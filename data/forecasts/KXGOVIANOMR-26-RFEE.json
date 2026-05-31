@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "ticker": "KXGOVIANOMR-26-RFEE",
+  "title": "Will Randy Feenstra win the Iowa GOP gubernatorial nomination (June 2)?",
+  "category": "politics",
+  "close_time": "2026-06-02T14:00:00Z",
+  "current": {
+    "as_of": "2026-05-31T18:47:19Z",
+    "my_probability": 0.8,
+    "my_confidence": "low",
+    "market_implied_probability": 0.93,
+    "market_price_cents": 93,
+    "edge": -0.13,
+    "yes_ask": 0.933,
+    "no_ask": 0.068,
+    "fee_per_contract": 0.01,
+    "ev_per_contract": 0.122,
+    "limit_price": 0.067,
+    "ev_limit_per_contract": 0.123,
+    "lean": "NO",
+    "conviction": "low",
+    "prob_delta_vs_prev": null,
+    "trigger": "bootstrap",
+    "rationale_summary": "Feenstra got a late Trump endorsement (very strong in Iowa) but polls ~tied with Lahn (22 vs 24) with 27% undecided and a 35% threshold likely forcing a June 13 convention; the market's ~93% looks overconfident given that contested-convention path.",
+    "key_drivers": [
+      "Trump endorsement (strong in IA)",
+      "tied with Lahn + 27% undecided",
+      "35% threshold -> likely convention"
+    ],
+    "reference_classes": [],
+    "research_refs": [
+      "https://winwithjmc.com/wp-content/uploads/2026/05/IA-Republican-Primary-Toplines-May-27-28-2026.pdf"
+    ]
+  },
+  "history": [
+    {
+      "as_of": "2026-05-31T18:47:19Z",
+      "my_probability": 0.8,
+      "my_confidence": "low",
+      "market_implied_probability": 0.93,
+      "market_price_cents": 93,
+      "edge": -0.13,
+      "yes_ask": 0.933,
+      "no_ask": 0.068,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": 0.122,
+      "limit_price": 0.067,
+      "ev_limit_per_contract": 0.123,
+      "lean": "NO",
+      "conviction": "low",
+      "prob_delta_vs_prev": null,
+      "trigger": "bootstrap",
+      "rationale_summary": "Feenstra got a late Trump endorsement (very strong in Iowa) but polls ~tied with Lahn (22 vs 24) with 27% undecided and a 35% threshold likely forcing a June 13 convention; the market's ~93% looks overconfident given that contested-convention path.",
+      "key_drivers": [
+        "Trump endorsement (strong in IA)",
+        "tied with Lahn + 27% undecided",
+        "35% threshold -> likely convention"
+      ],
+      "reference_classes": [],
+      "research_refs": [
+        "https://winwithjmc.com/wp-content/uploads/2026/05/IA-Republican-Primary-Toplines-May-27-28-2026.pdf"
+      ]
+    }
+  ]
+}

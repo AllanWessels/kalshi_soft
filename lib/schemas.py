@@ -153,8 +153,11 @@ class ForecastEntry:
     # Profitability (fee-aware): prices you would actually trade at + net expected value.
     yes_ask: Optional[float] = None       # price to BUY yes (dollars)
     no_ask: Optional[float] = None        # price to BUY no  (dollars) ~= 1 - yes_bid
-    fee_per_contract: Optional[float] = None   # Kalshi fee on the lean side (dollars)
-    ev_per_contract: Optional[float] = None    # net expected profit/contract on lean side ($), after fee
+    fee_per_contract: Optional[float] = None   # Kalshi fee on the lean side at the SPOT (ask) price ($)
+    ev_per_contract: Optional[float] = None    # SPOT net expected profit/contract ($): buy lean side at the ask, after fee
+    # Limit-order alternative: rest a buy on the lean side at its current best bid.
+    limit_price: Optional[float] = None        # the bid on the lean side (the resting limit price, dollars)
+    ev_limit_per_contract: Optional[float] = None  # net EV/contract IF filled at limit_price, after fee
     lean: str = "NONE"                    # LEANS — set only when ev_per_contract is meaningfully positive
     conviction: str = "low"               # CONVICTION_LEVELS
     prob_delta_vs_prev: Optional[float] = None   # computed by store

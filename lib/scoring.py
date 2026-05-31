@@ -235,6 +235,24 @@ def kalshi_fee(price: Optional[float], contracts: int = 1, fee_rate: float = 0.0
     return _math.ceil(raw * 100.0) / 100.0
 
 
+def net_ev_at_price(
+    my_prob: float,
+    side: str,
+    price: Optional[float],
+    fee_rate: float = 0.07,
+) -> Optional[float]:
+    """Net expected profit per contract (dollars) for buying ``side`` at an explicit
+    ``price`` (dollars), after the Kalshi fee at that price. None if price is None.
+
+    win_prob = my_prob (YES) or 1-my_prob (NO);  EV = win_prob - price - fee(price).
+    Use the ASK for a spot/taker order, the BID for a resting limit order.
+    """
+    if price is None:
+        return None
+    win_prob = my_prob if side == "YES" else (1.0 - my_prob)
+    return win_prob - price - kalshi_fee(price, fee_rate=fee_rate)
+
+
 def expected_net_profit(
     my_prob: float,
     side: str,

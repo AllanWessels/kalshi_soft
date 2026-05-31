@@ -78,7 +78,10 @@ MIN_VOLUME_24H = 100            # contracts traded in last 24h
 MIN_OPEN_INTEREST = 500         # open contracts
 MAX_SPREAD_CENTS = 12           # yes_ask - yes_bid, in cents
 MIN_DAYS_TO_CLOSE = 1           # skip markets about to close (no time to forecast)
-MAX_DAYS_TO_CLOSE = 540         # skip markets too far out to research meaningfully
+# Deployment strategy: only track markets that SETTLE within ~1 month, keyed off
+# expected_expiration_time (the true resolution date), not the trading close_time.
+# Near-term resolvers give fast calibration and actionable trades.
+MAX_DAYS_TO_RESOLVE = 31
 
 
 def first_run_max() -> Optional[int]:

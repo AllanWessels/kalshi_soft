@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-05-31T18:10:20Z",
+  "updated_at": "2026-05-31T18:39:26Z",
   "cap": 20,
   "markets": [
     {
@@ -15,7 +15,7 @@
         "open_interest": 5000658.91,
         "spread_cents": 1.0
       },
-      "status": "active",
+      "status": "dropped",
       "reforecast_cadence_days": 7.0
     },
     {
@@ -45,7 +45,7 @@
         "open_interest": 849659.07,
         "spread_cents": 1.0
       },
-      "status": "active",
+      "status": "dropped",
       "reforecast_cadence_days": 7.0
     },
     {
@@ -60,7 +60,7 @@
         "open_interest": 230281.9,
         "spread_cents": 1.0
       },
-      "status": "active",
+      "status": "dropped",
       "reforecast_cadence_days": 7.0
     },
     {
@@ -75,7 +75,7 @@
         "open_interest": 379555.83,
         "spread_cents": 1.0
       },
-      "status": "active",
+      "status": "dropped",
       "reforecast_cadence_days": 7.0
     },
     {
@@ -90,7 +90,7 @@
         "open_interest": 1243459.08,
         "spread_cents": 1.0
       },
-      "status": "active",
+      "status": "dropped",
       "reforecast_cadence_days": 7.0
     },
     {
@@ -105,7 +105,7 @@
         "open_interest": 18812992.48,
         "spread_cents": 1.0
       },
-      "status": "active",
+      "status": "dropped",
       "reforecast_cadence_days": 7.0
     },
     {
@@ -120,7 +120,7 @@
         "open_interest": 1541050.97,
         "spread_cents": 1.0
       },
-      "status": "active",
+      "status": "dropped",
       "reforecast_cadence_days": 7.0
     },
     {
@@ -135,7 +135,7 @@
         "open_interest": 2365648.35,
         "spread_cents": 0.0
       },
-      "status": "active",
+      "status": "dropped",
       "reforecast_cadence_days": 7.0
     },
     {
@@ -150,7 +150,7 @@
         "open_interest": 2035388.57,
         "spread_cents": 0.0
       },
-      "status": "active",
+      "status": "dropped",
       "reforecast_cadence_days": 7.0
     },
     {
@@ -165,7 +165,7 @@
         "open_interest": 1811666.01,
         "spread_cents": 0.0
       },
-      "status": "active",
+      "status": "dropped",
       "reforecast_cadence_days": 7.0
     },
     {
@@ -180,7 +180,7 @@
         "open_interest": 9334073.5,
         "spread_cents": 0.0
       },
-      "status": "active",
+      "status": "dropped",
       "reforecast_cadence_days": 7.0
     },
     {
@@ -195,7 +195,7 @@
         "open_interest": 1695501.72,
         "spread_cents": 1.0
       },
-      "status": "active",
+      "status": "dropped",
       "reforecast_cadence_days": 7.0
     },
     {
@@ -210,7 +210,7 @@
         "open_interest": 2272290.49,
         "spread_cents": 1.0
       },
-      "status": "active",
+      "status": "dropped",
       "reforecast_cadence_days": 7.0
     },
     {
@@ -240,7 +240,7 @@
         "open_interest": 459246.45,
         "spread_cents": 5.0
       },
-      "status": "active",
+      "status": "dropped",
       "reforecast_cadence_days": 7.0
     },
     {
@@ -255,7 +255,7 @@
         "open_interest": 399141.07,
         "spread_cents": 1.0
       },
-      "status": "active",
+      "status": "dropped",
       "reforecast_cadence_days": 7.0
     },
     {
@@ -270,7 +270,7 @@
         "open_interest": 620128.34,
         "spread_cents": 1.0
       },
-      "status": "active",
+      "status": "dropped",
       "reforecast_cadence_days": 7.0
     },
     {
@@ -285,7 +285,7 @@
         "open_interest": 1481268.69,
         "spread_cents": 1.0
       },
-      "status": "active",
+      "status": "dropped",
       "reforecast_cadence_days": 7.0
     },
     {
@@ -302,6 +302,201 @@
       },
       "status": "active",
       "reforecast_cadence_days": 7.0
+    },
+    {
+      "ticker": "KXLAMAYOR1R-26-SPRA",
+      "event_ticker": "KXLAMAYOR1R-26",
+      "title": "Who will win the first round of the Los Angeles mayoral election?",
+      "category": "politics",
+      "close_time": "2026-06-02T14:00:00Z",
+      "added_at": "2026-05-31T18:38:54Z",
+      "liquidity_snapshot": {
+        "volume_24h": 74880.24,
+        "open_interest": 366616.75,
+        "spread_cents": 1.0
+      },
+      "status": "active",
+      "reforecast_cadence_days": 0.0
+    },
+    {
+      "ticker": "KXGOVCAPRIMARY-26-CBIA",
+      "event_ticker": "KXGOVCAPRIMARY-26",
+      "title": "Who will win California's top-two primary for governor?",
+      "category": "politics",
+      "close_time": "2026-06-02T14:00:00Z",
+      "added_at": "2026-05-31T18:38:54Z",
+      "liquidity_snapshot": {
+        "volume_24h": 56606.75,
+        "open_interest": 368036.67,
+        "spread_cents": 0.0
+      },
+      "status": "active",
+      "reforecast_cadence_days": 0.0
+    },
+    {
+      "ticker": "KXGOVIANOMR-26-RFEE",
+      "event_ticker": "KXGOVIANOMR-26",
+      "title": "Will Randy Feenstra be the Republican nominee for Governor in Iowa?",
+      "category": "politics",
+      "close_time": "2026-06-02T14:00:00Z",
+      "added_at": "2026-05-31T18:38:54Z",
+      "liquidity_snapshot": {
+        "volume_24h": 17681.48,
+        "open_interest": 114409.77,
+        "spread_cents": 0.0
+      },
+      "status": "active",
+      "reforecast_cadence_days": 0.0
+    },
+    {
+      "ticker": "KXGOVCAPRIMARYPARTY-26-2R",
+      "event_ticker": "KXGOVCAPRIMARYPARTY-26",
+      "title": "Who will advance from California's top-two primary for governor?",
+      "category": "politics",
+      "close_time": "2026-06-30T14:00:00Z",
+      "added_at": "2026-05-31T18:38:54Z",
+      "liquidity_snapshot": {
+        "volume_24h": 14606.53,
+        "open_interest": 106272.08,
+        "spread_cents": 1.0
+      },
+      "status": "active",
+      "reforecast_cadence_days": 3.0
+    },
+    {
+      "ticker": "KXGOVSDNOMR-26-TDOE",
+      "event_ticker": "KXGOVSDNOMR-26",
+      "title": "Will Toby Doeden be the Republican nominee for Governor in South Dakota?",
+      "category": "politics",
+      "close_time": "2026-06-30T14:00:00Z",
+      "added_at": "2026-05-31T18:38:54Z",
+      "liquidity_snapshot": {
+        "volume_24h": 7695.86,
+        "open_interest": 83805.54,
+        "spread_cents": 3.0
+      },
+      "status": "active",
+      "reforecast_cadence_days": 3.0
+    },
+    {
+      "ticker": "KXSENATENJR-26-VBRA",
+      "event_ticker": "KXSENATENJR-26",
+      "title": "Will Vinnie Brand be the Republican nominee for Senate in New Jersey?",
+      "category": "politics",
+      "close_time": "2026-06-09T14:00:00Z",
+      "added_at": "2026-05-31T18:38:54Z",
+      "liquidity_snapshot": {
+        "volume_24h": 10998.0,
+        "open_interest": 12620.0,
+        "spread_cents": 1.0
+      },
+      "status": "active",
+      "reforecast_cadence_days": 3.0
+    },
+    {
+      "ticker": "KXSENATESCR-26-LGRA",
+      "event_ticker": "KXSENATESCR-26",
+      "title": "Will Lindsey Graham be the Republican nominee for the Senate in South Carolina?",
+      "category": "politics",
+      "close_time": "2026-06-09T14:00:00Z",
+      "added_at": "2026-05-31T18:38:54Z",
+      "liquidity_snapshot": {
+        "volume_24h": 1532.4,
+        "open_interest": 87604.48,
+        "spread_cents": 1.0
+      },
+      "status": "active",
+      "reforecast_cadence_days": 3.0
+    },
+    {
+      "ticker": "KXSENATEREC-26MAY-JUN06",
+      "event_ticker": "KXSENATEREC-26MAY",
+      "title": "Will a reconciliation bill passed the Senate before Jun 6, 2026?",
+      "category": "politics",
+      "close_time": "2026-06-14T14:00:00Z",
+      "added_at": "2026-05-31T18:38:54Z",
+      "liquidity_snapshot": {
+        "volume_24h": 2851.51,
+        "open_interest": 50260.88,
+        "spread_cents": 2.0
+      },
+      "status": "active",
+      "reforecast_cadence_days": 3.0
+    },
+    {
+      "ticker": "KXGOVOKNOMR-26-MMAZ",
+      "event_ticker": "KXGOVOKNOMR-26",
+      "title": "Will Mike Mazzei be the Republican nominee for Governor in Oklahoma?",
+      "category": "politics",
+      "close_time": "2026-06-30T14:00:00Z",
+      "added_at": "2026-05-31T18:38:54Z",
+      "liquidity_snapshot": {
+        "volume_24h": 4349.42,
+        "open_interest": 32865.24,
+        "spread_cents": 1.0
+      },
+      "status": "active",
+      "reforecast_cadence_days": 3.0
+    },
+    {
+      "ticker": "KXSEOULMAYOR-26JUN03-CWON",
+      "event_ticker": "KXSEOULMAYOR-26JUN03",
+      "title": "Will Chong Won-o win the 2026 Seoul mayoral election?",
+      "category": "politics",
+      "close_time": "2026-06-03T14:00:00Z",
+      "added_at": "2026-05-31T18:38:54Z",
+      "liquidity_snapshot": {
+        "volume_24h": 2304.96,
+        "open_interest": 38412.45,
+        "spread_cents": 2.0
+      },
+      "status": "active",
+      "reforecast_cadence_days": 0.0
+    },
+    {
+      "ticker": "KXU3-26MAY-T4.2",
+      "event_ticker": "KXU3-26MAY",
+      "title": "Will the unemployment rate (U-3) be above 4.2% in May?",
+      "category": "economy",
+      "close_time": "2026-06-05T14:00:00Z",
+      "added_at": "2026-05-31T18:38:54Z",
+      "liquidity_snapshot": {
+        "volume_24h": 4076.33,
+        "open_interest": 14941.39,
+        "spread_cents": 1.0
+      },
+      "status": "active",
+      "reforecast_cadence_days": 0.0
+    },
+    {
+      "ticker": "KXFEDDECISION-26JUN-H25",
+      "event_ticker": "KXFEDDECISION-26JUN",
+      "title": "Will the Federal Reserve Hike rates by 25bps at their June 2026 meeting?",
+      "category": "economy",
+      "close_time": "2026-06-17T18:05:00Z",
+      "added_at": "2026-05-31T18:38:54Z",
+      "liquidity_snapshot": {
+        "volume_24h": 36527.21,
+        "open_interest": 2698509.4,
+        "spread_cents": 1.0
+      },
+      "status": "active",
+      "reforecast_cadence_days": 3.0
+    },
+    {
+      "ticker": "KXFEDDECISION-26JUN-C26",
+      "event_ticker": "KXFEDDECISION-26JUN",
+      "title": "Will the Federal Reserve Cut rates by >25bps at their June 2026 meeting?",
+      "category": "economy",
+      "close_time": "2026-06-17T18:05:00Z",
+      "added_at": "2026-05-31T18:38:54Z",
+      "liquidity_snapshot": {
+        "volume_24h": 14457.72,
+        "open_interest": 2013184.65,
+        "spread_cents": 1.0
+      },
+      "status": "active",
+      "reforecast_cadence_days": 3.0
     }
   ]
 }

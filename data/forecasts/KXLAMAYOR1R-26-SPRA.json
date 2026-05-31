@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "ticker": "KXLAMAYOR1R-26-SPRA",
+  "title": "Will Spencer Pratt finish 1st in the June 2 Los Angeles mayoral primary?",
+  "category": "politics",
+  "close_time": "2026-06-02T14:00:00Z",
+  "current": {
+    "as_of": "2026-05-31T18:47:19Z",
+    "my_probability": 0.19,
+    "my_confidence": "medium",
+    "market_implied_probability": 0.235,
+    "market_price_cents": 24,
+    "edge": -0.044999999999999984,
+    "yes_ask": 0.24,
+    "no_ask": 0.77,
+    "fee_per_contract": 0.02,
+    "ev_per_contract": 0.02,
+    "limit_price": 0.76,
+    "ev_limit_per_contract": 0.03,
+    "lean": "NO",
+    "conviction": "low",
+    "prob_delta_vs_prev": null,
+    "trigger": "bootstrap",
+    "rationale_summary": "Pratt polls a competitive 3rd (~22%) within the margin behind Bass and Raman, but no credible poll has him 1st; the anti-Bass vote splits with Raman and Bass holds the machine + early mail ballots.",
+    "key_drivers": [
+      "polls 3rd ~22% never 1st",
+      "anti-Bass vote split with Raman",
+      "Bass machine + mail lead"
+    ],
+    "reference_classes": [],
+    "research_refs": [
+      "https://www.cbsnews.com/losangeles/news/new-poll-shows-bass-has-slim-lead-over-raman-pratt-in-la-mayoral-election/"
+    ]
+  },
+  "history": [
+    {
+      "as_of": "2026-05-31T18:47:19Z",
+      "my_probability": 0.19,
+      "my_confidence": "medium",
+      "market_implied_probability": 0.235,
+      "market_price_cents": 24,
+      "edge": -0.044999999999999984,
+      "yes_ask": 0.24,
+      "no_ask": 0.77,
+      "fee_per_contract": 0.02,
+      "ev_per_contract": 0.02,
+      "limit_price": 0.76,
+      "ev_limit_per_contract": 0.03,
+      "lean": "NO",
+      "conviction": "low",
+      "prob_delta_vs_prev": null,
+      "trigger": "bootstrap",
+      "rationale_summary": "Pratt polls a competitive 3rd (~22%) within the margin behind Bass and Raman, but no credible poll has him 1st; the anti-Bass vote splits with Raman and Bass holds the machine + early mail ballots.",
+      "key_drivers": [
+        "polls 3rd ~22% never 1st",
+        "anti-Bass vote split with Raman",
+        "Bass machine + mail lead"
+      ],
+      "reference_classes": [],
+      "research_refs": [
+        "https://www.cbsnews.com/losangeles/news/new-poll-shows-bass-has-slim-lead-over-raman-pratt-in-la-mayoral-election/"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "ticker": "KXGOVCAPRIMARY-26-CBIA",
+  "title": "Will Chad Bianco advance (top-two) in the June 2 California gubernatorial primary?",
+  "category": "politics",
+  "close_time": "2026-06-02T14:00:00Z",
+  "current": {
+    "as_of": "2026-05-31T18:47:19Z",
+    "my_probability": 0.04,
+    "my_confidence": "high",
+    "market_implied_probability": 0.0295,
+    "market_price_cents": 3,
+    "edge": 0.010500000000000002,
+    "yes_ask": 0.033,
+    "no_ask": 0.971,
+    "fee_per_contract": 0.01,
+    "ev_per_contract": -0.003,
+    "limit_price": null,
+    "ev_limit_per_contract": null,
+    "lean": "NONE",
+    "conviction": "low",
+    "prob_delta_vs_prev": null,
+    "trigger": "bootstrap",
+    "rationale_summary": "Bianco polls ~12-13% (4th), ~8-10 pts behind Hilton (the leading Republican) and the leading Democrats; the top-two is Becerra plus Hilton/Steyer, not Bianco.",
+    "key_drivers": [
+      "Bianco ~12-13% trails Hilton",
+      "top-two is Becerra+Hilton/Steyer",
+      "CA D+13"
+    ],
+    "reference_classes": [],
+    "research_refs": [
+      "https://emersoncollegepolling.com/california-2026-poll-becerra-leads-steyer-and-hilton-toss-up-for-second-spot/"
+    ]
+  },
+  "history": [
+    {
+      "as_of": "2026-05-31T18:47:19Z",
+      "my_probability": 0.04,
+      "my_confidence": "high",
+      "market_implied_probability": 0.0295,
+      "market_price_cents": 3,
+      "edge": 0.010500000000000002,
+      "yes_ask": 0.033,
+      "no_ask": 0.971,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": -0.003,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "prob_delta_vs_prev": null,
+      "trigger": "bootstrap",
+      "rationale_summary": "Bianco polls ~12-13% (4th), ~8-10 pts behind Hilton (the leading Republican) and the leading Democrats; the top-two is Becerra plus Hilton/Steyer, not Bianco.",
+      "key_drivers": [
+        "Bianco ~12-13% trails Hilton",
+        "top-two is Becerra+Hilton/Steyer",
+        "CA D+13"
+      ],
+      "reference_classes": [],
+      "research_refs": [
+        "https://emersoncollegepolling.com/california-2026-poll-becerra-leads-steyer-and-hilton-toss-up-for-second-spot/"
+      ]
+    }
+  ]
+}

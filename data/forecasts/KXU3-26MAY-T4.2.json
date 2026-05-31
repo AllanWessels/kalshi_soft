@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "ticker": "KXU3-26MAY-T4.2",
+  "title": "Will the May 2026 U-3 unemployment rate be above 4.2%?",
+  "category": "economy",
+  "close_time": "2026-06-05T14:00:00Z",
+  "current": {
+    "as_of": "2026-05-31T18:47:19Z",
+    "my_probability": 0.86,
+    "my_confidence": "high",
+    "market_implied_probability": 0.725,
+    "market_price_cents": 72,
+    "edge": 0.135,
+    "yes_ask": 0.73,
+    "no_ask": 0.28,
+    "fee_per_contract": 0.02,
+    "ev_per_contract": 0.11,
+    "limit_price": 0.72,
+    "ev_limit_per_contract": 0.12,
+    "lean": "YES",
+    "conviction": "medium",
+    "prob_delta_vs_prev": null,
+    "trigger": "bootstrap",
+    "rationale_summary": "U-3 printed >=4.3% every month of 2026 and Bloomberg consensus / Chicago Fed nowcast both put May at 4.3%; the macro backdrop tilts toward upside unemployment risk, so >4.2% is well-supported vs the market's ~72%.",
+    "key_drivers": [
+      "2026 prints all >=4.3%",
+      "consensus + Chicago Fed nowcast 4.3%",
+      "upside labor risk"
+    ],
+    "reference_classes": [],
+    "research_refs": [
+      "https://www.bloomberg.com/news/articles/2026-05-30/us-jobs-report-set-to-reveal-solid-growth-steady-unemployment-rate"
+    ]
+  },
+  "history": [
+    {
+      "as_of": "2026-05-31T18:47:19Z",
+      "my_probability": 0.86,
+      "my_confidence": "high",
+      "market_implied_probability": 0.725,
+      "market_price_cents": 72,
+      "edge": 0.135,
+      "yes_ask": 0.73,
+      "no_ask": 0.28,
+      "fee_per_contract": 0.02,
+      "ev_per_contract": 0.11,
+      "limit_price": 0.72,
+      "ev_limit_per_contract": 0.12,
+      "lean": "YES",
+      "conviction": "medium",
+      "prob_delta_vs_prev": null,
+      "trigger": "bootstrap",
+      "rationale_summary": "U-3 printed >=4.3% every month of 2026 and Bloomberg consensus / Chicago Fed nowcast both put May at 4.3%; the macro backdrop tilts toward upside unemployment risk, so >4.2% is well-supported vs the market's ~72%.",
+      "key_drivers": [
+        "2026 prints all >=4.3%",
+        "consensus + Chicago Fed nowcast 4.3%",
+        "upside labor risk"
+      ],
+      "reference_classes": [],
+      "research_refs": [
+        "https://www.bloomberg.com/news/articles/2026-05-30/us-jobs-report-set-to-reveal-solid-growth-steady-unemployment-rate"
+      ]
+    }
+  ]
+}

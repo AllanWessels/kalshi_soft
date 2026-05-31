@@ -109,6 +109,20 @@ def build_parser() -> argparse.ArgumentParser:
         default=None,
         help="Price to buy NO (dollars, [0,1]). Used with --yes-ask for profitability calc.",
     )
+    p.add_argument(
+        "--yes-bid",
+        dest="yes_bid",
+        type=float,
+        default=None,
+        help="Best YES bid (dollars). Used to price a resting LIMIT buy if the lean is YES.",
+    )
+    p.add_argument(
+        "--no-bid",
+        dest="no_bid",
+        type=float,
+        default=None,
+        help="Best NO bid (dollars). Used to price a resting LIMIT buy if the lean is NO.",
+    )
 
     # --- narrative fields ---
     p.add_argument(
@@ -202,6 +216,8 @@ def main(argv: list[str] | None = None) -> None:
     no_ask_field: float | None = None
     fee_per_contract: float | None = None
     ev_per_contract: float | None = None
+    limit_price: float | None = None
+    ev_limit_per_contract: float | None = None
 
     if args.yes_ask is not None:
         # Fee-aware path.
@@ -228,6 +244,13 @@ def main(argv: list[str] | None = None) -> None:
         fee_per_contract = fee
         ev_per_contract = ev
 
+        # Limit-order alternative: rest a buy on the lean side at its current best bid.
+        if side in ("YES", "NO"):
+            limit_price = args.yes_bid if side == "YES" else args.no_bid
+            ev_limit_per_contract = scoring.net_ev_at_price(
+                args.prob, side, limit_price, fee_rate=config.KALSHI_FEE_RATE
+            )
+
         # Conviction: derive from EV unless the user explicitly passed --conviction.
         if args.conviction is not None:
             conviction = args.conviction
@@ -250,6 +273,9 @@ def main(argv: list[str] | None = None) -> None:
         no_ask=no_ask_field,
         fee_per_contract=fee_per_contract,
         ev_per_contract=ev_per_contract,
+        limit_price=limit_price,
+        ev_limit_per_contract=(round(ev_limit_per_contract, 4)
+                               if ev_limit_per_contract is not None else None),
         lean=lean,
         conviction=conviction,
         trigger=args.trigger,

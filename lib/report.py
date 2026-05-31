@@ -148,45 +148,71 @@ def _fmt_dollar(v: float) -> str:
     return f"{sign}${abs(v):.2f}"
 
 
-def _profitability_line(cur: schemas.ForecastEntry, st: dict) -> Optional[object]:
-    """Return a Paragraph for the fee-aware profitability line, or None if no ev data."""
+def _profitability_lines(
+    cur: schemas.ForecastEntry,
+    st: dict,
+    close_time: str = "",
+) -> list:
+    """Return a list of Paragraphs for the explicit trade lines, or [] if no ev data.
+
+    Parameters
+    ----------
+    cur:
+        The current ForecastEntry.
+    st:
+        Paragraph styles dict.
+    close_time:
+        ISO-8601 close timestamp for the market (used in the limit-order line).
+        Comes from the WatchlistEntry or ForecastRecord, not ForecastEntry itself.
+    """
     if cur.ev_per_contract is None:
-        return None
+        return []
 
     ev = cur.ev_per_contract
     lean = cur.lean or "NONE"
     fee = cur.fee_per_contract  # may be None for older records
 
     if lean == "NONE":
-        # No profitable lean: show best net EV
         ev_str = _fmt_dollar(ev)
-        text = f"Profitability: no profitable edge after fees (best net EV {ev_str}/contract)"
-        color = "#888888"
-    else:
-        # Determine the relevant ask price
-        if lean == "YES":
-            ask = cur.yes_ask
-        else:
-            ask = cur.no_ask
-
-        ev_str = _fmt_dollar(ev)
-        color = "#2E7D32" if ev > 0 else "#C62828"
-
-        # Build the detail suffix
-        parts: list[str] = []
-        if fee is not None:
-            parts.append(f"fee ${fee:.2f}")
-        if ask is not None:
-            parts.append(f"ask ${ask:.2f}")
-        detail = ", ".join(parts)
-        detail_str = f" ({detail})" if detail else ""
-        conv = cur.conviction or "—"
         text = (
-            f'Profitability: {lean} — net EV <font color="{color}"><b>{ev_str}/contract</b></font>'
-            f"{detail_str}, conviction {conv}"
+            f'<font color="#888888">No profitable trade after fees '
+            f"(best net EV {ev_str}/contract at spot).</font>"
         )
+        return [Paragraph(text, st["body"])]
 
-    return Paragraph(text, st["body"])
+    # Leaned market — determine the ask price for the lean side
+    ask = cur.yes_ask if lean == "YES" else cur.no_ask
+
+    ev_color = "#2E7D32" if ev > 0 else "#C62828"
+    ev_str = _fmt_dollar(ev)
+
+    # Build spot trade line
+    ask_str = f"${ask:.2f}" if ask is not None else "—"
+    fee_str = f"${fee:.2f}" if fee is not None else "—"
+
+    close_date = close_time[:10] if close_time else ""
+
+    spot_text = (
+        f"Trade (spot): BUY {lean} @ {ask_str} now "
+        f"(taker, fee {fee_str}/contract) -> "
+        f'net EV <font color="{ev_color}"><b>{ev_str}/contract</b></font>'
+    )
+    result = [Paragraph(spot_text, st["body"])]
+
+    # Build limit trade line (only if both limit_price and ev_limit_per_contract are present)
+    if cur.limit_price is not None and cur.ev_limit_per_contract is not None:
+        lev = cur.ev_limit_per_contract
+        lev_color = "#2E7D32" if lev > 0 else "#C62828"
+        lev_str = _fmt_dollar(lev)
+        limit_str = f"${cur.limit_price:.2f}"
+        close_part = f" until {close_date}" if close_date else ""
+        limit_text = (
+            f"Trade (limit): rest BUY {lean} @ {limit_str} GTC{close_part} -> "
+            f'net EV <font color="{lev_color}"><b>{lev_str}/contract</b></font> if filled'
+        )
+        result.append(Paragraph(limit_text, st["body"]))
+
+    return result
 
 
 def _parse_dt(ts: str) -> Optional[_dt.datetime]:
@@ -471,6 +497,23 @@ def _build_per_market(
     if not active_with_fc:
         return elems
 
+    # Sort by profitability then absolute edge, descending:
+    # markets with a lean come first (highest spot net EV first),
+    # then NONE markets by largest absolute edge.
+    import math as _math
+
+    def _sort_key(m):
+        cur = forecast_map[m.ticker].current
+        if cur is None:
+            return (0, -_math.inf, 0)
+        lean = cur.lean or "NONE"
+        has_lean = 1 if lean != "NONE" else 0
+        ev = cur.ev_per_contract if cur.ev_per_contract is not None else -_math.inf
+        abs_edge = abs(cur.edge) if cur.edge is not None else 0
+        return (has_lean, ev, abs_edge)
+
+    active_with_fc = sorted(active_with_fc, key=_sort_key, reverse=True)
+
     elems.append(Paragraph("Active Markets", st["section"]))
     elems.append(_hr())
 
@@ -512,8 +555,7 @@ def _build_per_market(
             lean_line = f"Lean: <b>{lean}</b>  Conviction: <b>{cur.conviction}</b>"
             block.append(Paragraph(lean_line, st["body"]))
 
-            prof_para = _profitability_line(cur, st)
-            if prof_para is not None:
+            for prof_para in _profitability_lines(cur, st, close_time=ct or ""):
                 block.append(prof_para)
 
             if cur.rationale_summary:
@@ -611,13 +653,11 @@ def _build_profitable_leans(
             continue
         if cur.ev_per_contract is None:
             continue
-        title = m.title or rec.title or m.ticker
-        title_trunc = (title[:38] + "…") if len(title) > 39 else title
         rows.append((
             m.ticker,
-            title_trunc,
             lean,
             cur.ev_per_contract,
+            cur.ev_limit_per_contract,  # may be None
             cur.conviction or "—",
         ))
 
@@ -627,20 +667,28 @@ def _build_profitable_leans(
             "for our estimates.",
             st["small"],
         ))
+        elems.append(_sp(4))
+        elems.append(Paragraph(
+            "Fees use Kalshi's standard taker formula ceil(0.07*p*(1-p))/contract; "
+            "resting (maker) limit fills may be cheaper on some series. "
+            "Paper only - read-only key places no orders.",
+            st["footnote"],
+        ))
         return elems
 
     # Sort descending by ev_per_contract
-    rows.sort(key=lambda r: r[3], reverse=True)
+    rows.sort(key=lambda r: r[2], reverse=True)
 
-    tbl_data = [["Ticker", "Title", "Side", "Net EV/contract", "Conviction"]]
-    for ticker, title_trunc, side, ev, conv in rows:
+    tbl_data = [["Ticker", "Side", "Spot EV/contract", "Limit EV/contract", "Conviction"]]
+    for ticker, side, ev, lev, conv in rows:
         ev_str = _fmt_dollar(ev)
-        tbl_data.append([ticker, title_trunc, side, ev_str, conv])
+        lev_str = _fmt_dollar(lev) if lev is not None else "—"
+        tbl_data.append([ticker, side, ev_str, lev_str, conv])
 
-    col_widths = [3.5 * cm, 7.5 * cm, 1.5 * cm, 3.0 * cm, 2.5 * cm]
+    col_widths = [3.5 * cm, 1.5 * cm, 3.5 * cm, 3.5 * cm, 2.5 * cm]
     tbl = Table(tbl_data, colWidths=col_widths)
 
-    # Color the Net EV column green/red based on sign
+    # Color the EV columns green/red based on sign
     row_styles = [
         ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#283593")),
         ("TEXTCOLOR", (0, 0), (-1, 0), colors.white),
@@ -653,13 +701,24 @@ def _build_profitable_leans(
         ("BOTTOMPADDING", (0, 0), (-1, -1), 3),
         ("LEFTPADDING", (0, 0), (-1, -1), 4),
     ]
-    for i, (_, _, _, ev, _) in enumerate(rows, start=1):
+    for i, (_, _, ev, lev, _) in enumerate(rows, start=1):
         ev_color = colors.HexColor("#2E7D32") if ev > 0 else colors.HexColor("#C62828")
-        row_styles.append(("TEXTCOLOR", (3, i), (3, i), ev_color))
-        row_styles.append(("FONTNAME", (3, i), (3, i), "Helvetica-Bold"))
+        row_styles.append(("TEXTCOLOR", (2, i), (2, i), ev_color))
+        row_styles.append(("FONTNAME", (2, i), (2, i), "Helvetica-Bold"))
+        if lev is not None:
+            lev_color = colors.HexColor("#2E7D32") if lev > 0 else colors.HexColor("#C62828")
+            row_styles.append(("TEXTCOLOR", (3, i), (3, i), lev_color))
+            row_styles.append(("FONTNAME", (3, i), (3, i), "Helvetica-Bold"))
 
     tbl.setStyle(TableStyle(row_styles))
     elems.append(tbl)
+    elems.append(_sp(4))
+    elems.append(Paragraph(
+        "Fees use Kalshi's standard taker formula ceil(0.07*p*(1-p))/contract; "
+        "resting (maker) limit fills may be cheaper on some series. "
+        "Paper only - read-only key places no orders.",
+        st["footnote"],
+    ))
     return elems
 
 
@@ -899,6 +958,8 @@ if __name__ == "__main__":
         no_ask=0.38,
         fee_per_contract=0.01,
         ev_per_contract=0.13,
+        limit_price=0.61,
+        ev_limit_per_contract=0.15,
         lean="YES",
         conviction="high",
         rationale_summary="New poll adds to lead; no scandals.",

@@ -92,7 +92,7 @@ def main() -> None:
 
     # Effective thresholds (command-line overrides win over config defaults).
     min_volume_24h = args.min_volume if args.min_volume is not None else config.MIN_VOLUME_24H
-    max_days = args.max_days if args.max_days is not None else config.MAX_DAYS_TO_CLOSE
+    max_days = args.max_days if args.max_days is not None else config.MAX_DAYS_TO_RESOLVE
     min_open_interest = config.MIN_OPEN_INTEREST
     max_spread_cents = config.MAX_SPREAD_CENTS
     min_days = config.MIN_DAYS_TO_CLOSE
@@ -162,6 +162,9 @@ def main() -> None:
                 open_interest = _parse_fp(market.get("open_interest_fp"))
                 close_time_iso = market.get("close_time", "") or ""
                 dtc = _days_to_close(close_time_iso, now_utc)
+                # True resolution/settlement date drives the near-term filter.
+                resolve_iso = market.get("expected_expiration_time", "") or close_time_iso
+                dtr = _days_to_close(resolve_iso, now_utc)
 
                 # Quote for spread and implied probability.
                 try:
@@ -187,7 +190,10 @@ def main() -> None:
                     continue
                 if spread_cents > max_spread_cents:
                     continue
-                if dtc < min_days or dtc > max_days:
+                # Track only markets that settle within [min_days, max_days] of now,
+                # keyed off the true resolution date. The floor drops already-resolved /
+                # same-day markets (which can carry stale or negative horizons).
+                if dtr < min_days or dtr > max_days:
                     continue
 
                 lscore = _liquidity_score(volume_24h, open_interest)
@@ -199,6 +205,8 @@ def main() -> None:
                     "category": category,
                     "close_time": close_time_iso,
                     "days_to_close": round(dtc, 2),
+                    "resolve_time": resolve_iso,
+                    "days_to_resolve": round(dtr, 2),
                     "volume_24h": round(volume_24h, 2),
                     "open_interest": round(open_interest, 2),
                     "spread_cents": spread_cents,

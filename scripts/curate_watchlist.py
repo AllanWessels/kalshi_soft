@@ -50,12 +50,17 @@ def main() -> int:
         if not c:
             skipped.append(f"{t} (not in candidates.json — run fetch_candidates first)")
             continue
+        # Use the true resolution date (expected_expiration_time, surfaced as
+        # resolve_time by fetch_candidates) for tiering — some markets trade well
+        # past when they actually settle (e.g. a primary that settles in June but
+        # whose close_time is the November general).
+        resolve_time = c.get("resolve_time") or c.get("close_time", "")
         entry = schemas.WatchlistEntry(
             ticker=t,
             event_ticker=c.get("event_ticker", ""),
             title=c.get("title", ""),
             category=c.get("category", ""),
-            close_time=c.get("close_time", ""),
+            close_time=resolve_time,
             added_at=schemas.utc_now_iso(),
             liquidity_snapshot=schemas.LiquiditySnapshot(
                 volume_24h=float(c.get("volume_24h", 0) or 0),
@@ -63,7 +68,7 @@ def main() -> int:
                 spread_cents=float(c.get("spread_cents", 0) or 0),
             ),
             status="active",
-            reforecast_cadence_days=config.cadence_days_for(c.get("days_to_close", 9999) or 9999),
+            reforecast_cadence_days=config.cadence_days_for(c.get("days_to_resolve", c.get("days_to_close", 9999)) or 9999),
         )
         if t in by_ticker:
             # re-activating a previously dropped/resolved entry

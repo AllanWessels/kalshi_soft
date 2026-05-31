@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "ticker": "KXSENATEREC-26MAY-JUN06",
+  "title": "Will a reconciliation bill pass the U.S. Senate before June 6, 2026?",
+  "category": "politics",
+  "close_time": "2026-06-14T14:00:00Z",
+  "current": {
+    "as_of": "2026-05-31T18:47:19Z",
+    "my_probability": 0.15,
+    "my_confidence": "medium",
+    "market_implied_probability": 0.23,
+    "market_price_cents": 23,
+    "edge": -0.08000000000000002,
+    "yes_ask": 0.24,
+    "no_ask": 0.78,
+    "fee_per_contract": 0.02,
+    "ev_per_contract": 0.05,
+    "limit_price": 0.76,
+    "ev_limit_per_contract": 0.07,
+    "lean": "NO",
+    "conviction": "low",
+    "prob_delta_vs_prev": null,
+    "trigger": "bootstrap",
+    "rationale_summary": "The Senate reconciliation (ICE/CBP) bill missed its pre-recess deadline amid intra-GOP disputes; the Senate returns June 1 with no reconciliation vote scheduled and unfinished text, making passage in ~5 days unlikely.",
+    "key_drivers": [
+      "missed pre-recess deadline",
+      "no vote scheduled June 1",
+      "text/parliamentarian unresolved"
+    ],
+    "reference_classes": [],
+    "research_refs": [
+      "https://www.npr.org/2026/05/22/nx-s1-5830311/congress-delays-vote-on-republican-backed-ice-funding-after-gop-infighting"
+    ]
+  },
+  "history": [
+    {
+      "as_of": "2026-05-31T18:47:19Z",
+      "my_probability": 0.15,
+      "my_confidence": "medium",
+      "market_implied_probability": 0.23,
+      "market_price_cents": 23,
+      "edge": -0.08000000000000002,
+      "yes_ask": 0.24,
+      "no_ask": 0.78,
+      "fee_per_contract": 0.02,
+      "ev_per_contract": 0.05,
+      "limit_price": 0.76,
+      "ev_limit_per_contract": 0.07,
+      "lean": "NO",
+      "conviction": "low",
+      "prob_delta_vs_prev": null,
+      "trigger": "bootstrap",
+      "rationale_summary": "The Senate reconciliation (ICE/CBP) bill missed its pre-recess deadline amid intra-GOP disputes; the Senate returns June 1 with no reconciliation vote scheduled and unfinished text, making passage in ~5 days unlikely.",
+      "key_drivers": [
+        "missed pre-recess deadline",
+        "no vote scheduled June 1",
+        "text/parliamentarian unresolved"
+      ],
+      "reference_classes": [],
+      "research_refs": [
+        "https://www.npr.org/2026/05/22/nx-s1-5830311/congress-delays-vote-on-republican-backed-ice-funding-after-gop-infighting"
+      ]
+    }
+  ]
+}

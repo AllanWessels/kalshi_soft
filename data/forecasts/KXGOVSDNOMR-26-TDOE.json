@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "ticker": "KXGOVSDNOMR-26-TDOE",
+  "title": "Will Toby Doeden win the South Dakota GOP gubernatorial nomination?",
+  "category": "politics",
+  "close_time": "2026-06-30T14:00:00Z",
+  "current": {
+    "as_of": "2026-05-31T18:47:19Z",
+    "my_probability": 0.32,
+    "my_confidence": "medium",
+    "market_implied_probability": 0.405,
+    "market_price_cents": 40,
+    "edge": -0.08500000000000002,
+    "yes_ask": 0.42,
+    "no_ask": 0.6,
+    "fee_per_contract": 0.02,
+    "ev_per_contract": 0.06,
+    "limit_price": 0.58,
+    "ev_limit_per_contract": 0.08,
+    "lean": "NO",
+    "conviction": "medium",
+    "prob_delta_vs_prev": null,
+    "trigger": "bootstrap",
+    "rationale_summary": "Doeden leads one poll (26%) but trails 17-34 in another; with no Trump endorsement, a likely runoff favors the establishment (Johnson's 113-lawmaker bloc) consolidating against the outsider. Market's ~40% looks rich.",
+    "key_drivers": [
+      "poll divergence (26% vs 17%)",
+      "no Trump endorsement",
+      "runoff consolidation favors establishment"
+    ],
+    "reference_classes": [],
+    "research_refs": [
+      "https://www.sdnewswatch.org/south-dakota-republican-gop-primary-governor-gubernatorial/"
+    ]
+  },
+  "history": [
+    {
+      "as_of": "2026-05-31T18:47:19Z",
+      "my_probability": 0.32,
+      "my_confidence": "medium",
+      "market_implied_probability": 0.405,
+      "market_price_cents": 40,
+      "edge": -0.08500000000000002,
+      "yes_ask": 0.42,
+      "no_ask": 0.6,
+      "fee_per_contract": 0.02,
+      "ev_per_contract": 0.06,
+      "limit_price": 0.58,
+      "ev_limit_per_contract": 0.08,
+      "lean": "NO",
+      "conviction": "medium",
+      "prob_delta_vs_prev": null,
+      "trigger": "bootstrap",
+      "rationale_summary": "Doeden leads one poll (26%) but trails 17-34 in another; with no Trump endorsement, a likely runoff favors the establishment (Johnson's 113-lawmaker bloc) consolidating against the outsider. Market's ~40% looks rich.",
+      "key_drivers": [
+        "poll divergence (26% vs 17%)",
+        "no Trump endorsement",
+        "runoff consolidation favors establishment"
+      ],
+      "reference_classes": [],
+      "research_refs": [
+        "https://www.sdnewswatch.org/south-dakota-republican-gop-primary-governor-gubernatorial/"
+      ]
+    }
+  ]
+}

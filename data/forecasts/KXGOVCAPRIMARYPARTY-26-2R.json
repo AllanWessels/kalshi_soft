@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "ticker": "KXGOVCAPRIMARYPARTY-26-2R",
+  "title": "Will 2 Republicans advance from the June 2 California gubernatorial top-two primary?",
+  "category": "politics",
+  "close_time": "2026-06-30T14:00:00Z",
+  "current": {
+    "as_of": "2026-05-31T18:47:19Z",
+    "my_probability": 0.03,
+    "my_confidence": "high",
+    "market_implied_probability": 0.0205,
+    "market_price_cents": 2,
+    "edge": 0.009499999999999998,
+    "yes_ask": 0.026,
+    "no_ask": 0.985,
+    "fee_per_contract": 0.01,
+    "ev_per_contract": -0.006,
+    "limit_price": null,
+    "ev_limit_per_contract": null,
+    "lean": "NONE",
+    "conviction": "low",
+    "prob_delta_vs_prev": null,
+    "trigger": "bootstrap",
+    "rationale_summary": "Combined GOP polling (~33%) is far below the combined Democratic field (~55%); CA has never sent two Republicans out of a top-two gov primary. Near-zero.",
+    "key_drivers": [
+      "GOP ~33% vs Dem ~55%",
+      "no precedent for 2 R in CA top-two",
+      "Becerra near-certain to advance"
+    ],
+    "reference_classes": [],
+    "research_refs": [
+      "https://www.kqed.org/news/12085443/new-california-governor-poll-shows-a-slim-but-growing-chance-of-2-democrats-advancing"
+    ]
+  },
+  "history": [
+    {
+      "as_of": "2026-05-31T18:47:19Z",
+      "my_probability": 0.03,
+      "my_confidence": "high",
+      "market_implied_probability": 0.0205,
+      "market_price_cents": 2,
+      "edge": 0.009499999999999998,
+      "yes_ask": 0.026,
+      "no_ask": 0.985,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": -0.006,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "prob_delta_vs_prev": null,
+      "trigger": "bootstrap",
+      "rationale_summary": "Combined GOP polling (~33%) is far below the combined Democratic field (~55%); CA has never sent two Republicans out of a top-two gov primary. Near-zero.",
+      "key_drivers": [
+        "GOP ~33% vs Dem ~55%",
+        "no precedent for 2 R in CA top-two",
+        "Becerra near-certain to advance"
+      ],
+      "reference_classes": [],
+      "research_refs": [
+        "https://www.kqed.org/news/12085443/new-california-governor-poll-shows-a-slim-but-growing-chance-of-2-democrats-advancing"
+      ]
+    }
+  ]
+}
