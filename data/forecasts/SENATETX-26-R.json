@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "ticker": "SENATETX-26-R",
+  "title": "Will Republicans win the 2026 U.S. Senate race in Texas?",
+  "category": "politics",
+  "close_time": "2027-11-03T15:00:00Z",
+  "current": {
+    "as_of": "2026-05-31T18:11:16Z",
+    "my_probability": 0.65,
+    "my_confidence": "medium",
+    "market_implied_probability": 0.595,
+    "market_price_cents": 60,
+    "edge": 0.05500000000000005,
+    "yes_ask": 0.6,
+    "no_ask": 0.41,
+    "fee_per_contract": 0.02,
+    "ev_per_contract": 0.03,
+    "lean": "YES",
+    "conviction": "low",
+    "prob_delta_vs_prev": null,
+    "trigger": "bootstrap",
+    "rationale_summary": "Texas hasn't elected a Democrat statewide since 1994 (R+14 in 2024), a large structural buffer, but nominee Ken Paxton is uniquely damaged (-19 net favorability, Talarico funding edge, polls tied); net ~65%, above the near-tossup market.",
+    "key_drivers": [
+      "Texas R+14 structural lean",
+      "Paxton toxicity (-19 net fav)",
+      "Talarico funding + polling"
+    ],
+    "reference_classes": [],
+    "research_refs": [
+      "https://www.cookpolitical.com/analysis/senate/texas-senate"
+    ]
+  },
+  "history": [
+    {
+      "as_of": "2026-05-31T18:11:16Z",
+      "my_probability": 0.65,
+      "my_confidence": "medium",
+      "market_implied_probability": 0.595,
+      "market_price_cents": 60,
+      "edge": 0.05500000000000005,
+      "yes_ask": 0.6,
+      "no_ask": 0.41,
+      "fee_per_contract": 0.02,
+      "ev_per_contract": 0.03,
+      "lean": "YES",
+      "conviction": "low",
+      "prob_delta_vs_prev": null,
+      "trigger": "bootstrap",
+      "rationale_summary": "Texas hasn't elected a Democrat statewide since 1994 (R+14 in 2024), a large structural buffer, but nominee Ken Paxton is uniquely damaged (-19 net favorability, Talarico funding edge, polls tied); net ~65%, above the near-tossup market.",
+      "key_drivers": [
+        "Texas R+14 structural lean",
+        "Paxton toxicity (-19 net fav)",
+        "Talarico funding + polling"
+      ],
+      "reference_classes": [],
+      "research_refs": [
+        "https://www.cookpolitical.com/analysis/senate/texas-senate"
+      ]
+    }
+  ]
+}

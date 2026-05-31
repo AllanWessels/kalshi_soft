@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "ticker": "CONTROLS-2026-R",
+  "title": "Will Republicans win the U.S. Senate in 2026?",
+  "category": "politics",
+  "close_time": "2027-02-01T15:00:00Z",
+  "current": {
+    "as_of": "2026-05-31T18:11:16Z",
+    "my_probability": 0.62,
+    "my_confidence": "medium",
+    "market_implied_probability": 0.565,
+    "market_price_cents": 56,
+    "edge": 0.05500000000000005,
+    "yes_ask": 0.57,
+    "no_ask": 0.44,
+    "fee_per_contract": 0.02,
+    "ev_per_contract": 0.03,
+    "lean": "YES",
+    "conviction": "low",
+    "prob_delta_vs_prev": null,
+    "trigger": "bootstrap",
+    "rationale_summary": "Republicans start 53-47 and Democrats need a tough net +4 (NC+ME+AK+OH) while holding their own; the 2018 precedent shows a friendly map can insulate the majority, though a D+7 environment adds real pressure. ~62%, above the market.",
+    "key_drivers": [
+      "GOP 53-47 start",
+      "Dems need +4",
+      "2018 map-insulation precedent",
+      "D+7 environment pressure"
+    ],
+    "reference_classes": [],
+    "research_refs": [
+      "https://centerforpolitics.org/crystalball/2026-senate/"
+    ]
+  },
+  "history": [
+    {
+      "as_of": "2026-05-31T18:11:16Z",
+      "my_probability": 0.62,
+      "my_confidence": "medium",
+      "market_implied_probability": 0.565,
+      "market_price_cents": 56,
+      "edge": 0.05500000000000005,
+      "yes_ask": 0.57,
+      "no_ask": 0.44,
+      "fee_per_contract": 0.02,
+      "ev_per_contract": 0.03,
+      "lean": "YES",
+      "conviction": "low",
+      "prob_delta_vs_prev": null,
+      "trigger": "bootstrap",
+      "rationale_summary": "Republicans start 53-47 and Democrats need a tough net +4 (NC+ME+AK+OH) while holding their own; the 2018 precedent shows a friendly map can insulate the majority, though a D+7 environment adds real pressure. ~62%, above the market.",
+      "key_drivers": [
+        "GOP 53-47 start",
+        "Dems need +4",
+        "2018 map-insulation precedent",
+        "D+7 environment pressure"
+      ],
+      "reference_classes": [],
+      "research_refs": [
+        "https://centerforpolitics.org/crystalball/2026-senate/"
+      ]
+    }
+  ]
+}

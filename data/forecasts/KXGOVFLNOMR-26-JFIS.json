@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "ticker": "KXGOVFLNOMR-26-JFIS",
+  "title": "Will James Fishback be the Republican nominee for Governor of Florida?",
+  "category": "politics",
+  "close_time": "2026-11-03T15:00:00Z",
+  "current": {
+    "as_of": "2026-05-31T18:11:16Z",
+    "my_probability": 0.03,
+    "my_confidence": "high",
+    "market_implied_probability": 0.0965,
+    "market_price_cents": 10,
+    "edge": -0.0665,
+    "yes_ask": 0.099,
+    "no_ask": 0.906,
+    "fee_per_contract": 0.01,
+    "ev_per_contract": 0.054,
+    "lean": "NO",
+    "conviction": "medium",
+    "prob_delta_vs_prev": null,
+    "trigger": "bootstrap",
+    "rationale_summary": "Byron Donalds leads the FL GOP primary ~46-54% with Trump's endorsement; Fishback sits ~9% and faces a residency/eligibility challenge. Single-digit challengers vs an endorsed frontrunner win ~2-5%.",
+    "key_drivers": [
+      "Donalds ~46-54% + Trump endorsement",
+      "Fishback ~9%",
+      "Fishback eligibility challenge"
+    ],
+    "reference_classes": [],
+    "research_refs": [
+      "https://emersoncollegepolling.com/florida-2026-poll-donalds-leads-gop-primary-for-governor-republicans-outpace-democrats-in-florida-elections/"
+    ]
+  },
+  "history": [
+    {
+      "as_of": "2026-05-31T18:11:16Z",
+      "my_probability": 0.03,
+      "my_confidence": "high",
+      "market_implied_probability": 0.0965,
+      "market_price_cents": 10,
+      "edge": -0.0665,
+      "yes_ask": 0.099,
+      "no_ask": 0.906,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": 0.054,
+      "lean": "NO",
+      "conviction": "medium",
+      "prob_delta_vs_prev": null,
+      "trigger": "bootstrap",
+      "rationale_summary": "Byron Donalds leads the FL GOP primary ~46-54% with Trump's endorsement; Fishback sits ~9% and faces a residency/eligibility challenge. Single-digit challengers vs an endorsed frontrunner win ~2-5%.",
+      "key_drivers": [
+        "Donalds ~46-54% + Trump endorsement",
+        "Fishback ~9%",
+        "Fishback eligibility challenge"
+      ],
+      "reference_classes": [],
+      "research_refs": [
+        "https://emersoncollegepolling.com/florida-2026-poll-donalds-leads-gop-primary-for-governor-republicans-outpace-democrats-in-florida-elections/"
+      ]
+    }
+  ]
+}

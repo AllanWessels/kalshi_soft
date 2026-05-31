@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "ticker": "KXUSAIRANAGREEMENT-27-26JUL",
+  "title": "Will the US agree to a new Iran nuclear deal before July 1, 2026?",
+  "category": "politics",
+  "close_time": "2026-07-01T14:00:00Z",
+  "current": {
+    "as_of": "2026-05-31T18:11:16Z",
+    "my_probability": 0.12,
+    "my_confidence": "medium",
+    "market_implied_probability": 0.145,
+    "market_price_cents": 14,
+    "edge": -0.024999999999999994,
+    "yes_ask": 0.15,
+    "no_ask": 0.86,
+    "fee_per_contract": 0.01,
+    "ev_per_contract": 0.01,
+    "lean": "NONE",
+    "conviction": "low",
+    "prob_delta_vs_prev": null,
+    "trigger": "bootstrap",
+    "rationale_summary": "A tentative US-Iran MOU to launch 60-day nuclear talks exists but is unsigned, and a full nuclear deal (the resolution bar) is downstream with unresolved enrichment/sanctions issues — unlikely within 30 days. ~12%.",
+    "key_drivers": [
+      "MOU unsigned",
+      "Trump sent it back",
+      "nuclear deal is downstream of 60-day talks",
+      "JCPOA took 3 months framework-to-deal"
+    ],
+    "reference_classes": [],
+    "research_refs": [
+      "https://www.cnbc.com/2026/05/28/hope-fades-for-us-iran-nuclear-deal-after-ceasefire-report.html"
+    ]
+  },
+  "history": [
+    {
+      "as_of": "2026-05-31T18:11:16Z",
+      "my_probability": 0.12,
+      "my_confidence": "medium",
+      "market_implied_probability": 0.145,
+      "market_price_cents": 14,
+      "edge": -0.024999999999999994,
+      "yes_ask": 0.15,
+      "no_ask": 0.86,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": 0.01,
+      "lean": "NONE",
+      "conviction": "low",
+      "prob_delta_vs_prev": null,
+      "trigger": "bootstrap",
+      "rationale_summary": "A tentative US-Iran MOU to launch 60-day nuclear talks exists but is unsigned, and a full nuclear deal (the resolution bar) is downstream with unresolved enrichment/sanctions issues — unlikely within 30 days. ~12%.",
+      "key_drivers": [
+        "MOU unsigned",
+        "Trump sent it back",
+        "nuclear deal is downstream of 60-day talks",
+        "JCPOA took 3 months framework-to-deal"
+      ],
+      "reference_classes": [],
+      "research_refs": [
+        "https://www.cnbc.com/2026/05/28/hope-fades-for-us-iran-nuclear-deal-after-ceasefire-report.html"
+      ]
+    }
+  ]
+}

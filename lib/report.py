@@ -142,6 +142,53 @@ def _edge_color(edge: Optional[float], lean: str) -> str:
     return "#C62828"
 
 
+def _fmt_dollar(v: float) -> str:
+    """Format a dollar value with sign and 2 decimal places, e.g. +$0.13 or -$0.05."""
+    sign = "+" if v >= 0 else "-"
+    return f"{sign}${abs(v):.2f}"
+
+
+def _profitability_line(cur: schemas.ForecastEntry, st: dict) -> Optional[object]:
+    """Return a Paragraph for the fee-aware profitability line, or None if no ev data."""
+    if cur.ev_per_contract is None:
+        return None
+
+    ev = cur.ev_per_contract
+    lean = cur.lean or "NONE"
+    fee = cur.fee_per_contract  # may be None for older records
+
+    if lean == "NONE":
+        # No profitable lean: show best net EV
+        ev_str = _fmt_dollar(ev)
+        text = f"Profitability: no profitable edge after fees (best net EV {ev_str}/contract)"
+        color = "#888888"
+    else:
+        # Determine the relevant ask price
+        if lean == "YES":
+            ask = cur.yes_ask
+        else:
+            ask = cur.no_ask
+
+        ev_str = _fmt_dollar(ev)
+        color = "#2E7D32" if ev > 0 else "#C62828"
+
+        # Build the detail suffix
+        parts: list[str] = []
+        if fee is not None:
+            parts.append(f"fee ${fee:.2f}")
+        if ask is not None:
+            parts.append(f"ask ${ask:.2f}")
+        detail = ", ".join(parts)
+        detail_str = f" ({detail})" if detail else ""
+        conv = cur.conviction or "—"
+        text = (
+            f'Profitability: {lean} — net EV <font color="{color}"><b>{ev_str}/contract</b></font>'
+            f"{detail_str}, conviction {conv}"
+        )
+
+    return Paragraph(text, st["body"])
+
+
 def _parse_dt(ts: str) -> Optional[_dt.datetime]:
     if not ts:
         return None
@@ -358,11 +405,22 @@ def _build_cover(
     resolved_count = len(resolutions.resolved)
     total_forecasts = sum(len(f.history) for f in forecasts)
 
+    # Count profitable leans (lean != NONE and ev_per_contract is not None)
+    forecast_map = {f.ticker: f for f in forecasts}
+    profitable_count = 0
+    for m in watchlist.active():
+        rec = forecast_map.get(m.ticker)
+        if rec and rec.current:
+            cur = rec.current
+            if (cur.lean or "NONE") != "NONE" and cur.ev_per_contract is not None:
+                profitable_count += 1
+
     summary_data = [
         ["Metric", "Value"],
         ["Active markets", str(active_count)],
         ["Resolved markets", str(resolved_count)],
         ["Total forecast entries", str(total_forecasts)],
+        ["Profitable leans (after fees)", str(profitable_count)],
     ]
 
     if calibration.n_resolved > 0:
@@ -454,6 +512,10 @@ def _build_per_market(
             lean_line = f"Lean: <b>{lean}</b>  Conviction: <b>{cur.conviction}</b>"
             block.append(Paragraph(lean_line, st["body"]))
 
+            prof_para = _profitability_line(cur, st)
+            if prof_para is not None:
+                block.append(prof_para)
+
             if cur.rationale_summary:
                 block.append(Paragraph(
                     f"<i>Rationale:</i> {cur.rationale_summary}", st["body"]
@@ -522,6 +584,82 @@ def _build_edge_overview(
     else:
         elems.append(Paragraph("No edge data available.", st["small"]))
 
+    return elems
+
+
+def _build_profitable_leans(
+    watchlist: schemas.Watchlist,
+    forecasts: list[schemas.ForecastRecord],
+    st: dict,
+) -> list:
+    """Build 'Profitable Leans (after fees)' summary table section."""
+    elems: list = []
+    elems.append(Paragraph("Profitable Leans (after fees)", st["section"]))
+    elems.append(_hr())
+
+    forecast_map = {f.ticker: f for f in forecasts}
+    active = watchlist.active()
+
+    rows: list[tuple] = []
+    for m in active:
+        rec = forecast_map.get(m.ticker)
+        if not rec or not rec.current:
+            continue
+        cur = rec.current
+        lean = cur.lean or "NONE"
+        if lean == "NONE":
+            continue
+        if cur.ev_per_contract is None:
+            continue
+        title = m.title or rec.title or m.ticker
+        title_trunc = (title[:38] + "…") if len(title) > 39 else title
+        rows.append((
+            m.ticker,
+            title_trunc,
+            lean,
+            cur.ev_per_contract,
+            cur.conviction or "—",
+        ))
+
+    if not rows:
+        elems.append(Paragraph(
+            "No profitable leans after fees this run — markets are efficiently priced "
+            "for our estimates.",
+            st["small"],
+        ))
+        return elems
+
+    # Sort descending by ev_per_contract
+    rows.sort(key=lambda r: r[3], reverse=True)
+
+    tbl_data = [["Ticker", "Title", "Side", "Net EV/contract", "Conviction"]]
+    for ticker, title_trunc, side, ev, conv in rows:
+        ev_str = _fmt_dollar(ev)
+        tbl_data.append([ticker, title_trunc, side, ev_str, conv])
+
+    col_widths = [3.5 * cm, 7.5 * cm, 1.5 * cm, 3.0 * cm, 2.5 * cm]
+    tbl = Table(tbl_data, colWidths=col_widths)
+
+    # Color the Net EV column green/red based on sign
+    row_styles = [
+        ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#283593")),
+        ("TEXTCOLOR", (0, 0), (-1, 0), colors.white),
+        ("FONTNAME", (0, 0), (-1, 0), "Helvetica-Bold"),
+        ("FONTSIZE", (0, 0), (-1, -1), 8),
+        ("ROWBACKGROUNDS", (0, 1), (-1, -1),
+         [colors.HexColor("#EEF2FF"), colors.white]),
+        ("GRID", (0, 0), (-1, -1), 0.3, colors.HexColor("#C5CAE9")),
+        ("TOPPADDING", (0, 0), (-1, -1), 3),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 3),
+        ("LEFTPADDING", (0, 0), (-1, -1), 4),
+    ]
+    for i, (_, _, _, ev, _) in enumerate(rows, start=1):
+        ev_color = colors.HexColor("#2E7D32") if ev > 0 else colors.HexColor("#C62828")
+        row_styles.append(("TEXTCOLOR", (3, i), (3, i), ev_color))
+        row_styles.append(("FONTNAME", (3, i), (3, i), "Helvetica-Bold"))
+
+    tbl.setStyle(TableStyle(row_styles))
+    elems.append(tbl)
     return elems
 
 
@@ -716,11 +854,14 @@ def build_pdf(
     # 3. Edge overview
     story.extend(_build_edge_overview(watchlist, forecasts, scratch, st))
 
-    # 4. Calibration (gated on n_resolved >= 1)
+    # 4. Profitable leans (after fees)
+    story.extend(_build_profitable_leans(watchlist, forecasts, st))
+
+    # 5. Calibration (gated on n_resolved >= 1)
     if calibration.n_resolved >= 1:
         story.extend(_build_calibration(resolutions, calibration, scratch, st))
 
-    # 5. Cost & usage
+    # 6. Cost & usage
     story.extend(_build_cost_usage(run_log, scratch, st))
 
     doc.build(story)
@@ -754,6 +895,10 @@ if __name__ == "__main__":
         my_confidence="high",
         market_implied_probability=0.62,
         edge=0.08,
+        yes_ask=0.63,
+        no_ask=0.38,
+        fee_per_contract=0.01,
+        ev_per_contract=0.13,
         lean="YES",
         conviction="high",
         rationale_summary="New poll adds to lead; no scandals.",
@@ -786,7 +931,11 @@ if __name__ == "__main__":
         my_confidence="medium",
         market_implied_probability=0.40,
         edge=-0.05,
-        lean="NO",
+        yes_ask=0.41,
+        no_ask=0.60,
+        fee_per_contract=0.01,
+        ev_per_contract=-0.03,
+        lean="NONE",
         conviction="medium",
         rationale_summary="CPI softer, but Fed still cautious.",
         key_drivers=["CPI softer MoM", "Jobs hot"],

@@ -50,7 +50,19 @@ def _build_market_obj(ticker: str, client: kalshi_client.KalshiClient) -> dict[s
     quote = kalshi_client.market_quote(market)
     yes_bid: Optional[float] = quote["yes_bid"]
     yes_ask: Optional[float] = quote["yes_ask"]
+    no_bid: Optional[float] = quote["no_bid"]
+    no_ask: Optional[float] = quote["no_ask"]
     last_price: Optional[float] = quote["last_price"]
+
+    # --- fees ----------------------------------------------------------------
+    fee_yes: Optional[float] = (
+        scoring.kalshi_fee(yes_ask, fee_rate=config.KALSHI_FEE_RATE)
+        if yes_ask is not None else None
+    )
+    fee_no: Optional[float] = (
+        scoring.kalshi_fee(no_ask, fee_rate=config.KALSHI_FEE_RATE)
+        if no_ask is not None else None
+    )
 
     # --- market-implied probability ------------------------------------------
     market_implied_probability: Optional[float] = scoring.market_implied_from_quote(
@@ -85,11 +97,15 @@ def _build_market_obj(ticker: str, client: kalshi_client.KalshiClient) -> dict[s
         "result": result,
         "yes_bid": yes_bid,
         "yes_ask": yes_ask,
+        "no_bid": no_bid,
+        "no_ask": no_ask,
         "last_price": last_price,
         "market_implied_probability": market_implied_probability,
         "market_price_cents": market_price_cents,
         "volume_24h": volume_24h,
         "open_interest": open_interest,
+        "fee_yes": fee_yes,
+        "fee_no": fee_no,
     }
 
 

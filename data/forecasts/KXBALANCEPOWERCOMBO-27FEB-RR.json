@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "ticker": "KXBALANCEPOWERCOMBO-27FEB-RR",
+  "title": "Will Republicans control both the House and Senate as of Feb 2027?",
+  "category": "politics",
+  "close_time": "2027-02-01T15:00:00Z",
+  "current": {
+    "as_of": "2026-05-31T18:11:16Z",
+    "my_probability": 0.18,
+    "my_confidence": "medium",
+    "market_implied_probability": 0.225,
+    "market_price_cents": 22,
+    "edge": -0.04500000000000001,
+    "yes_ask": 0.23,
+    "no_ask": 0.78,
+    "fee_per_contract": 0.02,
+    "ev_per_contract": 0.02,
+    "lean": "NO",
+    "conviction": "low",
+    "prob_delta_vs_prev": null,
+    "trigger": "bootstrap",
+    "rationale_summary": "Joint hold: the House is a likely GOP loss (~37% approval, D+7 generic ballot) while the Senate map is friendlier (~62% hold). Positively correlated, so the joint ~18% — consistent with my House (0.20) and Senate (0.62) views.",
+    "key_drivers": [
+      "House likely flips (D+7 generic)",
+      "Senate map friendlier",
+      "positive correlation lowers joint"
+    ],
+    "reference_classes": [],
+    "research_refs": [
+      "https://www.cookpolitical.com/ratings/house-race-ratings"
+    ]
+  },
+  "history": [
+    {
+      "as_of": "2026-05-31T18:11:16Z",
+      "my_probability": 0.18,
+      "my_confidence": "medium",
+      "market_implied_probability": 0.225,
+      "market_price_cents": 22,
+      "edge": -0.04500000000000001,
+      "yes_ask": 0.23,
+      "no_ask": 0.78,
+      "fee_per_contract": 0.02,
+      "ev_per_contract": 0.02,
+      "lean": "NO",
+      "conviction": "low",
+      "prob_delta_vs_prev": null,
+      "trigger": "bootstrap",
+      "rationale_summary": "Joint hold: the House is a likely GOP loss (~37% approval, D+7 generic ballot) while the Senate map is friendlier (~62% hold). Positively correlated, so the joint ~18% — consistent with my House (0.20) and Senate (0.62) views.",
+      "key_drivers": [
+        "House likely flips (D+7 generic)",
+        "Senate map friendlier",
+        "positive correlation lowers joint"
+      ],
+      "reference_classes": [],
+      "research_refs": [
+        "https://www.cookpolitical.com/ratings/house-race-ratings"
+      ]
+    }
+  ]
+}

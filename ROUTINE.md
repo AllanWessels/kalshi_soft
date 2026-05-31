@@ -38,9 +38,12 @@ Writes the top-150 soft-market pool to `data/candidates.json`. Read it.
 
 ## Step 2 — Curate the watchlist (judgment, cap 20)
 Read `data/watchlist.json`. Drop entries already `resolved`/`delisted`. Then top up toward the
-cap of 20 from `candidates.json`, choosing markets that (a) are genuinely soft, (b) are diverse
-across the four categories (politics / culture / statements / economy — don't let politics crowd
-out everything), and (c) are ones where you expect to be able to form an analyzable edge. To add
+cap of 20 from `candidates.json`, ranking candidates **primarily by FORECASTABILITY** (per the
+SKILL's selection-priority rule): pick markets with a real evidential basis where research yields
+a defensible, well-calibrated number; do NOT add near-random trivia (weekly-chart specifics,
+single-broadcast word/mention markets, coin-flips) even when liquid. Within the forecastable set,
+favor genuine softness and some category spread, but accuracy beats diversity — it's fine if the
+list skews to politics/economy, since that's where forecastable human-behavior volume is. To add
 a market, you will create its first forecast in Step 5 (the `--title/--category/--close-time`
 args seed the record); also reflect membership by editing `data/watchlist.json` **via a script
 or `store` helper**, not by guessing fields. Keep active count ≤ 20.
@@ -69,17 +72,19 @@ Give each worker the market title + ticker + resolution rules and this instructi
 
 Then **you (Opus), per returned draft**, execute SKILL step 5 (anti-anchoring):
 ```
-python3 scripts/refresh_market.py --ticker <TICKER>      # NOW look at the price
+python3 scripts/refresh_market.py --ticker <TICKER>      # NOW look at the price + asks + fees
 ```
-Compare the worker's independent probability to the market implied probability. Decide whether
-the market knows something the research missed; adjust only for a stated reason (do not average
-toward it). Set `--lean` / `--conviction` per the SKILL thresholds.
+This returns `yes_ask`, `no_ask`, `fee_yes`, `fee_no`. Compare the worker's independent
+probability to the market implied probability; adjust only for a stated reason (do not average
+toward it). You do NOT hand-pick the lean — pass `--yes-ask`/`--no-ask` to `record_forecast.py`
+and it computes **fee-aware profitability**, setting `lean`/`conviction` from net EV per contract
+(lean=NONE unless the best side clears `MIN_PROFITABLE_EV`). Expect mostly NONE on liquid markets.
 
 ## Step 5 — Record each forecast
 For every due market:
 ```
 python3 scripts/record_forecast.py --ticker <TICKER> --prob <P> --confidence <low|medium|high> \
-  --market-implied <MP> --market-price-cents <C> --lean <YES|NO|NONE> --conviction <low|medium|high> \
+  --market-implied <MP> --market-price-cents <C> --yes-ask <YA> --no-ask <NA> \
   --trigger <bootstrap|scheduled|near_close|event_driven> \
   --rationale "<1-3 sentences>" --drivers "a,b,c" --reference-classes "x,y" --refs "url1,url2" \
   --title "<market title>" --category <politics|culture|statements|economy> --close-time <ISO8601Z>

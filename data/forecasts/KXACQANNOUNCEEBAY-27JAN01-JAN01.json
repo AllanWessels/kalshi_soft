@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "ticker": "KXACQANNOUNCEEBAY-27JAN01-JAN01",
+  "title": "Will GameStop announce an acquisition of eBay before Jan 1, 2027?",
+  "category": "statements",
+  "close_time": "2027-01-01T04:59:00Z",
+  "current": {
+    "as_of": "2026-05-31T18:11:16Z",
+    "my_probability": 0.17,
+    "my_confidence": "medium",
+    "market_implied_probability": 0.175,
+    "market_price_cents": 18,
+    "edge": -0.004999999999999977,
+    "yes_ask": 0.18,
+    "no_ask": 0.83,
+    "fee_per_contract": 0.01,
+    "ev_per_contract": -0.01,
+    "lean": "NONE",
+    "conviction": "low",
+    "prob_delta_vs_prev": null,
+    "trigger": "bootstrap",
+    "rationale_summary": "GameStop proposed a ~$55B acquisition of eBay on May 3 and built a 5% stake, but eBay's board rejected it twice as 'not credible'; a signed definitive agreement within ~7 months faces financing and resistance hurdles. ~17%.",
+    "key_drivers": [
+      "eBay board rejected bid twice",
+      "Cohen 5% stake + escalation intent",
+      "financing credibility gap"
+    ],
+    "reference_classes": [],
+    "research_refs": [
+      "https://www.cnn.com/2026/05/12/business/ebay-rejects-gamestop-offer-intl"
+    ]
+  },
+  "history": [
+    {
+      "as_of": "2026-05-31T18:11:16Z",
+      "my_probability": 0.17,
+      "my_confidence": "medium",
+      "market_implied_probability": 0.175,
+      "market_price_cents": 18,
+      "edge": -0.004999999999999977,
+      "yes_ask": 0.18,
+      "no_ask": 0.83,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": -0.01,
+      "lean": "NONE",
+      "conviction": "low",
+      "prob_delta_vs_prev": null,
+      "trigger": "bootstrap",
+      "rationale_summary": "GameStop proposed a ~$55B acquisition of eBay on May 3 and built a 5% stake, but eBay's board rejected it twice as 'not credible'; a signed definitive agreement within ~7 months faces financing and resistance hurdles. ~17%.",
+      "key_drivers": [
+        "eBay board rejected bid twice",
+        "Cohen 5% stake + escalation intent",
+        "financing credibility gap"
+      ],
+      "reference_classes": [],
+      "research_refs": [
+        "https://www.cnn.com/2026/05/12/business/ebay-rejects-gamestop-offer-intl"
+      ]
+    }
+  ]
+}

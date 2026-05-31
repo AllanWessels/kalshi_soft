@@ -150,7 +150,12 @@ class ForecastEntry:
     market_implied_probability: Optional[float] = None
     market_price_cents: Optional[float] = None  # raw yes midpoint (cents) for audit
     edge: Optional[float] = None          # my_probability - market_implied (computed by store)
-    lean: str = "NONE"                    # LEANS
+    # Profitability (fee-aware): prices you would actually trade at + net expected value.
+    yes_ask: Optional[float] = None       # price to BUY yes (dollars)
+    no_ask: Optional[float] = None        # price to BUY no  (dollars) ~= 1 - yes_bid
+    fee_per_contract: Optional[float] = None   # Kalshi fee on the lean side (dollars)
+    ev_per_contract: Optional[float] = None    # net expected profit/contract on lean side ($), after fee
+    lean: str = "NONE"                    # LEANS — set only when ev_per_contract is meaningfully positive
     conviction: str = "low"               # CONVICTION_LEVELS
     prob_delta_vs_prev: Optional[float] = None   # computed by store
     trigger: str = "scheduled"            # TRIGGERS

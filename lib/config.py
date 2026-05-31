@@ -55,6 +55,16 @@ KALSHI_MAX_REQ_PER_SEC = 8
 KALSHI_TIMEOUT_S = 20
 KALSHI_MAX_RETRIES = 4
 
+# Kalshi trading fee: ceil(FEE_RATE * contracts * price * (1 - price)) per contract,
+# rounded up to the next cent. 0.07 is the standard retail rate; some series differ
+# (series metadata carries a fee_multiplier we could read later). Settlement is free.
+KALSHI_FEE_RATE = 0.07
+
+# Minimum net expected profit per contract (in dollars, after fees + crossing the
+# spread) for a market to count as a profitable/tradable lean. Below this we record
+# lean=NONE regardless of raw edge.
+MIN_PROFITABLE_EV = 0.02
+
 # ---------------------------------------------------------------------------
 # Watchlist / discovery thresholds
 # ---------------------------------------------------------------------------

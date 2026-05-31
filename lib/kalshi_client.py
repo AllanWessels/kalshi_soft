@@ -64,7 +64,10 @@ def market_quote(market: dict) -> dict:
 
     Returns
     -------
-    dict with keys ``yes_bid``, ``yes_ask``, ``last_price`` (each float or None).
+    dict with keys ``yes_bid``, ``yes_ask``, ``no_bid``, ``no_ask``, ``last_price``
+    (each float or None). The NO side falls back to the YES book identity
+    (``no_ask = 1 - yes_bid``, ``no_bid = 1 - yes_ask``) when explicit NO quotes are
+    absent — this is what you'd pay to take the other side.
     """
     def _get(dollars_key: str, cents_key: str) -> Optional[float]:
         if dollars_key in market:
@@ -77,9 +80,20 @@ def market_quote(market: dict) -> dict:
                 pass
         return None
 
+    yes_bid = _get("yes_bid_dollars", "yes_bid")
+    yes_ask = _get("yes_ask_dollars", "yes_ask")
+    no_bid = _get("no_bid_dollars", "no_bid")
+    no_ask = _get("no_ask_dollars", "no_ask")
+    if no_ask is None and yes_bid is not None:
+        no_ask = round(1.0 - yes_bid, 6)
+    if no_bid is None and yes_ask is not None:
+        no_bid = round(1.0 - yes_ask, 6)
+
     return {
-        "yes_bid": _get("yes_bid_dollars", "yes_bid"),
-        "yes_ask": _get("yes_ask_dollars", "yes_ask"),
+        "yes_bid": yes_bid,
+        "yes_ask": yes_ask,
+        "no_bid": no_bid,
+        "no_ask": no_ask,
         "last_price": _get("last_price_dollars", "last_price"),
     }
 

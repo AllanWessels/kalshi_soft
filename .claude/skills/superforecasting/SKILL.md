@@ -20,6 +20,16 @@ Project method. Follow it literally — the calibration record is the whole poin
   blocklists them, but if one slips through, skip it.
 - **Skip** thinly traded markets where the "market price" is noise, not a crowd estimate.
 
+### Selection priority: weight by FORECASTABILITY, not liquidity
+When curating the watchlist, rank candidates by *how accurately you can predict them*, not by
+volume. Prefer markets with a real evidential basis — base rates, polls, models, expert signal,
+observable process (elections, nominations, legislation, Fed decisions, macro prints, M&A with a
+known deal status, a star's contract/retirement). **Avoid near-random trivia even when liquid**:
+which exact songs top a weekly chart, whether a person utters a specific word in one broadcast,
+single-game in-broadcast mentions, or any coin-flip with no diagnostic evidence. A market belongs
+on the watchlist only if research can move you to a defensible, well-calibrated number — that is
+where the hypothesis can actually be tested and where edge, if any, is real.
+
 ## The mindset: be a fox, not a hedgehog
 Aggregate many small ideas from many sources; distrust single grand theories. Hold views
 provisionally and update incrementally. Comfort with uncertainty is a feature: most honest
@@ -77,11 +87,16 @@ Record via `scripts/record_forecast.py`. Provide:
 - `--confidence` — your *epistemic* confidence (low/medium/high) — how solid the evidence is.
   This is SEPARATE from the probability (you can be highly confident the answer is ~0.30).
 - `--market-implied` — the market probability you saw (after step 5), and `--market-price-cents`.
-- `--lean` / `--conviction` — paper-only direction. Set a lean only when your edge is real:
-  - edge = your_prob − market_prob. |edge| < 0.05 → `NONE`.
-  - 0.05–0.10 with medium+ evidence → low/medium conviction.
-  - > 0.10 with solid, disconfirmation-tested evidence → medium/high conviction.
-  - This is paper only — the API key is read-only, no orders are ever placed.
+- `--yes-ask` / `--no-ask` — the prices you'd actually trade at (from `refresh_market.py`).
+  Pass these and the script computes **fee-aware profitability** and sets the lean for you.
+- **Profitability is the real test, not raw edge.** You don't trade at the mid — you cross the
+  spread and pay Kalshi's fee `ceil(0.07 × price × (1−price))` per contract. Net expected value:
+  - EV(YES) = your_prob − yes_ask − fee(yes_ask);  EV(NO) = (1−your_prob) − no_ask − fee(no_ask).
+  - A lean is set only when the best side's net EV ≥ `MIN_PROFITABLE_EV` (config, $0.02/contract);
+    otherwise `lean = NONE` even if your raw edge looked positive. Conviction scales with EV
+    (≥$0.05 medium, ≥$0.12 high). This is paper only — the read-only key places no orders.
+  - Expect many `NONE` leans on liquid markets: a small probability disagreement is usually eaten
+    by the spread + fee. Honest calibration matters more than manufacturing trades.
 - `--rationale` — 1–3 crisp sentences: the base rate, the decisive update, the disagreement
   with the market. `--drivers`, `--reference-classes`, `--refs` — the supporting lists.
 

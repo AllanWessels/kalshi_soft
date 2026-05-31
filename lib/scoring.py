@@ -56,6 +56,7 @@ def market_implied_from_quote(
     yes_bid: Optional[float],
     yes_ask: Optional[float],
     last_price: Optional[float] = None,
+    **_ignored,  # tolerate extra quote keys (no_bid/no_ask) when called as **market_quote(...)
 ) -> Optional[float]:
     """Derive a single market-implied probability from quote data.
 
@@ -214,6 +215,74 @@ def drift_series(record: schemas.ForecastRecord) -> list[tuple]:
         (entry.as_of, entry.my_probability, entry.market_implied_probability)
         for entry in record.history
     ]
+
+
+# ---------------------------------------------------------------------------
+# Profitability (fee-aware)
+# ---------------------------------------------------------------------------
+
+import math as _math  # noqa: E402
+
+
+def kalshi_fee(price: Optional[float], contracts: int = 1, fee_rate: float = 0.07) -> float:
+    """Kalshi trading fee in dollars: ``ceil(fee_rate * contracts * price * (1-price))``
+    rounded UP to the next cent. ``price`` is in dollars (0..1). Settlement is free,
+    so this is the only fee on a round trip. Returns 0.0 for an invalid price.
+    """
+    if price is None or price <= 0 or price >= 1:
+        return 0.0
+    raw = fee_rate * contracts * price * (1.0 - price)
+    return _math.ceil(raw * 100.0) / 100.0
+
+
+def expected_net_profit(
+    my_prob: float,
+    side: str,
+    yes_ask: Optional[float],
+    no_ask: Optional[float],
+    fee_rate: float = 0.07,
+) -> Optional[float]:
+    """Net expected profit per 1 contract (dollars), after the entry fee, for buying
+    ``side`` (\"YES\" or \"NO\") at the ask. None if the needed ask is unavailable.
+
+    YES: pay ``yes_ask``; win $1 with prob ``my_prob``  -> EV = my_prob - yes_ask - fee
+    NO:  pay ``no_ask`` ; win $1 with prob ``1-my_prob`` -> EV = (1-my_prob) - no_ask - fee
+    """
+    if side == "YES":
+        if yes_ask is None:
+            return None
+        return my_prob - yes_ask - kalshi_fee(yes_ask, fee_rate=fee_rate)
+    if side == "NO":
+        if no_ask is None:
+            return None
+        return (1.0 - my_prob) - no_ask - kalshi_fee(no_ask, fee_rate=fee_rate)
+    return None
+
+
+def best_tradable(
+    my_prob: float,
+    yes_ask: Optional[float],
+    no_ask: Optional[float],
+    fee_rate: float = 0.07,
+    min_ev: float = 0.0,
+) -> tuple:
+    """Return ``(side, ev, fee)`` for the side with the higher net EV, or
+    ``("NONE", best_ev, fee)`` if neither side clears ``min_ev``.
+
+    ``side`` is "YES"/"NO"/"NONE"; ``ev`` is the net $/contract on that side;
+    ``fee`` is the entry fee on that side.
+    """
+    ev_yes = expected_net_profit(my_prob, "YES", yes_ask, no_ask, fee_rate)
+    ev_no = expected_net_profit(my_prob, "NO", yes_ask, no_ask, fee_rate)
+    candidates = [(s, ev) for s, ev in (("YES", ev_yes), ("NO", ev_no)) if ev is not None]
+    if not candidates:
+        return ("NONE", None, None)
+    side, ev = max(candidates, key=lambda x: x[1])
+    ask = yes_ask if side == "YES" else no_ask
+    fee = kalshi_fee(ask, fee_rate=fee_rate)
+    if ev is None or ev < min_ev:
+        return ("NONE", ev, fee)
+    return (side, ev, fee)
 
 
 # ---------------------------------------------------------------------------

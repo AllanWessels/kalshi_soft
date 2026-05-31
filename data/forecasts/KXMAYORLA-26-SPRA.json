@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "ticker": "KXMAYORLA-26-SPRA",
+  "title": "Will Spencer Pratt win the 2026 Los Angeles Mayoral Election?",
+  "category": "politics",
+  "close_time": "2027-06-02T14:00:00Z",
+  "current": {
+    "as_of": "2026-05-31T18:11:16Z",
+    "my_probability": 0.18,
+    "my_confidence": "medium",
+    "market_implied_probability": 0.265,
+    "market_price_cents": 26,
+    "edge": -0.08500000000000002,
+    "yes_ask": 0.27,
+    "no_ask": 0.74,
+    "fee_per_contract": 0.02,
+    "ev_per_contract": 0.06,
+    "lean": "NO",
+    "conviction": "medium",
+    "prob_delta_vs_prev": null,
+    "trigger": "bootstrap",
+    "rationale_summary": "Pratt polls ~22% and has a real shot at the top-two primary, but winning the general in a D+30 city against incumbent Bass is a steep climb; combining ~75% advance x ~25% conditional win gives ~18%, below the market.",
+    "key_drivers": [
+      "post-fire anger at Bass",
+      "Pratt ~22% primary polling",
+      "D+30 city + incumbent"
+    ],
+    "reference_classes": [],
+    "research_refs": [
+      "https://en.wikipedia.org/wiki/2026_Los_Angeles_mayoral_election"
+    ]
+  },
+  "history": [
+    {
+      "as_of": "2026-05-31T18:11:16Z",
+      "my_probability": 0.18,
+      "my_confidence": "medium",
+      "market_implied_probability": 0.265,
+      "market_price_cents": 26,
+      "edge": -0.08500000000000002,
+      "yes_ask": 0.27,
+      "no_ask": 0.74,
+      "fee_per_contract": 0.02,
+      "ev_per_contract": 0.06,
+      "lean": "NO",
+      "conviction": "medium",
+      "prob_delta_vs_prev": null,
+      "trigger": "bootstrap",
+      "rationale_summary": "Pratt polls ~22% and has a real shot at the top-two primary, but winning the general in a D+30 city against incumbent Bass is a steep climb; combining ~75% advance x ~25% conditional win gives ~18%, below the market.",
+      "key_drivers": [
+        "post-fire anger at Bass",
+        "Pratt ~22% primary polling",
+        "D+30 city + incumbent"
+      ],
+      "reference_classes": [],
+      "research_refs": [
+        "https://en.wikipedia.org/wiki/2026_Los_Angeles_mayoral_election"
+      ]
+    }
+  ]
+}

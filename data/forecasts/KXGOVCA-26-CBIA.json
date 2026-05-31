@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "ticker": "KXGOVCA-26-CBIA",
+  "title": "Will Chad Bianco be elected Governor of California in 2026?",
+  "category": "politics",
+  "close_time": "2027-11-03T15:00:00Z",
+  "current": {
+    "as_of": "2026-05-31T18:11:16Z",
+    "my_probability": 0.015,
+    "my_confidence": "high",
+    "market_implied_probability": 0.0175,
+    "market_price_cents": 2,
+    "edge": -0.0025000000000000022,
+    "yes_ask": 0.02,
+    "no_ask": 0.985,
+    "fee_per_contract": 0.01,
+    "ev_per_contract": -0.01,
+    "lean": "NONE",
+    "conviction": "low",
+    "prob_delta_vs_prev": null,
+    "trigger": "bootstrap",
+    "rationale_summary": "Bianco polls ~13% (4th-5th) and likely fails to even advance past the top-two primary behind Hilton; California has not elected a Republican statewide since 2006. Joint ~1.5%.",
+    "key_drivers": [
+      "Bianco ~13% trails Hilton for GOP slot",
+      "no CA statewide R win since 2006",
+      "D+13 lean"
+    ],
+    "reference_classes": [],
+    "research_refs": [
+      "https://emersoncollegepolling.com/california-2026-poll-april/"
+    ]
+  },
+  "history": [
+    {
+      "as_of": "2026-05-31T18:11:16Z",
+      "my_probability": 0.015,
+      "my_confidence": "high",
+      "market_implied_probability": 0.0175,
+      "market_price_cents": 2,
+      "edge": -0.0025000000000000022,
+      "yes_ask": 0.02,
+      "no_ask": 0.985,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": -0.01,
+      "lean": "NONE",
+      "conviction": "low",
+      "prob_delta_vs_prev": null,
+      "trigger": "bootstrap",
+      "rationale_summary": "Bianco polls ~13% (4th-5th) and likely fails to even advance past the top-two primary behind Hilton; California has not elected a Republican statewide since 2006. Joint ~1.5%.",
+      "key_drivers": [
+        "Bianco ~13% trails Hilton for GOP slot",
+        "no CA statewide R win since 2006",
+        "D+13 lean"
+      ],
+      "reference_classes": [],
+      "research_refs": [
+        "https://emersoncollegepolling.com/california-2026-poll-april/"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "ticker": "KXSAVEACT-27-JAN04",
+  "title": "Will the SAVE Act (H.R. 22) become law before Jan 4, 2027?",
+  "category": "politics",
+  "close_time": "2027-01-04T15:00:00Z",
+  "current": {
+    "as_of": "2026-05-31T18:11:16Z",
+    "my_probability": 0.04,
+    "my_confidence": "high",
+    "market_implied_probability": 0.0885,
+    "market_price_cents": 9,
+    "edge": -0.048499999999999995,
+    "yes_ask": 0.09,
+    "no_ask": 0.913,
+    "fee_per_contract": 0.01,
+    "ev_per_contract": 0.037,
+    "lean": "NO",
+    "conviction": "low",
+    "prob_delta_vs_prev": null,
+    "trigger": "bootstrap",
+    "rationale_summary": "The SAVE Act needs 60 Senate votes; the GOP holds 53, zero Democrats support it, and a reconciliation workaround already failed 48-50 with four GOP defectors plus a Byrd-Rule barrier. ~4%.",
+    "key_drivers": [
+      "60-vote filibuster wall vs 53 GOP seats",
+      "reconciliation workaround failed 48-50",
+      "Byrd Rule bars election law"
+    ],
+    "reference_classes": [],
+    "research_refs": [
+      "https://campaignlegal.org/press-releases/victory-voters-save-america-act-fails-senate"
+    ]
+  },
+  "history": [
+    {
+      "as_of": "2026-05-31T18:11:16Z",
+      "my_probability": 0.04,
+      "my_confidence": "high",
+      "market_implied_probability": 0.0885,
+      "market_price_cents": 9,
+      "edge": -0.048499999999999995,
+      "yes_ask": 0.09,
+      "no_ask": 0.913,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": 0.037,
+      "lean": "NO",
+      "conviction": "low",
+      "prob_delta_vs_prev": null,
+      "trigger": "bootstrap",
+      "rationale_summary": "The SAVE Act needs 60 Senate votes; the GOP holds 53, zero Democrats support it, and a reconciliation workaround already failed 48-50 with four GOP defectors plus a Byrd-Rule barrier. ~4%.",
+      "key_drivers": [
+        "60-vote filibuster wall vs 53 GOP seats",
+        "reconciliation workaround failed 48-50",
+        "Byrd Rule bars election law"
+      ],
+      "reference_classes": [],
+      "research_refs": [
+        "https://campaignlegal.org/press-releases/victory-voters-save-america-act-fails-senate"
+      ]
+    }
+  ]
+}

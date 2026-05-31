@@ -6,6 +6,15 @@ Usage (agent):
 The agent provides judgment fields; store.append_forecast_entry computes
 edge, prob_delta_vs_prev, and as_of.  The resulting record.current is
 printed as pretty JSON so the agent can see the computed edge.
+
+Fee-aware profitability (optional)
+-----------------------------------
+Pass --yes-ask and/or --no-ask (prices in dollars, [0,1]) to enable
+fee-aware lean/conviction derivation.  When --yes-ask is given:
+  * scoring.best_tradable() determines lean, ev, and fee.
+  * lean is overridden by the profitability result (authoritative).
+  * conviction is derived from ev unless --conviction was explicitly passed.
+When --yes-ask is NOT given, legacy manual --lean/--conviction apply.
 """
 
 import sys
@@ -16,7 +25,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import argparse
 import json
 
-from lib import config, store, schemas  # noqa: E402 (after sys.path patch)
+from lib import config, store, schemas, scoring  # noqa: E402 (after sys.path patch)
 
 
 def _comma_list(value: str) -> list[str]:
@@ -43,7 +52,7 @@ def build_parser() -> argparse.ArgumentParser:
         help="My probability estimate, float in [0, 1].",
     )
 
-    # --- judgment fields with defaults ---
+    # --- judgment fields (defaults deferred to None so we can detect explicit passing) ---
     p.add_argument(
         "--confidence",
         choices=list(schemas.CONFIDENCE_LEVELS),
@@ -53,14 +62,14 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument(
         "--lean",
         choices=list(schemas.LEANS),
-        default="NONE",
-        help="Paper-trade direction (default: NONE).",
+        default=None,
+        help="Paper-trade direction (default: NONE; overridden by profitability when --yes-ask is given).",
     )
     p.add_argument(
         "--conviction",
         choices=list(schemas.CONVICTION_LEVELS),
-        default="low",
-        help="Size of paper lean (default: low).",
+        default=None,
+        help="Size of paper lean (default: low; derived from EV when --yes-ask is given and this is not passed).",
     )
     p.add_argument(
         "--trigger",
@@ -83,6 +92,22 @@ def build_parser() -> argparse.ArgumentParser:
         type=float,
         default=None,
         help="Raw YES midpoint in cents (for audit; optional).",
+    )
+
+    # --- fee-aware profitability ---
+    p.add_argument(
+        "--yes-ask",
+        dest="yes_ask",
+        type=float,
+        default=None,
+        help="Price to buy YES (dollars, [0,1]). Enables fee-aware lean/conviction derivation.",
+    )
+    p.add_argument(
+        "--no-ask",
+        dest="no_ask",
+        type=float,
+        default=None,
+        help="Price to buy NO (dollars, [0,1]). Used with --yes-ask for profitability calc.",
     )
 
     # --- narrative fields ---
@@ -132,7 +157,7 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def validate_args(args: argparse.Namespace) -> None:
-    """Validate probability ranges; exit 2 on error."""
+    """Validate probability ranges and ask prices; exit 2 on error."""
     errors: list[str] = []
 
     if not (0.0 <= args.prob <= 1.0):
@@ -141,10 +166,27 @@ def validate_args(args: argparse.Namespace) -> None:
     if args.market_implied is not None and not (0.0 <= args.market_implied <= 1.0):
         errors.append(f"--market-implied {args.market_implied!r} is outside [0, 1].")
 
+    if args.yes_ask is not None and not (0.0 <= args.yes_ask <= 1.0):
+        errors.append(f"--yes-ask {args.yes_ask!r} is outside [0, 1].")
+
+    if args.no_ask is not None and not (0.0 <= args.no_ask <= 1.0):
+        errors.append(f"--no-ask {args.no_ask!r} is outside [0, 1].")
+
     if errors:
         for msg in errors:
             print(f"ERROR: {msg}", file=sys.stderr)
         sys.exit(2)
+
+
+def _derive_conviction_from_ev(ev) -> str:
+    """Map net EV per contract to a conviction label."""
+    if ev is None:
+        return "low"
+    if ev >= 0.12:
+        return "high"
+    if ev >= 0.05:
+        return "medium"
+    return "low"
 
 
 def main(argv: list[str] | None = None) -> None:
@@ -153,6 +195,50 @@ def main(argv: list[str] | None = None) -> None:
 
     validate_args(args)
 
+    # Resolve lean, conviction, and optional EV/fee fields.
+    # When --yes-ask is provided, profitability is authoritative for lean;
+    # conviction is derived from EV unless --conviction was explicitly passed.
+    yes_ask_field: float | None = None
+    no_ask_field: float | None = None
+    fee_per_contract: float | None = None
+    ev_per_contract: float | None = None
+
+    if args.yes_ask is not None:
+        # Fee-aware path.
+        yes_ask_field = args.yes_ask
+        no_ask_field = args.no_ask
+
+        side, ev, fee = scoring.best_tradable(
+            args.prob,
+            args.yes_ask,
+            args.no_ask,
+            fee_rate=config.KALSHI_FEE_RATE,
+            min_ev=config.MIN_PROFITABLE_EV,
+        )
+
+        # Warn if user also passed an explicit --lean that differs from computed side.
+        if args.lean is not None and args.lean != side:
+            print(
+                f"NOTE: --lean {args.lean!r} overridden by profitability analysis "
+                f"(computed side={side!r}); profitability is authoritative.",
+                file=sys.stderr,
+            )
+
+        lean = side
+        fee_per_contract = fee
+        ev_per_contract = ev
+
+        # Conviction: derive from EV unless the user explicitly passed --conviction.
+        if args.conviction is not None:
+            conviction = args.conviction
+        else:
+            conviction = _derive_conviction_from_ev(ev) if side != "NONE" else "low"
+
+    else:
+        # Legacy path: use manual --lean / --conviction with documented defaults.
+        lean = args.lean if args.lean is not None else "NONE"
+        conviction = args.conviction if args.conviction is not None else "low"
+
     # Build the ForecastEntry from CLI args.
     # Leave as_of / edge / prob_delta_vs_prev unset — store computes them.
     entry = schemas.ForecastEntry(
@@ -160,8 +246,12 @@ def main(argv: list[str] | None = None) -> None:
         my_confidence=args.confidence,
         market_implied_probability=args.market_implied,
         market_price_cents=args.market_price_cents,
-        lean=args.lean,
-        conviction=args.conviction,
+        yes_ask=yes_ask_field,
+        no_ask=no_ask_field,
+        fee_per_contract=fee_per_contract,
+        ev_per_contract=ev_per_contract,
+        lean=lean,
+        conviction=conviction,
         trigger=args.trigger,
         rationale_summary=args.rationale,
         key_drivers=_comma_list(args.drivers),

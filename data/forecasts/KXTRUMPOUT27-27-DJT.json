@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "ticker": "KXTRUMPOUT27-27-DJT",
+  "title": "Will Donald Trump be out of office before 2027?",
+  "category": "politics",
+  "close_time": "2027-01-01T15:00:00Z",
+  "current": {
+    "as_of": "2026-05-31T18:11:16Z",
+    "my_probability": 0.05,
+    "my_confidence": "medium",
+    "market_implied_probability": 0.0845,
+    "market_price_cents": 8,
+    "edge": -0.0345,
+    "yes_ask": 0.085,
+    "no_ask": 0.916,
+    "fee_per_contract": 0.01,
+    "ev_per_contract": 0.024,
+    "lean": "NO",
+    "conviction": "low",
+    "prob_delta_vs_prev": null,
+    "trigger": "bootstrap",
+    "rationale_summary": "Dominant pathway is actuarial: ~3% death probability for an 80-year-old over 7 months; political removal is near-zero with a loyal GOP Senate and Cabinet. Combined ~5%, below the market's fat-tail premium.",
+    "key_drivers": [
+      "~3% 7-month actuarial death risk",
+      "no viable removal path (loyal Senate/Cabinet)",
+      "no resignation propensity"
+    ],
+    "reference_classes": [],
+    "research_refs": [
+      "https://www.ssa.gov/oact/STATS/table4c6.html"
+    ]
+  },
+  "history": [
+    {
+      "as_of": "2026-05-31T18:11:16Z",
+      "my_probability": 0.05,
+      "my_confidence": "medium",
+      "market_implied_probability": 0.0845,
+      "market_price_cents": 8,
+      "edge": -0.0345,
+      "yes_ask": 0.085,
+      "no_ask": 0.916,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": 0.024,
+      "lean": "NO",
+      "conviction": "low",
+      "prob_delta_vs_prev": null,
+      "trigger": "bootstrap",
+      "rationale_summary": "Dominant pathway is actuarial: ~3% death probability for an 80-year-old over 7 months; political removal is near-zero with a loyal GOP Senate and Cabinet. Combined ~5%, below the market's fat-tail premium.",
+      "key_drivers": [
+        "~3% 7-month actuarial death risk",
+        "no viable removal path (loyal Senate/Cabinet)",
+        "no resignation propensity"
+      ],
+      "reference_classes": [],
+      "research_refs": [
+        "https://www.ssa.gov/oact/STATS/table4c6.html"
+      ]
+    }
+  ]
+}

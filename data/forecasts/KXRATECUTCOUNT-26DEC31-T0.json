@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "ticker": "KXRATECUTCOUNT-26DEC31-T0",
+  "title": "Will the Fed cut rates 0 times in 2026?",
+  "category": "economy",
+  "close_time": "2027-01-01T04:59:00Z",
+  "current": {
+    "as_of": "2026-05-31T18:11:16Z",
+    "my_probability": 0.63,
+    "my_confidence": "medium",
+    "market_implied_probability": 0.6885,
+    "market_price_cents": 69,
+    "edge": -0.058499999999999996,
+    "yes_ask": 0.708,
+    "no_ask": 0.331,
+    "fee_per_contract": 0.02,
+    "ev_per_contract": 0.019,
+    "lean": "NONE",
+    "conviction": "low",
+    "prob_delta_vs_prev": null,
+    "trigger": "bootstrap",
+    "rationale_summary": "The Fed held at all three 2026 meetings so far and inflation is reaccelerating (core PCE 3.3%), supporting zero cuts; but 5 meetings remain and a 7-7 dot-plot split plus an H2 data surprise could unlock a cut. ~63%.",
+    "key_drivers": [
+      "3 holds so far in 2026",
+      "core PCE reaccelerating to 3.3%",
+      "7-7 dot plot + 5 meetings left"
+    ],
+    "reference_classes": [],
+    "research_refs": [
+      "https://www.cnbc.com/2026/05/28/core-inflation-hit-an-annual-rate-of-3point3percent-in-april-as-expected-feds-preferred-gauge-shows-.html"
+    ]
+  },
+  "history": [
+    {
+      "as_of": "2026-05-31T18:11:16Z",
+      "my_probability": 0.63,
+      "my_confidence": "medium",
+      "market_implied_probability": 0.6885,
+      "market_price_cents": 69,
+      "edge": -0.058499999999999996,
+      "yes_ask": 0.708,
+      "no_ask": 0.331,
+      "fee_per_contract": 0.02,
+      "ev_per_contract": 0.019,
+      "lean": "NONE",
+      "conviction": "low",
+      "prob_delta_vs_prev": null,
+      "trigger": "bootstrap",
+      "rationale_summary": "The Fed held at all three 2026 meetings so far and inflation is reaccelerating (core PCE 3.3%), supporting zero cuts; but 5 meetings remain and a 7-7 dot-plot split plus an H2 data surprise could unlock a cut. ~63%.",
+      "key_drivers": [
+        "3 holds so far in 2026",
+        "core PCE reaccelerating to 3.3%",
+        "7-7 dot plot + 5 meetings left"
+      ],
+      "reference_classes": [],
+      "research_refs": [
+        "https://www.cnbc.com/2026/05/28/core-inflation-hit-an-annual-rate-of-3point3percent-in-april-as-expected-feds-preferred-gauge-shows-.html"
+      ]
+    }
+  ]
+}

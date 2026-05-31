@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "ticker": "FEDHIKE-26JUN30",
+  "title": "Will the Federal Reserve hike rates by June 30, 2026?",
+  "category": "economy",
+  "close_time": "2026-07-01T03:59:00Z",
+  "current": {
+    "as_of": "2026-05-31T18:11:16Z",
+    "my_probability": 0.005,
+    "my_confidence": "high",
+    "market_implied_probability": 0.015,
+    "market_price_cents": 2,
+    "edge": -0.009999999999999998,
+    "yes_ask": 0.02,
+    "no_ask": 0.99,
+    "fee_per_contract": 0.01,
+    "ev_per_contract": -0.005,
+    "lean": "NONE",
+    "conviction": "low",
+    "prob_delta_vs_prev": null,
+    "trigger": "bootstrap",
+    "rationale_summary": "The Fed has held for five straight meetings with no member advocating a hike; FedWatch prices ~0.6% and a surprise hike at a new chair's first meeting has no modern precedent. ~0.5%.",
+    "key_drivers": [
+      "5 straight holds",
+      "no FOMC member favoring a hike",
+      "FedWatch ~0.6%"
+    ],
+    "reference_classes": [],
+    "research_refs": [
+      "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html"
+    ]
+  },
+  "history": [
+    {
+      "as_of": "2026-05-31T18:11:16Z",
+      "my_probability": 0.005,
+      "my_confidence": "high",
+      "market_implied_probability": 0.015,
+      "market_price_cents": 2,
+      "edge": -0.009999999999999998,
+      "yes_ask": 0.02,
+      "no_ask": 0.99,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": -0.005,
+      "lean": "NONE",
+      "conviction": "low",
+      "prob_delta_vs_prev": null,
+      "trigger": "bootstrap",
+      "rationale_summary": "The Fed has held for five straight meetings with no member advocating a hike; FedWatch prices ~0.6% and a surprise hike at a new chair's first meeting has no modern precedent. ~0.5%.",
+      "key_drivers": [
+        "5 straight holds",
+        "no FOMC member favoring a hike",
+        "FedWatch ~0.6%"
+      ],
+      "reference_classes": [],
+      "research_refs": [
+        "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html"
+      ]
+    }
+  ]
+}
