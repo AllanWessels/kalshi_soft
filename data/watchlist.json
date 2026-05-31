@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-05-31T17:38:26Z",
+  "cap": 20,
+  "markets": [
+    {
+      "ticker": "CONTROLH-2026-R",
+      "event_ticker": "CONTROLH-2026",
+      "title": "Will Republicans win the House in 2026?",
+      "category": "politics",
+      "close_time": "2027-02-01T15:00:00Z",
+      "added_at": "2026-05-31T17:38:26Z",
+      "liquidity_snapshot": {
+        "volume_24h": 47975.11,
+        "open_interest": 5000658.91,
+        "spread_cents": 1.0
+      },
+      "status": "active",
+      "reforecast_cadence_days": 7.0
+    },
+    {
+      "ticker": "KXFEDDECISION-26JUN-H0",
+      "event_ticker": "KXFEDDECISION-26JUN",
+      "title": "Will the Federal Reserve Hike rates by 0bps at their June 2026 meeting?",
+      "category": "economy",
+      "close_time": "2026-06-17T17:59:00Z",
+      "added_at": "2026-05-31T17:38:26Z",
+      "liquidity_snapshot": {
+        "volume_24h": 42307.14,
+        "open_interest": 2931087.03,
+        "spread_cents": 1.0
+      },
+      "status": "active",
+      "reforecast_cadence_days": 3.0
+    },
+    {
+      "ticker": "KXRECSSNBER-26",
+      "event_ticker": "KXRECSSNBER-26",
+      "title": "Will there be a recession in 2026?",
+      "category": "economy",
+      "close_time": "2027-01-31T13:25:00Z",
+      "added_at": "2026-05-31T17:38:26Z",
+      "liquidity_snapshot": {
+        "volume_24h": 6454.36,
+        "open_interest": 849659.07,
+        "spread_cents": 1.0
+      },
+      "status": "active",
+      "reforecast_cadence_days": 7.0
+    },
+    {
+      "ticker": "KXLBJRETIRE-26",
+      "event_ticker": "KXLBJRETIRE-26",
+      "title": "Will LeBron James announce his retirement in 2026?",
+      "category": "statements",
+      "close_time": "2026-10-31T14:00:00Z",
+      "added_at": "2026-05-31T17:38:26Z",
+      "liquidity_snapshot": {
+        "volume_24h": 14325.14,
+        "open_interest": 230281.9,
+        "spread_cents": 1.0
+      },
+      "status": "active",
+      "reforecast_cadence_days": 7.0
+    },
+    {
+      "ticker": "KXTAKEOVERACQWB-27JUN30-NFLX",
+      "event_ticker": "KXTAKEOVERACQWB-27JUN30",
+      "title": "Will Netflix's takeover of Warner Brothers succeed Before July 2027?",
+      "category": "culture",
+      "close_time": "2027-07-01T03:59:00Z",
+      "added_at": "2026-05-31T17:38:26Z",
+      "liquidity_snapshot": {
+        "volume_24h": 1069.37,
+        "open_interest": 379555.83,
+        "spread_cents": 1.0
+      },
+      "status": "active",
+      "reforecast_cadence_days": 7.0
+    },
+    {
+      "ticker": "KXSENATEMED-26-GRA",
+      "event_ticker": "KXSENATEMED-26",
+      "title": "Will Graham Platner be the Democratic nominee for the Senate in Maine?",
+      "category": "politics",
+      "close_time": "2026-11-03T15:00:00Z",
+      "added_at": "2026-05-31T17:38:26Z",
+      "liquidity_snapshot": {
+        "volume_24h": 290125.44,
+        "open_interest": 1243459.08,
+        "spread_cents": 1.0
+      },
+      "status": "active",
+      "reforecast_cadence_days": 7.0
+    }
+  ]
+}

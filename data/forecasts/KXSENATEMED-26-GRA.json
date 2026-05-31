@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "ticker": "KXSENATEMED-26-GRA",
+  "title": "Will Graham Platner be the Democratic nominee for the Senate in Maine?",
+  "category": "politics",
+  "close_time": "2026-11-03T15:00:00Z",
+  "current": {
+    "as_of": "2026-05-31T17:39:05Z",
+    "my_probability": 0.95,
+    "my_confidence": "high",
+    "market_implied_probability": 0.9205,
+    "market_price_cents": 92.0,
+    "edge": 0.02949999999999997,
+    "lean": "NONE",
+    "conviction": "low",
+    "prob_delta_vs_prev": null,
+    "trigger": "bootstrap",
+    "rationale_summary": "Graham Platner leads the June 9, 2026 Maine Democratic Senate primary at ~76% after Gov. Mills suspended her campaign; his only opponent is a fringe candidate, he holds Sanders/Warren endorsements, and with 9 days left there is little room for a disqualifying event.",
+    "key_drivers": [
+      "Mills withdrew Apr 30",
+      "Platner ~76% primary polling",
+      "fringe-only opposition",
+      "Sanders/Warren endorsements",
+      "9 days out"
+    ],
+    "reference_classes": [
+      "Primary frontrunners >70% with cleared field win ~97%+"
+    ],
+    "research_refs": [
+      "https://emersoncollegepolling.com/maine-2026-poll-platner-leads-gov-mills-democrats-lead-sen-collins-in-maine/",
+      "https://ballotpedia.org/United_States_Senate_election_in_Maine",
+      "_2026_(June_9_Democratic_primary)"
+    ]
+  },
+  "history": [
+    {
+      "as_of": "2026-05-31T17:39:05Z",
+      "my_probability": 0.95,
+      "my_confidence": "high",
+      "market_implied_probability": 0.9205,
+      "market_price_cents": 92.0,
+      "edge": 0.02949999999999997,
+      "lean": "NONE",
+      "conviction": "low",
+      "prob_delta_vs_prev": null,
+      "trigger": "bootstrap",
+      "rationale_summary": "Graham Platner leads the June 9, 2026 Maine Democratic Senate primary at ~76% after Gov. Mills suspended her campaign; his only opponent is a fringe candidate, he holds Sanders/Warren endorsements, and with 9 days left there is little room for a disqualifying event.",
+      "key_drivers": [
+        "Mills withdrew Apr 30",
+        "Platner ~76% primary polling",
+        "fringe-only opposition",
+        "Sanders/Warren endorsements",
+        "9 days out"
+      ],
+      "reference_classes": [
+        "Primary frontrunners >70% with cleared field win ~97%+"
+      ],
+      "research_refs": [
+        "https://emersoncollegepolling.com/maine-2026-poll-platner-leads-gov-mills-democrats-lead-sen-collins-in-maine/",
+        "https://ballotpedia.org/United_States_Senate_election_in_Maine",
+        "_2026_(June_9_Democratic_primary)"
+      ]
+    }
+  ]
+}

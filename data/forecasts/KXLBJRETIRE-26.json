@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "ticker": "KXLBJRETIRE-26",
+  "title": "Will LeBron James announce his retirement in 2026?",
+  "category": "statements",
+  "close_time": "2026-10-31T14:00:00Z",
+  "current": {
+    "as_of": "2026-05-31T17:39:05Z",
+    "my_probability": 0.2,
+    "my_confidence": "medium",
+    "market_implied_probability": 0.175,
+    "market_price_cents": 18.0,
+    "edge": 0.025000000000000022,
+    "lean": "NONE",
+    "conviction": "low",
+    "prob_delta_vs_prev": null,
+    "trigger": "bootstrap",
+    "rationale_summary": "LeBron (41, unrestricted FA) faces real retirement uncertainty, but the pull to keep playing with Bronny, still-useful production (20.9 PPG), and a stated July/August decision timeline make signing the more likely outcome before the season tips off; health (sciatica) keeps retirement a live minority.",
+    "key_drivers": [
+      "Bronny pairing motivation",
+      "still 20.9 PPG at 41",
+      "stated Jul/Aug decision",
+      "sciatica health risk"
+    ],
+    "reference_classes": [
+      "Elite players still effective usually sign rather than retire",
+      "LeBron's past deferral-then-return pattern"
+    ],
+    "research_refs": [
+      "https://www.espn.com/nba/story/_/id/48747842/lakers-lebron-james-know-future-holds-me"
+    ]
+  },
+  "history": [
+    {
+      "as_of": "2026-05-31T17:39:05Z",
+      "my_probability": 0.2,
+      "my_confidence": "medium",
+      "market_implied_probability": 0.175,
+      "market_price_cents": 18.0,
+      "edge": 0.025000000000000022,
+      "lean": "NONE",
+      "conviction": "low",
+      "prob_delta_vs_prev": null,
+      "trigger": "bootstrap",
+      "rationale_summary": "LeBron (41, unrestricted FA) faces real retirement uncertainty, but the pull to keep playing with Bronny, still-useful production (20.9 PPG), and a stated July/August decision timeline make signing the more likely outcome before the season tips off; health (sciatica) keeps retirement a live minority.",
+      "key_drivers": [
+        "Bronny pairing motivation",
+        "still 20.9 PPG at 41",
+        "stated Jul/Aug decision",
+        "sciatica health risk"
+      ],
+      "reference_classes": [
+        "Elite players still effective usually sign rather than retire",
+        "LeBron's past deferral-then-return pattern"
+      ],
+      "research_refs": [
+        "https://www.espn.com/nba/story/_/id/48747842/lakers-lebron-james-know-future-holds-me"
+      ]
+    }
+  ]
+}

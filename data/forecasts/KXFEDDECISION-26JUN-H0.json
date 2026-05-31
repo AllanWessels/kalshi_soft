@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "ticker": "KXFEDDECISION-26JUN-H0",
+  "title": "Will the Federal Reserve Hike rates by 0bps at their June 2026 meeting?",
+  "category": "economy",
+  "close_time": "2026-06-17T17:59:00Z",
+  "current": {
+    "as_of": "2026-05-31T17:39:05Z",
+    "my_probability": 0.97,
+    "my_confidence": "high",
+    "market_implied_probability": 0.965,
+    "market_price_cents": 97.0,
+    "edge": 0.0050000000000000044,
+    "lean": "NONE",
+    "conviction": "low",
+    "prob_delta_vs_prev": null,
+    "trigger": "bootstrap",
+    "rationale_summary": "A rate hike at a single meeting during an established hold cycle is essentially unprecedented absent a crisis; Fed held in April with no hike signal, CPI ~3.8% and unemployment 4.3% are not emergency triggers, and futures imply ~99% no-hike.",
+    "key_drivers": [
+      "Fed held in April",
+      "no hike signal",
+      "CPI 3.8% not emergency",
+      "futures ~99% hold"
+    ],
+    "reference_classes": [
+      "Fed hiking at a single meeting in a hold cycle <1%"
+    ],
+    "research_refs": [
+      "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260429a.htm",
+      "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html"
+    ]
+  },
+  "history": [
+    {
+      "as_of": "2026-05-31T17:39:05Z",
+      "my_probability": 0.97,
+      "my_confidence": "high",
+      "market_implied_probability": 0.965,
+      "market_price_cents": 97.0,
+      "edge": 0.0050000000000000044,
+      "lean": "NONE",
+      "conviction": "low",
+      "prob_delta_vs_prev": null,
+      "trigger": "bootstrap",
+      "rationale_summary": "A rate hike at a single meeting during an established hold cycle is essentially unprecedented absent a crisis; Fed held in April with no hike signal, CPI ~3.8% and unemployment 4.3% are not emergency triggers, and futures imply ~99% no-hike.",
+      "key_drivers": [
+        "Fed held in April",
+        "no hike signal",
+        "CPI 3.8% not emergency",
+        "futures ~99% hold"
+      ],
+      "reference_classes": [
+        "Fed hiking at a single meeting in a hold cycle <1%"
+      ],
+      "research_refs": [
+        "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260429a.htm",
+        "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "ticker": "KXRECSSNBER-26",
+  "title": "Will there be a recession in 2026?",
+  "category": "economy",
+  "close_time": "2027-01-31T13:25:00Z",
+  "current": {
+    "as_of": "2026-05-31T17:39:05Z",
+    "my_probability": 0.15,
+    "my_confidence": "medium",
+    "market_implied_probability": 0.145,
+    "market_price_cents": 15.0,
+    "edge": 0.0050000000000000044,
+    "lean": "NONE",
+    "conviction": "low",
+    "prob_delta_vs_prev": null,
+    "trigger": "bootstrap",
+    "rationale_summary": "Resolution needs two consecutive negative GDP quarters; Q1 2026 (+1.6%) and Q2 (~+3.8% GDPNow) are positive and 2025 had none, so YES requires both Q3 and Q4 2026 negative — a sharp H2 reversal. Institutional models (~19-35%) are broader than this strict rule, so I land near the market.",
+    "key_drivers": [
+      "Q1 +1.6% and Q2 ~+3.8% positive",
+      "rule needs Q3+Q4 both negative",
+      "labor softening not broken"
+    ],
+    "reference_classes": [
+      "Two consecutive negative quarters starting mid-year from positive H1 ~5-8%",
+      "unconditional annual recession ~15%"
+    ],
+    "research_refs": [
+      "https://www.atlantafed.org/research-and-data/data/gdpnow",
+      "https://www.newyorkfed.org/medialibrary/media/research/capital_markets/prob_rec.pdf"
+    ]
+  },
+  "history": [
+    {
+      "as_of": "2026-05-31T17:39:05Z",
+      "my_probability": 0.15,
+      "my_confidence": "medium",
+      "market_implied_probability": 0.145,
+      "market_price_cents": 15.0,
+      "edge": 0.0050000000000000044,
+      "lean": "NONE",
+      "conviction": "low",
+      "prob_delta_vs_prev": null,
+      "trigger": "bootstrap",
+      "rationale_summary": "Resolution needs two consecutive negative GDP quarters; Q1 2026 (+1.6%) and Q2 (~+3.8% GDPNow) are positive and 2025 had none, so YES requires both Q3 and Q4 2026 negative — a sharp H2 reversal. Institutional models (~19-35%) are broader than this strict rule, so I land near the market.",
+      "key_drivers": [
+        "Q1 +1.6% and Q2 ~+3.8% positive",
+        "rule needs Q3+Q4 both negative",
+        "labor softening not broken"
+      ],
+      "reference_classes": [
+        "Two consecutive negative quarters starting mid-year from positive H1 ~5-8%",
+        "unconditional annual recession ~15%"
+      ],
+      "research_refs": [
+        "https://www.atlantafed.org/research-and-data/data/gdpnow",
+        "https://www.newyorkfed.org/medialibrary/media/research/capital_markets/prob_rec.pdf"
+      ]
+    }
+  ]
+}

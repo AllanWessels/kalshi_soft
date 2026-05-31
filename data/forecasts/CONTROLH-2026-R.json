@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "ticker": "CONTROLH-2026-R",
+  "title": "Will Republicans win the House in 2026?",
+  "category": "politics",
+  "close_time": "2027-02-01T15:00:00Z",
+  "current": {
+    "as_of": "2026-05-31T17:39:05Z",
+    "my_probability": 0.2,
+    "my_confidence": "medium",
+    "market_implied_probability": 0.235,
+    "market_price_cents": 24.0,
+    "edge": -0.034999999999999976,
+    "lean": "NONE",
+    "conviction": "low",
+    "prob_delta_vs_prev": null,
+    "trigger": "bootstrap",
+    "rationale_summary": "President's party loses the House in 18/20 midterms; Trump ~36% approval and a D+6-8 generic ballot project large GOP losses against their 3-seat margin. GOP mid-decade redistricting (+10-15 seats) is a real offset but insufficient, so I sit just below the market.",
+    "key_drivers": [
+      "Trump approval ~36%",
+      "D+6-8 generic ballot",
+      "3-seat GOP margin",
+      "GOP redistricting offset"
+    ],
+    "reference_classes": [
+      "President's party loses House in 18/20 midterms",
+      "sub-50% approval avg ~37-seat loss"
+    ],
+    "research_refs": [
+      "https://centerforpolitics.org/crystalball/generic-ballot-model-gives-democrats-strong-chance-to-take-back-house-in-2026/",
+      "https://www.racetothewh.com/house"
+    ]
+  },
+  "history": [
+    {
+      "as_of": "2026-05-31T17:39:05Z",
+      "my_probability": 0.2,
+      "my_confidence": "medium",
+      "market_implied_probability": 0.235,
+      "market_price_cents": 24.0,
+      "edge": -0.034999999999999976,
+      "lean": "NONE",
+      "conviction": "low",
+      "prob_delta_vs_prev": null,
+      "trigger": "bootstrap",
+      "rationale_summary": "President's party loses the House in 18/20 midterms; Trump ~36% approval and a D+6-8 generic ballot project large GOP losses against their 3-seat margin. GOP mid-decade redistricting (+10-15 seats) is a real offset but insufficient, so I sit just below the market.",
+      "key_drivers": [
+        "Trump approval ~36%",
+        "D+6-8 generic ballot",
+        "3-seat GOP margin",
+        "GOP redistricting offset"
+      ],
+      "reference_classes": [
+        "President's party loses House in 18/20 midterms",
+        "sub-50% approval avg ~37-seat loss"
+      ],
+      "research_refs": [
+        "https://centerforpolitics.org/crystalball/generic-ballot-model-gives-democrats-strong-chance-to-take-back-house-in-2026/",
+        "https://www.racetothewh.com/house"
+      ]
+    }
+  ]
+}

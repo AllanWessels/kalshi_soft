@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "ticker": "KXTAKEOVERACQWB-27JUN30-NFLX",
+  "title": "Will Netflix's takeover of Warner Brothers succeed Before July 2027?",
+  "category": "culture",
+  "close_time": "2027-07-01T03:59:00Z",
+  "current": {
+    "as_of": "2026-05-31T17:39:05Z",
+    "my_probability": 0.03,
+    "my_confidence": "high",
+    "market_implied_probability": 0.035,
+    "market_price_cents": 4.0,
+    "edge": -0.0050000000000000044,
+    "lean": "NONE",
+    "conviction": "low",
+    "prob_delta_vs_prev": null,
+    "trigger": "bootstrap",
+    "rationale_summary": "Netflix's Dec-2025 bid for Warner Bros. Discovery collapsed: facing a Paramount Skydance counter-bid and a DOJ second request, WBD signed a definitive merger with Paramount in Feb 2026 and Netflix withdrew, making a completed Netflix takeover before July 2027 near-impossible.",
+    "key_drivers": [
+      "Netflix withdrew its bid",
+      "WBD signed definitive deal with Paramount",
+      "DOJ second request",
+      "bipartisan opposition"
+    ],
+    "reference_classes": [
+      "Original bidder closing after being outbid and signing rival deal <2%"
+    ],
+    "research_refs": [
+      "https://deadline.com/2026/02/doj-netflix-wb-deal-antitrust-probe-1236731978/",
+      "https://variety.com/2026/tv/news/netflix-warner-bros-deal-all-cash-shareholder-vote-1236635142/"
+    ]
+  },
+  "history": [
+    {
+      "as_of": "2026-05-31T17:39:05Z",
+      "my_probability": 0.03,
+      "my_confidence": "high",
+      "market_implied_probability": 0.035,
+      "market_price_cents": 4.0,
+      "edge": -0.0050000000000000044,
+      "lean": "NONE",
+      "conviction": "low",
+      "prob_delta_vs_prev": null,
+      "trigger": "bootstrap",
+      "rationale_summary": "Netflix's Dec-2025 bid for Warner Bros. Discovery collapsed: facing a Paramount Skydance counter-bid and a DOJ second request, WBD signed a definitive merger with Paramount in Feb 2026 and Netflix withdrew, making a completed Netflix takeover before July 2027 near-impossible.",
+      "key_drivers": [
+        "Netflix withdrew its bid",
+        "WBD signed definitive deal with Paramount",
+        "DOJ second request",
+        "bipartisan opposition"
+      ],
+      "reference_classes": [
+        "Original bidder closing after being outbid and signing rival deal <2%"
+      ],
+      "research_refs": [
+        "https://deadline.com/2026/02/doj-netflix-wb-deal-antitrust-probe-1236731978/",
+        "https://variety.com/2026/tv/news/netflix-warner-bros-deal-all-cash-shareholder-vote-1236635142/"
+      ]
+    }
+  ]
+}
