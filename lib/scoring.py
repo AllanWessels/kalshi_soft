@@ -277,6 +277,32 @@ def expected_net_profit(
     return None
 
 
+def modal_tradable(
+    my_prob: float,
+    yes_ask: Optional[float],
+    no_ask: Optional[float],
+    fee_rate: float = 0.07,
+    min_ev: float = 0.0,
+) -> tuple:
+    """Return ``(side, ev, fee)`` for a lean that NEVER opposes your modal forecast.
+
+    A lean may only back the side you consider MORE LIKELY THAN NOT (my_prob vs 0.5),
+    and only if buying that side is +EV (>= min_ev). This refuses to recommend betting
+    against your own prediction (e.g. lean NO when you think YES is 80% likely): if your
+    modal outcome is overpriced, the answer is "no value bet" (NONE), not the opposite side.
+
+    Returns the MODAL side's ev/fee even when it is NONE (negative/insufficient EV), so the
+    caller can show it as indicative ("I lean X but it isn't priced as value").
+    """
+    side = "YES" if my_prob >= 0.5 else "NO"
+    price = yes_ask if side == "YES" else no_ask
+    ev = net_ev_at_price(my_prob, side, price, fee_rate=fee_rate)
+    fee = kalshi_fee(price, fee_rate=fee_rate) if price is not None else None
+    if ev is None or ev < min_ev:
+        return ("NONE", ev, fee)
+    return (side, ev, fee)
+
+
 def confidence_gate(
     side: str,
     my_prob: float,

@@ -174,14 +174,13 @@ def _profitability_lines(
     fee = cur.fee_per_contract  # may be None for older records
 
     if lean == "NONE":
-        ev_str = _fmt_dollar(ev)
+        ev_str = _fmt_dollar(ev) if ev is not None else "n/a"
         note = getattr(cur, "lean_note", None)
-        if note and ev is not None and ev > 0:
-            # Positive raw EV that was gated by the confidence rule — show as INDICATIVE only.
-            text = (
-                f'<font color="#888888">No actionable lean: {note}. '
-                f"(Indicative raw EV {ev_str}/contract at my probability, not recommended.)</font>"
-            )
+        if note:
+            # Explain why there's no actionable lean (modal side overpriced, or confidence-gated).
+            tail = (f" (Indicative raw EV {ev_str}/contract at my probability, not recommended.)"
+                    if ev is not None and ev > 0 else "")
+            text = f'<font color="#888888">No actionable lean: {note}{tail}</font>'
         else:
             text = (
                 f'<font color="#888888">No profitable trade after fees '

@@ -117,9 +117,14 @@ Record via `scripts/record_forecast.py`. Provide:
 - **Profitability is the real test, not raw edge.** You don't trade at the mid — you cross the
   spread and pay Kalshi's fee `ceil(0.07 × price × (1−price))` per contract. Net expected value:
   - EV(YES) = your_prob − yes_ask − fee(yes_ask);  EV(NO) = (1−your_prob) − no_ask − fee(no_ask).
-  - A lean is set only when the best side's net EV ≥ `MIN_PROFITABLE_EV` (config, $0.02/contract);
-    otherwise `lean = NONE` even if your raw edge looked positive. Conviction scales with EV
-    (≥$0.05 medium, ≥$0.12 high). This is paper only — the read-only key places no orders.
+  - **A lean NEVER opposes your modal forecast.** You may only back the side you think is MORE
+    LIKELY THAN NOT (your prob vs 0.50), and only if buying that side is +EV (≥ `MIN_PROFITABLE_EV`,
+    $0.02/contract). If your modal outcome is *overpriced*, the answer is **"no value bet"
+    (`lean = NONE`)** — NOT a bet on the opposite side. Concretely: if you think YES is 80% but the
+    market prices it at 93¢, you do **not** "buy NO" — you say there's no value and move on.
+    (Betting against your own prediction to chase EV is incoherent for the one-shot markets we
+    forecast; we only act when our edge and our prediction point the same way.) Conviction scales
+    with EV (≥$0.05 medium, ≥$0.12 high). Paper only — the read-only key places no orders.
   - Expect many `NONE` leans on liquid markets: a small probability disagreement is usually eaten
     by the spread + fee. Honest calibration matters more than manufacturing trades.
   - **Confidence gate (enforced in code):** a positive-EV side is only an *actionable* lean if your

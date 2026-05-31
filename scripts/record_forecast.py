@@ -225,7 +225,11 @@ def main(argv: list[str] | None = None) -> None:
         yes_ask_field = args.yes_ask
         no_ask_field = args.no_ask
 
-        side, ev, fee = scoring.best_tradable(
+        # A lean may only back the side I think is MORE LIKELY (modal side), and only if
+        # it's +EV. Never recommend betting against my own forecast: if my modal outcome
+        # is overpriced, the answer is "no value bet", NOT the opposite side.
+        modal_side = "YES" if args.prob >= 0.5 else "NO"
+        side, ev, fee = scoring.modal_tradable(
             args.prob,
             args.yes_ask,
             args.no_ask,
@@ -233,17 +237,16 @@ def main(argv: list[str] | None = None) -> None:
             min_ev=config.MIN_PROFITABLE_EV,
         )
 
-        # Warn if user also passed an explicit --lean that differs from computed side.
-        if args.lean is not None and args.lean != side:
-            print(
-                f"NOTE: --lean {args.lean!r} overridden by profitability analysis "
-                f"(computed side={side!r}); profitability is authoritative.",
-                file=sys.stderr,
-            )
-
         lean = side
         fee_per_contract = fee
         ev_per_contract = ev
+
+        # If the modal side wasn't a value bet, record why (for the report).
+        if side == "NONE":
+            lean_note = (
+                f"I lean {modal_side} (my prob {round(args.prob*100)}%) but it isn't +EV at the "
+                f"ask — no value bet (betting the other side would contradict my forecast)."
+            )
 
         # Limit-order alternative: rest a buy on the lean side at its current best bid.
         if side in ("YES", "NO"):
