@@ -37,26 +37,30 @@ ROUTINE.md  the per-run runbook the scheduled agent executes
 ### Local (manual loop / development)
 ```bash
 pip install -r requirements.txt
-cp .env.example .env        # fill in KALSHI_KEY_ID + KALSHI_PRIVATE_KEY (gitignored)
-python3 scripts/refresh_market.py --selftest      # check API reachability
+python3 scripts/refresh_market.py --selftest      # check Kalshi reachability (no key needed)
 python3 scripts/fetch_candidates.py               # discover the soft-market pool
 # ...then follow ROUTINE.md steps 2–9 (curate, research, record, reconcile, report, commit)
 python3 scripts/build_report.py                   # regenerate reports/latest.pdf
 ```
+**No secrets required** — the loop uses only Kalshi's public market-data endpoints (see Security).
 
-### Autonomous (cloud Routine — runs with your laptop off)
-Configure a Routine at https://claude.ai/code:
+### On-demand from your phone (recommended) — the `/update` command
+Open **Claude Code on the web** (claude.ai/code) on your phone, start a session on this repo,
+and type **`/update`** — it runs one full loop and pushes an updated `reports/latest.pdf`, which
+you can open in the GitHub mobile app. One-time setup in the session's cloud environment:
 1. Add this repository.
-2. Set environment variables `KALSHI_KEY_ID` and `KALSHI_PRIVATE_KEY` (read-only key).
-3. Set network access to **Full** (or Custom + allowlist `external-api.kalshi.com`).
-4. Enable **unrestricted branch pushes** (so it can commit to `main`).
-5. Schedule **3 runs/day at 12:00 / 21:00 / 03:00 `America/Los_Angeles`**.
-6. Point the Routine prompt at `ROUTINE.md`.
+2. Network access **Full** (or Custom + allowlist `external-api.kalshi.com`).
+3. Enable **unrestricted branch pushes** (so `/update` can commit to `main`).
+
+No Kalshi key needs to be set in the cloud environment (public data only). For hands-free
+automation you can later point a scheduled Routine at the same `ROUTINE.md`, but it isn't required.
 
 ## Security
-Secrets live only in `.env` (gitignored) locally or in the Routine's environment config — never
-in the repo. `gitops.assert_no_secrets_staged()` aborts any commit containing a private key or
-`.env`. If a key was ever exposed, rotate it in the Kalshi dashboard.
+The loop is **read-only and needs no credentials** — it calls only Kalshi's public market-data
+endpoints (verified: a no-header request to `/trade-api/v2/markets` returns 200). The client
+implements no order/portfolio endpoints, so it cannot trade. Any optional Kalshi key (for future
+account features) lives only in a gitignored local `.env`, never in the repo or cloud environment,
+and `gitops.assert_no_secrets_staged()` aborts any commit containing a private key or `.env`.
 
 ## Reading the output
 Open `reports/latest.pdf`. Each market block names the **title + ticker** (so you can find it on

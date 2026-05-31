@@ -5,31 +5,31 @@
   "category": "politics",
   "close_time": "2026-06-02T14:00:00Z",
   "current": {
-    "as_of": "2026-05-31T18:47:19Z",
-    "my_probability": 0.19,
+    "as_of": "2026-05-31T19:42:28Z",
+    "my_probability": 0.25,
     "my_confidence": "medium",
     "market_implied_probability": 0.235,
     "market_price_cents": 24,
-    "edge": -0.044999999999999984,
+    "edge": 0.015000000000000013,
     "yes_ask": 0.24,
     "no_ask": 0.77,
     "fee_per_contract": 0.02,
-    "ev_per_contract": 0.02,
-    "limit_price": 0.76,
-    "ev_limit_per_contract": 0.03,
-    "lean": "NO",
+    "ev_per_contract": -0.01,
+    "limit_price": null,
+    "ev_limit_per_contract": null,
+    "lean": "NONE",
     "conviction": "low",
-    "prob_delta_vs_prev": null,
-    "trigger": "bootstrap",
-    "rationale_summary": "Pratt polls a competitive 3rd (~22%) within the margin behind Bass and Raman, but no credible poll has him 1st; the anti-Bass vote splits with Raman and Bass holds the machine + early mail ballots.",
+    "prob_delta_vs_prev": 0.06,
+    "trigger": "near_close",
+    "rationale_summary": "UPDATED up from 0.19: a new McLaughlin poll shows Pratt in a statistical tie for 1st (30.1 vs Bass 29.5), though most credible polls still have Bass narrowly ahead; finishing 1st is now roughly a market-priced coin-flip-ish ~25%.",
     "key_drivers": [
-      "polls 3rd ~22% never 1st",
-      "anti-Bass vote split with Raman",
-      "Bass machine + mail lead"
+      "new poll shows Pratt tied for 1st",
+      "most polls still Bass-ahead",
+      "celebrity election-day discount"
     ],
     "reference_classes": [],
     "research_refs": [
-      "https://www.cbsnews.com/losangeles/news/new-poll-shows-bass-has-slim-lead-over-raman-pratt-in-la-mayoral-election/"
+      "https://townhall.com/tipsheet/cameron-arcand/2026/05/30/exclusive-spencer-pratt-in-statistical-tie-for-tuesdays-mayoral-primary-n2676951"
     ]
   },
   "history": [
@@ -59,6 +59,34 @@
       "reference_classes": [],
       "research_refs": [
         "https://www.cbsnews.com/losangeles/news/new-poll-shows-bass-has-slim-lead-over-raman-pratt-in-la-mayoral-election/"
+      ]
+    },
+    {
+      "as_of": "2026-05-31T19:42:28Z",
+      "my_probability": 0.25,
+      "my_confidence": "medium",
+      "market_implied_probability": 0.235,
+      "market_price_cents": 24,
+      "edge": 0.015000000000000013,
+      "yes_ask": 0.24,
+      "no_ask": 0.77,
+      "fee_per_contract": 0.02,
+      "ev_per_contract": -0.01,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "prob_delta_vs_prev": 0.06,
+      "trigger": "near_close",
+      "rationale_summary": "UPDATED up from 0.19: a new McLaughlin poll shows Pratt in a statistical tie for 1st (30.1 vs Bass 29.5), though most credible polls still have Bass narrowly ahead; finishing 1st is now roughly a market-priced coin-flip-ish ~25%.",
+      "key_drivers": [
+        "new poll shows Pratt tied for 1st",
+        "most polls still Bass-ahead",
+        "celebrity election-day discount"
+      ],
+      "reference_classes": [],
+      "research_refs": [
+        "https://townhall.com/tipsheet/cameron-arcand/2026/05/30/exclusive-spencer-pratt-in-statistical-tie-for-tuesdays-mayoral-primary-n2676951"
       ]
     }
   ]

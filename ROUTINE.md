@@ -19,9 +19,9 @@ cloned fresh and `data/` holds your memory from prior runs. Read and follow
 ```
 pip install -r requirements.txt        # cryptography, requests, matplotlib, reportlab
 ```
-Secrets `KALSHI_KEY_ID` / `KALSHI_PRIVATE_KEY` are provided as environment variables (public
-market data needs no auth, so the run works even if they're absent). Record the wall-clock start
-so you can report `duration_s` at the end.
+No secrets are required: the loop uses only Kalshi's public market-data endpoints, which need no
+auth (the client signs only if a key happens to be present). Record the wall-clock start so you
+can report `duration_s` at the end.
 
 ## Step 0 — Preflight
 ```

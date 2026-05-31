@@ -5,31 +5,31 @@
   "category": "politics",
   "close_time": "2026-06-02T14:00:00Z",
   "current": {
-    "as_of": "2026-05-31T18:47:19Z",
-    "my_probability": 0.8,
-    "my_confidence": "low",
-    "market_implied_probability": 0.93,
+    "as_of": "2026-05-31T19:42:28Z",
+    "my_probability": 0.58,
+    "my_confidence": "medium",
+    "market_implied_probability": 0.9345,
     "market_price_cents": 93,
-    "edge": -0.13,
-    "yes_ask": 0.933,
-    "no_ask": 0.068,
+    "edge": -0.35450000000000004,
+    "yes_ask": 0.935,
+    "no_ask": 0.066,
     "fee_per_contract": 0.01,
-    "ev_per_contract": 0.122,
-    "limit_price": 0.067,
-    "ev_limit_per_contract": 0.123,
+    "ev_per_contract": 0.344,
+    "limit_price": 0.065,
+    "ev_limit_per_contract": 0.345,
     "lean": "NO",
-    "conviction": "low",
-    "prob_delta_vs_prev": null,
-    "trigger": "bootstrap",
-    "rationale_summary": "Feenstra got a late Trump endorsement (very strong in Iowa) but polls ~tied with Lahn (22 vs 24) with 27% undecided and a 35% threshold likely forcing a June 13 convention; the market's ~93% looks overconfident given that contested-convention path.",
+    "conviction": "medium",
+    "prob_delta_vs_prev": -0.22000000000000008,
+    "trigger": "near_close",
+    "rationale_summary": "DOWNGRADED from 0.80: county GOP straw polls show grassroots delegates strongly prefer Steen/Sherman (Feenstra ~14%), and with no one near the 35% threshold the race likely goes to a June 13 convention where Feenstra's establishment+Trump edge is contested. The market's ~93% looks overpriced given that convention risk.",
     "key_drivers": [
-      "Trump endorsement (strong in IA)",
-      "tied with Lahn + 27% undecided",
-      "35% threshold -> likely convention"
+      "likely June 13 convention (no one near 35%)",
+      "grassroots straw polls hostile (~14%)",
+      "Trump+establishment edge but contested at convention"
     ],
     "reference_classes": [],
     "research_refs": [
-      "https://winwithjmc.com/wp-content/uploads/2026/05/IA-Republican-Primary-Toplines-May-27-28-2026.pdf"
+      "https://www.thegazette.com/campaigns-elections/iowa-republican-grassroots-signal-unease-with-feenstra-as-county-parties-hold-unsanctioned-straw-pol/"
     ]
   },
   "history": [
@@ -59,6 +59,34 @@
       "reference_classes": [],
       "research_refs": [
         "https://winwithjmc.com/wp-content/uploads/2026/05/IA-Republican-Primary-Toplines-May-27-28-2026.pdf"
+      ]
+    },
+    {
+      "as_of": "2026-05-31T19:42:28Z",
+      "my_probability": 0.58,
+      "my_confidence": "medium",
+      "market_implied_probability": 0.9345,
+      "market_price_cents": 93,
+      "edge": -0.35450000000000004,
+      "yes_ask": 0.935,
+      "no_ask": 0.066,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": 0.344,
+      "limit_price": 0.065,
+      "ev_limit_per_contract": 0.345,
+      "lean": "NO",
+      "conviction": "medium",
+      "prob_delta_vs_prev": -0.22000000000000008,
+      "trigger": "near_close",
+      "rationale_summary": "DOWNGRADED from 0.80: county GOP straw polls show grassroots delegates strongly prefer Steen/Sherman (Feenstra ~14%), and with no one near the 35% threshold the race likely goes to a June 13 convention where Feenstra's establishment+Trump edge is contested. The market's ~93% looks overpriced given that convention risk.",
+      "key_drivers": [
+        "likely June 13 convention (no one near 35%)",
+        "grassroots straw polls hostile (~14%)",
+        "Trump+establishment edge but contested at convention"
+      ],
+      "reference_classes": [],
+      "research_refs": [
+        "https://www.thegazette.com/campaigns-elections/iowa-republican-grassroots-signal-unease-with-feenstra-as-county-parties-hold-unsanctioned-straw-pol/"
       ]
     }
   ]

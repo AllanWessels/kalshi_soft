@@ -5,27 +5,27 @@
   "category": "politics",
   "close_time": "2026-06-02T14:00:00Z",
   "current": {
-    "as_of": "2026-05-31T18:47:19Z",
-    "my_probability": 0.04,
+    "as_of": "2026-05-31T19:42:28Z",
+    "my_probability": 0.07,
     "my_confidence": "high",
-    "market_implied_probability": 0.0295,
+    "market_implied_probability": 0.0315,
     "market_price_cents": 3,
-    "edge": 0.010500000000000002,
-    "yes_ask": 0.033,
-    "no_ask": 0.971,
+    "edge": 0.038500000000000006,
+    "yes_ask": 0.032,
+    "no_ask": 0.969,
     "fee_per_contract": 0.01,
-    "ev_per_contract": -0.003,
-    "limit_price": null,
-    "ev_limit_per_contract": null,
-    "lean": "NONE",
+    "ev_per_contract": 0.028,
+    "limit_price": 0.031,
+    "ev_limit_per_contract": 0.029,
+    "lean": "YES",
     "conviction": "low",
-    "prob_delta_vs_prev": null,
-    "trigger": "bootstrap",
-    "rationale_summary": "Bianco polls ~12-13% (4th), ~8-10 pts behind Hilton (the leading Republican) and the leading Democrats; the top-two is Becerra plus Hilton/Steyer, not Bianco.",
+    "prob_delta_vs_prev": 0.030000000000000006,
+    "trigger": "near_close",
+    "rationale_summary": "Final polls (Emerson May 27-28) confirm Bianco ~12% in 4th, ~9 pts behind Hilton for the lone GOP slot; Republican vote is consolidating to Hilton (59% vs 29%). No path to top-two in 2 days.",
     "key_drivers": [
-      "Bianco ~12-13% trails Hilton",
-      "top-two is Becerra+Hilton/Steyer",
-      "CA D+13"
+      "Bianco ~12% 4th in final polls",
+      "9pt behind Hilton",
+      "GOP consolidating to Hilton"
     ],
     "reference_classes": [],
     "research_refs": [
@@ -55,6 +55,34 @@
         "Bianco ~12-13% trails Hilton",
         "top-two is Becerra+Hilton/Steyer",
         "CA D+13"
+      ],
+      "reference_classes": [],
+      "research_refs": [
+        "https://emersoncollegepolling.com/california-2026-poll-becerra-leads-steyer-and-hilton-toss-up-for-second-spot/"
+      ]
+    },
+    {
+      "as_of": "2026-05-31T19:42:28Z",
+      "my_probability": 0.07,
+      "my_confidence": "high",
+      "market_implied_probability": 0.0315,
+      "market_price_cents": 3,
+      "edge": 0.038500000000000006,
+      "yes_ask": 0.032,
+      "no_ask": 0.969,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": 0.028,
+      "limit_price": 0.031,
+      "ev_limit_per_contract": 0.029,
+      "lean": "YES",
+      "conviction": "low",
+      "prob_delta_vs_prev": 0.030000000000000006,
+      "trigger": "near_close",
+      "rationale_summary": "Final polls (Emerson May 27-28) confirm Bianco ~12% in 4th, ~9 pts behind Hilton for the lone GOP slot; Republican vote is consolidating to Hilton (59% vs 29%). No path to top-two in 2 days.",
+      "key_drivers": [
+        "Bianco ~12% 4th in final polls",
+        "9pt behind Hilton",
+        "GOP consolidating to Hilton"
       ],
       "reference_classes": [],
       "research_refs": [
