@@ -5,7 +5,7 @@
   "category": "economy",
   "close_time": "2026-06-05T14:00:00Z",
   "current": {
-    "as_of": "2026-05-31T19:42:28Z",
+    "as_of": "2026-05-31T21:03:53Z",
     "my_probability": 0.88,
     "my_confidence": "high",
     "market_implied_probability": 0.725,
@@ -19,6 +19,7 @@
     "ev_limit_per_contract": 0.14,
     "lean": "YES",
     "conviction": "high",
+    "lean_note": null,
     "prob_delta_vs_prev": 0.020000000000000018,
     "trigger": "near_close",
     "rationale_summary": "U-3 has printed >=4.3% all of 2026 and Bloomberg's May-30 consensus is 4.3% with low jobless claims and only ~89K payroll consensus; >4.2% is well-supported vs the market's ~72%.",
@@ -48,6 +49,7 @@
       "ev_limit_per_contract": 0.12,
       "lean": "YES",
       "conviction": "medium",
+      "lean_note": null,
       "prob_delta_vs_prev": null,
       "trigger": "bootstrap",
       "rationale_summary": "U-3 printed >=4.3% every month of 2026 and Bloomberg consensus / Chicago Fed nowcast both put May at 4.3%; the macro backdrop tilts toward upside unemployment risk, so >4.2% is well-supported vs the market's ~72%.",
@@ -62,7 +64,7 @@
       ]
     },
     {
-      "as_of": "2026-05-31T19:42:28Z",
+      "as_of": "2026-05-31T21:03:53Z",
       "my_probability": 0.88,
       "my_confidence": "high",
       "market_implied_probability": 0.725,
@@ -76,6 +78,7 @@
       "ev_limit_per_contract": 0.14,
       "lean": "YES",
       "conviction": "high",
+      "lean_note": null,
       "prob_delta_vs_prev": 0.020000000000000018,
       "trigger": "near_close",
       "rationale_summary": "U-3 has printed >=4.3% all of 2026 and Bloomberg's May-30 consensus is 4.3% with low jobless claims and only ~89K payroll consensus; >4.2% is well-supported vs the market's ~72%.",
