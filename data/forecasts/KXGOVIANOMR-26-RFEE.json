@@ -5,32 +5,30 @@
   "category": "politics",
   "close_time": "2026-06-02T14:00:00Z",
   "current": {
-    "as_of": "2026-05-31T19:42:28Z",
-    "my_probability": 0.58,
+    "as_of": "2026-05-31T19:49:13Z",
+    "my_probability": 0.8,
     "my_confidence": "medium",
     "market_implied_probability": 0.9345,
     "market_price_cents": 93,
-    "edge": -0.35450000000000004,
+    "edge": -0.13449999999999995,
     "yes_ask": 0.935,
     "no_ask": 0.066,
     "fee_per_contract": 0.01,
-    "ev_per_contract": 0.344,
+    "ev_per_contract": 0.124,
     "limit_price": 0.065,
-    "ev_limit_per_contract": 0.345,
+    "ev_limit_per_contract": 0.125,
     "lean": "NO",
-    "conviction": "medium",
-    "prob_delta_vs_prev": -0.22000000000000008,
+    "conviction": "low",
+    "prob_delta_vs_prev": 0.0,
     "trigger": "near_close",
-    "rationale_summary": "DOWNGRADED from 0.80: county GOP straw polls show grassroots delegates strongly prefer Steen/Sherman (Feenstra ~14%), and with no one near the 35% threshold the race likely goes to a June 13 convention where Feenstra's establishment+Trump edge is contested. The market's ~93% looks overpriced given that convention risk.",
+    "rationale_summary": "CORRECTED (was an over-reaction to 0.58): a single primary poll and unsanctioned county straw polls are too noisy to move much. Weighting the RELIABLE signals - Trump endorsement (May 29) and the real 35%-threshold->likely-convention mechanic - Feenstra remains a strong favorite (establishment + presidential backing carry a convention too); I hold ~0.80, only a modest discount below the market for genuine convention uncertainty.",
     "key_drivers": [
-      "likely June 13 convention (no one near 35%)",
-      "grassroots straw polls hostile (~14%)",
-      "Trump+establishment edge but contested at convention"
+      "Trump endorsement (high-reliability)",
+      "likely convention but establishment+Trump favored there",
+      "discounted noisy straw/single polls"
     ],
     "reference_classes": [],
-    "research_refs": [
-      "https://www.thegazette.com/campaigns-elections/iowa-republican-grassroots-signal-unease-with-feenstra-as-county-parties-hold-unsanctioned-straw-pol/"
-    ]
+    "research_refs": []
   },
   "history": [
     {
@@ -62,32 +60,30 @@
       ]
     },
     {
-      "as_of": "2026-05-31T19:42:28Z",
-      "my_probability": 0.58,
+      "as_of": "2026-05-31T19:49:13Z",
+      "my_probability": 0.8,
       "my_confidence": "medium",
       "market_implied_probability": 0.9345,
       "market_price_cents": 93,
-      "edge": -0.35450000000000004,
+      "edge": -0.13449999999999995,
       "yes_ask": 0.935,
       "no_ask": 0.066,
       "fee_per_contract": 0.01,
-      "ev_per_contract": 0.344,
+      "ev_per_contract": 0.124,
       "limit_price": 0.065,
-      "ev_limit_per_contract": 0.345,
+      "ev_limit_per_contract": 0.125,
       "lean": "NO",
-      "conviction": "medium",
-      "prob_delta_vs_prev": -0.22000000000000008,
+      "conviction": "low",
+      "prob_delta_vs_prev": 0.0,
       "trigger": "near_close",
-      "rationale_summary": "DOWNGRADED from 0.80: county GOP straw polls show grassroots delegates strongly prefer Steen/Sherman (Feenstra ~14%), and with no one near the 35% threshold the race likely goes to a June 13 convention where Feenstra's establishment+Trump edge is contested. The market's ~93% looks overpriced given that convention risk.",
+      "rationale_summary": "CORRECTED (was an over-reaction to 0.58): a single primary poll and unsanctioned county straw polls are too noisy to move much. Weighting the RELIABLE signals - Trump endorsement (May 29) and the real 35%-threshold->likely-convention mechanic - Feenstra remains a strong favorite (establishment + presidential backing carry a convention too); I hold ~0.80, only a modest discount below the market for genuine convention uncertainty.",
       "key_drivers": [
-        "likely June 13 convention (no one near 35%)",
-        "grassroots straw polls hostile (~14%)",
-        "Trump+establishment edge but contested at convention"
+        "Trump endorsement (high-reliability)",
+        "likely convention but establishment+Trump favored there",
+        "discounted noisy straw/single polls"
       ],
       "reference_classes": [],
-      "research_refs": [
-        "https://www.thegazette.com/campaigns-elections/iowa-republican-grassroots-signal-unease-with-feenstra-as-county-parties-hold-unsanctioned-straw-pol/"
-      ]
+      "research_refs": []
     }
   ]
 }

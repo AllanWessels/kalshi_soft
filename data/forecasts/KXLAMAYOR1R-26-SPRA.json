@@ -5,32 +5,30 @@
   "category": "politics",
   "close_time": "2026-06-02T14:00:00Z",
   "current": {
-    "as_of": "2026-05-31T19:42:28Z",
-    "my_probability": 0.25,
+    "as_of": "2026-05-31T19:49:13Z",
+    "my_probability": 0.21,
     "my_confidence": "medium",
     "market_implied_probability": 0.235,
     "market_price_cents": 24,
-    "edge": 0.015000000000000013,
+    "edge": -0.024999999999999994,
     "yes_ask": 0.24,
     "no_ask": 0.77,
     "fee_per_contract": 0.02,
-    "ev_per_contract": -0.01,
+    "ev_per_contract": 0.0,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "prob_delta_vs_prev": 0.06,
+    "prob_delta_vs_prev": 0.01999999999999999,
     "trigger": "near_close",
-    "rationale_summary": "UPDATED up from 0.19: a new McLaughlin poll shows Pratt in a statistical tie for 1st (30.1 vs Bass 29.5), though most credible polls still have Bass narrowly ahead; finishing 1st is now roughly a market-priced coin-flip-ish ~25%.",
+    "rationale_summary": "CORRECTED (was 0.25 chasing one outlier poll): the McLaughlin poll showing Pratt 1st is a single partisan survey; the polling AVERAGE still has Bass ahead with Pratt 2nd/3rd. Small update from 0.19 to ~0.21 for a genuinely close race, no more.",
     "key_drivers": [
-      "new poll shows Pratt tied for 1st",
-      "most polls still Bass-ahead",
-      "celebrity election-day discount"
+      "most polls still Bass-ahead (aggregate)",
+      "lone outlier poll discounted",
+      "close 3-way race"
     ],
     "reference_classes": [],
-    "research_refs": [
-      "https://townhall.com/tipsheet/cameron-arcand/2026/05/30/exclusive-spencer-pratt-in-statistical-tie-for-tuesdays-mayoral-primary-n2676951"
-    ]
+    "research_refs": []
   },
   "history": [
     {
@@ -62,32 +60,30 @@
       ]
     },
     {
-      "as_of": "2026-05-31T19:42:28Z",
-      "my_probability": 0.25,
+      "as_of": "2026-05-31T19:49:13Z",
+      "my_probability": 0.21,
       "my_confidence": "medium",
       "market_implied_probability": 0.235,
       "market_price_cents": 24,
-      "edge": 0.015000000000000013,
+      "edge": -0.024999999999999994,
       "yes_ask": 0.24,
       "no_ask": 0.77,
       "fee_per_contract": 0.02,
-      "ev_per_contract": -0.01,
+      "ev_per_contract": 0.0,
       "limit_price": null,
       "ev_limit_per_contract": null,
       "lean": "NONE",
       "conviction": "low",
-      "prob_delta_vs_prev": 0.06,
+      "prob_delta_vs_prev": 0.01999999999999999,
       "trigger": "near_close",
-      "rationale_summary": "UPDATED up from 0.19: a new McLaughlin poll shows Pratt in a statistical tie for 1st (30.1 vs Bass 29.5), though most credible polls still have Bass narrowly ahead; finishing 1st is now roughly a market-priced coin-flip-ish ~25%.",
+      "rationale_summary": "CORRECTED (was 0.25 chasing one outlier poll): the McLaughlin poll showing Pratt 1st is a single partisan survey; the polling AVERAGE still has Bass ahead with Pratt 2nd/3rd. Small update from 0.19 to ~0.21 for a genuinely close race, no more.",
       "key_drivers": [
-        "new poll shows Pratt tied for 1st",
-        "most polls still Bass-ahead",
-        "celebrity election-day discount"
+        "most polls still Bass-ahead (aggregate)",
+        "lone outlier poll discounted",
+        "close 3-way race"
       ],
       "reference_classes": [],
-      "research_refs": [
-        "https://townhall.com/tipsheet/cameron-arcand/2026/05/30/exclusive-spencer-pratt-in-statistical-tie-for-tuesdays-mayoral-primary-n2676951"
-      ]
+      "research_refs": []
     }
   ]
 }

@@ -64,6 +64,27 @@ already-priced-in evidence moves you little. Avoid both over-reaction to vivid n
 under-reaction to a steady accumulation of signal. State your posterior as a granular
 probability.
 
+#### 4a. Evidence quality & update discipline — DO NOT overreact to single data points
+The most common failure mode is swinging your number on one noisy signal. Guard hard against it:
+- **No single poll moves you materially.** Individual polls — *especially* small-n, partisan,
+  or unsanctioned "straw" polls — are high-variance and frequently garbage. Use polling
+  **aggregates/averages** and forecaster models; treat a lone outlier as weak evidence and
+  expect **regression to the mean**. A new poll that disagrees with the average is usually noise.
+- **Weight by reliability** (roughly, strongest first): deep/liquid market & futures pricing →
+  poll *aggregates* and reputable forecaster ratings (Cook/Sabato/NY Fed etc.) → a single
+  reputable poll → a single partisan/straw poll → punditry/anecdote. A high-reliability signal
+  (e.g. a sitting president's primary endorsement, or a statutory mechanism like a runoff/
+  convention threshold) should **dominate** a low-reliability one.
+- **Separate structural facts from noise.** A mechanism (a 35% threshold likely forcing a
+  convention; a candidate not being on the ballot; an incumbent's huge registration edge) is
+  reliable and *can* move you. A 14% unsanctioned straw poll is noise and should **not**.
+- **Move proportionally, and require corroboration for big moves.** The size of your update must
+  match diagnosticity × reliability. Do **not** move more than ~10 points on a single source;
+  a 15–20 point swing demands ≥2 independent, credible, corroborating signals.
+- **On every re-forecast ask:** "Is this change justified by reliable, corroborated new
+  information — or am I chasing noise?" If the latter, **hold your number.** Most re-forecasts
+  should barely move unless the world genuinely moved.
+
 ### 5. ANTI-ANCHORING PROTOCOL (mandatory)
 This is the discipline that makes the experiment meaningful.
 - **Do NOT look at the Kalshi market price until you have completed steps 1–4 and written
