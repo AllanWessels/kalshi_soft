@@ -96,6 +96,10 @@ This is the discipline that makes the experiment meaningful.
   disagreement explicitly.
 - "Wisdom of the crowd" is real but it is not a rule — your edge comes from independent,
   well-reasoned divergence, not from copying or splitting the difference.
+- **But respect a liquid market.** A *large* disagreement with a liquid, actively-traded market
+  (say >20 points) is, more often than not, a sign you are missing something the crowd knows —
+  not that you found edge. The bigger the gap and the lower your confidence, the more you should
+  suspect your own model. Hold such divergences with humility, not conviction.
 
 ### 6. Pre-mortem & disconfirmation
 Assume your forecast turns out wrong — write down the most likely reason. Actively seek
@@ -118,6 +122,12 @@ Record via `scripts/record_forecast.py`. Provide:
     (≥$0.05 medium, ≥$0.12 high). This is paper only — the read-only key places no orders.
   - Expect many `NONE` leans on liquid markets: a small probability disagreement is usually eaten
     by the spread + fee. Honest calibration matters more than manufacturing trades.
+  - **Confidence gate (enforced in code):** a positive-EV side is only an *actionable* lean if your
+    confidence backs it. EV is computed from your probability as if it were truth, so a
+    **low-confidence** estimate — or any estimate disagreeing with the market by more than ~20
+    points without **high** confidence — is recorded as `lean = NONE` (raw EV kept only as
+    "indicative"). You don't fade a liquid market on a shaky number; don't recommend a trade you
+    wouldn't stake your calibration on.
 - `--rationale` — 1–3 crisp sentences: the base rate, the decisive update, the disagreement
   with the market. `--drivers`, `--reference-classes`, `--refs` — the supporting lists.
 
@@ -126,14 +136,18 @@ When you re-forecast a market you've seen before, read your previous entry first
 change against new evidence. Don't anchor rigidly to your old number, and don't churn it on
 noise. A forecast that moves only when the world moves is a calibrated forecast.
 
-## Calibration feedback loop
-Once markets resolve, `data/calibration.json` holds your Brier score vs the market's and a
-reliability curve. Read it before forecasting:
+## Calibration feedback loop & self-revision
+Once markets resolve, `data/calibration.json` holds your Brier vs the market's and a reliability
+curve; `data/lessons.json` holds post-mortems; `data/forecasts.db` (rebuilt each run) lets you
+run SQL over your full track record. Read them before forecasting:
 - If your high-confidence forecasts resolve worse than their probabilities imply, you are
-  **overconfident** — compress toward 0.5.
-- If they resolve better, you are **underconfident** — be bolder.
-- Watch `skill_vs_market` (positive = you are beating the market). Per-category breakdowns tell
-  you where your edge is real and where it isn't.
+  **overconfident** — compress toward 0.5. If better, **underconfident** — be bolder.
+- Watch `skill_vs_market` (positive = beating the market). Per-category breakdowns tell you where
+  your edge is real and where it isn't.
+- **Self-revision rule:** when a post-mortem reveals an error, record a lesson with a
+  `pattern_tag`. Only revise THIS SKILL when the same pattern recurs across
+  ≥`SKILL_REVISION_MIN_PATTERN` (3) resolved markets. One resolution is a single noisy data point
+  — do not rewrite your method on it (§4a applies to learning, not just forecasting).
 
 ## Non-negotiables
 1. Independent estimate before the market price — always.

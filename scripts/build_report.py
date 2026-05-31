@@ -68,6 +68,7 @@ def main() -> int:
     resolutions = store.load_resolutions()
     calibration = store.load_calibration()
     run_log     = _load_run_log()
+    lessons     = store.load_lessons().lessons
 
     # Generate the PDF.
     try:
@@ -77,6 +78,7 @@ def main() -> int:
             resolutions,
             calibration,
             run_log,
+            lessons=lessons,
             out_path=out_path,
         )
     except Exception as exc:

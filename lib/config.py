@@ -28,7 +28,13 @@ WATCHLIST_PATH = DATA_DIR / "watchlist.json"
 RESOLUTIONS_PATH = DATA_DIR / "resolutions.json"
 CALIBRATION_PATH = DATA_DIR / "calibration.json"
 CANDIDATES_PATH = DATA_DIR / "candidates.json"
+LESSONS_PATH = DATA_DIR / "lessons.json"
 RUN_LOG_PATH = DATA_DIR / "run_log.jsonl"
+DB_PATH = DATA_DIR / "forecasts.db"          # SQLite analysis mirror (gitignored, rebuilt from JSON)
+
+# Skill self-revision: only fold a lesson into SKILL.md once the same pattern_tag
+# recurs across at least this many resolved markets (never on a single outcome).
+SKILL_REVISION_MIN_PATTERN = 3
 LATEST_PDF_PATH = REPORTS_DIR / "latest.pdf"
 
 
@@ -64,6 +70,15 @@ KALSHI_FEE_RATE = 0.07
 # spread) for a market to count as a profitable/tradable lean. Below this we record
 # lean=NONE regardless of raw edge.
 MIN_PROFITABLE_EV = 0.02
+
+# Confidence gate on leans: a positive-EV lean is only ACTIONABLE if my epistemic
+# confidence backs it. EV is computed from my probability as if it were truth, so a
+# low-confidence estimate that disagrees with a liquid market is more likely my error
+# than real edge. Rules (see scoring.confidence_gate):
+#   - confidence "low"  -> never an actionable lean (probability too shaky to fade the crowd)
+#   - gap = |my_prob - market_implied| > MAX_MARKET_DISAGREEMENT and confidence != "high"
+#       -> treat as probable model error -> no actionable lean
+MAX_MARKET_DISAGREEMENT = 0.20
 
 # ---------------------------------------------------------------------------
 # Watchlist / discovery thresholds

@@ -277,6 +277,33 @@ def expected_net_profit(
     return None
 
 
+def confidence_gate(
+    side: str,
+    my_prob: float,
+    market_implied: Optional[float],
+    confidence: str,
+    max_gap: float = 0.20,
+) -> tuple:
+    """Decide whether a positive-EV lean is ACTIONABLE given epistemic confidence.
+
+    Returns ``(ok: bool, note: str)``. EV is computed from ``my_prob`` as if it were
+    truth; this gate stops us from dressing up model error as edge:
+      - confidence "low"            -> never actionable (probability too shaky to fade the crowd)
+      - |my_prob - market| > max_gap and confidence != "high" -> probable model error -> not actionable
+    """
+    if side == "NONE":
+        return (False, "")
+    if confidence == "low":
+        return (False, "low confidence — estimate too uncertain to fade the market")
+    if market_implied is not None:
+        gap = abs(my_prob - market_implied)
+        if gap > max_gap and confidence != "high":
+            return (False,
+                    f"{round(gap*100)}pt gap vs a liquid market without high confidence — "
+                    f"more likely my error than edge")
+    return (True, "")
+
+
 def best_tradable(
     my_prob: float,
     yes_ask: Optional[float],

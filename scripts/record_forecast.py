@@ -218,6 +218,7 @@ def main(argv: list[str] | None = None) -> None:
     ev_per_contract: float | None = None
     limit_price: float | None = None
     ev_limit_per_contract: float | None = None
+    lean_note: str | None = None
 
     if args.yes_ask is not None:
         # Fee-aware path.
@@ -257,6 +258,20 @@ def main(argv: list[str] | None = None) -> None:
         else:
             conviction = _derive_conviction_from_ev(ev) if side != "NONE" else "low"
 
+        # Confidence gate (has the final say): a positive-EV side is only ACTIONABLE if
+        # confidence backs it. EV is computed from my probability as if true, so a low-
+        # confidence estimate or a large gap vs a liquid market is more likely model error
+        # than edge. When gated, keep ev_per_contract as INDICATIVE but set lean=NONE.
+        confidence_for_gate = args.confidence if args.confidence is not None else "medium"
+        ok, note = scoring.confidence_gate(
+            side, args.prob, args.market_implied, confidence_for_gate,
+            max_gap=config.MAX_MARKET_DISAGREEMENT,
+        )
+        if side != "NONE" and not ok:
+            lean = "NONE"
+            lean_note = note
+            conviction = "low"
+
     else:
         # Legacy path: use manual --lean / --conviction with documented defaults.
         lean = args.lean if args.lean is not None else "NONE"
@@ -278,6 +293,7 @@ def main(argv: list[str] | None = None) -> None:
                                if ev_limit_per_contract is not None else None),
         lean=lean,
         conviction=conviction,
+        lean_note=lean_note,
         trigger=args.trigger,
         rationale_summary=args.rationale,
         key_drivers=_comma_list(args.drivers),

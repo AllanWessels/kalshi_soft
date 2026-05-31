@@ -15,3 +15,8 @@ venv/
 data/scratch/
 *.tmp
 .DS_Store
+
+# SQLite analysis mirror — derived from the committed JSON, rebuilt each run
+data/*.db
+*.sqlite
+*.sqlite3

@@ -1,13 +1,14 @@
 """PDF report generator for the kalshi_soft superforecaster.
 
 Assembles a clean, multi-page PDF from watchlist data, forecast records,
-resolutions, calibration, and run-log entries.  Uses matplotlib for charts
-(non-interactive Agg backend) and reportlab.platypus for page layout.
+resolutions, calibration, run-log entries, and lessons learned.  Uses
+matplotlib for charts (non-interactive Agg backend) and reportlab.platypus
+for page layout.
 
 Public API
 ----------
 build_pdf(watchlist, forecasts, resolutions, calibration, run_log,
-          out_path=config.LATEST_PDF_PATH) -> Path
+          lessons=None, out_path=config.LATEST_PDF_PATH) -> Path
 """
 
 from __future__ import annotations
@@ -174,10 +175,18 @@ def _profitability_lines(
 
     if lean == "NONE":
         ev_str = _fmt_dollar(ev)
-        text = (
-            f'<font color="#888888">No profitable trade after fees '
-            f"(best net EV {ev_str}/contract at spot).</font>"
-        )
+        note = getattr(cur, "lean_note", None)
+        if note and ev is not None and ev > 0:
+            # Positive raw EV that was gated by the confidence rule — show as INDICATIVE only.
+            text = (
+                f'<font color="#888888">No actionable lean: {note}. '
+                f"(Indicative raw EV {ev_str}/contract at my probability, not recommended.)</font>"
+            )
+        else:
+            text = (
+                f'<font color="#888888">No profitable trade after fees '
+                f"(best net EV {ev_str}/contract at spot).</font>"
+            )
         return [Paragraph(text, st["body"])]
 
     # Leaned market — determine the ask price for the lean side
@@ -787,6 +796,86 @@ def _build_calibration(
     return elems
 
 
+def _build_lessons(
+    lessons: list[schemas.Lesson],
+    st: dict,
+) -> list:
+    """Build the 'Lessons Learned' section from a list of Lesson records."""
+    elems: list = []
+    elems.append(Paragraph("Lessons Learned", st["section"]))
+    elems.append(_hr())
+
+    if not lessons:
+        elems.append(Paragraph(
+            '<font color="#888888">No lessons recorded yet — they accrue as markets resolve '
+            "and post-mortems run.</font>",
+            st["small"],
+        ))
+        return elems
+
+    # Sort reverse-chronological by created_at; take at most 10
+    def _lesson_sort_key(lsn: schemas.Lesson) -> str:
+        return lsn.created_at or ""
+
+    recent = sorted(lessons, key=_lesson_sort_key, reverse=True)[:10]
+
+    for lsn in recent:
+        block: list = []
+
+        # Main lesson text in bold
+        lesson_text = lsn.lesson or "(no lesson text)"
+        block.append(Paragraph(f"<b>{lesson_text}</b>", st["body"]))
+
+        # Sub-line: source / ticker / category and pattern_tag
+        meta_parts = []
+        if lsn.source:
+            meta_parts.append(lsn.source)
+        if lsn.ticker:
+            meta_parts.append(lsn.ticker)
+        if lsn.category:
+            meta_parts.append(lsn.category)
+        meta_str = " &nbsp;|&nbsp; ".join(meta_parts) if meta_parts else ""
+        if lsn.pattern_tag:
+            tag_str = f'<font color="#1565C0">[{lsn.pattern_tag}]</font>'
+            meta_str = f"{meta_str} &nbsp;{tag_str}" if meta_str else tag_str
+        if lsn.created_at:
+            date_str = lsn.created_at[:10]
+            meta_str = f"{date_str} &nbsp;|&nbsp; {meta_str}" if meta_str else date_str
+        if meta_str:
+            block.append(Paragraph(
+                f'<font color="#555555">{meta_str}</font>',
+                st["small"],
+            ))
+
+        # Brier scores if present
+        if lsn.brier_mine is not None or lsn.brier_market is not None:
+            brier_parts = []
+            if lsn.brier_mine is not None:
+                brier_parts.append(f"Brier (mine): {_fmt_float(lsn.brier_mine)}")
+            if lsn.brier_market is not None:
+                brier_parts.append(f"Brier (market): {_fmt_float(lsn.brier_market)}")
+            if lsn.beat_market is not None:
+                beat_color = "#2E7D32" if lsn.beat_market else "#C62828"
+                beat_label = "beat market" if lsn.beat_market else "lost to market"
+                brier_parts.append(
+                    f'<font color="{beat_color}">{beat_label}</font>'
+                )
+            block.append(Paragraph(
+                " &nbsp;|&nbsp; ".join(brier_parts),
+                st["footnote"],
+            ))
+
+        block.append(_sp(3))
+        block.append(HRFlowable(
+            width="100%", thickness=0.3,
+            color=colors.HexColor("#E8EAF6"),
+            spaceBefore=2, spaceAfter=4,
+        ))
+        elems.append(KeepTogether(block))
+
+    return elems
+
+
 def _build_cost_usage(
     run_log: list[schemas.RunLogEntry],
     scratch_dir: Path,
@@ -860,6 +949,7 @@ def build_pdf(
     resolutions: schemas.ResolutionsFile,
     calibration: schemas.Calibration,
     run_log: list[schemas.RunLogEntry],
+    lessons: Optional[list[schemas.Lesson]] = None,
     out_path: Path = config.LATEST_PDF_PATH,
 ) -> Path:
     """Assemble a comprehensive multi-page PDF report and return the output Path.
@@ -877,6 +967,9 @@ def build_pdf(
         n_resolved >= 1.
     run_log:
         Agent run log entries (may be long; only last ~30 are used for charts).
+    lessons:
+        List of Lesson records for the 'Lessons Learned' section.  Defaults to
+        None (treated as empty — the section renders a placeholder message).
     out_path:
         Destination PDF path.  Defaults to config.LATEST_PDF_PATH.
 
@@ -920,7 +1013,10 @@ def build_pdf(
     if calibration.n_resolved >= 1:
         story.extend(_build_calibration(resolutions, calibration, scratch, st))
 
-    # 6. Cost & usage
+    # 6. Lessons Learned
+    story.extend(_build_lessons(lessons or [], st))
+
+    # 7. Cost & usage
     story.extend(_build_cost_usage(run_log, scratch, st))
 
     doc.build(story)
@@ -1075,6 +1171,24 @@ if __name__ == "__main__":
         ),
     )
 
+    # Synthetic lesson
+    lesson1 = schemas.Lesson(
+        id="2025-03-10T02:00:00Z-OSCARS-BESTPIC-2025",
+        created_at="2025-03-10T03:00:00Z",
+        source="resolution",
+        ticker="OSCARS-BESTPIC-2025",
+        category="culture",
+        outcome=1,
+        brier_mine=0.0784,
+        brier_market=0.1024,
+        beat_market=True,
+        what_went_right="Correctly weighted the frontrunner despite late buzz for the competitor.",
+        what_went_wrong="Initial confidence was lower than warranted; took two updates to reach high.",
+        lesson="For culture markets with a clear frontrunner, anchor earlier to strong evidence "
+               "rather than hedging on contrarian narratives.",
+        pattern_tag="culture-frontrunner-underconfidence",
+    )
+
     # ---- full-data report -----------------------------------------------
     test_pdf_path = config.SCRATCH_DIR / "_report_test.pdf"
     result = build_pdf(
@@ -1083,6 +1197,7 @@ if __name__ == "__main__":
         resolutions=resolutions_file,
         calibration=calibration,
         run_log=[run1, run2],
+        lessons=[lesson1],
         out_path=test_pdf_path,
     )
 

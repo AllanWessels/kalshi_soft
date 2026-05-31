@@ -258,6 +258,45 @@ def save_calibration(c: schemas.Calibration) -> None:
 
 
 # ---------------------------------------------------------------------------
+# Lessons (post-mortem learning log)
+# ---------------------------------------------------------------------------
+
+def load_lessons() -> schemas.LessonsFile:
+    """Load the lessons log; return an empty file on first run."""
+    data = read_json(config.LESSONS_PATH)
+    if data is None:
+        return schemas.LessonsFile()
+    return schemas.LessonsFile.from_dict(data)
+
+
+def save_lessons(lf: schemas.LessonsFile) -> None:
+    config.ensure_dirs()
+    lf.updated_at = schemas.utc_now_iso()
+    write_json_atomic(config.LESSONS_PATH, lf.to_dict())
+
+
+def append_lesson(lesson: schemas.Lesson) -> schemas.LessonsFile:
+    """Append a lesson (idempotent on id: replaces an existing lesson with the same id)."""
+    lf = load_lessons()
+    if not lesson.created_at:
+        lesson.created_at = schemas.utc_now_iso()
+    lf.lessons = [l for l in lf.lessons if l.id != lesson.id]
+    lf.lessons.append(lesson)
+    save_lessons(lf)
+    return lf
+
+
+def pattern_counts() -> dict:
+    """Count lessons per pattern_tag from resolution post-mortems — used to decide when a
+    pattern recurs often enough to justify a SKILL revision (>= config.SKILL_REVISION_MIN_PATTERN)."""
+    counts: dict[str, int] = {}
+    for l in load_lessons().lessons:
+        if l.source == "resolution" and l.pattern_tag:
+            counts[l.pattern_tag] = counts.get(l.pattern_tag, 0) + 1
+    return counts
+
+
+# ---------------------------------------------------------------------------
 # Run log (append-only JSONL)
 # ---------------------------------------------------------------------------
 

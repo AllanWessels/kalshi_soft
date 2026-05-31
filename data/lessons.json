@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-05-31T20:59:14Z",
+  "lessons": [
+    {
+      "id": "feedback-001",
+      "created_at": "2026-05-31T20:59:14Z",
+      "source": "user_feedback",
+      "ticker": "",
+      "category": "politics",
+      "outcome": null,
+      "final_my_probability": null,
+      "final_market_implied": null,
+      "brier_mine": null,
+      "brier_market": null,
+      "beat_market": null,
+      "what_went_right": "Anti-anchoring protocol held; research was multi-source.",
+      "what_went_wrong": "Swung Feenstra 22pts on a single primary poll + unsanctioned straw polls.",
+      "lesson": "Never move a forecast materially on one noisy data point (esp. a single poll); weight by reliability and require corroboration. Don't recommend fading a liquid market on a low-confidence estimate.",
+      "pattern_tag": "overreaction-and-confidence",
+      "applied_to_skill": false
+    }
+  ]
+}

@@ -98,6 +98,23 @@ python3 scripts/reconcile_resolutions.py
 Detects markets that resolved on Kalshi, records outcomes + Brier (yours vs market), frees
 watchlist slots, and recomputes `data/calibration.json`.
 
+## Step 6b — Post-mortem & learning (only when markets newly resolved this run)
+If Step 6 recorded any **new** resolutions, learn from them:
+1. Rebuild the analysis DB: `python3 scripts/build_db.py` (SQLite mirror of the JSON; gitignored).
+2. For each newly-resolved market, run a **post-mortem** (your judgment): pull its forecast
+   trajectory (`python3 -c "from lib import db; print(db.forecast_trajectory('<TICKER>'))"`),
+   compare it to the outcome and to the market (`brier_mine` vs `brier_market`). Ask: did I have
+   the right side? Was I over/under-confident? Did I update well over time, or chase noise? What
+   *reliable* signal did I under/over-weight? Record it: `python3 scripts/record_lesson.py --id
+   <resolved_at>-<TICKER> --source resolution --ticker <T> --category <c> --outcome <0|1>
+   --final-prob .. --final-market .. --brier-mine .. --brier-market .. --beat-market <true|false>
+   --right ".." --wrong ".." --lesson ".." --pattern <short-tag>`.
+3. **Update the SKILL only on a PATTERN, never on one outcome.** `record_lesson.py` reports how
+   many times a `pattern_tag` has recurred across resolutions; only when it reaches
+   `config.SKILL_REVISION_MIN_PATTERN` (3) should you edit `.claude/skills/superforecasting/SKILL.md`
+   to encode the correction, then re-run `record_lesson.py ... --applied-to-skill` for those. A
+   single resolution is one noisy data point — the same discipline as forecasting (SKILL §4a).
+
 ## Step 7 — Build the report
 ```
 python3 scripts/build_report.py

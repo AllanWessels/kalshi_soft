@@ -158,8 +158,9 @@ class ForecastEntry:
     # Limit-order alternative: rest a buy on the lean side at its current best bid.
     limit_price: Optional[float] = None        # the bid on the lean side (the resting limit price, dollars)
     ev_limit_per_contract: Optional[float] = None  # net EV/contract IF filled at limit_price, after fee
-    lean: str = "NONE"                    # LEANS — set only when ev_per_contract is meaningfully positive
+    lean: str = "NONE"                    # LEANS — actionable side; NONE if EV<min OR confidence gate fails
     conviction: str = "low"               # CONVICTION_LEVELS
+    lean_note: Optional[str] = None       # why a positive-EV side was gated to NONE (low conf / large market gap)
     prob_delta_vs_prev: Optional[float] = None   # computed by store
     trigger: str = "scheduled"            # TRIGGERS
     rationale_summary: str = ""           # 1-3 sentences, agent-written
@@ -260,6 +261,59 @@ class ResolutionsFile:
         return cls(
             updated_at=d.get("updated_at", ""),
             resolved=[Resolution.from_dict(r) for r in d.get("resolved", [])],
+            schema_version=int(d.get("schema_version", SCHEMA_VERSION)),
+        )
+
+
+@dataclass
+class Lesson:
+    """A post-mortem insight. Lessons accumulate; the SKILL is revised only when a
+    pattern recurs across MULTIPLE resolutions (never on a single outcome — same
+    single-data-point discipline as forecasting)."""
+    id: str = ""                          # e.g. "<resolved_at>-<ticker>" or "feedback-<n>"
+    created_at: str = ""
+    source: str = "resolution"            # resolution | self_review | user_feedback
+    ticker: str = ""
+    category: str = ""
+    outcome: Optional[int] = None         # 1/0 for the resolved market (if source=resolution)
+    final_my_probability: Optional[float] = None
+    final_market_implied: Optional[float] = None
+    brier_mine: Optional[float] = None
+    brier_market: Optional[float] = None
+    beat_market: Optional[bool] = None
+    what_went_right: str = ""
+    what_went_wrong: str = ""
+    lesson: str = ""                      # the actionable takeaway
+    pattern_tag: str = ""                 # short tag to group recurring lessons (e.g. "primary-overconfidence")
+    applied_to_skill: bool = False        # set true once folded into SKILL.md (only on a recurring pattern)
+
+    def to_dict(self) -> dict[str, Any]:
+        return asdict(self)
+
+    @classmethod
+    def from_dict(cls, d: dict[str, Any]) -> "Lesson":
+        return cls(**_filtered(cls, d or {}))
+
+
+@dataclass
+class LessonsFile:
+    updated_at: str = ""
+    lessons: list[Lesson] = field(default_factory=list)
+    schema_version: int = SCHEMA_VERSION
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "schema_version": self.schema_version,
+            "updated_at": self.updated_at,
+            "lessons": [l.to_dict() for l in self.lessons],
+        }
+
+    @classmethod
+    def from_dict(cls, d: dict[str, Any]) -> "LessonsFile":
+        d = d or {}
+        return cls(
+            updated_at=d.get("updated_at", ""),
+            lessons=[Lesson.from_dict(x) for x in d.get("lessons", [])],
             schema_version=int(d.get("schema_version", SCHEMA_VERSION)),
         )
 
