@@ -356,6 +356,11 @@ class Calibration:
     bins: list[CalibrationBin] = field(default_factory=list)
     by_category: dict[str, Any] = field(default_factory=dict)
     by_segment: dict[str, Any] = field(default_factory=dict)   # "category / subcategory" -> stats
+    by_strategy: dict[str, Any] = field(default_factory=dict)   # strategy_id -> Brier skill stats
+    # Realized-profit scoreboards (see lib/profit.aggregate_profit); empty until trades resolve.
+    profit_by_category: dict[str, Any] = field(default_factory=dict)
+    profit_by_segment: dict[str, Any] = field(default_factory=dict)
+    profit_by_strategy: dict[str, Any] = field(default_factory=dict)  # the "which topology wins" view
     schema_version: int = SCHEMA_VERSION
 
     def to_dict(self) -> dict[str, Any]:
@@ -369,6 +374,10 @@ class Calibration:
             "bins": [b.to_dict() for b in self.bins],
             "by_category": self.by_category,
             "by_segment": self.by_segment,
+            "by_strategy": self.by_strategy,
+            "profit_by_category": self.profit_by_category,
+            "profit_by_segment": self.profit_by_segment,
+            "profit_by_strategy": self.profit_by_strategy,
         }
 
     @classmethod
@@ -383,6 +392,10 @@ class Calibration:
             bins=[CalibrationBin.from_dict(b) for b in d.get("bins", [])],
             by_category=d.get("by_category", {}),
             by_segment=d.get("by_segment", {}),
+            by_strategy=d.get("by_strategy", {}),
+            profit_by_category=d.get("profit_by_category", {}),
+            profit_by_segment=d.get("profit_by_segment", {}),
+            profit_by_strategy=d.get("profit_by_strategy", {}),
             schema_version=int(d.get("schema_version", SCHEMA_VERSION)),
         )
 

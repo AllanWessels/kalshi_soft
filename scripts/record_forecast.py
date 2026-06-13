@@ -25,7 +25,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import argparse
 import json
 
-from lib import config, store, schemas, scoring  # noqa: E402 (after sys.path patch)
+from lib import config, store, schemas, scoring, strategies  # noqa: E402 (after sys.path patch)
 
 
 def _comma_list(value: str) -> list[str]:
@@ -166,6 +166,14 @@ def build_parser() -> argparse.ArgumentParser:
         default=None,
         help="Market close time as ISO-8601 UTC, e.g. 2026-12-01T00:00:00Z.",
     )
+    p.add_argument(
+        "--strategy-id",
+        dest="strategy_id",
+        choices=list(strategies.REGISTRY),
+        default=strategies.DEFAULT_STRATEGY,
+        help="Forecasting strategy/arm that produced this estimate (experimentation "
+             f"harness; see lib/strategies). Default: {strategies.DEFAULT_STRATEGY}.",
+    )
 
     return p
 
@@ -298,6 +306,7 @@ def main(argv: list[str] | None = None) -> None:
         conviction=conviction,
         lean_note=lean_note,
         trigger=args.trigger,
+        strategy_id=args.strategy_id,
         rationale_summary=args.rationale,
         key_drivers=_comma_list(args.drivers),
         reference_classes=_comma_list(args.reference_classes),

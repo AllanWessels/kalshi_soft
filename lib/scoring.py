@@ -106,6 +106,12 @@ def _segment_key(r: schemas.Resolution) -> str:
     return f"{cat} / {sub}"
 
 
+def _strategy_key(r: schemas.Resolution) -> str:
+    """Group key by the strategy/arm that produced the forecast (experiment harness).
+    Resolutions written before strategy tagging fall into ``"untagged"``."""
+    return r.strategy_id or "untagged"
+
+
 def aggregate_by(
     resolutions: list[schemas.Resolution],
     key_fn: Callable[[schemas.Resolution], str],
@@ -229,9 +235,16 @@ def compute_calibration(
     if brier_market_mean is not None and brier_mine_mean is not None:
         skill_vs_market = brier_market_mean - brier_mine_mean
 
-    # --- per-segment aggregation (category and category/subcategory) ---------
+    # --- per-segment aggregation (category, category/subcategory, strategy) --
     by_category_out = aggregate_by(resolutions, _category_key)
     by_segment_out = aggregate_by(resolutions, _segment_key)
+    by_strategy_out = aggregate_by(resolutions, _strategy_key)
+
+    # --- realized-profit scoreboards (lazy import: profit imports scoring) ---
+    from lib import profit  # noqa: E402 — deferred to avoid the profit<->scoring cycle
+    profit_by_category_out = profit.aggregate_profit(resolutions, _category_key)
+    profit_by_segment_out = profit.aggregate_profit(resolutions, _segment_key)
+    profit_by_strategy_out = profit.aggregate_profit(resolutions, _strategy_key)
 
     return schemas.Calibration(
         updated_at=schemas.utc_now_iso(),
@@ -242,6 +255,10 @@ def compute_calibration(
         bins=bins,
         by_category=by_category_out,
         by_segment=by_segment_out,
+        by_strategy=by_strategy_out,
+        profit_by_category=profit_by_category_out,
+        profit_by_segment=profit_by_segment_out,
+        profit_by_strategy=profit_by_strategy_out,
     )
 
 
