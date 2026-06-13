@@ -131,7 +131,7 @@ def cadence_days_for(days_to_close: float) -> float:
 # family => kills self-preference bias; free + unmetered on the RTX 5080 box).
 # Base URL is env-overridable so a tunnel / hosted endpoint is a drop-in later.
 LOCAL_LLM_BASE_URL = os.environ.get("LOCAL_LLM_BASE_URL", "http://localhost:11434/v1").strip()
-LOCAL_LLM_MODEL = os.environ.get("LOCAL_LLM_MODEL", "qwen3:14b-instruct-q4_K_M").strip()
+LOCAL_LLM_MODEL = os.environ.get("LOCAL_LLM_MODEL", "qwen3:14b-q4_K_M").strip()
 LOCAL_LLM_TIMEOUT_S = 60
 LOCAL_LLM_API_KEY = os.environ.get("LOCAL_LLM_API_KEY", "ollama").strip()  # Ollama ignores it
 

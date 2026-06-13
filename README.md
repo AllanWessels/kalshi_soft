@@ -81,7 +81,7 @@ sandboxes are GPU-less), so the open-weight model is reachable at `localhost` wi
 **operator-installed, not auto-installed**:
 ```bash
 # one-command start (Ollama, works on Blackwell w/ CUDA 12.8):
-ollama pull qwen3:14b-instruct-q4_K_M
+ollama pull qwen3:14b-q4_K_M    # 9.3 GB, fits the 16 GB card (Qwen3 14b; no "-instruct-" infix)
 ollama serve            # serves an OpenAI-compatible API on http://localhost:11434/v1
 ```
 Config lives in `lib/config.py` and is env-overridable:
