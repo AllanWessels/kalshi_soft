@@ -5,38 +5,34 @@
   "category": "politics",
   "close_time": "2026-07-07T13:59:00Z",
   "current": {
-    "as_of": "2026-06-13T10:29:30Z",
-    "my_probability": 0.06,
+    "as_of": "2026-06-13T23:09:37Z",
+    "my_probability": 0.086,
     "my_confidence": "medium",
-    "market_implied_probability": 0.165,
-    "market_price_cents": 16.0,
-    "edge": -0.10500000000000001,
-    "yes_ask": 0.17,
-    "no_ask": 0.84,
-    "fee_per_contract": 0.01,
-    "ev_per_contract": 0.08999999999999998,
-    "limit_price": 0.83,
-    "ev_limit_per_contract": 0.1,
+    "market_implied_probability": 0.195,
+    "market_price_cents": 20.0,
+    "edge": -0.10900000000000001,
+    "yes_ask": 0.2,
+    "no_ask": 0.81,
+    "fee_per_contract": 0.02,
+    "ev_per_contract": 0.08399999999999998,
+    "limit_price": 0.8,
+    "ev_limit_per_contract": 0.094,
     "lean": "NO",
     "conviction": "medium",
     "lean_note": null,
-    "prob_delta_vs_prev": null,
-    "trigger": "bootstrap",
-    "rationale_summary": "Reaching a 7-day MA of 60 (~50% of normal) by July 1 from today's ~3/day requires full physical reopening within ~18 days; mine clearing (months), war-risk insurance reinstatement, and vessel repositioning make this near-impossible even if a deal is signed this week.",
+    "prob_delta_vs_prev": 0.025999999999999995,
+    "trigger": "near_close",
+    "strategy_id": "S2-ensemble3-crowd",
+    "rationale_summary": "Blockade entrenched; even a ceasefire leaves demining+insurance+carrier lag beyond ~18 days. Modal NO; crowd-adjusted partway up from 0.04.",
     "key_drivers": [
-      "MA ~3/day vs 60 threshold",
-      "mine clearing takes months",
-      "war-risk insurance lag",
-      "vessel backlog",
-      "18-day window"
+      "hormuz-full-closure",
+      "conjunctive-recovery-chain"
     ],
     "reference_classes": [
-      "no chokepoint recovers 2%->50% in 3 weeks",
-      "Tanker War recovery took months"
+      "tanker-war",
+      "post-conflict-demining"
     ],
-    "research_refs": [
-      "https://www.pbs.org/newshour/world/u-s-says-its-clearing-iranian-mines-in-latest-push-to-open-the-strait-of-hormuz"
-    ]
+    "research_refs": []
   },
   "history": [
     {
@@ -57,6 +53,7 @@
       "lean_note": null,
       "prob_delta_vs_prev": null,
       "trigger": "bootstrap",
+      "strategy_id": "",
       "rationale_summary": "Reaching a 7-day MA of 60 (~50% of normal) by July 1 from today's ~3/day requires full physical reopening within ~18 days; mine clearing (months), war-risk insurance reinstatement, and vessel repositioning make this near-impossible even if a deal is signed this week.",
       "key_drivers": [
         "MA ~3/day vs 60 threshold",
@@ -72,6 +69,36 @@
       "research_refs": [
         "https://www.pbs.org/newshour/world/u-s-says-its-clearing-iranian-mines-in-latest-push-to-open-the-strait-of-hormuz"
       ]
+    },
+    {
+      "as_of": "2026-06-13T23:09:37Z",
+      "my_probability": 0.086,
+      "my_confidence": "medium",
+      "market_implied_probability": 0.195,
+      "market_price_cents": 20.0,
+      "edge": -0.10900000000000001,
+      "yes_ask": 0.2,
+      "no_ask": 0.81,
+      "fee_per_contract": 0.02,
+      "ev_per_contract": 0.08399999999999998,
+      "limit_price": 0.8,
+      "ev_limit_per_contract": 0.094,
+      "lean": "NO",
+      "conviction": "medium",
+      "lean_note": null,
+      "prob_delta_vs_prev": 0.025999999999999995,
+      "trigger": "near_close",
+      "strategy_id": "S2-ensemble3-crowd",
+      "rationale_summary": "Blockade entrenched; even a ceasefire leaves demining+insurance+carrier lag beyond ~18 days. Modal NO; crowd-adjusted partway up from 0.04.",
+      "key_drivers": [
+        "hormuz-full-closure",
+        "conjunctive-recovery-chain"
+      ],
+      "reference_classes": [
+        "tanker-war",
+        "post-conflict-demining"
+      ],
+      "research_refs": []
     }
   ]
 }

@@ -5,30 +5,32 @@
   "category": "politics",
   "close_time": "2026-06-16T12:59:00Z",
   "current": {
-    "as_of": "2026-06-13T10:25:07Z",
-    "my_probability": 0.02,
+    "as_of": "2026-06-13T23:09:37Z",
+    "my_probability": 0.01,
     "my_confidence": "high",
     "market_implied_probability": 0.005,
-    "market_price_cents": 0.0,
-    "edge": 0.015,
+    "market_price_cents": 1.0,
+    "edge": 0.005,
     "yes_ask": 0.01,
     "no_ask": 1.0,
     "fee_per_contract": 0.0,
-    "ev_per_contract": -0.020000000000000018,
+    "ev_per_contract": -0.010000000000000009,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "I lean NO (my prob 2%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
-    "prob_delta_vs_prev": 0.0,
+    "lean_note": "I lean NO (my prob 1%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+    "prob_delta_vs_prev": -0.01,
     "trigger": "near_close",
-    "rationale_summary": "Held: 7-day MA ~3-6 vs 60 threshold; cannot reach 60 by Jun 15.",
+    "strategy_id": "S0-single",
+    "rationale_summary": "103-day Hormuz blockade escalated to full closure Jun 10-11; full normalization within 2 days is ~0%. Aligns with market.",
     "key_drivers": [
-      "near-total closure",
-      "MA physical lag"
+      "hormuz-full-closure",
+      "demining-lag"
     ],
     "reference_classes": [
-      "no strait recovers to >50% normal in 48h"
+      "active-military-blockades",
+      "mined-strait-reopenings"
     ],
     "research_refs": []
   },
@@ -51,6 +53,7 @@
       "lean_note": "I lean NO (my prob 2%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
       "prob_delta_vs_prev": null,
       "trigger": "bootstrap",
+      "strategy_id": "",
       "rationale_summary": "The Hormuz 7-day transit MA is ~3-6 vs the 60 threshold amid an ongoing closure since Feb 2026; a moving average cannot mathematically jump to 60 by June 15 even if a deal were signed today.",
       "key_drivers": [
         "near-total closure since Feb 2026",
@@ -68,30 +71,32 @@
       ]
     },
     {
-      "as_of": "2026-06-13T10:25:07Z",
-      "my_probability": 0.02,
+      "as_of": "2026-06-13T23:09:37Z",
+      "my_probability": 0.01,
       "my_confidence": "high",
       "market_implied_probability": 0.005,
-      "market_price_cents": 0.0,
-      "edge": 0.015,
+      "market_price_cents": 1.0,
+      "edge": 0.005,
       "yes_ask": 0.01,
       "no_ask": 1.0,
       "fee_per_contract": 0.0,
-      "ev_per_contract": -0.020000000000000018,
+      "ev_per_contract": -0.010000000000000009,
       "limit_price": null,
       "ev_limit_per_contract": null,
       "lean": "NONE",
       "conviction": "low",
-      "lean_note": "I lean NO (my prob 2%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
-      "prob_delta_vs_prev": 0.0,
+      "lean_note": "I lean NO (my prob 1%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+      "prob_delta_vs_prev": -0.01,
       "trigger": "near_close",
-      "rationale_summary": "Held: 7-day MA ~3-6 vs 60 threshold; cannot reach 60 by Jun 15.",
+      "strategy_id": "S0-single",
+      "rationale_summary": "103-day Hormuz blockade escalated to full closure Jun 10-11; full normalization within 2 days is ~0%. Aligns with market.",
       "key_drivers": [
-        "near-total closure",
-        "MA physical lag"
+        "hormuz-full-closure",
+        "demining-lag"
       ],
       "reference_classes": [
-        "no strait recovers to >50% normal in 48h"
+        "active-military-blockades",
+        "mined-strait-reopenings"
       ],
       "research_refs": []
     }

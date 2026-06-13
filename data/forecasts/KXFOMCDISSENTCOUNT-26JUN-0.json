@@ -5,31 +5,31 @@
   "category": "economy",
   "close_time": "2026-06-17T17:59:00Z",
   "current": {
-    "as_of": "2026-06-13T10:25:06Z",
-    "my_probability": 0.42,
-    "my_confidence": "low",
-    "market_implied_probability": 0.635,
-    "market_price_cents": 64.0,
-    "edge": -0.21500000000000002,
-    "yes_ask": 0.64,
-    "no_ask": 0.37,
+    "as_of": "2026-06-13T23:09:51Z",
+    "my_probability": 0.246,
+    "my_confidence": "medium",
+    "market_implied_probability": 0.705,
+    "market_price_cents": 71.0,
+    "edge": -0.45899999999999996,
+    "yes_ask": 0.72,
+    "no_ask": 0.31,
     "fee_per_contract": 0.02,
-    "ev_per_contract": 0.19000000000000009,
-    "limit_price": 0.36,
-    "ev_limit_per_contract": 0.2,
+    "ev_per_contract": 0.424,
+    "limit_price": 0.28,
+    "ev_limit_per_contract": 0.454,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "low confidence — estimate too uncertain to fade the market",
-    "prob_delta_vs_prev": 0.0,
+    "lean_note": "46pt gap vs a liquid market without high confidence — more likely my error than edge",
+    "prob_delta_vs_prev": -0.174,
     "trigger": "near_close",
-    "rationale_summary": "Held: at least one dissent (likely dove Miran) remains more probable than market's 64% zero-dissent pricing; tempered by new-chair unity effect.",
+    "strategy_id": "S2-ensemble3-crowd",
+    "rationale_summary": "April+May FOMC were 8-4 (4 dissents each); implies continued dissent (zero-dissents unlikely). But liquid market prices 70% zero-dissents -> 46-pt gap means I likely miss a June development; record but NONE.",
     "key_drivers": [
-      "Miran dissent risk",
-      "fractious FOMC",
-      "new-chair unity"
+      "fomc-dissent-autocorrelation",
+      "large-market-gap"
     ],
     "reference_classes": [
-      "dissent rate in divided FOMC ~50%"
+      "consecutive-multi-dissent-fomc"
     ],
     "research_refs": []
   },
@@ -52,6 +52,7 @@
       "lean_note": "low confidence — estimate too uncertain to fade the market",
       "prob_delta_vs_prev": null,
       "trigger": "bootstrap",
+      "strategy_id": "",
       "rationale_summary": "April's anomalous 4-dissent meeting and dove Miran's likely cut-dissent against a hold make at least one dissent more probable than the market's 64% zero-dissent pricing, though a new-chair unity effect tempers this.",
       "key_drivers": [
         "Miran dovish dissent risk",
@@ -67,31 +68,31 @@
       ]
     },
     {
-      "as_of": "2026-06-13T10:25:06Z",
-      "my_probability": 0.42,
-      "my_confidence": "low",
-      "market_implied_probability": 0.635,
-      "market_price_cents": 64.0,
-      "edge": -0.21500000000000002,
-      "yes_ask": 0.64,
-      "no_ask": 0.37,
+      "as_of": "2026-06-13T23:09:51Z",
+      "my_probability": 0.246,
+      "my_confidence": "medium",
+      "market_implied_probability": 0.705,
+      "market_price_cents": 71.0,
+      "edge": -0.45899999999999996,
+      "yes_ask": 0.72,
+      "no_ask": 0.31,
       "fee_per_contract": 0.02,
-      "ev_per_contract": 0.19000000000000009,
-      "limit_price": 0.36,
-      "ev_limit_per_contract": 0.2,
+      "ev_per_contract": 0.424,
+      "limit_price": 0.28,
+      "ev_limit_per_contract": 0.454,
       "lean": "NONE",
       "conviction": "low",
-      "lean_note": "low confidence — estimate too uncertain to fade the market",
-      "prob_delta_vs_prev": 0.0,
+      "lean_note": "46pt gap vs a liquid market without high confidence — more likely my error than edge",
+      "prob_delta_vs_prev": -0.174,
       "trigger": "near_close",
-      "rationale_summary": "Held: at least one dissent (likely dove Miran) remains more probable than market's 64% zero-dissent pricing; tempered by new-chair unity effect.",
+      "strategy_id": "S2-ensemble3-crowd",
+      "rationale_summary": "April+May FOMC were 8-4 (4 dissents each); implies continued dissent (zero-dissents unlikely). But liquid market prices 70% zero-dissents -> 46-pt gap means I likely miss a June development; record but NONE.",
       "key_drivers": [
-        "Miran dissent risk",
-        "fractious FOMC",
-        "new-chair unity"
+        "fomc-dissent-autocorrelation",
+        "large-market-gap"
       ],
       "reference_classes": [
-        "dissent rate in divided FOMC ~50%"
+        "consecutive-multi-dissent-fomc"
       ],
       "research_refs": []
     }
