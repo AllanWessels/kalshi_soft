@@ -46,21 +46,39 @@ favor genuine softness and some category spread, but accuracy beats diversity �
 list skews to politics/economy, since that's where forecastable human-behavior volume is. To add
 a market, you will create its first forecast in Step 5 (the `--title/--category/--close-time`
 args seed the record); also reflect membership by editing `data/watchlist.json` **via a script
-or `store` helper**, not by guessing fields. Keep active count ≤ 20.
+or `store` helper**, not by guessing fields. Keep active count ≤ 20. `curate_watchlist.py` is
+**self-cleaning**: every run auto-purges dead entries (any non-active status), so the file holds only
+`active` markets and a `--drop` removes the entry outright. Resolved-market history is preserved in
+`resolutions.json`, not the watchlist — so nothing is lost.
 
 > **First run (bootstrap):** the watchlist is empty. Fill it with your best ~20 (or fewer if you
 > set `FIRST_RUN_MAX`). Every market will be "new" and therefore due.
 
-## Step 3 — Determine what's due
+## Step 3 — Determine what's due (then apply the per-run cap)
 ```
 python3 scripts/due_for_reforecast.py --summary
 ```
 Returns the JSON list of tickers needing a fresh forecast this run (new markets, markets past
-their tier cadence, or `--event-driven` overrides). Only these get researched — this is what
-keeps 3×/day affordable.
+their tier cadence, or `--event-driven` overrides). The list is **sorted by `days_to_close`
+ascending — most urgent first.** Only these get researched — this is what keeps 3×/day affordable.
 
-## Step 4 — Research & forecast each due market (FAN OUT to Sonnet)
-For the due list, **dispatch one Sonnet subagent per market in parallel** (Opus orchestrates).
+**Per-run cap (throttle — prevents rate-limit shutdowns):** research **at most the 12 most-urgent
+due markets this run.** Take the first 12 of the sorted list; if more than 12 are due, **defer the
+rest** — do not research them now. Carryover is automatic: a market you skip stays past its cadence
+and reappears (more urgent) on the next run, so nothing is lost. Always keep `--event-driven`
+overrides inside the kept set even if it means dropping a less-urgent cadence market. Note in the
+Step 8 log how many were deferred (`reforecast_deferred`).
+
+## Step 4 — Research & forecast each due market (FAN OUT to Sonnet, IN WAVES)
+For the capped due list (≤12 from Step 3), **dispatch Sonnet subagents in bounded waves of at
+most 4 at a time** — never all at once. This is the concurrency throttle that keeps the run under
+Anthropic's burst limits (a single 20-wide fan-out is what got the org rate-limited).
+
+> **Wave protocol (MANDATORY):** issue at most **4** `Task`/subagent calls in one message, then
+> **wait for all 4 to return** before issuing the next batch of ≤4. For 12 markets that is 3 waves.
+> Do **not** start a new wave until the previous wave's agents have all completed. Never put more
+> than 4 subagent calls in a single message.
+
 Give each worker the market title + ticker + resolution rules and this instruction:
 
 > Follow `.claude/skills/superforecasting/SKILL.md` steps 1–4 and 6. Form an INDEPENDENT

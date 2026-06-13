@@ -5,10 +5,14 @@ The agent decides WHICH markets to track (judgment); this script performs the
 mechanical add/drop against data/watchlist.json, pulling market metadata from
 data/candidates.json so fields are accurate and not guessed. Enforces the cap.
 
+Self-cleaning: every run purges dead entries (any non-active status) so the file
+never accumulates dropped/resolved tombstones. A --drop therefore removes the
+entry outright rather than leaving a marker.
+
 Usage:
     python3 scripts/curate_watchlist.py --add TICKER1,TICKER2
-    python3 scripts/curate_watchlist.py --drop TICKER          # marks status="dropped"
-    python3 scripts/curate_watchlist.py --list
+    python3 scripts/curate_watchlist.py --drop TICKER          # removes the entry
+    python3 scripts/curate_watchlist.py --list                 # also purges dead entries
 """
 from __future__ import annotations
 
@@ -84,13 +88,26 @@ def main() -> int:
             by_ticker[t].status = "dropped"
             dropped.append(t)
 
-    if added or dropped:
+    # Self-cleaning: purge dead entries (any non-active status) so the file does
+    # not accumulate tombstones run over run. Safe because non-active entries are
+    # redundant — resolved markets are the source of truth in resolutions.json,
+    # forecast records live in their own files, and reconcile re-discovers any
+    # still-open market via the forecast-record union (not watchlist status). This
+    # also removes anything dropped earlier in this same run.
+    purged = [m.ticker for m in wl.markets if m.status != "active"]
+    if purged:
+        wl.markets = [m for m in wl.markets if m.status == "active"]
+
+    if added or dropped or purged:
         store.save_watchlist(wl)
 
     if added:
         print(f"added:   {', '.join(added)}")
     if dropped:
         print(f"dropped: {', '.join(dropped)}")
+    if purged:
+        noun = "entry" if len(purged) == 1 else "entries"
+        print(f"purged:  {len(purged)} dead {noun} ({', '.join(purged)})")
     if skipped:
         print(f"skipped: {'; '.join(skipped)}")
 

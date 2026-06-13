@@ -1,23 +1,8 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-05-31T18:39:26Z",
+  "updated_at": "2026-06-13T02:19:00Z",
   "cap": 20,
   "markets": [
-    {
-      "ticker": "CONTROLH-2026-R",
-      "event_ticker": "CONTROLH-2026",
-      "title": "Will Republicans win the House in 2026?",
-      "category": "politics",
-      "close_time": "2027-02-01T15:00:00Z",
-      "added_at": "2026-05-31T17:38:26Z",
-      "liquidity_snapshot": {
-        "volume_24h": 47975.11,
-        "open_interest": 5000658.91,
-        "spread_cents": 1.0
-      },
-      "status": "dropped",
-      "reforecast_cadence_days": 7.0
-    },
     {
       "ticker": "KXFEDDECISION-26JUN-H0",
       "event_ticker": "KXFEDDECISION-26JUN",
@@ -32,186 +17,6 @@
       },
       "status": "active",
       "reforecast_cadence_days": 3.0
-    },
-    {
-      "ticker": "KXRECSSNBER-26",
-      "event_ticker": "KXRECSSNBER-26",
-      "title": "Will there be a recession in 2026?",
-      "category": "economy",
-      "close_time": "2027-01-31T13:25:00Z",
-      "added_at": "2026-05-31T17:38:26Z",
-      "liquidity_snapshot": {
-        "volume_24h": 6454.36,
-        "open_interest": 849659.07,
-        "spread_cents": 1.0
-      },
-      "status": "dropped",
-      "reforecast_cadence_days": 7.0
-    },
-    {
-      "ticker": "KXLBJRETIRE-26",
-      "event_ticker": "KXLBJRETIRE-26",
-      "title": "Will LeBron James announce his retirement in 2026?",
-      "category": "statements",
-      "close_time": "2026-10-31T14:00:00Z",
-      "added_at": "2026-05-31T17:38:26Z",
-      "liquidity_snapshot": {
-        "volume_24h": 14325.14,
-        "open_interest": 230281.9,
-        "spread_cents": 1.0
-      },
-      "status": "dropped",
-      "reforecast_cadence_days": 7.0
-    },
-    {
-      "ticker": "KXTAKEOVERACQWB-27JUN30-NFLX",
-      "event_ticker": "KXTAKEOVERACQWB-27JUN30",
-      "title": "Will Netflix's takeover of Warner Brothers succeed Before July 2027?",
-      "category": "culture",
-      "close_time": "2027-07-01T03:59:00Z",
-      "added_at": "2026-05-31T17:38:26Z",
-      "liquidity_snapshot": {
-        "volume_24h": 1069.37,
-        "open_interest": 379555.83,
-        "spread_cents": 1.0
-      },
-      "status": "dropped",
-      "reforecast_cadence_days": 7.0
-    },
-    {
-      "ticker": "KXSENATEMED-26-GRA",
-      "event_ticker": "KXSENATEMED-26",
-      "title": "Will Graham Platner be the Democratic nominee for the Senate in Maine?",
-      "category": "politics",
-      "close_time": "2026-11-03T15:00:00Z",
-      "added_at": "2026-05-31T17:38:26Z",
-      "liquidity_snapshot": {
-        "volume_24h": 290125.44,
-        "open_interest": 1243459.08,
-        "spread_cents": 1.0
-      },
-      "status": "dropped",
-      "reforecast_cadence_days": 7.0
-    },
-    {
-      "ticker": "KXMAYORLA-26-SPRA",
-      "event_ticker": "KXMAYORLA-26",
-      "title": "Who will win Los Angeles Mayoral Election?",
-      "category": "politics",
-      "close_time": "2027-06-02T14:00:00Z",
-      "added_at": "2026-05-31T18:10:20Z",
-      "liquidity_snapshot": {
-        "volume_24h": 1642986.32,
-        "open_interest": 18812992.48,
-        "spread_cents": 1.0
-      },
-      "status": "dropped",
-      "reforecast_cadence_days": 7.0
-    },
-    {
-      "ticker": "SENATETX-26-R",
-      "event_ticker": "SENATETX-26",
-      "title": "Will Republicans win the Senate race in Texas?",
-      "category": "politics",
-      "close_time": "2027-11-03T15:00:00Z",
-      "added_at": "2026-05-31T18:10:20Z",
-      "liquidity_snapshot": {
-        "volume_24h": 27889.67,
-        "open_interest": 1541050.97,
-        "spread_cents": 1.0
-      },
-      "status": "dropped",
-      "reforecast_cadence_days": 7.0
-    },
-    {
-      "ticker": "KXTRUMPOUT27-27-DJT",
-      "event_ticker": "KXTRUMPOUT27-27",
-      "title": "Donald Trump out before 2027?",
-      "category": "politics",
-      "close_time": "2027-01-01T15:00:00Z",
-      "added_at": "2026-05-31T18:10:20Z",
-      "liquidity_snapshot": {
-        "volume_24h": 7078.08,
-        "open_interest": 2365648.35,
-        "spread_cents": 0.0
-      },
-      "status": "dropped",
-      "reforecast_cadence_days": 7.0
-    },
-    {
-      "ticker": "KXSAVEACT-27-JAN04",
-      "event_ticker": "KXSAVEACT-27",
-      "title": "Will \"SAVE Act\" (H.R. 22) becomes law before Jan 4, 2027?",
-      "category": "politics",
-      "close_time": "2027-01-04T15:00:00Z",
-      "added_at": "2026-05-31T18:10:20Z",
-      "liquidity_snapshot": {
-        "volume_24h": 21584.73,
-        "open_interest": 2035388.57,
-        "spread_cents": 0.0
-      },
-      "status": "dropped",
-      "reforecast_cadence_days": 7.0
-    },
-    {
-      "ticker": "KXGOVFLNOMR-26-JFIS",
-      "event_ticker": "KXGOVFLNOMR-26",
-      "title": "Will James Fishback be the Republican nominee for Governor in Florida?",
-      "category": "politics",
-      "close_time": "2026-11-03T15:00:00Z",
-      "added_at": "2026-05-31T18:10:20Z",
-      "liquidity_snapshot": {
-        "volume_24h": 20499.77,
-        "open_interest": 1811666.01,
-        "spread_cents": 0.0
-      },
-      "status": "dropped",
-      "reforecast_cadence_days": 7.0
-    },
-    {
-      "ticker": "KXALIENS-27",
-      "event_ticker": "KXALIENS-27",
-      "title": "Will the U.S. confirm that aliens exist before 2027?",
-      "category": "politics",
-      "close_time": "2027-01-01T15:00:00Z",
-      "added_at": "2026-05-31T18:10:20Z",
-      "liquidity_snapshot": {
-        "volume_24h": 41530.3,
-        "open_interest": 9334073.5,
-        "spread_cents": 0.0
-      },
-      "status": "dropped",
-      "reforecast_cadence_days": 7.0
-    },
-    {
-      "ticker": "KXBALANCEPOWERCOMBO-27FEB-RR",
-      "event_ticker": "KXBALANCEPOWERCOMBO-27FEB",
-      "title": "Will House Control be Republican AND Senate Control be Republican for Feb 2027?",
-      "category": "politics",
-      "close_time": "2027-02-01T15:00:00Z",
-      "added_at": "2026-05-31T18:10:20Z",
-      "liquidity_snapshot": {
-        "volume_24h": 9415.24,
-        "open_interest": 1695501.72,
-        "spread_cents": 1.0
-      },
-      "status": "dropped",
-      "reforecast_cadence_days": 7.0
-    },
-    {
-      "ticker": "KXGOVCA-26-CBIA",
-      "event_ticker": "KXGOVCA-26",
-      "title": "Who will win the governorship in California?",
-      "category": "politics",
-      "close_time": "2027-11-03T15:00:00Z",
-      "added_at": "2026-05-31T18:10:20Z",
-      "liquidity_snapshot": {
-        "volume_24h": 106440.94,
-        "open_interest": 2272290.49,
-        "spread_cents": 1.0
-      },
-      "status": "dropped",
-      "reforecast_cadence_days": 7.0
     },
     {
       "ticker": "KXFEDDECISION-26JUN-C25",
@@ -229,66 +34,6 @@
       "reforecast_cadence_days": 3.0
     },
     {
-      "ticker": "KXRATECUTCOUNT-26DEC31-T0",
-      "event_ticker": "KXRATECUTCOUNT-26DEC31",
-      "title": "Will the Fed cut rates 0 times?",
-      "category": "economy",
-      "close_time": "2027-01-01T04:59:00Z",
-      "added_at": "2026-05-31T18:10:20Z",
-      "liquidity_snapshot": {
-        "volume_24h": 16751.66,
-        "open_interest": 459246.45,
-        "spread_cents": 5.0
-      },
-      "status": "dropped",
-      "reforecast_cadence_days": 7.0
-    },
-    {
-      "ticker": "FEDHIKE-26JUN30",
-      "event_ticker": "FEDHIKE",
-      "title": "Will the Federal Reserve hike rates by June 30, 2026?",
-      "category": "economy",
-      "close_time": "2026-07-01T03:59:00Z",
-      "added_at": "2026-05-31T18:10:20Z",
-      "liquidity_snapshot": {
-        "volume_24h": 1967.08,
-        "open_interest": 399141.07,
-        "spread_cents": 1.0
-      },
-      "status": "dropped",
-      "reforecast_cadence_days": 7.0
-    },
-    {
-      "ticker": "KXACQANNOUNCEEBAY-27JAN01-JAN01",
-      "event_ticker": "KXACQANNOUNCEEBAY-27JAN01",
-      "title": "Will GameStop announce acquisition of eBay before Jan 1, 2027?",
-      "category": "statements",
-      "close_time": "2027-01-01T04:59:00Z",
-      "added_at": "2026-05-31T18:10:20Z",
-      "liquidity_snapshot": {
-        "volume_24h": 20426.28,
-        "open_interest": 620128.34,
-        "spread_cents": 1.0
-      },
-      "status": "dropped",
-      "reforecast_cadence_days": 7.0
-    },
-    {
-      "ticker": "CONTROLS-2026-R",
-      "event_ticker": "CONTROLS-2026",
-      "title": "Will Republicans win the U.S. Senate in 2026?",
-      "category": "politics",
-      "close_time": "2027-02-01T15:00:00Z",
-      "added_at": "2026-05-31T18:10:20Z",
-      "liquidity_snapshot": {
-        "volume_24h": 15011.48,
-        "open_interest": 1481268.69,
-        "spread_cents": 1.0
-      },
-      "status": "dropped",
-      "reforecast_cadence_days": 7.0
-    },
-    {
       "ticker": "KXUSAIRANAGREEMENT-27-26JUL",
       "event_ticker": "KXUSAIRANAGREEMENT-27",
       "title": "Will the US agree to a new Iranian nuclear deal this year?",
@@ -304,66 +49,6 @@
       "reforecast_cadence_days": 7.0
     },
     {
-      "ticker": "KXLAMAYOR1R-26-SPRA",
-      "event_ticker": "KXLAMAYOR1R-26",
-      "title": "Who will win the first round of the Los Angeles mayoral election?",
-      "category": "politics",
-      "close_time": "2026-06-02T14:00:00Z",
-      "added_at": "2026-05-31T18:38:54Z",
-      "liquidity_snapshot": {
-        "volume_24h": 74880.24,
-        "open_interest": 366616.75,
-        "spread_cents": 1.0
-      },
-      "status": "active",
-      "reforecast_cadence_days": 0.0
-    },
-    {
-      "ticker": "KXGOVCAPRIMARY-26-CBIA",
-      "event_ticker": "KXGOVCAPRIMARY-26",
-      "title": "Who will win California's top-two primary for governor?",
-      "category": "politics",
-      "close_time": "2026-06-02T14:00:00Z",
-      "added_at": "2026-05-31T18:38:54Z",
-      "liquidity_snapshot": {
-        "volume_24h": 56606.75,
-        "open_interest": 368036.67,
-        "spread_cents": 0.0
-      },
-      "status": "active",
-      "reforecast_cadence_days": 0.0
-    },
-    {
-      "ticker": "KXGOVIANOMR-26-RFEE",
-      "event_ticker": "KXGOVIANOMR-26",
-      "title": "Will Randy Feenstra be the Republican nominee for Governor in Iowa?",
-      "category": "politics",
-      "close_time": "2026-06-02T14:00:00Z",
-      "added_at": "2026-05-31T18:38:54Z",
-      "liquidity_snapshot": {
-        "volume_24h": 17681.48,
-        "open_interest": 114409.77,
-        "spread_cents": 0.0
-      },
-      "status": "active",
-      "reforecast_cadence_days": 0.0
-    },
-    {
-      "ticker": "KXGOVCAPRIMARYPARTY-26-2R",
-      "event_ticker": "KXGOVCAPRIMARYPARTY-26",
-      "title": "Who will advance from California's top-two primary for governor?",
-      "category": "politics",
-      "close_time": "2026-06-30T14:00:00Z",
-      "added_at": "2026-05-31T18:38:54Z",
-      "liquidity_snapshot": {
-        "volume_24h": 14606.53,
-        "open_interest": 106272.08,
-        "spread_cents": 1.0
-      },
-      "status": "active",
-      "reforecast_cadence_days": 3.0
-    },
-    {
       "ticker": "KXGOVSDNOMR-26-TDOE",
       "event_ticker": "KXGOVSDNOMR-26",
       "title": "Will Toby Doeden be the Republican nominee for Governor in South Dakota?",
@@ -374,51 +59,6 @@
         "volume_24h": 7695.86,
         "open_interest": 83805.54,
         "spread_cents": 3.0
-      },
-      "status": "active",
-      "reforecast_cadence_days": 3.0
-    },
-    {
-      "ticker": "KXSENATENJR-26-VBRA",
-      "event_ticker": "KXSENATENJR-26",
-      "title": "Will Vinnie Brand be the Republican nominee for Senate in New Jersey?",
-      "category": "politics",
-      "close_time": "2026-06-09T14:00:00Z",
-      "added_at": "2026-05-31T18:38:54Z",
-      "liquidity_snapshot": {
-        "volume_24h": 10998.0,
-        "open_interest": 12620.0,
-        "spread_cents": 1.0
-      },
-      "status": "active",
-      "reforecast_cadence_days": 3.0
-    },
-    {
-      "ticker": "KXSENATESCR-26-LGRA",
-      "event_ticker": "KXSENATESCR-26",
-      "title": "Will Lindsey Graham be the Republican nominee for the Senate in South Carolina?",
-      "category": "politics",
-      "close_time": "2026-06-09T14:00:00Z",
-      "added_at": "2026-05-31T18:38:54Z",
-      "liquidity_snapshot": {
-        "volume_24h": 1532.4,
-        "open_interest": 87604.48,
-        "spread_cents": 1.0
-      },
-      "status": "active",
-      "reforecast_cadence_days": 3.0
-    },
-    {
-      "ticker": "KXSENATEREC-26MAY-JUN06",
-      "event_ticker": "KXSENATEREC-26MAY",
-      "title": "Will a reconciliation bill passed the Senate before Jun 6, 2026?",
-      "category": "politics",
-      "close_time": "2026-06-14T14:00:00Z",
-      "added_at": "2026-05-31T18:38:54Z",
-      "liquidity_snapshot": {
-        "volume_24h": 2851.51,
-        "open_interest": 50260.88,
-        "spread_cents": 2.0
       },
       "status": "active",
       "reforecast_cadence_days": 3.0
@@ -437,36 +77,6 @@
       },
       "status": "active",
       "reforecast_cadence_days": 3.0
-    },
-    {
-      "ticker": "KXSEOULMAYOR-26JUN03-CWON",
-      "event_ticker": "KXSEOULMAYOR-26JUN03",
-      "title": "Will Chong Won-o win the 2026 Seoul mayoral election?",
-      "category": "politics",
-      "close_time": "2026-06-03T14:00:00Z",
-      "added_at": "2026-05-31T18:38:54Z",
-      "liquidity_snapshot": {
-        "volume_24h": 2304.96,
-        "open_interest": 38412.45,
-        "spread_cents": 2.0
-      },
-      "status": "active",
-      "reforecast_cadence_days": 0.0
-    },
-    {
-      "ticker": "KXU3-26MAY-T4.2",
-      "event_ticker": "KXU3-26MAY",
-      "title": "Will the unemployment rate (U-3) be above 4.2% in May?",
-      "category": "economy",
-      "close_time": "2026-06-05T14:00:00Z",
-      "added_at": "2026-05-31T18:38:54Z",
-      "liquidity_snapshot": {
-        "volume_24h": 4076.33,
-        "open_interest": 14941.39,
-        "spread_cents": 1.0
-      },
-      "status": "active",
-      "reforecast_cadence_days": 0.0
     },
     {
       "ticker": "KXFEDDECISION-26JUN-H25",
