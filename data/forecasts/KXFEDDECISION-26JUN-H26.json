@@ -5,7 +5,7 @@
   "category": "economy",
   "close_time": "2026-06-17T17:59:00Z",
   "current": {
-    "as_of": "2026-06-13T07:05:53Z",
+    "as_of": "2026-06-13T10:25:06Z",
     "my_probability": 0.01,
     "my_confidence": "high",
     "market_implied_probability": 0.005,
@@ -20,19 +20,16 @@
     "lean": "NONE",
     "conviction": "low",
     "lean_note": "I lean NO (my prob 1%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
-    "prob_delta_vs_prev": null,
-    "trigger": "bootstrap",
-    "rationale_summary": "A hike of more than 25bps is near-impossible at a new chair's first meeting absent a crisis.",
+    "prob_delta_vs_prev": 0.0,
+    "trigger": "near_close",
+    "rationale_summary": "Held: >25bps hike near-impossible absent a crisis.",
     "key_drivers": [
-      "no crisis",
-      "new-chair caution"
+      "no crisis"
     ],
     "reference_classes": [
-      "no >25bps single-meeting hikes in modern era"
+      "no >25bps single-meeting hikes modern era"
     ],
-    "research_refs": [
-      "https://www.federalreserve.gov/monetarypolicy/fomcminutes20260429.htm"
-    ]
+    "research_refs": []
   },
   "history": [
     {
@@ -64,6 +61,33 @@
       "research_refs": [
         "https://www.federalreserve.gov/monetarypolicy/fomcminutes20260429.htm"
       ]
+    },
+    {
+      "as_of": "2026-06-13T10:25:06Z",
+      "my_probability": 0.01,
+      "my_confidence": "high",
+      "market_implied_probability": 0.005,
+      "market_price_cents": 0.0,
+      "edge": 0.005,
+      "yes_ask": 0.01,
+      "no_ask": 1.0,
+      "fee_per_contract": 0.0,
+      "ev_per_contract": -0.010000000000000009,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "I lean NO (my prob 1%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+      "prob_delta_vs_prev": 0.0,
+      "trigger": "near_close",
+      "rationale_summary": "Held: >25bps hike near-impossible absent a crisis.",
+      "key_drivers": [
+        "no crisis"
+      ],
+      "reference_classes": [
+        "no >25bps single-meeting hikes modern era"
+      ],
+      "research_refs": []
     }
   ]
 }

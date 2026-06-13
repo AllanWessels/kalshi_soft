@@ -5,7 +5,7 @@
   "category": "economy",
   "close_time": "2026-06-17T17:59:00Z",
   "current": {
-    "as_of": "2026-06-13T07:05:53Z",
+    "as_of": "2026-06-13T10:25:06Z",
     "my_probability": 0.03,
     "my_confidence": "medium",
     "market_implied_probability": 0.005,
@@ -22,19 +22,15 @@
     "lean_note": "I lean NO (my prob 3%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
     "prob_delta_vs_prev": 0.0,
     "trigger": "near_close",
-    "rationale_summary": "A 25bps hike is unlikely at Warsh's first meeting despite elevated inflation; markets price ~3% and there is no forward guidance signaling a hike.",
+    "rationale_summary": "Held: no new info; a 25bps hike unlikely at first meeting absent forward guidance.",
     "key_drivers": [
-      "elevated inflation",
       "no hike guidance",
       "new-chair caution"
     ],
     "reference_classes": [
-      "first-meeting continuity",
-      "CME hike pricing"
+      "first-meeting continuity"
     ],
-    "research_refs": [
-      "https://www.cnbc.com/2026/06/10/cpi-inflation-report-may-2026.html"
-    ]
+    "research_refs": []
   },
   "history": [
     {
@@ -67,7 +63,7 @@
       ]
     },
     {
-      "as_of": "2026-06-13T07:05:53Z",
+      "as_of": "2026-06-13T10:25:06Z",
       "my_probability": 0.03,
       "my_confidence": "medium",
       "market_implied_probability": 0.005,
@@ -84,19 +80,15 @@
       "lean_note": "I lean NO (my prob 3%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
       "prob_delta_vs_prev": 0.0,
       "trigger": "near_close",
-      "rationale_summary": "A 25bps hike is unlikely at Warsh's first meeting despite elevated inflation; markets price ~3% and there is no forward guidance signaling a hike.",
+      "rationale_summary": "Held: no new info; a 25bps hike unlikely at first meeting absent forward guidance.",
       "key_drivers": [
-        "elevated inflation",
         "no hike guidance",
         "new-chair caution"
       ],
       "reference_classes": [
-        "first-meeting continuity",
-        "CME hike pricing"
+        "first-meeting continuity"
       ],
-      "research_refs": [
-        "https://www.cnbc.com/2026/06/10/cpi-inflation-report-may-2026.html"
-      ]
+      "research_refs": []
     }
   ]
 }

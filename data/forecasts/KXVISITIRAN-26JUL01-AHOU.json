@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "ticker": "KXVISITIRAN-26JUL01-AHOU",
+  "title": "Will any U.S. House member visit Iran before Jul 1, 2026?",
+  "category": "politics",
+  "close_time": "2026-07-01T14:00:00Z",
+  "current": {
+    "as_of": "2026-06-13T10:29:30Z",
+    "my_probability": 0.015,
+    "my_confidence": "high",
+    "market_implied_probability": 0.013,
+    "market_price_cents": 1.0,
+    "edge": 0.002,
+    "yes_ask": 0.016,
+    "no_ask": 0.99,
+    "fee_per_contract": 0.01,
+    "ev_per_contract": -0.015000000000000005,
+    "limit_price": null,
+    "ev_limit_per_contract": null,
+    "lean": "NONE",
+    "conviction": "low",
+    "lean_note": "I lean NO (my prob 2%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+    "prob_delta_vs_prev": null,
+    "trigger": "bootstrap",
+    "rationale_summary": "No sitting US House member has visited Iran in the modern era; with an active conflict, a Level 4 advisory, and no planned CODEL, a visit before July 1 is virtually impossible (marginally above Rubio as an informal trip is less institutionally constrained).",
+    "key_drivers": [
+      "no modern sitting-member visits",
+      "active conflict",
+      "Level 4 advisory",
+      "no planned CODEL"
+    ],
+    "reference_classes": [
+      "0 known sitting House-member visits to Iran",
+      "one staff trip 2003"
+    ],
+    "research_refs": [
+      "https://en.wikipedia.org/wiki/List_of_diplomatic_visits_to_Iran"
+    ]
+  },
+  "history": [
+    {
+      "as_of": "2026-06-13T10:29:30Z",
+      "my_probability": 0.015,
+      "my_confidence": "high",
+      "market_implied_probability": 0.013,
+      "market_price_cents": 1.0,
+      "edge": 0.002,
+      "yes_ask": 0.016,
+      "no_ask": 0.99,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": -0.015000000000000005,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "I lean NO (my prob 2%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+      "prob_delta_vs_prev": null,
+      "trigger": "bootstrap",
+      "rationale_summary": "No sitting US House member has visited Iran in the modern era; with an active conflict, a Level 4 advisory, and no planned CODEL, a visit before July 1 is virtually impossible (marginally above Rubio as an informal trip is less institutionally constrained).",
+      "key_drivers": [
+        "no modern sitting-member visits",
+        "active conflict",
+        "Level 4 advisory",
+        "no planned CODEL"
+      ],
+      "reference_classes": [
+        "0 known sitting House-member visits to Iran",
+        "one staff trip 2003"
+      ],
+      "research_refs": [
+        "https://en.wikipedia.org/wiki/List_of_diplomatic_visits_to_Iran"
+      ]
+    }
+  ]
+}

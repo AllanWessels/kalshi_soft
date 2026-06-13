@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "ticker": "KXHORMUZWEEKLY-26JUN14-T25",
+  "title": "Will there be more than 25 transit calls through the Strait of Hormuz from Jun 8 to Jun 14, 2026?",
+  "category": "politics",
+  "close_time": "2026-06-16T13:00:00Z",
+  "current": {
+    "as_of": "2026-06-13T10:29:30Z",
+    "my_probability": 0.42,
+    "my_confidence": "low",
+    "market_implied_probability": 0.445,
+    "market_price_cents": 44.0,
+    "edge": -0.025000000000000022,
+    "yes_ask": 0.45,
+    "no_ask": 0.56,
+    "fee_per_contract": 0.02,
+    "ev_per_contract": 1.734723475976807e-17,
+    "limit_price": null,
+    "ev_limit_per_contract": null,
+    "lean": "NONE",
+    "conviction": "low",
+    "lean_note": "I lean NO (my prob 42%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+    "prob_delta_vs_prev": null,
+    "trigger": "bootstrap",
+    "rationale_summary": "The Jun 8-14 week ran at near-zero commercial transits after the Jun 10-11 IRGC hard closure, but IMF PortWatch counts traffic broadly (both directions, naval) and the prior three weeks all resolved in the 25-49 range, leaving real uncertainty whether the total clears 25.",
+    "key_drivers": [
+      "near-zero commercial transits this week",
+      "IRGC hard closure Jun 10-11",
+      "prior 3 weeks resolved 25-49",
+      "PortWatch counts broadly"
+    ],
+    "reference_classes": [
+      "prior weekly PortWatch totals 25-49",
+      "Hormuz closure 2026"
+    ],
+    "research_refs": [
+      "https://portwatch.imf.org/pages/cc317ba850e34c4dadbead6f7b336fb1"
+    ]
+  },
+  "history": [
+    {
+      "as_of": "2026-06-13T10:29:30Z",
+      "my_probability": 0.42,
+      "my_confidence": "low",
+      "market_implied_probability": 0.445,
+      "market_price_cents": 44.0,
+      "edge": -0.025000000000000022,
+      "yes_ask": 0.45,
+      "no_ask": 0.56,
+      "fee_per_contract": 0.02,
+      "ev_per_contract": 1.734723475976807e-17,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "I lean NO (my prob 42%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+      "prob_delta_vs_prev": null,
+      "trigger": "bootstrap",
+      "rationale_summary": "The Jun 8-14 week ran at near-zero commercial transits after the Jun 10-11 IRGC hard closure, but IMF PortWatch counts traffic broadly (both directions, naval) and the prior three weeks all resolved in the 25-49 range, leaving real uncertainty whether the total clears 25.",
+      "key_drivers": [
+        "near-zero commercial transits this week",
+        "IRGC hard closure Jun 10-11",
+        "prior 3 weeks resolved 25-49",
+        "PortWatch counts broadly"
+      ],
+      "reference_classes": [
+        "prior weekly PortWatch totals 25-49",
+        "Hormuz closure 2026"
+      ],
+      "research_refs": [
+        "https://portwatch.imf.org/pages/cc317ba850e34c4dadbead6f7b336fb1"
+      ]
+    }
+  ]
+}

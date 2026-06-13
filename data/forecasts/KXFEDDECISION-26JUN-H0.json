@@ -5,7 +5,7 @@
   "category": "economy",
   "close_time": "2026-06-17T17:59:00Z",
   "current": {
-    "as_of": "2026-06-13T07:05:52Z",
+    "as_of": "2026-06-13T10:25:06Z",
     "my_probability": 0.95,
     "my_confidence": "medium",
     "market_implied_probability": 0.985,
@@ -22,21 +22,15 @@
     "lean_note": "I lean YES (my prob 95%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
     "prob_delta_vs_prev": -0.020000000000000018,
     "trigger": "near_close",
-    "rationale_summary": "Core PCE 3.3% and CPI 4.2% leave no room for a cut; new Chair Warsh's first meeting strongly favors continuity, with any hawkish shift expressed via dot plot/statement rather than a rate move.",
+    "rationale_summary": "Held: no new information since this morning's forecast; pre-meeting blackout. Hold overwhelmingly likely at Warsh's first meeting with inflation elevated.",
     "key_drivers": [
       "inflation above target",
-      "resilient labor market",
-      "new-chair continuity norm",
-      "CME ~97% hold"
+      "new-chair continuity norm"
     ],
     "reference_classes": [
-      "Fed holds at new-chair first meeting",
-      "hawkish-pause meetings 2023"
+      "Fed holds at new-chair first meeting"
     ],
-    "research_refs": [
-      "https://www.federalreserve.gov/monetarypolicy/fomcminutes20260429.htm",
-      "https://www.cnbc.com/2026/06/10/cpi-inflation-report-may-2026.html"
-    ]
+    "research_refs": []
   },
   "history": [
     {
@@ -69,7 +63,7 @@
       ]
     },
     {
-      "as_of": "2026-06-13T07:05:52Z",
+      "as_of": "2026-06-13T10:25:06Z",
       "my_probability": 0.95,
       "my_confidence": "medium",
       "market_implied_probability": 0.985,
@@ -86,21 +80,15 @@
       "lean_note": "I lean YES (my prob 95%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
       "prob_delta_vs_prev": -0.020000000000000018,
       "trigger": "near_close",
-      "rationale_summary": "Core PCE 3.3% and CPI 4.2% leave no room for a cut; new Chair Warsh's first meeting strongly favors continuity, with any hawkish shift expressed via dot plot/statement rather than a rate move.",
+      "rationale_summary": "Held: no new information since this morning's forecast; pre-meeting blackout. Hold overwhelmingly likely at Warsh's first meeting with inflation elevated.",
       "key_drivers": [
         "inflation above target",
-        "resilient labor market",
-        "new-chair continuity norm",
-        "CME ~97% hold"
+        "new-chair continuity norm"
       ],
       "reference_classes": [
-        "Fed holds at new-chair first meeting",
-        "hawkish-pause meetings 2023"
+        "Fed holds at new-chair first meeting"
       ],
-      "research_refs": [
-        "https://www.federalreserve.gov/monetarypolicy/fomcminutes20260429.htm",
-        "https://www.cnbc.com/2026/06/10/cpi-inflation-report-may-2026.html"
-      ]
+      "research_refs": []
     }
   ]
 }

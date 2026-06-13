@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "ticker": "KXHORMUZWEEKLY-26JUN14-T30",
+  "title": "Will there be more than 30 transit calls through the Strait of Hormuz from Jun 8 to Jun 14, 2026?",
+  "category": "politics",
+  "close_time": "2026-06-16T13:00:00Z",
+  "current": {
+    "as_of": "2026-06-13T10:29:30Z",
+    "my_probability": 0.25,
+    "my_confidence": "low",
+    "market_implied_probability": 0.32,
+    "market_price_cents": 32.0,
+    "edge": -0.07,
+    "yes_ask": 0.33,
+    "no_ask": 0.69,
+    "fee_per_contract": 0.02,
+    "ev_per_contract": 0.04000000000000005,
+    "limit_price": 0.67,
+    "ev_limit_per_contract": 0.06,
+    "lean": "NONE",
+    "conviction": "low",
+    "lean_note": "low confidence — estimate too uncertain to fade the market",
+    "prob_delta_vs_prev": null,
+    "trigger": "bootstrap",
+    "rationale_summary": "Same week as T25 but a higher bar (>30); with near-zero commercial transits and the hard closure, exceeding 30 is less likely than 25, though PortWatch's broad counting and prior 25-49 resolutions keep it live.",
+    "key_drivers": [
+      "higher threshold",
+      "near-zero commercial transits",
+      "PortWatch broad counting",
+      "prior weeks 25-49"
+    ],
+    "reference_classes": [
+      "prior weekly PortWatch totals 25-49"
+    ],
+    "research_refs": [
+      "https://portwatch.imf.org/pages/cc317ba850e34c4dadbead6f7b336fb1"
+    ]
+  },
+  "history": [
+    {
+      "as_of": "2026-06-13T10:29:30Z",
+      "my_probability": 0.25,
+      "my_confidence": "low",
+      "market_implied_probability": 0.32,
+      "market_price_cents": 32.0,
+      "edge": -0.07,
+      "yes_ask": 0.33,
+      "no_ask": 0.69,
+      "fee_per_contract": 0.02,
+      "ev_per_contract": 0.04000000000000005,
+      "limit_price": 0.67,
+      "ev_limit_per_contract": 0.06,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "low confidence — estimate too uncertain to fade the market",
+      "prob_delta_vs_prev": null,
+      "trigger": "bootstrap",
+      "rationale_summary": "Same week as T25 but a higher bar (>30); with near-zero commercial transits and the hard closure, exceeding 30 is less likely than 25, though PortWatch's broad counting and prior 25-49 resolutions keep it live.",
+      "key_drivers": [
+        "higher threshold",
+        "near-zero commercial transits",
+        "PortWatch broad counting",
+        "prior weeks 25-49"
+      ],
+      "reference_classes": [
+        "prior weekly PortWatch totals 25-49"
+      ],
+      "research_refs": [
+        "https://portwatch.imf.org/pages/cc317ba850e34c4dadbead6f7b336fb1"
+      ]
+    }
+  ]
+}

@@ -5,7 +5,7 @@
   "category": "economy",
   "close_time": "2026-06-17T17:59:00Z",
   "current": {
-    "as_of": "2026-06-13T07:05:53Z",
+    "as_of": "2026-06-13T10:25:06Z",
     "my_probability": 0.02,
     "my_confidence": "high",
     "market_implied_probability": 0.005,
@@ -22,18 +22,15 @@
     "lean_note": "I lean NO (my prob 2%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
     "prob_delta_vs_prev": -0.009999999999999998,
     "trigger": "near_close",
-    "rationale_summary": "A cut is unjustified with core PCE at 3.3% and a resilient labor market; new chair will not ease at his first meeting.",
+    "rationale_summary": "Held: a cut is unjustified with core PCE 3.3%.",
     "key_drivers": [
       "inflation far above target",
-      "strong jobs",
       "no easing case"
     ],
     "reference_classes": [
       "Fed does not cut with core inflation >3%"
     ],
-    "research_refs": [
-      "https://www.cnbc.com/2026/05/28/core-inflation-april-2026.html"
-    ]
+    "research_refs": []
   },
   "history": [
     {
@@ -66,7 +63,7 @@
       ]
     },
     {
-      "as_of": "2026-06-13T07:05:53Z",
+      "as_of": "2026-06-13T10:25:06Z",
       "my_probability": 0.02,
       "my_confidence": "high",
       "market_implied_probability": 0.005,
@@ -83,18 +80,15 @@
       "lean_note": "I lean NO (my prob 2%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
       "prob_delta_vs_prev": -0.009999999999999998,
       "trigger": "near_close",
-      "rationale_summary": "A cut is unjustified with core PCE at 3.3% and a resilient labor market; new chair will not ease at his first meeting.",
+      "rationale_summary": "Held: a cut is unjustified with core PCE 3.3%.",
       "key_drivers": [
         "inflation far above target",
-        "strong jobs",
         "no easing case"
       ],
       "reference_classes": [
         "Fed does not cut with core inflation >3%"
       ],
-      "research_refs": [
-        "https://www.cnbc.com/2026/05/28/core-inflation-april-2026.html"
-      ]
+      "research_refs": []
     }
   ]
 }

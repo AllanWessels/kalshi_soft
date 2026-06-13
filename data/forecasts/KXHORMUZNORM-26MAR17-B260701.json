@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "ticker": "KXHORMUZNORM-26MAR17-B260701",
+  "title": "Will the 7-day moving average of transit calls through the Strait of Hormuz be above 60 before July 1, 2026?",
+  "category": "politics",
+  "close_time": "2026-07-07T13:59:00Z",
+  "current": {
+    "as_of": "2026-06-13T10:29:30Z",
+    "my_probability": 0.06,
+    "my_confidence": "medium",
+    "market_implied_probability": 0.165,
+    "market_price_cents": 16.0,
+    "edge": -0.10500000000000001,
+    "yes_ask": 0.17,
+    "no_ask": 0.84,
+    "fee_per_contract": 0.01,
+    "ev_per_contract": 0.08999999999999998,
+    "limit_price": 0.83,
+    "ev_limit_per_contract": 0.1,
+    "lean": "NO",
+    "conviction": "medium",
+    "lean_note": null,
+    "prob_delta_vs_prev": null,
+    "trigger": "bootstrap",
+    "rationale_summary": "Reaching a 7-day MA of 60 (~50% of normal) by July 1 from today's ~3/day requires full physical reopening within ~18 days; mine clearing (months), war-risk insurance reinstatement, and vessel repositioning make this near-impossible even if a deal is signed this week.",
+    "key_drivers": [
+      "MA ~3/day vs 60 threshold",
+      "mine clearing takes months",
+      "war-risk insurance lag",
+      "vessel backlog",
+      "18-day window"
+    ],
+    "reference_classes": [
+      "no chokepoint recovers 2%->50% in 3 weeks",
+      "Tanker War recovery took months"
+    ],
+    "research_refs": [
+      "https://www.pbs.org/newshour/world/u-s-says-its-clearing-iranian-mines-in-latest-push-to-open-the-strait-of-hormuz"
+    ]
+  },
+  "history": [
+    {
+      "as_of": "2026-06-13T10:29:30Z",
+      "my_probability": 0.06,
+      "my_confidence": "medium",
+      "market_implied_probability": 0.165,
+      "market_price_cents": 16.0,
+      "edge": -0.10500000000000001,
+      "yes_ask": 0.17,
+      "no_ask": 0.84,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": 0.08999999999999998,
+      "limit_price": 0.83,
+      "ev_limit_per_contract": 0.1,
+      "lean": "NO",
+      "conviction": "medium",
+      "lean_note": null,
+      "prob_delta_vs_prev": null,
+      "trigger": "bootstrap",
+      "rationale_summary": "Reaching a 7-day MA of 60 (~50% of normal) by July 1 from today's ~3/day requires full physical reopening within ~18 days; mine clearing (months), war-risk insurance reinstatement, and vessel repositioning make this near-impossible even if a deal is signed this week.",
+      "key_drivers": [
+        "MA ~3/day vs 60 threshold",
+        "mine clearing takes months",
+        "war-risk insurance lag",
+        "vessel backlog",
+        "18-day window"
+      ],
+      "reference_classes": [
+        "no chokepoint recovers 2%->50% in 3 weeks",
+        "Tanker War recovery took months"
+      ],
+      "research_refs": [
+        "https://www.pbs.org/newshour/world/u-s-says-its-clearing-iranian-mines-in-latest-push-to-open-the-strait-of-hormuz"
+      ]
+    }
+  ]
+}
