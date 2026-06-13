@@ -37,23 +37,33 @@ class Strategy:
     crowd_adjust_weight: float = 0.0   # 0..1 weight pulled toward the market price
     debate_rounds: int = 0             # 0 = no debate (independent estimation)
     redteam: bool = False              # adversarial critic pass before committing
-    forecaster_model: str = "sonnet"   # Claude tier for each forecaster
+    forecaster_model: str = "opus"     # forecaster model: "opus" (frontier) or "local" (Qwen)
 
 
 # The seed arms. Ordered so the round-robin selector cycles through them.
+# PROJECT DIRECTIVE: forecasting uses only Opus (frontier) or local Qwen — never Sonnet.
+# The L* arms run the LOCAL model as forecaster so the scoreboard measures whether a free
+# local model can match Opus on Brier + realized profit (topology is an experiment).
 REGISTRY: dict[str, Strategy] = {
     "S0-single": Strategy(
-        "S0-single", "Single forecaster, no aggregation (baseline)",
-        n_forecasters=1, aggregation="mean"),
+        "S0-single", "Single Opus forecaster, no aggregation (baseline)",
+        n_forecasters=1, aggregation="mean", forecaster_model="opus"),
     "S1-ensemble3": Strategy(
-        "S1-ensemble3", "3 independent forecasters -> trimmed mean",
-        n_forecasters=3, aggregation="trimmed_mean"),
+        "S1-ensemble3", "3 independent Opus forecasters -> trimmed mean",
+        n_forecasters=3, aggregation="trimmed_mean", forecaster_model="opus"),
     "S2-ensemble3-crowd": Strategy(
         "S2-ensemble3-crowd", "S1 + crowd-adjust 30% toward the market price",
-        n_forecasters=3, aggregation="trimmed_mean", crowd_adjust_weight=0.30),
+        n_forecasters=3, aggregation="trimmed_mean", crowd_adjust_weight=0.30,
+        forecaster_model="opus"),
     "S3-ensemble3-redteam": Strategy(
         "S3-ensemble3-redteam", "S1 + adversarial red-team pass before commit",
-        n_forecasters=3, aggregation="trimmed_mean", redteam=True),
+        n_forecasters=3, aggregation="trimmed_mean", redteam=True, forecaster_model="opus"),
+    "L0-local-single": Strategy(
+        "L0-local-single", "Single LOCAL Qwen forecaster (free; measured head-to-head vs Opus)",
+        n_forecasters=1, aggregation="mean", forecaster_model="local"),
+    "L1-local-crowd": Strategy(
+        "L1-local-crowd", "Local Qwen forecaster + crowd-adjust 30% toward the market price",
+        n_forecasters=1, aggregation="mean", crowd_adjust_weight=0.30, forecaster_model="local"),
 }
 
 DEFAULT_STRATEGY = "S1-ensemble3"

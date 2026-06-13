@@ -226,6 +226,43 @@ def critique(
 
 
 # ---------------------------------------------------------------------------
+# Forecasting tier — LOCAL model as forecaster (the L* strategy arms)
+# ---------------------------------------------------------------------------
+
+_FORECASTER_SYSTEM = (
+    "You are a calibrated superforecaster for human-behavior markets (politics, policy, "
+    "culture). Reason from the supplied evidence notes ONLY. Follow the method: establish a "
+    "base rate / reference class first, update incrementally on the evidence, run a quick "
+    "pre-mortem, and avoid overreacting to a single noisy signal. Output a GRANULAR probability "
+    "(not lazy round numbers). You are NOT given the market price — do not guess it. Judge "
+    "epistemic confidence separately from the probability."
+)
+
+
+def forecast(question: str, evidence_notes: dict, *, as_of: str = "") -> dict:
+    """LOCAL-model forecaster (the L* arms). Returns
+    ``{"my_probability": float, "my_confidence": "low|medium|high",
+    "rationale_summary": str, "key_drivers": [str], "reference_classes": [str]}``.
+    Raises LocalLLMError so the orchestrator can fall back to an Opus forecaster."""
+    import json as _json
+    user = (
+        f"QUESTION: {question}\n"
+        f"AS_OF: {as_of}\n\n"
+        f"EVIDENCE NOTES (JSON):\n{_json.dumps(evidence_notes, indent=2)}\n\n"
+        'OUTPUT JSON: {"my_probability": <0-1 float>, "my_confidence": "low|medium|high", '
+        '"rationale_summary": str, "key_drivers": [str], "reference_classes": [str]}'
+    )
+    out = complete_json(_FORECASTER_SYSTEM, user, max_tokens=900)
+    # Clamp + validate the probability so a malformed value can't poison the record.
+    p = out.get("my_probability")
+    if not isinstance(p, (int, float)) or not (0.0 <= float(p) <= 1.0):
+        raise LocalLLMError(f"local forecaster returned invalid probability: {p!r}")
+    out["my_probability"] = float(p)
+    out.setdefault("my_confidence", "low")
+    return out
+
+
+# ---------------------------------------------------------------------------
 # Inline self-test (no live server required — exercises parsing + fallback)
 # ---------------------------------------------------------------------------
 
@@ -274,6 +311,22 @@ if __name__ == "__main__":
         v = critique("Q", 0.7, "reasoning", outcome=1, market_implied=0.6)
         check("critique_parsed",
               v["rubric_scores"]["base_rate_established"]["pass"] is True)
+    finally:
+        globals()["chat"] = _orig_chat
+
+    # forecast(): valid probability parses; out-of-range / non-numeric raises
+    globals()["chat"] = lambda *a, **k: '{"my_probability": 0.37, "my_confidence": "medium", "rationale_summary": "r"}'
+    try:
+        fc = forecast("Q", {"facts": []}, as_of="2026-06-13")
+        check("forecast_parsed", fc["my_probability"] == 0.37 and fc["my_confidence"] == "medium")
+    finally:
+        globals()["chat"] = _orig_chat
+    globals()["chat"] = lambda *a, **k: '{"my_probability": 1.7}'
+    try:
+        forecast("Q", {})
+        check("forecast_rejects_bad_prob", False)
+    except LocalLLMError:
+        check("forecast_rejects_bad_prob", True)
     finally:
         globals()["chat"] = _orig_chat
 

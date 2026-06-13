@@ -135,11 +135,13 @@ LOCAL_LLM_MODEL = os.environ.get("LOCAL_LLM_MODEL", "qwen3:14b-q4_K_M").strip()
 LOCAL_LLM_TIMEOUT_S = 60
 LOCAL_LLM_API_KEY = os.environ.get("LOCAL_LLM_API_KEY", "ollama").strip()  # Ollama ignores it
 
-# Claude tiers per role (lifted out of markdown prose into code). The orchestrator
-# reads these to decide which model each step's sub-agents use.
-MODEL_FORECASTER = "sonnet"   # the N independent forecasters (strategy arms)
+# Per-role model routing. PROJECT DIRECTIVE: only two model families are used in
+# this project — Opus (frontier Claude) and Qwen (local open-weight). NEVER Sonnet.
+# Forecasting runs on Opus; a local-Qwen forecaster ARM is measured head-to-head on
+# the scoreboard (see lib/strategies). Retrieval + adversarial critic run on Qwen.
+MODEL_FORECASTER = "opus"     # the N independent Claude forecasters (strategy arms)
 MODEL_CRITIC = "local"        # blind adversarial critic -> local Qwen (different family)
-MODEL_DEFENDER = "sonnet"     # argues what was right / unforeseeable
+MODEL_DEFENDER = "opus"       # argues what was right / unforeseeable
 MODEL_JUDGE = "opus"          # reads critic+defender, issues verdict + lesson
 
 # Post-mortem panel rubric: fixed BEFORE resolution so the judge can't retrofit
