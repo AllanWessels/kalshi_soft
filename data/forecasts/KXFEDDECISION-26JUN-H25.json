@@ -5,36 +5,35 @@
   "category": "economy",
   "close_time": "2026-06-17T17:59:00Z",
   "current": {
-    "as_of": "2026-06-13T03:15:35Z",
-    "my_probability": 0.025,
+    "as_of": "2026-06-13T07:05:53Z",
+    "my_probability": 0.03,
     "my_confidence": "medium",
     "market_implied_probability": 0.005,
     "market_price_cents": 0.0,
-    "edge": 0.02,
+    "edge": 0.024999999999999998,
     "yes_ask": 0.01,
     "no_ask": 1.0,
     "fee_per_contract": 0.0,
-    "ev_per_contract": -0.025000000000000022,
+    "ev_per_contract": -0.030000000000000027,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "I lean NO (my prob 2%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
-    "prob_delta_vs_prev": -0.0049999999999999975,
+    "lean_note": "I lean NO (my prob 3%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+    "prob_delta_vs_prev": 0.0,
     "trigger": "near_close",
-    "rationale_summary": "CPI's surge to 4.2% YoY plus a hawkish new Chair create a small hike tail the market (0.5%) underweights, but a first-meeting unprimed hike is near-unprecedented; modal is still no-hike, so no actionable lean.",
+    "rationale_summary": "A 25bps hike is unlikely at Warsh's first meeting despite elevated inflation; markets price ~3% and there is no forward guidance signaling a hike.",
     "key_drivers": [
-      "cpi_4.2pct",
-      "chair_warsh_hawkish",
-      "no_pre_signaling"
+      "elevated inflation",
+      "no hike guidance",
+      "new-chair caution"
     ],
     "reference_classes": [
-      "new_chair_debut_no_hike",
-      "fed_follows_futures_30d"
+      "first-meeting continuity",
+      "CME hike pricing"
     ],
     "research_refs": [
-      "growbeansprout.com/tools/fedwatch",
-      "cnbc.com/2026/06/10/cpi-inflation-report-may-2026.html"
+      "https://www.cnbc.com/2026/06/10/cpi-inflation-report-may-2026.html"
     ]
   },
   "history": [
@@ -68,36 +67,35 @@
       ]
     },
     {
-      "as_of": "2026-06-13T03:15:35Z",
-      "my_probability": 0.025,
+      "as_of": "2026-06-13T07:05:53Z",
+      "my_probability": 0.03,
       "my_confidence": "medium",
       "market_implied_probability": 0.005,
       "market_price_cents": 0.0,
-      "edge": 0.02,
+      "edge": 0.024999999999999998,
       "yes_ask": 0.01,
       "no_ask": 1.0,
       "fee_per_contract": 0.0,
-      "ev_per_contract": -0.025000000000000022,
+      "ev_per_contract": -0.030000000000000027,
       "limit_price": null,
       "ev_limit_per_contract": null,
       "lean": "NONE",
       "conviction": "low",
-      "lean_note": "I lean NO (my prob 2%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
-      "prob_delta_vs_prev": -0.0049999999999999975,
+      "lean_note": "I lean NO (my prob 3%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+      "prob_delta_vs_prev": 0.0,
       "trigger": "near_close",
-      "rationale_summary": "CPI's surge to 4.2% YoY plus a hawkish new Chair create a small hike tail the market (0.5%) underweights, but a first-meeting unprimed hike is near-unprecedented; modal is still no-hike, so no actionable lean.",
+      "rationale_summary": "A 25bps hike is unlikely at Warsh's first meeting despite elevated inflation; markets price ~3% and there is no forward guidance signaling a hike.",
       "key_drivers": [
-        "cpi_4.2pct",
-        "chair_warsh_hawkish",
-        "no_pre_signaling"
+        "elevated inflation",
+        "no hike guidance",
+        "new-chair caution"
       ],
       "reference_classes": [
-        "new_chair_debut_no_hike",
-        "fed_follows_futures_30d"
+        "first-meeting continuity",
+        "CME hike pricing"
       ],
       "research_refs": [
-        "growbeansprout.com/tools/fedwatch",
-        "cnbc.com/2026/06/10/cpi-inflation-report-may-2026.html"
+        "https://www.cnbc.com/2026/06/10/cpi-inflation-report-may-2026.html"
       ]
     }
   ]

@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "ticker": "KXFEDDECISION-26JUN-H26",
+  "title": "Will the Federal Reserve Hike rates by >25bps at their June 2026 meeting?",
+  "category": "economy",
+  "close_time": "2026-06-17T17:59:00Z",
+  "current": {
+    "as_of": "2026-06-13T07:05:53Z",
+    "my_probability": 0.01,
+    "my_confidence": "high",
+    "market_implied_probability": 0.005,
+    "market_price_cents": 0.0,
+    "edge": 0.005,
+    "yes_ask": 0.01,
+    "no_ask": 1.0,
+    "fee_per_contract": 0.0,
+    "ev_per_contract": -0.010000000000000009,
+    "limit_price": null,
+    "ev_limit_per_contract": null,
+    "lean": "NONE",
+    "conviction": "low",
+    "lean_note": "I lean NO (my prob 1%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+    "prob_delta_vs_prev": null,
+    "trigger": "bootstrap",
+    "rationale_summary": "A hike of more than 25bps is near-impossible at a new chair's first meeting absent a crisis.",
+    "key_drivers": [
+      "no crisis",
+      "new-chair caution"
+    ],
+    "reference_classes": [
+      "no >25bps single-meeting hikes in modern era"
+    ],
+    "research_refs": [
+      "https://www.federalreserve.gov/monetarypolicy/fomcminutes20260429.htm"
+    ]
+  },
+  "history": [
+    {
+      "as_of": "2026-06-13T07:05:53Z",
+      "my_probability": 0.01,
+      "my_confidence": "high",
+      "market_implied_probability": 0.005,
+      "market_price_cents": 0.0,
+      "edge": 0.005,
+      "yes_ask": 0.01,
+      "no_ask": 1.0,
+      "fee_per_contract": 0.0,
+      "ev_per_contract": -0.010000000000000009,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "I lean NO (my prob 1%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+      "prob_delta_vs_prev": null,
+      "trigger": "bootstrap",
+      "rationale_summary": "A hike of more than 25bps is near-impossible at a new chair's first meeting absent a crisis.",
+      "key_drivers": [
+        "no crisis",
+        "new-chair caution"
+      ],
+      "reference_classes": [
+        "no >25bps single-meeting hikes in modern era"
+      ],
+      "research_refs": [
+        "https://www.federalreserve.gov/monetarypolicy/fomcminutes20260429.htm"
+      ]
+    }
+  ]
+}

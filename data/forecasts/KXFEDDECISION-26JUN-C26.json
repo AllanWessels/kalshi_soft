@@ -5,35 +5,34 @@
   "category": "economy",
   "close_time": "2026-06-17T17:59:00Z",
   "current": {
-    "as_of": "2026-06-13T03:15:35Z",
-    "my_probability": 0.003,
+    "as_of": "2026-06-13T07:05:53Z",
+    "my_probability": 0.01,
     "my_confidence": "high",
     "market_implied_probability": 0.005,
     "market_price_cents": 0.0,
-    "edge": -0.002,
+    "edge": 0.005,
     "yes_ask": 0.01,
     "no_ask": 1.0,
     "fee_per_contract": 0.0,
-    "ev_per_contract": -0.0030000000000000027,
+    "ev_per_contract": -0.010000000000000009,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "I lean NO (my prob 0%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
-    "prob_delta_vs_prev": -0.017,
+    "lean_note": "I lean NO (my prob 1%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+    "prob_delta_vs_prev": -0.01,
     "trigger": "near_close",
-    "rationale_summary": "A >25bp cut would require emergency easing — incoherent with CPI at 4.2% YoY. Negligible tail; market agrees.",
+    "rationale_summary": "A cut of more than 25bps is near-impossible with inflation elevated and no recession signal.",
     "key_drivers": [
-      "cpi_4.2pct",
-      "no_emergency_easing"
+      "elevated inflation",
+      "no recession",
+      "no easing case"
     ],
     "reference_classes": [
-      "fed_follows_futures_30d",
-      "emergency_intermeeting_rare"
+      "emergency-size cuts only in crises"
     ],
     "research_refs": [
-      "growbeansprout.com/tools/fedwatch",
-      "cnbc.com/2026/06/10/cpi-inflation-report-may-2026.html"
+      "https://www.cnbc.com/2026/05/28/core-inflation-april-2026.html"
     ]
   },
   "history": [
@@ -67,35 +66,34 @@
       ]
     },
     {
-      "as_of": "2026-06-13T03:15:35Z",
-      "my_probability": 0.003,
+      "as_of": "2026-06-13T07:05:53Z",
+      "my_probability": 0.01,
       "my_confidence": "high",
       "market_implied_probability": 0.005,
       "market_price_cents": 0.0,
-      "edge": -0.002,
+      "edge": 0.005,
       "yes_ask": 0.01,
       "no_ask": 1.0,
       "fee_per_contract": 0.0,
-      "ev_per_contract": -0.0030000000000000027,
+      "ev_per_contract": -0.010000000000000009,
       "limit_price": null,
       "ev_limit_per_contract": null,
       "lean": "NONE",
       "conviction": "low",
-      "lean_note": "I lean NO (my prob 0%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
-      "prob_delta_vs_prev": -0.017,
+      "lean_note": "I lean NO (my prob 1%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+      "prob_delta_vs_prev": -0.01,
       "trigger": "near_close",
-      "rationale_summary": "A >25bp cut would require emergency easing — incoherent with CPI at 4.2% YoY. Negligible tail; market agrees.",
+      "rationale_summary": "A cut of more than 25bps is near-impossible with inflation elevated and no recession signal.",
       "key_drivers": [
-        "cpi_4.2pct",
-        "no_emergency_easing"
+        "elevated inflation",
+        "no recession",
+        "no easing case"
       ],
       "reference_classes": [
-        "fed_follows_futures_30d",
-        "emergency_intermeeting_rare"
+        "emergency-size cuts only in crises"
       ],
       "research_refs": [
-        "growbeansprout.com/tools/fedwatch",
-        "cnbc.com/2026/06/10/cpi-inflation-report-may-2026.html"
+        "https://www.cnbc.com/2026/05/28/core-inflation-april-2026.html"
       ]
     }
   ]

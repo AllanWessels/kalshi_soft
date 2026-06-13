@@ -5,35 +5,34 @@
   "category": "economy",
   "close_time": "2026-06-17T17:59:00Z",
   "current": {
-    "as_of": "2026-06-13T03:15:34Z",
-    "my_probability": 0.01,
+    "as_of": "2026-06-13T07:05:53Z",
+    "my_probability": 0.02,
     "my_confidence": "high",
     "market_implied_probability": 0.005,
     "market_price_cents": 0.0,
-    "edge": 0.005,
+    "edge": 0.015,
     "yes_ask": 0.01,
     "no_ask": 1.0,
     "fee_per_contract": 0.0,
-    "ev_per_contract": -0.010000000000000009,
+    "ev_per_contract": -0.020000000000000018,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "I lean NO (my prob 1%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
-    "prob_delta_vs_prev": -0.019999999999999997,
+    "lean_note": "I lean NO (my prob 2%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+    "prob_delta_vs_prev": -0.009999999999999998,
     "trigger": "near_close",
-    "rationale_summary": "Futures imply ~97% HOLD; May CPI at 4.2% YoY forecloses a June cut. A 25bp cut is a tail. Market agrees (~0.5%).",
+    "rationale_summary": "A cut is unjustified with core PCE at 3.3% and a resilient labor market; new chair will not ease at his first meeting.",
     "key_drivers": [
-      "cpi_4.2pct",
-      "fed_funds_futures",
-      "no_cut_signal"
+      "inflation far above target",
+      "strong jobs",
+      "no easing case"
     ],
     "reference_classes": [
-      "fed_follows_futures_30d"
+      "Fed does not cut with core inflation >3%"
     ],
     "research_refs": [
-      "growbeansprout.com/tools/fedwatch",
-      "cnbc.com/2026/06/10/cpi-inflation-report-may-2026.html"
+      "https://www.cnbc.com/2026/05/28/core-inflation-april-2026.html"
     ]
   },
   "history": [
@@ -67,35 +66,34 @@
       ]
     },
     {
-      "as_of": "2026-06-13T03:15:34Z",
-      "my_probability": 0.01,
+      "as_of": "2026-06-13T07:05:53Z",
+      "my_probability": 0.02,
       "my_confidence": "high",
       "market_implied_probability": 0.005,
       "market_price_cents": 0.0,
-      "edge": 0.005,
+      "edge": 0.015,
       "yes_ask": 0.01,
       "no_ask": 1.0,
       "fee_per_contract": 0.0,
-      "ev_per_contract": -0.010000000000000009,
+      "ev_per_contract": -0.020000000000000018,
       "limit_price": null,
       "ev_limit_per_contract": null,
       "lean": "NONE",
       "conviction": "low",
-      "lean_note": "I lean NO (my prob 1%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
-      "prob_delta_vs_prev": -0.019999999999999997,
+      "lean_note": "I lean NO (my prob 2%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+      "prob_delta_vs_prev": -0.009999999999999998,
       "trigger": "near_close",
-      "rationale_summary": "Futures imply ~97% HOLD; May CPI at 4.2% YoY forecloses a June cut. A 25bp cut is a tail. Market agrees (~0.5%).",
+      "rationale_summary": "A cut is unjustified with core PCE at 3.3% and a resilient labor market; new chair will not ease at his first meeting.",
       "key_drivers": [
-        "cpi_4.2pct",
-        "fed_funds_futures",
-        "no_cut_signal"
+        "inflation far above target",
+        "strong jobs",
+        "no easing case"
       ],
       "reference_classes": [
-        "fed_follows_futures_30d"
+        "Fed does not cut with core inflation >3%"
       ],
       "research_refs": [
-        "growbeansprout.com/tools/fedwatch",
-        "cnbc.com/2026/06/10/cpi-inflation-report-may-2026.html"
+        "https://www.cnbc.com/2026/05/28/core-inflation-april-2026.html"
       ]
     }
   ]
