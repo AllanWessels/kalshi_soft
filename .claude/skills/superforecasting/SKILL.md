@@ -11,6 +11,19 @@ statements, behavioral economics/policy), and to beat the market's implied proba
 over time as measured by Brier score. This skill codifies the Tetlock / Good Judgment
 Project method. Follow it literally — the calibration record is the whole point.
 
+## §0. This loop is a measured experiment (topology is discovered, not assumed)
+We do **not** hard-code which forecasting topology is best. Each forecast is produced by a registered
+**strategy arm** (`lib/strategies.py`) — varying how many independent forecasters run, how their
+probabilities are aggregated, whether the estimate is crowd-adjusted toward the market, and whether an
+adversarial red-team pass runs — and is tagged with its `strategy_id`. At resolution every forecast is
+scored on **two axes, not one**:
+- **Brier skill** vs the market (are we calibrated / do we beat the price?), and
+- **realized profit** — P&L, ROI, win rate on the paper lean after fees (do we actually make money?).
+A forecast can be well-calibrated yet lose money; the **Strategy Scoreboard** in the report surfaces
+both so the system *learns which arm wins, per category* from its own record. When you orchestrate a
+run, honor the arm assigned to each market (ROUTINE Step 4b) — that's how the experiment accrues
+signal. Don't collapse everything to one method because it "feels" best; let the scoreboard decide.
+
 ## Scope: what to forecast (and what not)
 - **Forecast:** elections, nominations, legislation, approval, appointments; awards, box
   office, charts; whether a public figure says/does X; Fed decisions, CPI/jobs prints,
@@ -57,6 +70,14 @@ analysis. Weight each by evidential strength. Note where they agree and disagree
 runs as a fan-out, each Sonnet worker is itself one independent perspective — preserve that
 independence; do not let workers converge by peeking at each other or at the price.)
 
+#### 3a. Robust aggregation when the arm runs multiple forecasters
+If the assigned strategy arm has `n_forecasters > 1`, combine the independent estimates with
+`strategies.combine(probs, arm)` — **do not eyeball an average**. Robust aggregators beat the naive
+mean (Halawi'24, Schoenegger'24): `trimmed_mean` drops one high and one low forecaster so a single
+outlier can't drag the estimate, and `median` is fully robust. The point of N independent
+forecasters is variance reduction *only if* the combiner is robust and the forecasters were genuinely
+independent — so keep them blind to each other and to the price.
+
 ### 4. Update from the prior — Bayesian, incremental
 Start at the base-rate prior and move it with each piece of evidence, in the right direction
 and by a defensible magnitude. Strong, diagnostic evidence moves you a lot; weak or
@@ -96,6 +117,11 @@ This is the discipline that makes the experiment meaningful.
   disagreement explicitly.
 - "Wisdom of the crowd" is real but it is not a rule — your edge comes from independent,
   well-reasoned divergence, not from copying or splitting the difference.
+- **Crowd-adjust only if the arm says so.** Some strategy arms (e.g. `S2-ensemble3-crowd`) apply a
+  *measured* shrink toward the market price via `strategies.crowd_adjust(p, market_price, weight)` —
+  Halawi'24 finds a ~0.01 Brier gain from blending toward the crowd. This is implemented as a
+  first-class arm precisely so the scoreboard **tests** the claim rather than assuming it; apply it
+  only when the assigned arm has a non-zero `crowd_adjust_weight`, never as a reflex on every market.
 - **But respect a liquid market.** A *large* disagreement with a liquid, actively-traded market
   (say >20 points) is, more often than not, a sign you are missing something the crowd knows —
   not that you found edge. The bigger the gap and the lower your confidence, the more you should
@@ -141,18 +167,34 @@ When you re-forecast a market you've seen before, read your previous entry first
 change against new evidence. Don't anchor rigidly to your old number, and don't churn it on
 noise. A forecast that moves only when the world moves is a calibrated forecast.
 
-## Calibration feedback loop & self-revision
-Once markets resolve, `data/calibration.json` holds your Brier vs the market's and a reliability
-curve; `data/lessons.json` holds post-mortems; `data/forecasts.db` (rebuilt each run) lets you
-run SQL over your full track record. Read them before forecasting:
+## Calibration feedback loop & adversarial post-mortem
+Once markets resolve, `data/calibration.json` holds your Brier vs the market's, the reliability
+curve, **and the profit + strategy scoreboards**; `data/lessons.json` holds post-mortems;
+`data/forecasts.db` (rebuilt each run) lets you run SQL over your full track record. Read them
+before forecasting:
 - If your high-confidence forecasts resolve worse than their probabilities imply, you are
   **overconfident** — compress toward 0.5. If better, **underconfident** — be bolder.
-- Watch `skill_vs_market` (positive = beating the market). Per-category breakdowns tell you where
-  your edge is real and where it isn't.
-- **Self-revision rule:** when a post-mortem reveals an error, record a lesson with a
-  `pattern_tag`. Only revise THIS SKILL when the same pattern recurs across
-  ≥`SKILL_REVISION_MIN_PATTERN` (3) resolved markets. One resolution is a single noisy data point
-  — do not rewrite your method on it (§4a applies to learning, not just forecasting).
+- Watch `skill_vs_market` (positive = beating the market) **and `profit_by_*` / `by_strategy`**.
+  Per-category and per-strategy breakdowns tell you where your edge is real, where it isn't, and
+  which arm converts calibration into money. High win rate + negative ROI = a pricing problem, not a
+  calibration win.
+
+### Learn through the adversarial panel — never grade your own work
+Self-judging carries measured self-preference/sycophancy bias (Verga'24; Wataoka'24). Post-mortems
+therefore run as a panel (ROUTINE Step 6b, `scripts/postmortem.py`):
+- **Critic** — a *different model family* (local Qwen; Sonnet fallback), **blind to forecaster
+  identity**, scores a **fixed rubric defined before resolution** so it can't retrofit "good
+  reasoning" onto a lucky outcome. The rubric (`config.POSTMORTEM_RUBRIC`): **(1)** base rate
+  established? **(2)** ≥3 independent sources? **(3)** confidence/uncertainty considered, not just a
+  point? **(4)** any market divergence justified? Judge **reasoning quality, not the outcome** — a
+  good forecast can lose and a bad one can win.
+- **Defender** (Claude) argues what was right / whether the outcome was unforeseeable; **Judge**
+  (Claude) rules per-rubric and writes one actionable lesson + `pattern_tag`, recording where critic
+  and defender disagreed (that gap is the signal worth keeping).
+- **Self-revision rule (pattern-gated AND human-gated):** only a `pattern_tag` that recurs across
+  ≥`SKILL_REVISION_MIN_PATTERN` (3) resolved markets is eligible to change THIS SKILL — and even then
+  the edit is a **proposal surfaced to the user** (`postmortem.py patterns`), never an autonomous
+  rewrite. One resolution is a single noisy data point (§4a applies to learning, not just forecasting).
 
 ## Non-negotiables
 1. Independent estimate before the market price — always.
