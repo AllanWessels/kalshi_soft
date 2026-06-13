@@ -103,7 +103,9 @@ CREATE TABLE IF NOT EXISTS lessons (
     beat_market       INTEGER,
     lesson            TEXT,
     pattern_tag       TEXT,
-    applied_to_skill  INTEGER
+    applied_to_skill  INTEGER,
+    critic_model      TEXT,
+    judge_verdict     TEXT
 );
 """
 
@@ -249,14 +251,16 @@ def _populate_lessons(conn: sqlite3.Connection) -> None:
             l.lesson or None,
             l.pattern_tag or None,
             int(l.applied_to_skill) if l.applied_to_skill is not None else None,
+            getattr(l, "critic_model", "") or None,
+            getattr(l, "judge_verdict", "") or None,
         )
         for l in lf.lessons
     ]
     conn.executemany(
         "INSERT OR REPLACE INTO lessons "
         "(id, created_at, source, ticker, category, outcome, brier_mine, brier_market, "
-        " beat_market, lesson, pattern_tag, applied_to_skill) "
-        "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+        " beat_market, lesson, pattern_tag, applied_to_skill, critic_model, judge_verdict) "
+        "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
         rows,
     )
 

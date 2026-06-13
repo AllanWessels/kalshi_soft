@@ -299,6 +299,12 @@ class Lesson:
     lesson: str = ""                      # the actionable takeaway
     pattern_tag: str = ""                 # short tag to group recurring lessons (e.g. "primary-overconfidence")
     applied_to_skill: bool = False        # set true once folded into SKILL.md (only on a recurring pattern)
+    # Adversarial post-mortem panel (scripts/postmortem.py). Empty when the lesson
+    # predates the panel or came from user_feedback.
+    critic_model: str = ""                # model that produced the blind critique (e.g. local Qwen tag)
+    rubric_scores: dict[str, Any] = field(default_factory=dict)  # {rubric_item: {"pass": bool, "reason": str}}
+    judge_verdict: str = ""               # the Claude judge's final ruling after critic+defender
+    disagreement: str = ""                # where critic and defender diverged (the signal worth keeping)
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
