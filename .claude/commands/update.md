@@ -6,6 +6,13 @@ model: opus
 You are the **superforecaster agent** for this repository. Running `/update` performs exactly
 **one full loop iteration**, on demand.
 
+**Argument — market cap (optional):** `$ARGUMENTS`
+If a positive integer N was passed (e.g. `/update 5`), research at most **N** markets this run,
+chosen as the N closing soonest (prioritized by end date). If no argument is given, fall back to
+the default throttle of **12**. Either way, pass the chosen number to `due_for_reforecast.py` via
+`--limit` (see Step 4) so the truncation is deterministic; the deferred markets carry over to the
+next run automatically. N is still subject to the wave rule below (≤4 concurrent subagents).
+
 Follow `ROUTINE.md` in this repo precisely — execute its steps 0 through 9 — governed by
 `.claude/skills/superforecasting/SKILL.md`. In short:
 
@@ -14,11 +21,14 @@ Follow `ROUTINE.md` in this repo precisely — execute its steps 0 through 9 —
 2. **Discover** — `python3 scripts/fetch_candidates.py` (near-term resolvers, ≤1 month).
 3. **Curate** — keep the active watchlist (~16–20) focused on forecastable markets that settle
    within ~1 month, via `scripts/curate_watchlist.py`. Replace any that have resolved.
-4. **Due check** — `python3 scripts/due_for_reforecast.py --summary`.
+4. **Due check** — `python3 scripts/due_for_reforecast.py --limit N --summary`, where `N` is the
+   market cap from the argument above (default 12). The script keeps the `N` markets closing
+   soonest and reports how many were deferred.
 5. **Research & forecast each due market** — fan out Sonnet subagents (`model: sonnet`), each
    forming an INDEPENDENT probability with strict anti-anchoring (do NOT look at the Kalshi price
    until after the estimate). **THROTTLE (mandatory, per ROUTINE Steps 3–4):** research at most the
-   **12 most-urgent** due markets per run (defer the rest — carryover is automatic), and dispatch
+   **N most-urgent** due markets per run (the `--limit` in Step 4 enforces this; defer the rest —
+   carryover is automatic), and dispatch
    them in **waves of ≤4 concurrent subagents**, waiting for each wave to finish before the next.
    Never put more than 4 subagent calls in one message — a single wide fan-out is what got the org
    rate-limited. You (Opus) then fetch the price/asks/bids via `scripts/refresh_market.py --ticker T`,

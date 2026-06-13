@@ -3,11 +3,17 @@ a fresh forecast this run, using only stored data (no API calls).
 
 Usage
 -----
-    python3 scripts/due_for_reforecast.py [--event-driven T1,T2,...] [--summary]
+    python3 scripts/due_for_reforecast.py [--event-driven T1,T2,...] [--limit N] [--summary]
 
     --event-driven T1,T2,...
         Force-include the listed tickers regardless of cadence (reason=event_driven).
         The orchestrating agent sets this when it has spotted breaking news.
+
+    --limit N
+        Keep only the N most-urgent due markets (those closing soonest). The list
+        is already sorted by days_to_close ascending, so this truncates the tail
+        (the deferred markets carry over to the next run automatically). N<=0 or
+        omitted means no limit.
 
     --summary
         Print a human-readable count-by-reason summary to STDERR in addition to
@@ -174,6 +180,14 @@ def _build_parser() -> argparse.ArgumentParser:
         help="Comma-separated tickers to force-include (reason=event_driven).",
     )
     p.add_argument(
+        "--limit",
+        type=int,
+        default=0,
+        metavar="N",
+        help="Keep only the N most-urgent due markets (closing soonest). "
+        "0 or negative means no limit.",
+    )
+    p.add_argument(
         "--summary",
         action="store_true",
         help="Print a human-readable count-by-reason summary to STDERR.",
@@ -198,13 +212,20 @@ def main(argv: list[str] | None = None) -> int:
 
     now = schemas.parse_iso(schemas.utc_now_iso())  # timezone-aware UTC
 
-    # Compute due list
+    # Compute due list (already sorted most-urgent-first by days_to_close)
     due = compute_due(
         watchlist=watchlist,
         load_record_fn=store.load_forecast,
         now=now,
         event_driven=event_driven,
     )
+
+    # Apply --limit: keep the N markets closing soonest; the rest carry over.
+    total_due = len(due)
+    deferred = 0
+    if args.limit and args.limit > 0 and total_due > args.limit:
+        deferred = total_due - args.limit
+        due = due[: args.limit]
 
     # --- STDOUT: machine-readable JSON only ---
     print(json.dumps(due, indent=2, ensure_ascii=False))
@@ -217,9 +238,14 @@ def main(argv: list[str] | None = None) -> int:
             counts[r] = counts.get(r, 0) + 1
 
         total = len(due)
-        lines = [
-            f"due_for_reforecast: {total} market(s) due this run",
-        ]
+        if deferred:
+            header = (
+                f"due_for_reforecast: {total} market(s) selected this run "
+                f"(limit={args.limit}; {deferred} deferred of {total_due} due)"
+            )
+        else:
+            header = f"due_for_reforecast: {total} market(s) due this run"
+        lines = [header]
         for reason in ("new", "scheduled", "near_close", "event_driven"):
             n = counts.get(reason, 0)
             if n:

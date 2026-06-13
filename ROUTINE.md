@@ -56,18 +56,19 @@ or `store` helper**, not by guessing fields. Keep active count ≤ 20. `curate_w
 
 ## Step 3 — Determine what's due (then apply the per-run cap)
 ```
-python3 scripts/due_for_reforecast.py --summary
+python3 scripts/due_for_reforecast.py --limit 12 --summary
 ```
 Returns the JSON list of tickers needing a fresh forecast this run (new markets, markets past
 their tier cadence, or `--event-driven` overrides). The list is **sorted by `days_to_close`
 ascending — most urgent first.** Only these get researched — this is what keeps 3×/day affordable.
 
-**Per-run cap (throttle — prevents rate-limit shutdowns):** research **at most the 12 most-urgent
-due markets this run.** Take the first 12 of the sorted list; if more than 12 are due, **defer the
-rest** — do not research them now. Carryover is automatic: a market you skip stays past its cadence
-and reappears (more urgent) on the next run, so nothing is lost. Always keep `--event-driven`
-overrides inside the kept set even if it means dropping a less-urgent cadence market. Note in the
-Step 8 log how many were deferred (`reforecast_deferred`).
+**Per-run cap (throttle — prevents rate-limit shutdowns):** research **at most the N most-urgent
+due markets this run** (N defaults to 12; `/update N` overrides it). `--limit N` enforces this in
+the script — it keeps the first N of the sorted list and reports how many were **deferred**. Carryover
+is automatic: a market you skip stays past its cadence and reappears (more urgent) on the next run,
+so nothing is lost. Always keep `--event-driven` overrides inside the kept set even if it means
+dropping a less-urgent cadence market. Note in the Step 8 log how many were deferred
+(`reforecast_deferred`) — the `--summary` line reports this directly.
 
 ## Step 4 — Research & forecast each due market (FAN OUT to Sonnet, IN WAVES)
 For the capped due list (≤12 from Step 3), **dispatch Sonnet subagents in bounded waves of at
