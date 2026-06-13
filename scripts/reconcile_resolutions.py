@@ -36,7 +36,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import argparse
 import datetime as dt
 
-from lib import config, store, scoring, schemas, kalshi_client, taxonomy
+from lib import config, store, scoring, schemas, kalshi_client, taxonomy, profit
 
 # Statuses that indicate a Kalshi market has resolved.
 RESOLVED_STATUSES = {"settled", "finalized", "determined"}
@@ -216,6 +216,10 @@ def reconcile(dry_run: bool = False) -> None:
 
         subcategory = taxonomy.classify_subcategory(ticker, title, category)
 
+        # Realized paper-trade economics from the lean that was live at resolution.
+        # None when the final lean was NONE (no position taken).
+        trade = profit.trade_from_entry(final_entry, outcome, final_market_implied)
+
         resolution = schemas.Resolution(
             ticker=ticker,
             title=title,
@@ -230,6 +234,8 @@ def reconcile(dry_run: bool = False) -> None:
             brier_market=brier_market,
             num_forecasts=num_forecasts,
             first_forecast_prob=first_forecast_prob,
+            strategy_id=getattr(final_entry, "strategy_id", "") or "",
+            **(trade or {}),
         )
 
         if not dry_run:

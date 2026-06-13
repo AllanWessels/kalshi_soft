@@ -163,6 +163,7 @@ class ForecastEntry:
     lean_note: Optional[str] = None       # why a positive-EV side was gated to NONE (low conf / large market gap)
     prob_delta_vs_prev: Optional[float] = None   # computed by store
     trigger: str = "scheduled"            # TRIGGERS
+    strategy_id: str = ""                 # which forecasting strategy/arm produced this (see lib/strategies)
     rationale_summary: str = ""           # 1-3 sentences, agent-written
     key_drivers: list[str] = field(default_factory=list)
     reference_classes: list[str] = field(default_factory=list)
@@ -231,6 +232,17 @@ class Resolution:
     brier_market: Optional[float] = None
     num_forecasts: int = 0
     first_forecast_prob: Optional[float] = None
+    # Strategy that produced the final forecast (experimentation harness).
+    strategy_id: str = ""
+    # Realized paper-trade economics (populated only when the final lean was YES/NO;
+    # all None when lean was NONE = no position taken). See lib/profit.py.
+    entry_side: str = ""                  # YES | NO | "" (no trade)
+    entry_price: Optional[float] = None   # price paid on the lean side (dollars)
+    fee_at_entry: Optional[float] = None
+    realized_pnl: Optional[float] = None  # net $/contract after fee; None = no trade
+    roi: Optional[float] = None           # realized_pnl / staked
+    won: Optional[bool] = None
+    clv: Optional[float] = None           # closing-line value (skill signal)
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)

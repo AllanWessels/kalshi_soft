@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-06-13T04:00:34Z",
+  "updated_at": "2026-06-13T21:31:41Z",
   "resolved": [
     {
       "ticker": "KXGOVCA-26-CBIA",
@@ -15,7 +15,15 @@
       "brier_mine": 0.000225,
       "brier_market": 0.00030625000000000004,
       "num_forecasts": 1,
-      "first_forecast_prob": 0.015
+      "first_forecast_prob": 0.015,
+      "strategy_id": "",
+      "entry_side": "",
+      "entry_price": null,
+      "fee_at_entry": null,
+      "realized_pnl": null,
+      "roi": null,
+      "won": null,
+      "clv": null
     },
     {
       "ticker": "KXGOVCAPRIMARY-26-CBIA",
@@ -30,7 +38,15 @@
       "brier_mine": 0.004900000000000001,
       "brier_market": 0.0012602500000000003,
       "num_forecasts": 2,
-      "first_forecast_prob": 0.04
+      "first_forecast_prob": 0.04,
+      "strategy_id": "",
+      "entry_side": "",
+      "entry_price": null,
+      "fee_at_entry": null,
+      "realized_pnl": null,
+      "roi": null,
+      "won": null,
+      "clv": null
     },
     {
       "ticker": "KXGOVCAPRIMARYPARTY-26-2R",
@@ -45,7 +61,15 @@
       "brier_mine": 0.0009,
       "brier_market": 3.6e-05,
       "num_forecasts": 1,
-      "first_forecast_prob": 0.03
+      "first_forecast_prob": 0.03,
+      "strategy_id": "",
+      "entry_side": "",
+      "entry_price": null,
+      "fee_at_entry": null,
+      "realized_pnl": null,
+      "roi": null,
+      "won": null,
+      "clv": null
     },
     {
       "ticker": "KXGOVIANOMR-26-RFEE",
@@ -60,7 +84,15 @@
       "brier_mine": 0.6400000000000001,
       "brier_market": 0.8381402499999999,
       "num_forecasts": 2,
-      "first_forecast_prob": 0.8
+      "first_forecast_prob": 0.8,
+      "strategy_id": "",
+      "entry_side": "",
+      "entry_price": null,
+      "fee_at_entry": null,
+      "realized_pnl": null,
+      "roi": null,
+      "won": null,
+      "clv": null
     },
     {
       "ticker": "KXLAMAYOR1R-26-SPRA",
@@ -75,7 +107,15 @@
       "brier_mine": 0.04409999999999999,
       "brier_market": 0.065025,
       "num_forecasts": 2,
-      "first_forecast_prob": 0.19
+      "first_forecast_prob": 0.19,
+      "strategy_id": "",
+      "entry_side": "NO",
+      "entry_price": 0.75,
+      "fee_at_entry": 0.02,
+      "realized_pnl": 0.23,
+      "roi": 0.2987012987012987,
+      "won": true,
+      "clv": -0.0050000000000000044
     },
     {
       "ticker": "KXMAYORLA-26-SPRA",
@@ -90,7 +130,15 @@
       "brier_mine": 0.0324,
       "brier_market": 0.07022500000000001,
       "num_forecasts": 1,
-      "first_forecast_prob": 0.18
+      "first_forecast_prob": 0.18,
+      "strategy_id": "",
+      "entry_side": "NO",
+      "entry_price": 0.74,
+      "fee_at_entry": 0.02,
+      "realized_pnl": 0.24000000000000002,
+      "roi": 0.31578947368421056,
+      "won": true,
+      "clv": -0.0050000000000000044
     },
     {
       "ticker": "KXSENATEMED-26-GRA",
@@ -105,7 +153,15 @@
       "brier_mine": 0.0025000000000000044,
       "brier_market": 0.006320250000000002,
       "num_forecasts": 1,
-      "first_forecast_prob": 0.95
+      "first_forecast_prob": 0.95,
+      "strategy_id": "",
+      "entry_side": "",
+      "entry_price": null,
+      "fee_at_entry": null,
+      "realized_pnl": null,
+      "roi": null,
+      "won": null,
+      "clv": null
     },
     {
       "ticker": "KXSENATENJR-26-VBRA",
@@ -120,7 +176,15 @@
       "brier_mine": 0.0004,
       "brier_market": 3.6e-05,
       "num_forecasts": 1,
-      "first_forecast_prob": 0.02
+      "first_forecast_prob": 0.02,
+      "strategy_id": "",
+      "entry_side": "",
+      "entry_price": null,
+      "fee_at_entry": null,
+      "realized_pnl": null,
+      "roi": null,
+      "won": null,
+      "clv": null
     },
     {
       "ticker": "KXSENATEREC-26MAY-JUN06",
@@ -135,7 +199,15 @@
       "brier_mine": 0.7224999999999999,
       "brier_market": 0.5929,
       "num_forecasts": 1,
-      "first_forecast_prob": 0.15
+      "first_forecast_prob": 0.15,
+      "strategy_id": "",
+      "entry_side": "NO",
+      "entry_price": 0.78,
+      "fee_at_entry": 0.02,
+      "realized_pnl": -0.8,
+      "roi": -1.0,
+      "won": false,
+      "clv": -0.010000000000000009
     },
     {
       "ticker": "KXSENATESCR-26-LGRA",
@@ -150,7 +222,15 @@
       "brier_mine": 0.004899999999999993,
       "brier_market": 0.0009302499999999982,
       "num_forecasts": 1,
-      "first_forecast_prob": 0.93
+      "first_forecast_prob": 0.93,
+      "strategy_id": "",
+      "entry_side": "",
+      "entry_price": null,
+      "fee_at_entry": null,
+      "realized_pnl": null,
+      "roi": null,
+      "won": null,
+      "clv": null
     },
     {
       "ticker": "KXSEOULMAYOR-26JUN03-CWON",
@@ -165,7 +245,15 @@
       "brier_mine": 0.3844,
       "brier_market": 0.697225,
       "num_forecasts": 2,
-      "first_forecast_prob": 0.65
+      "first_forecast_prob": 0.65,
+      "strategy_id": "",
+      "entry_side": "",
+      "entry_price": null,
+      "fee_at_entry": null,
+      "realized_pnl": null,
+      "roi": null,
+      "won": null,
+      "clv": null
     },
     {
       "ticker": "KXU3-26MAY-T4.2",
@@ -180,7 +268,15 @@
       "brier_mine": 0.0144,
       "brier_market": 0.07562500000000001,
       "num_forecasts": 2,
-      "first_forecast_prob": 0.86
+      "first_forecast_prob": 0.86,
+      "strategy_id": "",
+      "entry_side": "YES",
+      "entry_price": 0.73,
+      "fee_at_entry": 0.02,
+      "realized_pnl": 0.25,
+      "roi": 0.3333333333333333,
+      "won": true,
+      "clv": -0.0050000000000000044
     }
   ]
 }
