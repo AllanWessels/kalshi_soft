@@ -36,7 +36,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import argparse
 import datetime as dt
 
-from lib import config, store, scoring, schemas, kalshi_client
+from lib import config, store, scoring, schemas, kalshi_client, taxonomy
 
 # Statuses that indicate a Kalshi market has resolved.
 RESOLVED_STATUSES = {"settled", "finalized", "determined"}
@@ -214,10 +214,13 @@ def reconcile(dry_run: bool = False) -> None:
         if not category:
             category = forecast_rec.category
 
+        subcategory = taxonomy.classify_subcategory(ticker, title, category)
+
         resolution = schemas.Resolution(
             ticker=ticker,
             title=title,
             category=category,
+            subcategory=subcategory,
             resolved_at=resolved_at,
             outcome=outcome,
             final_my_probability=final_my_probability,

@@ -221,6 +221,7 @@ class Resolution:
     ticker: str
     title: str = ""
     category: str = ""
+    subcategory: str = ""                 # finer taxonomy slug (see lib/taxonomy)
     resolved_at: str = ""
     outcome: int = 0                      # 1 = YES occurred, 0 = NO
     final_my_probability: float = 0.0     # last forecast BEFORE resolution
@@ -342,6 +343,7 @@ class Calibration:
     skill_vs_market: Optional[float] = None   # market_mean - mine_mean (positive = we beat market)
     bins: list[CalibrationBin] = field(default_factory=list)
     by_category: dict[str, Any] = field(default_factory=dict)
+    by_segment: dict[str, Any] = field(default_factory=dict)   # "category / subcategory" -> stats
     schema_version: int = SCHEMA_VERSION
 
     def to_dict(self) -> dict[str, Any]:
@@ -354,6 +356,7 @@ class Calibration:
             "skill_vs_market": self.skill_vs_market,
             "bins": [b.to_dict() for b in self.bins],
             "by_category": self.by_category,
+            "by_segment": self.by_segment,
         }
 
     @classmethod
@@ -367,6 +370,7 @@ class Calibration:
             skill_vs_market=d.get("skill_vs_market"),
             bins=[CalibrationBin.from_dict(b) for b in d.get("bins", [])],
             by_category=d.get("by_category", {}),
+            by_segment=d.get("by_segment", {}),
             schema_version=int(d.get("schema_version", SCHEMA_VERSION)),
         )
 

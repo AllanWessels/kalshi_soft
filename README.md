@@ -23,7 +23,7 @@ scores + calibration curves as markets resolve, and publishes a PDF report each 
 
 ## Layout
 ```
-lib/        schemas, config, kalshi_client, store, scoring, report, gitops   (deterministic)
+lib/        schemas, config, taxonomy, kalshi_client, store, scoring, report, gitops  (deterministic)
 scripts/    fetch_candidates, refresh_market, record_forecast,
             due_for_reforecast, reconcile_resolutions, build_report          (CLI entrypoints)
 data/       watchlist.json, forecasts/<TICKER>.json, resolutions.json,
@@ -67,3 +67,10 @@ Open `reports/latest.pdf`. Each market block names the **title + ticker** (so yo
 Kalshi), your probability + confidence, the market's implied probability, the signed edge, your
 paper lean, and a drift chart. Once markets resolve, the calibration section shows your Brier
 score vs the market's and a reliability curve — the empirical verdict on the hypothesis.
+
+The **Performance Over Time** section is the trend view: cumulative Brier (yours vs market) and
+running skill as the resolved-market sample grows, plus per-category and per-**sub-category** skill
+tables (where your edge is real and where it isn't). Every market is auto-tagged with a
+sub-category by `lib/taxonomy.py` (e.g. `politics / us-governor-primary`, `economy / fed-rates`),
+also queryable via `data/forecasts.db` (`resolutions.subcategory`). Skill numbers are labelled
+**provisional below ~30 resolutions** — read the trend, not the point estimate.

@@ -114,8 +114,9 @@ The script computes edge + drift and is idempotent for same-day/same-trigger re-
 ```
 python3 scripts/reconcile_resolutions.py
 ```
-Detects markets that resolved on Kalshi, records outcomes + Brier (yours vs market), frees
-watchlist slots, and recomputes `data/calibration.json`.
+Detects markets that resolved on Kalshi, records outcomes + Brier (yours vs market), tags each
+with a **sub-category** (`lib/taxonomy.py`), frees watchlist slots, and recomputes
+`data/calibration.json` (cumulative + per-category + per-sub-category skill in `by_segment`).
 
 ## Step 6b — Post-mortem & learning (only when markets newly resolved this run)
 If Step 6 recorded any **new** resolutions, learn from them:
@@ -139,7 +140,8 @@ If Step 6 recorded any **new** resolutions, learn from them:
 python3 scripts/build_report.py
 ```
 Regenerates `reports/latest.pdf` and archives a dated copy. Always run this, even on a degraded
-run.
+run. The report's **Performance Over Time** section shows the cumulative Brier/skill trend and the
+per-category / per-sub-category skill tables (with a provisional caveat below ~30 resolutions).
 
 ## Step 8 — Log the run (with usage)
 Append one line to `data/run_log.jsonl` capturing this run: `run_id` (UTC timestamp), `status`,

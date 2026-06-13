@@ -15,9 +15,9 @@ drift_series(record) -> list[tuple]
 
 from __future__ import annotations
 
-from typing import Optional
+from typing import Callable, Optional
 
-from lib import schemas
+from lib import schemas, taxonomy
 
 
 # ---------------------------------------------------------------------------
@@ -89,6 +89,65 @@ def market_implied_from_quote(
 # ---------------------------------------------------------------------------
 # Calibration
 # ---------------------------------------------------------------------------
+
+def _mean(xs: list[float]) -> Optional[float]:
+    return sum(xs) / len(xs) if xs else None
+
+
+def _category_key(r: schemas.Resolution) -> str:
+    return r.category or "uncategorized"
+
+
+def _segment_key(r: schemas.Resolution) -> str:
+    """Group key ``"<category> / <subcategory>"``; classifies on the fly when the
+    stored subcategory is absent (e.g. resolutions written before taxonomy existed)."""
+    cat = r.category or "uncategorized"
+    sub = r.subcategory or taxonomy.classify_subcategory(r.ticker, r.title, cat)
+    return f"{cat} / {sub}"
+
+
+def aggregate_by(
+    resolutions: list[schemas.Resolution],
+    key_fn: Callable[[schemas.Resolution], str],
+) -> dict[str, dict]:
+    """Group *resolutions* by ``key_fn(r)`` and return per-group performance stats.
+
+    Each value is ``{n, brier_mine_mean, brier_market_mean, skill_vs_market}``
+    where ``skill_vs_market = brier_market_mean - brier_mine_mean`` (positive =
+    we beat the market in that group). Market means use only rows that had a
+    market-implied probability, so a group's market mean may rest on fewer rows
+    than ``n``.
+    """
+    groups: dict[str, dict] = {}
+    for r in resolutions:
+        g = groups.setdefault(key_fn(r), {"mine": [], "market": []})
+        g["mine"].append(
+            r.brier_mine if r.brier_mine is not None
+            else brier(r.final_my_probability, r.outcome)
+        )
+        if r.final_market_implied is not None:
+            g["market"].append(
+                r.brier_market if r.brier_market is not None
+                else brier(r.final_market_implied, r.outcome)
+            )
+
+    out: dict[str, dict] = {}
+    for key, g in groups.items():
+        mine_mean = _mean(g["mine"])
+        market_mean = _mean(g["market"])
+        skill = (
+            market_mean - mine_mean
+            if mine_mean is not None and market_mean is not None
+            else None
+        )
+        out[key] = {
+            "n": len(g["mine"]),
+            "brier_mine_mean": mine_mean,
+            "brier_market_mean": market_mean,
+            "skill_vs_market": skill,
+        }
+    return out
+
 
 def compute_calibration(
     resolutions: list[schemas.Resolution],
@@ -170,24 +229,9 @@ def compute_calibration(
     if brier_market_mean is not None and brier_mine_mean is not None:
         skill_vs_market = brier_market_mean - brier_mine_mean
 
-    # --- by_category --------------------------------------------------------
-    by_category: dict[str, dict] = {}
-    for r in resolutions:
-        cat = r.category or ""
-        if cat not in by_category:
-            by_category[cat] = {"_scores": []}
-        if r.brier_mine is not None:
-            by_category[cat]["_scores"].append(r.brier_mine)
-        else:
-            by_category[cat]["_scores"].append(brier(r.final_my_probability, r.outcome))
-
-    by_category_out: dict[str, dict] = {}
-    for cat, v in by_category.items():
-        scores = v["_scores"]
-        by_category_out[cat] = {
-            "n": len(scores),
-            "brier_mine_mean": sum(scores) / len(scores) if scores else None,
-        }
+    # --- per-segment aggregation (category and category/subcategory) ---------
+    by_category_out = aggregate_by(resolutions, _category_key)
+    by_segment_out = aggregate_by(resolutions, _segment_key)
 
     return schemas.Calibration(
         updated_at=schemas.utc_now_iso(),
@@ -197,6 +241,7 @@ def compute_calibration(
         skill_vs_market=skill_vs_market,
         bins=bins,
         by_category=by_category_out,
+        by_segment=by_segment_out,
     )
 
 

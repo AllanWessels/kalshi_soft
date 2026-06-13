@@ -417,6 +417,92 @@ def _usage_trend_chart(run_log: list[schemas.RunLogEntry], out_path: Path) -> Op
     return out_path
 
 
+def _performance_over_time_chart(
+    resolutions: schemas.ResolutionsFile,
+    out_path: Path,
+) -> Optional[Path]:
+    """Cumulative Brier (mine vs market) and running skill, in resolution order.
+
+    This is the "am I getting better as the sample grows?" view: at each resolved
+    market we plot the mean Brier so far (mine and market) and their gap (skill).
+    Lower Brier is better; skill > 0 means we are beating the market cumulatively.
+    """
+    resolved = list(resolutions.resolved)
+    if len(resolved) < 2:
+        return None
+
+    def _key(r):
+        dt = _parse_dt(r.resolved_at)
+        return (dt is None, dt or r.resolved_at)
+
+    resolved = sorted(resolved, key=_key)
+
+    xs, cum_mine, cum_mkt, cum_skill = [], [], [], []
+    mine_sum = mine_n = 0.0
+    mkt_sum = mkt_n = 0.0
+    for i, r in enumerate(resolved, start=1):
+        bm = r.brier_mine
+        if bm is None:
+            bm = scoring.brier(r.final_my_probability, r.outcome)
+        mine_sum += bm
+        mine_n += 1
+        if r.final_market_implied is not None:
+            bk = r.brier_market
+            if bk is None:
+                bk = scoring.brier(r.final_market_implied, r.outcome)
+            mkt_sum += bk
+            mkt_n += 1
+        dt = _parse_dt(r.resolved_at)
+        xs.append(dt if dt is not None else i)
+        cm = mine_sum / mine_n
+        ck = (mkt_sum / mkt_n) if mkt_n else None
+        cum_mine.append(cm)
+        cum_mkt.append(ck)
+        cum_skill.append((ck - cm) if ck is not None else None)
+
+    use_dates = all(not isinstance(x, int) for x in xs)
+
+    fig, ax1 = plt.subplots(figsize=(5.6, 2.6))
+    ax1.plot(xs, cum_mine, "o-", color="#1565C0", linewidth=1.6, markersize=3,
+             label="Brier — mine (cum.)")
+    # Market line: skip None gaps.
+    mkt_x = [x for x, y in zip(xs, cum_mkt) if y is not None]
+    mkt_y = [y for y in cum_mkt if y is not None]
+    if mkt_y:
+        ax1.plot(mkt_x, mkt_y, "s--", color="#EF6C00", linewidth=1.3, markersize=3,
+                 label="Brier — market (cum.)")
+    ax1.set_ylabel("Cumulative Brier (lower = better)", fontsize=7)
+    ax1.tick_params(labelsize=6)
+    ax1.grid(True, linestyle=":", linewidth=0.4, alpha=0.5)
+
+    ax2 = ax1.twinx()
+    sk_x = [x for x, y in zip(xs, cum_skill) if y is not None]
+    sk_y = [y for y in cum_skill if y is not None]
+    if sk_y:
+        ax2.plot(sk_x, sk_y, "-", color="#2E7D32", linewidth=1.0, alpha=0.7,
+                 label="Skill vs market (cum.)")
+        ax2.axhline(0.0, color="#999999", linewidth=0.6, linestyle=":")
+    ax2.set_ylabel("Skill (market − mine)", fontsize=7, color="#2E7D32")
+    ax2.tick_params(labelsize=6)
+
+    if use_dates:
+        ax1.xaxis.set_major_formatter(mdates.DateFormatter("%m/%d"))
+        ax1.xaxis.set_major_locator(mdates.AutoDateLocator(minticks=2, maxticks=6))
+    else:
+        ax1.set_xlabel("Resolution #", fontsize=7)
+
+    ax1.set_title("Performance Over Time (by resolution)", fontsize=8, pad=3)
+    lines1, labels1 = ax1.get_legend_handles_labels()
+    lines2, labels2 = ax2.get_legend_handles_labels()
+    if lines1 or lines2:
+        ax1.legend(lines1 + lines2, labels1 + labels2, fontsize=6, loc="upper right")
+
+    fig.tight_layout(pad=0.5)
+    fig.savefig(str(out_path), dpi=110, bbox_inches="tight")
+    plt.close(fig)
+    return out_path
+
+
 # ---------------------------------------------------------------------------
 # Section builders — each returns a list of flowables
 # ---------------------------------------------------------------------------
@@ -486,6 +572,151 @@ def _build_cover(
             "No data yet — run the agent to populate forecasts.",
             st["small"],
         ))
+
+    return elems
+
+
+# Below this many resolved markets, a Brier/skill gap is not yet distinguishable
+# from luck — we surface it but label it provisional rather than letting the
+# headline number read as a proven edge.
+_MIN_RESOLUTIONS_FOR_SIGNAL = 30
+
+
+def _segment_table(title: str, segments: dict, st: dict, label_header: str) -> list:
+    """Render one performance table from a by_category / by_segment dict.
+
+    *segments* maps a label -> {n, brier_mine_mean, brier_market_mean,
+    skill_vs_market}. Rows are sorted by skill (best first); rows with no market
+    comparison (skill None) sink to the bottom.
+    """
+    elems: list = []
+    if not segments:
+        return elems
+
+    def _sort_key(item):
+        skill = item[1].get("skill_vs_market")
+        return (skill is None, -(skill if skill is not None else 0.0))
+
+    rows = sorted(segments.items(), key=_sort_key)
+
+    data = [[label_header, "n", "Brier (mine)", "Brier (mkt)", "Skill"]]
+    for label, s in rows:
+        skill = s.get("skill_vs_market")
+        skill_str = f"{skill:+.3f}" if skill is not None else "—"
+        data.append([
+            label,
+            str(s.get("n", 0)),
+            _fmt_float(s.get("brier_mine_mean"), 3),
+            _fmt_float(s.get("brier_market_mean"), 3),
+            skill_str,
+        ])
+
+    tbl = Table(data, colWidths=[7.5 * cm, 1.2 * cm, 2.4 * cm, 2.4 * cm, 2.0 * cm])
+    style = [
+        ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#283593")),
+        ("TEXTCOLOR", (0, 0), (-1, 0), colors.white),
+        ("FONTNAME", (0, 0), (-1, 0), "Helvetica-Bold"),
+        ("FONTSIZE", (0, 0), (-1, -1), 8),
+        ("ROWBACKGROUNDS", (0, 1), (-1, -1),
+         [colors.HexColor("#EEF2FF"), colors.white]),
+        ("GRID", (0, 0), (-1, -1), 0.3, colors.HexColor("#C5CAE9")),
+        ("TOPPADDING", (0, 0), (-1, -1), 3),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 3),
+        ("LEFTPADDING", (0, 0), (-1, -1), 4),
+        ("ALIGN", (1, 0), (-1, -1), "CENTER"),
+    ]
+    # Tint the Skill column green/red by sign.
+    for i, (_, s) in enumerate(rows, start=1):
+        skill = s.get("skill_vs_market")
+        if skill is None:
+            continue
+        col = colors.HexColor("#1B5E20") if skill > 0 else colors.HexColor("#B71C1C")
+        style.append(("TEXTCOLOR", (4, i), (4, i), col))
+    tbl.setStyle(TableStyle(style))
+
+    elems.append(Paragraph(title, st["small"]))
+    elems.append(_sp(2))
+    elems.append(tbl)
+    return elems
+
+
+def _build_performance(
+    resolutions: schemas.ResolutionsFile,
+    calibration: schemas.Calibration,
+    scratch_dir: Path,
+    st: dict,
+) -> list:
+    """Performance-over-time + per-segment skill breakdown (gated on n_resolved >= 1)."""
+    elems: list = []
+    n = calibration.n_resolved
+    if n < 1:
+        return elems
+
+    elems.append(Paragraph("Performance Over Time", st["section"]))
+    elems.append(_hr())
+
+    # Headline KPIs with an explicit significance caveat.
+    bm = calibration.brier_mine_mean
+    bk = calibration.brier_market_mean
+    sk = calibration.skill_vs_market
+    verdict = "beating" if (sk is not None and sk > 0) else "trailing"
+    kpi = (
+        f"Resolved: <b>{n}</b> &nbsp; Brier (mine): <b>{_fmt_float(bm, 3)}</b> "
+        f"vs market <b>{_fmt_float(bk, 3)}</b> &nbsp; "
+        f"Skill: <b>{(f'{sk:+.3f}' if sk is not None else '—')}</b> "
+        f"({verdict} the market)"
+    )
+    elems.append(Paragraph(kpi, st["body"]))
+
+    if n < _MIN_RESOLUTIONS_FOR_SIGNAL:
+        elems.append(Paragraph(
+            f'<font color="#B71C1C">Provisional — only {n} resolved market(s). '
+            f"A skill gap is not statistically distinguishable from luck below "
+            f"~{_MIN_RESOLUTIONS_FOR_SIGNAL} resolutions; read the trend, not the point estimate.</font>",
+            st["small"],
+        ))
+    elems.append(_sp(6))
+
+    # Cumulative trend chart.
+    chart_path = scratch_dir / "_performance_trend.png"
+    saved = _performance_over_time_chart(resolutions, chart_path)
+    if saved and saved.exists():
+        elems.append(Image(str(saved), width=13 * cm, height=6.0 * cm))
+    else:
+        elems.append(Paragraph(
+            "Need at least 2 resolved markets to plot a trend.", st["small"]
+        ))
+    elems.append(_sp(8))
+
+    # Per-segment skill — where the edge is (and isn't).
+    elems.append(Paragraph("Where the edge is — by segment", st["small"]))
+
+    # Best/worst callout among subcategories with at least 2 resolutions.
+    seg = calibration.by_segment or {}
+    rated = {k: v for k, v in seg.items()
+             if v.get("n", 0) >= 2 and v.get("skill_vs_market") is not None}
+    if rated:
+        best = max(rated.items(), key=lambda kv: kv[1]["skill_vs_market"])
+        worst = min(rated.items(), key=lambda kv: kv[1]["skill_vs_market"])
+        callout = (
+            f'Strongest: <b>{best[0]}</b> (skill {best[1]["skill_vs_market"]:+.3f}, '
+            f'n={best[1]["n"]}). &nbsp; Weakest: <b>{worst[0]}</b> '
+            f'(skill {worst[1]["skill_vs_market"]:+.3f}, n={worst[1]["n"]}).'
+        )
+        elems.append(Paragraph(callout, st["small"]))
+    else:
+        elems.append(Paragraph(
+            '<font color="#888888">No segment has ≥2 resolved markets yet — '
+            "per-segment skill is still single-sample noise.</font>",
+            st["small"],
+        ))
+    elems.append(_sp(4))
+
+    elems.extend(_segment_table(
+        "By category", calibration.by_category or {}, st, "Category"))
+    elems.append(_sp(6))
+    elems.extend(_segment_table(
+        "By sub-category", seg, st, "Category / sub-category"))
 
     return elems
 
@@ -998,6 +1229,11 @@ def build_pdf(
     # 1. Cover / summary
     story.extend(_build_cover(watchlist, forecasts, resolutions, calibration, st))
     story.append(_sp(12))
+
+    # 1b. Performance over time + per-segment skill (gated on n_resolved >= 1)
+    if calibration.n_resolved >= 1:
+        story.extend(_build_performance(resolutions, calibration, scratch, st))
+        story.append(_sp(12))
 
     # 2. Per-market section
     story.extend(_build_per_market(watchlist, forecasts, scratch, st))

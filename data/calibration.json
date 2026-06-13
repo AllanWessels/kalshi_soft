@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-06-12T22:05:23Z",
+  "updated_at": "2026-06-13T04:00:34Z",
   "n_resolved": 12,
   "brier_mine_mean": 0.15430208333333334,
   "brier_market_mean": 0.19566910416666664,
@@ -100,11 +100,53 @@
   "by_category": {
     "politics": {
       "n": 11,
-      "brier_mine_mean": 0.16702045454545456
+      "brier_mine_mean": 0.16702045454545456,
+      "brier_market_mean": 0.2065822045454545,
+      "skill_vs_market": 0.03956174999999995
     },
     "economy": {
       "n": 1,
-      "brier_mine_mean": 0.0144
+      "brier_mine_mean": 0.0144,
+      "brier_market_mean": 0.07562500000000001,
+      "skill_vs_market": 0.061225000000000016
+    }
+  },
+  "by_segment": {
+    "politics / us-governor": {
+      "n": 1,
+      "brier_mine_mean": 0.000225,
+      "brier_market_mean": 0.00030625000000000004,
+      "skill_vs_market": 8.125000000000005e-05
+    },
+    "politics / us-governor-primary": {
+      "n": 3,
+      "brier_mine_mean": 0.21526666666666672,
+      "brier_market_mean": 0.27981216666666664,
+      "skill_vs_market": 0.06454549999999992
+    },
+    "politics / mayoral": {
+      "n": 2,
+      "brier_mine_mean": 0.03824999999999999,
+      "brier_market_mean": 0.067625,
+      "skill_vs_market": 0.029375000000000012
+    },
+    "politics / us-senate": {
+      "n": 4,
+      "brier_mine_mean": 0.182575,
+      "brier_market_mean": 0.150046625,
+      "skill_vs_market": -0.032528375
+    },
+    "politics / foreign-election": {
+      "n": 1,
+      "brier_mine_mean": 0.3844,
+      "brier_market_mean": 0.697225,
+      "skill_vs_market": 0.31282499999999996
+    },
+    "economy / jobs-unemployment": {
+      "n": 1,
+      "brier_mine_mean": 0.0144,
+      "brier_market_mean": 0.07562500000000001,
+      "skill_vs_market": 0.061225000000000016
     }
   }
 }

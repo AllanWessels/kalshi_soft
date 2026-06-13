@@ -71,6 +71,7 @@ CREATE TABLE IF NOT EXISTS resolutions (
     ticker                TEXT PRIMARY KEY,
     title                 TEXT,
     category              TEXT,
+    subcategory           TEXT,
     resolved_at           TEXT,
     outcome               INTEGER,
     final_my_probability  REAL,
@@ -195,6 +196,7 @@ def _populate_resolutions(conn: sqlite3.Connection) -> None:
             r.ticker,
             r.title or None,
             r.category or None,
+            r.subcategory or None,
             r.resolved_at or None,
             r.outcome if r.outcome is not None else None,
             r.final_my_probability if r.final_my_probability is not None else None,
@@ -207,9 +209,9 @@ def _populate_resolutions(conn: sqlite3.Connection) -> None:
     ]
     conn.executemany(
         "INSERT OR REPLACE INTO resolutions "
-        "(ticker, title, category, resolved_at, outcome, final_my_probability, "
+        "(ticker, title, category, subcategory, resolved_at, outcome, final_my_probability, "
         " final_market_implied, brier_mine, brier_market, num_forecasts) "
-        "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+        "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
         rows,
     )
 
