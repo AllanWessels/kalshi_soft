@@ -12,6 +12,16 @@ cloned fresh and `data/` holds your memory from prior runs. Read and follow
   probability first (enforced by the order of steps below).
 - **Parallelize (project directive):** independent research fans out to **Sonnet** subagents,
   one per due market; you (Opus) orchestrate and synthesize. Pass `model: sonnet` explicitly.
+- **This loop is an EXPERIMENT (project directive).** Every forecast is produced by a registered
+  *strategy arm* (`lib/strategies.py`) and tagged with its `strategy_id`; every resolution scores
+  that arm on **both Brier skill and realized profit**. We do not assume which forecasting topology
+  is best — the scoreboard discovers it. See SKILL §0.
+- **Retrieval runs LOCAL, judgment runs on Claude (cost unlock).** Raw web pages are condensed by a
+  local open-weight model (`lib/local_llm.py`) into compact *quoted* evidence notes; raw pages never
+  enter Claude context. If the local endpoint is down, fall back to a Sonnet retrieval agent — the
+  pipeline never hard-breaks.
+- **Never grade your own work.** Post-mortems run through an **adversarial panel** (blind local
+  Critic → Claude Defender → Claude Judge), not single-agent self-judging. See Step 6b.
 - Degrade gracefully: if a step fails, log it and continue to the report + commit steps so every
   run still produces output. Never leave the repo half-committed.
 
@@ -26,9 +36,16 @@ can report `duration_s` at the end.
 ## Step 0 — Preflight
 ```
 python3 scripts/refresh_market.py --selftest
+python3 -c "from lib import local_llm, config; print('local_llm', 'UP' if (config.local_llm_enabled() and local_llm.ping()) else 'DOWN')"
 ```
-If it prints `kalshi UNREACHABLE`, skip the research/resolution steps that need the API, jump to
-Step 7 (build report from existing state), Step 8, Step 9, and exit. Otherwise continue.
+If `refresh_market` prints `kalshi UNREACHABLE`, skip the research/resolution steps that need the
+API, jump to Step 7 (build report from existing state), Step 8, Step 9, and exit. Otherwise continue.
+
+**Local-LLM mode:** if the healthcheck prints `local_llm UP`, retrieval condensation runs locally
+(free) and the per-run cap can **relax** (see Step 3) — the cap existed to throttle frontier fan-out,
+which local retrieval removes. If it prints `local_llm DOWN`, the pipeline still works via the
+**Sonnet fallback** retrieval/critic agents, and the per-run cap stays at its default (frontier
+fan-out is back in play). Note which mode you're in for the Step 8 log.
 
 ## Step 1 — Discover
 ```
@@ -70,26 +87,62 @@ so nothing is lost. Always keep `--event-driven` overrides inside the kept set e
 dropping a less-urgent cadence market. Note in the Step 8 log how many were deferred
 (`reforecast_deferred`) — the `--summary` line reports this directly.
 
-## Step 4 — Research & forecast each due market (FAN OUT to Sonnet, IN WAVES)
-For the capped due list (≤12 from Step 3), **dispatch Sonnet subagents in bounded waves of at
-most 4 at a time** — never all at once. This is the concurrency throttle that keeps the run under
-Anthropic's burst limits (a single 20-wide fan-out is what got the org rate-limited).
+**Cap relaxation when `local_llm UP` (Step 0):** the cap throttled *frontier* fan-out — the part
+that got the org rate-limited. With local retrieval doing the heavy web work, that pressure is gone,
+so when an explicit `/update N` was **not** given you may raise the default (e.g. `--limit 20`) up to
+the full due list. The **wave rule below still binds**: only the lighter Claude forecasting/judge
+calls fan out, and never more than 4 concurrently. On the Sonnet-fallback path keep the default 12.
+
+## Step 4 — Research & forecast each due market (RETRIEVE local → assign arm → FAN OUT in WAVES)
+
+### Step 4a — Retrieval tier (LOCAL evidence notes, free)
+For each due market, gather web evidence and condense it to compact, *quoted* structured notes
+**before** any frontier forecasting — so raw pages never enter Claude context.
+- **`local_llm UP`:** run your web searches/fetches, then pipe the raw results through
+  `lib.local_llm.extract_evidence(question, raw_results, as_of=...)` to get `EvidenceNotes`
+  (claims with verbatim source quotes, base rates, key uncertainties). Hand the **notes**, not the
+  raw pages, to the forecasters.
+- **`local_llm DOWN`:** fall back to a Sonnet retrieval agent that returns the same notes shape.
+The notes carry source quotes so the forecaster can verify rather than blindly trust a small model.
+
+### Step 4b — Assign the strategy arm (the experiment)
+For each due market, pick its arm:
+```
+python3 -c "from lib import strategies, scoring, store; \
+  s=strategies.select_strategy('<TICKER>', scoring.compute_calibration(store.load_resolutions().resolved).by_strategy); \
+  print(s.id, s.n_forecasters, s.aggregation, s.crowd_adjust_weight, s.redteam)"
+```
+The arm config tells you **how many independent forecasters to spawn** (`n_forecasters`), how to
+**combine** them (`aggregation` — use `strategies.combine(probs, arm, market_price)`), whether to
+**crowd-adjust** toward the market, and whether to run a **red-team** pass before committing.
+Selection is round-robin while cold, epsilon-greedy on `by_strategy` skill+ROI once arms have a
+record. Carry the chosen `strategy_id` to Step 5.
+
+### Step 4c — Forecast (FAN OUT to Sonnet, IN WAVES)
+**Dispatch Sonnet subagents in bounded waves of at most 4 at a time** — never all at once. This is
+the concurrency throttle that keeps the run under Anthropic's burst limits (a single 20-wide
+fan-out is what got the org rate-limited). For an arm with `n_forecasters > 1`, the independent
+forecasters for a market also count toward the ≤4 concurrent budget.
 
 > **Wave protocol (MANDATORY):** issue at most **4** `Task`/subagent calls in one message, then
-> **wait for all 4 to return** before issuing the next batch of ≤4. For 12 markets that is 3 waves.
-> Do **not** start a new wave until the previous wave's agents have all completed. Never put more
-> than 4 subagent calls in a single message.
+> **wait for all 4 to return** before issuing the next batch of ≤4. Do **not** start a new wave
+> until the previous wave's agents have all completed. Never put more than 4 subagent calls in a
+> single message.
 
-Give each worker the market title + ticker + resolution rules and this instruction:
+Give each worker the market title + ticker + resolution rules + the **evidence notes from 4a** and
+this instruction:
 
 > Follow `.claude/skills/superforecasting/SKILL.md` steps 1–4 and 6. Form an INDEPENDENT
-> probability: decompose the question, establish base rates / reference classes, gather ≥3
-> independent perspectives via web research, run a pre-mortem. **Do NOT look up the Kalshi market
-> price.** Return a structured result: `my_probability` (granular), `my_confidence`
+> probability from the supplied evidence notes: decompose the question, establish base rates /
+> reference classes, weigh ≥3 independent perspectives, run a pre-mortem. **Do NOT look up the
+> Kalshi market price.** Return a structured result: `my_probability` (granular), `my_confidence`
 > (low/med/high), `rationale_summary` (1–3 sentences), `key_drivers`, `reference_classes`,
 > `research_refs` (URLs).
 
-Then **you (Opus), per returned draft**, execute SKILL step 5 (anti-anchoring):
+For a multi-forecaster arm, combine the returned probabilities with
+`strategies.combine(probs, arm, market_price=None)` (anti-anchoring: do not pass the price yet).
+If the arm sets `redteam`, run one adversarial red-team pass on the combined estimate before
+committing. Then **you (Opus), per market**, execute SKILL step 5 (anti-anchoring):
 ```
 python3 scripts/refresh_market.py --ticker <TICKER>      # NOW look at the price + asks + fees
 ```
@@ -104,11 +157,13 @@ For every due market:
 ```
 python3 scripts/record_forecast.py --ticker <TICKER> --prob <P> --confidence <low|medium|high> \
   --market-implied <MP> --market-price-cents <C> --yes-ask <YA> --no-ask <NA> \
-  --trigger <bootstrap|scheduled|near_close|event_driven> \
+  --trigger <bootstrap|scheduled|near_close|event_driven> --strategy-id <ARM from Step 4b> \
   --rationale "<1-3 sentences>" --drivers "a,b,c" --reference-classes "x,y" --refs "url1,url2" \
   --title "<market title>" --category <politics|culture|statements|economy> --close-time <ISO8601Z>
 ```
-The script computes edge + drift and is idempotent for same-day/same-trigger re-runs.
+The script computes edge + drift and is idempotent for same-day/same-trigger re-runs. `--strategy-id`
+tags the forecast with the arm from Step 4b so the resolution scoreboard can attribute Brier + ROI
+to it (defaults to `strategies.DEFAULT_STRATEGY` if omitted).
 
 ## Step 6 — Reconcile resolutions & score
 ```
@@ -118,30 +173,51 @@ Detects markets that resolved on Kalshi, records outcomes + Brier (yours vs mark
 with a **sub-category** (`lib/taxonomy.py`), frees watchlist slots, and recomputes
 `data/calibration.json` (cumulative + per-category + per-sub-category skill in `by_segment`).
 
-## Step 6b — Post-mortem & learning (only when markets newly resolved this run)
-If Step 6 recorded any **new** resolutions, learn from them:
+## Step 6b — Adversarial post-mortem panel (only when markets newly resolved this run)
+If Step 6 recorded any **new** resolutions, learn from them — but **never grade your own work**.
+Run the three-role panel via `scripts/postmortem.py` for each newly-resolved market:
 1. Rebuild the analysis DB: `python3 scripts/build_db.py` (SQLite mirror of the JSON; gitignored).
-2. For each newly-resolved market, run a **post-mortem** (your judgment): pull its forecast
-   trajectory (`python3 -c "from lib import db; print(db.forecast_trajectory('<TICKER>'))"`),
-   compare it to the outcome and to the market (`brier_mine` vs `brier_market`). Ask: did I have
-   the right side? Was I over/under-confident? Did I update well over time, or chase noise? What
-   *reliable* signal did I under/over-weight? Record it: `python3 scripts/record_lesson.py --id
-   <resolved_at>-<TICKER> --source resolution --ticker <T> --category <c> --outcome <0|1>
-   --final-prob .. --final-market .. --brier-mine .. --brier-market .. --beat-market <true|false>
-   --right ".." --wrong ".." --lesson ".." --pattern <short-tag>`.
-3. **Update the SKILL only on a PATTERN, never on one outcome.** `record_lesson.py` reports how
-   many times a `pattern_tag` has recurred across resolutions; only when it reaches
-   `config.SKILL_REVISION_MIN_PATTERN` (3) should you edit `.claude/skills/superforecasting/SKILL.md`
-   to encode the correction, then re-run `record_lesson.py ... --applied-to-skill` for those. A
-   single resolution is one noisy data point — the same discipline as forecasting (SKILL §4a).
+2. **Critic (blind, rubric-anchored, different model family).**
+   ```
+   python3 scripts/postmortem.py critic --ticker <TICKER>
+   ```
+   - `status: ok` → the **local Qwen** critic scored the fixed rubric (`config.POSTMORTEM_RUBRIC`),
+     blind to forecaster identity. Use its `rubric_scores` + `summary` + `biggest_miss`.
+   - `status: fallback` → local model down: spawn a **Sonnet critic sub-agent** with the printed
+     `packet` and the same blind rubric instruction; that becomes the critique (`critic_model:
+     sonnet-fallback`). The critic must judge **reasoning quality, not the outcome** (a good forecast
+     can still lose).
+3. **Defender (Claude sub-agent):** argue what the forecast got *right* and whether the outcome was
+   genuinely unforeseeable at forecast time. **Judge (Claude, Opus tier):** read critic + defender,
+   issue a per-rubric verdict and a single actionable `lesson` with a short `pattern` tag; note where
+   critic and defender disagreed (that gap is the signal).
+4. Persist the adversarial lesson:
+   ```
+   python3 scripts/postmortem.py record --ticker <TICKER> --pattern <short-tag> \
+     --critic-model <local-model-tag|sonnet-fallback> --rubric-scores '<critic rubric_scores JSON>' \
+     --judge-verdict "<judge ruling>" --disagreement "<where critic/defender diverged>" \
+     --right ".." --wrong ".." --lesson "<actionable takeaway>"
+   ```
+5. **SKILL revision is human-gated and pattern-gated.** Never edit the SKILL on one outcome. Check
+   eligible patterns:
+   ```
+   python3 scripts/postmortem.py patterns
+   ```
+   Only a `pattern_tag` that has recurred across ≥ `config.SKILL_REVISION_MIN_PATTERN` (3) resolved
+   markets is eligible, and even then the edit is a **proposal for the user** — surface it in your
+   summary; do not auto-edit `.claude/skills/superforecasting/SKILL.md`. A single resolution is one
+   noisy data point — same discipline as forecasting (SKILL §4a).
 
 ## Step 7 — Build the report
 ```
 python3 scripts/build_report.py
 ```
 Regenerates `reports/latest.pdf` and archives a dated copy. Always run this, even on a degraded
-run. The report's **Performance Over Time** section shows the cumulative Brier/skill trend and the
-per-category / per-sub-category skill tables (with a provisional caveat below ~30 resolutions).
+run. The report shows: **Performance Over Time** (cumulative Brier/skill trend + per-category /
+per-sub-category skill tables), **Profit & Loss (realized)** (P&L, ROI, win rate on resolved
+YES/NO leans — calibration is not profit), and the **Strategy Scoreboard** (each arm's Brier skill
+*and* realized ROI — the "which topology wins" view). A provisional caveat shows below ~30
+resolutions.
 
 ## Step 8 — Log the run (with usage)
 Append one line to `data/run_log.jsonl` capturing this run: `run_id` (UTC timestamp), `status`,
