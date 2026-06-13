@@ -721,6 +721,194 @@ def _build_performance(
     return elems
 
 
+def _profit_table(title: str, segments: dict, st: dict, label_header: str) -> list:
+    """Render one realized-P&L table from a profit_by_* dict.
+
+    *segments* maps a label -> {n_trades, total_pnl, total_staked, roi, win_rate,
+    avg_clv, max_drawdown}. Rows are sorted by ROI (best first); ties broken by P&L.
+    """
+    elems: list = []
+    if not segments:
+        return elems
+
+    def _sort_key(item):
+        roi = item[1].get("roi")
+        return (roi is None, -(roi if roi is not None else 0.0))
+
+    rows = sorted(segments.items(), key=_sort_key)
+
+    data = [[label_header, "Trades", "P&L", "ROI", "Win%", "MaxDD"]]
+    for label, s in rows:
+        roi = s.get("roi")
+        wr = s.get("win_rate")
+        data.append([
+            label,
+            str(s.get("n_trades", 0)),
+            _fmt_dollar(s.get("total_pnl", 0.0)),
+            (f"{roi:+.1%}" if roi is not None else "—"),
+            (f"{wr:.0%}" if wr is not None else "—"),
+            _fmt_dollar(s.get("max_drawdown", 0.0)),
+        ])
+
+    tbl = Table(data, colWidths=[7.5 * cm, 1.6 * cm, 2.2 * cm, 1.9 * cm, 1.5 * cm, 2.0 * cm])
+    style = [
+        ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#283593")),
+        ("TEXTCOLOR", (0, 0), (-1, 0), colors.white),
+        ("FONTNAME", (0, 0), (-1, 0), "Helvetica-Bold"),
+        ("FONTSIZE", (0, 0), (-1, -1), 8),
+        ("ROWBACKGROUNDS", (0, 1), (-1, -1),
+         [colors.HexColor("#EEF2FF"), colors.white]),
+        ("GRID", (0, 0), (-1, -1), 0.3, colors.HexColor("#C5CAE9")),
+        ("TOPPADDING", (0, 0), (-1, -1), 3),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 3),
+        ("LEFTPADDING", (0, 0), (-1, -1), 4),
+        ("ALIGN", (1, 0), (-1, -1), "CENTER"),
+    ]
+    # Tint the P&L + ROI columns green/red by sign.
+    for i, (_, s) in enumerate(rows, start=1):
+        pnl = s.get("total_pnl")
+        if pnl is not None:
+            col = colors.HexColor("#1B5E20") if pnl > 0 else colors.HexColor("#B71C1C")
+            style.append(("TEXTCOLOR", (2, i), (3, i), col))
+    tbl.setStyle(TableStyle(style))
+
+    elems.append(Paragraph(title, st["small"]))
+    elems.append(_sp(2))
+    elems.append(tbl)
+    return elems
+
+
+def _build_profit_and_loss(
+    calibration: schemas.Calibration,
+    st: dict,
+) -> list:
+    """Realized Profit & Loss — the dollar dimension that Brier alone can't see.
+
+    A forecast can be well-calibrated yet lose money; this section makes that
+    visible by scoring every resolved YES/NO lean on realized P&L, ROI, and win
+    rate. NONE-leans (no position taken) are excluded from the trade counts.
+    """
+    elems: list = []
+    pbc = calibration.profit_by_category or {}
+    pbs = calibration.profit_by_strategy or {}
+    if not pbc and not pbs:
+        return elems
+
+    # Portfolio-wide rollup across all trades (category partition covers every trade).
+    n_trades = sum(s.get("n_trades", 0) for s in pbc.values())
+    if n_trades == 0:
+        return elems
+    total_pnl = sum(s.get("total_pnl", 0.0) for s in pbc.values())
+    total_staked = sum(s.get("total_staked", 0.0) for s in pbc.values())
+    total_wins = sum((s.get("win_rate") or 0.0) * s.get("n_trades", 0) for s in pbc.values())
+    roi = (total_pnl / total_staked) if total_staked > 0 else None
+    win_rate = (total_wins / n_trades) if n_trades else None
+
+    elems.append(Paragraph("Profit &amp; Loss (realized)", st["section"]))
+    elems.append(_hr())
+
+    pnl_color = "#1B5E20" if total_pnl > 0 else "#B71C1C"
+    kpi = (
+        f"Resolved trades: <b>{n_trades}</b> &nbsp; "
+        f'Realized P&amp;L: <b><font color="{pnl_color}">{_fmt_dollar(total_pnl)}</font></b> '
+        f"per contract &nbsp; "
+        f"ROI: <b>{(f'{roi:+.1%}' if roi is not None else '—')}</b> &nbsp; "
+        f"Win rate: <b>{(f'{win_rate:.0%}' if win_rate is not None else '—')}</b>"
+    )
+    elems.append(Paragraph(kpi, st["body"]))
+    elems.append(Paragraph(
+        '<font color="#888888">Paper trade: buy the lean side at its entry ask, '
+        "after Kalshi fees. A high win rate with negative ROI means winners are "
+        "underpriced relative to the losers — calibration without profit.</font>",
+        st["small"],
+    ))
+    elems.append(_sp(6))
+
+    elems.extend(_profit_table("By category", pbc, st, "Category"))
+    return elems
+
+
+def _build_strategy_scoreboard(
+    calibration: schemas.Calibration,
+    st: dict,
+) -> list:
+    """Strategy Scoreboard — the experiment's verdict: which forecasting topology wins.
+
+    Joins each arm's Brier skill (by_strategy) with its realized ROI
+    (profit_by_strategy) so a single table answers 'what's actually working'.
+    """
+    elems: list = []
+    bs = calibration.by_strategy or {}
+    ps = calibration.profit_by_strategy or {}
+    if not bs:
+        return elems
+
+    elems.append(Paragraph("Strategy Scoreboard", st["section"]))
+    elems.append(_hr())
+    elems.append(Paragraph(
+        "Every forecast is tagged with the strategy arm that produced it; resolutions "
+        "score that arm on both Brier skill and realized profit. The topology is "
+        "measured, not assumed.", st["body"]))
+    elems.append(_sp(4))
+
+    # Sort arms by skill (best first), then ROI.
+    def _sort_key(item):
+        sk = item[1].get("skill_vs_market")
+        roi = (ps.get(item[0]) or {}).get("roi")
+        return (sk is None, -(sk if sk is not None else 0.0), -(roi if roi is not None else 0.0))
+
+    rows = sorted(bs.items(), key=_sort_key)
+    data = [["Strategy", "n", "Brier", "Skill", "Trades", "ROI"]]
+    for sid, s in rows:
+        p = ps.get(sid) or {}
+        sk = s.get("skill_vs_market")
+        roi = p.get("roi")
+        data.append([
+            sid,
+            str(s.get("n", 0)),
+            _fmt_float(s.get("brier_mine_mean"), 3),
+            (f"{sk:+.3f}" if sk is not None else "—"),
+            str(p.get("n_trades", 0)),
+            (f"{roi:+.1%}" if roi is not None else "—"),
+        ])
+
+    tbl = Table(data, colWidths=[6.0 * cm, 1.2 * cm, 2.0 * cm, 2.0 * cm, 1.6 * cm, 1.9 * cm])
+    style = [
+        ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#283593")),
+        ("TEXTCOLOR", (0, 0), (-1, 0), colors.white),
+        ("FONTNAME", (0, 0), (-1, 0), "Helvetica-Bold"),
+        ("FONTSIZE", (0, 0), (-1, -1), 8),
+        ("ROWBACKGROUNDS", (0, 1), (-1, -1),
+         [colors.HexColor("#EEF2FF"), colors.white]),
+        ("GRID", (0, 0), (-1, -1), 0.3, colors.HexColor("#C5CAE9")),
+        ("TOPPADDING", (0, 0), (-1, -1), 3),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 3),
+        ("LEFTPADDING", (0, 0), (-1, -1), 4),
+        ("ALIGN", (1, 0), (-1, -1), "CENTER"),
+    ]
+    for i, (sid, s) in enumerate(rows, start=1):
+        sk = s.get("skill_vs_market")
+        if sk is not None:
+            col = colors.HexColor("#1B5E20") if sk > 0 else colors.HexColor("#B71C1C")
+            style.append(("TEXTCOLOR", (3, i), (3, i), col))
+        roi = (ps.get(sid) or {}).get("roi")
+        if roi is not None:
+            col = colors.HexColor("#1B5E20") if roi > 0 else colors.HexColor("#B71C1C")
+            style.append(("TEXTCOLOR", (5, i), (5, i), col))
+    tbl.setStyle(TableStyle(style))
+    elems.append(tbl)
+
+    if len(rows) == 1 and rows[0][0] == "untagged":
+        elems.append(_sp(3))
+        elems.append(Paragraph(
+            '<font color="#888888">All resolved markets predate strategy tagging '
+            "(arm = untagged). The scoreboard differentiates once strategy-tagged "
+            "forecasts resolve.</font>",
+            st["small"],
+        ))
+    return elems
+
+
 def _build_per_market(
     watchlist: schemas.Watchlist,
     forecasts: list[schemas.ForecastRecord],
@@ -1234,6 +1422,19 @@ def build_pdf(
     if calibration.n_resolved >= 1:
         story.extend(_build_performance(resolutions, calibration, scratch, st))
         story.append(_sp(12))
+
+    # 1c. Realized Profit & Loss (only renders once a YES/NO lean has resolved)
+    pnl_section = _build_profit_and_loss(calibration, st)
+    if pnl_section:
+        story.extend(pnl_section)
+        story.append(_sp(12))
+
+    # 1d. Strategy Scoreboard — which forecasting topology wins (gated on n_resolved >= 1)
+    if calibration.n_resolved >= 1:
+        scoreboard = _build_strategy_scoreboard(calibration, st)
+        if scoreboard:
+            story.extend(scoreboard)
+            story.append(_sp(12))
 
     # 2. Per-market section
     story.extend(_build_per_market(watchlist, forecasts, scratch, st))

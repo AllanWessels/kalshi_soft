@@ -124,6 +124,44 @@ def cadence_days_for(days_to_close: float) -> float:
 
 
 # ---------------------------------------------------------------------------
+# Model routing + local open-weight LLM (cost unlock + adversarial critic)
+# ---------------------------------------------------------------------------
+# The forecasting/judging tiers stay on Claude; raw web retrieval and the blind
+# adversarial post-mortem critic run on a LOCAL open-weight model (different model
+# family => kills self-preference bias; free + unmetered on the RTX 5080 box).
+# Base URL is env-overridable so a tunnel / hosted endpoint is a drop-in later.
+LOCAL_LLM_BASE_URL = os.environ.get("LOCAL_LLM_BASE_URL", "http://localhost:11434/v1").strip()
+LOCAL_LLM_MODEL = os.environ.get("LOCAL_LLM_MODEL", "qwen3:14b-instruct-q4_K_M").strip()
+LOCAL_LLM_TIMEOUT_S = 60
+LOCAL_LLM_API_KEY = os.environ.get("LOCAL_LLM_API_KEY", "ollama").strip()  # Ollama ignores it
+
+# Claude tiers per role (lifted out of markdown prose into code). The orchestrator
+# reads these to decide which model each step's sub-agents use.
+MODEL_FORECASTER = "sonnet"   # the N independent forecasters (strategy arms)
+MODEL_CRITIC = "local"        # blind adversarial critic -> local Qwen (different family)
+MODEL_DEFENDER = "sonnet"     # argues what was right / unforeseeable
+MODEL_JUDGE = "opus"          # reads critic+defender, issues verdict + lesson
+
+# Post-mortem panel rubric: fixed BEFORE resolution so the judge can't retrofit
+# "good reasoning" onto a lucky/unlucky outcome.
+POSTMORTEM_RUBRIC = (
+    "base_rate_established",      # did the forecast anchor on an explicit base rate?
+    "three_independent_sources",  # >=3 genuinely independent pieces of evidence?
+    "confidence_interval",        # was forecaster uncertainty considered, not just a point?
+    "market_divergence_justified",  # if we faded the market, was the divergence reasoned?
+)
+
+
+def local_llm_enabled() -> bool:
+    """Whether the local-LLM tier is opted in (env LOCAL_LLM_ENABLED, default on).
+
+    Lets the operator force the Sonnet-fallback path (e.g. GPU-less context) without
+    editing code. Any of 0/false/no/off disables it."""
+    v = os.environ.get("LOCAL_LLM_ENABLED", "1").strip().lower()
+    return v not in ("0", "false", "no", "off", "")
+
+
+# ---------------------------------------------------------------------------
 # Secrets
 # ---------------------------------------------------------------------------
 

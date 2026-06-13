@@ -62,6 +62,7 @@ CREATE TABLE IF NOT EXISTS forecasts (
     ev_per_contract           REAL,
     ev_limit_per_contract     REAL,
     trigger                   TEXT,
+    strategy_id               TEXT,
     rationale_summary         TEXT
 );
 """
@@ -78,7 +79,14 @@ CREATE TABLE IF NOT EXISTS resolutions (
     final_market_implied  REAL,
     brier_mine            REAL,
     brier_market          REAL,
-    num_forecasts         INTEGER
+    num_forecasts         INTEGER,
+    strategy_id           TEXT,
+    entry_side            TEXT,
+    entry_price           REAL,
+    realized_pnl          REAL,
+    roi                   REAL,
+    won                   INTEGER,
+    clv                   REAL
 );
 """
 
@@ -95,7 +103,9 @@ CREATE TABLE IF NOT EXISTS lessons (
     beat_market       INTEGER,
     lesson            TEXT,
     pattern_tag       TEXT,
-    applied_to_skill  INTEGER
+    applied_to_skill  INTEGER,
+    critic_model      TEXT,
+    judge_verdict     TEXT
 );
 """
 
@@ -177,14 +187,15 @@ def _populate_forecasts(conn: sqlite3.Connection) -> None:
                 entry.ev_per_contract,
                 entry.ev_limit_per_contract,
                 entry.trigger or None,
+                getattr(entry, "strategy_id", "") or None,
                 entry.rationale_summary or None,
             ))
     conn.executemany(
         "INSERT INTO forecasts "
         "(ticker, as_of, my_probability, my_confidence, market_implied_probability, "
         " edge, lean, conviction, ev_per_contract, ev_limit_per_contract, "
-        " trigger, rationale_summary) "
-        "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+        " trigger, strategy_id, rationale_summary) "
+        "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
         rows,
     )
 
@@ -204,14 +215,22 @@ def _populate_resolutions(conn: sqlite3.Connection) -> None:
             r.brier_mine,
             r.brier_market,
             r.num_forecasts if r.num_forecasts is not None else None,
+            r.strategy_id or None,
+            r.entry_side or None,
+            r.entry_price,
+            r.realized_pnl,
+            r.roi,
+            (int(r.won) if r.won is not None else None),
+            r.clv,
         )
         for r in rf.resolved
     ]
     conn.executemany(
         "INSERT OR REPLACE INTO resolutions "
         "(ticker, title, category, subcategory, resolved_at, outcome, final_my_probability, "
-        " final_market_implied, brier_mine, brier_market, num_forecasts) "
-        "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+        " final_market_implied, brier_mine, brier_market, num_forecasts, "
+        " strategy_id, entry_side, entry_price, realized_pnl, roi, won, clv) "
+        "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
         rows,
     )
 
@@ -232,14 +251,16 @@ def _populate_lessons(conn: sqlite3.Connection) -> None:
             l.lesson or None,
             l.pattern_tag or None,
             int(l.applied_to_skill) if l.applied_to_skill is not None else None,
+            getattr(l, "critic_model", "") or None,
+            getattr(l, "judge_verdict", "") or None,
         )
         for l in lf.lessons
     ]
     conn.executemany(
         "INSERT OR REPLACE INTO lessons "
         "(id, created_at, source, ticker, category, outcome, brier_mine, brier_market, "
-        " beat_market, lesson, pattern_tag, applied_to_skill) "
-        "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+        " beat_market, lesson, pattern_tag, applied_to_skill, critic_model, judge_verdict) "
+        "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
         rows,
     )
 

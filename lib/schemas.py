@@ -163,6 +163,7 @@ class ForecastEntry:
     lean_note: Optional[str] = None       # why a positive-EV side was gated to NONE (low conf / large market gap)
     prob_delta_vs_prev: Optional[float] = None   # computed by store
     trigger: str = "scheduled"            # TRIGGERS
+    strategy_id: str = ""                 # which forecasting strategy/arm produced this (see lib/strategies)
     rationale_summary: str = ""           # 1-3 sentences, agent-written
     key_drivers: list[str] = field(default_factory=list)
     reference_classes: list[str] = field(default_factory=list)
@@ -231,6 +232,17 @@ class Resolution:
     brier_market: Optional[float] = None
     num_forecasts: int = 0
     first_forecast_prob: Optional[float] = None
+    # Strategy that produced the final forecast (experimentation harness).
+    strategy_id: str = ""
+    # Realized paper-trade economics (populated only when the final lean was YES/NO;
+    # all None when lean was NONE = no position taken). See lib/profit.py.
+    entry_side: str = ""                  # YES | NO | "" (no trade)
+    entry_price: Optional[float] = None   # price paid on the lean side (dollars)
+    fee_at_entry: Optional[float] = None
+    realized_pnl: Optional[float] = None  # net $/contract after fee; None = no trade
+    roi: Optional[float] = None           # realized_pnl / staked
+    won: Optional[bool] = None
+    clv: Optional[float] = None           # closing-line value (skill signal)
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
@@ -287,6 +299,12 @@ class Lesson:
     lesson: str = ""                      # the actionable takeaway
     pattern_tag: str = ""                 # short tag to group recurring lessons (e.g. "primary-overconfidence")
     applied_to_skill: bool = False        # set true once folded into SKILL.md (only on a recurring pattern)
+    # Adversarial post-mortem panel (scripts/postmortem.py). Empty when the lesson
+    # predates the panel or came from user_feedback.
+    critic_model: str = ""                # model that produced the blind critique (e.g. local Qwen tag)
+    rubric_scores: dict[str, Any] = field(default_factory=dict)  # {rubric_item: {"pass": bool, "reason": str}}
+    judge_verdict: str = ""               # the Claude judge's final ruling after critic+defender
+    disagreement: str = ""                # where critic and defender diverged (the signal worth keeping)
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
@@ -344,6 +362,11 @@ class Calibration:
     bins: list[CalibrationBin] = field(default_factory=list)
     by_category: dict[str, Any] = field(default_factory=dict)
     by_segment: dict[str, Any] = field(default_factory=dict)   # "category / subcategory" -> stats
+    by_strategy: dict[str, Any] = field(default_factory=dict)   # strategy_id -> Brier skill stats
+    # Realized-profit scoreboards (see lib/profit.aggregate_profit); empty until trades resolve.
+    profit_by_category: dict[str, Any] = field(default_factory=dict)
+    profit_by_segment: dict[str, Any] = field(default_factory=dict)
+    profit_by_strategy: dict[str, Any] = field(default_factory=dict)  # the "which topology wins" view
     schema_version: int = SCHEMA_VERSION
 
     def to_dict(self) -> dict[str, Any]:
@@ -357,6 +380,10 @@ class Calibration:
             "bins": [b.to_dict() for b in self.bins],
             "by_category": self.by_category,
             "by_segment": self.by_segment,
+            "by_strategy": self.by_strategy,
+            "profit_by_category": self.profit_by_category,
+            "profit_by_segment": self.profit_by_segment,
+            "profit_by_strategy": self.profit_by_strategy,
         }
 
     @classmethod
@@ -371,6 +398,10 @@ class Calibration:
             bins=[CalibrationBin.from_dict(b) for b in d.get("bins", [])],
             by_category=d.get("by_category", {}),
             by_segment=d.get("by_segment", {}),
+            by_strategy=d.get("by_strategy", {}),
+            profit_by_category=d.get("profit_by_category", {}),
+            profit_by_segment=d.get("profit_by_segment", {}),
+            profit_by_strategy=d.get("profit_by_strategy", {}),
             schema_version=int(d.get("schema_version", SCHEMA_VERSION)),
         )
 

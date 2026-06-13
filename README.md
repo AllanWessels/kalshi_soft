@@ -15,22 +15,42 @@ scores + calibration curves as markets resolve, and publishes a PDF report each 
 
 ## How it works
 - **Python = deterministic plumbing** (`lib/`, `scripts/`): Kalshi fetch, state storage,
-  Brier/calibration math, PDF rendering, git ops. It never decides a probability.
-- **Opus = the forecaster**: each run it follows `.claude/skills/superforecasting/SKILL.md`,
+  Brier/calibration math, profit/P&L math, PDF rendering, git ops. It never decides a probability.
+- **Opus = the forecaster/orchestrator**: each run it follows `.claude/skills/superforecasting/SKILL.md`,
   fanning out **Sonnet** research workers (one per market) and synthesizing the final calls.
+- **A local open-weight model = free retrieval + adversarial critic** (`lib/local_llm.py`): condenses
+  raw web pages into compact *quoted* evidence notes (so raw pages never enter Claude context) and
+  acts as the blind, different-family Critic in the post-mortem panel. Degrades to a Sonnet agent
+  when the local endpoint is down.
+- **The loop is an experiment**: every forecast is produced by a registered **strategy arm**
+  (`lib/strategies.py`) and scored at resolution on **both Brier skill and realized profit**, so the
+  scoreboard *discovers* which forecasting topology wins rather than assuming one.
+- **Learning is adversarial, not self-graded**: resolved markets go through a Critic → Defender →
+  Judge panel (`scripts/postmortem.py`); SKILL edits are pattern-gated **and** human-gated.
 - **The repo is the memory**: all state lives in `data/` and is committed each run, so the
   cloud Routine (which clones fresh each time) carries its track record forward.
 
 ## Layout
 ```
-lib/        schemas, config, taxonomy, kalshi_client, store, scoring, report, gitops  (deterministic)
-scripts/    fetch_candidates, refresh_market, record_forecast,
-            due_for_reforecast, reconcile_resolutions, build_report          (CLI entrypoints)
+lib/        schemas, config, taxonomy, kalshi_client, store, scoring, gitops,
+            profit, strategies, local_llm, report                            (deterministic + LLM client)
+scripts/    fetch_candidates, refresh_market, record_forecast, due_for_reforecast,
+            reconcile_resolutions, build_report, postmortem, record_lesson   (CLI entrypoints)
 data/       watchlist.json, forecasts/<TICKER>.json, resolutions.json,
-            calibration.json, candidates.json, run_log.jsonl                 (committed state)
+            calibration.json, candidates.json, lessons.json, run_log.jsonl   (committed state)
 reports/    latest.pdf + archive/report_YYYY-MM-DD.pdf                       (the deliverable)
 ROUTINE.md  the per-run runbook the scheduled agent executes
 .claude/skills/superforecasting/SKILL.md   the forecasting methodology
+```
+
+### The `/update` pipeline (per run)
+```
+0 preflight + local-LLM healthcheck   1 discover/curate/due
+2 RETRIEVE (local Qwen → quoted evidence notes; Sonnet fallback if down)
+3 FORECAST (assign strategy arm → N Sonnet forecasters on the notes → combine; anti-anchoring)
+4 RECORD (--strategy-id + entry prices)   5 RECONCILE (Brier + realized P&L/ROI)
+6 ADVERSARIAL POST-MORTEM (blind local Critic → Claude Defender → Judge → lesson)
+7 REPORT (Performance, Profit & Loss, Strategy Scoreboard) + commit
 ```
 
 ## Running it
@@ -55,6 +75,27 @@ you can open in the GitHub mobile app. One-time setup in the session's cloud env
 No Kalshi key needs to be set in the cloud environment (public data only). For hands-free
 automation you can later point a scheduled Routine at the same `ROUTINE.md`, but it isn't required.
 
+### Local open-weight model (optional but recommended) — retrieval + adversarial critic
+`/update` runs on the local RTX 5080 box (directly or via phone Remote Control — Claude Code web
+sandboxes are GPU-less), so the open-weight model is reachable at `localhost` with no tunnel. It is
+**operator-installed, not auto-installed**:
+```bash
+# one-command start (Ollama, works on Blackwell w/ CUDA 12.8):
+ollama pull qwen3:14b-instruct-q4_K_M
+ollama serve            # serves an OpenAI-compatible API on http://localhost:11434/v1
+```
+Config lives in `lib/config.py` and is env-overridable:
+`LOCAL_LLM_BASE_URL` (default `http://localhost:11434/v1`), `LOCAL_LLM_MODEL`,
+`LOCAL_LLM_ENABLED=0` to force the Sonnet-fallback path. Verify with:
+```bash
+python3 -c "from lib import local_llm; print('UP' if local_llm.ping() else 'DOWN')"
+python3 -m lib.local_llm        # offline self-test (JSON parsing + fallback, no server needed)
+```
+When the endpoint is **down or disabled**, the pipeline still works end-to-end via Sonnet retrieval
+and critic agents — the local model is a cost optimization, not a hard dependency. Migrate to
+vLLM-from-source only if concurrency demands it (Blackwell needs torch cu128,
+`VLLM_FLASH_ATTN_VERSION=2`, `TORCH_CUDA_ARCH_LIST=12.0`).
+
 ## Security
 The loop is **read-only and needs no credentials** — it calls only Kalshi's public market-data
 endpoints (verified: a no-header request to `/trade-api/v2/markets` returns 200). The client
@@ -74,3 +115,10 @@ tables (where your edge is real and where it isn't). Every market is auto-tagged
 sub-category by `lib/taxonomy.py` (e.g. `politics / us-governor-primary`, `economy / fed-rates`),
 also queryable via `data/forecasts.db` (`resolutions.subcategory`). Skill numbers are labelled
 **provisional below ~30 resolutions** — read the trend, not the point estimate.
+
+Two further sections close the loop between *calibration* and *money*:
+- **Profit & Loss (realized)** — every resolved YES/NO paper lean scored on realized P&L, ROI, and
+  win rate (entry ask, after Kalshi fees). A high win rate with negative ROI = calibration without
+  profit, the gap Brier alone can't see.
+- **Strategy Scoreboard** — each strategy arm's Brier skill **and** realized ROI side by side: the
+  empirical answer to *which forecasting topology actually works*, which the harness keeps testing.
