@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "ticker": "KXFEDDECISION-26JUN-C26",
-  "title": "Will the Federal Reserve Cut rates by >25bps at their June 2026 meeting?",
+  "ticker": "KXFEDDECISION-26JUN-H26",
+  "title": "Will the Federal Reserve Hike rates by >25bps at their June 2026 meeting?",
   "category": "economy",
   "close_time": "2026-06-17T17:59:00Z",
   "current": {
@@ -20,46 +20,46 @@
     "lean": "NONE",
     "conviction": "low",
     "lean_note": "I lean NO (my prob 1%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
-    "prob_delta_vs_prev": -0.01,
+    "prob_delta_vs_prev": 0.0,
     "trigger": "near_close",
-    "rationale_summary": "Held: >25bps cut near-impossible absent recession.",
+    "rationale_summary": "Held: >25bps hike near-impossible absent a crisis.",
     "key_drivers": [
-      "no recession",
-      "no easing case"
+      "no crisis"
     ],
     "reference_classes": [
-      "emergency-size cuts only in crises"
+      "no >25bps single-meeting hikes modern era"
     ],
     "research_refs": []
   },
   "history": [
     {
-      "as_of": "2026-05-31T18:47:19Z",
-      "my_probability": 0.02,
+      "as_of": "2026-06-13T07:05:53Z",
+      "my_probability": 0.01,
       "my_confidence": "high",
       "market_implied_probability": 0.005,
-      "market_price_cents": 0,
-      "edge": 0.015,
+      "market_price_cents": 0.0,
+      "edge": 0.005,
       "yes_ask": 0.01,
       "no_ask": 1.0,
       "fee_per_contract": 0.0,
-      "ev_per_contract": -0.02,
+      "ev_per_contract": -0.010000000000000009,
       "limit_price": null,
       "ev_limit_per_contract": null,
       "lean": "NONE",
       "conviction": "low",
-      "lean_note": "I lean NO (my prob 2%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+      "lean_note": "I lean NO (my prob 1%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
       "prob_delta_vs_prev": null,
       "trigger": "bootstrap",
-      "rationale_summary": "A 50bp+ cut has no precedent with inflation near 4%; only a financial crisis in the 17-day window could trigger it. FedWatch ~0%.",
+      "rationale_summary": "A hike of more than 25bps is near-impossible at a new chair's first meeting absent a crisis.",
       "key_drivers": [
-        "no precedent for 50bp+ at ~4% inflation",
-        "FedWatch ~0%",
-        "no crisis signal"
+        "no crisis",
+        "new-chair caution"
       ],
-      "reference_classes": [],
+      "reference_classes": [
+        "no >25bps single-meeting hikes in modern era"
+      ],
       "research_refs": [
-        "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html"
+        "https://www.federalreserve.gov/monetarypolicy/fomcminutes20260429.htm"
       ]
     },
     {
@@ -78,15 +78,14 @@
       "lean": "NONE",
       "conviction": "low",
       "lean_note": "I lean NO (my prob 1%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
-      "prob_delta_vs_prev": -0.01,
+      "prob_delta_vs_prev": 0.0,
       "trigger": "near_close",
-      "rationale_summary": "Held: >25bps cut near-impossible absent recession.",
+      "rationale_summary": "Held: >25bps hike near-impossible absent a crisis.",
       "key_drivers": [
-        "no recession",
-        "no easing case"
+        "no crisis"
       ],
       "reference_classes": [
-        "emergency-size cuts only in crises"
+        "no >25bps single-meeting hikes modern era"
       ],
       "research_refs": []
     }

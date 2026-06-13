@@ -1,36 +1,42 @@
 {
   "schema_version": 1,
   "ticker": "KXGOVSDNOMR-26-TDOE",
-  "title": "Will Toby Doeden win the South Dakota GOP gubernatorial nomination?",
+  "title": "Will Toby Doeden be the Republican nominee for Governor in South Dakota?",
   "category": "politics",
-  "close_time": "2026-06-30T14:00:00Z",
+  "close_time": "2026-11-03T15:00:00Z",
   "current": {
-    "as_of": "2026-05-31T18:47:19Z",
-    "my_probability": 0.32,
-    "my_confidence": "medium",
-    "market_implied_probability": 0.405,
-    "market_price_cents": 40,
-    "edge": -0.085,
-    "yes_ask": 0.41,
-    "no_ask": 0.6,
+    "as_of": "2026-06-13T07:06:43Z",
+    "my_probability": 0.45,
+    "my_confidence": "low",
+    "market_implied_probability": 0.525,
+    "market_price_cents": 52.0,
+    "edge": -0.07500000000000001,
+    "yes_ask": 0.53,
+    "no_ask": 0.48,
     "fee_per_contract": 0.02,
-    "ev_per_contract": 0.06,
-    "limit_price": 0.59,
-    "ev_limit_per_contract": 0.07,
-    "lean": "NO",
-    "conviction": "medium",
-    "lean_note": null,
-    "prob_delta_vs_prev": null,
-    "trigger": "bootstrap",
-    "rationale_summary": "Doeden leads one poll (26%) but trails 17-34 in another; with no Trump endorsement, a likely runoff favors the establishment (Johnson's 113-lawmaker bloc) consolidating against the outsider. Market's ~40% looks rich.",
+    "ev_per_contract": 0.05000000000000006,
+    "limit_price": 0.47,
+    "ev_limit_per_contract": 0.06,
+    "lean": "NONE",
+    "conviction": "low",
+    "lean_note": "low confidence — estimate too uncertain to fade the market",
+    "prob_delta_vs_prev": 0.13,
+    "trigger": "scheduled",
+    "rationale_summary": "Doeden led the June 2 primary (31% vs Rhoden 25%) forcing a first-ever July 28 runoff; establishment/donor consolidation behind Rhoden and lower runoff turnout slightly favor Rhoden, putting Doeden just under even. Market resolves on the actual nominee (closes Nov 3).",
     "key_drivers": [
-      "poll divergence (26% vs 17%)",
+      "Doeden primary lead",
+      "establishment consolidation to Rhoden",
+      "lower runoff turnout favors establishment",
       "no Trump endorsement",
-      "runoff consolidation favors establishment"
+      "Doeden self-funding"
     ],
-    "reference_classes": [],
+    "reference_classes": [
+      "first-round leaders win runoffs ~55-65%",
+      "establishment consolidation flips outsiders"
+    ],
     "research_refs": [
-      "https://www.sdnewswatch.org/south-dakota-republican-gop-primary-governor-gubernatorial/"
+      "https://news.ballotpedia.org/2026/06/04/incumbent-larry-rhoden-and-toby-doeden-advance-to-first-ever-primary-runoff-for-south-dakota-governor/",
+      "https://www.kotatv.com/2026/06/07/where-backers-losing-campaigns-are-shifting-support-ahead-south-dakotas-governor-runoff/"
     ]
   },
   "history": [
@@ -61,6 +67,41 @@
       "reference_classes": [],
       "research_refs": [
         "https://www.sdnewswatch.org/south-dakota-republican-gop-primary-governor-gubernatorial/"
+      ]
+    },
+    {
+      "as_of": "2026-06-13T07:06:43Z",
+      "my_probability": 0.45,
+      "my_confidence": "low",
+      "market_implied_probability": 0.525,
+      "market_price_cents": 52.0,
+      "edge": -0.07500000000000001,
+      "yes_ask": 0.53,
+      "no_ask": 0.48,
+      "fee_per_contract": 0.02,
+      "ev_per_contract": 0.05000000000000006,
+      "limit_price": 0.47,
+      "ev_limit_per_contract": 0.06,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "low confidence — estimate too uncertain to fade the market",
+      "prob_delta_vs_prev": 0.13,
+      "trigger": "scheduled",
+      "rationale_summary": "Doeden led the June 2 primary (31% vs Rhoden 25%) forcing a first-ever July 28 runoff; establishment/donor consolidation behind Rhoden and lower runoff turnout slightly favor Rhoden, putting Doeden just under even. Market resolves on the actual nominee (closes Nov 3).",
+      "key_drivers": [
+        "Doeden primary lead",
+        "establishment consolidation to Rhoden",
+        "lower runoff turnout favors establishment",
+        "no Trump endorsement",
+        "Doeden self-funding"
+      ],
+      "reference_classes": [
+        "first-round leaders win runoffs ~55-65%",
+        "establishment consolidation flips outsiders"
+      ],
+      "research_refs": [
+        "https://news.ballotpedia.org/2026/06/04/incumbent-larry-rhoden-and-toby-doeden-advance-to-first-ever-primary-runoff-for-south-dakota-governor/",
+        "https://www.kotatv.com/2026/06/07/where-backers-losing-campaigns-are-shifting-support-ahead-south-dakotas-governor-runoff/"
       ]
     }
   ]

@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "ticker": "KXU3-26JUN-T4.1",
+  "title": "Will the unemployment rate (U-3) be above 4.1% in June?",
+  "category": "economy",
+  "close_time": "2026-07-02T12:29:00Z",
+  "current": {
+    "as_of": "2026-06-13T10:25:07Z",
+    "my_probability": 0.93,
+    "my_confidence": "high",
+    "market_implied_probability": 0.895,
+    "market_price_cents": 90.0,
+    "edge": 0.03500000000000003,
+    "yes_ask": 0.9,
+    "no_ask": 0.11,
+    "fee_per_contract": 0.01,
+    "ev_per_contract": 0.020000000000000025,
+    "limit_price": 0.89,
+    "ev_limit_per_contract": 0.03,
+    "lean": "YES",
+    "conviction": "low",
+    "lean_note": null,
+    "prob_delta_vs_prev": null,
+    "trigger": "bootstrap",
+    "rationale_summary": "U-3 has held at 4.3% for April and May 2026; resolving NO requires a rare 0.2pp single-month drop against Iran-war and tariff headwinds and rising jobless claims.",
+    "key_drivers": [
+      "U-3 stable at 4.3%",
+      "rare 0.2pp monthly drop needed",
+      "rising initial claims",
+      "CBO/Vanguard project 4.5-4.6% by year-end"
+    ],
+    "reference_classes": [
+      "monthly U-3 moves >=0.2pp ~5-8% of months",
+      "stable-then-drop ~3-5%"
+    ],
+    "research_refs": [
+      "https://www.bls.gov/news.release/empsit.nr0.htm",
+      "https://www.cbo.gov/publication/62105"
+    ]
+  },
+  "history": [
+    {
+      "as_of": "2026-06-13T10:25:07Z",
+      "my_probability": 0.93,
+      "my_confidence": "high",
+      "market_implied_probability": 0.895,
+      "market_price_cents": 90.0,
+      "edge": 0.03500000000000003,
+      "yes_ask": 0.9,
+      "no_ask": 0.11,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": 0.020000000000000025,
+      "limit_price": 0.89,
+      "ev_limit_per_contract": 0.03,
+      "lean": "YES",
+      "conviction": "low",
+      "lean_note": null,
+      "prob_delta_vs_prev": null,
+      "trigger": "bootstrap",
+      "rationale_summary": "U-3 has held at 4.3% for April and May 2026; resolving NO requires a rare 0.2pp single-month drop against Iran-war and tariff headwinds and rising jobless claims.",
+      "key_drivers": [
+        "U-3 stable at 4.3%",
+        "rare 0.2pp monthly drop needed",
+        "rising initial claims",
+        "CBO/Vanguard project 4.5-4.6% by year-end"
+      ],
+      "reference_classes": [
+        "monthly U-3 moves >=0.2pp ~5-8% of months",
+        "stable-then-drop ~3-5%"
+      ],
+      "research_refs": [
+        "https://www.bls.gov/news.release/empsit.nr0.htm",
+        "https://www.cbo.gov/publication/62105"
+      ]
+    }
+  ]
+}

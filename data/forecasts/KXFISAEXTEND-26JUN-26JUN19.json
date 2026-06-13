@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "ticker": "KXFISAEXTEND-26JUN-26JUN19",
+  "title": "Will legislation that reauthorizes FISA Section 702 authority become law before Jun 19, 2026?",
+  "category": "politics",
+  "close_time": "2026-06-19T14:00:00Z",
+  "current": {
+    "as_of": "2026-06-13T07:06:43Z",
+    "my_probability": 0.04,
+    "my_confidence": "high",
+    "market_implied_probability": 0.005,
+    "market_price_cents": 0.0,
+    "edge": 0.035,
+    "yes_ask": 0.01,
+    "no_ask": 1.0,
+    "fee_per_contract": 0.0,
+    "ev_per_contract": -0.040000000000000036,
+    "limit_price": null,
+    "ev_limit_per_contract": null,
+    "lean": "NONE",
+    "conviction": "low",
+    "lean_note": "I lean NO (my prob 4%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+    "prob_delta_vs_prev": null,
+    "trigger": "bootstrap",
+    "rationale_summary": "FISA 702 lapsed June 12/13 after the House voted it down and recessed until June 23; with Speaker Johnson declining an emergency recall, enactment before June 19 is mechanically near-impossible.",
+    "key_drivers": [
+      "House in recess until June 23",
+      "no emergency recall",
+      "failed Senate UC",
+      "Pulte-DNI impasse"
+    ],
+    "reference_classes": [
+      "bill enacted in 6-day recess window ~1-2%",
+      "post-lapse surveillance reauth within a week ~0%"
+    ],
+    "research_refs": [
+      "https://www.nbcnews.com/politics/congress/fisa-spying-power-scheduled-expire-house-fails-extend-leaving-town-rcna349595",
+      "https://thehill.com/homenews/senate/5920406-fisa-702-senate-unanimous-consent/"
+    ]
+  },
+  "history": [
+    {
+      "as_of": "2026-06-13T07:06:43Z",
+      "my_probability": 0.04,
+      "my_confidence": "high",
+      "market_implied_probability": 0.005,
+      "market_price_cents": 0.0,
+      "edge": 0.035,
+      "yes_ask": 0.01,
+      "no_ask": 1.0,
+      "fee_per_contract": 0.0,
+      "ev_per_contract": -0.040000000000000036,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "I lean NO (my prob 4%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+      "prob_delta_vs_prev": null,
+      "trigger": "bootstrap",
+      "rationale_summary": "FISA 702 lapsed June 12/13 after the House voted it down and recessed until June 23; with Speaker Johnson declining an emergency recall, enactment before June 19 is mechanically near-impossible.",
+      "key_drivers": [
+        "House in recess until June 23",
+        "no emergency recall",
+        "failed Senate UC",
+        "Pulte-DNI impasse"
+      ],
+      "reference_classes": [
+        "bill enacted in 6-day recess window ~1-2%",
+        "post-lapse surveillance reauth within a week ~0%"
+      ],
+      "research_refs": [
+        "https://www.nbcnews.com/politics/congress/fisa-spying-power-scheduled-expire-house-fails-extend-leaving-town-rcna349595",
+        "https://thehill.com/homenews/senate/5920406-fisa-702-senate-unanimous-consent/"
+      ]
+    }
+  ]
+}

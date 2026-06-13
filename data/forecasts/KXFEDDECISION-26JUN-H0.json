@@ -5,39 +5,32 @@
   "category": "economy",
   "close_time": "2026-06-17T17:59:00Z",
   "current": {
-    "as_of": "2026-06-13T03:15:34Z",
-    "my_probability": 0.96,
-    "my_confidence": "high",
+    "as_of": "2026-06-13T10:25:06Z",
+    "my_probability": 0.95,
+    "my_confidence": "medium",
     "market_implied_probability": 0.985,
     "market_price_cents": 98.0,
-    "edge": -0.025000000000000022,
+    "edge": -0.03500000000000003,
     "yes_ask": 0.99,
     "no_ask": 0.02,
     "fee_per_contract": 0.01,
-    "ev_per_contract": -0.04000000000000003,
+    "ev_per_contract": -0.05000000000000004,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "I lean YES (my prob 96%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
-    "prob_delta_vs_prev": -0.010000000000000009,
+    "lean_note": "I lean YES (my prob 95%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+    "prob_delta_vs_prev": -0.020000000000000018,
     "trigger": "near_close",
-    "rationale_summary": "Fed-funds futures imply ~97% HOLD for the June 17 meeting; three consecutive holds and May CPI at 4.2% YoY foreclose any cut. I sit marginally below the market (96% vs 98.5%) on a small hike-tail from hawkish new Chair Warsh's debut; market overprices YES so no value bet.",
+    "rationale_summary": "Held: no new information since this morning's forecast; pre-meeting blackout. Hold overwhelmingly likely at Warsh's first meeting with inflation elevated.",
     "key_drivers": [
-      "fed_funds_futures",
-      "cpi_4.2pct",
-      "chair_warsh_hawkish",
-      "three_consecutive_holds"
+      "inflation above target",
+      "new-chair continuity norm"
     ],
     "reference_classes": [
-      "fed_follows_futures_30d",
-      "new_chair_debut_no_hike"
+      "Fed holds at new-chair first meeting"
     ],
-    "research_refs": [
-      "growbeansprout.com/tools/fedwatch",
-      "cnbc.com/2026/06/10/cpi-inflation-report-may-2026.html",
-      "federalreserve.gov/monetarypolicy/fomcminutes20260429.htm"
-    ]
+    "research_refs": []
   },
   "history": [
     {
@@ -70,39 +63,32 @@
       ]
     },
     {
-      "as_of": "2026-06-13T03:15:34Z",
-      "my_probability": 0.96,
-      "my_confidence": "high",
+      "as_of": "2026-06-13T10:25:06Z",
+      "my_probability": 0.95,
+      "my_confidence": "medium",
       "market_implied_probability": 0.985,
       "market_price_cents": 98.0,
-      "edge": -0.025000000000000022,
+      "edge": -0.03500000000000003,
       "yes_ask": 0.99,
       "no_ask": 0.02,
       "fee_per_contract": 0.01,
-      "ev_per_contract": -0.04000000000000003,
+      "ev_per_contract": -0.05000000000000004,
       "limit_price": null,
       "ev_limit_per_contract": null,
       "lean": "NONE",
       "conviction": "low",
-      "lean_note": "I lean YES (my prob 96%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
-      "prob_delta_vs_prev": -0.010000000000000009,
+      "lean_note": "I lean YES (my prob 95%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+      "prob_delta_vs_prev": -0.020000000000000018,
       "trigger": "near_close",
-      "rationale_summary": "Fed-funds futures imply ~97% HOLD for the June 17 meeting; three consecutive holds and May CPI at 4.2% YoY foreclose any cut. I sit marginally below the market (96% vs 98.5%) on a small hike-tail from hawkish new Chair Warsh's debut; market overprices YES so no value bet.",
+      "rationale_summary": "Held: no new information since this morning's forecast; pre-meeting blackout. Hold overwhelmingly likely at Warsh's first meeting with inflation elevated.",
       "key_drivers": [
-        "fed_funds_futures",
-        "cpi_4.2pct",
-        "chair_warsh_hawkish",
-        "three_consecutive_holds"
+        "inflation above target",
+        "new-chair continuity norm"
       ],
       "reference_classes": [
-        "fed_follows_futures_30d",
-        "new_chair_debut_no_hike"
+        "Fed holds at new-chair first meeting"
       ],
-      "research_refs": [
-        "growbeansprout.com/tools/fedwatch",
-        "cnbc.com/2026/06/10/cpi-inflation-report-may-2026.html",
-        "federalreserve.gov/monetarypolicy/fomcminutes20260429.htm"
-      ]
+      "research_refs": []
     }
   ]
 }

@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "ticker": "KXLAGODAYS-26JUN-2",
+  "title": "Will Trump make 2 trips to Mar-a-Lago as President in Jun 2026?",
+  "category": "politics",
+  "close_time": "2026-07-01T14:00:00Z",
+  "current": {
+    "as_of": "2026-06-13T10:29:31Z",
+    "my_probability": 0.02,
+    "my_confidence": "low",
+    "market_implied_probability": 0.01,
+    "market_price_cents": 1.0,
+    "edge": 0.01,
+    "yes_ask": 0.02,
+    "no_ask": 1.0,
+    "fee_per_contract": 0.0,
+    "ev_per_contract": -0.020000000000000018,
+    "limit_price": null,
+    "ev_limit_per_contract": null,
+    "lean": "NONE",
+    "conviction": "low",
+    "lean_note": "I lean NO (my prob 2%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+    "prob_delta_vs_prev": null,
+    "trigger": "bootstrap",
+    "rationale_summary": "Two June Mar-a-Lago trips is very unlikely given seasonal closure and a packed Iran/G7/NATO schedule.",
+    "key_drivers": [
+      "summer closure",
+      "packed schedule"
+    ],
+    "reference_classes": [
+      "Trump first-term summer Mar-a-Lago visits ~0"
+    ],
+    "research_refs": []
+  },
+  "history": [
+    {
+      "as_of": "2026-06-13T10:29:31Z",
+      "my_probability": 0.02,
+      "my_confidence": "low",
+      "market_implied_probability": 0.01,
+      "market_price_cents": 1.0,
+      "edge": 0.01,
+      "yes_ask": 0.02,
+      "no_ask": 1.0,
+      "fee_per_contract": 0.0,
+      "ev_per_contract": -0.020000000000000018,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "I lean NO (my prob 2%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+      "prob_delta_vs_prev": null,
+      "trigger": "bootstrap",
+      "rationale_summary": "Two June Mar-a-Lago trips is very unlikely given seasonal closure and a packed Iran/G7/NATO schedule.",
+      "key_drivers": [
+        "summer closure",
+        "packed schedule"
+      ],
+      "reference_classes": [
+        "Trump first-term summer Mar-a-Lago visits ~0"
+      ],
+      "research_refs": []
+    }
+  ]
+}

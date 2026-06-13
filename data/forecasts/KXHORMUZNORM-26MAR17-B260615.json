@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "ticker": "KXHORMUZNORM-26MAR17-B260615",
+  "title": "Will the 7-day moving average of transit calls through the Strait of Hormuz be above 60 before June 15, 2026?",
+  "category": "politics",
+  "close_time": "2026-06-16T12:59:00Z",
+  "current": {
+    "as_of": "2026-06-13T10:25:07Z",
+    "my_probability": 0.02,
+    "my_confidence": "high",
+    "market_implied_probability": 0.005,
+    "market_price_cents": 0.0,
+    "edge": 0.015,
+    "yes_ask": 0.01,
+    "no_ask": 1.0,
+    "fee_per_contract": 0.0,
+    "ev_per_contract": -0.020000000000000018,
+    "limit_price": null,
+    "ev_limit_per_contract": null,
+    "lean": "NONE",
+    "conviction": "low",
+    "lean_note": "I lean NO (my prob 2%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+    "prob_delta_vs_prev": 0.0,
+    "trigger": "near_close",
+    "rationale_summary": "Held: 7-day MA ~3-6 vs 60 threshold; cannot reach 60 by Jun 15.",
+    "key_drivers": [
+      "near-total closure",
+      "MA physical lag"
+    ],
+    "reference_classes": [
+      "no strait recovers to >50% normal in 48h"
+    ],
+    "research_refs": []
+  },
+  "history": [
+    {
+      "as_of": "2026-06-13T07:06:43Z",
+      "my_probability": 0.02,
+      "my_confidence": "high",
+      "market_implied_probability": 0.005,
+      "market_price_cents": 0.0,
+      "edge": 0.015,
+      "yes_ask": 0.01,
+      "no_ask": 1.0,
+      "fee_per_contract": 0.0,
+      "ev_per_contract": -0.020000000000000018,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "I lean NO (my prob 2%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+      "prob_delta_vs_prev": null,
+      "trigger": "bootstrap",
+      "rationale_summary": "The Hormuz 7-day transit MA is ~3-6 vs the 60 threshold amid an ongoing closure since Feb 2026; a moving average cannot mathematically jump to 60 by June 15 even if a deal were signed today.",
+      "key_drivers": [
+        "near-total closure since Feb 2026",
+        "7-day MA ~3-6",
+        "physical lag of moving average",
+        "no signed deal"
+      ],
+      "reference_classes": [
+        "no strait recovers to >50% normal in 48h",
+        "Suez/Red Sea recovery lags"
+      ],
+      "research_refs": [
+        "https://en.macromicro.me/series/30932/imf-hormuz-number-total-ma7",
+        "https://en.wikipedia.org/wiki/2026_Strait_of_Hormuz_crisis"
+      ]
+    },
+    {
+      "as_of": "2026-06-13T10:25:07Z",
+      "my_probability": 0.02,
+      "my_confidence": "high",
+      "market_implied_probability": 0.005,
+      "market_price_cents": 0.0,
+      "edge": 0.015,
+      "yes_ask": 0.01,
+      "no_ask": 1.0,
+      "fee_per_contract": 0.0,
+      "ev_per_contract": -0.020000000000000018,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "I lean NO (my prob 2%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+      "prob_delta_vs_prev": 0.0,
+      "trigger": "near_close",
+      "rationale_summary": "Held: 7-day MA ~3-6 vs 60 threshold; cannot reach 60 by Jun 15.",
+      "key_drivers": [
+        "near-total closure",
+        "MA physical lag"
+      ],
+      "reference_classes": [
+        "no strait recovers to >50% normal in 48h"
+      ],
+      "research_refs": []
+    }
+  ]
+}
