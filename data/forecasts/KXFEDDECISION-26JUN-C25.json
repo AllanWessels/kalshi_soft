@@ -3,34 +3,37 @@
   "ticker": "KXFEDDECISION-26JUN-C25",
   "title": "Will the Federal Reserve Cut rates by 25bps at their June 2026 meeting?",
   "category": "economy",
-  "close_time": "2026-06-17T18:05:00Z",
+  "close_time": "2026-06-17T17:59:00Z",
   "current": {
-    "as_of": "2026-05-31T18:47:19Z",
-    "my_probability": 0.03,
+    "as_of": "2026-06-13T03:15:34Z",
+    "my_probability": 0.01,
     "my_confidence": "high",
-    "market_implied_probability": 0.025,
-    "market_price_cents": 2,
+    "market_implied_probability": 0.005,
+    "market_price_cents": 0.0,
     "edge": 0.005,
-    "yes_ask": 0.03,
-    "no_ask": 0.98,
-    "fee_per_contract": 0.01,
-    "ev_per_contract": -0.02,
+    "yes_ask": 0.01,
+    "no_ask": 1.0,
+    "fee_per_contract": 0.0,
+    "ev_per_contract": -0.010000000000000009,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "I lean NO (my prob 3%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
-    "prob_delta_vs_prev": null,
-    "trigger": "bootstrap",
-    "rationale_summary": "With CPI ~3.8% and an 8-4 April hold under new chair Warsh, a June cut is highly unlikely; FedWatch ~2-3%.",
+    "lean_note": "I lean NO (my prob 1%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+    "prob_delta_vs_prev": -0.019999999999999997,
+    "trigger": "near_close",
+    "rationale_summary": "Futures imply ~97% HOLD; May CPI at 4.2% YoY forecloses a June cut. A 25bp cut is a tail. Market agrees (~0.5%).",
     "key_drivers": [
-      "CPI 3.8%",
-      "April 8-4 hold",
-      "FedWatch ~2-3%"
+      "cpi_4.2pct",
+      "fed_funds_futures",
+      "no_cut_signal"
     ],
-    "reference_classes": [],
+    "reference_classes": [
+      "fed_follows_futures_30d"
+    ],
     "research_refs": [
-      "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html"
+      "growbeansprout.com/tools/fedwatch",
+      "cnbc.com/2026/06/10/cpi-inflation-report-may-2026.html"
     ]
   },
   "history": [
@@ -61,6 +64,38 @@
       "reference_classes": [],
       "research_refs": [
         "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html"
+      ]
+    },
+    {
+      "as_of": "2026-06-13T03:15:34Z",
+      "my_probability": 0.01,
+      "my_confidence": "high",
+      "market_implied_probability": 0.005,
+      "market_price_cents": 0.0,
+      "edge": 0.005,
+      "yes_ask": 0.01,
+      "no_ask": 1.0,
+      "fee_per_contract": 0.0,
+      "ev_per_contract": -0.010000000000000009,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "I lean NO (my prob 1%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+      "prob_delta_vs_prev": -0.019999999999999997,
+      "trigger": "near_close",
+      "rationale_summary": "Futures imply ~97% HOLD; May CPI at 4.2% YoY forecloses a June cut. A 25bp cut is a tail. Market agrees (~0.5%).",
+      "key_drivers": [
+        "cpi_4.2pct",
+        "fed_funds_futures",
+        "no_cut_signal"
+      ],
+      "reference_classes": [
+        "fed_follows_futures_30d"
+      ],
+      "research_refs": [
+        "growbeansprout.com/tools/fedwatch",
+        "cnbc.com/2026/06/10/cpi-inflation-report-may-2026.html"
       ]
     }
   ]

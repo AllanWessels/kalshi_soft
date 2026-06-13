@@ -1,36 +1,40 @@
 {
   "schema_version": 1,
   "ticker": "KXFEDDECISION-26JUN-H25",
-  "title": "Will the Federal Reserve hike 25bps at their June 2026 meeting?",
+  "title": "Will the Federal Reserve Hike rates by 25bps at their June 2026 meeting?",
   "category": "economy",
-  "close_time": "2026-06-17T18:05:00Z",
+  "close_time": "2026-06-17T17:59:00Z",
   "current": {
-    "as_of": "2026-05-31T18:47:19Z",
-    "my_probability": 0.03,
-    "my_confidence": "high",
-    "market_implied_probability": 0.015,
-    "market_price_cents": 2,
-    "edge": 0.015,
-    "yes_ask": 0.02,
-    "no_ask": 0.99,
-    "fee_per_contract": 0.01,
-    "ev_per_contract": -0.03,
+    "as_of": "2026-06-13T03:15:35Z",
+    "my_probability": 0.025,
+    "my_confidence": "medium",
+    "market_implied_probability": 0.005,
+    "market_price_cents": 0.0,
+    "edge": 0.02,
+    "yes_ask": 0.01,
+    "no_ask": 1.0,
+    "fee_per_contract": 0.0,
+    "ev_per_contract": -0.025000000000000022,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "I lean NO (my prob 3%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
-    "prob_delta_vs_prev": null,
-    "trigger": "bootstrap",
-    "rationale_summary": "A 25bp hike requires a tightening pivot with no telegraphing; April was an 8-4 hold with no member favoring a hike and FedWatch prices ~0.6%.",
+    "lean_note": "I lean NO (my prob 2%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+    "prob_delta_vs_prev": -0.0049999999999999975,
+    "trigger": "near_close",
+    "rationale_summary": "CPI's surge to 4.2% YoY plus a hawkish new Chair create a small hike tail the market (0.5%) underweights, but a first-meeting unprimed hike is near-unprecedented; modal is still no-hike, so no actionable lean.",
     "key_drivers": [
-      "no member favors a hike",
-      "FedWatch ~0.6%",
-      "new-chair first meeting"
+      "cpi_4.2pct",
+      "chair_warsh_hawkish",
+      "no_pre_signaling"
     ],
-    "reference_classes": [],
+    "reference_classes": [
+      "new_chair_debut_no_hike",
+      "fed_follows_futures_30d"
+    ],
     "research_refs": [
-      "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html"
+      "growbeansprout.com/tools/fedwatch",
+      "cnbc.com/2026/06/10/cpi-inflation-report-may-2026.html"
     ]
   },
   "history": [
@@ -61,6 +65,39 @@
       "reference_classes": [],
       "research_refs": [
         "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html"
+      ]
+    },
+    {
+      "as_of": "2026-06-13T03:15:35Z",
+      "my_probability": 0.025,
+      "my_confidence": "medium",
+      "market_implied_probability": 0.005,
+      "market_price_cents": 0.0,
+      "edge": 0.02,
+      "yes_ask": 0.01,
+      "no_ask": 1.0,
+      "fee_per_contract": 0.0,
+      "ev_per_contract": -0.025000000000000022,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "I lean NO (my prob 2%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+      "prob_delta_vs_prev": -0.0049999999999999975,
+      "trigger": "near_close",
+      "rationale_summary": "CPI's surge to 4.2% YoY plus a hawkish new Chair create a small hike tail the market (0.5%) underweights, but a first-meeting unprimed hike is near-unprecedented; modal is still no-hike, so no actionable lean.",
+      "key_drivers": [
+        "cpi_4.2pct",
+        "chair_warsh_hawkish",
+        "no_pre_signaling"
+      ],
+      "reference_classes": [
+        "new_chair_debut_no_hike",
+        "fed_follows_futures_30d"
+      ],
+      "research_refs": [
+        "growbeansprout.com/tools/fedwatch",
+        "cnbc.com/2026/06/10/cpi-inflation-report-may-2026.html"
       ]
     }
   ]

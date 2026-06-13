@@ -1,36 +1,42 @@
 {
   "schema_version": 1,
   "ticker": "KXFEDDECISION-26JUN-H0",
-  "title": "Will the Federal Reserve Hike rates by 0bps (i.e. not hike) at their June 2026 meeting?",
+  "title": "Will the Federal Reserve Hike rates by 0bps at their June 2026 meeting?",
   "category": "economy",
-  "close_time": "2026-06-17T18:05:00Z",
+  "close_time": "2026-06-17T17:59:00Z",
   "current": {
-    "as_of": "2026-05-31T18:47:19Z",
-    "my_probability": 0.97,
+    "as_of": "2026-06-13T03:15:34Z",
+    "my_probability": 0.96,
     "my_confidence": "high",
-    "market_implied_probability": 0.965,
-    "market_price_cents": 96,
-    "edge": 0.005,
-    "yes_ask": 0.97,
-    "no_ask": 0.04,
+    "market_implied_probability": 0.985,
+    "market_price_cents": 98.0,
+    "edge": -0.025000000000000022,
+    "yes_ask": 0.99,
+    "no_ask": 0.02,
     "fee_per_contract": 0.01,
-    "ev_per_contract": -0.01,
+    "ev_per_contract": -0.04000000000000003,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "I lean YES (my prob 97%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
-    "prob_delta_vs_prev": null,
-    "trigger": "bootstrap",
-    "rationale_summary": "A hike at a single meeting in an established hold cycle is essentially unprecedented absent a crisis; CPI ~3.8% is not an emergency trigger and futures imply ~99% no-hike.",
+    "lean_note": "I lean YES (my prob 96%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+    "prob_delta_vs_prev": -0.010000000000000009,
+    "trigger": "near_close",
+    "rationale_summary": "Fed-funds futures imply ~97% HOLD for the June 17 meeting; three consecutive holds and May CPI at 4.2% YoY foreclose any cut. I sit marginally below the market (96% vs 98.5%) on a small hike-tail from hawkish new Chair Warsh's debut; market overprices YES so no value bet.",
     "key_drivers": [
-      "no tightening posture",
-      "CPI not emergency",
-      "FedWatch ~99% hold"
+      "fed_funds_futures",
+      "cpi_4.2pct",
+      "chair_warsh_hawkish",
+      "three_consecutive_holds"
     ],
-    "reference_classes": [],
+    "reference_classes": [
+      "fed_follows_futures_30d",
+      "new_chair_debut_no_hike"
+    ],
     "research_refs": [
-      "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html"
+      "growbeansprout.com/tools/fedwatch",
+      "cnbc.com/2026/06/10/cpi-inflation-report-may-2026.html",
+      "federalreserve.gov/monetarypolicy/fomcminutes20260429.htm"
     ]
   },
   "history": [
@@ -61,6 +67,41 @@
       "reference_classes": [],
       "research_refs": [
         "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html"
+      ]
+    },
+    {
+      "as_of": "2026-06-13T03:15:34Z",
+      "my_probability": 0.96,
+      "my_confidence": "high",
+      "market_implied_probability": 0.985,
+      "market_price_cents": 98.0,
+      "edge": -0.025000000000000022,
+      "yes_ask": 0.99,
+      "no_ask": 0.02,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": -0.04000000000000003,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "I lean YES (my prob 96%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+      "prob_delta_vs_prev": -0.010000000000000009,
+      "trigger": "near_close",
+      "rationale_summary": "Fed-funds futures imply ~97% HOLD for the June 17 meeting; three consecutive holds and May CPI at 4.2% YoY foreclose any cut. I sit marginally below the market (96% vs 98.5%) on a small hike-tail from hawkish new Chair Warsh's debut; market overprices YES so no value bet.",
+      "key_drivers": [
+        "fed_funds_futures",
+        "cpi_4.2pct",
+        "chair_warsh_hawkish",
+        "three_consecutive_holds"
+      ],
+      "reference_classes": [
+        "fed_follows_futures_30d",
+        "new_chair_debut_no_hike"
+      ],
+      "research_refs": [
+        "growbeansprout.com/tools/fedwatch",
+        "cnbc.com/2026/06/10/cpi-inflation-report-may-2026.html",
+        "federalreserve.gov/monetarypolicy/fomcminutes20260429.htm"
       ]
     }
   ]

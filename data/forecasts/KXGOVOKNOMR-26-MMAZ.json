@@ -1,36 +1,44 @@
 {
   "schema_version": 1,
   "ticker": "KXGOVOKNOMR-26-MMAZ",
-  "title": "Will Mike Mazzei win the Oklahoma GOP gubernatorial nomination?",
+  "title": "Will Mike Mazzei be the Republican nominee for Governor in Oklahoma?",
   "category": "politics",
-  "close_time": "2026-06-30T14:00:00Z",
+  "close_time": "2026-11-03T15:00:00Z",
   "current": {
-    "as_of": "2026-05-31T18:47:19Z",
-    "my_probability": 0.78,
-    "my_confidence": "low",
-    "market_implied_probability": 0.865,
-    "market_price_cents": 86,
-    "edge": -0.085,
-    "yes_ask": 0.87,
-    "no_ask": 0.14,
-    "fee_per_contract": 0.01,
-    "ev_per_contract": -0.1,
+    "as_of": "2026-06-13T03:15:35Z",
+    "my_probability": 0.79,
+    "my_confidence": "medium",
+    "market_implied_probability": 0.805,
+    "market_price_cents": 80.0,
+    "edge": -0.015000000000000013,
+    "yes_ask": 0.81,
+    "no_ask": 0.2,
+    "fee_per_contract": 0.02,
+    "ev_per_contract": -0.04000000000000002,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "I lean YES (my prob 78%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
-    "prob_delta_vs_prev": null,
-    "trigger": "bootstrap",
-    "rationale_summary": "Trump endorsed Mazzei (May 29) in a Trump-loyal state, but a 9-way field makes an outright June 16 win unlikely and likely forces an Aug 25 runoff — which sits awkwardly against this market's June-30 settlement. Treating it as eventual-nomination, ~78%; flagged low conviction for the resolution-timing ambiguity.",
+    "lean_note": "I lean YES (my prob 79%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+    "prob_delta_vs_prev": 0.010000000000000009,
+    "trigger": "scheduled",
+    "rationale_summary": "Polling leader (~23-24%) in a 5-way race headed to an Aug 25 runoff; Trump's May 29 endorsement is the dominant signal in OK GOP primaries and his $10.9M self-funding leads the ad war. Market (0.805) ~ my estimate, so no edge.",
     "key_drivers": [
-      "Trump endorsement (strong in OK)",
-      "9-way field -> likely Aug runoff",
-      "June-30 settlement vs Aug runoff ambiguity"
+      "trump_endorsement",
+      "polling_lead",
+      "self_funding_10.9M",
+      "runoff_likely"
     ],
-    "reference_classes": [],
+    "reference_classes": [
+      "trump_endorsed_gop_primary_winrate",
+      "frontrunner_nomination_rate",
+      "runoff_advancer_winrate"
+    ],
     "research_refs": [
-      "https://nondoc.com/2026/05/29/tremendous-honor-donald-trump-endorses-mike-mazzei-for-governor-of-oklahoma/"
+      "kswo.com/2026/05/29/trump-announces-endorsement-mike-mazzei-oklahoma-governor",
+      "ballotpedia.org/Oklahoma_gubernatorial_election",
+      "_2026",
+      "nondoc.com/2026/05/26/oklahoma-governor-polling"
     ]
   },
   "history": [
@@ -61,6 +69,43 @@
       "reference_classes": [],
       "research_refs": [
         "https://nondoc.com/2026/05/29/tremendous-honor-donald-trump-endorses-mike-mazzei-for-governor-of-oklahoma/"
+      ]
+    },
+    {
+      "as_of": "2026-06-13T03:15:35Z",
+      "my_probability": 0.79,
+      "my_confidence": "medium",
+      "market_implied_probability": 0.805,
+      "market_price_cents": 80.0,
+      "edge": -0.015000000000000013,
+      "yes_ask": 0.81,
+      "no_ask": 0.2,
+      "fee_per_contract": 0.02,
+      "ev_per_contract": -0.04000000000000002,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "I lean YES (my prob 79%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+      "prob_delta_vs_prev": 0.010000000000000009,
+      "trigger": "scheduled",
+      "rationale_summary": "Polling leader (~23-24%) in a 5-way race headed to an Aug 25 runoff; Trump's May 29 endorsement is the dominant signal in OK GOP primaries and his $10.9M self-funding leads the ad war. Market (0.805) ~ my estimate, so no edge.",
+      "key_drivers": [
+        "trump_endorsement",
+        "polling_lead",
+        "self_funding_10.9M",
+        "runoff_likely"
+      ],
+      "reference_classes": [
+        "trump_endorsed_gop_primary_winrate",
+        "frontrunner_nomination_rate",
+        "runoff_advancer_winrate"
+      ],
+      "research_refs": [
+        "kswo.com/2026/05/29/trump-announces-endorsement-mike-mazzei-oklahoma-governor",
+        "ballotpedia.org/Oklahoma_gubernatorial_election",
+        "_2026",
+        "nondoc.com/2026/05/26/oklahoma-governor-polling"
       ]
     }
   ]
