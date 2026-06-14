@@ -21,7 +21,7 @@ Follow `ROUTINE.md` in this repo precisely — execute its steps 0 through 9 —
 
 1. **Preflight** — `python3 scripts/refresh_market.py --selftest` + local-LLM healthcheck. If Kalshi
    is unreachable, skip the API-dependent steps, still rebuild the report, commit, and report that.
-   Note whether local-LLM is UP (local retrieval + relaxed cap) or DOWN (Sonnet fallback, default cap).
+   Note whether local-LLM is UP (local retrieval + relaxed cap) or DOWN (Opus-agent fallback, default cap).
 2. **Discover** — `python3 scripts/fetch_candidates.py` (near-term resolvers, ≤1 month).
 3. **Curate** — keep the active watchlist (~16–20) focused on forecastable markets that settle
    within ~1 month, via `scripts/curate_watchlist.py`. Replace any that have resolved.
