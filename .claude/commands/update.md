@@ -30,27 +30,35 @@ Follow `ROUTINE.md` in this repo precisely — execute its steps 0 through 9 —
    the `N` markets closing soonest and reports how many were deferred.
 5. **Research & forecast each due market** — for each due market: (4a) gather web evidence and
    condense it to **quoted evidence notes** via the LOCAL model (`lib.local_llm.extract_evidence`;
-   Sonnet-agent fallback when down) so raw pages never hit Claude context; (4b) assign a **strategy
-   arm** (`lib.strategies.select_strategy`) that sets how many forecasters to spawn and how to
-   combine them; (4c) fan out Sonnet forecasters (`model: sonnet`) on the **notes**, each forming an
-   INDEPENDENT probability with strict anti-anchoring (do NOT look at the Kalshi price until after
-   the estimate). **THROTTLE (mandatory):** dispatch in **waves of ≤4 concurrent subagents**, waiting
-   for each wave to finish before the next; never put more than 4 subagent calls in one message — a
-   single wide fan-out is what got the org rate-limited. You (Opus) then fetch price/asks/bids via
-   `scripts/refresh_market.py --ticker T`, compare, and record via `scripts/record_forecast.py`
-   passing `--strategy-id` + `--yes-ask/--no-ask/--yes-bid/--no-bid` so the arm is tagged and spot +
-   limit profitability is computed.
-6. **Reconcile** — `python3 scripts/reconcile_resolutions.py` (score resolved markets; record Brier
-   **and realized P&L/ROI**; update calibration + scoreboards).
+   fallback agent when down) so raw pages never hit Claude context; (4b) assign a **strategy arm**
+   (`lib.strategies.select_strategy`) that sets how many forecasters to spawn and how to combine
+   them; (4c) fan out **Opus** forecasters (or the local-Qwen `L*` arm) on the **notes** — **never
+   Sonnet** — each forming an INDEPENDENT probability with strict anti-anchoring (do NOT look at the
+   Kalshi price until after the estimate). **THROTTLE:** dispatch in **waves of ≤4 concurrent
+   subagents**. You (Opus) then fetch price/asks/bids via `scripts/refresh_market.py --ticker T`,
+   compare, and record via `scripts/record_forecast.py` passing `--strategy-id` +
+   `--yes-ask/--no-ask/--yes-bid/--no-bid`. **The adversarial gate is automatic + unskippable:**
+   `record_forecast` runs `lib.local_llm.challenge` on every actionable lean (independent
+   cross-family review — Opus alone is not trusted to greenlight its own bet); a **veto** downgrades
+   the lean to NONE. The first surviving lean **locks an immutable `Position`** (entry-lock) — that
+   committed entry is what performance is scored against, not later re-forecasts.
+6. **Reconcile** — `python3 scripts/reconcile_resolutions.py` (score resolved markets against the
+   **locked entry**; record Brier **and realized + counterfactual P&L/ROI**; update calibration +
+   scoreboards).
    **6b. Adversarial post-mortem** (only on new resolutions) — `scripts/postmortem.py`: blind local
    Critic → Claude Defender → Claude Judge → recorded lesson. Never self-judge; SKILL revision stays
    pattern-gated **and** human-gated (`postmortem.py patterns`).
-7. **Report** — `python3 scripts/build_report.py` → `reports/latest.pdf` + dated archive (now incl.
-   Profit & Loss and the Strategy Scoreboard).
+   **6c. Autonomous learning pass** — `python3 scripts/learn_policy.py --apply`: reads the resolved
+   record, proposes nudges to the learnable decision policy (`data/policy.json` — the "when do I take
+   a position" knobs), and applies **only** what clears the anti-overfit guardrails (min-n, max-step);
+   the rest stay INSUFFICIENT_DATA/HUMAN_GATE in `data/policy_proposals.json`. Surface any AUTO_OK or
+   HUMAN_GATE proposals in the summary.
+7. **Report** — `python3 scripts/build_report.py` → `reports/latest.pdf` + dated archive (incl.
+   Profit & Loss, Strategy Scoreboard, and the **Autonomous Learning** policy/proposals section).
 8. **Log** — append this run (with the `usage` block) to `data/run_log.jsonl`.
 9. **Commit & push** — run the secrets guard, then commit `data/` + `reports/` and `git push origin main`.
 
 Keep it bounded: only *due* markets get fresh research (tiering keeps cost low). Never commit
 secrets. End by telling me, in 3–5 lines: how many markets were re-forecast, any new resolutions,
 the top profitable leans (with the explicit spot/limit trade), which strategy arm is leading on the
-scoreboard, and that `reports/latest.pdf` is updated.
+scoreboard, any policy proposals the learner surfaced, and that `reports/latest.pdf` is updated.
