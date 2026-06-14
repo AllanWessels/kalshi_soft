@@ -10,15 +10,15 @@ cloned fresh and `data/` holds your memory from prior runs. Read and follow
   the math, storage, and rendering. Always go through the scripts — never hand-edit `data/`.
 - **Anti-anchoring:** never look at a market's Kalshi price until you have written your own
   probability first (enforced by the order of steps below).
-- **Parallelize (project directive):** independent research fans out to **Sonnet** subagents,
-  one per due market; you (Opus) orchestrate and synthesize. Pass `model: sonnet` explicitly.
+- **Parallelize (project directive):** independent research fans out to **Opus** subagents,
+  one per due market; you (Opus) orchestrate and synthesize. Pass `model: opus` explicitly.
 - **This loop is an EXPERIMENT (project directive).** Every forecast is produced by a registered
   *strategy arm* (`lib/strategies.py`) and tagged with its `strategy_id`; every resolution scores
   that arm on **both Brier skill and realized profit**. We do not assume which forecasting topology
   is best — the scoreboard discovers it. See SKILL §0.
 - **Retrieval runs LOCAL, judgment runs on Claude (cost unlock).** Raw web pages are condensed by a
   local open-weight model (`lib/local_llm.py`) into compact *quoted* evidence notes; raw pages never
-  enter Claude context. If the local endpoint is down, fall back to a Sonnet retrieval agent — the
+  enter Claude context. If the local endpoint is down, fall back to an Opus retrieval agent — the
   pipeline never hard-breaks.
 - **Never grade your own work.** Post-mortems run through an **adversarial panel** (blind local
   Critic → Claude Defender → Claude Judge), not single-agent self-judging. See Step 6b.
@@ -44,7 +44,7 @@ API, jump to Step 7 (build report from existing state), Step 8, Step 9, and exit
 **Local-LLM mode:** if the healthcheck prints `local_llm UP`, retrieval condensation runs locally
 (free) and the per-run cap can **relax** (see Step 3) — the cap existed to throttle frontier fan-out,
 which local retrieval removes. If it prints `local_llm DOWN`, the pipeline still works via the
-**Sonnet fallback** retrieval/critic agents, and the per-run cap stays at its default (frontier
+**Opus fallback** retrieval/critic agents, and the per-run cap stays at its default (frontier
 fan-out is back in play). Note which mode you're in for the Step 8 log.
 
 ## Step 1 — Discover
@@ -91,7 +91,7 @@ dropping a less-urgent cadence market. Note in the Step 8 log how many were defe
 that got the org rate-limited. With local retrieval doing the heavy web work, that pressure is gone,
 so when an explicit `/update N` was **not** given you may raise the default (e.g. `--limit 20`) up to
 the full due list. The **wave rule below still binds**: only the lighter Claude forecasting/judge
-calls fan out, and never more than 4 concurrently. On the Sonnet-fallback path keep the default 12.
+calls fan out, and never more than 4 concurrently. On the Opus-fallback path keep the default 12.
 
 ## Step 4 — Research & forecast each due market (RETRIEVE local → assign arm → FAN OUT in WAVES)
 
@@ -102,7 +102,7 @@ For each due market, gather web evidence and condense it to compact, *quoted* st
   `lib.local_llm.extract_evidence(question, raw_results, as_of=...)` to get `EvidenceNotes`
   (claims with verbatim source quotes, base rates, key uncertainties). Hand the **notes**, not the
   raw pages, to the forecasters.
-- **`local_llm DOWN`:** fall back to a Sonnet retrieval agent that returns the same notes shape.
+- **`local_llm DOWN`:** fall back to an Opus retrieval agent that returns the same notes shape.
 The notes carry source quotes so the forecaster can verify rather than blindly trust a small model.
 
 ### Step 4b — Assign the strategy arm (the experiment)
@@ -118,8 +118,8 @@ The arm config tells you **how many independent forecasters to spawn** (`n_forec
 Selection is round-robin while cold, epsilon-greedy on `by_strategy` skill+ROI once arms have a
 record. Carry the chosen `strategy_id` to Step 5.
 
-### Step 4c — Forecast (FAN OUT to Sonnet, IN WAVES)
-**Dispatch Sonnet subagents in bounded waves of at most 4 at a time** — never all at once. This is
+### Step 4c — Forecast (FAN OUT to Opus, IN WAVES)
+**Dispatch Opus subagents in bounded waves of at most 4 at a time** — never all at once. This is
 the concurrency throttle that keeps the run under Anthropic's burst limits (a single 20-wide
 fan-out is what got the org rate-limited). For an arm with `n_forecasters > 1`, the independent
 forecasters for a market also count toward the ≤4 concurrent budget.
@@ -183,9 +183,9 @@ Run the three-role panel via `scripts/postmortem.py` for each newly-resolved mar
    ```
    - `status: ok` → the **local Qwen** critic scored the fixed rubric (`config.POSTMORTEM_RUBRIC`),
      blind to forecaster identity. Use its `rubric_scores` + `summary` + `biggest_miss`.
-   - `status: fallback` → local model down: spawn a **Sonnet critic sub-agent** with the printed
+   - `status: fallback` → local model down: spawn a **Opus critic sub-agent** with the printed
      `packet` and the same blind rubric instruction; that becomes the critique (`critic_model:
-     sonnet-fallback`). The critic must judge **reasoning quality, not the outcome** (a good forecast
+     opus-fallback`). The critic must judge **reasoning quality, not the outcome** (a good forecast
      can still lose).
 3. **Defender (Claude sub-agent):** argue what the forecast got *right* and whether the outcome was
    genuinely unforeseeable at forecast time. **Judge (Claude, Opus tier):** read critic + defender,
@@ -194,7 +194,7 @@ Run the three-role panel via `scripts/postmortem.py` for each newly-resolved mar
 4. Persist the adversarial lesson:
    ```
    python3 scripts/postmortem.py record --ticker <TICKER> --pattern <short-tag> \
-     --critic-model <local-model-tag|sonnet-fallback> --rubric-scores '<critic rubric_scores JSON>' \
+     --critic-model <local-model-tag|opus-fallback> --rubric-scores '<critic rubric_scores JSON>' \
      --judge-verdict "<judge ruling>" --disagreement "<where critic/defender diverged>" \
      --right ".." --wrong ".." --lesson "<actionable takeaway>"
    ```

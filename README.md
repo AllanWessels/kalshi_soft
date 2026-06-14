@@ -17,10 +17,10 @@ scores + calibration curves as markets resolve, and publishes a PDF report each 
 - **Python = deterministic plumbing** (`lib/`, `scripts/`): Kalshi fetch, state storage,
   Brier/calibration math, profit/P&L math, PDF rendering, git ops. It never decides a probability.
 - **Opus = the forecaster/orchestrator**: each run it follows `.claude/skills/superforecasting/SKILL.md`,
-  fanning out **Sonnet** research workers (one per market) and synthesizing the final calls.
+  fanning out **Opus** research workers (one per market) and synthesizing the final calls.
 - **A local open-weight model = free retrieval + adversarial critic** (`lib/local_llm.py`): condenses
   raw web pages into compact *quoted* evidence notes (so raw pages never enter Claude context) and
-  acts as the blind, different-family Critic in the post-mortem panel. Degrades to a Sonnet agent
+  acts as the blind, different-family Critic in the post-mortem panel. Degrades to an Opus agent
   when the local endpoint is down.
 - **The loop is an experiment**: every forecast is produced by a registered **strategy arm**
   (`lib/strategies.py`) and scored at resolution on **both Brier skill and realized profit**, so the
@@ -46,8 +46,8 @@ ROUTINE.md  the per-run runbook the scheduled agent executes
 ### The `/update` pipeline (per run)
 ```
 0 preflight + local-LLM healthcheck   1 discover/curate/due
-2 RETRIEVE (local Qwen → quoted evidence notes; Sonnet fallback if down)
-3 FORECAST (assign strategy arm → N Sonnet forecasters on the notes → combine; anti-anchoring)
+2 RETRIEVE (local Qwen → quoted evidence notes; Opus fallback if down)
+3 FORECAST (assign strategy arm → N Opus forecasters on the notes → combine; anti-anchoring)
 4 RECORD (--strategy-id + entry prices)   5 RECONCILE (Brier + realized P&L/ROI)
 6 ADVERSARIAL POST-MORTEM (blind local Critic → Claude Defender → Judge → lesson)
 7 REPORT (Performance, Profit & Loss, Strategy Scoreboard) + commit
@@ -86,12 +86,12 @@ ollama serve            # serves an OpenAI-compatible API on http://localhost:11
 ```
 Config lives in `lib/config.py` and is env-overridable:
 `LOCAL_LLM_BASE_URL` (default `http://localhost:11434/v1`), `LOCAL_LLM_MODEL`,
-`LOCAL_LLM_ENABLED=0` to force the Sonnet-fallback path. Verify with:
+`LOCAL_LLM_ENABLED=0` to force the Opus-fallback path. Verify with:
 ```bash
 python3 -c "from lib import local_llm; print('UP' if local_llm.ping() else 'DOWN')"
 python3 -m lib.local_llm        # offline self-test (JSON parsing + fallback, no server needed)
 ```
-When the endpoint is **down or disabled**, the pipeline still works end-to-end via Sonnet retrieval
+When the endpoint is **down or disabled**, the pipeline still works end-to-end via Opus retrieval
 and critic agents — the local model is a cost optimization, not a hard dependency. Migrate to
 vLLM-from-source only if concurrency demands it (Blackwell needs torch cu128,
 `VLLM_FLASH_ATTN_VERSION=2`, `TORCH_CUDA_ARCH_LIST=12.0`).

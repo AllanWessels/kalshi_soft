@@ -67,7 +67,7 @@ more reference classes and write down the base rate.
 Gather ≥3 genuinely independent angles before concluding: e.g. polling/quantitative models,
 domain-expert commentary, historical analogy, on-the-ground/qualitative signals, incentive
 analysis. Weight each by evidential strength. Note where they agree and disagree. (When this
-runs as a fan-out, each Sonnet worker is itself one independent perspective — preserve that
+runs as a fan-out, each Opus worker is itself one independent perspective — preserve that
 independence; do not let workers converge by peeking at each other or at the price.)
 
 #### 3a. Robust aggregation when the arm runs multiple forecasters
@@ -182,7 +182,7 @@ before forecasting:
 ### Learn through the adversarial panel — never grade your own work
 Self-judging carries measured self-preference/sycophancy bias (Verga'24; Wataoka'24). Post-mortems
 therefore run as a panel (ROUTINE Step 6b, `scripts/postmortem.py`):
-- **Critic** — a *different model family* (local Qwen; Sonnet fallback), **blind to forecaster
+- **Critic** — a *different model family* (local Qwen; Opus fallback), **blind to forecaster
   identity**, scores a **fixed rubric defined before resolution** so it can't retrofit "good
   reasoning" onto a lucky outcome. The rubric (`config.POSTMORTEM_RUBRIC`): **(1)** base rate
   established? **(2)** ≥3 independent sources? **(3)** confidence/uncertainty considered, not just a
