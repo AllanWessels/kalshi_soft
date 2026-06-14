@@ -183,10 +183,10 @@ Run the three-role panel via `scripts/postmortem.py` for each newly-resolved mar
    ```
    - `status: ok` → the **local Qwen** critic scored the fixed rubric (`config.POSTMORTEM_RUBRIC`),
      blind to forecaster identity. Use its `rubric_scores` + `summary` + `biggest_miss`.
-   - `status: fallback` → local model down: spawn a **Opus critic sub-agent** with the printed
-     `packet` and the same blind rubric instruction; that becomes the critique (`critic_model:
-     opus-fallback`). The critic must judge **reasoning quality, not the outcome** (a good forecast
-     can still lose).
+   - `status: skipped` → local model down: **SKIP and DEFER this market's post-mortem** — do NOT
+     spawn a same-family (Opus) critic, since Opus grading an Opus forecast is self-judging, exactly
+     what this panel exists to prevent. Leave the market un-reviewed; it gets the adversarial
+     post-mortem on a later run when `local_llm` is UP. Note the deferral in the Step 8 log.
 3. **Defender (Claude sub-agent):** argue what the forecast got *right* and whether the outcome was
    genuinely unforeseeable at forecast time. **Judge (Claude, Opus tier):** read critic + defender,
    issue a per-rubric verdict and a single actionable `lesson` with a short `pattern` tag; note where

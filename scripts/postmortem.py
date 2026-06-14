@@ -100,15 +100,20 @@ def cmd_gather(args) -> int:
 
 
 def cmd_critic(args) -> int:
-    """Run the LOCAL blind critic. On any local-model failure, emit a fallback
-    marker (status="fallback") and exit 0 so the orchestrator spawns a Sonnet critic
-    sub-agent instead of hard-failing the run."""
+    """Run the LOCAL blind critic. If the local model is unavailable, SKIP and DEFER —
+    do NOT fall back to a same-family (Opus) critic. The adversary's whole value is being
+    a different model family than the Opus forecaster; an Opus-critiques-Opus pass is just
+    self-judging dressed up, which is exactly what this panel exists to avoid. So on
+    fallback we emit status="skipped", record nothing, and let the post-mortem run next
+    time the local model is up (the market stays flagged as un-reviewed)."""
     packet = build_packet(args.ticker)
     if not config.local_llm_enabled() or not local_llm.ping(timeout=3.0):
         print(json.dumps({
-            "status": "fallback",
-            "reason": "local LLM disabled or unreachable; spawn a Sonnet critic agent",
-            "packet": packet,
+            "status": "skipped",
+            "reason": "local model down/disabled — adversarial post-mortem DEFERRED. Do NOT "
+                      "run a same-family (Opus) critic; that would be self-judging. Re-run when "
+                      "local_llm is UP.",
+            "ticker": args.ticker,
         }, indent=2))
         return 0
     try:
@@ -124,9 +129,10 @@ def cmd_critic(args) -> int:
         print(json.dumps(verdict, indent=2))
     except local_llm.LocalLLMError as e:
         print(json.dumps({
-            "status": "fallback",
-            "reason": f"local critic error: {e}; spawn a Sonnet critic agent",
-            "packet": packet,
+            "status": "skipped",
+            "reason": f"local critic error: {e} — adversarial post-mortem DEFERRED (no "
+                      "same-family fallback). Re-run when local_llm is UP.",
+            "ticker": args.ticker,
         }, indent=2))
     return 0
 
