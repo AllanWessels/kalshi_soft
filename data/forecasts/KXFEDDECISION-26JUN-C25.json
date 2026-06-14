@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "ticker": "KXFEDDECISION-26JUN-C25",
-  "title": "Will the Federal Reserve Cut rates by 25bps at their June 2026 meeting?",
+  "title": "Fed cut 25bps June 2026",
   "category": "economy",
   "close_time": "2026-06-17T17:59:00Z",
   "current": {
-    "as_of": "2026-06-14T02:07:31Z",
+    "as_of": "2026-06-14T03:39:10Z",
     "my_probability": 0.02,
     "my_confidence": "high",
     "market_implied_probability": 0.005,
@@ -23,11 +23,13 @@
     "prob_delta_vs_prev": 0.0,
     "trigger": "near_close",
     "strategy_id": "S0-single",
-    "rationale_summary": "June FOMC near-certain HOLD (93%+); cut-25 very unlikely, GS/JPM see first cut mid-2027.",
-    "key_drivers": [
-      "hold-near-certain",
-      "no-easing-2026"
-    ],
+    "proposed_probability": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": "",
+    "rationale_summary": "98.3% hold; hawkish Warsh; cut near-zero.",
+    "key_drivers": [],
     "reference_classes": [],
     "research_refs": []
   },
@@ -51,6 +53,11 @@
       "prob_delta_vs_prev": null,
       "trigger": "bootstrap",
       "strategy_id": "",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
       "rationale_summary": "With CPI ~3.8% and an 8-4 April hold under new chair Warsh, a June cut is highly unlikely; FedWatch ~2-3%.",
       "key_drivers": [
         "CPI 3.8%",
@@ -81,6 +88,11 @@
       "prob_delta_vs_prev": -0.009999999999999998,
       "trigger": "near_close",
       "strategy_id": "",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
       "rationale_summary": "Held: a cut is unjustified with core PCE 3.3%.",
       "key_drivers": [
         "inflation far above target",
@@ -92,7 +104,7 @@
       "research_refs": []
     },
     {
-      "as_of": "2026-06-14T02:07:31Z",
+      "as_of": "2026-06-14T03:39:10Z",
       "my_probability": 0.02,
       "my_confidence": "high",
       "market_implied_probability": 0.005,
@@ -110,13 +122,30 @@
       "prob_delta_vs_prev": 0.0,
       "trigger": "near_close",
       "strategy_id": "S0-single",
-      "rationale_summary": "June FOMC near-certain HOLD (93%+); cut-25 very unlikely, GS/JPM see first cut mid-2027.",
-      "key_drivers": [
-        "hold-near-certain",
-        "no-easing-2026"
-      ],
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "98.3% hold; hawkish Warsh; cut near-zero.",
+      "key_drivers": [],
       "reference_classes": [],
       "research_refs": []
     }
-  ]
+  ],
+  "position": {
+    "entered": false,
+    "entry_as_of": "",
+    "entry_side": "",
+    "entry_probability": 0.0,
+    "entry_price": 0.0,
+    "entry_market_implied": null,
+    "entry_confidence": "",
+    "entry_conviction": "",
+    "entry_gap": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": ""
+  }
 }

@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "ticker": "KXFEDDECISION-26JUN-H26",
-  "title": "Will the Federal Reserve Hike rates by >25bps at their June 2026 meeting?",
+  "title": "Fed hike 26bps+ June 2026",
   "category": "economy",
   "close_time": "2026-06-17T17:59:00Z",
   "current": {
-    "as_of": "2026-06-14T02:07:31Z",
+    "as_of": "2026-06-14T03:39:10Z",
     "my_probability": 0.01,
     "my_confidence": "high",
     "market_implied_probability": 0.005,
@@ -23,10 +23,13 @@
     "prob_delta_vs_prev": 0.0,
     "trigger": "near_close",
     "strategy_id": "S0-single",
-    "rationale_summary": "Hike >=26bps essentially zero in a hold-biased, dovish-dissent committee.",
-    "key_drivers": [
-      "no-hike-bias"
-    ],
+    "proposed_probability": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": "",
+    "rationale_summary": "Hike >=26bps essentially zero in June.",
+    "key_drivers": [],
     "reference_classes": [],
     "research_refs": []
   },
@@ -50,6 +53,11 @@
       "prob_delta_vs_prev": null,
       "trigger": "bootstrap",
       "strategy_id": "",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
       "rationale_summary": "A hike of more than 25bps is near-impossible at a new chair's first meeting absent a crisis.",
       "key_drivers": [
         "no crisis",
@@ -81,6 +89,11 @@
       "prob_delta_vs_prev": 0.0,
       "trigger": "near_close",
       "strategy_id": "",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
       "rationale_summary": "Held: >25bps hike near-impossible absent a crisis.",
       "key_drivers": [
         "no crisis"
@@ -91,7 +104,7 @@
       "research_refs": []
     },
     {
-      "as_of": "2026-06-14T02:07:31Z",
+      "as_of": "2026-06-14T03:39:10Z",
       "my_probability": 0.01,
       "my_confidence": "high",
       "market_implied_probability": 0.005,
@@ -109,12 +122,30 @@
       "prob_delta_vs_prev": 0.0,
       "trigger": "near_close",
       "strategy_id": "S0-single",
-      "rationale_summary": "Hike >=26bps essentially zero in a hold-biased, dovish-dissent committee.",
-      "key_drivers": [
-        "no-hike-bias"
-      ],
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "Hike >=26bps essentially zero in June.",
+      "key_drivers": [],
       "reference_classes": [],
       "research_refs": []
     }
-  ]
+  ],
+  "position": {
+    "entered": false,
+    "entry_as_of": "",
+    "entry_side": "",
+    "entry_probability": 0.0,
+    "entry_price": 0.0,
+    "entry_market_implied": null,
+    "entry_confidence": "",
+    "entry_conviction": "",
+    "entry_gap": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": ""
+  }
 }
