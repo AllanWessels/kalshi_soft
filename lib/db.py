@@ -86,7 +86,16 @@ CREATE TABLE IF NOT EXISTS resolutions (
     realized_pnl          REAL,
     roi                   REAL,
     won                   INTEGER,
-    clv                   REAL
+    clv                   REAL,
+    -- counterfactual modal-side trade (scored for every resolution) + conditioning dims
+    cf_side               TEXT,
+    cf_entry_price        REAL,
+    cf_pnl                REAL,
+    cf_roi                REAL,
+    cf_won                INTEGER,
+    was_taken             INTEGER,
+    my_confidence         TEXT,
+    edge_gap_bucket       TEXT
 );
 """
 
@@ -222,6 +231,14 @@ def _populate_resolutions(conn: sqlite3.Connection) -> None:
             r.roi,
             (int(r.won) if r.won is not None else None),
             r.clv,
+            getattr(r, "cf_side", "") or None,
+            getattr(r, "cf_entry_price", None),
+            getattr(r, "cf_pnl", None),
+            getattr(r, "cf_roi", None),
+            (int(r.cf_won) if getattr(r, "cf_won", None) is not None else None),
+            (int(getattr(r, "was_taken", False))),
+            getattr(r, "my_confidence", "") or None,
+            getattr(r, "edge_gap_bucket", "") or None,
         )
         for r in rf.resolved
     ]
@@ -229,8 +246,9 @@ def _populate_resolutions(conn: sqlite3.Connection) -> None:
         "INSERT OR REPLACE INTO resolutions "
         "(ticker, title, category, subcategory, resolved_at, outcome, final_my_probability, "
         " final_market_implied, brier_mine, brier_market, num_forecasts, "
-        " strategy_id, entry_side, entry_price, realized_pnl, roi, won, clv) "
-        "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+        " strategy_id, entry_side, entry_price, realized_pnl, roi, won, clv, "
+        " cf_side, cf_entry_price, cf_pnl, cf_roi, cf_won, was_taken, my_confidence, edge_gap_bucket) "
+        "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
         rows,
     )
 
