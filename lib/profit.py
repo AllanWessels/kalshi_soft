@@ -102,6 +102,74 @@ def trade_from_entry(
 
 
 # ---------------------------------------------------------------------------
+# Counterfactual P&L — score the MODAL-side hypothetical for EVERY forecast,
+# taken or not. This is how we learn "when would I be profitable": a NONE-lean
+# (no position) is invisible to realized P&L, but its counterfactual trade is a
+# real data point. The ultimate goal is profit, so every forecast gets scored.
+# ---------------------------------------------------------------------------
+
+def modal_side(my_probability: float) -> str:
+    """The side my forecast favors: YES if p >= 0.5 else NO (the directional call)."""
+    return "YES" if my_probability >= 0.5 else "NO"
+
+
+def edge_gap_bucket(my_probability: float, market_implied: Optional[float]) -> str:
+    """Bucket |my_prob - market| into bands (percentage points). Reveals the minimum
+    edge at which counterfactual profit survives the spread + fee."""
+    if market_implied is None:
+        return "no-market"
+    gap = abs(my_probability - market_implied)
+    if gap < 0.05:
+        return "0-5pt"
+    if gap < 0.10:
+        return "5-10pt"
+    if gap < 0.20:
+        return "10-20pt"
+    return "20pt+"
+
+
+def counterfactual_from_entry(
+    entry: "schemas.ForecastEntry",
+    outcome: int,
+    final_market_implied: Optional[float] = None,
+) -> Optional[dict]:
+    """Score the MODAL-side hypothetical trade for a resolved market regardless of
+    whether an actionable lean was taken. Buy the side my probability favors at its
+    entry ask, hold to resolution, net after fees. ``None`` only if the modal side's
+    ask is missing. Returns cf_* fields ready to copy onto a ``schemas.Resolution``."""
+    p = entry.my_probability
+    if p is None:
+        return None
+    side = modal_side(p)
+    entry_price = entry.yes_ask if side == "YES" else entry.no_ask
+    if entry_price is None:
+        return None
+    fee = scoring.kalshi_fee(entry_price)
+    pnl = realized_pnl(side, entry_price, outcome, fee)
+    staked = entry_price + fee
+    return {
+        "cf_side": side,
+        "cf_entry_price": entry_price,
+        "cf_fee": fee,
+        "cf_pnl": pnl,
+        "cf_roi": (pnl / staked) if staked > 0 else None,
+        "cf_won": _won(side, outcome),
+        "edge_gap_bucket": edge_gap_bucket(p, final_market_implied),
+    }
+
+
+def expected_pnl(my_probability: float, side: str, entry_price: float,
+                 fee: Optional[float] = None) -> float:
+    """Forward-looking expected net $/contract for buying *side* at *entry_price*,
+    using my probability as truth (mark-to-model). For OPEN positions, before any
+    outcome. E[pnl] = P(win)*(1-entry-fee) - P(lose)*(entry+fee)."""
+    if fee is None:
+        fee = scoring.kalshi_fee(entry_price)
+    p_win = my_probability if side == "YES" else (1.0 - my_probability)
+    return p_win * (1.0 - entry_price - fee) + (1.0 - p_win) * (-(entry_price + fee))
+
+
+# ---------------------------------------------------------------------------
 # Aggregation across resolved markets
 # ---------------------------------------------------------------------------
 
@@ -158,6 +226,44 @@ def aggregate_profit(
             "roi": (total_pnl / total_staked) if total_staked > 0 else None,
             "win_rate": (len(wins) / len(rs_ordered)) if rs_ordered else None,
             "avg_clv": _mean(clvs),
+            "max_drawdown": max_dd,
+        }
+    return out
+
+
+def aggregate_cf_profit(
+    resolutions: list["schemas.Resolution"],
+    key_fn: Callable[["schemas.Resolution"], str],
+) -> dict[str, dict]:
+    """COUNTERFACTUAL profit, grouped by ``key_fn(r)``, over EVERY resolution that
+    carries a modal-side hypothetical (``cf_pnl``) — not just taken leans. This is
+    the broad signal for *when* the strategy would be profitable. Each value:
+    ``{n, cf_pnl, cf_staked, cf_roi, cf_win_rate, max_drawdown}``."""
+    groups: dict[str, list[schemas.Resolution]] = {}
+    for r in resolutions:
+        if getattr(r, "cf_pnl", None) is None:
+            continue
+        groups.setdefault(key_fn(r), []).append(r)
+
+    out: dict[str, dict] = {}
+    for key, rs in groups.items():
+        rs_ordered = sorted(rs, key=lambda r: r.resolved_at or "")
+        pnls = [r.cf_pnl for r in rs_ordered]
+        staked = [(r.cf_entry_price or 0.0) + (r.cf_fee or 0.0) for r in rs_ordered]
+        wins = [1 for r in rs_ordered if r.cf_won]
+        total_pnl = sum(pnls)
+        total_staked = sum(staked)
+        cum = peak = max_dd = 0.0
+        for p in pnls:
+            cum += p
+            peak = max(peak, cum)
+            max_dd = min(max_dd, cum - peak)
+        out[key] = {
+            "n": len(rs_ordered),
+            "cf_pnl": total_pnl,
+            "cf_staked": total_staked,
+            "cf_roi": (total_pnl / total_staked) if total_staked > 0 else None,
+            "cf_win_rate": (len(wins) / len(rs_ordered)) if rs_ordered else None,
             "max_drawdown": max_dd,
         }
     return out
@@ -222,6 +328,34 @@ if __name__ == "__main__":
     check("agg_pnl", abs(g["total_pnl"] - 0.16) < 1e-9)
     check("agg_winrate", abs(g["win_rate"] - 0.5) < 1e-9)
     check("agg_drawdown", g["max_drawdown"] <= 0.0)
+
+    # --- counterfactual + conditioning ---
+    check("modal_yes", modal_side(0.62) == "YES")
+    check("modal_no", modal_side(0.30) == "NO")
+    check("gap_bucket_small", edge_gap_bucket(0.52, 0.50) == "0-5pt")
+    check("gap_bucket_big", edge_gap_bucket(0.05, 0.50) == "20pt+")
+    check("gap_bucket_nomkt", edge_gap_bucket(0.5, None) == "no-market")
+
+    # counterfactual: NONE lean still scored on the modal side. my_prob 0.20 -> modal NO,
+    # buy NO at no_ask 0.62, outcome NO(0) wins -> 1-0.62-fee. (lean was NONE; cf still set)
+    e_cf = schemas.ForecastEntry(lean="NONE", my_probability=0.20, yes_ask=0.42, no_ask=0.62)
+    cf = counterfactual_from_entry(e_cf, 0, final_market_implied=0.35)
+    check("cf_side_no", cf["cf_side"] == "NO")
+    check("cf_won", cf["cf_won"] is True)
+    check("cf_pnl_positive", cf["cf_pnl"] > 0)
+    check("cf_gap", cf["edge_gap_bucket"] == "10-20pt")  # |0.20-0.35| = 0.15 -> 10-20pt
+
+    # expected_pnl: my_prob 0.70 buying YES at 0.50, fee 0.02 ->
+    # 0.70*(1-0.50-0.02) + 0.30*(-(0.50+0.02)) = 0.70*0.48 - 0.30*0.52 = 0.336-0.156 = 0.18
+    check("expected_pnl", abs(expected_pnl(0.70, "YES", 0.50, 0.02) - 0.18) < 1e-9)
+
+    # aggregate_cf_profit covers a NONE-lean resolution (realized None, cf set)
+    rcf = schemas.Resolution(ticker="C", category="economy", resolved_at="2026-06-03T00:00:00Z",
+                             outcome=0, cf_side="NO", cf_entry_price=0.62, cf_fee=0.02,
+                             cf_pnl=0.36, cf_roi=0.5625, cf_won=True)
+    cfa = aggregate_cf_profit([r1, r2, rcf], lambda r: r.category)
+    check("cf_agg_econ_n", cfa["economy"]["n"] == 1)
+    check("cf_agg_skips_no_cf", "politics" not in cfa)  # r1/r2 have no cf_pnl -> skipped
 
     if errors:
         print("PROFIT TEST FAILURES:", ", ".join(errors))

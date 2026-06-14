@@ -219,6 +219,9 @@ def reconcile(dry_run: bool = False) -> None:
         # Realized paper-trade economics from the lean that was live at resolution.
         # None when the final lean was NONE (no position taken).
         trade = profit.trade_from_entry(final_entry, outcome, final_market_implied)
+        # Counterfactual modal-side trade — scored even when the lean was NONE, so
+        # every resolution feeds the profitability analysis (profit is the goal).
+        cf = profit.counterfactual_from_entry(final_entry, outcome, final_market_implied)
 
         resolution = schemas.Resolution(
             ticker=ticker,
@@ -235,7 +238,10 @@ def reconcile(dry_run: bool = False) -> None:
             num_forecasts=num_forecasts,
             first_forecast_prob=first_forecast_prob,
             strategy_id=getattr(final_entry, "strategy_id", "") or "",
+            was_taken=trade is not None,
+            my_confidence=getattr(final_entry, "my_confidence", "") or "",
             **(trade or {}),
+            **(cf or {}),
         )
 
         if not dry_run:

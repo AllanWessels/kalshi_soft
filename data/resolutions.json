@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-06-13T21:31:41Z",
+  "updated_at": "2026-06-14T01:46:58Z",
   "resolved": [
     {
       "ticker": "KXGOVCA-26-CBIA",
@@ -23,7 +23,16 @@
       "realized_pnl": null,
       "roi": null,
       "won": null,
-      "clv": null
+      "clv": null,
+      "cf_side": "NO",
+      "cf_entry_price": 0.985,
+      "cf_fee": 0.01,
+      "cf_pnl": 0.005000000000000013,
+      "cf_roi": 0.005025125628140717,
+      "cf_won": true,
+      "was_taken": false,
+      "my_confidence": "high",
+      "edge_gap_bucket": "0-5pt"
     },
     {
       "ticker": "KXGOVCAPRIMARY-26-CBIA",
@@ -46,7 +55,16 @@
       "realized_pnl": null,
       "roi": null,
       "won": null,
-      "clv": null
+      "clv": null,
+      "cf_side": "NO",
+      "cf_entry_price": 0.968,
+      "cf_fee": 0.01,
+      "cf_pnl": 0.022000000000000026,
+      "cf_roi": 0.0224948875255624,
+      "cf_won": true,
+      "was_taken": false,
+      "my_confidence": "high",
+      "edge_gap_bucket": "0-5pt"
     },
     {
       "ticker": "KXGOVCAPRIMARYPARTY-26-2R",
@@ -69,7 +87,16 @@
       "realized_pnl": null,
       "roi": null,
       "won": null,
-      "clv": null
+      "clv": null,
+      "cf_side": "NO",
+      "cf_entry_price": 0.998,
+      "cf_fee": 0.01,
+      "cf_pnl": -0.007999999999999998,
+      "cf_roi": -0.007936507936507934,
+      "cf_won": true,
+      "was_taken": false,
+      "my_confidence": "high",
+      "edge_gap_bucket": "0-5pt"
     },
     {
       "ticker": "KXGOVIANOMR-26-RFEE",
@@ -92,7 +119,16 @@
       "realized_pnl": null,
       "roi": null,
       "won": null,
-      "clv": null
+      "clv": null,
+      "cf_side": "YES",
+      "cf_entry_price": 0.919,
+      "cf_fee": 0.01,
+      "cf_pnl": -0.929,
+      "cf_roi": -1.0,
+      "cf_won": false,
+      "was_taken": false,
+      "my_confidence": "medium",
+      "edge_gap_bucket": "10-20pt"
     },
     {
       "ticker": "KXLAMAYOR1R-26-SPRA",
@@ -115,7 +151,16 @@
       "realized_pnl": 0.23,
       "roi": 0.2987012987012987,
       "won": true,
-      "clv": -0.0050000000000000044
+      "clv": -0.0050000000000000044,
+      "cf_side": "NO",
+      "cf_entry_price": 0.75,
+      "cf_fee": 0.02,
+      "cf_pnl": 0.23,
+      "cf_roi": 0.2987012987012987,
+      "cf_won": true,
+      "was_taken": true,
+      "my_confidence": "medium",
+      "edge_gap_bucket": "0-5pt"
     },
     {
       "ticker": "KXMAYORLA-26-SPRA",
@@ -138,7 +183,16 @@
       "realized_pnl": 0.24000000000000002,
       "roi": 0.31578947368421056,
       "won": true,
-      "clv": -0.0050000000000000044
+      "clv": -0.0050000000000000044,
+      "cf_side": "NO",
+      "cf_entry_price": 0.74,
+      "cf_fee": 0.02,
+      "cf_pnl": 0.24000000000000002,
+      "cf_roi": 0.31578947368421056,
+      "cf_won": true,
+      "was_taken": true,
+      "my_confidence": "medium",
+      "edge_gap_bucket": "5-10pt"
     },
     {
       "ticker": "KXSENATEMED-26-GRA",
@@ -161,7 +215,16 @@
       "realized_pnl": null,
       "roi": null,
       "won": null,
-      "clv": null
+      "clv": null,
+      "cf_side": "YES",
+      "cf_entry_price": 0.922,
+      "cf_fee": 0.01,
+      "cf_pnl": 0.06799999999999996,
+      "cf_roi": 0.0729613733905579,
+      "cf_won": true,
+      "was_taken": false,
+      "my_confidence": "high",
+      "edge_gap_bucket": "0-5pt"
     },
     {
       "ticker": "KXSENATENJR-26-VBRA",
@@ -184,7 +247,16 @@
       "realized_pnl": null,
       "roi": null,
       "won": null,
-      "clv": null
+      "clv": null,
+      "cf_side": "NO",
+      "cf_entry_price": 1.0,
+      "cf_fee": 0.0,
+      "cf_pnl": 0.0,
+      "cf_roi": 0.0,
+      "cf_won": true,
+      "was_taken": false,
+      "my_confidence": "high",
+      "edge_gap_bucket": "0-5pt"
     },
     {
       "ticker": "KXSENATEREC-26MAY-JUN06",
@@ -207,7 +279,16 @@
       "realized_pnl": -0.8,
       "roi": -1.0,
       "won": false,
-      "clv": -0.010000000000000009
+      "clv": -0.010000000000000009,
+      "cf_side": "NO",
+      "cf_entry_price": 0.78,
+      "cf_fee": 0.02,
+      "cf_pnl": -0.8,
+      "cf_roi": -1.0,
+      "cf_won": false,
+      "was_taken": true,
+      "my_confidence": "medium",
+      "edge_gap_bucket": "5-10pt"
     },
     {
       "ticker": "KXSENATESCR-26-LGRA",
@@ -230,7 +311,16 @@
       "realized_pnl": null,
       "roi": null,
       "won": null,
-      "clv": null
+      "clv": null,
+      "cf_side": "YES",
+      "cf_entry_price": 0.977,
+      "cf_fee": 0.01,
+      "cf_pnl": 0.01300000000000002,
+      "cf_roi": 0.013171225937183405,
+      "cf_won": true,
+      "was_taken": false,
+      "my_confidence": "high",
+      "edge_gap_bucket": "0-5pt"
     },
     {
       "ticker": "KXSEOULMAYOR-26JUN03-CWON",
@@ -253,7 +343,16 @@
       "realized_pnl": null,
       "roi": null,
       "won": null,
-      "clv": null
+      "clv": null,
+      "cf_side": "YES",
+      "cf_entry_price": 0.84,
+      "cf_fee": 0.01,
+      "cf_pnl": -0.85,
+      "cf_roi": -1.0,
+      "cf_won": false,
+      "was_taken": false,
+      "my_confidence": "low",
+      "edge_gap_bucket": "20pt+"
     },
     {
       "ticker": "KXU3-26MAY-T4.2",
@@ -276,7 +375,16 @@
       "realized_pnl": 0.25,
       "roi": 0.3333333333333333,
       "won": true,
-      "clv": -0.0050000000000000044
+      "clv": -0.0050000000000000044,
+      "cf_side": "YES",
+      "cf_entry_price": 0.73,
+      "cf_fee": 0.02,
+      "cf_pnl": 0.25,
+      "cf_roi": 0.3333333333333333,
+      "cf_won": true,
+      "was_taken": true,
+      "my_confidence": "high",
+      "edge_gap_bucket": "10-20pt"
     }
   ]
 }

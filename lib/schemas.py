@@ -243,6 +243,19 @@ class Resolution:
     roi: Optional[float] = None           # realized_pnl / staked
     won: Optional[bool] = None
     clv: Optional[float] = None           # closing-line value (skill signal)
+    # Counterfactual modal-side trade — scored for EVERY resolution, taken or not,
+    # so NONE-leans still yield profit signal ("when would I be profitable"). See
+    # lib/profit.counterfactual_from_entry.
+    cf_side: str = ""                     # modal side: YES if my_prob>=0.5 else NO
+    cf_entry_price: Optional[float] = None
+    cf_fee: Optional[float] = None
+    cf_pnl: Optional[float] = None        # net $/contract on the modal-side hypothetical
+    cf_roi: Optional[float] = None
+    cf_won: Optional[bool] = None
+    # Conditioning dims for profitability slices.
+    was_taken: bool = False               # True if an actionable lean was placed (realized_pnl set)
+    my_confidence: str = ""               # forecaster confidence at resolution (low|medium|high)
+    edge_gap_bucket: str = ""             # |my_prob - market| band (see lib/profit.edge_gap_bucket)
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
@@ -367,6 +380,11 @@ class Calibration:
     profit_by_category: dict[str, Any] = field(default_factory=dict)
     profit_by_segment: dict[str, Any] = field(default_factory=dict)
     profit_by_strategy: dict[str, Any] = field(default_factory=dict)  # the "which topology wins" view
+    # COUNTERFACTUAL profitability — the "when would I be profitable" engine. Every
+    # resolved forecast scored as a modal-side hypothetical, then conditioned on the
+    # dims that predict profit. Shape: {"cf_by_taken","cf_by_gap","cf_by_confidence",
+    # "cf_by_category","cf_by_strategy","open_expected": {...}}. See lib/scoring.
+    profitability: dict[str, Any] = field(default_factory=dict)
     schema_version: int = SCHEMA_VERSION
 
     def to_dict(self) -> dict[str, Any]:
@@ -384,6 +402,7 @@ class Calibration:
             "profit_by_category": self.profit_by_category,
             "profit_by_segment": self.profit_by_segment,
             "profit_by_strategy": self.profit_by_strategy,
+            "profitability": self.profitability,
         }
 
     @classmethod
@@ -402,6 +421,7 @@ class Calibration:
             profit_by_category=d.get("profit_by_category", {}),
             profit_by_segment=d.get("profit_by_segment", {}),
             profit_by_strategy=d.get("profit_by_strategy", {}),
+            profitability=d.get("profitability", {}),
             schema_version=int(d.get("schema_version", SCHEMA_VERSION)),
         )
 

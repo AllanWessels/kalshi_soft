@@ -246,6 +246,21 @@ def compute_calibration(
     profit_by_segment_out = profit.aggregate_profit(resolutions, _segment_key)
     profit_by_strategy_out = profit.aggregate_profit(resolutions, _strategy_key)
 
+    # --- COUNTERFACTUAL profitability — every forecast scored, conditioned on the
+    #     dims that predict profit. This is the "when would I be profitable" engine. --
+    _taken_key = lambda r: "taken" if getattr(r, "was_taken", False) else "gated/none"
+    _gap_key = lambda r: getattr(r, "edge_gap_bucket", "") or "unknown"
+    _conf_key = lambda r: getattr(r, "my_confidence", "") or "unknown"
+    cf_all = profit.aggregate_cf_profit(resolutions, lambda r: "all")
+    profitability = {
+        "cf_overall": cf_all.get("all", {}),
+        "cf_by_taken": profit.aggregate_cf_profit(resolutions, _taken_key),
+        "cf_by_gap": profit.aggregate_cf_profit(resolutions, _gap_key),
+        "cf_by_confidence": profit.aggregate_cf_profit(resolutions, _conf_key),
+        "cf_by_category": profit.aggregate_cf_profit(resolutions, _category_key),
+        "cf_by_strategy": profit.aggregate_cf_profit(resolutions, _strategy_key),
+    }
+
     return schemas.Calibration(
         updated_at=schemas.utc_now_iso(),
         n_resolved=len(resolutions),
@@ -259,6 +274,7 @@ def compute_calibration(
         profit_by_category=profit_by_category_out,
         profit_by_segment=profit_by_segment_out,
         profit_by_strategy=profit_by_strategy_out,
+        profitability=profitability,
     )
 
 

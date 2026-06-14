@@ -909,6 +909,151 @@ def _build_strategy_scoreboard(
     return elems
 
 
+def _cf_table(title: str, groups: dict, st: dict, label_header: str,
+              order: Optional[list] = None) -> list:
+    """Render one counterfactual-profitability table from a cf_by_* dict.
+
+    *groups* maps a label -> {n, cf_pnl, cf_staked, cf_roi, cf_win_rate, max_drawdown}.
+    Rows ordered by *order* if given (e.g. gap bands), else by ROI descending."""
+    elems: list = []
+    if not groups:
+        return elems
+    if order:
+        rows = [(k, groups[k]) for k in order if k in groups]
+        rows += [(k, v) for k, v in groups.items() if k not in order]
+    else:
+        rows = sorted(groups.items(),
+                      key=lambda kv: (kv[1].get("cf_roi") is None,
+                                      -(kv[1].get("cf_roi") or 0.0)))
+    data = [[label_header, "n", "CF P&L", "CF ROI", "Win%", "MaxDD"]]
+    for label, s in rows:
+        roi = s.get("cf_roi")
+        wr = s.get("cf_win_rate")
+        data.append([
+            label,
+            str(s.get("n", 0)),
+            _fmt_dollar(s.get("cf_pnl", 0.0)),
+            (f"{roi:+.1%}" if roi is not None else "—"),
+            (f"{wr:.0%}" if wr is not None else "—"),
+            _fmt_dollar(s.get("max_drawdown", 0.0)),
+        ])
+    tbl = Table(data, colWidths=[6.6 * cm, 1.2 * cm, 2.2 * cm, 2.0 * cm, 1.5 * cm, 2.0 * cm])
+    style = [
+        ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#1B5E20")),
+        ("TEXTCOLOR", (0, 0), (-1, 0), colors.white),
+        ("FONTNAME", (0, 0), (-1, 0), "Helvetica-Bold"),
+        ("FONTSIZE", (0, 0), (-1, -1), 8),
+        ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.HexColor("#E8F5E9"), colors.white]),
+        ("GRID", (0, 0), (-1, -1), 0.3, colors.HexColor("#A5D6A7")),
+        ("TOPPADDING", (0, 0), (-1, -1), 3),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 3),
+        ("LEFTPADDING", (0, 0), (-1, -1), 4),
+        ("ALIGN", (1, 0), (-1, -1), "CENTER"),
+    ]
+    for i, (_, s) in enumerate(rows, start=1):
+        roi = s.get("cf_roi")
+        if roi is not None:
+            col = colors.HexColor("#1B5E20") if roi > 0 else colors.HexColor("#B71C1C")
+            style.append(("TEXTCOLOR", (2, i), (3, i), col))
+    tbl.setStyle(TableStyle(style))
+    elems.append(Paragraph(title, st["small"]))
+    elems.append(_sp(2))
+    elems.append(tbl)
+    return elems
+
+
+def _open_expected_pnl(forecasts: list, st: dict) -> list:
+    """Forward-looking: expected net P&L (mark-to-model) on current OPEN modal-side
+    positions, using my probability as truth. Shows profitability before resolution."""
+    from lib import profit
+    elems: list = []
+    rows = []
+    total_ev = 0.0
+    for rec in forecasts:
+        c = rec.current
+        if not c or c.my_probability is None:
+            continue
+        side = profit.modal_side(c.my_probability)
+        ask = c.yes_ask if side == "YES" else c.no_ask
+        if ask is None:
+            continue
+        ev = profit.expected_pnl(c.my_probability, side, ask)
+        total_ev += ev
+        rows.append((rec.ticker, side, ev, c.lean))
+    if not rows:
+        return elems
+    taken_ev = sum(ev for _, _, ev, lean in rows if lean in ("YES", "NO"))
+    pos = sum(1 for _, _, ev, _ in rows if ev > 0)
+    elems.append(Paragraph(
+        f"Forward-looking expected P&amp;L on <b>{len(rows)}</b> open modal-side positions "
+        f"(mark-to-model): <b>{_fmt_dollar(total_ev)}</b>/contract total "
+        f"({pos} are +EV). Of that, <b>{_fmt_dollar(taken_ev)}</b> is on actionable leans "
+        f"(the rest is counterfactual — positions the confidence gate is holding us out of).",
+        st["small"]))
+    return elems
+
+
+def _build_profitability(
+    calibration: schemas.Calibration,
+    forecasts: list,
+    st: dict,
+) -> list:
+    """Profitability — the project's north star, tracked like any other metric.
+
+    Counterfactual P&L scores EVERY resolved forecast (modal-side hypothetical), not
+    just taken leans, then conditions it on the dims that predict profit so we learn
+    *when* trading pays. Plus forward-looking expected P&L on open positions."""
+    elems: list = []
+    p = calibration.profitability or {}
+    overall = p.get("cf_overall") or {}
+    if not overall:
+        return elems
+
+    elems.append(Paragraph("Profitability — when does the edge pay? (counterfactual)", st["section"]))
+    elems.append(_hr())
+    roi = overall.get("cf_roi")
+    wr = overall.get("cf_win_rate")
+    roi_color = "#1B5E20" if (roi or 0) > 0 else "#B71C1C"
+    elems.append(Paragraph(
+        f"Every resolved forecast scored as a modal-side paper trade ({overall.get('n', 0)} total, "
+        f"vs only the taken leans in the realized section above). Overall counterfactual "
+        f'ROI: <b><font color="{roi_color}">{(f"{roi:+.1%}" if roi is not None else "—")}</font></b>, '
+        f"win rate {(f'{wr:.0%}' if wr is not None else '—')}. The breakdowns below isolate "
+        f"<b>when</b> the strategy is profitable — the goal is profit, so this is the scoreboard "
+        f"that matters most.", st["body"]))
+    elems.append(_sp(6))
+
+    # The two highest-signal lenses first: does the gate help, and at what edge do we profit?
+    elems.extend(_cf_table("Confidence gate: taken leans vs the ones we declined",
+                           p.get("cf_by_taken", {}), st, "Decision"))
+    elems.append(_sp(6))
+    elems.extend(_cf_table("By edge vs market (|my prob − market|) — where profit survives fees",
+                           p.get("cf_by_gap", {}), st, "Edge band",
+                           order=["0-5pt", "5-10pt", "10-20pt", "20pt+", "no-market"]))
+    elems.append(_sp(6))
+    elems.extend(_cf_table("By stated confidence — does confidence predict profit?",
+                           p.get("cf_by_confidence", {}), st, "Confidence",
+                           order=["high", "medium", "low", "unknown"]))
+    elems.append(_sp(6))
+    elems.extend(_cf_table("By category", p.get("cf_by_category", {}), st, "Category"))
+    elems.append(_sp(6))
+    elems.extend(_cf_table("By strategy arm", p.get("cf_by_strategy", {}), st, "Strategy"))
+    elems.append(_sp(8))
+
+    # Forward-looking open-position expected P&L.
+    elems.append(Paragraph("Open positions — expected P&amp;L (forward-looking)", st["small"]))
+    elems.append(_sp(2))
+    elems.extend(_open_expected_pnl(forecasts, st))
+
+    if calibration.n_resolved < _MIN_RESOLUTIONS_FOR_SIGNAL:
+        elems.append(_sp(4))
+        elems.append(Paragraph(
+            f'<font color="#B71C1C">Provisional — {calibration.n_resolved} resolved. '
+            f"Profit ROI is even noisier than Brier at small n; read the direction, not the digits.</font>",
+            st["small"]))
+    return elems
+
+
 def _build_per_market(
     watchlist: schemas.Watchlist,
     forecasts: list[schemas.ForecastRecord],
@@ -1435,6 +1580,13 @@ def build_pdf(
         if scoreboard:
             story.extend(scoreboard)
             story.append(_sp(12))
+
+    # 1e. Profitability — counterfactual "when do we profit" + forward-looking open EV.
+    #     The north-star section: profit is the goal, scored on every forecast.
+    prof_section = _build_profitability(calibration, forecasts, st)
+    if prof_section:
+        story.extend(prof_section)
+        story.append(_sp(12))
 
     # 2. Per-market section
     story.extend(_build_per_market(watchlist, forecasts, scratch, st))

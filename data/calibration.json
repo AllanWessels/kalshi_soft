@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-06-13T21:32:10Z",
+  "updated_at": "2026-06-14T01:46:58Z",
   "n_resolved": 12,
   "brier_mine_mean": 0.15430208333333334,
   "brier_market_mean": 0.19566910416666664,
@@ -147,6 +147,190 @@
       "brier_mine_mean": 0.0144,
       "brier_market_mean": 0.07562500000000001,
       "skill_vs_market": 0.061225000000000016
+    }
+  },
+  "by_strategy": {
+    "untagged": {
+      "n": 12,
+      "brier_mine_mean": 0.15430208333333334,
+      "brier_market_mean": 0.19566910416666664,
+      "skill_vs_market": 0.041367020833333296
+    }
+  },
+  "profit_by_category": {
+    "politics": {
+      "n_trades": 3,
+      "total_pnl": -0.33,
+      "total_staked": 2.33,
+      "roi": -0.14163090128755365,
+      "win_rate": 0.6666666666666666,
+      "avg_clv": -0.006666666666666672,
+      "max_drawdown": -0.8
+    },
+    "economy": {
+      "n_trades": 1,
+      "total_pnl": 0.25,
+      "total_staked": 0.75,
+      "roi": 0.3333333333333333,
+      "win_rate": 1.0,
+      "avg_clv": -0.0050000000000000044,
+      "max_drawdown": 0.0
+    }
+  },
+  "profit_by_segment": {
+    "politics / mayoral": {
+      "n_trades": 2,
+      "total_pnl": 0.47000000000000003,
+      "total_staked": 1.53,
+      "roi": 0.30718954248366015,
+      "win_rate": 1.0,
+      "avg_clv": -0.0050000000000000044,
+      "max_drawdown": 0.0
+    },
+    "politics / us-senate": {
+      "n_trades": 1,
+      "total_pnl": -0.8,
+      "total_staked": 0.8,
+      "roi": -1.0,
+      "win_rate": 0.0,
+      "avg_clv": -0.010000000000000009,
+      "max_drawdown": -0.8
+    },
+    "economy / jobs-unemployment": {
+      "n_trades": 1,
+      "total_pnl": 0.25,
+      "total_staked": 0.75,
+      "roi": 0.3333333333333333,
+      "win_rate": 1.0,
+      "avg_clv": -0.0050000000000000044,
+      "max_drawdown": 0.0
+    }
+  },
+  "profit_by_strategy": {
+    "untagged": {
+      "n_trades": 4,
+      "total_pnl": -0.08000000000000002,
+      "total_staked": 3.08,
+      "roi": -0.02597402597402598,
+      "win_rate": 0.75,
+      "avg_clv": -0.0062500000000000056,
+      "max_drawdown": -0.8
+    }
+  },
+  "profitability": {
+    "cf_overall": {
+      "n": 12,
+      "cf_pnl": -1.7590000000000001,
+      "cf_staked": 10.759,
+      "cf_roi": -0.16349103076494098,
+      "cf_win_rate": 0.75,
+      "max_drawdown": -2.3369999999999997
+    },
+    "cf_by_taken": {
+      "gated/none": {
+        "n": 8,
+        "cf_pnl": -1.679,
+        "cf_staked": 7.679,
+        "cf_roi": -0.2186482614923818,
+        "cf_win_rate": 0.75,
+        "max_drawdown": -1.787
+      },
+      "taken": {
+        "n": 4,
+        "cf_pnl": -0.08000000000000002,
+        "cf_staked": 3.08,
+        "cf_roi": -0.02597402597402598,
+        "cf_win_rate": 0.75,
+        "max_drawdown": -0.8
+      }
+    },
+    "cf_by_gap": {
+      "0-5pt": {
+        "n": 7,
+        "cf_pnl": 0.33,
+        "cf_staked": 6.67,
+        "cf_roi": 0.049475262368815595,
+        "cf_win_rate": 1.0,
+        "max_drawdown": -0.007999999999999998
+      },
+      "10-20pt": {
+        "n": 2,
+        "cf_pnl": -0.679,
+        "cf_staked": 1.679,
+        "cf_roi": -0.4044073853484217,
+        "cf_win_rate": 0.5,
+        "max_drawdown": -0.929
+      },
+      "5-10pt": {
+        "n": 2,
+        "cf_pnl": -0.56,
+        "cf_staked": 1.56,
+        "cf_roi": -0.358974358974359,
+        "cf_win_rate": 0.5,
+        "max_drawdown": -0.8
+      },
+      "20pt+": {
+        "n": 1,
+        "cf_pnl": -0.85,
+        "cf_staked": 0.85,
+        "cf_roi": -1.0,
+        "cf_win_rate": 0.0,
+        "max_drawdown": -0.85
+      }
+    },
+    "cf_by_confidence": {
+      "high": {
+        "n": 7,
+        "cf_pnl": 0.35000000000000003,
+        "cf_staked": 6.65,
+        "cf_roi": 0.052631578947368425,
+        "cf_win_rate": 1.0,
+        "max_drawdown": -0.008000000000000007
+      },
+      "medium": {
+        "n": 4,
+        "cf_pnl": -1.2590000000000001,
+        "cf_staked": 3.2590000000000003,
+        "cf_roi": -0.386314820497085,
+        "cf_win_rate": 0.5,
+        "max_drawdown": -1.729
+      },
+      "low": {
+        "n": 1,
+        "cf_pnl": -0.85,
+        "cf_staked": 0.85,
+        "cf_roi": -1.0,
+        "cf_win_rate": 0.0,
+        "max_drawdown": -0.85
+      }
+    },
+    "cf_by_category": {
+      "politics": {
+        "n": 11,
+        "cf_pnl": -2.009,
+        "cf_staked": 10.009,
+        "cf_roi": -0.20071935258267556,
+        "cf_win_rate": 0.7272727272727273,
+        "max_drawdown": -2.5869999999999997
+      },
+      "economy": {
+        "n": 1,
+        "cf_pnl": 0.25,
+        "cf_staked": 0.75,
+        "cf_roi": 0.3333333333333333,
+        "cf_win_rate": 1.0,
+        "max_drawdown": 0.0
+      }
+    },
+    "cf_by_strategy": {
+      "untagged": {
+        "n": 12,
+        "cf_pnl": -1.7590000000000001,
+        "cf_staked": 10.759,
+        "cf_roi": -0.16349103076494098,
+        "cf_win_rate": 0.75,
+        "max_drawdown": -2.3369999999999997
+      }
     }
   }
 }
