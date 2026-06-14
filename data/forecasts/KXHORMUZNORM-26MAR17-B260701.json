@@ -5,32 +5,33 @@
   "category": "politics",
   "close_time": "2026-07-07T13:59:00Z",
   "current": {
-    "as_of": "2026-06-13T23:09:37Z",
-    "my_probability": 0.086,
+    "as_of": "2026-06-14T02:12:29Z",
+    "my_probability": 0.084,
     "my_confidence": "medium",
-    "market_implied_probability": 0.195,
-    "market_price_cents": 20.0,
-    "edge": -0.10900000000000001,
-    "yes_ask": 0.2,
-    "no_ask": 0.81,
+    "market_implied_probability": 0.185,
+    "market_price_cents": 19.0,
+    "edge": -0.10099999999999999,
+    "yes_ask": 0.19,
+    "no_ask": 0.82,
     "fee_per_contract": 0.02,
-    "ev_per_contract": 0.08399999999999998,
-    "limit_price": 0.8,
-    "ev_limit_per_contract": 0.094,
+    "ev_per_contract": 0.07600000000000008,
+    "limit_price": 0.81,
+    "ev_limit_per_contract": 0.086,
     "lean": "NO",
     "conviction": "medium",
     "lean_note": null,
-    "prob_delta_vs_prev": 0.025999999999999995,
+    "prob_delta_vs_prev": -0.001999999999999988,
     "trigger": "near_close",
     "strategy_id": "S2-ensemble3-crowd",
-    "rationale_summary": "Blockade entrenched; even a ceasefire leaves demining+insurance+carrier lag beyond ~18 days. Modal NO; crowd-adjusted partway up from 0.04.",
+    "rationale_summary": "3-Opus ensemble (0.04/0.05/0.04, trimmed 0.04) + crowd 0.3 -> 0.084. Toll/diplomatic stalemate + 800-vessel backlog block FULL normalization by Jul 1 even with ceasefire holding.",
     "key_drivers": [
-      "hormuz-full-closure",
-      "conjunctive-recovery-chain"
+      "ceasefire",
+      "toll-stalemate",
+      "backlog-lag"
     ],
     "reference_classes": [
-      "tanker-war",
-      "post-conflict-demining"
+      "political-chokepoint-recovery",
+      "red-sea-houthi"
     ],
     "research_refs": []
   },
@@ -97,6 +98,37 @@
       "reference_classes": [
         "tanker-war",
         "post-conflict-demining"
+      ],
+      "research_refs": []
+    },
+    {
+      "as_of": "2026-06-14T02:12:29Z",
+      "my_probability": 0.084,
+      "my_confidence": "medium",
+      "market_implied_probability": 0.185,
+      "market_price_cents": 19.0,
+      "edge": -0.10099999999999999,
+      "yes_ask": 0.19,
+      "no_ask": 0.82,
+      "fee_per_contract": 0.02,
+      "ev_per_contract": 0.07600000000000008,
+      "limit_price": 0.81,
+      "ev_limit_per_contract": 0.086,
+      "lean": "NO",
+      "conviction": "medium",
+      "lean_note": null,
+      "prob_delta_vs_prev": -0.001999999999999988,
+      "trigger": "near_close",
+      "strategy_id": "S2-ensemble3-crowd",
+      "rationale_summary": "3-Opus ensemble (0.04/0.05/0.04, trimmed 0.04) + crowd 0.3 -> 0.084. Toll/diplomatic stalemate + 800-vessel backlog block FULL normalization by Jul 1 even with ceasefire holding.",
+      "key_drivers": [
+        "ceasefire",
+        "toll-stalemate",
+        "backlog-lag"
+      ],
+      "reference_classes": [
+        "political-chokepoint-recovery",
+        "red-sea-houthi"
       ],
       "research_refs": []
     }

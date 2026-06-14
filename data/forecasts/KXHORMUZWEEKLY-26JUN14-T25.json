@@ -5,31 +5,32 @@
   "category": "politics",
   "close_time": "2026-06-16T13:00:00Z",
   "current": {
-    "as_of": "2026-06-13T23:09:51Z",
-    "my_probability": 0.194,
+    "as_of": "2026-06-14T02:12:29Z",
+    "my_probability": 0.61,
     "my_confidence": "medium",
-    "market_implied_probability": 0.505,
-    "market_price_cents": 51.0,
-    "edge": -0.311,
-    "yes_ask": 0.51,
-    "no_ask": 0.5,
+    "market_implied_probability": 0.495,
+    "market_price_cents": 50.0,
+    "edge": 0.11499999999999999,
+    "yes_ask": 0.5,
+    "no_ask": 0.51,
     "fee_per_contract": 0.02,
-    "ev_per_contract": 0.28600000000000003,
+    "ev_per_contract": 0.08999999999999998,
     "limit_price": 0.49,
-    "ev_limit_per_contract": 0.296,
-    "lean": "NONE",
-    "conviction": "low",
-    "lean_note": "31pt gap vs a liquid market without high confidence — more likely my error than edge",
-    "prob_delta_vs_prev": -0.22599999999999998,
+    "ev_limit_per_contract": 0.1,
+    "lean": "YES",
+    "conviction": "medium",
+    "lean_note": null,
+    "prob_delta_vs_prev": 0.416,
     "trigger": "near_close",
     "strategy_id": "S2-ensemble3-crowd",
-    "rationale_summary": "Full closure + complete halt last 5 days implies weekly transits well under 25; but market at 50% may count small/escort craft I cannot see. 31-pt gap -> hold humble.",
+    "rationale_summary": "3-Opus ensemble (0.68/0.66/0.62, trimmed 0.66) + crowd 0.3 -> 0.61. ~5/day supervised (~35/wk) vs 25 threshold (=3.6/day); 800-vessel backlog skews up. DIRECTIONAL FLIP from yesterday's 0.19.",
     "key_drivers": [
-      "hormuz-full-closure",
-      "count-definition-risk"
+      "supervised-transit-35wk",
+      "backlog-pressure"
     ],
     "reference_classes": [
-      "blockade-throughput-collapse"
+      "throttled-chokepoint-throughput",
+      "poisson-count"
     ],
     "research_refs": []
   },
@@ -94,6 +95,36 @@
       ],
       "reference_classes": [
         "blockade-throughput-collapse"
+      ],
+      "research_refs": []
+    },
+    {
+      "as_of": "2026-06-14T02:12:29Z",
+      "my_probability": 0.61,
+      "my_confidence": "medium",
+      "market_implied_probability": 0.495,
+      "market_price_cents": 50.0,
+      "edge": 0.11499999999999999,
+      "yes_ask": 0.5,
+      "no_ask": 0.51,
+      "fee_per_contract": 0.02,
+      "ev_per_contract": 0.08999999999999998,
+      "limit_price": 0.49,
+      "ev_limit_per_contract": 0.1,
+      "lean": "YES",
+      "conviction": "medium",
+      "lean_note": null,
+      "prob_delta_vs_prev": 0.416,
+      "trigger": "near_close",
+      "strategy_id": "S2-ensemble3-crowd",
+      "rationale_summary": "3-Opus ensemble (0.68/0.66/0.62, trimmed 0.66) + crowd 0.3 -> 0.61. ~5/day supervised (~35/wk) vs 25 threshold (=3.6/day); 800-vessel backlog skews up. DIRECTIONAL FLIP from yesterday's 0.19.",
+      "key_drivers": [
+        "supervised-transit-35wk",
+        "backlog-pressure"
+      ],
+      "reference_classes": [
+        "throttled-chokepoint-throughput",
+        "poisson-count"
       ],
       "research_refs": []
     }

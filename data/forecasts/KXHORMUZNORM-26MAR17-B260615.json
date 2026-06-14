@@ -5,33 +5,30 @@
   "category": "politics",
   "close_time": "2026-06-16T12:59:00Z",
   "current": {
-    "as_of": "2026-06-13T23:09:37Z",
-    "my_probability": 0.01,
-    "my_confidence": "high",
-    "market_implied_probability": 0.005,
-    "market_price_cents": 1.0,
-    "edge": 0.005,
-    "yes_ask": 0.01,
+    "as_of": "2026-06-14T02:06:44Z",
+    "my_probability": 0.02,
+    "my_confidence": "medium",
+    "market_implied_probability": 0.01,
+    "market_price_cents": 2.0,
+    "edge": 0.01,
+    "yes_ask": 0.02,
     "no_ask": 1.0,
     "fee_per_contract": 0.0,
-    "ev_per_contract": -0.010000000000000009,
+    "ev_per_contract": -0.020000000000000018,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "I lean NO (my prob 1%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
-    "prob_delta_vs_prev": -0.01,
+    "lean_note": "I lean NO (my prob 2%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+    "prob_delta_vs_prev": 0.01,
     "trigger": "near_close",
     "strategy_id": "S0-single",
-    "rationale_summary": "103-day Hormuz blockade escalated to full closure Jun 10-11; full normalization within 2 days is ~0%. Aligns with market.",
+    "rationale_summary": "Ceasefire holds but shipping ~95% below normal, tolls disputed; full normalization by Jun 15 still ~0.",
     "key_drivers": [
-      "hormuz-full-closure",
-      "demining-lag"
+      "ceasefire-partial",
+      "toll-dispute"
     ],
-    "reference_classes": [
-      "active-military-blockades",
-      "mined-strait-reopenings"
-    ],
+    "reference_classes": [],
     "research_refs": []
   },
   "history": [
@@ -98,6 +95,33 @@
         "active-military-blockades",
         "mined-strait-reopenings"
       ],
+      "research_refs": []
+    },
+    {
+      "as_of": "2026-06-14T02:06:44Z",
+      "my_probability": 0.02,
+      "my_confidence": "medium",
+      "market_implied_probability": 0.01,
+      "market_price_cents": 2.0,
+      "edge": 0.01,
+      "yes_ask": 0.02,
+      "no_ask": 1.0,
+      "fee_per_contract": 0.0,
+      "ev_per_contract": -0.020000000000000018,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "I lean NO (my prob 2%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+      "prob_delta_vs_prev": 0.01,
+      "trigger": "near_close",
+      "strategy_id": "S0-single",
+      "rationale_summary": "Ceasefire holds but shipping ~95% below normal, tolls disputed; full normalization by Jun 15 still ~0.",
+      "key_drivers": [
+        "ceasefire-partial",
+        "toll-dispute"
+      ],
+      "reference_classes": [],
       "research_refs": []
     }
   ]

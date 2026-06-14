@@ -5,11 +5,11 @@
   "category": "economy",
   "close_time": "2026-06-17T17:59:00Z",
   "current": {
-    "as_of": "2026-06-13T10:25:06Z",
+    "as_of": "2026-06-14T02:07:31Z",
     "my_probability": 0.02,
     "my_confidence": "high",
     "market_implied_probability": 0.005,
-    "market_price_cents": 0.0,
+    "market_price_cents": 1.0,
     "edge": 0.015,
     "yes_ask": 0.01,
     "no_ask": 1.0,
@@ -20,16 +20,15 @@
     "lean": "NONE",
     "conviction": "low",
     "lean_note": "I lean NO (my prob 2%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
-    "prob_delta_vs_prev": -0.009999999999999998,
+    "prob_delta_vs_prev": 0.0,
     "trigger": "near_close",
-    "rationale_summary": "Held: a cut is unjustified with core PCE 3.3%.",
+    "strategy_id": "S0-single",
+    "rationale_summary": "June FOMC near-certain HOLD (93%+); cut-25 very unlikely, GS/JPM see first cut mid-2027.",
     "key_drivers": [
-      "inflation far above target",
-      "no easing case"
+      "hold-near-certain",
+      "no-easing-2026"
     ],
-    "reference_classes": [
-      "Fed does not cut with core inflation >3%"
-    ],
+    "reference_classes": [],
     "research_refs": []
   },
   "history": [
@@ -51,6 +50,7 @@
       "lean_note": "I lean NO (my prob 3%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
       "prob_delta_vs_prev": null,
       "trigger": "bootstrap",
+      "strategy_id": "",
       "rationale_summary": "With CPI ~3.8% and an 8-4 April hold under new chair Warsh, a June cut is highly unlikely; FedWatch ~2-3%.",
       "key_drivers": [
         "CPI 3.8%",
@@ -80,6 +80,7 @@
       "lean_note": "I lean NO (my prob 2%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
       "prob_delta_vs_prev": -0.009999999999999998,
       "trigger": "near_close",
+      "strategy_id": "",
       "rationale_summary": "Held: a cut is unjustified with core PCE 3.3%.",
       "key_drivers": [
         "inflation far above target",
@@ -88,6 +89,33 @@
       "reference_classes": [
         "Fed does not cut with core inflation >3%"
       ],
+      "research_refs": []
+    },
+    {
+      "as_of": "2026-06-14T02:07:31Z",
+      "my_probability": 0.02,
+      "my_confidence": "high",
+      "market_implied_probability": 0.005,
+      "market_price_cents": 1.0,
+      "edge": 0.015,
+      "yes_ask": 0.01,
+      "no_ask": 1.0,
+      "fee_per_contract": 0.0,
+      "ev_per_contract": -0.020000000000000018,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "I lean NO (my prob 2%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+      "prob_delta_vs_prev": 0.0,
+      "trigger": "near_close",
+      "strategy_id": "S0-single",
+      "rationale_summary": "June FOMC near-certain HOLD (93%+); cut-25 very unlikely, GS/JPM see first cut mid-2027.",
+      "key_drivers": [
+        "hold-near-certain",
+        "no-easing-2026"
+      ],
+      "reference_classes": [],
       "research_refs": []
     }
   ]

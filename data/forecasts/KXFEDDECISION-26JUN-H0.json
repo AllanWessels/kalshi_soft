@@ -5,31 +5,30 @@
   "category": "economy",
   "close_time": "2026-06-17T17:59:00Z",
   "current": {
-    "as_of": "2026-06-13T10:25:06Z",
-    "my_probability": 0.95,
-    "my_confidence": "medium",
+    "as_of": "2026-06-14T02:07:31Z",
+    "my_probability": 0.96,
+    "my_confidence": "high",
     "market_implied_probability": 0.985,
-    "market_price_cents": 98.0,
-    "edge": -0.03500000000000003,
+    "market_price_cents": 99.0,
+    "edge": -0.025000000000000022,
     "yes_ask": 0.99,
     "no_ask": 0.02,
     "fee_per_contract": 0.01,
-    "ev_per_contract": -0.05000000000000004,
+    "ev_per_contract": -0.04000000000000003,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "I lean YES (my prob 95%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
-    "prob_delta_vs_prev": -0.020000000000000018,
+    "lean_note": "I lean YES (my prob 96%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+    "prob_delta_vs_prev": 0.010000000000000009,
     "trigger": "near_close",
-    "rationale_summary": "Held: no new information since this morning's forecast; pre-meeting blackout. Hold overwhelmingly likely at Warsh's first meeting with inflation elevated.",
+    "strategy_id": "S0-single",
+    "rationale_summary": "HOLD is the overwhelming consensus (93%+ priced; third consecutive hold; no easing expected through 2026).",
     "key_drivers": [
-      "inflation above target",
-      "new-chair continuity norm"
+      "hold-consensus",
+      "sticky-inflation"
     ],
-    "reference_classes": [
-      "Fed holds at new-chair first meeting"
-    ],
+    "reference_classes": [],
     "research_refs": []
   },
   "history": [
@@ -51,6 +50,7 @@
       "lean_note": "I lean YES (my prob 97%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
       "prob_delta_vs_prev": null,
       "trigger": "bootstrap",
+      "strategy_id": "",
       "rationale_summary": "A hike at a single meeting in an established hold cycle is essentially unprecedented absent a crisis; CPI ~3.8% is not an emergency trigger and futures imply ~99% no-hike.",
       "key_drivers": [
         "no tightening posture",
@@ -80,6 +80,7 @@
       "lean_note": "I lean YES (my prob 95%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
       "prob_delta_vs_prev": -0.020000000000000018,
       "trigger": "near_close",
+      "strategy_id": "",
       "rationale_summary": "Held: no new information since this morning's forecast; pre-meeting blackout. Hold overwhelmingly likely at Warsh's first meeting with inflation elevated.",
       "key_drivers": [
         "inflation above target",
@@ -88,6 +89,33 @@
       "reference_classes": [
         "Fed holds at new-chair first meeting"
       ],
+      "research_refs": []
+    },
+    {
+      "as_of": "2026-06-14T02:07:31Z",
+      "my_probability": 0.96,
+      "my_confidence": "high",
+      "market_implied_probability": 0.985,
+      "market_price_cents": 99.0,
+      "edge": -0.025000000000000022,
+      "yes_ask": 0.99,
+      "no_ask": 0.02,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": -0.04000000000000003,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "I lean YES (my prob 96%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+      "prob_delta_vs_prev": 0.010000000000000009,
+      "trigger": "near_close",
+      "strategy_id": "S0-single",
+      "rationale_summary": "HOLD is the overwhelming consensus (93%+ priced; third consecutive hold; no easing expected through 2026).",
+      "key_drivers": [
+        "hold-consensus",
+        "sticky-inflation"
+      ],
+      "reference_classes": [],
       "research_refs": []
     }
   ]

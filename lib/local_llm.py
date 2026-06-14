@@ -174,7 +174,7 @@ def extract_evidence(question: str, search_results: str, *, as_of: str = "") -> 
         f"OUTPUT {_EVIDENCE_SCHEMA_HINT}\n\n"
         f"RAW SEARCH RESULTS:\n{search_results}"
     )
-    notes = complete_json(_EVIDENCE_SYSTEM, user, max_tokens=1500)
+    notes = complete_json(_EVIDENCE_SYSTEM, user, max_tokens=4000)  # free + unmetered; generous headroom
     notes.setdefault("question", question)
     notes.setdefault("as_of", as_of)
     notes.setdefault("facts", [])
@@ -219,7 +219,7 @@ def critique(
         'OUTPUT JSON: {"rubric_scores": {"<item>": {"pass": bool, "reason": str}}, '
         '"summary": str, "biggest_miss": str}'
     )
-    verdict = complete_json(_CRITIC_SYSTEM, user, max_tokens=1200)
+    verdict = complete_json(_CRITIC_SYSTEM, user, max_tokens=3000)  # free + unmetered; generous headroom
     verdict.setdefault("rubric_scores", {})
     verdict.setdefault("summary", "")
     return verdict
@@ -245,14 +245,18 @@ def forecast(question: str, evidence_notes: dict, *, as_of: str = "") -> dict:
     "rationale_summary": str, "key_drivers": [str], "reference_classes": [str]}``.
     Raises LocalLLMError so the orchestrator can fall back to an Opus forecaster."""
     import json as _json
+    # /no_think: Qwen3 is a hybrid reasoning model — without this it spends the token
+    # budget on a <think> block and can return no JSON. These structured tasks don't
+    # need chain-of-thought, and disabling it is faster + cheaper.
     user = (
         f"QUESTION: {question}\n"
         f"AS_OF: {as_of}\n\n"
         f"EVIDENCE NOTES (JSON):\n{_json.dumps(evidence_notes, indent=2)}\n\n"
         'OUTPUT JSON: {"my_probability": <0-1 float>, "my_confidence": "low|medium|high", '
-        '"rationale_summary": str, "key_drivers": [str], "reference_classes": [str]}'
+        '"rationale_summary": str, "key_drivers": [str], "reference_classes": [str]}\n/no_think'
     )
-    out = complete_json(_FORECASTER_SYSTEM, user, max_tokens=900)
+    # Local model is free + unmetered — cap is just truncation headroom, not a budget.
+    out = complete_json(_FORECASTER_SYSTEM, user, max_tokens=2048)
     # Clamp + validate the probability so a malformed value can't poison the record.
     p = out.get("my_probability")
     if not isinstance(p, (int, float)) or not (0.0 <= float(p) <= 1.0):
