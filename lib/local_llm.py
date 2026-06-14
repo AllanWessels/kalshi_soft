@@ -267,6 +267,71 @@ def forecast(question: str, evidence_notes: dict, *, as_of: str = "") -> dict:
 
 
 # ---------------------------------------------------------------------------
+# Adversarial DECISION GATE — challenge a proposed position BEFORE it is committed.
+# A single agent (even Opus) cannot be trusted to grade its own decision; this is the
+# independent, different-model-family check that runs IN the loop, not post-mortem.
+# ---------------------------------------------------------------------------
+
+_CHALLENGE_SYSTEM = (
+    "You are an ADVERSARIAL risk reviewer guarding a paper-trading book. A forecaster — a "
+    "different, larger model — has proposed a probability and a position. Your job is NOT to "
+    "agree; it is to find every reason the position is WRONG before capital is committed. A "
+    "single agent cannot be trusted to check its own decision: you are that independent check.\n"
+    "Attack on these axes:\n"
+    "- EDGE REALITY: is the gap vs the market a true edge, or noise the forecaster is fooling "
+    "itself with? If the position diverges far from a LIQUID market, the default is that the "
+    "forecaster is missing something the crowd knows — demand a specific, credible reason.\n"
+    "- OVERCONFIDENCE: is the stated confidence justified by the evidence, or inflated?\n"
+    "- REASONING FLAWS: base-rate neglect, over-update on a vivid detail, one-sided evidence, "
+    "stale or thin sourcing.\n"
+    "Return VETO (do not take it), REVISE (take a smaller/adjusted position), or CONFIRM (it "
+    "survives scrutiny). Default toward skepticism; CONFIRM only what genuinely withstands attack."
+)
+
+
+def challenge(
+    question: str,
+    proposed_probability: float,
+    proposed_lean: str,
+    reasoning: str,
+    market_implied: Optional[float] = None,
+    proposed_confidence: str = "",
+    evidence_notes: Optional[dict] = None,
+) -> dict:
+    """Adversarially review a PROPOSED position before commit (the local cross-family
+    gate). Returns ``{"verdict": "confirm"|"revise"|"veto", "challenged_probability":
+    float|None, "edge_is_real": bool, "overconfident": bool, "concerns": [str],
+    "rationale": str}``. Raises LocalLLMError so the orchestrator can fall back."""
+    import json as _json
+    gap = None if market_implied is None else round(abs(proposed_probability - market_implied), 3)
+    ev_block = "" if evidence_notes is None else f"\nEVIDENCE THE FORECASTER USED:\n{_json.dumps(evidence_notes, indent=1)}\n"
+    user = (
+        f"QUESTION: {question}\n"
+        f"PROPOSED PROBABILITY (YES): {proposed_probability}\n"
+        f"PROPOSED POSITION: {proposed_lean}   CONFIDENCE: {proposed_confidence or 'n/a'}\n"
+        f"MARKET-IMPLIED (YES): {'n/a' if market_implied is None else market_implied}"
+        f"{'' if gap is None else f'   DIVERGENCE FROM MARKET: {gap}'}\n"
+        f"{ev_block}\n"
+        f"FORECASTER REASONING:\n{reasoning}\n\n"
+        'OUTPUT JSON: {"verdict": "confirm"|"revise"|"veto", '
+        '"challenged_probability": <0-1 float or null>, "edge_is_real": bool, '
+        '"overconfident": bool, "concerns": [str], "rationale": str}\n/no_think'
+    )
+    out = complete_json(_CHALLENGE_SYSTEM, user, max_tokens=2048)
+    v = str(out.get("verdict", "")).lower()
+    if v not in ("confirm", "revise", "veto"):
+        # An unparseable verdict is itself a reason not to trust the position -> revise.
+        out["verdict"] = "revise"
+    out.setdefault("concerns", [])
+    cp = out.get("challenged_probability")
+    if isinstance(cp, (int, float)) and 0.0 <= float(cp) <= 1.0:
+        out["challenged_probability"] = float(cp)
+    else:
+        out["challenged_probability"] = None
+    return out
+
+
+# ---------------------------------------------------------------------------
 # Inline self-test (no live server required — exercises parsing + fallback)
 # ---------------------------------------------------------------------------
 

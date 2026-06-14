@@ -164,6 +164,13 @@ class ForecastEntry:
     prob_delta_vs_prev: Optional[float] = None   # computed by store
     trigger: str = "scheduled"            # TRIGGERS
     strategy_id: str = ""                 # which forecasting strategy/arm produced this (see lib/strategies)
+    # Adversarial pre-commit gate (lib/local_llm.challenge): a position is NEVER taken on
+    # the forecaster's say-so alone — an independent cross-family model must clear it first.
+    proposed_probability: Optional[float] = None  # the forecaster's number BEFORE the gate
+    adversarial_verdict: str = ""         # confirm | revise | veto ("" = gate not run)
+    adversarial_challenged_prob: Optional[float] = None
+    adversarial_concerns: list[str] = field(default_factory=list)
+    adversarial_model: str = ""           # which model adversarially reviewed (different family)
     rationale_summary: str = ""           # 1-3 sentences, agent-written
     key_drivers: list[str] = field(default_factory=list)
     reference_classes: list[str] = field(default_factory=list)
@@ -178,6 +185,35 @@ class ForecastEntry:
 
 
 @dataclass
+class Position:
+    """An IMMUTABLE entry — the moment a position was actually taken. Frozen once, the
+    first time a lean becomes actionable AND survives the adversarial gate. All
+    performance (Brier + P&L) is measured against THIS, not the latest forecast, so the
+    score reflects a real committed decision at a point in time, not a moving opinion."""
+    entered: bool = False
+    entry_as_of: str = ""                  # timestamp the position was locked
+    entry_side: str = ""                   # YES | NO
+    entry_probability: float = 0.0         # my probability AT ENTRY (what Brier scores)
+    entry_price: float = 0.0               # price paid on the entry side (dollars)
+    entry_market_implied: Optional[float] = None
+    entry_confidence: str = ""
+    entry_conviction: str = ""
+    entry_gap: Optional[float] = None      # |entry_prob - market| at entry
+    # The adversarial gate that let this position through (local cross-family review).
+    adversarial_verdict: str = ""          # confirm | revise (veto never becomes a position)
+    adversarial_challenged_prob: Optional[float] = None
+    adversarial_concerns: list[str] = field(default_factory=list)
+    adversarial_model: str = ""
+
+    def to_dict(self) -> dict[str, Any]:
+        return asdict(self)
+
+    @classmethod
+    def from_dict(cls, d: dict[str, Any]) -> "Position":
+        return cls(**_filtered(cls, d or {}))
+
+
+@dataclass
 class ForecastRecord:
     ticker: str
     title: str = ""
@@ -185,6 +221,7 @@ class ForecastRecord:
     close_time: str = ""
     current: Optional[ForecastEntry] = None   # denormalized copy of newest history entry
     history: list[ForecastEntry] = field(default_factory=list)
+    position: Position = field(default_factory=Position)  # immutable entry; set once
     schema_version: int = SCHEMA_VERSION
 
     def to_dict(self) -> dict[str, Any]:
@@ -196,6 +233,7 @@ class ForecastRecord:
             "close_time": self.close_time,
             "current": self.current.to_dict() if self.current else None,
             "history": [h.to_dict() for h in self.history],
+            "position": self.position.to_dict(),
         }
 
     @classmethod
@@ -209,6 +247,7 @@ class ForecastRecord:
             close_time=d.get("close_time", ""),
             current=ForecastEntry.from_dict(cur) if cur else None,
             history=[ForecastEntry.from_dict(h) for h in d.get("history", [])],
+            position=Position.from_dict(d.get("position", {})),
             schema_version=int(d.get("schema_version", SCHEMA_VERSION)),
         )
 

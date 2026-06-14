@@ -216,6 +216,30 @@ def append_forecast_entry(
     # Denormalized current = newest history entry (deep copy so mutations don't alias).
     rec.current = copy.deepcopy(rec.history[-1])
 
+    # ENTRY LOCK (option A): the first time a lean is ACTIONABLE (YES/NO) we freeze the
+    # position immutably. A vetoed position arrives here as lean=NONE, so it never locks.
+    # Once locked, later re-forecasts are belief-drift only — they never move the entry,
+    # so performance is scored against a real committed decision, not a shifting opinion.
+    side = (entry.lean or "NONE").upper()
+    if side in ("YES", "NO") and not rec.position.entered:
+        ask = entry.yes_ask if side == "YES" else entry.no_ask
+        rec.position = schemas.Position(
+            entered=True,
+            entry_as_of=entry.as_of,
+            entry_side=side,
+            entry_probability=entry.my_probability,
+            entry_price=(ask if ask is not None else 0.0),
+            entry_market_implied=entry.market_implied_probability,
+            entry_confidence=entry.my_confidence or "",
+            entry_conviction=entry.conviction or "",
+            entry_gap=(None if entry.market_implied_probability is None
+                       else round(abs(entry.my_probability - entry.market_implied_probability), 4)),
+            adversarial_verdict=entry.adversarial_verdict or "",
+            adversarial_challenged_prob=entry.adversarial_challenged_prob,
+            adversarial_concerns=list(entry.adversarial_concerns or []),
+            adversarial_model=entry.adversarial_model or "",
+        )
+
     save_forecast(rec)
     return rec
 

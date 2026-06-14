@@ -25,7 +25,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import argparse
 import json
 
-from lib import config, store, schemas, scoring, strategies  # noqa: E402 (after sys.path patch)
+from lib import config, store, schemas, scoring, strategies, local_llm  # noqa: E402 (after sys.path patch)
 
 
 def _comma_list(value: str) -> list[str]:
@@ -174,6 +174,14 @@ def build_parser() -> argparse.ArgumentParser:
         help="Forecasting strategy/arm that produced this estimate (experimentation "
              f"harness; see lib/strategies). Default: {strategies.DEFAULT_STRATEGY}.",
     )
+    p.add_argument(
+        "--no-adversarial",
+        dest="no_adversarial",
+        action="store_true",
+        help="Skip the adversarial pre-commit gate (testing/backfill only). By default "
+             "every actionable lean is challenged by the local cross-family model and a "
+             "veto downgrades it to NONE.",
+    )
 
     return p
 
@@ -227,6 +235,12 @@ def main(argv: list[str] | None = None) -> None:
     limit_price: float | None = None
     ev_limit_per_contract: float | None = None
     lean_note: str | None = None
+    # Adversarial pre-commit gate results (filled below when a lean is actionable).
+    adversarial_verdict: str = ""
+    adversarial_challenged_prob: float | None = None
+    adversarial_concerns: list[str] = []
+    adversarial_model: str = ""
+    proposed_probability: float | None = None
 
     if args.yes_ask is not None:
         # Fee-aware path.
@@ -283,6 +297,38 @@ def main(argv: list[str] | None = None) -> None:
             lean_note = note
             conviction = "low"
 
+        # ADVERSARIAL DECISION GATE (unskippable): once EV + confidence say "take it",
+        # an independent cross-family model must still clear the position before it is
+        # committed. A single agent (even Opus) is not trusted to greenlight its own bet.
+        # veto -> the position is NOT taken (lean=NONE); revise -> taken but flagged.
+        if lean in ("YES", "NO") and not args.no_adversarial:
+            proposed_probability = args.prob
+            try:
+                if config.local_llm_enabled() and local_llm.ping(timeout=4.0):
+                    verdict = local_llm.challenge(
+                        question=(args.title or args.ticker),
+                        proposed_probability=args.prob,
+                        proposed_lean=lean,
+                        reasoning=args.rationale or "(no rationale provided)",
+                        market_implied=args.market_implied,
+                        proposed_confidence=confidence_for_gate,
+                    )
+                    adversarial_verdict = verdict.get("verdict", "")
+                    adversarial_challenged_prob = verdict.get("challenged_probability")
+                    adversarial_concerns = list(verdict.get("concerns", []))
+                    adversarial_model = config.LOCAL_LLM_MODEL
+                    if adversarial_verdict == "veto":
+                        lean = "NONE"
+                        conviction = "low"
+                        lean_note = ("ADVERSARIAL VETO: " +
+                                     (verdict.get("rationale", "") or "; ".join(adversarial_concerns))[:240])
+                else:
+                    adversarial_verdict = "skipped-local-down"
+                    lean_note = (lean_note or "") + " [adversarial gate skipped: local model down]"
+            except local_llm.LocalLLMError as e:
+                adversarial_verdict = "skipped-error"
+                lean_note = (lean_note or "") + f" [adversarial gate error: {e}]"
+
     else:
         # Legacy path: use manual --lean / --conviction with documented defaults.
         lean = args.lean if args.lean is not None else "NONE"
@@ -307,6 +353,11 @@ def main(argv: list[str] | None = None) -> None:
         lean_note=lean_note,
         trigger=args.trigger,
         strategy_id=args.strategy_id,
+        proposed_probability=proposed_probability,
+        adversarial_verdict=adversarial_verdict,
+        adversarial_challenged_prob=adversarial_challenged_prob,
+        adversarial_concerns=adversarial_concerns,
+        adversarial_model=adversarial_model,
         rationale_summary=args.rationale,
         key_drivers=_comma_list(args.drivers),
         reference_classes=_comma_list(args.reference_classes),
