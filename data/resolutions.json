@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-06-14T01:46:58Z",
+  "updated_at": "2026-06-14T02:52:17Z",
   "resolved": [
     {
       "ticker": "KXGOVCA-26-CBIA",
@@ -32,7 +32,11 @@
       "cf_won": true,
       "was_taken": false,
       "my_confidence": "high",
-      "edge_gap_bucket": "0-5pt"
+      "edge_gap_bucket": "0-5pt",
+      "commit_probability": 0.015,
+      "commit_as_of": "2026-05-31T18:11:16Z",
+      "held_days": 9.24,
+      "adversarial_verdict": ""
     },
     {
       "ticker": "KXGOVCAPRIMARY-26-CBIA",
@@ -44,8 +48,8 @@
       "final_my_probability": 0.07,
       "final_as_of": "2026-05-31T21:37:23Z",
       "final_market_implied": 0.035500000000000004,
-      "brier_mine": 0.004900000000000001,
-      "brier_market": 0.0012602500000000003,
+      "brier_mine": 0.0016,
+      "brier_market": 0.0008702499999999999,
       "num_forecasts": 2,
       "first_forecast_prob": 0.04,
       "strategy_id": "",
@@ -57,14 +61,18 @@
       "won": null,
       "clv": null,
       "cf_side": "NO",
-      "cf_entry_price": 0.968,
+      "cf_entry_price": 0.971,
       "cf_fee": 0.01,
-      "cf_pnl": 0.022000000000000026,
-      "cf_roi": 0.0224948875255624,
+      "cf_pnl": 0.019000000000000024,
+      "cf_roi": 0.01936799184505609,
       "cf_won": true,
       "was_taken": false,
       "my_confidence": "high",
-      "edge_gap_bucket": "0-5pt"
+      "edge_gap_bucket": "0-5pt",
+      "commit_probability": 0.04,
+      "commit_as_of": "2026-05-31T18:47:19Z",
+      "held_days": 9.22,
+      "adversarial_verdict": ""
     },
     {
       "ticker": "KXGOVCAPRIMARYPARTY-26-2R",
@@ -96,7 +104,11 @@
       "cf_won": true,
       "was_taken": false,
       "my_confidence": "high",
-      "edge_gap_bucket": "0-5pt"
+      "edge_gap_bucket": "0-5pt",
+      "commit_probability": 0.03,
+      "commit_as_of": "2026-05-31T18:47:19Z",
+      "held_days": 5.31,
+      "adversarial_verdict": ""
     },
     {
       "ticker": "KXGOVIANOMR-26-RFEE",
@@ -109,7 +121,7 @@
       "final_as_of": "2026-05-31T21:37:24Z",
       "final_market_implied": 0.9155,
       "brier_mine": 0.6400000000000001,
-      "brier_market": 0.8381402499999999,
+      "brier_market": 0.8649000000000001,
       "num_forecasts": 2,
       "first_forecast_prob": 0.8,
       "strategy_id": "",
@@ -121,14 +133,18 @@
       "won": null,
       "clv": null,
       "cf_side": "YES",
-      "cf_entry_price": 0.919,
+      "cf_entry_price": 0.933,
       "cf_fee": 0.01,
-      "cf_pnl": -0.929,
+      "cf_pnl": -0.9430000000000001,
       "cf_roi": -1.0,
       "cf_won": false,
       "was_taken": false,
       "my_confidence": "medium",
-      "edge_gap_bucket": "10-20pt"
+      "edge_gap_bucket": "10-20pt",
+      "commit_probability": 0.8,
+      "commit_as_of": "2026-05-31T18:47:19Z",
+      "held_days": 2.46,
+      "adversarial_verdict": ""
     },
     {
       "ticker": "KXLAMAYOR1R-26-SPRA",
@@ -140,8 +156,8 @@
       "final_my_probability": 0.21,
       "final_as_of": "2026-05-31T21:37:24Z",
       "final_market_implied": 0.255,
-      "brier_mine": 0.04409999999999999,
-      "brier_market": 0.065025,
+      "brier_mine": 0.0361,
+      "brier_market": 0.055224999999999996,
       "num_forecasts": 2,
       "first_forecast_prob": 0.19,
       "strategy_id": "",
@@ -153,14 +169,18 @@
       "won": true,
       "clv": -0.0050000000000000044,
       "cf_side": "NO",
-      "cf_entry_price": 0.75,
+      "cf_entry_price": 0.77,
       "cf_fee": 0.02,
-      "cf_pnl": 0.23,
-      "cf_roi": 0.2987012987012987,
+      "cf_pnl": 0.21,
+      "cf_roi": 0.26582278481012656,
       "cf_won": true,
       "was_taken": true,
       "my_confidence": "medium",
-      "edge_gap_bucket": "0-5pt"
+      "edge_gap_bucket": "0-5pt",
+      "commit_probability": 0.19,
+      "commit_as_of": "2026-05-31T18:47:19Z",
+      "held_days": 8.22,
+      "adversarial_verdict": ""
     },
     {
       "ticker": "KXMAYORLA-26-SPRA",
@@ -192,7 +212,11 @@
       "cf_won": true,
       "was_taken": true,
       "my_confidence": "medium",
-      "edge_gap_bucket": "5-10pt"
+      "edge_gap_bucket": "5-10pt",
+      "commit_probability": 0.18,
+      "commit_as_of": "2026-05-31T18:11:16Z",
+      "held_days": 8.24,
+      "adversarial_verdict": ""
     },
     {
       "ticker": "KXSENATEMED-26-GRA",
@@ -224,7 +248,11 @@
       "cf_won": true,
       "was_taken": false,
       "my_confidence": "high",
-      "edge_gap_bucket": "0-5pt"
+      "edge_gap_bucket": "0-5pt",
+      "commit_probability": 0.95,
+      "commit_as_of": "2026-05-31T17:39:05Z",
+      "held_days": 9.32,
+      "adversarial_verdict": ""
     },
     {
       "ticker": "KXSENATENJR-26-VBRA",
@@ -256,7 +284,11 @@
       "cf_won": true,
       "was_taken": false,
       "my_confidence": "high",
-      "edge_gap_bucket": "0-5pt"
+      "edge_gap_bucket": "0-5pt",
+      "commit_probability": 0.02,
+      "commit_as_of": "2026-05-31T18:47:19Z",
+      "held_days": 2.36,
+      "adversarial_verdict": ""
     },
     {
       "ticker": "KXSENATEREC-26MAY-JUN06",
@@ -288,7 +320,11 @@
       "cf_won": false,
       "was_taken": true,
       "my_confidence": "medium",
-      "edge_gap_bucket": "5-10pt"
+      "edge_gap_bucket": "5-10pt",
+      "commit_probability": 0.15,
+      "commit_as_of": "2026-05-31T18:47:19Z",
+      "held_days": 4.81,
+      "adversarial_verdict": ""
     },
     {
       "ticker": "KXSENATESCR-26-LGRA",
@@ -320,7 +356,11 @@
       "cf_won": true,
       "was_taken": false,
       "my_confidence": "high",
-      "edge_gap_bucket": "0-5pt"
+      "edge_gap_bucket": "0-5pt",
+      "commit_probability": 0.93,
+      "commit_as_of": "2026-05-31T18:47:19Z",
+      "held_days": 9.27,
+      "adversarial_verdict": ""
     },
     {
       "ticker": "KXSEOULMAYOR-26JUN03-CWON",
@@ -332,8 +372,8 @@
       "final_my_probability": 0.62,
       "final_as_of": "2026-05-31T21:37:24Z",
       "final_market_implied": 0.835,
-      "brier_mine": 0.3844,
-      "brier_market": 0.697225,
+      "brier_mine": 0.42250000000000004,
+      "brier_market": 0.6723999999999999,
       "num_forecasts": 2,
       "first_forecast_prob": 0.65,
       "strategy_id": "",
@@ -345,14 +385,18 @@
       "won": null,
       "clv": null,
       "cf_side": "YES",
-      "cf_entry_price": 0.84,
+      "cf_entry_price": 0.83,
       "cf_fee": 0.01,
-      "cf_pnl": -0.85,
+      "cf_pnl": -0.84,
       "cf_roi": -1.0,
       "cf_won": false,
       "was_taken": false,
       "my_confidence": "low",
-      "edge_gap_bucket": "20pt+"
+      "edge_gap_bucket": "10-20pt",
+      "commit_probability": 0.65,
+      "commit_as_of": "2026-05-31T18:47:19Z",
+      "held_days": 3.96,
+      "adversarial_verdict": ""
     },
     {
       "ticker": "KXU3-26MAY-T4.2",
@@ -364,7 +408,7 @@
       "final_my_probability": 0.88,
       "final_as_of": "2026-05-31T21:37:24Z",
       "final_market_implied": 0.725,
-      "brier_mine": 0.0144,
+      "brier_mine": 0.019600000000000003,
       "brier_market": 0.07562500000000001,
       "num_forecasts": 2,
       "first_forecast_prob": 0.86,
@@ -384,7 +428,11 @@
       "cf_won": true,
       "was_taken": true,
       "my_confidence": "high",
-      "edge_gap_bucket": "10-20pt"
+      "edge_gap_bucket": "10-20pt",
+      "commit_probability": 0.86,
+      "commit_as_of": "2026-05-31T18:47:19Z",
+      "held_days": 4.74,
+      "adversarial_verdict": ""
     }
   ]
 }

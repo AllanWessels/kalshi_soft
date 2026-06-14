@@ -5,7 +5,7 @@
   "category": "economy",
   "close_time": "2026-06-17T17:59:00Z",
   "current": {
-    "as_of": "2026-06-14T02:07:31Z",
+    "as_of": "2026-06-14T02:54:54Z",
     "my_probability": 0.96,
     "my_confidence": "high",
     "market_implied_probability": 0.985,
@@ -23,11 +23,13 @@
     "prob_delta_vs_prev": 0.010000000000000009,
     "trigger": "near_close",
     "strategy_id": "S0-single",
-    "rationale_summary": "HOLD is the overwhelming consensus (93%+ priced; third consecutive hold; no easing expected through 2026).",
-    "key_drivers": [
-      "hold-consensus",
-      "sticky-inflation"
-    ],
+    "proposed_probability": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": "",
+    "rationale_summary": "Hold consensus.",
+    "key_drivers": [],
     "reference_classes": [],
     "research_refs": []
   },
@@ -51,6 +53,11 @@
       "prob_delta_vs_prev": null,
       "trigger": "bootstrap",
       "strategy_id": "",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
       "rationale_summary": "A hike at a single meeting in an established hold cycle is essentially unprecedented absent a crisis; CPI ~3.8% is not an emergency trigger and futures imply ~99% no-hike.",
       "key_drivers": [
         "no tightening posture",
@@ -81,6 +88,11 @@
       "prob_delta_vs_prev": -0.020000000000000018,
       "trigger": "near_close",
       "strategy_id": "",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
       "rationale_summary": "Held: no new information since this morning's forecast; pre-meeting blackout. Hold overwhelmingly likely at Warsh's first meeting with inflation elevated.",
       "key_drivers": [
         "inflation above target",
@@ -92,7 +104,7 @@
       "research_refs": []
     },
     {
-      "as_of": "2026-06-14T02:07:31Z",
+      "as_of": "2026-06-14T02:54:54Z",
       "my_probability": 0.96,
       "my_confidence": "high",
       "market_implied_probability": 0.985,
@@ -110,13 +122,30 @@
       "prob_delta_vs_prev": 0.010000000000000009,
       "trigger": "near_close",
       "strategy_id": "S0-single",
-      "rationale_summary": "HOLD is the overwhelming consensus (93%+ priced; third consecutive hold; no easing expected through 2026).",
-      "key_drivers": [
-        "hold-consensus",
-        "sticky-inflation"
-      ],
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "Hold consensus.",
+      "key_drivers": [],
       "reference_classes": [],
       "research_refs": []
     }
-  ]
+  ],
+  "position": {
+    "entered": false,
+    "entry_as_of": "",
+    "entry_side": "",
+    "entry_probability": 0.0,
+    "entry_price": 0.0,
+    "entry_market_implied": null,
+    "entry_confidence": "",
+    "entry_conviction": "",
+    "entry_gap": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": ""
+  }
 }

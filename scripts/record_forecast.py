@@ -25,7 +25,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import argparse
 import json
 
-from lib import config, store, schemas, scoring, strategies, local_llm  # noqa: E402 (after sys.path patch)
+from lib import config, store, schemas, scoring, strategies, local_llm, policy  # noqa: E402 (after sys.path patch)
 
 
 def _comma_list(value: str) -> list[str]:
@@ -208,13 +208,13 @@ def validate_args(args: argparse.Namespace) -> None:
         sys.exit(2)
 
 
-def _derive_conviction_from_ev(ev) -> str:
-    """Map net EV per contract to a conviction label."""
+def _derive_conviction_from_ev(ev, pol) -> str:
+    """Map net EV per contract to a conviction label (thresholds from the learned policy)."""
     if ev is None:
         return "low"
-    if ev >= 0.12:
+    if ev >= pol.conviction_high_ev:
         return "high"
-    if ev >= 0.05:
+    if ev >= pol.conviction_medium_ev:
         return "medium"
     return "low"
 
@@ -222,6 +222,9 @@ def _derive_conviction_from_ev(ev) -> str:
 def main(argv: list[str] | None = None) -> None:
     parser = build_parser()
     args = parser.parse_args(argv)
+    # Load the LEARNABLE decision policy (thresholds live in data/policy.json, not frozen
+    # constants) so the learning loop's updates take effect on the next run.
+    pol = policy.load()
 
     validate_args(args)
 
@@ -256,7 +259,7 @@ def main(argv: list[str] | None = None) -> None:
             args.yes_ask,
             args.no_ask,
             fee_rate=config.KALSHI_FEE_RATE,
-            min_ev=config.MIN_PROFITABLE_EV,
+            min_ev=pol.min_profitable_ev,
         )
 
         lean = side
@@ -281,7 +284,7 @@ def main(argv: list[str] | None = None) -> None:
         if args.conviction is not None:
             conviction = args.conviction
         else:
-            conviction = _derive_conviction_from_ev(ev) if side != "NONE" else "low"
+            conviction = _derive_conviction_from_ev(ev, pol) if side != "NONE" else "low"
 
         # Confidence gate (has the final say): a positive-EV side is only ACTIONABLE if
         # confidence backs it. EV is computed from my probability as if true, so a low-
@@ -290,7 +293,7 @@ def main(argv: list[str] | None = None) -> None:
         confidence_for_gate = args.confidence if args.confidence is not None else "medium"
         ok, note = scoring.confidence_gate(
             side, args.prob, args.market_implied, confidence_for_gate,
-            max_gap=config.MAX_MARKET_DISAGREEMENT,
+            max_gap=pol.max_market_disagreement,
         )
         if side != "NONE" and not ok:
             lean = "NONE"
@@ -317,11 +320,13 @@ def main(argv: list[str] | None = None) -> None:
                     adversarial_challenged_prob = verdict.get("challenged_probability")
                     adversarial_concerns = list(verdict.get("concerns", []))
                     adversarial_model = config.LOCAL_LLM_MODEL
-                    if adversarial_verdict == "veto":
+                    if adversarial_verdict == "veto" and pol.adversarial_veto_binding:
                         lean = "NONE"
                         conviction = "low"
                         lean_note = ("ADVERSARIAL VETO: " +
                                      (verdict.get("rationale", "") or "; ".join(adversarial_concerns))[:240])
+                    elif adversarial_verdict == "veto":
+                        lean_note = (lean_note or "") + " [adversarial VETO recorded (advisory; not binding per policy)]"
                 else:
                     adversarial_verdict = "skipped-local-down"
                     lean_note = (lean_note or "") + " [adversarial gate skipped: local model down]"

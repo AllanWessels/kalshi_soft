@@ -1,0 +1,91 @@
+{
+  "generated_at": "2026-06-14T02:56:26Z",
+  "n_resolved": 12,
+  "guardrails": {
+    "min_n": 20,
+    "max_step": 0.05
+  },
+  "mode": "apply",
+  "proposals": [
+    {
+      "knob": "max_market_disagreement",
+      "current": 0.2,
+      "proposed": 0.1,
+      "n": 3,
+      "guardrail": "INSUFFICIENT_DATA",
+      "rationale": "Counterfactual ROI negative in 10-20pt -> wide fades lose; tighten the fade gate.",
+      "evidence": {
+        "0-5pt": {
+          "n": 7,
+          "cf_pnl": 0.307,
+          "cf_staked": 6.693,
+          "cf_roi": 0.04586881816823547,
+          "cf_win_rate": 1.0,
+          "max_drawdown": -0.007999999999999998
+        },
+        "5-10pt": {
+          "n": 2,
+          "cf_pnl": -0.56,
+          "cf_staked": 1.56,
+          "cf_roi": -0.358974358974359,
+          "cf_win_rate": 0.5,
+          "max_drawdown": -0.8
+        },
+        "10-20pt": {
+          "n": 3,
+          "cf_pnl": -1.533,
+          "cf_staked": 2.533,
+          "cf_roi": -0.6052112120015791,
+          "cf_win_rate": 0.3333333333333333,
+          "max_drawdown": -1.783
+        },
+        "20pt+": null
+      }
+    },
+    {
+      "knob": "low_confidence_never_leans",
+      "current": true,
+      "proposed": true,
+      "n": 11,
+      "guardrail": "INSUFFICIENT_DATA",
+      "rationale": "medium-confidence trades lose while high-confidence profit -> consider gating medium too (currently only low is gated).",
+      "evidence": {
+        "high": {
+          "n": 7,
+          "cf_pnl": 0.34700000000000003,
+          "cf_staked": 6.6530000000000005,
+          "cf_roi": 0.0521569216894634,
+          "cf_win_rate": 1.0,
+          "max_drawdown": -0.008000000000000007
+        },
+        "medium": {
+          "n": 4,
+          "cf_pnl": -1.2930000000000001,
+          "cf_staked": 3.293,
+          "cf_roi": -0.3926510780443365,
+          "cf_win_rate": 0.5,
+          "max_drawdown": -1.743
+        },
+        "low": {
+          "n": 1,
+          "cf_pnl": -0.84,
+          "cf_staked": 0.84,
+          "cf_roi": -1.0,
+          "cf_win_rate": 0.0,
+          "max_drawdown": -0.84
+        }
+      }
+    },
+    {
+      "knob": "adversarial_veto_binding",
+      "current": true,
+      "proposed": null,
+      "n": 0,
+      "guardrail": "INSUFFICIENT_DATA",
+      "rationale": "No resolved positions carry an adversarial verdict yet — the gate is new. Its veto precision becomes learnable once vetoed/revised positions resolve.",
+      "evidence": {
+        "resolved_with_verdict": 0
+      }
+    }
+  ]
+}

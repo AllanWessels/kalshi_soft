@@ -295,6 +295,13 @@ class Resolution:
     was_taken: bool = False               # True if an actionable lean was placed (realized_pnl set)
     my_confidence: str = ""               # forecaster confidence at resolution (low|medium|high)
     edge_gap_bucket: str = ""             # |my_prob - market| band (see lib/profit.edge_gap_bucket)
+    # COMMIT anchor — the frozen point we score against (entry-lock, option A): the
+    # position entry if one was taken, else the first forecast. NOT the drifting final
+    # forecast. Brier is scored on commit_probability. See scripts/reconcile_resolutions.
+    commit_probability: Optional[float] = None
+    commit_as_of: str = ""
+    held_days: Optional[float] = None     # commit -> resolution, in days
+    adversarial_verdict: str = ""         # the gate verdict on the committed position
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)

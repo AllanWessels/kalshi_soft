@@ -1,0 +1,13 @@
+{
+  "min_profitable_ev": 0.02,
+  "max_market_disagreement": 0.2,
+  "conviction_medium_ev": 0.05,
+  "conviction_high_ev": 0.12,
+  "low_confidence_never_leans": true,
+  "adversarial_veto_binding": true,
+  "adversarial_min_veto_precision": 0.0,
+  "crowd_adjust_weight_default": 0.3,
+  "updated_at": "2026-06-14T02:53:33Z",
+  "version": 1,
+  "changelog": []
+}

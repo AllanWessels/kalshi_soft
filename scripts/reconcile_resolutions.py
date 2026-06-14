@@ -52,6 +52,14 @@ def _parse_iso(ts: str) -> dt.datetime:
     return dt.datetime.fromisoformat(ts.replace("Z", "+00:00"))
 
 
+def _days_between(start_iso: str, end_iso: str):
+    """Days from *start_iso* to *end_iso* (holding period), or None if unparseable."""
+    try:
+        return round((_parse_iso(end_iso) - _parse_iso(start_iso)).total_seconds() / 86400.0, 2)
+    except Exception:
+        return None
+
+
 def _resolved_at_from_market(market: dict) -> str:
     """Extract settlement timestamp from the market dict, falling back to utc now."""
     # Kalshi may provide settlement_date, close_time, expiration_time, etc.
@@ -201,12 +209,27 @@ def reconcile(dry_run: bool = False) -> None:
         first_forecast_prob = history[0].my_probability
         num_forecasts = len(history)
 
-        brier_mine = scoring.brier(final_my_probability, outcome)
+        # COMMIT ANCHOR (entry-lock, option A): score against a FROZEN commitment, not the
+        # drifting final forecast. Commit = the locked Position if one was taken, else the
+        # first forecast (shadow entry). Later re-forecasts are belief-drift diagnostics only.
+        pos = getattr(forecast_rec, "position", None)
+        positioned = bool(getattr(pos, "entered", False))
+        if positioned:
+            commit_prob = pos.entry_probability
+            commit_market = pos.entry_market_implied
+            commit_as_of = pos.entry_as_of
+            commit_verdict = pos.adversarial_verdict or ""
+        else:
+            commit_prob = first_forecast_prob
+            commit_market = history[0].market_implied_probability
+            commit_as_of = history[0].as_of
+            commit_verdict = ""
+
+        brier_mine = scoring.brier(commit_prob, outcome)
         brier_market: float | None = (
-            scoring.brier(final_market_implied, outcome)
-            if final_market_implied is not None
-            else None
+            scoring.brier(commit_market, outcome) if commit_market is not None else None
         )
+        held_days = _days_between(commit_as_of, resolved_at)
 
         # Use forecast record metadata where market dict is thin.
         if not title or title == ticker:
@@ -216,12 +239,25 @@ def reconcile(dry_run: bool = False) -> None:
 
         subcategory = taxonomy.classify_subcategory(ticker, title, category)
 
-        # Realized paper-trade economics from the lean that was live at resolution.
-        # None when the final lean was NONE (no position taken).
-        trade = profit.trade_from_entry(final_entry, outcome, final_market_implied)
-        # Counterfactual modal-side trade — scored even when the lean was NONE, so
-        # every resolution feeds the profitability analysis (profit is the goal).
-        cf = profit.counterfactual_from_entry(final_entry, outcome, final_market_implied)
+        # Realized paper-trade economics. PREFER the locked Position (the real entry);
+        # fall back to the final lean only for legacy records that predate entry-locking.
+        if positioned:
+            _fee = scoring.kalshi_fee(pos.entry_price)
+            _staked = pos.entry_price + _fee
+            _pnl = profit.realized_pnl(pos.entry_side, pos.entry_price, outcome, _fee)
+            trade = {
+                "entry_side": pos.entry_side, "entry_price": pos.entry_price,
+                "fee_at_entry": _fee, "realized_pnl": _pnl,
+                "roi": (_pnl / _staked) if _staked > 0 else None,
+                "won": profit._won(pos.entry_side, outcome),
+                "clv": profit.clv(pos.entry_side, pos.entry_price, final_market_implied),
+            }
+        else:
+            trade = profit.trade_from_entry(final_entry, outcome, final_market_implied)
+        # Counterfactual modal-side trade anchored at the FIRST forecast (every market,
+        # taken or not) — "if I'd traded my first committed view." Feeds the learner.
+        cf = profit.counterfactual_from_entry(history[0], outcome,
+                                              history[0].market_implied_probability)
 
         resolution = schemas.Resolution(
             ticker=ticker,
@@ -238,8 +274,12 @@ def reconcile(dry_run: bool = False) -> None:
             num_forecasts=num_forecasts,
             first_forecast_prob=first_forecast_prob,
             strategy_id=getattr(final_entry, "strategy_id", "") or "",
-            was_taken=trade is not None,
-            my_confidence=getattr(final_entry, "my_confidence", "") or "",
+            was_taken=positioned,
+            my_confidence=(pos.entry_confidence if positioned else history[0].my_confidence) or "",
+            commit_probability=commit_prob,
+            commit_as_of=commit_as_of,
+            held_days=held_days,
+            adversarial_verdict=commit_verdict,
             **(trade or {}),
             **(cf or {}),
         )
