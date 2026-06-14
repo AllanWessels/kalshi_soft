@@ -208,6 +208,26 @@ Run the three-role panel via `scripts/postmortem.py` for each newly-resolved mar
    summary; do not auto-edit `.claude/skills/superforecasting/SKILL.md`. A single resolution is one
    noisy data point — same discipline as forecasting (SKILL §4a).
 
+## Step 6c — Autonomous learning pass (the system tunes its own decision policy)
+Always run this (it's cheap and self-gating):
+```
+python3 scripts/learn_policy.py --apply
+```
+The learner reads the resolved track record, finds which **entry criteria** actually predicted
+profit (via the counterfactual conditioning engine), and proposes nudges to the **learnable policy**
+(`data/policy.json`) — the "when do I take a position" knobs (EV floor, market-fade gate, conviction
+thresholds, confidence gating, **adversarial-veto authority**). `--apply` lands **only** proposals
+that clear every anti-overfit guardrail (`min_n`, `max_step`); everything else stays
+**INSUFFICIENT_DATA / HUMAN_GATE** and is written to `data/policy_proposals.json` for review, never
+auto-applied. Every applied change is appended to `policy.changelog` (auditable + reversible). At
+small `n` this correctly applies nothing — by design; the loop earns authority as the record grows.
+Surface any `AUTO_OK` (applied) or `HUMAN_GATE` (awaiting you) proposals in the Step "summary".
+
+This is the closed loop: the **adversary** (Step 5) challenges each decision *before* commit; this
+pass rewrites the rules that *define* a good decision *after* outcomes land. The forecast that counts
+is the one at the **locked entry** (`Position`), not the latest re-forecast — performance is scored
+against that committed point (entry-lock, option A).
+
 ## Step 7 — Build the report
 ```
 python3 scripts/build_report.py

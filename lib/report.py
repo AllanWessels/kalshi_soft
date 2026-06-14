@@ -1054,6 +1054,90 @@ def _build_profitability(
     return elems
 
 
+def _build_learning(st: dict) -> list:
+    """Autonomous Learning — the current learnable policy and the pending proposals the
+    system has generated from its OWN record (scripts/learn_policy.py). Makes the
+    self-tuning loop visible: what it wants to change, and whether the guardrails allow it."""
+    from lib import policy as _policy, config as _config, store as _store
+    elems: list = []
+    pol = _policy.load()
+    proposals_doc = _store.read_json(_config.DATA_DIR / "policy_proposals.json") or {}
+    proposals = proposals_doc.get("proposals", [])
+
+    elems.append(Paragraph("Autonomous Learning — policy &amp; proposals", st["section"]))
+    elems.append(_hr())
+    elems.append(Paragraph(
+        "The decision policy (when to take a position) is data, not frozen code. The learning "
+        "pass reads the system's own resolved record and proposes nudges, but anti-overfit "
+        "guardrails (min-n, max-step) gate every change. <b>Policy v"
+        f"{pol.version}</b>; proposals as of {(proposals_doc.get('generated_at') or 'n/a')[:10]}.",
+        st["body"]))
+    elems.append(_sp(5))
+
+    # Current policy knobs.
+    pol_rows = [["Knob (decision threshold)", "Value"],
+                ["min profitable EV ($/contract)", f"{pol.min_profitable_ev:.3f}"],
+                ["max market-fade gap (no-high-conf)", f"{pol.max_market_disagreement:.3f}"],
+                ["conviction medium / high EV", f"{pol.conviction_medium_ev:.2f} / {pol.conviction_high_ev:.2f}"],
+                ["low confidence never leans", str(pol.low_confidence_never_leans)],
+                ["adversarial veto binding", str(pol.adversarial_veto_binding)]]
+    t1 = Table(pol_rows, colWidths=[9.0 * cm, 4.0 * cm])
+    t1.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#4A148C")),
+        ("TEXTCOLOR", (0, 0), (-1, 0), colors.white),
+        ("FONTNAME", (0, 0), (-1, 0), "Helvetica-Bold"),
+        ("FONTSIZE", (0, 0), (-1, -1), 8),
+        ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.HexColor("#F3E5F5"), colors.white]),
+        ("GRID", (0, 0), (-1, -1), 0.3, colors.HexColor("#CE93D8")),
+        ("TOPPADDING", (0, 0), (-1, -1), 3), ("BOTTOMPADDING", (0, 0), (-1, -1), 3),
+        ("LEFTPADDING", (0, 0), (-1, -1), 4)]))
+    elems.append(t1)
+    elems.append(_sp(6))
+
+    # Pending proposals.
+    if proposals:
+        elems.append(Paragraph("Pending proposals (from the system's own outcomes)", st["small"]))
+        elems.append(_sp(2))
+        data = [["Knob", "Current → Proposed", "n", "Guardrail", "Rationale"]]
+        for p in proposals:
+            data.append([
+                p.get("knob", ""),
+                f"{p.get('current')} → {p.get('proposed')}",
+                str(p.get("n", 0)),
+                p.get("guardrail", ""),
+                (p.get("rationale", "") or "")[:90],
+            ])
+        t2 = Table(data, colWidths=[4.2 * cm, 3.2 * cm, 0.9 * cm, 2.6 * cm, 6.1 * cm])
+        style = [
+            ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#4A148C")),
+            ("TEXTCOLOR", (0, 0), (-1, 0), colors.white),
+            ("FONTNAME", (0, 0), (-1, 0), "Helvetica-Bold"),
+            ("FONTSIZE", (0, 0), (-1, -1), 7),
+            ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.HexColor("#F3E5F5"), colors.white]),
+            ("GRID", (0, 0), (-1, -1), 0.3, colors.HexColor("#CE93D8")),
+            ("TOPPADDING", (0, 0), (-1, -1), 2), ("BOTTOMPADDING", (0, 0), (-1, -1), 2),
+            ("LEFTPADDING", (0, 0), (-1, -1), 3), ("VALIGN", (0, 0), (-1, -1), "TOP")]
+        for i, p in enumerate(proposals, start=1):
+            g = p.get("guardrail", "")
+            col = (colors.HexColor("#1B5E20") if g == "AUTO_OK"
+                   else colors.HexColor("#B71C1C") if g == "HUMAN_GATE"
+                   else colors.HexColor("#888888"))
+            style.append(("TEXTCOLOR", (3, i), (3, i), col))
+        t2.setStyle(TableStyle(style))
+        elems.append(t2)
+        elems.append(_sp(3))
+        elems.append(Paragraph(
+            '<font color="#888888">INSUFFICIENT_DATA = directionally real but too few samples to '
+            "trust; HUMAN_GATE = change too large to auto-apply; AUTO_OK = guardrail-cleared, "
+            "auto-applied. Nothing auto-applies until the record is large enough.</font>",
+            st["small"]))
+    else:
+        elems.append(Paragraph(
+            '<font color="#888888">No proposals yet — run scripts/learn_policy.py after '
+            "resolutions accumulate.</font>", st["small"]))
+    return elems
+
+
 def _build_per_market(
     watchlist: schemas.Watchlist,
     forecasts: list[schemas.ForecastRecord],
@@ -1587,6 +1671,13 @@ def build_pdf(
     if prof_section:
         story.extend(prof_section)
         story.append(_sp(12))
+
+    # 1f. Autonomous Learning — current policy + the proposals the system generated itself.
+    try:
+        story.extend(_build_learning(st))
+        story.append(_sp(12))
+    except Exception:
+        pass  # report must always render even if the learning artifacts are absent
 
     # 2. Per-market section
     story.extend(_build_per_market(watchlist, forecasts, scratch, st))
