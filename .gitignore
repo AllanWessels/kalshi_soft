@@ -20,3 +20,6 @@ data/scratch/
 data/*.db
 *.sqlite
 *.sqlite3
+
+# Real-money trade ledger — keep private (public repo)
+trade.md
