@@ -65,22 +65,28 @@ python3 scripts/fetch_candidates.py
 ```
 Writes the top-150 soft-market pool to `data/candidates.json`. Read it.
 
-## Step 2 — Curate the watchlist (judgment, cap 20)
+## Step 2 — Curate the watchlist (judgment, cap `config.WATCHLIST_CAP` = 30)
 Read `data/watchlist.json`. Drop entries already `resolved`/`delisted`. Then top up toward the
-cap of 20 from `candidates.json`, ranking candidates **primarily by FORECASTABILITY** (per the
-SKILL's selection-priority rule): pick markets with a real evidential basis where research yields
-a defensible, well-calibrated number; do NOT add near-random trivia (weekly-chart specifics,
-single-broadcast word/mention markets, coin-flips) even when liquid. Within the forecastable set,
-favor genuine softness and some category spread, but accuracy beats diversity — it's fine if the
-list skews to politics/economy, since that's where forecastable human-behavior volume is. To add
-a market, you will create its first forecast in Step 5 (the `--title/--category/--close-time`
-args seed the record); also reflect membership by editing `data/watchlist.json` **via a script
-or `store` helper**, not by guessing fields. Keep active count ≤ 20. `curate_watchlist.py` is
+cap (`config.WATCHLIST_CAP`, currently **30**) from `candidates.json`, ranking candidates
+**primarily by FORECASTABILITY** (per the SKILL's selection-priority rule): pick markets with a real
+evidential basis where research yields a defensible, well-calibrated number; do NOT add near-random
+trivia (weekly-chart specifics, single-broadcast word/mention markets, coin-flips) even when liquid.
+**Widen-the-funnel directive (2026-06-19):** within the forecastable set, deliberately favor *softer,
+less efficiently-priced* markets — ones priced in the uncertain middle (~0.15–0.85) and in
+less-nationally-covered corners (down-ballot/foreign nominations, the cheap side of a race you already
+have a view on, RT-score/box-office/award/chart markets with real review tracking, topical
+event-driven statements) — because that is where research can actually beat the price and produce a
+lean. Efficiently-priced macro/headline markets are worth tracking but mostly resolve to NONE. Accuracy
+still beats diversity, but the cap was raised from 20→30 precisely to hold a wider funnel of soft
+forecastable markets. To add a market, you will create its first forecast in Step 5 (the
+`--title/--category/--close-time` args seed the record); also reflect membership by editing
+`data/watchlist.json` **via a script or `store` helper**, not by guessing fields. Keep active count ≤
+the cap. `curate_watchlist.py` is
 **self-cleaning**: every run auto-purges dead entries (any non-active status), so the file holds only
 `active` markets and a `--drop` removes the entry outright. Resolved-market history is preserved in
 `resolutions.json`, not the watchlist — so nothing is lost.
 
-> **First run (bootstrap):** the watchlist is empty. Fill it with your best ~20 (or fewer if you
+> **First run (bootstrap):** the watchlist is empty. Fill it with your best ~30 (up to the cap; fewer if you
 > set `FIRST_RUN_MAX`). Every market will be "new" and therefore due.
 
 ## Step 3 — Determine what's due (then apply the per-run cap)

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-06-19T18:47:55Z",
-  "cap": 20,
+  "updated_at": "2026-06-19T20:50:22Z",
+  "cap": 30,
   "markets": [
     {
       "ticker": "KXUSAIRANAGREEMENT-27-26JUL",
@@ -257,6 +257,126 @@
       },
       "status": "active",
       "reforecast_cadence_days": 7.0
+    },
+    {
+      "ticker": "KXRT-TOY-92",
+      "event_ticker": "KXRT-TOY",
+      "title": "Toy Story 5 Rotten Tomatoes score?",
+      "category": "culture",
+      "close_time": "2026-06-22T14:00:00Z",
+      "added_at": "2026-06-19T20:50:22Z",
+      "liquidity_snapshot": {
+        "volume_24h": 28371.67,
+        "open_interest": 56298.78,
+        "spread_cents": 1.0
+      },
+      "status": "active",
+      "reforecast_cadence_days": 0.0
+    },
+    {
+      "ticker": "KXRT-DEA-68",
+      "event_ticker": "KXRT-DEA",
+      "title": "The Death of Robin Hood Rotten Tomatoes score?",
+      "category": "culture",
+      "close_time": "2026-06-22T14:00:00Z",
+      "added_at": "2026-06-19T20:50:22Z",
+      "liquidity_snapshot": {
+        "volume_24h": 6426.34,
+        "open_interest": 7660.51,
+        "spread_cents": 1.0
+      },
+      "status": "active",
+      "reforecast_cadence_days": 0.0
+    },
+    {
+      "ticker": "KXRT-SUPE-75",
+      "event_ticker": "KXRT-SUPE",
+      "title": "Supergirl Rotten Tomatoes score?",
+      "category": "culture",
+      "close_time": "2026-06-22T14:00:00Z",
+      "added_at": "2026-06-19T20:50:22Z",
+      "liquidity_snapshot": {
+        "volume_24h": 2816.21,
+        "open_interest": 11639.73,
+        "spread_cents": 4.0
+      },
+      "status": "active",
+      "reforecast_cadence_days": 0.0
+    },
+    {
+      "ticker": "KXRT-ODY-90",
+      "event_ticker": "KXRT-ODY",
+      "title": "The Odyssey Rotten Tomatoes score?",
+      "category": "culture",
+      "close_time": "2026-07-20T14:00:00Z",
+      "added_at": "2026-06-19T20:50:22Z",
+      "liquidity_snapshot": {
+        "volume_24h": 3357.54,
+        "open_interest": 25913.37,
+        "spread_cents": 7.0
+      },
+      "status": "active",
+      "reforecast_cadence_days": 7.0
+    },
+    {
+      "ticker": "KXECONSTATCPIYOY-26JUN-T3.9",
+      "event_ticker": "KXECONSTATCPIYOY-26JUN",
+      "title": "CPI year-over-year in Jun 2026?",
+      "category": "economy",
+      "close_time": "2026-07-14T14:00:00Z",
+      "added_at": "2026-06-19T20:50:22Z",
+      "liquidity_snapshot": {
+        "volume_24h": 1494.08,
+        "open_interest": 17561.72,
+        "spread_cents": 1.0
+      },
+      "status": "active",
+      "reforecast_cadence_days": 3.0
+    },
+    {
+      "ticker": "KXCPI-26JUN-T-0.1",
+      "event_ticker": "KXCPI-26JUN",
+      "title": "Will CPI rise more than -0.1% in June 2026?",
+      "category": "economy",
+      "close_time": "2026-07-14T13:56:00Z",
+      "added_at": "2026-06-19T20:50:22Z",
+      "liquidity_snapshot": {
+        "volume_24h": 1243.95,
+        "open_interest": 30569.43,
+        "spread_cents": 1.0
+      },
+      "status": "active",
+      "reforecast_cadence_days": 3.0
+    },
+    {
+      "ticker": "KXGOVOKNOMR-26-GDRU",
+      "event_ticker": "KXGOVOKNOMR-26",
+      "title": "Will Genter Drummond be the Republican nominee for Governor in Oklahoma?",
+      "category": "politics",
+      "close_time": "2026-06-30T14:00:00Z",
+      "added_at": "2026-06-19T20:50:22Z",
+      "liquidity_snapshot": {
+        "volume_24h": 6737.69,
+        "open_interest": 103923.92,
+        "spread_cents": 1.0
+      },
+      "status": "active",
+      "reforecast_cadence_days": 3.0
+    },
+    {
+      "ticker": "KXTRUMPSAY-26JUN22-URAN",
+      "event_ticker": "KXTRUMPSAY-26JUN22",
+      "title": "Will Trump say \"Uranium\" before Jun 22, 2026?",
+      "category": "statements",
+      "close_time": "2026-06-22T14:00:00Z",
+      "added_at": "2026-06-19T20:50:22Z",
+      "liquidity_snapshot": {
+        "volume_24h": 2803.35,
+        "open_interest": 8324.37,
+        "spread_cents": 7.0
+      },
+      "status": "active",
+      "reforecast_cadence_days": 0.0
     }
   ]
 }

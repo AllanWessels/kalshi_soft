@@ -6,7 +6,7 @@ probability forecasts that beat the market on Kalshi markets driven by human beh
 politics, culture, public statements, behavioral economics/policy — as opposed to stochastic
 markets (crypto/sports/weather) where research can't out-model the price.
 
-The agent runs unattended 3×/day, maintains a focused ~20-market watchlist, re-forecasts on a
+The agent runs unattended 3×/day, maintains a focused ~30-market watchlist, re-forecasts on a
 tiered cadence, tracks probability/confidence drift and edge-vs-market, scores itself with Brier
 scores + calibration curves as markets resolve, and publishes a PDF report each run.
 

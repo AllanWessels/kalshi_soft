@@ -84,7 +84,7 @@ MAX_MARKET_DISAGREEMENT = 0.20
 # Watchlist / discovery thresholds
 # ---------------------------------------------------------------------------
 
-WATCHLIST_CAP = 20
+WATCHLIST_CAP = 30
 
 # Tuned so a healthy pool (~tens) of soft markets passes, which the agent then
 # curates down to WATCHLIST_CAP. Soft markets are thinner than sports/crypto, so
