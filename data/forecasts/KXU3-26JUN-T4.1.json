@@ -5,37 +5,40 @@
   "category": "economy",
   "close_time": "2026-07-02T12:29:00Z",
   "current": {
-    "as_of": "2026-06-13T10:25:07Z",
-    "my_probability": 0.93,
+    "as_of": "2026-06-19T19:12:39Z",
+    "my_probability": 0.92,
     "my_confidence": "high",
-    "market_implied_probability": 0.895,
-    "market_price_cents": 90.0,
-    "edge": 0.03500000000000003,
-    "yes_ask": 0.9,
-    "no_ask": 0.11,
+    "market_implied_probability": 0.93,
+    "market_price_cents": 93.0,
+    "edge": -0.010000000000000009,
+    "yes_ask": 0.94,
+    "no_ask": 0.08,
     "fee_per_contract": 0.01,
-    "ev_per_contract": 0.020000000000000025,
-    "limit_price": 0.89,
-    "ev_limit_per_contract": 0.03,
-    "lean": "YES",
+    "ev_per_contract": -0.02999999999999991,
+    "limit_price": null,
+    "ev_limit_per_contract": null,
+    "lean": "NONE",
     "conviction": "low",
-    "lean_note": null,
-    "prob_delta_vs_prev": null,
-    "trigger": "bootstrap",
-    "rationale_summary": "U-3 has held at 4.3% for April and May 2026; resolving NO requires a rare 0.2pp single-month drop against Iran-war and tariff headwinds and rising jobless claims.",
+    "lean_note": "I lean YES (my prob 92%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+    "prob_delta_vs_prev": -0.010000000000000009,
+    "trigger": "scheduled",
+    "strategy_id": "L0-local-single",
+    "proposed_probability": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": "",
+    "rationale_summary": "May 2026 U-3 = 4.3%, in a 4.3-4.5% range since Jul 2025; no sign of a drop below 4.1% in June. Very likely above 4.1%.",
     "key_drivers": [
-      "U-3 stable at 4.3%",
-      "rare 0.2pp monthly drop needed",
-      "rising initial claims",
-      "CBO/Vanguard project 4.5-4.6% by year-end"
+      "May 4.3%",
+      "stable 4.3-4.5% range",
+      "no rapid improvement"
     ],
     "reference_classes": [
-      "monthly U-3 moves >=0.2pp ~5-8% of months",
-      "stable-then-drop ~3-5%"
+      "month-to-month U-3 persistence"
     ],
     "research_refs": [
-      "https://www.bls.gov/news.release/empsit.nr0.htm",
-      "https://www.cbo.gov/publication/62105"
+      "https://www.bls.gov/news.release/empsit.nr0.htm"
     ]
   },
   "history": [
@@ -57,6 +60,12 @@
       "lean_note": null,
       "prob_delta_vs_prev": null,
       "trigger": "bootstrap",
+      "strategy_id": "",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
       "rationale_summary": "U-3 has held at 4.3% for April and May 2026; resolving NO requires a rare 0.2pp single-month drop against Iran-war and tariff headwinds and rising jobless claims.",
       "key_drivers": [
         "U-3 stable at 4.3%",
@@ -72,6 +81,58 @@
         "https://www.bls.gov/news.release/empsit.nr0.htm",
         "https://www.cbo.gov/publication/62105"
       ]
+    },
+    {
+      "as_of": "2026-06-19T19:12:39Z",
+      "my_probability": 0.92,
+      "my_confidence": "high",
+      "market_implied_probability": 0.93,
+      "market_price_cents": 93.0,
+      "edge": -0.010000000000000009,
+      "yes_ask": 0.94,
+      "no_ask": 0.08,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": -0.02999999999999991,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "I lean YES (my prob 92%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+      "prob_delta_vs_prev": -0.010000000000000009,
+      "trigger": "scheduled",
+      "strategy_id": "L0-local-single",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "May 2026 U-3 = 4.3%, in a 4.3-4.5% range since Jul 2025; no sign of a drop below 4.1% in June. Very likely above 4.1%.",
+      "key_drivers": [
+        "May 4.3%",
+        "stable 4.3-4.5% range",
+        "no rapid improvement"
+      ],
+      "reference_classes": [
+        "month-to-month U-3 persistence"
+      ],
+      "research_refs": [
+        "https://www.bls.gov/news.release/empsit.nr0.htm"
+      ]
     }
-  ]
+  ],
+  "position": {
+    "entered": false,
+    "entry_as_of": "",
+    "entry_side": "",
+    "entry_probability": 0.0,
+    "entry_price": 0.0,
+    "entry_market_implied": null,
+    "entry_confidence": "",
+    "entry_conviction": "",
+    "entry_gap": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": ""
+  }
 }

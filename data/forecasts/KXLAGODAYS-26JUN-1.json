@@ -5,33 +5,40 @@
   "category": "politics",
   "close_time": "2026-07-01T14:00:00Z",
   "current": {
-    "as_of": "2026-06-13T10:29:30Z",
-    "my_probability": 0.1,
-    "my_confidence": "low",
-    "market_implied_probability": 0.025,
-    "market_price_cents": 2.0,
+    "as_of": "2026-06-19T19:12:38Z",
+    "my_probability": 0.13,
+    "my_confidence": "medium",
+    "market_implied_probability": 0.055,
+    "market_price_cents": 6.0,
     "edge": 0.07500000000000001,
-    "yes_ask": 0.03,
-    "no_ask": 0.98,
+    "yes_ask": 0.06,
+    "no_ask": 0.95,
     "fee_per_contract": 0.01,
     "ev_per_contract": -0.08999999999999996,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "I lean NO (my prob 10%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
-    "prob_delta_vs_prev": null,
-    "trigger": "bootstrap",
-    "rationale_summary": "A single personal-use Florida visit in the Jun 18-30 window is possible but unlikely given seasonal closure and Iran/G7 schedule.",
+    "lean_note": "I lean NO (my prob 13%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+    "prob_delta_vs_prev": 0.03,
+    "trigger": "scheduled",
+    "strategy_id": "L0-local-single",
+    "proposed_probability": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": "",
+    "rationale_summary": "Coherence with P(0 trips)~0.82: residual mass for exactly 1 trip is modest. Summer/war suppress Florida travel.",
     "key_drivers": [
-      "summer closure",
-      "Iran/G7 schedule",
-      "small personal-visit chance"
+      "coherence with high P(0)",
+      "summer suppression of FL travel"
     ],
     "reference_classes": [
-      "Trump first-term summer Mar-a-Lago visits ~0"
+      "monthly Mar-a-Lago trip counts"
     ],
-    "research_refs": []
+    "research_refs": [
+      "https://patch.com/new-jersey/bridgewater/donald-trump-may-be-returning-bedminster-summer"
+    ]
   },
   "history": [
     {
@@ -52,6 +59,12 @@
       "lean_note": "I lean NO (my prob 10%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
       "prob_delta_vs_prev": null,
       "trigger": "bootstrap",
+      "strategy_id": "",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
       "rationale_summary": "A single personal-use Florida visit in the Jun 18-30 window is possible but unlikely given seasonal closure and Iran/G7 schedule.",
       "key_drivers": [
         "summer closure",
@@ -62,6 +75,57 @@
         "Trump first-term summer Mar-a-Lago visits ~0"
       ],
       "research_refs": []
+    },
+    {
+      "as_of": "2026-06-19T19:12:38Z",
+      "my_probability": 0.13,
+      "my_confidence": "medium",
+      "market_implied_probability": 0.055,
+      "market_price_cents": 6.0,
+      "edge": 0.07500000000000001,
+      "yes_ask": 0.06,
+      "no_ask": 0.95,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": -0.08999999999999996,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "I lean NO (my prob 13%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+      "prob_delta_vs_prev": 0.03,
+      "trigger": "scheduled",
+      "strategy_id": "L0-local-single",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "Coherence with P(0 trips)~0.82: residual mass for exactly 1 trip is modest. Summer/war suppress Florida travel.",
+      "key_drivers": [
+        "coherence with high P(0)",
+        "summer suppression of FL travel"
+      ],
+      "reference_classes": [
+        "monthly Mar-a-Lago trip counts"
+      ],
+      "research_refs": [
+        "https://patch.com/new-jersey/bridgewater/donald-trump-may-be-returning-bedminster-summer"
+      ]
     }
-  ]
+  ],
+  "position": {
+    "entered": false,
+    "entry_as_of": "",
+    "entry_side": "",
+    "entry_probability": 0.0,
+    "entry_price": 0.0,
+    "entry_market_implied": null,
+    "entry_confidence": "",
+    "entry_conviction": "",
+    "entry_gap": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": ""
+  }
 }

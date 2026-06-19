@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-05-31T20:59:14Z",
+  "updated_at": "2026-06-19T19:16:00Z",
   "lessons": [
     {
       "id": "feedback-001",
@@ -18,7 +18,81 @@
       "what_went_wrong": "Swung Feenstra 22pts on a single primary poll + unsanctioned straw polls.",
       "lesson": "Never move a forecast materially on one noisy data point (esp. a single poll); weight by reliability and require corroboration. Don't recommend fading a liquid market on a low-confidence estimate.",
       "pattern_tag": "overreaction-and-confidence",
-      "applied_to_skill": false
+      "applied_to_skill": false,
+      "critic_model": "",
+      "rubric_scores": {},
+      "judge_verdict": "",
+      "disagreement": ""
+    },
+    {
+      "id": "2026-06-17T17:59:00Z-KXFOMCDISSENTCOUNT-26JUN-0",
+      "created_at": "2026-06-19T19:16:00Z",
+      "source": "resolution",
+      "ticker": "KXFOMCDISSENTCOUNT-26JUN-0",
+      "category": "economy",
+      "outcome": 1,
+      "final_my_probability": 0.25,
+      "final_market_implied": 0.665,
+      "brier_mine": 0.3364000000000001,
+      "brier_market": 0.13322499999999998,
+      "beat_market": false,
+      "what_went_right": "Identified the genuine bimodality and the Warsh wildcard; 0.42 was a defensible non-extreme number.",
+      "what_went_wrong": "Let a vivid 'division' narrative pull the estimate below a liquid market pricing a strong base rate of 0 dissents, without a specific documented reason for the divergence.",
+      "lesson": "When diverging below a liquid market that is pricing a strong institutional base rate, require a specific, verifiable reason; narrative of 'division' is not evidence of a formally recorded dissent. Anchor on the base rate.",
+      "pattern_tag": "unjustified-market-divergence",
+      "applied_to_skill": false,
+      "critic_model": "qwen3:14b-q4_K_M",
+      "rubric_scores": {
+        "base_rate_established": {
+          "pass": true
+        },
+        "three_independent_sources": {
+          "pass": false
+        },
+        "confidence_interval": {
+          "pass": false
+        },
+        "market_divergence_justified": {
+          "pass": false
+        }
+      },
+      "judge_verdict": "Forecaster (0.42) diverged below a liquid market (0.635) that correctly priced the strong institutional base rate of zero formal FOMC dissents. A 'most-divided-since-1992' narrative was allowed to override that base rate; committee division rhetoric != a formally recorded dissent. No position taken, so a calibration loss only. Defender right that 0.42 is non-extreme and one resolution is noisy, but the directional lean against the base rate was the real error.",
+      "disagreement": "Critic called the divergence unjustified (process flaw); Defender framed it as reasonable disagreement plus single-point noise. The gap: was the sub-market lean a process error or variance?"
+    },
+    {
+      "id": "2026-06-16T13:00:00Z-KXHORMUZWEEKLY-26JUN14-T25",
+      "created_at": "2026-06-19T19:16:00Z",
+      "source": "resolution",
+      "ticker": "KXHORMUZWEEKLY-26JUN14-T25",
+      "category": "politics",
+      "outcome": 0,
+      "final_my_probability": 0.6,
+      "final_market_implied": 0.465,
+      "brier_mine": 0.3721,
+      "brier_market": 0.245025,
+      "beat_market": false,
+      "what_went_right": "Correctly saw transit was the key variable; market itself was near coin-flip, so the call was genuinely contested.",
+      "what_went_wrong": "Anchored to a hoped-for recovery instead of the prevailing crisis-suppressed regime, and took a position despite only a coin-flip-level divergence from a liquid market built on an unverified assumption.",
+      "lesson": "During an active supply-disruption crisis, anchor flow estimates to the SUPPRESSED regime, not an assumed recovery, until data confirms normalization; and do not enter a position when divergence from a liquid market is small and rests on an unverified assumption.",
+      "pattern_tag": "unjustified-market-divergence",
+      "applied_to_skill": false,
+      "critic_model": "qwen3:14b-q4_K_M",
+      "rubric_scores": {
+        "base_rate_established": {
+          "pass": true
+        },
+        "three_independent_sources": {
+          "pass": false
+        },
+        "confidence_interval": {
+          "pass": false
+        },
+        "market_divergence_justified": {
+          "pass": false
+        }
+      },
+      "judge_verdict": "Forecaster (0.61) assumed a transit RECOVERY toward ~35/week, but the resolution week (Jun 8-14) sat entirely inside the active blockade with traffic collapsed (~5/day, as confirmed by the current Hormuz-norm read). The ensemble baked in a normalization that had not occurred. Critically, a YES position was ENTERED on a near-coin-flip divergence (0.61 vs market 0.495) resting on that unverified recovery assumption -> realized loss. This is the overconfident-entry-on-thin-edge / stale-regime failure.",
+      "disagreement": "Critic: divergence unjustified, single ensemble, no CI. Defender: directionally defensible, ceasefire only at window-end, count noise near the 25 line. The gap: was entering the position justified given the thin edge?"
     }
   ]
 }

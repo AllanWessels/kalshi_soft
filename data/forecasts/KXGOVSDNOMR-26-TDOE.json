@@ -5,38 +5,48 @@
   "category": "politics",
   "close_time": "2026-11-03T15:00:00Z",
   "current": {
-    "as_of": "2026-06-13T07:06:43Z",
-    "my_probability": 0.45,
-    "my_confidence": "low",
-    "market_implied_probability": 0.525,
-    "market_price_cents": 52.0,
-    "edge": -0.07500000000000001,
-    "yes_ask": 0.53,
-    "no_ask": 0.48,
+    "as_of": "2026-06-19T18:57:37Z",
+    "my_probability": 0.27,
+    "my_confidence": "medium",
+    "market_implied_probability": 0.445,
+    "market_price_cents": 44.0,
+    "edge": -0.175,
+    "yes_ask": 0.45,
+    "no_ask": 0.56,
     "fee_per_contract": 0.02,
-    "ev_per_contract": 0.05000000000000006,
-    "limit_price": 0.47,
-    "ev_limit_per_contract": 0.06,
-    "lean": "NONE",
-    "conviction": "low",
-    "lean_note": "low confidence — estimate too uncertain to fade the market",
-    "prob_delta_vs_prev": 0.13,
+    "ev_per_contract": 0.14999999999999994,
+    "limit_price": null,
+    "ev_limit_per_contract": null,
+    "lean": "NO",
+    "conviction": "high",
+    "lean_note": null,
+    "prob_delta_vs_prev": -0.18,
     "trigger": "scheduled",
-    "rationale_summary": "Doeden led the June 2 primary (31% vs Rhoden 25%) forcing a first-ever July 28 runoff; establishment/donor consolidation behind Rhoden and lower runoff turnout slightly favor Rhoden, putting Doeden just under even. Market resolves on the actual nominee (closes Nov 3).",
+    "strategy_id": "L0-local-single",
+    "proposed_probability": 0.27,
+    "adversarial_verdict": "revise",
+    "adversarial_challenged_prob": 0.35,
+    "adversarial_concerns": [
+      "Assumes anti-Doeden voters will consolidate behind Rhoden without evidence of Rhoden's appeal to those voters",
+      "Underestimates potential for Doeden to gain momentum in runoff",
+      "Ignores market's higher implied probability which may reflect broader information"
+    ],
+    "adversarial_model": "qwen3:14b-q4_K_M",
+    "rationale_summary": "SD primary Jun 2 hit no 35% threshold; 2-way Jul 28 runoff Doeden (31% plurality) vs incumbent Gov Rhoden (25%). ~69% did not back Doeden; anti-Doeden (Johnson) base expected to consolidate behind incumbent. Doeden a clear underdog with intense base.",
     "key_drivers": [
-      "Doeden primary lead",
-      "establishment consolidation to Rhoden",
-      "lower runoff turnout favors establishment",
-      "no Trump endorsement",
-      "Doeden self-funding"
+      "Jul 28 runoff vs incumbent Rhoden",
+      "69% did not back Doeden",
+      "Johnson voters consolidate to Rhoden",
+      "Doeden base intensity in low-turnout runoff"
     ],
     "reference_classes": [
-      "first-round leaders win runoffs ~55-65%",
-      "establishment consolidation flips outsiders"
+      "outsider plurality winners losing 2-way runoffs",
+      "incumbent governors winning intraparty runoffs"
     ],
     "research_refs": [
-      "https://news.ballotpedia.org/2026/06/04/incumbent-larry-rhoden-and-toby-doeden-advance-to-first-ever-primary-runoff-for-south-dakota-governor/",
-      "https://www.kotatv.com/2026/06/07/where-backers-losing-campaigns-are-shifting-support-ahead-south-dakotas-governor-runoff/"
+      "https://www.nbcnews.com/politics/2026-election/republican-toby-doeden-advances-primary-runoff-south-dakota-rcna347472",
+      "https://ballotpedia.org/South_Dakota_gubernatorial_election",
+      "_2026_(June_2_Republican_primary)"
     ]
   },
   "history": [
@@ -58,6 +68,12 @@
       "lean_note": null,
       "prob_delta_vs_prev": null,
       "trigger": "bootstrap",
+      "strategy_id": "",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
       "rationale_summary": "Doeden leads one poll (26%) but trails 17-34 in another; with no Trump endorsement, a likely runoff favors the establishment (Johnson's 113-lawmaker bloc) consolidating against the outsider. Market's ~40% looks rich.",
       "key_drivers": [
         "poll divergence (26% vs 17%)",
@@ -87,6 +103,12 @@
       "lean_note": "low confidence — estimate too uncertain to fade the market",
       "prob_delta_vs_prev": 0.13,
       "trigger": "scheduled",
+      "strategy_id": "",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
       "rationale_summary": "Doeden led the June 2 primary (31% vs Rhoden 25%) forcing a first-ever July 28 runoff; establishment/donor consolidation behind Rhoden and lower runoff turnout slightly favor Rhoden, putting Doeden just under even. Market resolves on the actual nominee (closes Nov 3).",
       "key_drivers": [
         "Doeden primary lead",
@@ -103,6 +125,70 @@
         "https://news.ballotpedia.org/2026/06/04/incumbent-larry-rhoden-and-toby-doeden-advance-to-first-ever-primary-runoff-for-south-dakota-governor/",
         "https://www.kotatv.com/2026/06/07/where-backers-losing-campaigns-are-shifting-support-ahead-south-dakotas-governor-runoff/"
       ]
+    },
+    {
+      "as_of": "2026-06-19T18:57:37Z",
+      "my_probability": 0.27,
+      "my_confidence": "medium",
+      "market_implied_probability": 0.445,
+      "market_price_cents": 44.0,
+      "edge": -0.175,
+      "yes_ask": 0.45,
+      "no_ask": 0.56,
+      "fee_per_contract": 0.02,
+      "ev_per_contract": 0.14999999999999994,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NO",
+      "conviction": "high",
+      "lean_note": null,
+      "prob_delta_vs_prev": -0.18,
+      "trigger": "scheduled",
+      "strategy_id": "L0-local-single",
+      "proposed_probability": 0.27,
+      "adversarial_verdict": "revise",
+      "adversarial_challenged_prob": 0.35,
+      "adversarial_concerns": [
+        "Assumes anti-Doeden voters will consolidate behind Rhoden without evidence of Rhoden's appeal to those voters",
+        "Underestimates potential for Doeden to gain momentum in runoff",
+        "Ignores market's higher implied probability which may reflect broader information"
+      ],
+      "adversarial_model": "qwen3:14b-q4_K_M",
+      "rationale_summary": "SD primary Jun 2 hit no 35% threshold; 2-way Jul 28 runoff Doeden (31% plurality) vs incumbent Gov Rhoden (25%). ~69% did not back Doeden; anti-Doeden (Johnson) base expected to consolidate behind incumbent. Doeden a clear underdog with intense base.",
+      "key_drivers": [
+        "Jul 28 runoff vs incumbent Rhoden",
+        "69% did not back Doeden",
+        "Johnson voters consolidate to Rhoden",
+        "Doeden base intensity in low-turnout runoff"
+      ],
+      "reference_classes": [
+        "outsider plurality winners losing 2-way runoffs",
+        "incumbent governors winning intraparty runoffs"
+      ],
+      "research_refs": [
+        "https://www.nbcnews.com/politics/2026-election/republican-toby-doeden-advances-primary-runoff-south-dakota-rcna347472",
+        "https://ballotpedia.org/South_Dakota_gubernatorial_election",
+        "_2026_(June_2_Republican_primary)"
+      ]
     }
-  ]
+  ],
+  "position": {
+    "entered": true,
+    "entry_as_of": "2026-06-19T18:57:37Z",
+    "entry_side": "NO",
+    "entry_probability": 0.27,
+    "entry_price": 0.56,
+    "entry_market_implied": 0.445,
+    "entry_confidence": "medium",
+    "entry_conviction": "high",
+    "entry_gap": 0.175,
+    "adversarial_verdict": "revise",
+    "adversarial_challenged_prob": 0.35,
+    "adversarial_concerns": [
+      "Assumes anti-Doeden voters will consolidate behind Rhoden without evidence of Rhoden's appeal to those voters",
+      "Underestimates potential for Doeden to gain momentum in runoff",
+      "Ignores market's higher implied probability which may reflect broader information"
+    ],
+    "adversarial_model": "qwen3:14b-q4_K_M"
+  }
 }

@@ -5,37 +5,40 @@
   "category": "politics",
   "close_time": "2026-07-01T14:00:00Z",
   "current": {
-    "as_of": "2026-06-13T07:10:26Z",
-    "my_probability": 0.22,
+    "as_of": "2026-06-19T19:12:38Z",
+    "my_probability": 0.05,
     "my_confidence": "medium",
-    "market_implied_probability": 0.195,
-    "market_price_cents": 20.0,
-    "edge": 0.024999999999999994,
-    "yes_ask": 0.2,
-    "no_ask": 0.81,
-    "fee_per_contract": 0.02,
-    "ev_per_contract": -0.05000000000000003,
+    "market_implied_probability": 0.005,
+    "market_price_cents": 1.0,
+    "edge": 0.045000000000000005,
+    "yes_ask": 0.01,
+    "no_ask": 1.0,
+    "fee_per_contract": 0.0,
+    "ev_per_contract": -0.050000000000000044,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "I lean NO (my prob 22%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
-    "prob_delta_vs_prev": 0.1,
+    "lean_note": "I lean NO (my prob 5%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+    "prob_delta_vs_prev": -0.16999999999999998,
     "trigger": "scheduled",
-    "rationale_summary": "Diplomatic momentum has improved (reports of a 'final agreed text' and officials voicing high confidence), but the actual nuclear terms required to resolve YES remain deferred to follow-on talks, and Trump has repeatedly claimed a deal 'imminent' without one materializing; a qualifying formal deal before the ~July 1 close is more likely than not to fail.",
+    "strategy_id": "L0-local-single",
+    "proposed_probability": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": "",
+    "rationale_summary": "June 14-19 MOU is explicitly a roadmap, not a nuclear deal; opens a 60-day nuclear negotiation window ending ~mid-August — after the July 1 close. Talks contentious (missiles, rebuilding).",
     "key_drivers": [
-      "nuclear terms deferred to later talks",
-      "repeated false 'deal imminent' claims",
-      "Iran enrichment red line",
-      "new Supreme Leader hardening stance",
-      "18-day window"
+      "MOU is roadmap not deal",
+      "60-day window ends mid-Aug past close",
+      "contentious nuclear talks"
     ],
     "reference_classes": [
-      "JCPOA took ~20 months to negotiate",
-      "framework MoUs vs binding deals"
+      "comprehensive nuclear agreements concluded within weeks"
     ],
     "research_refs": [
-      "https://www.cnn.com/2026/06/12/world/live-news/iran-war-trump-israel"
+      "https://www.csis.org/analysis/united-states-and-iran-announce-deal-end-war-state-play"
     ]
   },
   "history": [
@@ -57,6 +60,12 @@
       "lean_note": "I lean NO (my prob 12%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
       "prob_delta_vs_prev": null,
       "trigger": "bootstrap",
+      "strategy_id": "",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
       "rationale_summary": "A tentative US-Iran MOU to launch 60-day nuclear talks is unsigned; a full nuclear deal (the resolution bar) is downstream with unresolved enrichment/sanctions issues — unlikely within 30 days.",
       "key_drivers": [
         "MOU unsigned",
@@ -86,6 +95,12 @@
       "lean_note": "I lean NO (my prob 22%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
       "prob_delta_vs_prev": 0.1,
       "trigger": "scheduled",
+      "strategy_id": "",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
       "rationale_summary": "Diplomatic momentum has improved (reports of a 'final agreed text' and officials voicing high confidence), but the actual nuclear terms required to resolve YES remain deferred to follow-on talks, and Trump has repeatedly claimed a deal 'imminent' without one materializing; a qualifying formal deal before the ~July 1 close is more likely than not to fail.",
       "key_drivers": [
         "nuclear terms deferred to later talks",
@@ -101,6 +116,58 @@
       "research_refs": [
         "https://www.cnn.com/2026/06/12/world/live-news/iran-war-trump-israel"
       ]
+    },
+    {
+      "as_of": "2026-06-19T19:12:38Z",
+      "my_probability": 0.05,
+      "my_confidence": "medium",
+      "market_implied_probability": 0.005,
+      "market_price_cents": 1.0,
+      "edge": 0.045000000000000005,
+      "yes_ask": 0.01,
+      "no_ask": 1.0,
+      "fee_per_contract": 0.0,
+      "ev_per_contract": -0.050000000000000044,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "I lean NO (my prob 5%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+      "prob_delta_vs_prev": -0.16999999999999998,
+      "trigger": "scheduled",
+      "strategy_id": "L0-local-single",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "June 14-19 MOU is explicitly a roadmap, not a nuclear deal; opens a 60-day nuclear negotiation window ending ~mid-August — after the July 1 close. Talks contentious (missiles, rebuilding).",
+      "key_drivers": [
+        "MOU is roadmap not deal",
+        "60-day window ends mid-Aug past close",
+        "contentious nuclear talks"
+      ],
+      "reference_classes": [
+        "comprehensive nuclear agreements concluded within weeks"
+      ],
+      "research_refs": [
+        "https://www.csis.org/analysis/united-states-and-iran-announce-deal-end-war-state-play"
+      ]
     }
-  ]
+  ],
+  "position": {
+    "entered": false,
+    "entry_as_of": "",
+    "entry_side": "",
+    "entry_probability": 0.0,
+    "entry_price": 0.0,
+    "entry_market_implied": null,
+    "entry_confidence": "",
+    "entry_conviction": "",
+    "entry_gap": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": ""
+  }
 }

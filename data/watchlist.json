@@ -1,38 +1,8 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-06-13T10:21:31Z",
+  "updated_at": "2026-06-19T18:47:55Z",
   "cap": 20,
   "markets": [
-    {
-      "ticker": "KXFEDDECISION-26JUN-H0",
-      "event_ticker": "KXFEDDECISION-26JUN",
-      "title": "Will the Federal Reserve Hike rates by 0bps at their June 2026 meeting?",
-      "category": "economy",
-      "close_time": "2026-06-17T17:59:00Z",
-      "added_at": "2026-05-31T17:38:26Z",
-      "liquidity_snapshot": {
-        "volume_24h": 42307.14,
-        "open_interest": 2931087.03,
-        "spread_cents": 1.0
-      },
-      "status": "active",
-      "reforecast_cadence_days": 3.0
-    },
-    {
-      "ticker": "KXFEDDECISION-26JUN-C25",
-      "event_ticker": "KXFEDDECISION-26JUN",
-      "title": "Will the Federal Reserve Cut rates by 25bps at their June 2026 meeting?",
-      "category": "economy",
-      "close_time": "2026-06-17T17:59:00Z",
-      "added_at": "2026-05-31T18:10:20Z",
-      "liquidity_snapshot": {
-        "volume_24h": 65038.64,
-        "open_interest": 2612669.27,
-        "spread_cents": 1.0
-      },
-      "status": "active",
-      "reforecast_cadence_days": 3.0
-    },
     {
       "ticker": "KXUSAIRANAGREEMENT-27-26JUL",
       "event_ticker": "KXUSAIRANAGREEMENT-27",
@@ -79,96 +49,6 @@
       "reforecast_cadence_days": 3.0
     },
     {
-      "ticker": "KXFEDDECISION-26JUN-H25",
-      "event_ticker": "KXFEDDECISION-26JUN",
-      "title": "Will the Federal Reserve Hike rates by 25bps at their June 2026 meeting?",
-      "category": "economy",
-      "close_time": "2026-06-17T18:05:00Z",
-      "added_at": "2026-05-31T18:38:54Z",
-      "liquidity_snapshot": {
-        "volume_24h": 36527.21,
-        "open_interest": 2698509.4,
-        "spread_cents": 1.0
-      },
-      "status": "active",
-      "reforecast_cadence_days": 3.0
-    },
-    {
-      "ticker": "KXFEDDECISION-26JUN-C26",
-      "event_ticker": "KXFEDDECISION-26JUN",
-      "title": "Will the Federal Reserve Cut rates by >25bps at their June 2026 meeting?",
-      "category": "economy",
-      "close_time": "2026-06-17T18:05:00Z",
-      "added_at": "2026-05-31T18:38:54Z",
-      "liquidity_snapshot": {
-        "volume_24h": 14457.72,
-        "open_interest": 2013184.65,
-        "spread_cents": 1.0
-      },
-      "status": "active",
-      "reforecast_cadence_days": 3.0
-    },
-    {
-      "ticker": "KXFOMCDISSENTCOUNT-26JUN-0",
-      "event_ticker": "KXFOMCDISSENTCOUNT-26JUN",
-      "title": "How many dissenting votes at the next Fed meeting?",
-      "category": "economy",
-      "close_time": "2026-06-17T14:00:00Z",
-      "added_at": "2026-06-13T06:54:34Z",
-      "liquidity_snapshot": {
-        "volume_24h": 4689.78,
-        "open_interest": 46739.49,
-        "spread_cents": 1.0
-      },
-      "status": "active",
-      "reforecast_cadence_days": 0.0
-    },
-    {
-      "ticker": "KXFEDDECISION-26JUN-H26",
-      "event_ticker": "KXFEDDECISION-26JUN",
-      "title": "Will the Federal Reserve Hike rates by >25bps at their June 2026 meeting?",
-      "category": "economy",
-      "close_time": "2026-06-17T18:05:00Z",
-      "added_at": "2026-06-13T06:54:34Z",
-      "liquidity_snapshot": {
-        "volume_24h": 24253.0,
-        "open_interest": 1408181.88,
-        "spread_cents": 1.0
-      },
-      "status": "active",
-      "reforecast_cadence_days": 0.0
-    },
-    {
-      "ticker": "KXFISAEXTEND-26JUN-26JUN19",
-      "event_ticker": "KXFISAEXTEND-26MAY",
-      "title": "Will legislation that reauthorizes FISA Section 702 authority become law before Jun 19, 2026?",
-      "category": "politics",
-      "close_time": "2026-07-01T14:00:00Z",
-      "added_at": "2026-06-13T06:54:34Z",
-      "liquidity_snapshot": {
-        "volume_24h": 3102.3,
-        "open_interest": 6846.82,
-        "spread_cents": 1.0
-      },
-      "status": "active",
-      "reforecast_cadence_days": 3.0
-    },
-    {
-      "ticker": "KXHORMUZNORM-26MAR17-B260615",
-      "event_ticker": "KXHORMUZNORM-26MAR17",
-      "title": "Will the 7-day moving average of transit calls through the Strait of Hormuz as reported by the IMF PortWatch be above 60 before June 15, 2026?",
-      "category": "politics",
-      "close_time": "2026-06-15T14:00:00Z",
-      "added_at": "2026-06-13T06:54:34Z",
-      "liquidity_snapshot": {
-        "volume_24h": 36742.76,
-        "open_interest": 471570.24,
-        "spread_cents": 1.0
-      },
-      "status": "active",
-      "reforecast_cadence_days": 0.0
-    },
-    {
       "ticker": "KXHORMUZNORM-26MAR17-B260701",
       "event_ticker": "KXHORMUZNORM-26MAR17",
       "title": "Will the 7-day moving average of transit calls through the Strait of Hormuz as reported by the IMF PortWatch be above 60 before July 1, 2026?",
@@ -179,36 +59,6 @@
         "volume_24h": 258661.4,
         "open_interest": 1996281.23,
         "spread_cents": 1.0
-      },
-      "status": "active",
-      "reforecast_cadence_days": 0.0
-    },
-    {
-      "ticker": "KXHORMUZWEEKLY-26JUN14-T25",
-      "event_ticker": "KXHORMUZWEEKLY-26JUN14",
-      "title": "Will there be more than 25 transit calls through the Strait of Hormuz from Jun 8, 2026 to Jun 14, 2026?",
-      "category": "politics",
-      "close_time": "2026-06-16T14:00:00Z",
-      "added_at": "2026-06-13T10:21:31Z",
-      "liquidity_snapshot": {
-        "volume_24h": 3441.23,
-        "open_interest": 6555.95,
-        "spread_cents": 1.0
-      },
-      "status": "active",
-      "reforecast_cadence_days": 0.0
-    },
-    {
-      "ticker": "KXHORMUZWEEKLY-26JUN14-T30",
-      "event_ticker": "KXHORMUZWEEKLY-26JUN14",
-      "title": "Will there be more than 30 transit calls through the Strait of Hormuz from Jun 8, 2026 to Jun 14, 2026?",
-      "category": "politics",
-      "close_time": "2026-06-16T14:00:00Z",
-      "added_at": "2026-06-13T10:21:31Z",
-      "liquidity_snapshot": {
-        "volume_24h": 4398.36,
-        "open_interest": 8200.33,
-        "spread_cents": 2.0
       },
       "status": "active",
       "reforecast_cadence_days": 0.0
@@ -302,6 +152,111 @@
       },
       "status": "active",
       "reforecast_cadence_days": 3.0
+    },
+    {
+      "ticker": "KXFISAEXTEND-26JUN-26JUN25",
+      "event_ticker": "KXFISAEXTEND-26MAY",
+      "title": "Will legislation that reauthorizes FISA Section 702 authority become law before Jun 25, 2026?",
+      "category": "politics",
+      "close_time": "2026-07-01T14:00:00Z",
+      "added_at": "2026-06-19T18:47:55Z",
+      "liquidity_snapshot": {
+        "volume_24h": 8182.05,
+        "open_interest": 13610.59,
+        "spread_cents": 1.0
+      },
+      "status": "active",
+      "reforecast_cadence_days": 3.0
+    },
+    {
+      "ticker": "KXEOWEEK-26JUN13-0",
+      "event_ticker": "KXEOWEEK-26JUN13",
+      "title": "Will the President sign more than 0 Executive Orders between Jun 7, 2026 and Jun 13, 2026?",
+      "category": "politics",
+      "close_time": "2026-06-27T14:00:00Z",
+      "added_at": "2026-06-19T18:47:55Z",
+      "liquidity_snapshot": {
+        "volume_24h": 2036.52,
+        "open_interest": 19248.73,
+        "spread_cents": 1.0
+      },
+      "status": "active",
+      "reforecast_cadence_days": 3.0
+    },
+    {
+      "ticker": "KXPLATNERDROPOUT-26",
+      "event_ticker": "KXPLATNERDROPOUT-26",
+      "title": "Will Graham Platner drop out of the 2026 United States Senate election in Maine before Jul 14, 2026?",
+      "category": "politics",
+      "close_time": "2026-07-14T14:00:00Z",
+      "added_at": "2026-06-19T18:47:55Z",
+      "liquidity_snapshot": {
+        "volume_24h": 23957.77,
+        "open_interest": 401024.68,
+        "spread_cents": 1.0
+      },
+      "status": "active",
+      "reforecast_cadence_days": 3.0
+    },
+    {
+      "ticker": "KXCPI-26JUN-T0.0",
+      "event_ticker": "KXCPI-26JUN",
+      "title": "Will CPI rise more than 0.0% in June 2026?",
+      "category": "economy",
+      "close_time": "2026-07-14T13:56:00Z",
+      "added_at": "2026-06-19T18:47:55Z",
+      "liquidity_snapshot": {
+        "volume_24h": 3187.99,
+        "open_interest": 34954.79,
+        "spread_cents": 2.0
+      },
+      "status": "active",
+      "reforecast_cadence_days": 3.0
+    },
+    {
+      "ticker": "KXECONSTATCPIYOY-26JUN-T4.1",
+      "event_ticker": "KXECONSTATCPIYOY-26JUN",
+      "title": "CPI year-over-year in Jun 2026?",
+      "category": "economy",
+      "close_time": "2026-07-14T14:00:00Z",
+      "added_at": "2026-06-19T18:47:55Z",
+      "liquidity_snapshot": {
+        "volume_24h": 9942.69,
+        "open_interest": 22434.8,
+        "spread_cents": 2.0
+      },
+      "status": "active",
+      "reforecast_cadence_days": 3.0
+    },
+    {
+      "ticker": "KXVISITIRAN-26JUL01-JVAN",
+      "event_ticker": "KXVISITIRAN",
+      "title": "Will JD Vance visit Iran before Jul 1, 2026?",
+      "category": "politics",
+      "close_time": "2026-07-01T14:00:00Z",
+      "added_at": "2026-06-19T18:47:55Z",
+      "liquidity_snapshot": {
+        "volume_24h": 3404.7,
+        "open_interest": 79329.56,
+        "spread_cents": 1.0
+      },
+      "status": "active",
+      "reforecast_cadence_days": 3.0
+    },
+    {
+      "ticker": "KXTRUMPATTEND",
+      "event_ticker": "KXTRUMPATTEND",
+      "title": "Will Donald J. Trump attend The 2026 FIFA World Cup Final?",
+      "category": "politics",
+      "close_time": "2026-07-20T14:00:00Z",
+      "added_at": "2026-06-19T18:47:55Z",
+      "liquidity_snapshot": {
+        "volume_24h": 13142.84,
+        "open_interest": 90371.48,
+        "spread_cents": 1.0
+      },
+      "status": "active",
+      "reforecast_cadence_days": 7.0
     }
   ]
 }

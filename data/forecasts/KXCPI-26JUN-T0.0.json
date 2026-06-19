@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "ticker": "KXCPI-26JUN-T0.0",
+  "title": "Will CPI rise more than 0.0% in June 2026?",
+  "category": "economy",
+  "close_time": "2026-07-14T12:25:00Z",
+  "current": {
+    "as_of": "2026-06-19T19:12:39Z",
+    "my_probability": 0.4,
+    "my_confidence": "low",
+    "market_implied_probability": 0.125,
+    "market_price_cents": 13.0,
+    "edge": 0.275,
+    "yes_ask": 0.14,
+    "no_ask": 0.89,
+    "fee_per_contract": 0.01,
+    "ev_per_contract": -0.30000000000000004,
+    "limit_price": null,
+    "ev_limit_per_contract": null,
+    "lean": "NONE",
+    "conviction": "low",
+    "lean_note": "I lean NO (my prob 40%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+    "prob_delta_vs_prev": null,
+    "trigger": "scheduled",
+    "strategy_id": "L0-local-single",
+    "proposed_probability": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": "",
+    "rationale_summary": "Local model (0.75) under-weighted the post-ceasefire energy reversal: Hormuz reopened June 14, oil/gas falling, a major drag on June headline MoM after May's gas +40.5% spike. Liquid market prices ~87% chance of flat/negative MoM; deferring substantially toward that mechanism-backed signal while retaining upside from sticky core/shelter.",
+    "key_drivers": [
+      "post-ceasefire oil/gas reversal drags headline",
+      "May gas spike unwinds",
+      "sticky positive core offsets",
+      "strong liquid-market disinflation signal"
+    ],
+    "reference_classes": [
+      "monthly CPI sign",
+      "energy-driven monthly swings"
+    ],
+    "research_refs": [
+      "https://www.cnbc.com/2026/06/10/cpi-inflation-report-may-2026.html"
+    ]
+  },
+  "history": [
+    {
+      "as_of": "2026-06-19T19:12:39Z",
+      "my_probability": 0.4,
+      "my_confidence": "low",
+      "market_implied_probability": 0.125,
+      "market_price_cents": 13.0,
+      "edge": 0.275,
+      "yes_ask": 0.14,
+      "no_ask": 0.89,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": -0.30000000000000004,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "I lean NO (my prob 40%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+      "prob_delta_vs_prev": null,
+      "trigger": "scheduled",
+      "strategy_id": "L0-local-single",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "Local model (0.75) under-weighted the post-ceasefire energy reversal: Hormuz reopened June 14, oil/gas falling, a major drag on June headline MoM after May's gas +40.5% spike. Liquid market prices ~87% chance of flat/negative MoM; deferring substantially toward that mechanism-backed signal while retaining upside from sticky core/shelter.",
+      "key_drivers": [
+        "post-ceasefire oil/gas reversal drags headline",
+        "May gas spike unwinds",
+        "sticky positive core offsets",
+        "strong liquid-market disinflation signal"
+      ],
+      "reference_classes": [
+        "monthly CPI sign",
+        "energy-driven monthly swings"
+      ],
+      "research_refs": [
+        "https://www.cnbc.com/2026/06/10/cpi-inflation-report-may-2026.html"
+      ]
+    }
+  ],
+  "position": {
+    "entered": false,
+    "entry_as_of": "",
+    "entry_side": "",
+    "entry_probability": 0.0,
+    "entry_price": 0.0,
+    "entry_market_implied": null,
+    "entry_confidence": "",
+    "entry_conviction": "",
+    "entry_gap": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": ""
+  }
+}

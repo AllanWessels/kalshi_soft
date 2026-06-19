@@ -1,42 +1,52 @@
 {
   "schema_version": 1,
   "ticker": "KXHORMUZNORM-26MAR17-B260701",
-  "title": "Hormuz normal by Jul 1 2026",
+  "title": "Will the 7-day moving average of transit calls through the Strait of Hormuz as reported by the IMF PortWatch be above 60 before July 1, 2026?",
   "category": "politics",
   "close_time": "2026-07-07T13:59:00Z",
   "current": {
-    "as_of": "2026-06-14T03:38:01Z",
-    "my_probability": 0.08,
-    "my_confidence": "medium",
-    "market_implied_probability": 0.175,
-    "market_price_cents": 18.0,
-    "edge": -0.09499999999999999,
-    "yes_ask": 0.18,
-    "no_ask": 0.83,
+    "as_of": "2026-06-19T18:57:11Z",
+    "my_probability": 0.012,
+    "my_confidence": "high",
+    "market_implied_probability": 0.073,
+    "market_price_cents": 7.0,
+    "edge": -0.061,
+    "yes_ask": 0.077,
+    "no_ask": 0.931,
     "fee_per_contract": 0.01,
-    "ev_per_contract": 0.08000000000000008,
-    "limit_price": 0.82,
-    "ev_limit_per_contract": 0.08,
+    "ev_per_contract": 0.04699999999999994,
+    "limit_price": null,
+    "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "ADVERSARIAL VETO: The forecaster's position relies on unspecified factors and short-term observations to predict a low probability of Hormuz normalization by 2026, diverging significantly from the market. Without concrete evidence, credible sourcing, or anal",
-    "prob_delta_vs_prev": -0.0059999999999999915,
+    "lean_note": "ADVERSARIAL VETO: The forecaster's 'NO' position assumes a future crisis with no present indicators, diverging sharply from the market's 7.3% implied probability. The 5-ships vs 60 threshold gap is extreme but uncorroborated by liquid market data. Overconfid",
+    "prob_delta_vs_prev": -0.068,
     "trigger": "near_close",
-    "strategy_id": "S2-ensemble3-crowd",
-    "proposed_probability": 0.08,
+    "strategy_id": "L0-local-single",
+    "proposed_probability": 0.012,
     "adversarial_verdict": "veto",
-    "adversarial_challenged_prob": 0.08,
+    "adversarial_challenged_prob": 0.012,
     "adversarial_concerns": [
-      "Lack of specific, credible evidence for 'toll/diplomatic stalemate' or 'backlog' blocking normalization; vague reasoning",
-      "Overreliance on model's 'unchanged since yesterday' as a long-term predictor",
-      "Divergence from market implies unexplained edge not justified by evidence",
-      "Base-rate neglect: historical normalization trends not addressed"
+      "Assumes a 2026 crisis without current evidence; market implies higher probability of recovery",
+      "Relies on speculative scenario (90% collapse) without credible sourcing",
+      "Overlooks geopolitical/economic factors that could alter transit patterns"
     ],
     "adversarial_model": "qwen3:14b-q4_K_M",
-    "rationale_summary": "Held 3-Opus ensemble: toll/diplomatic stalemate + backlog block full normalization by Jul 1; world unchanged since yesterday.",
-    "key_drivers": [],
-    "reference_classes": [],
-    "research_refs": []
+    "rationale_summary": "2026 Strait of Hormuz crisis collapsed transit >90%; IMF PortWatch 7-day MA ~5 ships vs the 60 threshold, no recovery before the window. Effectively determined NO.",
+    "key_drivers": [
+      "Hormuz crisis collapsed traffic >90%",
+      "7-day MA ~5 vs 60 threshold",
+      "no recovery before window",
+      "US-Iran deal too late"
+    ],
+    "reference_classes": [
+      "IMF PortWatch Hormuz 7-day MA history",
+      "post-conflict maritime recovery timelines"
+    ],
+    "research_refs": [
+      "https://en.wikipedia.org/wiki/2026_Strait_of_Hormuz_crisis",
+      "https://en.macromicro.me/series/30932/imf-hormuz-number-total-ma7"
+    ]
   },
   "history": [
     {
@@ -147,6 +157,50 @@
       "key_drivers": [],
       "reference_classes": [],
       "research_refs": []
+    },
+    {
+      "as_of": "2026-06-19T18:57:11Z",
+      "my_probability": 0.012,
+      "my_confidence": "high",
+      "market_implied_probability": 0.073,
+      "market_price_cents": 7.0,
+      "edge": -0.061,
+      "yes_ask": 0.077,
+      "no_ask": 0.931,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": 0.04699999999999994,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "ADVERSARIAL VETO: The forecaster's 'NO' position assumes a future crisis with no present indicators, diverging sharply from the market's 7.3% implied probability. The 5-ships vs 60 threshold gap is extreme but uncorroborated by liquid market data. Overconfid",
+      "prob_delta_vs_prev": -0.068,
+      "trigger": "near_close",
+      "strategy_id": "L0-local-single",
+      "proposed_probability": 0.012,
+      "adversarial_verdict": "veto",
+      "adversarial_challenged_prob": 0.012,
+      "adversarial_concerns": [
+        "Assumes a 2026 crisis without current evidence; market implies higher probability of recovery",
+        "Relies on speculative scenario (90% collapse) without credible sourcing",
+        "Overlooks geopolitical/economic factors that could alter transit patterns"
+      ],
+      "adversarial_model": "qwen3:14b-q4_K_M",
+      "rationale_summary": "2026 Strait of Hormuz crisis collapsed transit >90%; IMF PortWatch 7-day MA ~5 ships vs the 60 threshold, no recovery before the window. Effectively determined NO.",
+      "key_drivers": [
+        "Hormuz crisis collapsed traffic >90%",
+        "7-day MA ~5 vs 60 threshold",
+        "no recovery before window",
+        "US-Iran deal too late"
+      ],
+      "reference_classes": [
+        "IMF PortWatch Hormuz 7-day MA history",
+        "post-conflict maritime recovery timelines"
+      ],
+      "research_refs": [
+        "https://en.wikipedia.org/wiki/2026_Strait_of_Hormuz_crisis",
+        "https://en.macromicro.me/series/30932/imf-hormuz-number-total-ma7"
+      ]
     }
   ],
   "position": {

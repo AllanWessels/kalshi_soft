@@ -5,36 +5,40 @@
   "category": "politics",
   "close_time": "2026-07-01T14:00:00Z",
   "current": {
-    "as_of": "2026-06-13T10:29:30Z",
-    "my_probability": 0.012,
+    "as_of": "2026-06-19T19:12:38Z",
+    "my_probability": 0.01,
     "my_confidence": "high",
-    "market_implied_probability": 0.013,
+    "market_implied_probability": 0.009,
     "market_price_cents": 1.0,
-    "edge": -0.0009999999999999992,
-    "yes_ask": 0.015,
-    "no_ask": 0.989,
+    "edge": 0.0010000000000000009,
+    "yes_ask": 0.012,
+    "no_ask": 0.995,
     "fee_per_contract": 0.01,
-    "ev_per_contract": -0.011000000000000001,
+    "ev_per_contract": -0.015000000000000005,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
     "lean_note": "I lean NO (my prob 1%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
-    "prob_delta_vs_prev": null,
-    "trigger": "bootstrap",
-    "rationale_summary": "All US-Iran negotiations occur in third countries (Oman, Pakistan, Geneva), the prospective signing is in Geneva with VP Vance not Rubio, and no US Secretary of State has visited Iran since 1979 — a Rubio visit to Tehran before July 1 is virtually impossible.",
+    "prob_delta_vs_prev": -0.002,
+    "trigger": "scheduled",
+    "strategy_id": "L0-local-single",
+    "proposed_probability": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": "",
+    "rationale_summary": "No US Secretary of State has visited Iran since 1979; 2026 talks held in neutral venues (Geneva); no plan to travel to Tehran.",
     "key_drivers": [
-      "talks held in third countries",
-      "Vance not Rubio is signatory",
-      "no SecState visit since 1979",
-      "Level 4 travel advisory"
+      "no SoS visit since 1979",
+      "neutral-venue talks",
+      "no Tehran plan"
     ],
     "reference_classes": [
-      "0 US SecState visits to Iran in 47 years",
-      "post-conflict normalization takes months/years"
+      "US officials physically visiting Iran post-1979"
     ],
     "research_refs": [
-      "https://en.wikipedia.org/wiki/List_of_diplomatic_visits_to_Iran"
+      "https://www.timesofisrael.com/as-talks-resume-rubio-vance-accuse-iran-of-trying-to-restart-its-nuclear-program/"
     ]
   },
   "history": [
@@ -56,6 +60,12 @@
       "lean_note": "I lean NO (my prob 1%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
       "prob_delta_vs_prev": null,
       "trigger": "bootstrap",
+      "strategy_id": "",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
       "rationale_summary": "All US-Iran negotiations occur in third countries (Oman, Pakistan, Geneva), the prospective signing is in Geneva with VP Vance not Rubio, and no US Secretary of State has visited Iran since 1979 — a Rubio visit to Tehran before July 1 is virtually impossible.",
       "key_drivers": [
         "talks held in third countries",
@@ -70,6 +80,58 @@
       "research_refs": [
         "https://en.wikipedia.org/wiki/List_of_diplomatic_visits_to_Iran"
       ]
+    },
+    {
+      "as_of": "2026-06-19T19:12:38Z",
+      "my_probability": 0.01,
+      "my_confidence": "high",
+      "market_implied_probability": 0.009,
+      "market_price_cents": 1.0,
+      "edge": 0.0010000000000000009,
+      "yes_ask": 0.012,
+      "no_ask": 0.995,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": -0.015000000000000005,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "I lean NO (my prob 1%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+      "prob_delta_vs_prev": -0.002,
+      "trigger": "scheduled",
+      "strategy_id": "L0-local-single",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "No US Secretary of State has visited Iran since 1979; 2026 talks held in neutral venues (Geneva); no plan to travel to Tehran.",
+      "key_drivers": [
+        "no SoS visit since 1979",
+        "neutral-venue talks",
+        "no Tehran plan"
+      ],
+      "reference_classes": [
+        "US officials physically visiting Iran post-1979"
+      ],
+      "research_refs": [
+        "https://www.timesofisrael.com/as-talks-resume-rubio-vance-accuse-iran-of-trying-to-restart-its-nuclear-program/"
+      ]
     }
-  ]
+  ],
+  "position": {
+    "entered": false,
+    "entry_as_of": "",
+    "entry_side": "",
+    "entry_probability": 0.0,
+    "entry_price": 0.0,
+    "entry_market_implied": null,
+    "entry_confidence": "",
+    "entry_conviction": "",
+    "entry_gap": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": ""
+  }
 }

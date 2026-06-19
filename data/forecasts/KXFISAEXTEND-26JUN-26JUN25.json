@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "ticker": "KXFISAEXTEND-26JUN-26JUN25",
+  "title": "Will legislation that reauthorizes FISA Section 702 authority become law before Jun 25, 2026?",
+  "category": "politics",
+  "close_time": "2026-06-25T14:00:00Z",
+  "current": {
+    "as_of": "2026-06-19T19:12:38Z",
+    "my_probability": 0.06,
+    "my_confidence": "medium",
+    "market_implied_probability": 0.015,
+    "market_price_cents": 2.0,
+    "edge": 0.045,
+    "yes_ask": 0.02,
+    "no_ask": 0.99,
+    "fee_per_contract": 0.01,
+    "ev_per_contract": -0.060000000000000046,
+    "limit_price": null,
+    "ev_limit_per_contract": null,
+    "lean": "NONE",
+    "conviction": "low",
+    "lean_note": "I lean NO (my prob 6%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+    "prob_delta_vs_prev": null,
+    "trigger": "scheduled",
+    "strategy_id": "L0-local-single",
+    "proposed_probability": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": "",
+    "rationale_summary": "702 in active lapse: House failed short extension 198-218, Senate stalled 47-52, 'lapse assured', Dems blocking over Pulte DNI. No path to law in 6 days.",
+    "key_drivers": [
+      "House extension failed 198-218",
+      "Senate motion failed 47-52",
+      "program lapsed",
+      "Pulte standoff"
+    ],
+    "reference_classes": [
+      "lapsed-authority reauth within a short window"
+    ],
+    "research_refs": [
+      "https://rollcall.com/2026/06/05/fisa-reauthorization-stalls-in-early-morning-senate-vote/"
+    ]
+  },
+  "history": [
+    {
+      "as_of": "2026-06-19T19:12:38Z",
+      "my_probability": 0.06,
+      "my_confidence": "medium",
+      "market_implied_probability": 0.015,
+      "market_price_cents": 2.0,
+      "edge": 0.045,
+      "yes_ask": 0.02,
+      "no_ask": 0.99,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": -0.060000000000000046,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "I lean NO (my prob 6%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+      "prob_delta_vs_prev": null,
+      "trigger": "scheduled",
+      "strategy_id": "L0-local-single",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "702 in active lapse: House failed short extension 198-218, Senate stalled 47-52, 'lapse assured', Dems blocking over Pulte DNI. No path to law in 6 days.",
+      "key_drivers": [
+        "House extension failed 198-218",
+        "Senate motion failed 47-52",
+        "program lapsed",
+        "Pulte standoff"
+      ],
+      "reference_classes": [
+        "lapsed-authority reauth within a short window"
+      ],
+      "research_refs": [
+        "https://rollcall.com/2026/06/05/fisa-reauthorization-stalls-in-early-morning-senate-vote/"
+      ]
+    }
+  ],
+  "position": {
+    "entered": false,
+    "entry_as_of": "",
+    "entry_side": "",
+    "entry_probability": 0.0,
+    "entry_price": 0.0,
+    "entry_market_implied": null,
+    "entry_confidence": "",
+    "entry_conviction": "",
+    "entry_gap": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": ""
+  }
+}

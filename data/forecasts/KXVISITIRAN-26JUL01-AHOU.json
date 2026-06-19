@@ -5,36 +5,40 @@
   "category": "politics",
   "close_time": "2026-07-01T14:00:00Z",
   "current": {
-    "as_of": "2026-06-13T10:29:30Z",
-    "my_probability": 0.015,
-    "my_confidence": "high",
-    "market_implied_probability": 0.013,
+    "as_of": "2026-06-19T19:12:38Z",
+    "my_probability": 0.03,
+    "my_confidence": "medium",
+    "market_implied_probability": 0.007,
     "market_price_cents": 1.0,
-    "edge": 0.002,
-    "yes_ask": 0.016,
-    "no_ask": 0.99,
+    "edge": 0.023,
+    "yes_ask": 0.012,
+    "no_ask": 0.998,
     "fee_per_contract": 0.01,
-    "ev_per_contract": -0.015000000000000005,
+    "ev_per_contract": -0.03800000000000003,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "I lean NO (my prob 2%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
-    "prob_delta_vs_prev": null,
-    "trigger": "bootstrap",
-    "rationale_summary": "No sitting US House member has visited Iran in the modern era; with an active conflict, a Level 4 advisory, and no planned CODEL, a visit before July 1 is virtually impossible (marginally above Rubio as an informal trip is less institutionally constrained).",
+    "lean_note": "I lean NO (my prob 3%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+    "prob_delta_vs_prev": 0.015,
+    "trigger": "scheduled",
+    "strategy_id": "L0-local-single",
+    "proposed_probability": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": "",
+    "rationale_summary": "All US-Iran engagement is in neutral venues (Geneva/Switzerland/Rome), not Tehran; no House member traveling to Iran; physically near-unprecedented. Corrected down from local overestimate.",
     "key_drivers": [
-      "no modern sitting-member visits",
-      "active conflict",
-      "Level 4 advisory",
-      "no planned CODEL"
+      "talks in neutral venues not Tehran",
+      "no House travel to Iran",
+      "near-unprecedented"
     ],
     "reference_classes": [
-      "0 known sitting House-member visits to Iran",
-      "one staff trip 2003"
+      "US officials physically visiting Iran post-1979"
     ],
     "research_refs": [
-      "https://en.wikipedia.org/wiki/List_of_diplomatic_visits_to_Iran"
+      "https://www.timesofisrael.com/as-talks-resume-rubio-vance-accuse-iran-of-trying-to-restart-its-nuclear-program/"
     ]
   },
   "history": [
@@ -56,6 +60,12 @@
       "lean_note": "I lean NO (my prob 2%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
       "prob_delta_vs_prev": null,
       "trigger": "bootstrap",
+      "strategy_id": "",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
       "rationale_summary": "No sitting US House member has visited Iran in the modern era; with an active conflict, a Level 4 advisory, and no planned CODEL, a visit before July 1 is virtually impossible (marginally above Rubio as an informal trip is less institutionally constrained).",
       "key_drivers": [
         "no modern sitting-member visits",
@@ -70,6 +80,58 @@
       "research_refs": [
         "https://en.wikipedia.org/wiki/List_of_diplomatic_visits_to_Iran"
       ]
+    },
+    {
+      "as_of": "2026-06-19T19:12:38Z",
+      "my_probability": 0.03,
+      "my_confidence": "medium",
+      "market_implied_probability": 0.007,
+      "market_price_cents": 1.0,
+      "edge": 0.023,
+      "yes_ask": 0.012,
+      "no_ask": 0.998,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": -0.03800000000000003,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "I lean NO (my prob 3%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+      "prob_delta_vs_prev": 0.015,
+      "trigger": "scheduled",
+      "strategy_id": "L0-local-single",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "All US-Iran engagement is in neutral venues (Geneva/Switzerland/Rome), not Tehran; no House member traveling to Iran; physically near-unprecedented. Corrected down from local overestimate.",
+      "key_drivers": [
+        "talks in neutral venues not Tehran",
+        "no House travel to Iran",
+        "near-unprecedented"
+      ],
+      "reference_classes": [
+        "US officials physically visiting Iran post-1979"
+      ],
+      "research_refs": [
+        "https://www.timesofisrael.com/as-talks-resume-rubio-vance-accuse-iran-of-trying-to-restart-its-nuclear-program/"
+      ]
     }
-  ]
+  ],
+  "position": {
+    "entered": false,
+    "entry_as_of": "",
+    "entry_side": "",
+    "entry_probability": 0.0,
+    "entry_price": 0.0,
+    "entry_market_implied": null,
+    "entry_confidence": "",
+    "entry_conviction": "",
+    "entry_gap": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": ""
+  }
 }

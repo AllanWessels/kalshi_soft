@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "ticker": "KXTRUMPATTEND",
+  "title": "Will Donald J. Trump attend The 2026 FIFA World Cup Final?",
+  "category": "politics",
+  "close_time": "2026-07-20T14:00:00Z",
+  "current": {
+    "as_of": "2026-06-19T19:12:39Z",
+    "my_probability": 0.85,
+    "my_confidence": "medium",
+    "market_implied_probability": 0.815,
+    "market_price_cents": 82.0,
+    "edge": 0.03500000000000003,
+    "yes_ask": 0.82,
+    "no_ask": 0.19,
+    "fee_per_contract": 0.02,
+    "ev_per_contract": 0.010000000000000026,
+    "limit_price": null,
+    "ev_limit_per_contract": null,
+    "lean": "NONE",
+    "conviction": "low",
+    "lean_note": "I lean YES (my prob 85%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+    "prob_delta_vs_prev": null,
+    "trigger": "scheduled",
+    "strategy_id": "L0-local-single",
+    "proposed_probability": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": "",
+    "rationale_summary": "Trump plans to attend (WH 'holding' his schedule); FIFA wants him to present the trophy; precedent at Club World Cup; marquee US-hosted event he is motivated to attend. Residual scheduling/security/health risk a month out.",
+    "key_drivers": [
+      "WH holding the date",
+      "FIFA trophy-presentation role",
+      "Club World Cup precedent",
+      "strong personal motivation"
+    ],
+    "reference_classes": [
+      "stated-intention attendance at marquee events ~1 month out"
+    ],
+    "research_refs": [
+      "https://www.nbcnewyork.com/world-cup/trump-world-cup-final-fifa-metlife-stadium/6512369/"
+    ]
+  },
+  "history": [
+    {
+      "as_of": "2026-06-19T19:12:39Z",
+      "my_probability": 0.85,
+      "my_confidence": "medium",
+      "market_implied_probability": 0.815,
+      "market_price_cents": 82.0,
+      "edge": 0.03500000000000003,
+      "yes_ask": 0.82,
+      "no_ask": 0.19,
+      "fee_per_contract": 0.02,
+      "ev_per_contract": 0.010000000000000026,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "I lean YES (my prob 85%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+      "prob_delta_vs_prev": null,
+      "trigger": "scheduled",
+      "strategy_id": "L0-local-single",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "Trump plans to attend (WH 'holding' his schedule); FIFA wants him to present the trophy; precedent at Club World Cup; marquee US-hosted event he is motivated to attend. Residual scheduling/security/health risk a month out.",
+      "key_drivers": [
+        "WH holding the date",
+        "FIFA trophy-presentation role",
+        "Club World Cup precedent",
+        "strong personal motivation"
+      ],
+      "reference_classes": [
+        "stated-intention attendance at marquee events ~1 month out"
+      ],
+      "research_refs": [
+        "https://www.nbcnewyork.com/world-cup/trump-world-cup-final-fifa-metlife-stadium/6512369/"
+      ]
+    }
+  ],
+  "position": {
+    "entered": false,
+    "entry_as_of": "",
+    "entry_side": "",
+    "entry_probability": 0.0,
+    "entry_price": 0.0,
+    "entry_market_implied": null,
+    "entry_confidence": "",
+    "entry_conviction": "",
+    "entry_gap": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": ""
+  }
+}

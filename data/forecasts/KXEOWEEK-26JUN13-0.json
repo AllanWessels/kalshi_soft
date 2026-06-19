@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "ticker": "KXEOWEEK-26JUN13-0",
+  "title": "Will the President sign more than 0 Executive Orders between Jun 7, 2026 and Jun 13, 2026?",
+  "category": "politics",
+  "close_time": "2026-06-27T14:00:00Z",
+  "current": {
+    "as_of": "2026-06-19T18:57:37Z",
+    "my_probability": 0.1,
+    "my_confidence": "medium",
+    "market_implied_probability": 0.005,
+    "market_price_cents": 1.0,
+    "edge": 0.095,
+    "yes_ask": 0.01,
+    "no_ask": 1.0,
+    "fee_per_contract": 0.0,
+    "ev_per_contract": -0.09999999999999998,
+    "limit_price": null,
+    "ev_limit_per_contract": null,
+    "lean": "NONE",
+    "conviction": "low",
+    "lean_note": "I lean NO (my prob 10%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+    "prob_delta_vs_prev": null,
+    "trigger": "scheduled",
+    "strategy_id": "L0-local-single",
+    "proposed_probability": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": "",
+    "rationale_summary": "Window Jun 7-13 is past. Numbered EO series stopped at EO 14411 on Jun 3 (pre-window); in-window actions were a proclamation (Jun 11) + memorandum (Jun 12), not numbered EOs -> strict reading NO. 0.10 reflects residual Federal-Register-lag and resolution-ambiguity tail risk vs market 0.5%.",
+    "key_drivers": [
+      "numbered EO series stopped at 14411 Jun 3",
+      "in-window actions were proclamation+memo not EOs",
+      "Federal Register lag risk",
+      "resolution-definition ambiguity"
+    ],
+    "reference_classes": [
+      "Trump 2026 weekly numbered-EO cadence",
+      "Kalshi EOWEEK resolution practice"
+    ],
+    "research_refs": [
+      "https://www.federalregister.gov/presidential-documents/executive-orders/donald-trump/2026",
+      "https://www.presidency.ucsb.edu/documents/app-categories/written-presidential-orders/presidential/executive-orders"
+    ]
+  },
+  "history": [
+    {
+      "as_of": "2026-06-19T18:57:37Z",
+      "my_probability": 0.1,
+      "my_confidence": "medium",
+      "market_implied_probability": 0.005,
+      "market_price_cents": 1.0,
+      "edge": 0.095,
+      "yes_ask": 0.01,
+      "no_ask": 1.0,
+      "fee_per_contract": 0.0,
+      "ev_per_contract": -0.09999999999999998,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "I lean NO (my prob 10%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+      "prob_delta_vs_prev": null,
+      "trigger": "scheduled",
+      "strategy_id": "L0-local-single",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "Window Jun 7-13 is past. Numbered EO series stopped at EO 14411 on Jun 3 (pre-window); in-window actions were a proclamation (Jun 11) + memorandum (Jun 12), not numbered EOs -> strict reading NO. 0.10 reflects residual Federal-Register-lag and resolution-ambiguity tail risk vs market 0.5%.",
+      "key_drivers": [
+        "numbered EO series stopped at 14411 Jun 3",
+        "in-window actions were proclamation+memo not EOs",
+        "Federal Register lag risk",
+        "resolution-definition ambiguity"
+      ],
+      "reference_classes": [
+        "Trump 2026 weekly numbered-EO cadence",
+        "Kalshi EOWEEK resolution practice"
+      ],
+      "research_refs": [
+        "https://www.federalregister.gov/presidential-documents/executive-orders/donald-trump/2026",
+        "https://www.presidency.ucsb.edu/documents/app-categories/written-presidential-orders/presidential/executive-orders"
+      ]
+    }
+  ],
+  "position": {
+    "entered": false,
+    "entry_as_of": "",
+    "entry_side": "",
+    "entry_probability": 0.0,
+    "entry_price": 0.0,
+    "entry_market_implied": null,
+    "entry_confidence": "",
+    "entry_conviction": "",
+    "entry_gap": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": ""
+  }
+}

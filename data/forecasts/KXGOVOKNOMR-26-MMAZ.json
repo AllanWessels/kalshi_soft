@@ -5,40 +5,43 @@
   "category": "politics",
   "close_time": "2026-11-03T15:00:00Z",
   "current": {
-    "as_of": "2026-06-13T03:15:35Z",
-    "my_probability": 0.79,
+    "as_of": "2026-06-19T18:56:45Z",
+    "my_probability": 0.55,
     "my_confidence": "medium",
-    "market_implied_probability": 0.805,
-    "market_price_cents": 80.0,
-    "edge": -0.015000000000000013,
-    "yes_ask": 0.81,
-    "no_ask": 0.2,
+    "market_implied_probability": 0.75,
+    "market_price_cents": 75.0,
+    "edge": -0.19999999999999996,
+    "yes_ask": 0.76,
+    "no_ask": 0.26,
     "fee_per_contract": 0.02,
-    "ev_per_contract": -0.04000000000000002,
+    "ev_per_contract": -0.22999999999999995,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "I lean YES (my prob 79%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
-    "prob_delta_vs_prev": 0.010000000000000009,
+    "lean_note": "I lean YES (my prob 55%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+    "prob_delta_vs_prev": -0.24,
     "trigger": "scheduled",
-    "rationale_summary": "Polling leader (~23-24%) in a 5-way race headed to an Aug 25 runoff; Trump's May 29 endorsement is the dominant signal in OK GOP primaries and his $10.9M self-funding leads the ad war. Market (0.805) ~ my estimate, so no edge.",
+    "strategy_id": "S0-single",
+    "proposed_probability": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": "",
+    "rationale_summary": "OK primary already held Jun 16; now a 2-way Aug 25 runoff Drummond (26.3%) vs Mazzei (26.0%). Mazzei has Trump endorsement + favorable transfer of Merrick's America-First bloc; Drummond led R1 with higher statewide name ID. Net slight Mazzei edge.",
     "key_drivers": [
-      "trump_endorsement",
-      "polling_lead",
-      "self_funding_10.9M",
-      "runoff_likely"
+      "Aug 25 runoff after near-tie R1",
+      "Trump endorsement of Mazzei",
+      "Merrick bloc transfers to Mazzei",
+      "Drummond incumbent-AG name ID"
     ],
     "reference_classes": [
-      "trump_endorsed_gop_primary_winrate",
-      "frontrunner_nomination_rate",
-      "runoff_advancer_winrate"
+      "2-way runoffs after near-tied first round",
+      "Trump-endorsed GOP in OK runoffs (Mullin 2022)"
     ],
     "research_refs": [
-      "kswo.com/2026/05/29/trump-announces-endorsement-mike-mazzei-oklahoma-governor",
-      "ballotpedia.org/Oklahoma_gubernatorial_election",
-      "_2026",
-      "nondoc.com/2026/05/26/oklahoma-governor-polling"
+      "https://en.wikipedia.org/wiki/2026_Oklahoma_gubernatorial_election",
+      "https://www.notus.org/2026-election/gentner-drummond-mike-mazzei-oklahoma-runoff"
     ]
   },
   "history": [
@@ -60,6 +63,12 @@
       "lean_note": "I lean YES (my prob 78%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
       "prob_delta_vs_prev": null,
       "trigger": "bootstrap",
+      "strategy_id": "",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
       "rationale_summary": "Trump endorsed Mazzei (May 29) in a Trump-loyal state, but a 9-way field makes an outright June 16 win unlikely and likely forces an Aug 25 runoff — which sits awkwardly against this market's June-30 settlement. Treating it as eventual-nomination, ~78%; flagged low conviction for the resolution-timing ambiguity.",
       "key_drivers": [
         "Trump endorsement (strong in OK)",
@@ -89,6 +98,12 @@
       "lean_note": "I lean YES (my prob 79%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
       "prob_delta_vs_prev": 0.010000000000000009,
       "trigger": "scheduled",
+      "strategy_id": "",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
       "rationale_summary": "Polling leader (~23-24%) in a 5-way race headed to an Aug 25 runoff; Trump's May 29 endorsement is the dominant signal in OK GOP primaries and his $10.9M self-funding leads the ad war. Market (0.805) ~ my estimate, so no edge.",
       "key_drivers": [
         "trump_endorsement",
@@ -107,6 +122,61 @@
         "_2026",
         "nondoc.com/2026/05/26/oklahoma-governor-polling"
       ]
+    },
+    {
+      "as_of": "2026-06-19T18:56:45Z",
+      "my_probability": 0.55,
+      "my_confidence": "medium",
+      "market_implied_probability": 0.75,
+      "market_price_cents": 75.0,
+      "edge": -0.19999999999999996,
+      "yes_ask": 0.76,
+      "no_ask": 0.26,
+      "fee_per_contract": 0.02,
+      "ev_per_contract": -0.22999999999999995,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "I lean YES (my prob 55%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+      "prob_delta_vs_prev": -0.24,
+      "trigger": "scheduled",
+      "strategy_id": "S0-single",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "OK primary already held Jun 16; now a 2-way Aug 25 runoff Drummond (26.3%) vs Mazzei (26.0%). Mazzei has Trump endorsement + favorable transfer of Merrick's America-First bloc; Drummond led R1 with higher statewide name ID. Net slight Mazzei edge.",
+      "key_drivers": [
+        "Aug 25 runoff after near-tie R1",
+        "Trump endorsement of Mazzei",
+        "Merrick bloc transfers to Mazzei",
+        "Drummond incumbent-AG name ID"
+      ],
+      "reference_classes": [
+        "2-way runoffs after near-tied first round",
+        "Trump-endorsed GOP in OK runoffs (Mullin 2022)"
+      ],
+      "research_refs": [
+        "https://en.wikipedia.org/wiki/2026_Oklahoma_gubernatorial_election",
+        "https://www.notus.org/2026-election/gentner-drummond-mike-mazzei-oklahoma-runoff"
+      ]
     }
-  ]
+  ],
+  "position": {
+    "entered": false,
+    "entry_as_of": "",
+    "entry_side": "",
+    "entry_probability": 0.0,
+    "entry_price": 0.0,
+    "entry_market_implied": null,
+    "entry_confidence": "",
+    "entry_conviction": "",
+    "entry_gap": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": ""
+  }
 }

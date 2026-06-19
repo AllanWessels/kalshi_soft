@@ -5,32 +5,41 @@
   "category": "politics",
   "close_time": "2026-07-01T14:00:00Z",
   "current": {
-    "as_of": "2026-06-13T10:29:31Z",
-    "my_probability": 0.02,
-    "my_confidence": "low",
-    "market_implied_probability": 0.01,
+    "as_of": "2026-06-19T19:12:38Z",
+    "my_probability": 0.03,
+    "my_confidence": "medium",
+    "market_implied_probability": 0.005,
     "market_price_cents": 1.0,
-    "edge": 0.01,
-    "yes_ask": 0.02,
+    "edge": 0.024999999999999998,
+    "yes_ask": 0.01,
     "no_ask": 1.0,
     "fee_per_contract": 0.0,
-    "ev_per_contract": -0.020000000000000018,
+    "ev_per_contract": -0.030000000000000027,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "I lean NO (my prob 2%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
-    "prob_delta_vs_prev": null,
-    "trigger": "bootstrap",
-    "rationale_summary": "Two June Mar-a-Lago trips is very unlikely given seasonal closure and a packed Iran/G7/NATO schedule.",
+    "lean_note": "I lean NO (my prob 3%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+    "prob_delta_vs_prev": 0.009999999999999998,
+    "trigger": "scheduled",
+    "strategy_id": "L0-local-single",
+    "proposed_probability": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": "",
+    "rationale_summary": "Two June Mar-a-Lago trips highly unlikely given summer Bedminster pattern + Iran war in DC; corrected down from incoherent local estimate.",
     "key_drivers": [
-      "summer closure",
-      "packed schedule"
+      "summer Bedminster",
+      "Iran war",
+      "2 trips needs unlikely double travel"
     ],
     "reference_classes": [
-      "Trump first-term summer Mar-a-Lago visits ~0"
+      "monthly Mar-a-Lago trip counts"
     ],
-    "research_refs": []
+    "research_refs": [
+      "https://patch.com/new-jersey/bridgewater/donald-trump-may-be-returning-bedminster-summer"
+    ]
   },
   "history": [
     {
@@ -51,6 +60,12 @@
       "lean_note": "I lean NO (my prob 2%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
       "prob_delta_vs_prev": null,
       "trigger": "bootstrap",
+      "strategy_id": "",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
       "rationale_summary": "Two June Mar-a-Lago trips is very unlikely given seasonal closure and a packed Iran/G7/NATO schedule.",
       "key_drivers": [
         "summer closure",
@@ -60,6 +75,58 @@
         "Trump first-term summer Mar-a-Lago visits ~0"
       ],
       "research_refs": []
+    },
+    {
+      "as_of": "2026-06-19T19:12:38Z",
+      "my_probability": 0.03,
+      "my_confidence": "medium",
+      "market_implied_probability": 0.005,
+      "market_price_cents": 1.0,
+      "edge": 0.024999999999999998,
+      "yes_ask": 0.01,
+      "no_ask": 1.0,
+      "fee_per_contract": 0.0,
+      "ev_per_contract": -0.030000000000000027,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "I lean NO (my prob 3%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+      "prob_delta_vs_prev": 0.009999999999999998,
+      "trigger": "scheduled",
+      "strategy_id": "L0-local-single",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "Two June Mar-a-Lago trips highly unlikely given summer Bedminster pattern + Iran war in DC; corrected down from incoherent local estimate.",
+      "key_drivers": [
+        "summer Bedminster",
+        "Iran war",
+        "2 trips needs unlikely double travel"
+      ],
+      "reference_classes": [
+        "monthly Mar-a-Lago trip counts"
+      ],
+      "research_refs": [
+        "https://patch.com/new-jersey/bridgewater/donald-trump-may-be-returning-bedminster-summer"
+      ]
     }
-  ]
+  ],
+  "position": {
+    "entered": false,
+    "entry_as_of": "",
+    "entry_side": "",
+    "entry_probability": 0.0,
+    "entry_price": 0.0,
+    "entry_market_implied": null,
+    "entry_confidence": "",
+    "entry_conviction": "",
+    "entry_gap": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": ""
+  }
 }
