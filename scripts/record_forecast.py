@@ -250,11 +250,17 @@ def main(argv: list[str] | None = None) -> None:
         yes_ask_field = args.yes_ask
         no_ask_field = args.no_ask
 
-        # A lean may only back the side I think is MORE LIKELY (modal side), and only if
-        # it's +EV. Never recommend betting against my own forecast: if my modal outcome
-        # is overpriced, the answer is "no value bet", NOT the opposite side.
+        # Confidence governs how much latitude the lean logic gets (see below + the gate).
+        confidence_for_gate = args.confidence if args.confidence is not None else "medium"
+
+        # Lean side + EV. LOW/MEDIUM confidence: modal-side-only — a lean may only back the
+        # side you think is MORE LIKELY, never bet against your own modal forecast.
+        # HIGH confidence (option C): you may take the +EV VALUE side even when it's the
+        # underdog (my_prob < 0.5) — buying an underpriced YES at 0.21 when you rate it 0.43
+        # is betting WITH your forecast, not against it. High confidence is the trusted tier.
         modal_side = "YES" if args.prob >= 0.5 else "NO"
-        side, ev, fee = scoring.modal_tradable(
+        _tradable = scoring.best_tradable if confidence_for_gate == "high" else scoring.modal_tradable
+        side, ev, fee = _tradable(
             args.prob,
             args.yes_ask,
             args.no_ask,
@@ -266,11 +272,11 @@ def main(argv: list[str] | None = None) -> None:
         fee_per_contract = fee
         ev_per_contract = ev
 
-        # If the modal side wasn't a value bet, record why (for the report).
+        # If no value side cleared the EV floor, record why (for the report).
         if side == "NONE":
             lean_note = (
-                f"I lean {modal_side} (my prob {round(args.prob*100)}%) but it isn't +EV at the "
-                f"ask — no value bet (betting the other side would contradict my forecast)."
+                f"no +EV value bet at the ask (my prob {round(args.prob*100)}%, modal "
+                f"{modal_side}) — staying out."
             )
 
         # Limit-order alternative: rest a buy on the lean side at its current best bid.
@@ -289,8 +295,8 @@ def main(argv: list[str] | None = None) -> None:
         # Confidence gate (has the final say): a positive-EV side is only ACTIONABLE if
         # confidence backs it. EV is computed from my probability as if true, so a low-
         # confidence estimate or a large gap vs a liquid market is more likely model error
-        # than edge. When gated, keep ev_per_contract as INDICATIVE but set lean=NONE.
-        confidence_for_gate = args.confidence if args.confidence is not None else "medium"
+        # than edge. (Option B: HIGH confidence is exempt from the gap cap — see
+        # scoring.confidence_gate.) When gated, keep ev_per_contract as INDICATIVE but set lean=NONE.
         ok, note = scoring.confidence_gate(
             side, args.prob, args.market_implied, confidence_for_gate,
             max_gap=pol.max_market_disagreement,
@@ -320,13 +326,19 @@ def main(argv: list[str] | None = None) -> None:
                     adversarial_challenged_prob = verdict.get("challenged_probability")
                     adversarial_concerns = list(verdict.get("concerns", []))
                     adversarial_model = config.LOCAL_LLM_MODEL
-                    if adversarial_verdict == "veto" and pol.adversarial_veto_binding:
+                    # Option A: a veto is BINDING for low/medium confidence, but ADVISORY
+                    # for HIGH confidence — the gate too often false-vetoes well-evidenced
+                    # high-conf near-certainties by deferring to a stale market (e.g. a word
+                    # the principal has already said). High-conf leans survive a veto but are
+                    # flagged; the learner tracks veto precision as these resolve.
+                    veto_binding = pol.adversarial_veto_binding and confidence_for_gate != "high"
+                    if adversarial_verdict == "veto" and veto_binding:
                         lean = "NONE"
                         conviction = "low"
                         lean_note = ("ADVERSARIAL VETO: " +
                                      (verdict.get("rationale", "") or "; ".join(adversarial_concerns))[:240])
                     elif adversarial_verdict == "veto":
-                        lean_note = (lean_note or "") + " [adversarial VETO recorded (advisory; not binding per policy)]"
+                        lean_note = (lean_note or "") + " [adversarial VETO recorded (ADVISORY — high-confidence lean kept; gate non-binding for high conf)]"
                 else:
                     adversarial_verdict = "skipped-local-down"
                     lean_note = (lean_note or "") + " [adversarial gate skipped: local model down]"
