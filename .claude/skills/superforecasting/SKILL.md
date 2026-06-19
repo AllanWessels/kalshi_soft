@@ -24,6 +24,17 @@ both so the system *learns which arm wins, per category* from its own record. Wh
 run, honor the arm assigned to each market (ROUTINE Step 4b) — that's how the experiment accrues
 signal. Don't collapse everything to one method because it "feels" best; let the scoreboard decide.
 
+**Model routing (fixed — not part of the experiment).** Two models, two jobs:
+- **Qwen (local) = retrieval + adversarial analysis.** It condenses raw web results into quoted
+  evidence notes (`extract_evidence`), runs the in-loop decision **challenge gate** that can veto a
+  lean before commit (`challenge`, step 5/§ gate), and runs the **blind post-mortem critic**
+  (`critique`). It compresses evidence and *attacks* forecasts — it never forms them.
+- **Opus = forecasting.** Every probability is formed by Opus (single arm or an Opus ensemble),
+  working only from the Qwen-condensed notes. **Never** forecast on the local model; **never** Sonnet.
+What the strategy arms vary is forecasting *topology* (how many Opus forecasters, aggregation,
+crowd-adjust, red-team), **not** which model forecasts. The retired `L*` (local-forecaster) arms are
+gone; if `local_llm` is down, an Opus agent covers retrieval/critic as a degraded fallback only.
+
 ## Scope: what to forecast (and what not)
 - **Forecast:** elections, nominations, legislation, approval, appointments; awards, box
   office, charts; whether a public figure says/does X; Fed decisions, CPI/jobs prints,

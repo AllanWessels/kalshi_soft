@@ -10,16 +10,25 @@ cloned fresh and `data/` holds your memory from prior runs. Read and follow
   the math, storage, and rendering. Always go through the scripts — never hand-edit `data/`.
 - **Anti-anchoring:** never look at a market's Kalshi price until you have written your own
   probability first (enforced by the order of steps below).
-- **Parallelize (project directive):** independent research fans out to **Opus** subagents,
-  one per due market; you (Opus) orchestrate and synthesize. Pass `model: opus` explicitly.
+- **Parallelize (project directive):** the **forecasting** step fans out to **Opus** subagents
+  (one independent forecaster per perspective/market); you (Opus) orchestrate and synthesize. Pass
+  `model: opus` explicitly. Retrieval is *not* an Opus subagent — the orchestrator runs the web
+  tool-calls inline and Qwen condenses them (see the model-routing rule below).
 - **This loop is an EXPERIMENT (project directive).** Every forecast is produced by a registered
   *strategy arm* (`lib/strategies.py`) and tagged with its `strategy_id`; every resolution scores
   that arm on **both Brier skill and realized profit**. We do not assume which forecasting topology
   is best — the scoreboard discovers it. See SKILL §0.
-- **Retrieval runs LOCAL, judgment runs on Claude (cost unlock).** Raw web pages are condensed by a
-  local open-weight model (`lib/local_llm.py`) into compact *quoted* evidence notes; raw pages never
-  enter Claude context. If the local endpoint is down, fall back to an Opus retrieval agent — the
-  pipeline never hard-breaks.
+- **Model routing (fixed): Qwen = retrieval + adversarial analysis; Opus = forecasting.** The local
+  open-weight model (`lib/local_llm.py`, Qwen) does two jobs and *only* these two: (1) **retrieval
+  condensation** — turning raw web results into compact *quoted* evidence notes (`extract_evidence`),
+  and (2) **adversarial analysis** — the in-loop decision **challenge gate** (`challenge`, Step 5) and
+  the blind **post-mortem critic** (`critique`, Step 6b). **All forecasting runs on Opus** — never the
+  local model, never Sonnet. Qwen is not trusted to *form* a forecast, only to compress evidence and to
+  attack a forecast Opus has formed. The web tool-calls themselves (Qwen has no browser) are run **by
+  the orchestrator inline**, not by an Opus retrieval subagent; the raw results are piped straight to
+  `extract_evidence` so only the condensed notes flow onward. If the local endpoint is **down**, fall
+  back to an Opus retrieval/critic agent so the pipeline never hard-breaks — but that is a degraded
+  fallback, not the steady state.
 - **Never grade your own work.** Post-mortems run through an **adversarial panel** (blind local
   Critic → Claude Defender → Claude Judge), not single-agent self-judging. See Step 6b.
 - Degrade gracefully: if a step fails, log it and continue to the report + commit steps so every
@@ -41,11 +50,14 @@ python3 -c "from lib import local_llm, config; print('local_llm', 'UP' if (confi
 If `refresh_market` prints `kalshi UNREACHABLE`, skip the research/resolution steps that need the
 API, jump to Step 7 (build report from existing state), Step 8, Step 9, and exit. Otherwise continue.
 
-**Local-LLM mode:** if the healthcheck prints `local_llm UP`, retrieval condensation runs locally
-(free) and the per-run cap can **relax** (see Step 3) — the cap existed to throttle frontier fan-out,
-which local retrieval removes. If it prints `local_llm DOWN`, the pipeline still works via the
-**Opus fallback** retrieval/critic agents, and the per-run cap stays at its default (frontier
-fan-out is back in play). Note which mode you're in for the Step 8 log.
+**Local-LLM mode:** if the healthcheck prints `local_llm UP`, retrieval condensation **and** the
+adversarial passes (challenge gate, post-mortem critic) run locally (free), and the per-run cap can
+**relax** (see Step 3) — local retrieval offloads the bulk web work so more markets fit in a run.
+Forecasting is **always Opus** regardless of this flag, so the **≤4-concurrent-wave rule (Step 4c) is
+the real burst throttle**, not the cap. If it prints `local_llm DOWN`, the pipeline still works via the
+**Opus fallback** retrieval/critic agents (degraded), the per-run cap stays at its default, and the
+post-mortem critic is **skipped/deferred** rather than run same-family (Step 6b). Note which mode
+you're in for the Step 8 log.
 
 ## Step 1 — Discover
 ```
@@ -87,23 +99,26 @@ so nothing is lost. Always keep `--event-driven` overrides inside the kept set e
 dropping a less-urgent cadence market. Note in the Step 8 log how many were deferred
 (`reforecast_deferred`) — the `--summary` line reports this directly.
 
-**Cap relaxation when `local_llm UP` (Step 0):** the cap throttled *frontier* fan-out — the part
-that got the org rate-limited. With local retrieval doing the heavy web work, that pressure is gone,
-so when an explicit `/update N` was **not** given you may raise the default (e.g. `--limit 20`) up to
-the full due list. The **wave rule below still binds**: only the lighter Claude forecasting/judge
-calls fan out, and never more than 4 concurrently. On the Opus-fallback path keep the default 12.
+**Cap relaxation when `local_llm UP` (Step 0):** with Qwen doing the heavy web condensation, the
+per-run volume pressure eases, so when an explicit `/update N` was **not** given you may raise the
+default (e.g. `--limit 20`) up to the full due list. Note that **forecasting is still Opus** even when
+local is UP, so the throttle that actually matters is the **wave rule below** (≤4 concurrent Opus
+forecasters) — it always binds, UP or DOWN. On the Opus-fallback path (local DOWN) keep the default 12.
 
 ## Step 4 — Research & forecast each due market (RETRIEVE local → assign arm → FAN OUT in WAVES)
 
-### Step 4a — Retrieval tier (LOCAL evidence notes, free)
+### Step 4a — Retrieval tier (Qwen evidence notes, free)
 For each due market, gather web evidence and condense it to compact, *quoted* structured notes
-**before** any frontier forecasting — so raw pages never enter Claude context.
-- **`local_llm UP`:** run your web searches/fetches, then pipe the raw results through
-  `lib.local_llm.extract_evidence(question, raw_results, as_of=...)` to get `EvidenceNotes`
-  (claims with verbatim source quotes, base rates, key uncertainties). Hand the **notes**, not the
-  raw pages, to the forecasters.
-- **`local_llm DOWN`:** fall back to an Opus retrieval agent that returns the same notes shape.
-The notes carry source quotes so the forecaster can verify rather than blindly trust a small model.
+**before** any Opus forecasting — so raw pages never enter the forecaster's context.
+- **`local_llm UP` (steady state):** the **orchestrator** runs the web searches/fetches inline
+  (Qwen has no browser, so the tool-call mechanic must live with the orchestrator — do **not** spend
+  an Opus retrieval subagent on this), then pipes the raw results through
+  `lib.local_llm.extract_evidence(question, raw_results, as_of=...)` to get `EvidenceNotes` (claims
+  with verbatim source quotes, base rates, key uncertainties). Hand the **notes**, not the raw pages,
+  to the Opus forecasters. Retrieval is Qwen's job — never route forecasting through it.
+- **`local_llm DOWN` (degraded):** fall back to an Opus retrieval agent that returns the same notes
+  shape.
+The notes carry source quotes so the Opus forecaster can verify rather than blindly trust a small model.
 
 ### Step 4b — Assign the strategy arm (the experiment)
 For each due market, pick its arm:

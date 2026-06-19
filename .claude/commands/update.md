@@ -10,11 +10,12 @@ You are the **superforecaster agent** for this repository. Running `/update` per
 If a positive integer N was passed (e.g. `/update 5`), research at most **N** markets this run,
 chosen as the N closing soonest (prioritized by end date). If no argument is given, fall back to
 the default throttle of **12** — but when the **local-LLM healthcheck is UP** (Step 0), the cap may
-relax toward the full due list (e.g. 20), since the throttle existed to limit *frontier* fan-out and
-local retrieval removes that pressure (ROUTINE Step 3). Either way, pass the chosen number to
-`due_for_reforecast.py` via `--limit` (see Step 4) so the truncation is deterministic; the deferred
-markets carry over to the next run automatically. N is still subject to the wave rule below (≤4
-concurrent subagents).
+relax toward the full due list (e.g. 20), since Qwen now does the heavy web condensation so more
+markets fit per run (ROUTINE Step 3). **Forecasting is always Opus regardless**, so the real burst
+throttle is the **wave rule** (≤4 concurrent Opus forecasters), not the cap. Either way, pass the
+chosen number to `due_for_reforecast.py` via `--limit` (see Step 4) so the truncation is deterministic;
+the deferred markets carry over to the next run automatically. N is still subject to the wave rule
+below (≤4 concurrent subagents).
 
 Follow `ROUTINE.md` in this repo precisely — execute its steps 0 through 9 — governed by
 `.claude/skills/superforecasting/SKILL.md`. In short:
@@ -28,13 +29,14 @@ Follow `ROUTINE.md` in this repo precisely — execute its steps 0 through 9 —
 4. **Due check** — `python3 scripts/due_for_reforecast.py --limit N --summary`, where `N` is the
    market cap from the argument above (default 12, relaxed when local-LLM is UP). The script keeps
    the `N` markets closing soonest and reports how many were deferred.
-5. **Research & forecast each due market** — for each due market: (4a) gather web evidence and
-   condense it to **quoted evidence notes** via the LOCAL model (`lib.local_llm.extract_evidence`;
-   fallback agent when down) so raw pages never hit Claude context; (4b) assign a **strategy arm**
-   (`lib.strategies.select_strategy`) that sets how many forecasters to spawn and how to combine
-   them; (4c) fan out **Opus** forecasters (or the local-Qwen `L*` arm) on the **notes** — **never
-   Sonnet** — each forming an INDEPENDENT probability with strict anti-anchoring (do NOT look at the
-   Kalshi price until after the estimate). **THROTTLE:** dispatch in **waves of ≤4 concurrent
+5. **Research & forecast each due market** — for each due market: (4a) **you (orchestrator)** run the
+   web searches/fetches inline, then condense them to **quoted evidence notes** via **Qwen**
+   (`lib.local_llm.extract_evidence`; Opus fallback only when local is down) so raw pages never hit the
+   forecaster's context — retrieval is Qwen's job, never route forecasting through it; (4b) assign a
+   **strategy arm** (`lib.strategies.select_strategy`) that sets how many forecasters to spawn and how
+   to combine them; (4c) fan out **Opus** forecasters on the **notes** — **forecasting is always Opus**,
+   never the local model, never Sonnet — each forming an INDEPENDENT probability with strict
+   anti-anchoring (do NOT look at the Kalshi price until after the estimate). **THROTTLE:** dispatch in **waves of ≤4 concurrent
    subagents**. You (Opus) then fetch price/asks/bids via `scripts/refresh_market.py --ticker T`,
    compare, and record via `scripts/record_forecast.py` passing `--strategy-id` +
    `--yes-ask/--no-ask/--yes-bid/--no-bid`. **The adversarial gate is automatic + unskippable:**
