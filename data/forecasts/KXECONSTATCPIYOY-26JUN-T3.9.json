@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "ticker": "KXECONSTATCPIYOY-26JUN-T3.9",
+  "title": "CPI year-over-year in Jun 2026 (>3.9%)?",
+  "category": "economy",
+  "close_time": "2026-07-14T12:29:00Z",
+  "current": {
+    "as_of": "2026-06-19T21:12:55Z",
+    "my_probability": 0.3,
+    "my_confidence": "low",
+    "market_implied_probability": 0.165,
+    "market_price_cents": 17.0,
+    "edge": 0.13499999999999998,
+    "yes_ask": 0.17,
+    "no_ask": 0.84,
+    "fee_per_contract": 0.01,
+    "ev_per_contract": -0.15000000000000002,
+    "limit_price": null,
+    "ev_limit_per_contract": null,
+    "lean": "NONE",
+    "conviction": "low",
+    "lean_note": "I lean NO (my prob 30%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+    "prob_delta_vs_prev": null,
+    "trigger": "scheduled",
+    "strategy_id": "S0-single",
+    "proposed_probability": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": "",
+    "rationale_summary": "May YoY 4.2%; >3.9% needs YoY NOT to fall ~0.3pp in one month. Energy passthrough timing (mid-month ceasefire, lagged gasoline) means most relief hits July not June, and sticky shelter/food anchor near 4.0-4.1%. Market 0.17 likely overconfident on fast June passthrough; lean above to 0.30 but still below even.",
+    "key_drivers": [
+      "needs 0.3pp 1-month drop",
+      "passthrough hits July not June",
+      "sticky shelter floor",
+      "market overconfident on speed"
+    ],
+    "reference_classes": [
+      "1-month YoY moves rarely >0.2-0.3pp absent energy",
+      "gasoline lags crude 2-4wk"
+    ],
+    "research_refs": [
+      "https://www.cnbc.com/2026/06/10/cpi-inflation-report-may-2026.html"
+    ]
+  },
+  "history": [
+    {
+      "as_of": "2026-06-19T21:12:55Z",
+      "my_probability": 0.3,
+      "my_confidence": "low",
+      "market_implied_probability": 0.165,
+      "market_price_cents": 17.0,
+      "edge": 0.13499999999999998,
+      "yes_ask": 0.17,
+      "no_ask": 0.84,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": -0.15000000000000002,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "I lean NO (my prob 30%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+      "prob_delta_vs_prev": null,
+      "trigger": "scheduled",
+      "strategy_id": "S0-single",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "May YoY 4.2%; >3.9% needs YoY NOT to fall ~0.3pp in one month. Energy passthrough timing (mid-month ceasefire, lagged gasoline) means most relief hits July not June, and sticky shelter/food anchor near 4.0-4.1%. Market 0.17 likely overconfident on fast June passthrough; lean above to 0.30 but still below even.",
+      "key_drivers": [
+        "needs 0.3pp 1-month drop",
+        "passthrough hits July not June",
+        "sticky shelter floor",
+        "market overconfident on speed"
+      ],
+      "reference_classes": [
+        "1-month YoY moves rarely >0.2-0.3pp absent energy",
+        "gasoline lags crude 2-4wk"
+      ],
+      "research_refs": [
+        "https://www.cnbc.com/2026/06/10/cpi-inflation-report-may-2026.html"
+      ]
+    }
+  ],
+  "position": {
+    "entered": false,
+    "entry_as_of": "",
+    "entry_side": "",
+    "entry_probability": 0.0,
+    "entry_price": 0.0,
+    "entry_market_implied": null,
+    "entry_confidence": "",
+    "entry_conviction": "",
+    "entry_gap": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": ""
+  }
+}

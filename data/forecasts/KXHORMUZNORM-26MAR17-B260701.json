@@ -5,47 +5,45 @@
   "category": "politics",
   "close_time": "2026-07-07T13:59:00Z",
   "current": {
-    "as_of": "2026-06-19T18:57:11Z",
-    "my_probability": 0.012,
+    "as_of": "2026-06-19T21:12:22Z",
+    "my_probability": 0.032,
     "my_confidence": "high",
-    "market_implied_probability": 0.073,
+    "market_implied_probability": 0.069,
     "market_price_cents": 7.0,
-    "edge": -0.061,
-    "yes_ask": 0.077,
-    "no_ask": 0.931,
+    "edge": -0.037000000000000005,
+    "yes_ask": 0.07,
+    "no_ask": 0.932,
     "fee_per_contract": 0.01,
-    "ev_per_contract": 0.04699999999999994,
+    "ev_per_contract": 0.02599999999999992,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "ADVERSARIAL VETO: The forecaster's 'NO' position assumes a future crisis with no present indicators, diverging sharply from the market's 7.3% implied probability. The 5-ships vs 60 threshold gap is extreme but uncorroborated by liquid market data. Overconfid",
-    "prob_delta_vs_prev": -0.068,
+    "lean_note": "ADVERSARIAL VETO: The forecaster's edge claim collapses on three fronts: (1) The stated 5/day MA is implausibly low for a critical global shipping chokepoint, suggesting either data misinterpretation or stale sourcing; (2) The ceasefire timeline assumption i",
+    "prob_delta_vs_prev": -0.048,
     "trigger": "near_close",
-    "strategy_id": "L0-local-single",
-    "proposed_probability": 0.012,
+    "strategy_id": "S0-single",
+    "proposed_probability": 0.032,
     "adversarial_verdict": "veto",
-    "adversarial_challenged_prob": 0.012,
+    "adversarial_challenged_prob": 0.032,
     "adversarial_concerns": [
-      "Assumes a 2026 crisis without current evidence; market implies higher probability of recovery",
-      "Relies on speculative scenario (90% collapse) without credible sourcing",
-      "Overlooks geopolitical/economic factors that could alter transit patterns"
+      "Current 7-day MA of ~5/day contradicts historical transit volumes through Strait of Hormuz (typically ~100k+ vessels/year, ~35/day average) — likely data misinterpretation or sourcing error",
+      "Assumes ceasefire normalization by August precludes any pre-July surge, ignoring geopolitical volatility risks",
+      "Trailing MA lag assumption ignores potential sudden spikes unaccounted for in historical averages"
     ],
     "adversarial_model": "qwen3:14b-q4_K_M",
-    "rationale_summary": "2026 Strait of Hormuz crisis collapsed transit >90%; IMF PortWatch 7-day MA ~5 ships vs the 60 threshold, no recovery before the window. Effectively determined NO.",
+    "rationale_summary": "7-day MA ~5/day vs 60 threshold after >90% war collapse; ceasefire Jun14 but normalization expected ~August, past deadline; trailing MA lags any late surge.",
     "key_drivers": [
-      "Hormuz crisis collapsed traffic >90%",
-      "7-day MA ~5 vs 60 threshold",
-      "no recovery before window",
-      "US-Iran deal too late"
+      "MA ~5 vs 60",
+      "no recovery post-ceasefire",
+      "MA lags surge"
     ],
     "reference_classes": [
-      "IMF PortWatch Hormuz 7-day MA history",
-      "post-conflict maritime recovery timelines"
+      "post-war maritime recovery",
+      "trailing-MA lag"
     ],
     "research_refs": [
-      "https://en.wikipedia.org/wiki/2026_Strait_of_Hormuz_crisis",
-      "https://en.macromicro.me/series/30932/imf-hormuz-number-total-ma7"
+      "https://en.wikipedia.org/wiki/2026_Strait_of_Hormuz_crisis"
     ]
   },
   "history": [
@@ -159,47 +157,45 @@
       "research_refs": []
     },
     {
-      "as_of": "2026-06-19T18:57:11Z",
-      "my_probability": 0.012,
+      "as_of": "2026-06-19T21:12:22Z",
+      "my_probability": 0.032,
       "my_confidence": "high",
-      "market_implied_probability": 0.073,
+      "market_implied_probability": 0.069,
       "market_price_cents": 7.0,
-      "edge": -0.061,
-      "yes_ask": 0.077,
-      "no_ask": 0.931,
+      "edge": -0.037000000000000005,
+      "yes_ask": 0.07,
+      "no_ask": 0.932,
       "fee_per_contract": 0.01,
-      "ev_per_contract": 0.04699999999999994,
+      "ev_per_contract": 0.02599999999999992,
       "limit_price": null,
       "ev_limit_per_contract": null,
       "lean": "NONE",
       "conviction": "low",
-      "lean_note": "ADVERSARIAL VETO: The forecaster's 'NO' position assumes a future crisis with no present indicators, diverging sharply from the market's 7.3% implied probability. The 5-ships vs 60 threshold gap is extreme but uncorroborated by liquid market data. Overconfid",
-      "prob_delta_vs_prev": -0.068,
+      "lean_note": "ADVERSARIAL VETO: The forecaster's edge claim collapses on three fronts: (1) The stated 5/day MA is implausibly low for a critical global shipping chokepoint, suggesting either data misinterpretation or stale sourcing; (2) The ceasefire timeline assumption i",
+      "prob_delta_vs_prev": -0.048,
       "trigger": "near_close",
-      "strategy_id": "L0-local-single",
-      "proposed_probability": 0.012,
+      "strategy_id": "S0-single",
+      "proposed_probability": 0.032,
       "adversarial_verdict": "veto",
-      "adversarial_challenged_prob": 0.012,
+      "adversarial_challenged_prob": 0.032,
       "adversarial_concerns": [
-        "Assumes a 2026 crisis without current evidence; market implies higher probability of recovery",
-        "Relies on speculative scenario (90% collapse) without credible sourcing",
-        "Overlooks geopolitical/economic factors that could alter transit patterns"
+        "Current 7-day MA of ~5/day contradicts historical transit volumes through Strait of Hormuz (typically ~100k+ vessels/year, ~35/day average) — likely data misinterpretation or sourcing error",
+        "Assumes ceasefire normalization by August precludes any pre-July surge, ignoring geopolitical volatility risks",
+        "Trailing MA lag assumption ignores potential sudden spikes unaccounted for in historical averages"
       ],
       "adversarial_model": "qwen3:14b-q4_K_M",
-      "rationale_summary": "2026 Strait of Hormuz crisis collapsed transit >90%; IMF PortWatch 7-day MA ~5 ships vs the 60 threshold, no recovery before the window. Effectively determined NO.",
+      "rationale_summary": "7-day MA ~5/day vs 60 threshold after >90% war collapse; ceasefire Jun14 but normalization expected ~August, past deadline; trailing MA lags any late surge.",
       "key_drivers": [
-        "Hormuz crisis collapsed traffic >90%",
-        "7-day MA ~5 vs 60 threshold",
-        "no recovery before window",
-        "US-Iran deal too late"
+        "MA ~5 vs 60",
+        "no recovery post-ceasefire",
+        "MA lags surge"
       ],
       "reference_classes": [
-        "IMF PortWatch Hormuz 7-day MA history",
-        "post-conflict maritime recovery timelines"
+        "post-war maritime recovery",
+        "trailing-MA lag"
       ],
       "research_refs": [
-        "https://en.wikipedia.org/wiki/2026_Strait_of_Hormuz_crisis",
-        "https://en.macromicro.me/series/30932/imf-hormuz-number-total-ma7"
+        "https://en.wikipedia.org/wiki/2026_Strait_of_Hormuz_crisis"
       ]
     }
   ],

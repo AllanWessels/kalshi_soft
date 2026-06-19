@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "ticker": "KXRT-TOY-92",
+  "title": "Toy Story 5 Rotten Tomatoes score (>=92%)?",
+  "category": "culture",
+  "close_time": "2026-06-22T14:00:00Z",
+  "current": {
+    "as_of": "2026-06-19T21:12:41Z",
+    "my_probability": 0.8,
+    "my_confidence": "medium",
+    "market_implied_probability": 0.755,
+    "market_price_cents": 76.0,
+    "edge": 0.04500000000000004,
+    "yes_ask": 0.76,
+    "no_ask": 0.25,
+    "fee_per_contract": 0.02,
+    "ev_per_contract": 0.020000000000000035,
+    "limit_price": null,
+    "ev_limit_per_contract": null,
+    "lean": "YES",
+    "conviction": "low",
+    "lean_note": null,
+    "prob_delta_vs_prev": null,
+    "trigger": "scheduled",
+    "strategy_id": "S0-single",
+    "proposed_probability": 0.8,
+    "adversarial_verdict": "revise",
+    "adversarial_challenged_prob": 0.72,
+    "adversarial_concerns": [
+      "Market implies lower probability (75.5%) despite forecaster's 80% confidence; divergence may reflect unaccounted risks like franchise fatigue or late-negative reviews",
+      "Assumes score stability near-final without evidence; Rotten Tomatoes scores can shift unexpectedly even late-stage",
+      "Base-rate neglect: High scores for sequels are rare despite franchise popularity"
+    ],
+    "adversarial_model": "qwen3:14b-q4_K_M",
+    "rationale_summary": "At 94% with 100+ reviews, ~2pt cushion above 92 and near-final; RT rarely moves >2-4pts late. Trimmed for recent 92<->94 bounce on the line + franchise-low/diminishing-sequel downward drift.",
+    "key_drivers": [
+      "94% with 100+ reviews",
+      "near-final",
+      "recent 92-94 bounce on line",
+      "negative-drift narrative"
+    ],
+    "reference_classes": [
+      "low-90s RT with 100+ reviews late drift",
+      "Pixar brand"
+    ],
+    "research_refs": [
+      "https://www.goldderby.com/film/2026/toy-story-5-reviews-critics-rotten-tomatoes-score-metacritic/"
+    ]
+  },
+  "history": [
+    {
+      "as_of": "2026-06-19T21:12:41Z",
+      "my_probability": 0.8,
+      "my_confidence": "medium",
+      "market_implied_probability": 0.755,
+      "market_price_cents": 76.0,
+      "edge": 0.04500000000000004,
+      "yes_ask": 0.76,
+      "no_ask": 0.25,
+      "fee_per_contract": 0.02,
+      "ev_per_contract": 0.020000000000000035,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "YES",
+      "conviction": "low",
+      "lean_note": null,
+      "prob_delta_vs_prev": null,
+      "trigger": "scheduled",
+      "strategy_id": "S0-single",
+      "proposed_probability": 0.8,
+      "adversarial_verdict": "revise",
+      "adversarial_challenged_prob": 0.72,
+      "adversarial_concerns": [
+        "Market implies lower probability (75.5%) despite forecaster's 80% confidence; divergence may reflect unaccounted risks like franchise fatigue or late-negative reviews",
+        "Assumes score stability near-final without evidence; Rotten Tomatoes scores can shift unexpectedly even late-stage",
+        "Base-rate neglect: High scores for sequels are rare despite franchise popularity"
+      ],
+      "adversarial_model": "qwen3:14b-q4_K_M",
+      "rationale_summary": "At 94% with 100+ reviews, ~2pt cushion above 92 and near-final; RT rarely moves >2-4pts late. Trimmed for recent 92<->94 bounce on the line + franchise-low/diminishing-sequel downward drift.",
+      "key_drivers": [
+        "94% with 100+ reviews",
+        "near-final",
+        "recent 92-94 bounce on line",
+        "negative-drift narrative"
+      ],
+      "reference_classes": [
+        "low-90s RT with 100+ reviews late drift",
+        "Pixar brand"
+      ],
+      "research_refs": [
+        "https://www.goldderby.com/film/2026/toy-story-5-reviews-critics-rotten-tomatoes-score-metacritic/"
+      ]
+    }
+  ],
+  "position": {
+    "entered": true,
+    "entry_as_of": "2026-06-19T21:12:41Z",
+    "entry_side": "YES",
+    "entry_probability": 0.8,
+    "entry_price": 0.76,
+    "entry_market_implied": 0.755,
+    "entry_confidence": "medium",
+    "entry_conviction": "low",
+    "entry_gap": 0.045,
+    "adversarial_verdict": "revise",
+    "adversarial_challenged_prob": 0.72,
+    "adversarial_concerns": [
+      "Market implies lower probability (75.5%) despite forecaster's 80% confidence; divergence may reflect unaccounted risks like franchise fatigue or late-negative reviews",
+      "Assumes score stability near-final without evidence; Rotten Tomatoes scores can shift unexpectedly even late-stage",
+      "Base-rate neglect: High scores for sequels are rare despite franchise popularity"
+    ],
+    "adversarial_model": "qwen3:14b-q4_K_M"
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "ticker": "KXRT-SUPE-75",
+  "title": "Supergirl Rotten Tomatoes score (>=75%)?",
+  "category": "culture",
+  "close_time": "2026-06-29T14:00:00Z",
+  "current": {
+    "as_of": "2026-06-19T21:12:41Z",
+    "my_probability": 0.58,
+    "my_confidence": "low",
+    "market_implied_probability": 0.515,
+    "market_price_cents": 52.0,
+    "edge": 0.06499999999999995,
+    "yes_ask": 0.53,
+    "no_ask": 0.5,
+    "fee_per_contract": 0.02,
+    "ev_per_contract": 0.029999999999999933,
+    "limit_price": null,
+    "ev_limit_per_contract": null,
+    "lean": "NONE",
+    "conviction": "low",
+    "lean_note": "low confidence — estimate too uncertain to fade the market",
+    "prob_delta_vs_prev": null,
+    "trigger": "scheduled",
+    "strategy_id": "S0-single",
+    "proposed_probability": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": "",
+    "rationale_summary": "Predicted 76% sits 1pt above the 75 line with no reviews yet (embargo Jun24); wide symmetric pre-embargo band leaves large mass below 75, so only modestly above coin flip. Upward momentum + genre comps (Superman 83, FF 86) nudge up.",
+    "key_drivers": [
+      "predicted 76 vs 75 line",
+      "no reviews yet wide band",
+      "upward momentum",
+      "genre comps cleared 75"
+    ],
+    "reference_classes": [
+      "2026 superhero RT comps",
+      "pre-embargo estimate vs realized"
+    ],
+    "research_refs": [
+      "https://www.comingsoon.net/movies/features/2146361-supergirl-rotten-tomatoes-rating-prediction-score-review"
+    ]
+  },
+  "history": [
+    {
+      "as_of": "2026-06-19T21:12:41Z",
+      "my_probability": 0.58,
+      "my_confidence": "low",
+      "market_implied_probability": 0.515,
+      "market_price_cents": 52.0,
+      "edge": 0.06499999999999995,
+      "yes_ask": 0.53,
+      "no_ask": 0.5,
+      "fee_per_contract": 0.02,
+      "ev_per_contract": 0.029999999999999933,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "low confidence — estimate too uncertain to fade the market",
+      "prob_delta_vs_prev": null,
+      "trigger": "scheduled",
+      "strategy_id": "S0-single",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "Predicted 76% sits 1pt above the 75 line with no reviews yet (embargo Jun24); wide symmetric pre-embargo band leaves large mass below 75, so only modestly above coin flip. Upward momentum + genre comps (Superman 83, FF 86) nudge up.",
+      "key_drivers": [
+        "predicted 76 vs 75 line",
+        "no reviews yet wide band",
+        "upward momentum",
+        "genre comps cleared 75"
+      ],
+      "reference_classes": [
+        "2026 superhero RT comps",
+        "pre-embargo estimate vs realized"
+      ],
+      "research_refs": [
+        "https://www.comingsoon.net/movies/features/2146361-supergirl-rotten-tomatoes-rating-prediction-score-review"
+      ]
+    }
+  ],
+  "position": {
+    "entered": false,
+    "entry_as_of": "",
+    "entry_side": "",
+    "entry_probability": 0.0,
+    "entry_price": 0.0,
+    "entry_market_implied": null,
+    "entry_confidence": "",
+    "entry_conviction": "",
+    "entry_gap": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": ""
+  }
+}

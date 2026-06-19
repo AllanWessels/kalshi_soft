@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "ticker": "KXRT-ODY-90",
+  "title": "The Odyssey Rotten Tomatoes score (>=90%)?",
+  "category": "culture",
+  "close_time": "2026-07-20T14:00:00Z",
+  "current": {
+    "as_of": "2026-06-19T21:12:55Z",
+    "my_probability": 0.55,
+    "my_confidence": "low",
+    "market_implied_probability": 0.415,
+    "market_price_cents": 42.0,
+    "edge": 0.13500000000000006,
+    "yes_ask": 0.46,
+    "no_ask": 0.63,
+    "fee_per_contract": 0.02,
+    "ev_per_contract": 0.07000000000000002,
+    "limit_price": null,
+    "ev_limit_per_contract": null,
+    "lean": "NONE",
+    "conviction": "low",
+    "lean_note": "low confidence — estimate too uncertain to fade the market",
+    "prob_delta_vs_prev": null,
+    "trigger": "scheduled",
+    "strategy_id": "S0-single",
+    "proposed_probability": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": "",
+    "rationale_summary": "Unreleased (Jul17), zero reviews -> base-rate call. Nolan ~3/6 >=90% (Oppenheimer 93, Dunkirk 92, Memento 95 vs Inception 87, Interstellar 73, Tenet 69); mythic-prestige register matches his >=90 films, nudged up, but the bright-line 90% + large critic pool dilution cap it. ~0.55.",
+    "key_drivers": [
+      "Nolan base rate ~50% >=90",
+      "register matches Oppenheimer/Dunkirk",
+      "90% bright line demanding",
+      "big critic pool dilutes"
+    ],
+    "reference_classes": [
+      "Nolan RT critics scores"
+    ],
+    "research_refs": [
+      "https://en.wikipedia.org/wiki/The_Odyssey_(2026_film)"
+    ]
+  },
+  "history": [
+    {
+      "as_of": "2026-06-19T21:12:55Z",
+      "my_probability": 0.55,
+      "my_confidence": "low",
+      "market_implied_probability": 0.415,
+      "market_price_cents": 42.0,
+      "edge": 0.13500000000000006,
+      "yes_ask": 0.46,
+      "no_ask": 0.63,
+      "fee_per_contract": 0.02,
+      "ev_per_contract": 0.07000000000000002,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "low confidence — estimate too uncertain to fade the market",
+      "prob_delta_vs_prev": null,
+      "trigger": "scheduled",
+      "strategy_id": "S0-single",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "Unreleased (Jul17), zero reviews -> base-rate call. Nolan ~3/6 >=90% (Oppenheimer 93, Dunkirk 92, Memento 95 vs Inception 87, Interstellar 73, Tenet 69); mythic-prestige register matches his >=90 films, nudged up, but the bright-line 90% + large critic pool dilution cap it. ~0.55.",
+      "key_drivers": [
+        "Nolan base rate ~50% >=90",
+        "register matches Oppenheimer/Dunkirk",
+        "90% bright line demanding",
+        "big critic pool dilutes"
+      ],
+      "reference_classes": [
+        "Nolan RT critics scores"
+      ],
+      "research_refs": [
+        "https://en.wikipedia.org/wiki/The_Odyssey_(2026_film)"
+      ]
+    }
+  ],
+  "position": {
+    "entered": false,
+    "entry_as_of": "",
+    "entry_side": "",
+    "entry_probability": 0.0,
+    "entry_price": 0.0,
+    "entry_market_implied": null,
+    "entry_confidence": "",
+    "entry_conviction": "",
+    "entry_gap": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": ""
+  }
+}

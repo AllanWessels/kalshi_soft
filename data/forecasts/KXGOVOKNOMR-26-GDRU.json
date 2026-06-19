@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "ticker": "KXGOVOKNOMR-26-GDRU",
+  "title": "Will Genter Drummond be the Republican nominee for Governor in Oklahoma?",
+  "category": "politics",
+  "close_time": "2026-11-03T15:00:00Z",
+  "current": {
+    "as_of": "2026-06-19T21:12:55Z",
+    "my_probability": 0.43,
+    "my_confidence": "low",
+    "market_implied_probability": 0.205,
+    "market_price_cents": 21.0,
+    "edge": 0.225,
+    "yes_ask": 0.21,
+    "no_ask": 0.8,
+    "fee_per_contract": 0.02,
+    "ev_per_contract": -0.24999999999999997,
+    "limit_price": null,
+    "ev_limit_per_contract": null,
+    "lean": "NONE",
+    "conviction": "low",
+    "lean_note": "I lean NO (my prob 43%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+    "prob_delta_vs_prev": null,
+    "trigger": "scheduled",
+    "strategy_id": "S0-single",
+    "proposed_probability": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": "",
+    "rationale_summary": "2-way Aug25 runoff after a 0.3pt R1 tie (Drummond first). Freed America-First Merrick bloc + Trump endorsement + low-turnout runoff tilt modestly to Mazzei; Drummond offsets via top name ID + institutional backing. Slightly below even (~0.43).",
+    "key_drivers": [
+      "R1 was 0.3pt tie",
+      "Merrick bloc leans Mazzei",
+      "Trump endorsement+low turnout favor insurgent",
+      "Drummond name ID offsets"
+    ],
+    "reference_classes": [
+      "plurality leader vs Trump-endorsed challenger in deep-red runoff"
+    ],
+    "research_refs": [
+      "https://www.notus.org/2026-election/gentner-drummond-mike-mazzei-oklahoma-runoff"
+    ]
+  },
+  "history": [
+    {
+      "as_of": "2026-06-19T21:12:55Z",
+      "my_probability": 0.43,
+      "my_confidence": "low",
+      "market_implied_probability": 0.205,
+      "market_price_cents": 21.0,
+      "edge": 0.225,
+      "yes_ask": 0.21,
+      "no_ask": 0.8,
+      "fee_per_contract": 0.02,
+      "ev_per_contract": -0.24999999999999997,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "I lean NO (my prob 43%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
+      "prob_delta_vs_prev": null,
+      "trigger": "scheduled",
+      "strategy_id": "S0-single",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "2-way Aug25 runoff after a 0.3pt R1 tie (Drummond first). Freed America-First Merrick bloc + Trump endorsement + low-turnout runoff tilt modestly to Mazzei; Drummond offsets via top name ID + institutional backing. Slightly below even (~0.43).",
+      "key_drivers": [
+        "R1 was 0.3pt tie",
+        "Merrick bloc leans Mazzei",
+        "Trump endorsement+low turnout favor insurgent",
+        "Drummond name ID offsets"
+      ],
+      "reference_classes": [
+        "plurality leader vs Trump-endorsed challenger in deep-red runoff"
+      ],
+      "research_refs": [
+        "https://www.notus.org/2026-election/gentner-drummond-mike-mazzei-oklahoma-runoff"
+      ]
+    }
+  ],
+  "position": {
+    "entered": false,
+    "entry_as_of": "",
+    "entry_side": "",
+    "entry_probability": 0.0,
+    "entry_price": 0.0,
+    "entry_market_implied": null,
+    "entry_confidence": "",
+    "entry_conviction": "",
+    "entry_gap": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": ""
+  }
+}
