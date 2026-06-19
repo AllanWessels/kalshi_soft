@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "ticker": "KXCOLOMBIAPRES-26-AESP",
+  "title": "Will Abelardo de la Espriella win the next Colombian presidential election?",
+  "category": "politics",
+  "close_time": "2027-05-31T14:00:00Z",
+  "current": {
+    "as_of": "2026-06-19T22:00:32Z",
+    "my_probability": 0.58,
+    "my_confidence": "medium",
+    "market_implied_probability": 0.875,
+    "market_price_cents": 88.0,
+    "edge": -0.29500000000000004,
+    "yes_ask": 0.88,
+    "no_ask": 0.13,
+    "fee_per_contract": 0.01,
+    "ev_per_contract": -0.31000000000000005,
+    "limit_price": null,
+    "ev_limit_per_contract": null,
+    "lean": "NONE",
+    "conviction": "low",
+    "lean_note": "no +EV value bet at the ask (my prob 58%, modal YES) — staying out.",
+    "prob_delta_vs_prev": null,
+    "trigger": "scheduled",
+    "strategy_id": "S0-single",
+    "proposed_probability": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": "",
+    "rationale_summary": "Led R1 43.7-40.9 (+2.8pt); center/center-right eliminated ~15% should transfer his way + anti-Petro runoff framing -> modest favorite. But thin margin and a hard-right/pro-Trump candidate can repel the anti-extremist center. ~0.58, well below market 0.88.",
+    "key_drivers": [
+      "R1 +2.8pt lead",
+      "center-right transfers to right",
+      "anti-Petro framing",
+      "hard-right repels center risk"
+    ],
+    "reference_classes": [
+      "sub-3pt R1 leaders in 2-way runoffs",
+      "runoff anti-incumbent referendums"
+    ],
+    "research_refs": [
+      "https://www.cnn.com/2026/05/31/americas/colombia-runoff-espriella-cepeda-latam-intl"
+    ]
+  },
+  "history": [
+    {
+      "as_of": "2026-06-19T22:00:32Z",
+      "my_probability": 0.58,
+      "my_confidence": "medium",
+      "market_implied_probability": 0.875,
+      "market_price_cents": 88.0,
+      "edge": -0.29500000000000004,
+      "yes_ask": 0.88,
+      "no_ask": 0.13,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": -0.31000000000000005,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "no +EV value bet at the ask (my prob 58%, modal YES) — staying out.",
+      "prob_delta_vs_prev": null,
+      "trigger": "scheduled",
+      "strategy_id": "S0-single",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "Led R1 43.7-40.9 (+2.8pt); center/center-right eliminated ~15% should transfer his way + anti-Petro runoff framing -> modest favorite. But thin margin and a hard-right/pro-Trump candidate can repel the anti-extremist center. ~0.58, well below market 0.88.",
+      "key_drivers": [
+        "R1 +2.8pt lead",
+        "center-right transfers to right",
+        "anti-Petro framing",
+        "hard-right repels center risk"
+      ],
+      "reference_classes": [
+        "sub-3pt R1 leaders in 2-way runoffs",
+        "runoff anti-incumbent referendums"
+      ],
+      "research_refs": [
+        "https://www.cnn.com/2026/05/31/americas/colombia-runoff-espriella-cepeda-latam-intl"
+      ]
+    }
+  ],
+  "position": {
+    "entered": false,
+    "entry_as_of": "",
+    "entry_side": "",
+    "entry_probability": 0.0,
+    "entry_price": 0.0,
+    "entry_market_implied": null,
+    "entry_confidence": "",
+    "entry_conviction": "",
+    "entry_gap": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": ""
+  }
+}

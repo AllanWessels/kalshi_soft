@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "ticker": "KXCOLOMBIAPRES-26-ICAS",
+  "title": "Will Iván Cepeda Castro win the next Colombian presidential election?",
+  "category": "politics",
+  "close_time": "2027-05-31T14:00:00Z",
+  "current": {
+    "as_of": "2026-06-19T22:00:32Z",
+    "my_probability": 0.42,
+    "my_confidence": "medium",
+    "market_implied_probability": 0.135,
+    "market_price_cents": 14.0,
+    "edge": 0.285,
+    "yes_ask": 0.14,
+    "no_ask": 0.87,
+    "fee_per_contract": 0.01,
+    "ev_per_contract": -0.29999999999999993,
+    "limit_price": null,
+    "ev_limit_per_contract": null,
+    "lean": "NONE",
+    "conviction": "low",
+    "lean_note": "no +EV value bet at the ask (my prob 42%, modal NO) — staying out.",
+    "prob_delta_vs_prev": null,
+    "trigger": "scheduled",
+    "strategy_id": "S0-single",
+    "proposed_probability": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": "",
+    "rationale_summary": "Coherent complement of de la Espriella (0.58): Cepeda trailed R1 40.9-43.7 and must win a center/center-right eliminated bloc that leans against him amid anti-Petro sentiment, but polarization + left ground game keep it live. ~0.42 — well above market 0.135 (value, but medium confidence gates a lean).",
+    "key_drivers": [
+      "trailed R1 by 2.8pt",
+      "must win unfavorable center bloc",
+      "anti-Petro headwind",
+      "left mobilization keeps it live"
+    ],
+    "reference_classes": [
+      "challenger consolidating eliminated center in runoff",
+      "polarized 2-way runoffs"
+    ],
+    "research_refs": [
+      "https://www.pbs.org/newshour/world/polls-close-in-colombia-vote-with-espriella-and-cepeda-advancing-to-runoff"
+    ]
+  },
+  "history": [
+    {
+      "as_of": "2026-06-19T22:00:32Z",
+      "my_probability": 0.42,
+      "my_confidence": "medium",
+      "market_implied_probability": 0.135,
+      "market_price_cents": 14.0,
+      "edge": 0.285,
+      "yes_ask": 0.14,
+      "no_ask": 0.87,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": -0.29999999999999993,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "no +EV value bet at the ask (my prob 42%, modal NO) — staying out.",
+      "prob_delta_vs_prev": null,
+      "trigger": "scheduled",
+      "strategy_id": "S0-single",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "Coherent complement of de la Espriella (0.58): Cepeda trailed R1 40.9-43.7 and must win a center/center-right eliminated bloc that leans against him amid anti-Petro sentiment, but polarization + left ground game keep it live. ~0.42 — well above market 0.135 (value, but medium confidence gates a lean).",
+      "key_drivers": [
+        "trailed R1 by 2.8pt",
+        "must win unfavorable center bloc",
+        "anti-Petro headwind",
+        "left mobilization keeps it live"
+      ],
+      "reference_classes": [
+        "challenger consolidating eliminated center in runoff",
+        "polarized 2-way runoffs"
+      ],
+      "research_refs": [
+        "https://www.pbs.org/newshour/world/polls-close-in-colombia-vote-with-espriella-and-cepeda-advancing-to-runoff"
+      ]
+    }
+  ],
+  "position": {
+    "entered": false,
+    "entry_as_of": "",
+    "entry_side": "",
+    "entry_probability": 0.0,
+    "entry_price": 0.0,
+    "entry_market_implied": null,
+    "entry_confidence": "",
+    "entry_conviction": "",
+    "entry_gap": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": ""
+  }
+}

@@ -5,42 +5,42 @@
   "category": "statements",
   "close_time": "2026-06-22T14:00:00Z",
   "current": {
-    "as_of": "2026-06-19T21:12:55Z",
+    "as_of": "2026-06-19T21:53:50Z",
     "my_probability": 0.99,
     "my_confidence": "high",
-    "market_implied_probability": 0.145,
-    "market_price_cents": 15.0,
-    "edge": 0.845,
-    "yes_ask": 0.15,
-    "no_ask": 0.86,
-    "fee_per_contract": 0.01,
-    "ev_per_contract": 0.83,
+    "market_implied_probability": 0.185,
+    "market_price_cents": 19.0,
+    "edge": 0.8049999999999999,
+    "yes_ask": 0.21,
+    "no_ask": 0.84,
+    "fee_per_contract": 0.02,
+    "ev_per_contract": 0.76,
     "limit_price": null,
     "ev_limit_per_contract": null,
-    "lean": "NONE",
-    "conviction": "low",
-    "lean_note": "ADVERSARIAL VETO: The forecaster assumes near-certainty based on a single prior statement and a technicality, ignoring market consensus and the unpredictability of political speech. The extreme confidence (0.99) is unjustified by the thin, one-sided evidence",
-    "prob_delta_vs_prev": null,
-    "trigger": "scheduled",
+    "lean": "YES",
+    "conviction": "high",
+    "lean_note": " [adversarial VETO recorded (ADVISORY — high-confidence lean kept; gate non-binding for high conf)]",
+    "prob_delta_vs_prev": 0.0,
+    "trigger": "near_close",
     "strategy_id": "S0-single",
     "proposed_probability": 0.99,
     "adversarial_verdict": "veto",
-    "adversarial_challenged_prob": 0.99,
+    "adversarial_challenged_prob": 0.3,
     "adversarial_concerns": [
-      "Divergence of 0.845 from market implies crowd knowledge forecaster is missing",
-      "Assumes past speech guarantees future mention without accounting for political context shifts",
-      "Base-rate neglect: Trump's uranium mentions are rare and context-dependent"
+      "Divergence from market implies forecaster ignores crowd wisdom about Trump's unpredictable speech patterns",
+      "Relies on stale evidence (2018/2019 events) without current triggers",
+      "Base-rate neglect: Trump's past uranium mentions don't guarantee future ones",
+      "Assumes continuity without evidence of ongoing uranium-related policy focus"
     ],
     "adversarial_model": "qwen3:14b-q4_K_M",
-    "rationale_summary": "Uranium enrichment is the core issue of the US-Iran deal signed Jun 19 (inside the window); Trump making frequent public remarks and ALREADY said it Jun 18 at the G7 ('Iran should have the right to enrich uranium'). Near-certain; only residual is resolution-source technicality.",
+    "rationale_summary": "Already said it Jun18 G7 ('right to enrich uranium'); core issue of the US-Iran deal signed Jun19 (in-window); frequent public remarks. Near-certain.",
     "key_drivers": [
-      "already said it Jun18 G7",
-      "core issue of deal signed Jun19 in-window",
-      "frequent public remarks",
+      "already said Jun18",
+      "deal signed Jun19 in-window",
       "word unavoidable"
     ],
     "reference_classes": [
-      "principal says operative noun of lead story over multi-day window (near-certain)"
+      "principal says lead-story noun over multi-day window"
     ],
     "research_refs": [
       "https://www.aljazeera.com/news/2026/6/18/what-the-trump-iran-14-point-plan-says-about-lebanon-hormuz-and-uranium"
@@ -88,21 +88,68 @@
       "research_refs": [
         "https://www.aljazeera.com/news/2026/6/18/what-the-trump-iran-14-point-plan-says-about-lebanon-hormuz-and-uranium"
       ]
+    },
+    {
+      "as_of": "2026-06-19T21:53:50Z",
+      "my_probability": 0.99,
+      "my_confidence": "high",
+      "market_implied_probability": 0.185,
+      "market_price_cents": 19.0,
+      "edge": 0.8049999999999999,
+      "yes_ask": 0.21,
+      "no_ask": 0.84,
+      "fee_per_contract": 0.02,
+      "ev_per_contract": 0.76,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "YES",
+      "conviction": "high",
+      "lean_note": " [adversarial VETO recorded (ADVISORY — high-confidence lean kept; gate non-binding for high conf)]",
+      "prob_delta_vs_prev": 0.0,
+      "trigger": "near_close",
+      "strategy_id": "S0-single",
+      "proposed_probability": 0.99,
+      "adversarial_verdict": "veto",
+      "adversarial_challenged_prob": 0.3,
+      "adversarial_concerns": [
+        "Divergence from market implies forecaster ignores crowd wisdom about Trump's unpredictable speech patterns",
+        "Relies on stale evidence (2018/2019 events) without current triggers",
+        "Base-rate neglect: Trump's past uranium mentions don't guarantee future ones",
+        "Assumes continuity without evidence of ongoing uranium-related policy focus"
+      ],
+      "adversarial_model": "qwen3:14b-q4_K_M",
+      "rationale_summary": "Already said it Jun18 G7 ('right to enrich uranium'); core issue of the US-Iran deal signed Jun19 (in-window); frequent public remarks. Near-certain.",
+      "key_drivers": [
+        "already said Jun18",
+        "deal signed Jun19 in-window",
+        "word unavoidable"
+      ],
+      "reference_classes": [
+        "principal says lead-story noun over multi-day window"
+      ],
+      "research_refs": [
+        "https://www.aljazeera.com/news/2026/6/18/what-the-trump-iran-14-point-plan-says-about-lebanon-hormuz-and-uranium"
+      ]
     }
   ],
   "position": {
-    "entered": false,
-    "entry_as_of": "",
-    "entry_side": "",
-    "entry_probability": 0.0,
-    "entry_price": 0.0,
-    "entry_market_implied": null,
-    "entry_confidence": "",
-    "entry_conviction": "",
-    "entry_gap": null,
-    "adversarial_verdict": "",
-    "adversarial_challenged_prob": null,
-    "adversarial_concerns": [],
-    "adversarial_model": ""
+    "entered": true,
+    "entry_as_of": "2026-06-19T21:53:50Z",
+    "entry_side": "YES",
+    "entry_probability": 0.99,
+    "entry_price": 0.21,
+    "entry_market_implied": 0.185,
+    "entry_confidence": "high",
+    "entry_conviction": "high",
+    "entry_gap": 0.805,
+    "adversarial_verdict": "veto",
+    "adversarial_challenged_prob": 0.3,
+    "adversarial_concerns": [
+      "Divergence from market implies forecaster ignores crowd wisdom about Trump's unpredictable speech patterns",
+      "Relies on stale evidence (2018/2019 events) without current triggers",
+      "Base-rate neglect: Trump's past uranium mentions don't guarantee future ones",
+      "Assumes continuity without evidence of ongoing uranium-related policy focus"
+    ],
+    "adversarial_model": "qwen3:14b-q4_K_M"
   }
 }

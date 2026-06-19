@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "ticker": "KXFEDDECISION-26JUL-H0",
+  "title": "Will the Federal Reserve Hike rates by 0bps at their July 2026 meeting?",
+  "category": "economy",
+  "close_time": "2026-07-29T17:59:00Z",
+  "current": {
+    "as_of": "2026-06-19T22:01:12Z",
+    "my_probability": 0.8,
+    "my_confidence": "medium",
+    "market_implied_probability": 0.745,
+    "market_price_cents": 75.0,
+    "edge": 0.05500000000000005,
+    "yes_ask": 0.75,
+    "no_ask": 0.26,
+    "fee_per_contract": 0.02,
+    "ev_per_contract": 0.030000000000000044,
+    "limit_price": null,
+    "ev_limit_per_contract": null,
+    "lean": "YES",
+    "conviction": "low",
+    "lean_note": null,
+    "prob_delta_vs_prev": null,
+    "trigger": "scheduled",
+    "strategy_id": "S0-single",
+    "proposed_probability": 0.8,
+    "adversarial_verdict": "revise",
+    "adversarial_challenged_prob": 0.77,
+    "adversarial_concerns": [
+      "Divergence from liquid market implies unexplained edge; market folds path risk into one meeting but forecaster assumes persistence without addressing Fed's explicit patience signal",
+      "Base-rate of 85% persistence after hold is cited but not reconciled with market's 74.5% (which may include delayed action risk)",
+      "Overconfidence in 0.8 vs market 0.745 without credible justification for tighter distribution"
+    ],
+    "adversarial_model": "qwen3:14b-q4_K_M",
+    "rationale_summary": "June was a UNANIMOUS hold; next-meeting persistence after a unanimous hold is ~85%. The 9/8 dot split is full-year, not July-specific (any hike can land later). Persistent 3.6% PCE removes cut risk but Fed signaled patience. ~0.80, slightly above market 0.745 (which folds path risk into one meeting).",
+    "key_drivers": [
+      "unanimous June hold -> high next-meeting persistence",
+      "dot split is full-year not July",
+      "PCE persistence biases alt to hike not cut",
+      "market underweights single-meeting inertia"
+    ],
+    "reference_classes": [
+      "FOMC outcome after a unanimous hold",
+      "per-meeting realization of a year-level dot move"
+    ],
+    "research_refs": [
+      "https://www.federalreserve.gov/monetarypolicy/fomcminutes20260429.htm"
+    ]
+  },
+  "history": [
+    {
+      "as_of": "2026-06-19T22:01:12Z",
+      "my_probability": 0.8,
+      "my_confidence": "medium",
+      "market_implied_probability": 0.745,
+      "market_price_cents": 75.0,
+      "edge": 0.05500000000000005,
+      "yes_ask": 0.75,
+      "no_ask": 0.26,
+      "fee_per_contract": 0.02,
+      "ev_per_contract": 0.030000000000000044,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "YES",
+      "conviction": "low",
+      "lean_note": null,
+      "prob_delta_vs_prev": null,
+      "trigger": "scheduled",
+      "strategy_id": "S0-single",
+      "proposed_probability": 0.8,
+      "adversarial_verdict": "revise",
+      "adversarial_challenged_prob": 0.77,
+      "adversarial_concerns": [
+        "Divergence from liquid market implies unexplained edge; market folds path risk into one meeting but forecaster assumes persistence without addressing Fed's explicit patience signal",
+        "Base-rate of 85% persistence after hold is cited but not reconciled with market's 74.5% (which may include delayed action risk)",
+        "Overconfidence in 0.8 vs market 0.745 without credible justification for tighter distribution"
+      ],
+      "adversarial_model": "qwen3:14b-q4_K_M",
+      "rationale_summary": "June was a UNANIMOUS hold; next-meeting persistence after a unanimous hold is ~85%. The 9/8 dot split is full-year, not July-specific (any hike can land later). Persistent 3.6% PCE removes cut risk but Fed signaled patience. ~0.80, slightly above market 0.745 (which folds path risk into one meeting).",
+      "key_drivers": [
+        "unanimous June hold -> high next-meeting persistence",
+        "dot split is full-year not July",
+        "PCE persistence biases alt to hike not cut",
+        "market underweights single-meeting inertia"
+      ],
+      "reference_classes": [
+        "FOMC outcome after a unanimous hold",
+        "per-meeting realization of a year-level dot move"
+      ],
+      "research_refs": [
+        "https://www.federalreserve.gov/monetarypolicy/fomcminutes20260429.htm"
+      ]
+    }
+  ],
+  "position": {
+    "entered": true,
+    "entry_as_of": "2026-06-19T22:01:12Z",
+    "entry_side": "YES",
+    "entry_probability": 0.8,
+    "entry_price": 0.75,
+    "entry_market_implied": 0.745,
+    "entry_confidence": "medium",
+    "entry_conviction": "low",
+    "entry_gap": 0.055,
+    "adversarial_verdict": "revise",
+    "adversarial_challenged_prob": 0.77,
+    "adversarial_concerns": [
+      "Divergence from liquid market implies unexplained edge; market folds path risk into one meeting but forecaster assumes persistence without addressing Fed's explicit patience signal",
+      "Base-rate of 85% persistence after hold is cited but not reconciled with market's 74.5% (which may include delayed action risk)",
+      "Overconfidence in 0.8 vs market 0.745 without credible justification for tighter distribution"
+    ],
+    "adversarial_model": "qwen3:14b-q4_K_M"
+  }
+}

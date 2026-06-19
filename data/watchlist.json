@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-06-19T20:50:22Z",
+  "updated_at": "2026-06-19T21:52:22Z",
   "cap": 30,
   "markets": [
     {
@@ -377,6 +377,81 @@
       },
       "status": "active",
       "reforecast_cadence_days": 0.0
+    },
+    {
+      "ticker": "KXCOLOMBIAPRES-26-ICAS",
+      "event_ticker": "KXCOLOMBIAPRES-26",
+      "title": "Will Iván Cepeda Castro win the next Colombian presidential election?",
+      "category": "politics",
+      "close_time": "2026-06-25T04:00:00Z",
+      "added_at": "2026-06-19T21:52:22Z",
+      "liquidity_snapshot": {
+        "volume_24h": 68091.47,
+        "open_interest": 385305.09,
+        "spread_cents": 1.0
+      },
+      "status": "active",
+      "reforecast_cadence_days": 0.0
+    },
+    {
+      "ticker": "KXCOLOMBIAPRES-26-AESP",
+      "event_ticker": "KXCOLOMBIAPRES-26",
+      "title": "Will Abelardo de la Espriella win the next Colombian presidential election?",
+      "category": "politics",
+      "close_time": "2026-06-25T04:00:00Z",
+      "added_at": "2026-06-19T21:52:22Z",
+      "liquidity_snapshot": {
+        "volume_24h": 31804.9,
+        "open_interest": 349245.65,
+        "spread_cents": 1.0
+      },
+      "status": "active",
+      "reforecast_cadence_days": 0.0
+    },
+    {
+      "ticker": "KXNY13D-26-AESP",
+      "event_ticker": "KXNY13D-26",
+      "title": "Will Adriano Espaillat be the Democratic nominee for NY-13?",
+      "category": "politics",
+      "close_time": "2026-06-30T14:00:00Z",
+      "added_at": "2026-06-19T21:52:22Z",
+      "liquidity_snapshot": {
+        "volume_24h": 18761.79,
+        "open_interest": 90495.23,
+        "spread_cents": 1.0
+      },
+      "status": "active",
+      "reforecast_cadence_days": 3.0
+    },
+    {
+      "ticker": "KXFEDDECISION-26JUL-H0",
+      "event_ticker": "KXFEDDECISION-26JUL",
+      "title": "Will the Federal Reserve Hike rates by 0bps at their July 2026 meeting?",
+      "category": "economy",
+      "close_time": "2026-07-29T18:05:00Z",
+      "added_at": "2026-06-19T21:52:22Z",
+      "liquidity_snapshot": {
+        "volume_24h": 63909.5,
+        "open_interest": 715104.83,
+        "spread_cents": 1.0
+      },
+      "status": "active",
+      "reforecast_cadence_days": 7.0
+    },
+    {
+      "ticker": "KXCPI-26JUN-T0.1",
+      "event_ticker": "KXCPI-26JUN",
+      "title": "Will CPI rise more than 0.1% in June 2026?",
+      "category": "economy",
+      "close_time": "2026-07-14T13:56:00Z",
+      "added_at": "2026-06-19T21:52:22Z",
+      "liquidity_snapshot": {
+        "volume_24h": 4237.84,
+        "open_interest": 34709.64,
+        "spread_cents": 1.0
+      },
+      "status": "active",
+      "reforecast_cadence_days": 3.0
     }
   ]
 }

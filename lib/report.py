@@ -1274,10 +1274,12 @@ def _build_edge_overview(
     chart_path = scratch_dir / "_edge_overview.png"
     saved = _edge_bar_chart(tickers, edges, chart_path)
     if saved and saved.exists():
+        # Cap height to fit the page frame (~716pt ≈ 25.3cm); the per-row 0.85cm would
+        # otherwise overflow once the watchlist grows past ~28 markets.
         elems.append(
             Image(str(saved),
                   width=13 * cm,
-                  height=max(3.5, 0.85 * len(tickers)) * cm)
+                  height=min(max(3.5, 0.85 * len(tickers)), 22.0) * cm)
         )
     else:
         elems.append(Paragraph("No edge data available.", st["small"]))

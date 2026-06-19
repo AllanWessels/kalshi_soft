@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "ticker": "KXNY13D-26-AESP",
+  "title": "Will Adriano Espaillat be the Democratic nominee for NY-13?",
+  "category": "politics",
+  "close_time": "2027-06-23T14:00:00Z",
+  "current": {
+    "as_of": "2026-06-19T22:00:32Z",
+    "my_probability": 0.56,
+    "my_confidence": "low",
+    "market_implied_probability": 0.485,
+    "market_price_cents": 49.0,
+    "edge": 0.07500000000000007,
+    "yes_ask": 0.49,
+    "no_ask": 0.52,
+    "fee_per_contract": 0.02,
+    "ev_per_contract": 0.05000000000000006,
+    "limit_price": null,
+    "ev_limit_per_contract": null,
+    "lean": "NONE",
+    "conviction": "low",
+    "lean_note": "low confidence — estimate too uncertain to fade the market",
+    "prob_delta_vs_prev": null,
+    "trigger": "scheduled",
+    "strategy_id": "S0-single",
+    "proposed_probability": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": "",
+    "rationale_summary": "House incumbents win primaries ~95%, but a single progressive-leaning DfP poll has Espaillat down 35-39 (inside MoE) and the Mamdani-backed challenger has real GOTV; broader market ~coin flip. Discount the base rate sharply but keep the incumbent machine floor -> ~0.56, low confidence.",
+    "key_drivers": [
+      "95% incumbent base rate",
+      "single biased poll down 4 inside MoE",
+      "Mamdani GOTV downside",
+      "low-turnout favors machine"
+    ],
+    "reference_classes": [
+      "House incumbents in contested primaries",
+      "establishment vs organized progressive insurgent"
+    ],
+    "research_refs": [
+      "https://www.semafor.com/article/06/11/2026/espaillat-challenger-leads-39-35-in-poll"
+    ]
+  },
+  "history": [
+    {
+      "as_of": "2026-06-19T22:00:32Z",
+      "my_probability": 0.56,
+      "my_confidence": "low",
+      "market_implied_probability": 0.485,
+      "market_price_cents": 49.0,
+      "edge": 0.07500000000000007,
+      "yes_ask": 0.49,
+      "no_ask": 0.52,
+      "fee_per_contract": 0.02,
+      "ev_per_contract": 0.05000000000000006,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "low confidence — estimate too uncertain to fade the market",
+      "prob_delta_vs_prev": null,
+      "trigger": "scheduled",
+      "strategy_id": "S0-single",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "House incumbents win primaries ~95%, but a single progressive-leaning DfP poll has Espaillat down 35-39 (inside MoE) and the Mamdani-backed challenger has real GOTV; broader market ~coin flip. Discount the base rate sharply but keep the incumbent machine floor -> ~0.56, low confidence.",
+      "key_drivers": [
+        "95% incumbent base rate",
+        "single biased poll down 4 inside MoE",
+        "Mamdani GOTV downside",
+        "low-turnout favors machine"
+      ],
+      "reference_classes": [
+        "House incumbents in contested primaries",
+        "establishment vs organized progressive insurgent"
+      ],
+      "research_refs": [
+        "https://www.semafor.com/article/06/11/2026/espaillat-challenger-leads-39-35-in-poll"
+      ]
+    }
+  ],
+  "position": {
+    "entered": false,
+    "entry_as_of": "",
+    "entry_side": "",
+    "entry_probability": 0.0,
+    "entry_price": 0.0,
+    "entry_market_implied": null,
+    "entry_confidence": "",
+    "entry_conviction": "",
+    "entry_gap": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": ""
+  }
+}
