@@ -1,25 +1,25 @@
 {
-  "generated_at": "2026-06-22T22:41:18Z",
-  "n_resolved": 22,
+  "generated_at": "2026-06-22T22:47:26Z",
+  "n_resolved": 25,
   "guardrails": {
     "min_n": 20,
     "max_step": 0.05
   },
-  "mode": "observe",
+  "mode": "apply",
   "proposals": [
     {
       "knob": "max_market_disagreement",
       "current": 0.15,
       "proposed": 0.1,
-      "n": 22,
+      "n": 25,
       "guardrail": "AUTO_OK",
       "rationale": "Counterfactual ROI falls monotonically as the fade widens and is profitable only at/under 5pt -> tighten the fade gate toward the band that actually pays.",
       "evidence": {
         "0-5pt": {
-          "n": 15,
-          "cf_pnl": 0.757,
-          "cf_staked": 14.243,
-          "cf_roi": 0.05314891525661729,
+          "n": 16,
+          "cf_pnl": 0.977,
+          "cf_staked": 15.023,
+          "cf_roi": 0.06503361512347733,
           "cf_win_rate": 1.0,
           "max_drawdown": -0.007999999999999998
         },
@@ -32,20 +32,20 @@
           "max_drawdown": -0.8
         },
         "10-20pt": {
-          "n": 3,
-          "cf_pnl": -1.533,
-          "cf_staked": 2.533,
-          "cf_roi": -0.6052112120015791,
-          "cf_win_rate": 0.3333333333333333,
-          "max_drawdown": -1.783
+          "n": 4,
+          "cf_pnl": -2.113,
+          "cf_staked": 3.113,
+          "cf_roi": -0.67876646321876,
+          "cf_win_rate": 0.25,
+          "max_drawdown": -2.113
         },
         "20pt+": {
-          "n": 1,
-          "cf_pnl": -0.39,
-          "cf_staked": 0.39,
+          "n": 2,
+          "cf_pnl": -0.55,
+          "cf_staked": 0.55,
           "cf_roi": -1.0,
           "cf_win_rate": 0.0,
-          "max_drawdown": -0.39
+          "max_drawdown": -0.55
         }
       }
     },
@@ -53,25 +53,25 @@
       "knob": "hard_gap_ceiling",
       "current": 0.3,
       "proposed": 0.25,
-      "n": 22,
+      "n": 25,
       "guardrail": "AUTO_OK",
       "rationale": "The widest fades (20pt+) lost catastrophically (ROI<=-50%) -> lower the absolute ceiling so even high-confidence cannot take a fade that wide. This is the URAN guard learned from the record.",
       "evidence": {
         "20pt+": {
-          "n": 1,
-          "cf_pnl": -0.39,
-          "cf_staked": 0.39,
+          "n": 2,
+          "cf_pnl": -0.55,
+          "cf_staked": 0.55,
           "cf_roi": -1.0,
           "cf_win_rate": 0.0,
-          "max_drawdown": -0.39
+          "max_drawdown": -0.55
         },
         "10-20pt": {
-          "n": 3,
-          "cf_pnl": -1.533,
-          "cf_staked": 2.533,
-          "cf_roi": -0.6052112120015791,
-          "cf_win_rate": 0.3333333333333333,
-          "max_drawdown": -1.783
+          "n": 4,
+          "cf_pnl": -2.113,
+          "cf_staked": 3.113,
+          "cf_roi": -0.67876646321876,
+          "cf_win_rate": 0.25,
+          "max_drawdown": -2.113
         }
       }
     },
@@ -79,24 +79,24 @@
       "knob": "low_confidence_never_leans",
       "current": true,
       "proposed": true,
-      "n": 22,
+      "n": 25,
       "guardrail": "HUMAN_GATE",
       "rationale": "medium-confidence trades lose while high-confidence profit -> consider a min-confidence gate (no continuous knob exists to auto-tune; human-gated).",
       "evidence": {
         "high": {
-          "n": 14,
-          "cf_pnl": 0.37700000000000006,
-          "cf_staked": 13.623,
-          "cf_roi": 0.02767378697790502,
-          "cf_win_rate": 1.0,
-          "max_drawdown": -0.008000000000000007
+          "n": 15,
+          "cf_pnl": 0.21700000000000008,
+          "cf_staked": 13.783,
+          "cf_roi": 0.015744032503809048,
+          "cf_win_rate": 0.9333333333333333,
+          "max_drawdown": -0.16
         },
         "medium": {
-          "n": 5,
-          "cf_pnl": -0.8730000000000002,
-          "cf_staked": 3.873,
-          "cf_roi": -0.22540666150271113,
-          "cf_win_rate": 0.6,
+          "n": 7,
+          "cf_pnl": -1.2330000000000003,
+          "cf_staked": 5.2330000000000005,
+          "cf_roi": -0.2356201031912861,
+          "cf_win_rate": 0.5714285714285714,
           "max_drawdown": -1.743
         },
         "low": {
@@ -113,11 +113,11 @@
       "knob": "adversarial_veto_binding",
       "current": true,
       "proposed": null,
-      "n": 1,
+      "n": 4,
       "guardrail": "INSUFFICIENT_DATA",
-      "rationale": "Veto precision becomes learnable once vetoed/revised positions resolve; 1 resolved position(s) carry a verdict so far.",
+      "rationale": "Veto precision becomes learnable once vetoed/revised positions resolve; 4 resolved position(s) carry a verdict so far.",
       "evidence": {
-        "resolved_with_verdict": 1
+        "resolved_with_verdict": 4
       }
     }
   ]

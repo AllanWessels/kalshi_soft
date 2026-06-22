@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-06-19T21:52:22Z",
+  "updated_at": "2026-06-22T22:45:47Z",
   "cap": 30,
   "markets": [
     {
@@ -270,7 +270,7 @@
         "open_interest": 56298.78,
         "spread_cents": 1.0
       },
-      "status": "active",
+      "status": "resolved",
       "reforecast_cadence_days": 0.0
     },
     {
@@ -285,7 +285,7 @@
         "open_interest": 7660.51,
         "spread_cents": 1.0
       },
-      "status": "active",
+      "status": "resolved",
       "reforecast_cadence_days": 0.0
     },
     {
@@ -375,7 +375,7 @@
         "open_interest": 8324.37,
         "spread_cents": 7.0
       },
-      "status": "active",
+      "status": "resolved",
       "reforecast_cadence_days": 0.0
     },
     {

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-06-19T19:16:00Z",
+  "updated_at": "2026-06-22T22:47:10Z",
   "lessons": [
     {
       "id": "feedback-001",
@@ -93,6 +93,33 @@
       },
       "judge_verdict": "Forecaster (0.61) assumed a transit RECOVERY toward ~35/week, but the resolution week (Jun 8-14) sat entirely inside the active blockade with traffic collapsed (~5/day, as confirmed by the current Hormuz-norm read). The ensemble baked in a normalization that had not occurred. Critically, a YES position was ENTERED on a near-coin-flip divergence (0.61 vs market 0.495) resting on that unverified recovery assumption -> realized loss. This is the overconfident-entry-on-thin-edge / stale-regime failure.",
       "disagreement": "Critic: divergence unjustified, single ensemble, no CI. Defender: directionally defensible, ceasefire only at window-end, count noise near the 25 line. The gap: was entering the position justified given the thin edge?"
+    },
+    {
+      "id": "2026-06-22T14:00:00Z-KXTRUMPSAY-26JUN22-URAN",
+      "created_at": "2026-06-22T22:47:10Z",
+      "source": "resolution",
+      "ticker": "KXTRUMPSAY-26JUN22-URAN",
+      "category": "statements",
+      "outcome": 0,
+      "final_my_probability": 0.99,
+      "final_market_implied": 0.185,
+      "brier_mine": 0.9801,
+      "brier_market": 0.034225,
+      "beat_market": false,
+      "what_went_right": "Uranium was topically central to the Jun-19 US-Iran deal; Trump using synonyms all week during peak nuclear coverage is a genuinely low-probability linguistic outcome.",
+      "what_went_wrong": "Substituted topical salience for the verbatim-quote resolution rule; asserted 'already said it at the G7 Jun 18' without confirming it against the resolution source; took a 0.99 forecast (80pt fade) against a liquid market at 18% that was carrying real information.",
+      "lesson": "For KXTRUMPSAY-style verbatim-utterance markets, resolution is a literal tracked quote from the resolution source, NOT topical salience — never forecast above the market without a CONFIRMED verbatim quote, and treat any 80pt fade against a liquid market as model error. This is exactly the case the new hard_gap_ceiling now hard-blocks regardless of confidence.",
+      "pattern_tag": "unjustified-market-divergence",
+      "applied_to_skill": false,
+      "critic_model": "qwen3:14b-q4_K_M",
+      "rubric_scores": {
+        "base_rate_established": true,
+        "three_independent_sources": false,
+        "confidence_interval": false,
+        "market_divergence_justified": false
+      },
+      "judge_verdict": "MODEL ERROR, avoidable (not bad luck). Worst-possible Brier 0.98 vs market 0.03.",
+      "disagreement": "Critic (blind) flagged market_divergence_justified as the biggest miss; defender conceded the synonym-avoidance was hard to foresee but the unverified 'already said it' premise made the 0.99 indefensible — judge sided with the critic."
     }
   ]
 }

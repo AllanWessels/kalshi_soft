@@ -5,49 +5,35 @@
   "category": "politics",
   "close_time": "2026-11-03T15:00:00Z",
   "current": {
-    "as_of": "2026-06-19T18:57:37Z",
-    "my_probability": 0.27,
+    "as_of": "2026-06-22T22:51:14Z",
+    "my_probability": 0.42,
     "my_confidence": "medium",
-    "market_implied_probability": 0.445,
-    "market_price_cents": 44.0,
-    "edge": -0.175,
-    "yes_ask": 0.45,
-    "no_ask": 0.56,
+    "market_implied_probability": 0.525,
+    "market_price_cents": null,
+    "edge": -0.10500000000000004,
+    "yes_ask": 0.53,
+    "no_ask": 0.48,
     "fee_per_contract": 0.02,
-    "ev_per_contract": 0.14999999999999994,
-    "limit_price": null,
-    "ev_limit_per_contract": null,
-    "lean": "NO",
-    "conviction": "high",
-    "lean_note": null,
-    "prob_delta_vs_prev": -0.18,
+    "ev_per_contract": 0.08000000000000008,
+    "limit_price": 0.47,
+    "ev_limit_per_contract": 0.09,
+    "lean": "NONE",
+    "conviction": "low",
+    "lean_note": "11pt gap vs a liquid market without high confidence — more likely my error than edge",
+    "prob_delta_vs_prev": 0.14999999999999997,
     "trigger": "scheduled",
-    "strategy_id": "L0-local-single",
-    "proposed_probability": 0.27,
-    "adversarial_verdict": "revise",
-    "adversarial_challenged_prob": 0.35,
-    "adversarial_concerns": [
-      "Assumes anti-Doeden voters will consolidate behind Rhoden without evidence of Rhoden's appeal to those voters",
-      "Underestimates potential for Doeden to gain momentum in runoff",
-      "Ignores market's higher implied probability which may reflect broader information"
-    ],
-    "adversarial_model": "qwen3:14b-q4_K_M",
-    "rationale_summary": "SD primary Jun 2 hit no 35% threshold; 2-way Jul 28 runoff Doeden (31% plurality) vs incumbent Gov Rhoden (25%). ~69% did not back Doeden; anti-Doeden (Johnson) base expected to consolidate behind incumbent. Doeden a clear underdog with intense base.",
-    "key_drivers": [
-      "Jul 28 runoff vs incumbent Rhoden",
-      "69% did not back Doeden",
-      "Johnson voters consolidate to Rhoden",
-      "Doeden base intensity in low-turnout runoff"
-    ],
+    "strategy_id": "S0-single",
+    "proposed_probability": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": "",
+    "rationale_summary": "Jul 28 two-way runoff: Doeden 31% plurality vs incumbent Rhoden 25% in round 1, with Johnson (23%) + Hansen (21%) eliminated. Reasoning the runoff independently: Johnson's mainstream-conservative bloc likely breaks toward the incumbent, Hansen's populists split -> Doeden lands ~42-48%. Market drifted up to ~0.525 (Doeden strengthening). REVISING my prior 0.27 fade UPWARD: that 17.5pt fade was over-confident, the exact unjustified-market-divergence pattern from the URAN post-mortem. Calibrated ~0.42, medium confidence; not a justified fade of a liquid runoff market.",
+    "key_drivers": [],
     "reference_classes": [
-      "outsider plurality winners losing 2-way runoffs",
-      "incumbent governors winning intraparty runoffs"
+      "two-way primary runoffs: plurality outsider vs consolidating establishment; eliminated-candidate vote transfer"
     ],
-    "research_refs": [
-      "https://www.nbcnews.com/politics/2026-election/republican-toby-doeden-advances-primary-runoff-south-dakota-rcna347472",
-      "https://ballotpedia.org/South_Dakota_gubernatorial_election",
-      "_2026_(June_2_Republican_primary)"
-    ]
+    "research_refs": []
   },
   "history": [
     {
@@ -170,6 +156,37 @@
         "https://ballotpedia.org/South_Dakota_gubernatorial_election",
         "_2026_(June_2_Republican_primary)"
       ]
+    },
+    {
+      "as_of": "2026-06-22T22:51:14Z",
+      "my_probability": 0.42,
+      "my_confidence": "medium",
+      "market_implied_probability": 0.525,
+      "market_price_cents": null,
+      "edge": -0.10500000000000004,
+      "yes_ask": 0.53,
+      "no_ask": 0.48,
+      "fee_per_contract": 0.02,
+      "ev_per_contract": 0.08000000000000008,
+      "limit_price": 0.47,
+      "ev_limit_per_contract": 0.09,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "11pt gap vs a liquid market without high confidence — more likely my error than edge",
+      "prob_delta_vs_prev": 0.14999999999999997,
+      "trigger": "scheduled",
+      "strategy_id": "S0-single",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "Jul 28 two-way runoff: Doeden 31% plurality vs incumbent Rhoden 25% in round 1, with Johnson (23%) + Hansen (21%) eliminated. Reasoning the runoff independently: Johnson's mainstream-conservative bloc likely breaks toward the incumbent, Hansen's populists split -> Doeden lands ~42-48%. Market drifted up to ~0.525 (Doeden strengthening). REVISING my prior 0.27 fade UPWARD: that 17.5pt fade was over-confident, the exact unjustified-market-divergence pattern from the URAN post-mortem. Calibrated ~0.42, medium confidence; not a justified fade of a liquid runoff market.",
+      "key_drivers": [],
+      "reference_classes": [
+        "two-way primary runoffs: plurality outsider vs consolidating establishment; eliminated-candidate vote transfer"
+      ],
+      "research_refs": []
     }
   ],
   "position": {

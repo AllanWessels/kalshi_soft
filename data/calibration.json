@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-06-19T18:46:37Z",
-  "n_resolved": 22,
-  "brier_mine_mean": 0.12090113636363636,
-  "brier_market_mean": 0.12829995454545454,
-  "skill_vs_market": 0.007398818181818173,
+  "updated_at": "2026-06-22T22:45:47Z",
+  "n_resolved": 25,
+  "brier_mine_mean": 0.16569299999999998,
+  "brier_market_mean": 0.12812296,
+  "skill_vs_market": -0.03757003999999997,
   "bins": [
     {
       "range": [
@@ -38,9 +38,9 @@
         0.3,
         0.4
       ],
-      "n": 0,
-      "mean_forecast": null,
-      "observed_freq": null
+      "n": 1,
+      "mean_forecast": 0.32,
+      "observed_freq": 1.0
     },
     {
       "range": [
@@ -83,18 +83,18 @@
         0.8,
         0.9
       ],
-      "n": 2,
-      "mean_forecast": 0.8400000000000001,
-      "observed_freq": 0.5
+      "n": 3,
+      "mean_forecast": 0.8266666666666667,
+      "observed_freq": 0.6666666666666666
     },
     {
       "range": [
         0.9,
         1.0
       ],
-      "n": 4,
-      "mean_forecast": 0.94,
-      "observed_freq": 0.75
+      "n": 5,
+      "mean_forecast": 0.95,
+      "observed_freq": 0.6
     }
   ],
   "by_category": {
@@ -109,6 +109,18 @@
       "brier_mine_mean": 0.05131428571428572,
       "brier_market_mean": 0.030139285714285712,
       "skill_vs_market": -0.02117500000000001
+    },
+    "culture": {
+      "n": 2,
+      "brier_mine_mean": 0.2512,
+      "brier_market_mean": 0.17312499999999995,
+      "skill_vs_market": -0.07807500000000003
+    },
+    "statements": {
+      "n": 1,
+      "brier_mine_mean": 0.9801,
+      "brier_market_mean": 0.034225,
+      "skill_vs_market": -0.945875
     }
   },
   "by_segment": {
@@ -165,6 +177,18 @@
       "brier_mine_mean": 0.145,
       "brier_market_mean": 0.11581666666666666,
       "skill_vs_market": -0.029183333333333325
+    },
+    "culture / box-office": {
+      "n": 2,
+      "brier_mine_mean": 0.2512,
+      "brier_market_mean": 0.17312499999999995,
+      "skill_vs_market": -0.07807500000000003
+    },
+    "statements / other-statements": {
+      "n": 1,
+      "brier_mine_mean": 0.9801,
+      "brier_market_mean": 0.034225,
+      "skill_vs_market": -0.945875
     }
   },
   "by_strategy": {
@@ -175,10 +199,10 @@
       "skill_vs_market": 0.03496723076923078
     },
     "S0-single": {
-      "n": 5,
-      "brier_mine_mean": 0.0006400000000000003,
-      "brier_market_mean": 0.00042500000000000046,
-      "skill_vs_market": -0.0002149999999999998
+      "n": 8,
+      "brier_mine_mean": 0.18571249999999997,
+      "brier_market_mean": 0.047824999999999986,
+      "skill_vs_market": -0.1378875
     },
     "L0-local-single": {
       "n": 2,
@@ -211,6 +235,24 @@
       "win_rate": 1.0,
       "avg_clv": -0.0050000000000000044,
       "max_drawdown": 0.0
+    },
+    "culture": {
+      "n_trades": 2,
+      "total_pnl": -0.3600000000000001,
+      "total_staked": 1.36,
+      "roi": -0.26470588235294124,
+      "win_rate": 0.5,
+      "avg_clv": -0.015000000000000013,
+      "max_drawdown": -0.5800000000000001
+    },
+    "statements": {
+      "n_trades": 1,
+      "total_pnl": -0.22999999999999998,
+      "total_staked": 0.22999999999999998,
+      "roi": -1.0,
+      "win_rate": 0.0,
+      "avg_clv": -0.024999999999999994,
+      "max_drawdown": -0.22999999999999998
     }
   },
   "profit_by_segment": {
@@ -249,6 +291,24 @@
       "win_rate": 0.0,
       "avg_clv": -0.034999999999999976,
       "max_drawdown": -0.52
+    },
+    "culture / box-office": {
+      "n_trades": 2,
+      "total_pnl": -0.3600000000000001,
+      "total_staked": 1.36,
+      "roi": -0.26470588235294124,
+      "win_rate": 0.5,
+      "avg_clv": -0.015000000000000013,
+      "max_drawdown": -0.5800000000000001
+    },
+    "statements / other-statements": {
+      "n_trades": 1,
+      "total_pnl": -0.22999999999999998,
+      "total_staked": 0.22999999999999998,
+      "roi": -1.0,
+      "win_rate": 0.0,
+      "avg_clv": -0.024999999999999994,
+      "max_drawdown": -0.22999999999999998
     }
   },
   "profit_by_strategy": {
@@ -269,15 +329,24 @@
       "win_rate": 0.0,
       "avg_clv": -0.034999999999999976,
       "max_drawdown": -0.52
+    },
+    "S0-single": {
+      "n_trades": 3,
+      "total_pnl": -0.5900000000000001,
+      "total_staked": 1.59,
+      "roi": -0.37106918238993714,
+      "win_rate": 0.3333333333333333,
+      "avg_clv": -0.01833333333333334,
+      "max_drawdown": -0.5900000000000001
     }
   },
   "profitability": {
     "cf_overall": {
-      "n": 22,
-      "cf_pnl": -1.436,
-      "cf_staked": 19.436,
-      "cf_roi": -0.07388351512656925,
-      "cf_win_rate": 0.8181818181818182,
+      "n": 25,
+      "cf_pnl": -1.9560000000000002,
+      "cf_staked": 20.956,
+      "cf_roi": -0.09333842336323726,
+      "cf_win_rate": 0.76,
       "max_drawdown": -2.341
     },
     "cf_by_taken": {
@@ -290,30 +359,30 @@
         "max_drawdown": -1.791
       },
       "taken": {
-        "n": 5,
-        "cf_pnl": 0.3199999999999999,
-        "cf_staked": 3.68,
-        "cf_roi": 0.0869565217391304,
-        "cf_win_rate": 0.8,
+        "n": 8,
+        "cf_pnl": -0.20000000000000018,
+        "cf_staked": 5.2,
+        "cf_roi": -0.03846153846153849,
+        "cf_win_rate": 0.625,
         "max_drawdown": -0.8
       }
     },
     "cf_by_gap": {
       "0-5pt": {
-        "n": 15,
-        "cf_pnl": 0.757,
-        "cf_staked": 14.243,
-        "cf_roi": 0.05314891525661729,
+        "n": 16,
+        "cf_pnl": 0.977,
+        "cf_staked": 15.023,
+        "cf_roi": 0.06503361512347733,
         "cf_win_rate": 1.0,
         "max_drawdown": -0.007999999999999998
       },
       "10-20pt": {
-        "n": 3,
-        "cf_pnl": -1.533,
-        "cf_staked": 2.533,
-        "cf_roi": -0.6052112120015791,
-        "cf_win_rate": 0.3333333333333333,
-        "max_drawdown": -1.783
+        "n": 4,
+        "cf_pnl": -2.113,
+        "cf_staked": 3.113,
+        "cf_roi": -0.67876646321876,
+        "cf_win_rate": 0.25,
+        "max_drawdown": -2.113
       },
       "5-10pt": {
         "n": 3,
@@ -324,29 +393,29 @@
         "max_drawdown": -0.8
       },
       "20pt+": {
-        "n": 1,
-        "cf_pnl": -0.39,
-        "cf_staked": 0.39,
+        "n": 2,
+        "cf_pnl": -0.55,
+        "cf_staked": 0.55,
         "cf_roi": -1.0,
         "cf_win_rate": 0.0,
-        "max_drawdown": -0.39
+        "max_drawdown": -0.55
       }
     },
     "cf_by_confidence": {
       "high": {
-        "n": 14,
-        "cf_pnl": 0.37700000000000006,
-        "cf_staked": 13.623,
-        "cf_roi": 0.02767378697790502,
-        "cf_win_rate": 1.0,
-        "max_drawdown": -0.008000000000000007
+        "n": 15,
+        "cf_pnl": 0.21700000000000008,
+        "cf_staked": 13.783,
+        "cf_roi": 0.015744032503809048,
+        "cf_win_rate": 0.9333333333333333,
+        "max_drawdown": -0.16
       },
       "medium": {
-        "n": 5,
-        "cf_pnl": -0.8730000000000002,
-        "cf_staked": 3.873,
-        "cf_roi": -0.22540666150271113,
-        "cf_win_rate": 0.6,
+        "n": 7,
+        "cf_pnl": -1.2330000000000003,
+        "cf_staked": 5.2330000000000005,
+        "cf_roi": -0.2356201031912861,
+        "cf_win_rate": 0.5714285714285714,
         "max_drawdown": -1.743
       },
       "low": {
@@ -374,6 +443,22 @@
         "cf_roi": -0.018003273322422252,
         "cf_win_rate": 0.8571428571428571,
         "max_drawdown": -0.39
+      },
+      "culture": {
+        "n": 2,
+        "cf_pnl": -0.3600000000000001,
+        "cf_staked": 1.36,
+        "cf_roi": -0.26470588235294124,
+        "cf_win_rate": 0.5,
+        "max_drawdown": -0.5800000000000001
+      },
+      "statements": {
+        "n": 1,
+        "cf_pnl": -0.16,
+        "cf_staked": 0.16,
+        "cf_roi": -1.0,
+        "cf_win_rate": 0.0,
+        "max_drawdown": -0.16
       }
     },
     "cf_by_strategy": {
@@ -386,12 +471,12 @@
         "max_drawdown": -2.341
       },
       "S0-single": {
-        "n": 5,
-        "cf_pnl": 0.03000000000000005,
-        "cf_staked": 4.97,
-        "cf_roi": 0.0060362173038229485,
-        "cf_win_rate": 1.0,
-        "max_drawdown": 0.0
+        "n": 8,
+        "cf_pnl": -0.49000000000000005,
+        "cf_staked": 6.49,
+        "cf_roi": -0.07550077041602465,
+        "cf_win_rate": 0.75,
+        "max_drawdown": -0.5800000000000001
       },
       "L0-local-single": {
         "n": 2,
