@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-06-22T22:47:26Z",
+  "generated_at": "2026-06-22T22:55:57Z",
   "n_resolved": 25,
   "guardrails": {
     "min_n": 20,
     "max_step": 0.05
   },
-  "mode": "apply",
+  "mode": "observe",
   "proposals": [
     {
       "knob": "max_market_disagreement",
-      "current": 0.15,
-      "proposed": 0.1,
+      "current": 0.1,
+      "proposed": 0.05,
       "n": 25,
       "guardrail": "AUTO_OK",
       "rationale": "Counterfactual ROI falls monotonically as the fade widens and is profitable only at/under 5pt -> tighten the fade gate toward the band that actually pays.",
@@ -51,8 +51,8 @@
     },
     {
       "knob": "hard_gap_ceiling",
-      "current": 0.3,
-      "proposed": 0.25,
+      "current": 0.25,
+      "proposed": 0.2,
       "n": 25,
       "guardrail": "AUTO_OK",
       "rationale": "The widest fades (20pt+) lost catastrophically (ROI<=-50%) -> lower the absolute ceiling so even high-confidence cannot take a fade that wide. This is the URAN guard learned from the record.",
@@ -76,12 +76,12 @@
       }
     },
     {
-      "knob": "low_confidence_never_leans",
-      "current": true,
-      "proposed": true,
+      "knob": "min_confidence_for_lean",
+      "current": "medium",
+      "proposed": "high",
       "n": 25,
       "guardrail": "HUMAN_GATE",
-      "rationale": "medium-confidence trades lose while high-confidence profit -> consider a min-confidence gate (no continuous knob exists to auto-tune; human-gated).",
+      "rationale": "medium-confidence ROI -24% (n=7) while high-confidence profits 2% (n=15) -> raise the lean floor to 'high'. Held for human sign-off until the medium tier has >= 10 resolved samples (has 7) — won't eliminate a tier on a thin sample.",
       "evidence": {
         "high": {
           "n": 15,

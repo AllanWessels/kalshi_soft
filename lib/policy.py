@@ -36,6 +36,10 @@ class Policy:
     conviction_medium_ev: float = 0.05     # EV at/above which conviction = medium
     conviction_high_ev: float = 0.12       # EV at/above which conviction = high
     low_confidence_never_leans: bool = True  # a low-confidence estimate is never an actionable lean
+    min_confidence_for_lean: str = "medium"  # the minimum confidence tier an actionable lean needs
+                                             # ("low"|"medium"|"high"). Raising this to "high" gates
+                                             # medium-confidence leans too — the learnable control for
+                                             # the finding that medium-confidence fades lose money.
 
     # --- adversarial gate authority (learned from the veto track record) ---
     adversarial_veto_binding: bool = True   # a veto downgrades the lean to NONE (vs advisory only)

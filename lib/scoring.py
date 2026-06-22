@@ -388,20 +388,24 @@ def confidence_gate(
     confidence: str,
     max_gap: float = 0.20,
     hard_ceiling: Optional[float] = None,
+    min_confidence: str = "medium",
 ) -> tuple:
     """Decide whether a positive-EV lean is ACTIONABLE given epistemic confidence.
 
     Returns ``(ok: bool, note: str)``. EV is computed from ``my_prob`` as if it were
     truth; this gate stops us from dressing up model error as edge:
-      - confidence "low"            -> never actionable (probability too shaky to fade the crowd)
+      - confidence below ``min_confidence`` -> never actionable (the learnable confidence floor;
+        at "medium" this gates low; raised to "high" it gates medium too)
       - |my_prob - market| > hard_ceiling -> NEVER actionable, even at high confidence
         (an extreme divergence from a liquid market is model error / misread rules, not edge)
       - |my_prob - market| > max_gap and confidence != "high" -> probable model error -> not actionable
     """
+    _RANK = {"low": 0, "medium": 1, "high": 2}
     if side == "NONE":
         return (False, "")
-    if confidence == "low":
-        return (False, "low confidence — estimate too uncertain to fade the market")
+    if _RANK.get(confidence, 0) < _RANK.get(min_confidence, 1):
+        return (False, f"{confidence} confidence below the {min_confidence} floor — "
+                       f"estimate too uncertain to fade the market")
     if market_implied is not None:
         gap = abs(my_prob - market_implied)
         # Absolute ceiling: no confidence level exempts an extreme fade. This is the

@@ -301,6 +301,7 @@ def main(argv: list[str] | None = None) -> None:
             side, args.prob, args.market_implied, confidence_for_gate,
             max_gap=pol.max_market_disagreement,
             hard_ceiling=pol.hard_gap_ceiling,
+            min_confidence=pol.min_confidence_for_lean,
         )
         if side != "NONE" and not ok:
             lean = "NONE"

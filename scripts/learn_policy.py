@@ -47,6 +47,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from lib import store, scoring, policy, config, schemas  # noqa: E402
 
 MIN_N = 20          # TOTAL resolved samples informing a knob before a change is auto-eligible
+MIN_TIER_N = 10     # resolved samples a confidence TIER needs before it can be gated out wholesale
 MAX_STEP = 0.05     # max change to any threshold per learning cycle (nudge, not jump)
 
 # Upper edge (in probability gap) of each counterfactual band — used to translate a
@@ -161,21 +162,38 @@ def analyze(resolutions, pol: policy.Policy) -> list[dict]:
                    "No catastrophic wide-fade band yet — the absolute ceiling stays put."),
         evidence={"20pt+": gap.get("20pt+"), "10-20pt": gap.get("10-20pt")}))
 
-    # --- KNOB 3: confidence gating (medium too?) — surfaced, not auto-applied -------------
-    # The record shows confidence predicts profit (high>medium>low), but there is no
-    # continuous knob to nudge here yet — gating medium is a discrete policy change, so it
-    # stays a human-surfaced recommendation rather than an autonomous move.
+    # --- KNOB 3: min_confidence_for_lean (raise the confidence floor?) -------------------
+    # The record shows confidence predicts profit (high>medium>low). This is now a real
+    # knob: raising the floor "medium" -> "high" gates medium-confidence leans. It is an
+    # ORDINAL one-step change (not a continuous nudge) that eliminates a whole tier of
+    # activity, so it needs a STRICTER bar than a threshold nudge — the to-be-gated tier
+    # must itself carry an adequate losing sample (MIN_TIER_N), not just clear the corpus
+    # total. Eliminating a tier on n=5 would be exactly the overfit the guardrails prevent.
     med, low, high = conf.get("medium", {}), conf.get("low", {}), conf.get("high", {})
     med_loses = (_roi(med) or 0) < 0 and (_roi(high) or 0) > 0
     conf_n = _n(med) + _n(high) + _n(low)
-    proposals.append(_row(
-        "low_confidence_never_leans", pol.low_confidence_never_leans,
-        True if med_loses else None, conf_n,
-        "HUMAN_GATE" if (med_loses and conf_n >= MIN_N) else "INSUFFICIENT_DATA",
-        rationale=("medium-confidence trades lose while high-confidence profit -> consider a "
-                   "min-confidence gate (no continuous knob exists to auto-tune; human-gated)."
-                   if med_loses else "Confidence gating evidence inconclusive."),
-        evidence={"high": high, "medium": med, "low": low}))
+    raise_floor = (pol.min_confidence_for_lean == "medium" and med_loses
+                   and _n(med) >= MIN_TIER_N and _n(high) >= MIN_TIER_N
+                   and conf_n >= MIN_N)
+    if pol.min_confidence_for_lean == "medium" and med_loses:
+        # risk-REDUCING (raising the floor sheds leans) — auto-eligible once the medium tier
+        # has enough resolved losers to trust; until then, surface as HUMAN_GATE.
+        guard = "AUTO_OK" if raise_floor else "HUMAN_GATE"
+        proposals.append(_row(
+            "min_confidence_for_lean", pol.min_confidence_for_lean, "high", conf_n, guard,
+            rationale=(f"medium-confidence ROI {round((_roi(med) or 0)*100)}% (n={_n(med)}) while "
+                       f"high-confidence profits {round((_roi(high) or 0)*100)}% (n={_n(high)}) -> raise "
+                       f"the lean floor to 'high'." +
+                       ("" if raise_floor else
+                        f" Held for human sign-off until the medium tier has >= {MIN_TIER_N} "
+                        f"resolved samples (has {_n(med)}) — won't eliminate a tier on a thin sample.")),
+            evidence={"high": high, "medium": med, "low": low}))
+    else:
+        proposals.append(_row(
+            "min_confidence_for_lean", pol.min_confidence_for_lean, None, conf_n,
+            "INSUFFICIENT_DATA",
+            rationale="Confidence gating evidence inconclusive (or floor already raised).",
+            evidence={"high": high, "medium": med, "low": low}))
 
     # --- KNOB 4: adversarial veto authority (learn to trust the gate) --------------------
     verdicts = [r for r in resolutions if getattr(r, "adversarial_verdict", "")]
