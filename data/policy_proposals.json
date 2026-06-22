@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-06-22T14:10:18Z",
+  "generated_at": "2026-06-22T22:41:18Z",
   "n_resolved": 22,
   "guardrails": {
     "min_n": 20,
     "max_step": 0.05
   },
-  "mode": "apply",
+  "mode": "observe",
   "proposals": [
     {
       "knob": "max_market_disagreement",
-      "current": 0.2,
+      "current": 0.15,
       "proposed": 0.1,
-      "n": 4,
-      "guardrail": "INSUFFICIENT_DATA",
-      "rationale": "Counterfactual ROI negative in 10-20pt, 20pt+ -> wide fades lose; tighten the fade gate.",
+      "n": 22,
+      "guardrail": "AUTO_OK",
+      "rationale": "Counterfactual ROI falls monotonically as the fade widens and is profitable only at/under 5pt -> tighten the fade gate toward the band that actually pays.",
       "evidence": {
         "0-5pt": {
           "n": 15,
@@ -50,12 +50,38 @@
       }
     },
     {
+      "knob": "hard_gap_ceiling",
+      "current": 0.3,
+      "proposed": 0.25,
+      "n": 22,
+      "guardrail": "AUTO_OK",
+      "rationale": "The widest fades (20pt+) lost catastrophically (ROI<=-50%) -> lower the absolute ceiling so even high-confidence cannot take a fade that wide. This is the URAN guard learned from the record.",
+      "evidence": {
+        "20pt+": {
+          "n": 1,
+          "cf_pnl": -0.39,
+          "cf_staked": 0.39,
+          "cf_roi": -1.0,
+          "cf_win_rate": 0.0,
+          "max_drawdown": -0.39
+        },
+        "10-20pt": {
+          "n": 3,
+          "cf_pnl": -1.533,
+          "cf_staked": 2.533,
+          "cf_roi": -0.6052112120015791,
+          "cf_win_rate": 0.3333333333333333,
+          "max_drawdown": -1.783
+        }
+      }
+    },
+    {
       "knob": "low_confidence_never_leans",
       "current": true,
       "proposed": true,
-      "n": 19,
-      "guardrail": "INSUFFICIENT_DATA",
-      "rationale": "medium-confidence trades lose while high-confidence profit -> consider gating medium too (currently only low is gated).",
+      "n": 22,
+      "guardrail": "HUMAN_GATE",
+      "rationale": "medium-confidence trades lose while high-confidence profit -> consider a min-confidence gate (no continuous knob exists to auto-tune; human-gated).",
       "evidence": {
         "high": {
           "n": 14,
@@ -89,7 +115,7 @@
       "proposed": null,
       "n": 1,
       "guardrail": "INSUFFICIENT_DATA",
-      "rationale": "No resolved positions carry an adversarial verdict yet — the gate is new. Its veto precision becomes learnable once vetoed/revised positions resolve.",
+      "rationale": "Veto precision becomes learnable once vetoed/revised positions resolve; 1 resolved position(s) carry a verdict so far.",
       "evidence": {
         "resolved_with_verdict": 1
       }

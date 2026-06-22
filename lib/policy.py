@@ -28,6 +28,11 @@ class Policy:
     # --- position-entry thresholds (the "when do I take a position" knobs) ---
     min_profitable_ev: float = 0.02        # net $/contract floor for an actionable lean
     max_market_disagreement: float = 0.20  # gap vs a liquid market above which (w/o high conf) we don't fade
+    hard_gap_ceiling: float = 0.35         # ABSOLUTE gap ceiling: above this, NO lean and the adversarial
+                                           # veto is ALWAYS binding — even at high confidence. A ~80pt
+                                           # divergence from a liquid market (see the URAN post-mortem) is
+                                           # model error or a misread resolution rule, not edge; the high-
+                                           # confidence carve-outs must not apply to it.
     conviction_medium_ev: float = 0.05     # EV at/above which conviction = medium
     conviction_high_ev: float = 0.12       # EV at/above which conviction = high
     low_confidence_never_leans: bool = True  # a low-confidence estimate is never an actionable lean

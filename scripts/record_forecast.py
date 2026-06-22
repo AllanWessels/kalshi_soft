@@ -300,6 +300,7 @@ def main(argv: list[str] | None = None) -> None:
         ok, note = scoring.confidence_gate(
             side, args.prob, args.market_implied, confidence_for_gate,
             max_gap=pol.max_market_disagreement,
+            hard_ceiling=pol.hard_gap_ceiling,
         )
         if side != "NONE" and not ok:
             lean = "NONE"
@@ -331,7 +332,15 @@ def main(argv: list[str] | None = None) -> None:
                     # high-conf near-certainties by deferring to a stale market (e.g. a word
                     # the principal has already said). High-conf leans survive a veto but are
                     # flagged; the learner tracks veto precision as these resolve.
-                    veto_binding = pol.adversarial_veto_binding and confidence_for_gate != "high"
+                    # EXCEPTION (URAN guard): the high-confidence advisory carve-out does NOT
+                    # apply to an extreme fade. Above the hard gap ceiling, a veto is ALWAYS
+                    # binding — a 0.99-vs-1% bet is exactly where "high confidence" is least
+                    # trustworthy and the gate's skepticism is most warranted.
+                    _gap = (abs(args.prob - args.market_implied)
+                            if args.market_implied is not None else 0.0)
+                    _extreme_fade = _gap > pol.hard_gap_ceiling
+                    veto_binding = pol.adversarial_veto_binding and (
+                        confidence_for_gate != "high" or _extreme_fade)
                     if adversarial_verdict == "veto" and veto_binding:
                         lean = "NONE"
                         conviction = "low"

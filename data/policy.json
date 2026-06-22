@@ -1,13 +1,81 @@
 {
   "min_profitable_ev": 0.02,
-  "max_market_disagreement": 0.2,
+  "max_market_disagreement": 0.15,
+  "hard_gap_ceiling": 0.3,
   "conviction_medium_ev": 0.05,
   "conviction_high_ev": 0.12,
   "low_confidence_never_leans": true,
   "adversarial_veto_binding": true,
   "adversarial_min_veto_precision": 0.0,
   "crowd_adjust_weight_default": 0.3,
-  "updated_at": "2026-06-14T02:53:33Z",
-  "version": 1,
-  "changelog": []
+  "updated_at": "2026-06-22T22:41:03Z",
+  "version": 3,
+  "changelog": [
+    {
+      "at": "2026-06-22T22:41:03Z",
+      "knob": "max_market_disagreement",
+      "old": 0.2,
+      "new": 0.15,
+      "reason": "Counterfactual ROI falls monotonically as the fade widens and is profitable only at/under 5pt -> tighten the fade gate toward the band that actually pays.",
+      "evidence": {
+        "0-5pt": {
+          "n": 15,
+          "cf_pnl": 0.757,
+          "cf_staked": 14.243,
+          "cf_roi": 0.05314891525661729,
+          "cf_win_rate": 1.0,
+          "max_drawdown": -0.007999999999999998
+        },
+        "5-10pt": {
+          "n": 3,
+          "cf_pnl": -0.27,
+          "cf_staked": 2.27,
+          "cf_roi": -0.11894273127753305,
+          "cf_win_rate": 0.6666666666666666,
+          "max_drawdown": -0.8
+        },
+        "10-20pt": {
+          "n": 3,
+          "cf_pnl": -1.533,
+          "cf_staked": 2.533,
+          "cf_roi": -0.6052112120015791,
+          "cf_win_rate": 0.3333333333333333,
+          "max_drawdown": -1.783
+        },
+        "20pt+": {
+          "n": 1,
+          "cf_pnl": -0.39,
+          "cf_staked": 0.39,
+          "cf_roi": -1.0,
+          "cf_win_rate": 0.0,
+          "max_drawdown": -0.39
+        }
+      }
+    },
+    {
+      "at": "2026-06-22T22:41:03Z",
+      "knob": "hard_gap_ceiling",
+      "old": 0.35,
+      "new": 0.3,
+      "reason": "The widest fades (20pt+) lost catastrophically (ROI<=-50%) -> lower the absolute ceiling so even high-confidence cannot take a fade that wide. This is the URAN guard learned from the record.",
+      "evidence": {
+        "20pt+": {
+          "n": 1,
+          "cf_pnl": -0.39,
+          "cf_staked": 0.39,
+          "cf_roi": -1.0,
+          "cf_win_rate": 0.0,
+          "max_drawdown": -0.39
+        },
+        "10-20pt": {
+          "n": 3,
+          "cf_pnl": -1.533,
+          "cf_staked": 2.533,
+          "cf_roi": -0.6052112120015791,
+          "cf_win_rate": 0.3333333333333333,
+          "max_drawdown": -1.783
+        }
+      }
+    }
+  ]
 }
