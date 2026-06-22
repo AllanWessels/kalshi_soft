@@ -1,49 +1,48 @@
 {
   "schema_version": 1,
   "ticker": "KXHORMUZNORM-26MAR17-B260701",
-  "title": "Will the 7-day moving average of transit calls through the Strait of Hormuz as reported by the IMF PortWatch be above 60 before July 1, 2026?",
+  "title": "Will the 7-day moving average of Strait of Hormuz transit calls be above 60 before July 1, 2026?",
   "category": "politics",
   "close_time": "2026-07-07T13:59:00Z",
   "current": {
-    "as_of": "2026-06-19T21:54:30Z",
-    "my_probability": 0.032,
-    "my_confidence": "high",
-    "market_implied_probability": 0.067,
-    "market_price_cents": 7.0,
-    "edge": -0.035,
-    "yes_ask": 0.068,
-    "no_ask": 0.934,
+    "as_of": "2026-06-22T14:09:53Z",
+    "my_probability": 0.05,
+    "my_confidence": "medium",
+    "market_implied_probability": 0.0435,
+    "market_price_cents": 4.0,
+    "edge": 0.006500000000000006,
+    "yes_ask": 0.046,
+    "no_ask": 0.959,
     "fee_per_contract": 0.01,
-    "ev_per_contract": 0.023999999999999917,
+    "ev_per_contract": -0.01900000000000001,
     "limit_price": null,
     "ev_limit_per_contract": null,
-    "lean": "NO",
+    "lean": "NONE",
     "conviction": "low",
-    "lean_note": null,
-    "prob_delta_vs_prev": -0.048,
-    "trigger": "near_close",
+    "lean_note": "no +EV value bet at the ask (my prob 5%, modal NO) — staying out.",
+    "prob_delta_vs_prev": 0.018000000000000002,
+    "trigger": "scheduled",
     "strategy_id": "S0-single",
-    "proposed_probability": 0.032,
-    "adversarial_verdict": "revise",
-    "adversarial_challenged_prob": 0.067,
-    "adversarial_concerns": [
-      "Assumes current 7-day MA (~5/day) is static without considering potential pre-August surges",
-      "Overlooks market's higher implied probability (0.067) which may reflect unmodeled risks",
-      "MA lag assumption may understate impact of late-June spikes"
-    ],
-    "adversarial_model": "qwen3:14b-q4_K_M",
-    "rationale_summary": "7-day MA ~5/day vs 60; normalization expected ~August, past deadline; MA lags any late surge.",
+    "proposed_probability": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": "",
+    "rationale_summary": "PortWatch reported ~0 transits as recently as Jun 14, so the 7-day MA sits near zero; it cannot mechanically exceed 60 within ~8-9 days unless near-baseline (~90/day) traffic resumes almost immediately AND sustains a week AND PortWatch captures it without lag. AIS spoofing/dark vessels bias reported counts low. Small tail for fast MOU-driven reopening + data backfill. Modal = NO.",
     "key_drivers": [
-      "MA ~5 vs 60",
-      "no recovery",
-      "MA lags"
+      "7d MA lags and cannot jump from ~0 to >60 fast",
+      "only ~8-9 days left",
+      "strait still declared closed",
+      "PortWatch undercount bias",
+      "Jun18 MOU upside tail"
     ],
     "reference_classes": [
-      "post-war maritime recovery",
-      "trailing-MA lag"
+      "chokepoint recovery from near-total halt within ~10 days",
+      "MOU reopenings within days",
+      "smoothed MA crossing high threshold in short window"
     ],
     "research_refs": [
-      "https://en.wikipedia.org/wiki/2026_Strait_of_Hormuz_crisis"
+      "https://portwatch.imf.org/pages/chokepoint6"
     ]
   },
   "history": [
@@ -196,6 +195,47 @@
       ],
       "research_refs": [
         "https://en.wikipedia.org/wiki/2026_Strait_of_Hormuz_crisis"
+      ]
+    },
+    {
+      "as_of": "2026-06-22T14:09:53Z",
+      "my_probability": 0.05,
+      "my_confidence": "medium",
+      "market_implied_probability": 0.0435,
+      "market_price_cents": 4.0,
+      "edge": 0.006500000000000006,
+      "yes_ask": 0.046,
+      "no_ask": 0.959,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": -0.01900000000000001,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "no +EV value bet at the ask (my prob 5%, modal NO) — staying out.",
+      "prob_delta_vs_prev": 0.018000000000000002,
+      "trigger": "scheduled",
+      "strategy_id": "S0-single",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "PortWatch reported ~0 transits as recently as Jun 14, so the 7-day MA sits near zero; it cannot mechanically exceed 60 within ~8-9 days unless near-baseline (~90/day) traffic resumes almost immediately AND sustains a week AND PortWatch captures it without lag. AIS spoofing/dark vessels bias reported counts low. Small tail for fast MOU-driven reopening + data backfill. Modal = NO.",
+      "key_drivers": [
+        "7d MA lags and cannot jump from ~0 to >60 fast",
+        "only ~8-9 days left",
+        "strait still declared closed",
+        "PortWatch undercount bias",
+        "Jun18 MOU upside tail"
+      ],
+      "reference_classes": [
+        "chokepoint recovery from near-total halt within ~10 days",
+        "MOU reopenings within days",
+        "smoothed MA crossing high threshold in short window"
+      ],
+      "research_refs": [
+        "https://portwatch.imf.org/pages/chokepoint6"
       ]
     }
   ],

@@ -1,47 +1,46 @@
 {
   "schema_version": 1,
   "ticker": "KXEOWEEK-26JUN13-0",
-  "title": "Will the President sign more than 0 Executive Orders between Jun 7, 2026 and Jun 13, 2026?",
+  "title": "Will the President sign more than 0 Executive Orders between Jun 7 and Jun 13, 2026?",
   "category": "politics",
   "close_time": "2026-06-27T14:00:00Z",
   "current": {
-    "as_of": "2026-06-19T18:57:37Z",
-    "my_probability": 0.1,
-    "my_confidence": "medium",
+    "as_of": "2026-06-22T14:09:52Z",
+    "my_probability": 0.03,
+    "my_confidence": "high",
     "market_implied_probability": 0.005,
-    "market_price_cents": 1.0,
-    "edge": 0.095,
+    "market_price_cents": 0.0,
+    "edge": 0.024999999999999998,
     "yes_ask": 0.01,
     "no_ask": 1.0,
-    "fee_per_contract": 0.0,
-    "ev_per_contract": -0.09999999999999998,
+    "fee_per_contract": 0.01,
+    "ev_per_contract": 0.009999999999999997,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "I lean NO (my prob 10%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
-    "prob_delta_vs_prev": null,
-    "trigger": "scheduled",
-    "strategy_id": "L0-local-single",
+    "lean_note": "no +EV value bet at the ask (my prob 3%, modal NO) — staying out.",
+    "prob_delta_vs_prev": -0.07,
+    "trigger": "near_close",
+    "strategy_id": "S0-single",
     "proposed_probability": null,
     "adversarial_verdict": "",
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "Window Jun 7-13 is past. Numbered EO series stopped at EO 14411 on Jun 3 (pre-window); in-window actions were a proclamation (Jun 11) + memorandum (Jun 12), not numbered EOs -> strict reading NO. 0.10 reflects residual Federal-Register-lag and resolution-ambiguity tail risk vs market 0.5%.",
+    "rationale_summary": "Federal Register API verified: the latest June EOs are 14409-14411 (signed Jun 2-3); ZERO Executive Orders carry a signing date inside Jun 7-13, 2026. The base-rate-only 0.69 is overridden by direct verification. Now 9+ days past the window, an unpublished in-window EO is highly unlikely. Resolves NO; market at 0.5c is correct. Modal = NO.",
     "key_drivers": [
-      "numbered EO series stopped at 14411 Jun 3",
-      "in-window actions were proclamation+memo not EOs",
-      "Federal Register lag risk",
-      "resolution-definition ambiguity"
+      "Federal Register verified zero EOs Jun 7-13",
+      "latest EO 14411 dated Jun 3",
+      "base rate overridden by direct check",
+      "publication essentially complete"
     ],
     "reference_classes": [
-      "Trump 2026 weekly numbered-EO cadence",
-      "Kalshi EOWEEK resolution practice"
+      "verified Federal Register weekly EO counts",
+      "settled past-fact markets"
     ],
     "research_refs": [
-      "https://www.federalregister.gov/presidential-documents/executive-orders/donald-trump/2026",
-      "https://www.presidency.ucsb.edu/documents/app-categories/written-presidential-orders/presidential/executive-orders"
+      "https://www.federalregister.gov/presidential-documents/executive-orders/donald-trump/2026"
     ]
   },
   "history": [
@@ -83,6 +82,45 @@
       "research_refs": [
         "https://www.federalregister.gov/presidential-documents/executive-orders/donald-trump/2026",
         "https://www.presidency.ucsb.edu/documents/app-categories/written-presidential-orders/presidential/executive-orders"
+      ]
+    },
+    {
+      "as_of": "2026-06-22T14:09:52Z",
+      "my_probability": 0.03,
+      "my_confidence": "high",
+      "market_implied_probability": 0.005,
+      "market_price_cents": 0.0,
+      "edge": 0.024999999999999998,
+      "yes_ask": 0.01,
+      "no_ask": 1.0,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": 0.009999999999999997,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "no +EV value bet at the ask (my prob 3%, modal NO) — staying out.",
+      "prob_delta_vs_prev": -0.07,
+      "trigger": "near_close",
+      "strategy_id": "S0-single",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "Federal Register API verified: the latest June EOs are 14409-14411 (signed Jun 2-3); ZERO Executive Orders carry a signing date inside Jun 7-13, 2026. The base-rate-only 0.69 is overridden by direct verification. Now 9+ days past the window, an unpublished in-window EO is highly unlikely. Resolves NO; market at 0.5c is correct. Modal = NO.",
+      "key_drivers": [
+        "Federal Register verified zero EOs Jun 7-13",
+        "latest EO 14411 dated Jun 3",
+        "base rate overridden by direct check",
+        "publication essentially complete"
+      ],
+      "reference_classes": [
+        "verified Federal Register weekly EO counts",
+        "settled past-fact markets"
+      ],
+      "research_refs": [
+        "https://www.federalregister.gov/presidential-documents/executive-orders/donald-trump/2026"
       ]
     }
   ],

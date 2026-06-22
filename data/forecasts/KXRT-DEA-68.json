@@ -1,49 +1,48 @@
 {
   "schema_version": 1,
   "ticker": "KXRT-DEA-68",
-  "title": "The Death of Robin Hood Rotten Tomatoes score (>=68%)?",
+  "title": "The Death of Robin Hood Rotten Tomatoes score above 68?",
   "category": "culture",
   "close_time": "2026-06-22T14:00:00Z",
   "current": {
-    "as_of": "2026-06-19T21:54:07Z",
-    "my_probability": 0.32,
+    "as_of": "2026-06-22T14:09:22Z",
+    "my_probability": 0.93,
     "my_confidence": "medium",
-    "market_implied_probability": 0.475,
-    "market_price_cents": 48.0,
-    "edge": -0.15499999999999997,
-    "yes_ask": 0.49,
-    "no_ask": 0.54,
-    "fee_per_contract": 0.02,
-    "ev_per_contract": 0.1199999999999999,
+    "market_implied_probability": 0.99,
+    "market_price_cents": null,
+    "edge": -0.05999999999999994,
+    "yes_ask": null,
+    "no_ask": null,
+    "fee_per_contract": null,
+    "ev_per_contract": null,
     "limit_price": null,
     "ev_limit_per_contract": null,
-    "lean": "NO",
-    "conviction": "medium",
+    "lean": "NONE",
+    "conviction": "low",
     "lean_note": null,
-    "prob_delta_vs_prev": 0.0,
+    "prob_delta_vs_prev": 0.6100000000000001,
     "trigger": "near_close",
     "strategy_id": "S0-single",
-    "proposed_probability": 0.32,
-    "adversarial_verdict": "revise",
-    "adversarial_challenged_prob": 0.4,
-    "adversarial_concerns": [
-      "Thin sourcing (only 22 reviews)",
-      "Assumes score won't rise with more reviews",
-      "Market may anticipate future score improvement"
-    ],
-    "adversarial_model": "qwen3:14b-q4_K_M",
-    "rationale_summary": "At 64% on 22 reviews, 4pts below the 68 line, divisive; modal stays low-to-mid 60s, short of 68.",
+    "proposed_probability": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": "",
+    "rationale_summary": "Currently 70% on 97 reviews, two points above the >68 threshold and effectively locked; each marginal review moves a 97-denominator score ~1pt and base mix is ~70% fresh. Divisive reception widens the downside tail but central case holds at 69-70. Market closed/awaiting settlement.",
     "key_drivers": [
-      "64% below threshold",
-      "divisive=flat-to-down drift",
-      "short window"
+      "70% with 2pt cushion",
+      "high review count locks score",
+      "~70% fresh marginal rate",
+      "divisive widens tail",
+      "resolution today"
     ],
     "reference_classes": [
-      "early RT vs final",
-      "divisive-film drift"
+      "established Tomatometer 90+ reviews on resolution day",
+      "final-day drift for divisive films",
+      "marginal-review impact at high n"
     ],
     "research_refs": [
-      "https://movieweb.com/the-death-of-robin-hood-rotten-tomatoes-score/"
+      "https://www.rottentomatoes.com/m/the_death_of_robin_hood"
     ]
   },
   "history": [
@@ -130,6 +129,47 @@
       ],
       "research_refs": [
         "https://movieweb.com/the-death-of-robin-hood-rotten-tomatoes-score/"
+      ]
+    },
+    {
+      "as_of": "2026-06-22T14:09:22Z",
+      "my_probability": 0.93,
+      "my_confidence": "medium",
+      "market_implied_probability": 0.99,
+      "market_price_cents": null,
+      "edge": -0.05999999999999994,
+      "yes_ask": null,
+      "no_ask": null,
+      "fee_per_contract": null,
+      "ev_per_contract": null,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": null,
+      "prob_delta_vs_prev": 0.6100000000000001,
+      "trigger": "near_close",
+      "strategy_id": "S0-single",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "Currently 70% on 97 reviews, two points above the >68 threshold and effectively locked; each marginal review moves a 97-denominator score ~1pt and base mix is ~70% fresh. Divisive reception widens the downside tail but central case holds at 69-70. Market closed/awaiting settlement.",
+      "key_drivers": [
+        "70% with 2pt cushion",
+        "high review count locks score",
+        "~70% fresh marginal rate",
+        "divisive widens tail",
+        "resolution today"
+      ],
+      "reference_classes": [
+        "established Tomatometer 90+ reviews on resolution day",
+        "final-day drift for divisive films",
+        "marginal-review impact at high n"
+      ],
+      "research_refs": [
+        "https://www.rottentomatoes.com/m/the_death_of_robin_hood"
       ]
     }
   ],

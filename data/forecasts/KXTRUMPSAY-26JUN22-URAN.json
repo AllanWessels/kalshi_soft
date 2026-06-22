@@ -1,46 +1,45 @@
 {
   "schema_version": 1,
   "ticker": "KXTRUMPSAY-26JUN22-URAN",
-  "title": "Will Trump say \"Uranium\" before Jun 22, 2026?",
+  "title": "Will Trump say Uranium before Jun 22, 2026?",
   "category": "statements",
   "close_time": "2026-06-22T14:00:00Z",
   "current": {
-    "as_of": "2026-06-19T21:53:50Z",
-    "my_probability": 0.99,
-    "my_confidence": "high",
-    "market_implied_probability": 0.185,
-    "market_price_cents": 19.0,
-    "edge": 0.8049999999999999,
-    "yes_ask": 0.21,
-    "no_ask": 0.84,
-    "fee_per_contract": 0.02,
-    "ev_per_contract": 0.76,
+    "as_of": "2026-06-22T14:09:22Z",
+    "my_probability": 0.08,
+    "my_confidence": "low",
+    "market_implied_probability": 0.01,
+    "market_price_cents": null,
+    "edge": 0.07,
+    "yes_ask": null,
+    "no_ask": null,
+    "fee_per_contract": null,
+    "ev_per_contract": null,
     "limit_price": null,
     "ev_limit_per_contract": null,
-    "lean": "YES",
-    "conviction": "high",
-    "lean_note": " [adversarial VETO recorded (ADVISORY — high-confidence lean kept; gate non-binding for high conf)]",
-    "prob_delta_vs_prev": 0.0,
+    "lean": "NONE",
+    "conviction": "low",
+    "lean_note": null,
+    "prob_delta_vs_prev": -0.91,
     "trigger": "near_close",
     "strategy_id": "S0-single",
-    "proposed_probability": 0.99,
-    "adversarial_verdict": "veto",
-    "adversarial_challenged_prob": 0.3,
-    "adversarial_concerns": [
-      "Divergence from market implies forecaster ignores crowd wisdom about Trump's unpredictable speech patterns",
-      "Relies on stale evidence (2018/2019 events) without current triggers",
-      "Base-rate neglect: Trump's past uranium mentions don't guarantee future ones",
-      "Assumes continuity without evidence of ongoing uranium-related policy focus"
-    ],
-    "adversarial_model": "qwen3:14b-q4_K_M",
-    "rationale_summary": "Already said it Jun18 G7 ('right to enrich uranium'); core issue of the US-Iran deal signed Jun19 (in-window); frequent public remarks. Near-certain.",
+    "proposed_probability": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": "",
+    "rationale_summary": "Saying-window (Jun15-Jun22 00:00 ET) is CLOSED; the informed market priced ~1% right up to close, implying full-information trackers found no qualifying verbatim Trump 'uranium' quote. Despite peak Iran-nuclear coverage, every confirmed in-window Trump quote used a synonym ('nuclear/enriched material'); no verbatim quote confirmed. Heavily discounting an independent forecaster's notes-only 0.44 toward the closed-window settlement signal.",
     "key_drivers": [
-      "already said Jun18",
-      "deal signed Jun19 in-window",
-      "word unavoidable"
+      "saying-window closed",
+      "informed market ~1% to close",
+      "no confirmed verbatim quote",
+      "Trump synonym-substitution all week",
+      "official/document mentions do not count"
     ],
     "reference_classes": [
-      "principal says lead-story noun over multi-day window"
+      "KXTRUMPSAY on-topic salient words",
+      "verbatim-quote-found rate under full-info tracking",
+      "closed-window settlement price as near-oracle"
     ],
     "research_refs": [
       "https://www.aljazeera.com/news/2026/6/18/what-the-trump-iran-14-point-plan-says-about-lebanon-hormuz-and-uranium"
@@ -126,6 +125,47 @@
       ],
       "reference_classes": [
         "principal says lead-story noun over multi-day window"
+      ],
+      "research_refs": [
+        "https://www.aljazeera.com/news/2026/6/18/what-the-trump-iran-14-point-plan-says-about-lebanon-hormuz-and-uranium"
+      ]
+    },
+    {
+      "as_of": "2026-06-22T14:09:22Z",
+      "my_probability": 0.08,
+      "my_confidence": "low",
+      "market_implied_probability": 0.01,
+      "market_price_cents": null,
+      "edge": 0.07,
+      "yes_ask": null,
+      "no_ask": null,
+      "fee_per_contract": null,
+      "ev_per_contract": null,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": null,
+      "prob_delta_vs_prev": -0.91,
+      "trigger": "near_close",
+      "strategy_id": "S0-single",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "Saying-window (Jun15-Jun22 00:00 ET) is CLOSED; the informed market priced ~1% right up to close, implying full-information trackers found no qualifying verbatim Trump 'uranium' quote. Despite peak Iran-nuclear coverage, every confirmed in-window Trump quote used a synonym ('nuclear/enriched material'); no verbatim quote confirmed. Heavily discounting an independent forecaster's notes-only 0.44 toward the closed-window settlement signal.",
+      "key_drivers": [
+        "saying-window closed",
+        "informed market ~1% to close",
+        "no confirmed verbatim quote",
+        "Trump synonym-substitution all week",
+        "official/document mentions do not count"
+      ],
+      "reference_classes": [
+        "KXTRUMPSAY on-topic salient words",
+        "verbatim-quote-found rate under full-info tracking",
+        "closed-window settlement price as near-oracle"
       ],
       "research_refs": [
         "https://www.aljazeera.com/news/2026/6/18/what-the-trump-iran-14-point-plan-says-about-lebanon-hormuz-and-uranium"

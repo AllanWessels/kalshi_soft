@@ -1,26 +1,26 @@
 {
   "schema_version": 1,
   "ticker": "KXRT-TOY-92",
-  "title": "Toy Story 5 Rotten Tomatoes score (>=92%)?",
+  "title": "Toy Story 5 Rotten Tomatoes score above 92?",
   "category": "culture",
   "close_time": "2026-06-22T14:00:00Z",
   "current": {
-    "as_of": "2026-06-19T21:53:50Z",
-    "my_probability": 0.8,
-    "my_confidence": "medium",
-    "market_implied_probability": 0.765,
-    "market_price_cents": 77.0,
-    "edge": 0.03500000000000003,
-    "yes_ask": 0.77,
-    "no_ask": 0.24,
-    "fee_per_contract": 0.02,
-    "ev_per_contract": 0.010000000000000026,
+    "as_of": "2026-06-22T14:09:22Z",
+    "my_probability": 0.95,
+    "my_confidence": "high",
+    "market_implied_probability": 0.98,
+    "market_price_cents": null,
+    "edge": -0.030000000000000027,
+    "yes_ask": null,
+    "no_ask": null,
+    "fee_per_contract": null,
+    "ev_per_contract": null,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "no +EV value bet at the ask (my prob 80%, modal YES) — staying out.",
-    "prob_delta_vs_prev": 0.0,
+    "lean_note": null,
+    "prob_delta_vs_prev": 0.1499999999999999,
     "trigger": "near_close",
     "strategy_id": "S0-single",
     "proposed_probability": null,
@@ -28,17 +28,20 @@
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "94% with 100+ reviews, ~2pt cushion, near-final; trimmed for 92<->94 bounce + franchise-low drift.",
+    "rationale_summary": "Currently 93% Certified Fresh on ~97 reviews (raw ~92.8%), one point above the >92 threshold; with high review count and resolution today the score is statistically locked. Small residual NO risk from a late rotten cluster nudging it to exactly 92. Market closed/awaiting settlement.",
     "key_drivers": [
-      "94% 100+ reviews",
-      "near-final",
-      "bounce on line"
+      "high review count ~97",
+      "score settled 93% just above round threshold",
+      "resolution immediate",
+      "prior brief dip to 92%"
     ],
     "reference_classes": [
-      "low-90s RT late drift"
+      "high-N Tomatometer near settlement",
+      "one-point-above-integer-threshold films",
+      "Toy Story franchise reception"
     ],
     "research_refs": [
-      "https://www.goldderby.com/film/2026/toy-story-5-reviews-critics-rotten-tomatoes-score-metacritic/"
+      "https://www.rottentomatoes.com/m/toy_story_5"
     ]
   },
   "history": [
@@ -120,6 +123,46 @@
       ],
       "research_refs": [
         "https://www.goldderby.com/film/2026/toy-story-5-reviews-critics-rotten-tomatoes-score-metacritic/"
+      ]
+    },
+    {
+      "as_of": "2026-06-22T14:09:22Z",
+      "my_probability": 0.95,
+      "my_confidence": "high",
+      "market_implied_probability": 0.98,
+      "market_price_cents": null,
+      "edge": -0.030000000000000027,
+      "yes_ask": null,
+      "no_ask": null,
+      "fee_per_contract": null,
+      "ev_per_contract": null,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": null,
+      "prob_delta_vs_prev": 0.1499999999999999,
+      "trigger": "near_close",
+      "strategy_id": "S0-single",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "Currently 93% Certified Fresh on ~97 reviews (raw ~92.8%), one point above the >92 threshold; with high review count and resolution today the score is statistically locked. Small residual NO risk from a late rotten cluster nudging it to exactly 92. Market closed/awaiting settlement.",
+      "key_drivers": [
+        "high review count ~97",
+        "score settled 93% just above round threshold",
+        "resolution immediate",
+        "prior brief dip to 92%"
+      ],
+      "reference_classes": [
+        "high-N Tomatometer near settlement",
+        "one-point-above-integer-threshold films",
+        "Toy Story franchise reception"
+      ],
+      "research_refs": [
+        "https://www.rottentomatoes.com/m/toy_story_5"
       ]
     }
   ],

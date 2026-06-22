@@ -3,44 +3,46 @@
   "ticker": "KXCOLOMBIAPRES-26-AESP",
   "title": "Will Abelardo de la Espriella win the next Colombian presidential election?",
   "category": "politics",
-  "close_time": "2027-05-31T14:00:00Z",
+  "close_time": "2026-06-25T04:00:00Z",
   "current": {
-    "as_of": "2026-06-19T22:00:32Z",
-    "my_probability": 0.58,
+    "as_of": "2026-06-22T14:09:52Z",
+    "my_probability": 0.96,
     "my_confidence": "medium",
-    "market_implied_probability": 0.875,
-    "market_price_cents": 88.0,
-    "edge": -0.29500000000000004,
-    "yes_ask": 0.88,
-    "no_ask": 0.13,
+    "market_implied_probability": 0.981,
+    "market_price_cents": 98.0,
+    "edge": -0.02100000000000002,
+    "yes_ask": 0.985,
+    "no_ask": 0.023,
     "fee_per_contract": 0.01,
-    "ev_per_contract": -0.31000000000000005,
+    "ev_per_contract": -0.035000000000000024,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "no +EV value bet at the ask (my prob 58%, modal YES) — staying out.",
-    "prob_delta_vs_prev": null,
-    "trigger": "scheduled",
+    "lean_note": "no +EV value bet at the ask (my prob 96%, modal YES) — staying out.",
+    "prob_delta_vs_prev": 0.38,
+    "trigger": "near_close",
     "strategy_id": "S0-single",
     "proposed_probability": null,
     "adversarial_verdict": "",
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "Led R1 43.7-40.9 (+2.8pt); center/center-right eliminated ~15% should transfer his way + anti-Petro runoff framing -> modest favorite. But thin margin and a hard-right/pro-Trump candidate can repel the anti-extremist center. ~0.58, well below market 0.88.",
+    "rationale_summary": "Declared winner of the June 21 runoff (preliminary 49.65% vs Cepeda 48.70%, ~0.95pt, record 12.9M votes). Declared narrow presidential results are essentially never reversed by a loser's challenge (Mexico 2006, Peru 2021, US 2000/2020 held); ~1pt margin is recount-proof. Small residual for preliminary/contested status. Modal = YES; no fade of an even-higher market.",
     "key_drivers": [
-      "R1 +2.8pt lead",
-      "center-right transfers to right",
-      "anti-Petro framing",
-      "hard-right repels center risk"
+      "declared winner + record turnout",
+      "~0.95pt recount-proof margin",
+      "near-zero overturn base rate",
+      "vow-to-challenge non-diagnostic",
+      "results preliminary"
     ],
     "reference_classes": [
-      "sub-3pt R1 leaders in 2-way runoffs",
-      "runoff anti-incumbent referendums"
+      "declared narrow presidential losers who challenge",
+      "litigated results that held",
+      "rare genuine reruns"
     ],
     "research_refs": [
-      "https://www.cnn.com/2026/05/31/americas/colombia-runoff-espriella-cepeda-latam-intl"
+      "https://www.cbsnews.com/news/colombia-electionn-runoff-ivan-cepeda-abelardo-de-la-espriella/"
     ]
   },
   "history": [
@@ -81,6 +83,47 @@
       ],
       "research_refs": [
         "https://www.cnn.com/2026/05/31/americas/colombia-runoff-espriella-cepeda-latam-intl"
+      ]
+    },
+    {
+      "as_of": "2026-06-22T14:09:52Z",
+      "my_probability": 0.96,
+      "my_confidence": "medium",
+      "market_implied_probability": 0.981,
+      "market_price_cents": 98.0,
+      "edge": -0.02100000000000002,
+      "yes_ask": 0.985,
+      "no_ask": 0.023,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": -0.035000000000000024,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "no +EV value bet at the ask (my prob 96%, modal YES) — staying out.",
+      "prob_delta_vs_prev": 0.38,
+      "trigger": "near_close",
+      "strategy_id": "S0-single",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "Declared winner of the June 21 runoff (preliminary 49.65% vs Cepeda 48.70%, ~0.95pt, record 12.9M votes). Declared narrow presidential results are essentially never reversed by a loser's challenge (Mexico 2006, Peru 2021, US 2000/2020 held); ~1pt margin is recount-proof. Small residual for preliminary/contested status. Modal = YES; no fade of an even-higher market.",
+      "key_drivers": [
+        "declared winner + record turnout",
+        "~0.95pt recount-proof margin",
+        "near-zero overturn base rate",
+        "vow-to-challenge non-diagnostic",
+        "results preliminary"
+      ],
+      "reference_classes": [
+        "declared narrow presidential losers who challenge",
+        "litigated results that held",
+        "rare genuine reruns"
+      ],
+      "research_refs": [
+        "https://www.cbsnews.com/news/colombia-electionn-runoff-ivan-cepeda-abelardo-de-la-espriella/"
       ]
     }
   ],
