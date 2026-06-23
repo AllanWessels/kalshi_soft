@@ -5,11 +5,11 @@
   "category": "politics",
   "close_time": "2026-06-27T14:00:00Z",
   "current": {
-    "as_of": "2026-06-22T14:09:52Z",
+    "as_of": "2026-06-23T18:40:02Z",
     "my_probability": 0.03,
     "my_confidence": "high",
     "market_implied_probability": 0.005,
-    "market_price_cents": 0.0,
+    "market_price_cents": null,
     "edge": 0.024999999999999998,
     "yes_ask": 0.01,
     "no_ask": 1.0,
@@ -20,7 +20,7 @@
     "lean": "NONE",
     "conviction": "low",
     "lean_note": "no +EV value bet at the ask (my prob 3%, modal NO) — staying out.",
-    "prob_delta_vs_prev": -0.07,
+    "prob_delta_vs_prev": 0.0,
     "trigger": "near_close",
     "strategy_id": "S0-single",
     "proposed_probability": null,
@@ -28,19 +28,17 @@
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "Federal Register API verified: the latest June EOs are 14409-14411 (signed Jun 2-3); ZERO Executive Orders carry a signing date inside Jun 7-13, 2026. The base-rate-only 0.69 is overridden by direct verification. Now 9+ days past the window, an unpublished in-window EO is highly unlikely. Resolves NO; market at 0.5c is correct. Modal = NO.",
+    "rationale_summary": "White House EO-signing events near this window are dated Jun 3 and Jun 22 (both outside Jun 7-13); no EO-signing falls in the window, and the market's ~0.5% YES (untaken 1c YES) confirms zero EOs that week.",
     "key_drivers": [
-      "Federal Register verified zero EOs Jun 7-13",
-      "latest EO 14411 dated Jun 3",
-      "base rate overridden by direct check",
-      "publication essentially complete"
+      "WH signings Jun3 & Jun22",
+      "none in window",
+      "market near-certain NO"
     ],
     "reference_classes": [
-      "verified Federal Register weekly EO counts",
-      "settled past-fact markets"
+      "weekly EO-count resolves on federal record"
     ],
     "research_refs": [
-      "https://www.federalregister.gov/presidential-documents/executive-orders/donald-trump/2026"
+      "https://www.whitehouse.gov/presidential-actions/executive-orders/"
     ]
   },
   "history": [
@@ -121,6 +119,43 @@
       ],
       "research_refs": [
         "https://www.federalregister.gov/presidential-documents/executive-orders/donald-trump/2026"
+      ]
+    },
+    {
+      "as_of": "2026-06-23T18:40:02Z",
+      "my_probability": 0.03,
+      "my_confidence": "high",
+      "market_implied_probability": 0.005,
+      "market_price_cents": null,
+      "edge": 0.024999999999999998,
+      "yes_ask": 0.01,
+      "no_ask": 1.0,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": 0.009999999999999997,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "no +EV value bet at the ask (my prob 3%, modal NO) — staying out.",
+      "prob_delta_vs_prev": 0.0,
+      "trigger": "near_close",
+      "strategy_id": "S0-single",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "White House EO-signing events near this window are dated Jun 3 and Jun 22 (both outside Jun 7-13); no EO-signing falls in the window, and the market's ~0.5% YES (untaken 1c YES) confirms zero EOs that week.",
+      "key_drivers": [
+        "WH signings Jun3 & Jun22",
+        "none in window",
+        "market near-certain NO"
+      ],
+      "reference_classes": [
+        "weekly EO-count resolves on federal record"
+      ],
+      "research_refs": [
+        "https://www.whitehouse.gov/presidential-actions/executive-orders/"
       ]
     }
   ],

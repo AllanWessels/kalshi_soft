@@ -5,22 +5,22 @@
   "category": "economy",
   "close_time": "2026-07-14T12:25:00Z",
   "current": {
-    "as_of": "2026-06-19T21:12:55Z",
-    "my_probability": 0.36,
-    "my_confidence": "low",
-    "market_implied_probability": 0.305,
-    "market_price_cents": 31.0,
-    "edge": 0.05499999999999999,
-    "yes_ask": 0.31,
-    "no_ask": 0.7,
+    "as_of": "2026-06-23T18:36:51Z",
+    "my_probability": 0.22,
+    "my_confidence": "medium",
+    "market_implied_probability": 0.225,
+    "market_price_cents": 22.0,
+    "edge": -0.0050000000000000044,
+    "yes_ask": 0.23,
+    "no_ask": 0.78,
     "fee_per_contract": 0.02,
-    "ev_per_contract": -0.07999999999999995,
+    "ev_per_contract": -0.02,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "I lean NO (my prob 36%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
-    "prob_delta_vs_prev": null,
+    "lean_note": "no +EV value bet at the ask (my prob 22%, modal NO) — staying out.",
+    "prob_delta_vs_prev": -0.13999999999999999,
     "trigger": "scheduled",
     "strategy_id": "S0-single",
     "proposed_probability": null,
@@ -28,19 +28,19 @@
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "Post-ceasefire energy reversal drags June headline, but the Jun14 ceasefire only affects the back half of the month (partial/lagged gasoline passthrough) and core ~+0.2% offsets, so headline may land closer to -0.1%/0.0% than the market's deeply-negative center. Lean modestly above market 0.30.",
+    "rationale_summary": "Post-ceasefire oil crash (Brent ~$78, ~20% off 2026 highs, near pre-war) makes June energy a large negative CPI contributor, flipping headline MoM likely negative; defer to market over my initial upward-momentum read.",
     "key_drivers": [
-      "energy reversal drag",
-      "mid-month ceasefire blunts June average",
-      "sticky core offsets",
-      "knife-edge threshold"
+      "energy collapse",
+      "oil ~20% off highs",
+      "core +0.25 floor",
+      "seasonal adj"
     ],
     "reference_classes": [
-      "CPI MoM during/after energy shocks",
-      "energy 7% weight"
+      "energy-driven monthly CPI swings",
+      "post-shock price reversal"
     ],
     "research_refs": [
-      "https://www.cnbc.com/2026/06/10/cpi-inflation-report-may-2026.html"
+      "https://www.aljazeera.com/economy/2026/6/18/oil-prices-fall-stocks-rally"
     ]
   },
   "history": [
@@ -81,6 +81,45 @@
       ],
       "research_refs": [
         "https://www.cnbc.com/2026/06/10/cpi-inflation-report-may-2026.html"
+      ]
+    },
+    {
+      "as_of": "2026-06-23T18:36:51Z",
+      "my_probability": 0.22,
+      "my_confidence": "medium",
+      "market_implied_probability": 0.225,
+      "market_price_cents": 22.0,
+      "edge": -0.0050000000000000044,
+      "yes_ask": 0.23,
+      "no_ask": 0.78,
+      "fee_per_contract": 0.02,
+      "ev_per_contract": -0.02,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "no +EV value bet at the ask (my prob 22%, modal NO) — staying out.",
+      "prob_delta_vs_prev": -0.13999999999999999,
+      "trigger": "scheduled",
+      "strategy_id": "S0-single",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "Post-ceasefire oil crash (Brent ~$78, ~20% off 2026 highs, near pre-war) makes June energy a large negative CPI contributor, flipping headline MoM likely negative; defer to market over my initial upward-momentum read.",
+      "key_drivers": [
+        "energy collapse",
+        "oil ~20% off highs",
+        "core +0.25 floor",
+        "seasonal adj"
+      ],
+      "reference_classes": [
+        "energy-driven monthly CPI swings",
+        "post-shock price reversal"
+      ],
+      "research_refs": [
+        "https://www.aljazeera.com/economy/2026/6/18/oil-prices-fall-stocks-rally"
       ]
     }
   ],

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-06-22T22:45:47Z",
+  "updated_at": "2026-06-23T18:21:23Z",
   "cap": 30,
   "markets": [
     {
@@ -259,36 +259,6 @@
       "reforecast_cadence_days": 7.0
     },
     {
-      "ticker": "KXRT-TOY-92",
-      "event_ticker": "KXRT-TOY",
-      "title": "Toy Story 5 Rotten Tomatoes score?",
-      "category": "culture",
-      "close_time": "2026-06-22T14:00:00Z",
-      "added_at": "2026-06-19T20:50:22Z",
-      "liquidity_snapshot": {
-        "volume_24h": 28371.67,
-        "open_interest": 56298.78,
-        "spread_cents": 1.0
-      },
-      "status": "resolved",
-      "reforecast_cadence_days": 0.0
-    },
-    {
-      "ticker": "KXRT-DEA-68",
-      "event_ticker": "KXRT-DEA",
-      "title": "The Death of Robin Hood Rotten Tomatoes score?",
-      "category": "culture",
-      "close_time": "2026-06-22T14:00:00Z",
-      "added_at": "2026-06-19T20:50:22Z",
-      "liquidity_snapshot": {
-        "volume_24h": 6426.34,
-        "open_interest": 7660.51,
-        "spread_cents": 1.0
-      },
-      "status": "resolved",
-      "reforecast_cadence_days": 0.0
-    },
-    {
       "ticker": "KXRT-SUPE-75",
       "event_ticker": "KXRT-SUPE",
       "title": "Supergirl Rotten Tomatoes score?",
@@ -362,21 +332,6 @@
       },
       "status": "active",
       "reforecast_cadence_days": 3.0
-    },
-    {
-      "ticker": "KXTRUMPSAY-26JUN22-URAN",
-      "event_ticker": "KXTRUMPSAY-26JUN22",
-      "title": "Will Trump say \"Uranium\" before Jun 22, 2026?",
-      "category": "statements",
-      "close_time": "2026-06-22T14:00:00Z",
-      "added_at": "2026-06-19T20:50:22Z",
-      "liquidity_snapshot": {
-        "volume_24h": 2803.35,
-        "open_interest": 8324.37,
-        "spread_cents": 7.0
-      },
-      "status": "resolved",
-      "reforecast_cadence_days": 0.0
     },
     {
       "ticker": "KXCOLOMBIAPRES-26-ICAS",

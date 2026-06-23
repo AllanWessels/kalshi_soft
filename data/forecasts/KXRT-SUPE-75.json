@@ -5,22 +5,22 @@
   "category": "culture",
   "close_time": "2026-06-29T14:00:00Z",
   "current": {
-    "as_of": "2026-06-22T14:08:48Z",
-    "my_probability": 0.56,
+    "as_of": "2026-06-23T18:42:18Z",
+    "my_probability": 0.38,
     "my_confidence": "low",
-    "market_implied_probability": 0.45,
-    "market_price_cents": 45.0,
-    "edge": 0.11000000000000004,
-    "yes_ask": 0.46,
-    "no_ask": 0.58,
-    "fee_per_contract": 0.02,
-    "ev_per_contract": 0.08000000000000003,
-    "limit_price": 0.42,
-    "ev_limit_per_contract": 0.12,
+    "market_implied_probability": 0.1,
+    "market_price_cents": 10.0,
+    "edge": 0.28,
+    "yes_ask": 0.12,
+    "no_ask": 0.92,
+    "fee_per_contract": 0.01,
+    "ev_per_contract": -0.31000000000000005,
+    "limit_price": null,
+    "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "low confidence — estimate too uncertain to fade the market",
-    "prob_delta_vs_prev": -0.019999999999999907,
+    "lean_note": "no +EV value bet at the ask (my prob 38%, modal NO) — staying out.",
+    "prob_delta_vs_prev": -0.18000000000000005,
     "trigger": "near_close",
     "strategy_id": "S0-single",
     "proposed_probability": null,
@@ -28,22 +28,20 @@
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "No critic score yet (embargo lifts Jun 24); only signal is a soft pre-embargo crowd estimate ~76 sitting one point above the >75 threshold — near coin-flip. Positive trend 68->76 and favorable Gunn-era DC comps (Superman 83, FF 86) nudge slightly above even; market implies ~45%.",
+    "rationale_summary": "Split reactions (universal Alcock praise vs recurring bland-villain knock) cluster mixed-positive DCU films ~60-80% straddling the 75 line; one outlet predicts 76%. I sit above the market's ~10% but below my forecaster's 0.43 given downward score-drift and sliding tracking.",
     "key_drivers": [
-      "pre-embargo crowd estimate ~76",
-      "threshold 1pt below estimate",
-      "wide unreleased-film variance",
-      "Gunn-era DC comps",
-      "trend 68->76"
+      "Alcock praise upside",
+      "bland-villain knock",
+      "76% industry prediction",
+      "wide-release score drift",
+      "sliding tracking"
     ],
     "reference_classes": [
-      "recent Gunn-era DC films",
-      "superhero RT distribution",
-      "pre-embargo crowd-forecast accuracy"
+      "mixed-positive DCU launches 60-80%",
+      "opening-to-wide RT drift down 3-8pts"
     ],
     "research_refs": [
-      "https://www.rottentomatoes.com/m/supergirl_2026",
-      "https://www.comingsoon.net/movies/features/2146361-supergirl-rotten-tomatoes-rating-prediction-score-review"
+      "https://www.hollywoodreporter.com/movies/movie-news/supergirl-first-reactions-reviews-1236625339/"
     ]
   },
   "history": [
@@ -163,6 +161,46 @@
       "research_refs": [
         "https://www.rottentomatoes.com/m/supergirl_2026",
         "https://www.comingsoon.net/movies/features/2146361-supergirl-rotten-tomatoes-rating-prediction-score-review"
+      ]
+    },
+    {
+      "as_of": "2026-06-23T18:42:18Z",
+      "my_probability": 0.38,
+      "my_confidence": "low",
+      "market_implied_probability": 0.1,
+      "market_price_cents": 10.0,
+      "edge": 0.28,
+      "yes_ask": 0.12,
+      "no_ask": 0.92,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": -0.31000000000000005,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "no +EV value bet at the ask (my prob 38%, modal NO) — staying out.",
+      "prob_delta_vs_prev": -0.18000000000000005,
+      "trigger": "near_close",
+      "strategy_id": "S0-single",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "Split reactions (universal Alcock praise vs recurring bland-villain knock) cluster mixed-positive DCU films ~60-80% straddling the 75 line; one outlet predicts 76%. I sit above the market's ~10% but below my forecaster's 0.43 given downward score-drift and sliding tracking.",
+      "key_drivers": [
+        "Alcock praise upside",
+        "bland-villain knock",
+        "76% industry prediction",
+        "wide-release score drift",
+        "sliding tracking"
+      ],
+      "reference_classes": [
+        "mixed-positive DCU launches 60-80%",
+        "opening-to-wide RT drift down 3-8pts"
+      ],
+      "research_refs": [
+        "https://www.hollywoodreporter.com/movies/movie-news/supergirl-first-reactions-reviews-1236625339/"
       ]
     }
   ],

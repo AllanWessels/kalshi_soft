@@ -5,40 +5,40 @@
   "category": "politics",
   "close_time": "2026-07-01T14:00:00Z",
   "current": {
-    "as_of": "2026-06-19T19:12:38Z",
-    "my_probability": 0.03,
+    "as_of": "2026-06-23T18:37:15Z",
+    "my_probability": 0.012,
     "my_confidence": "medium",
-    "market_implied_probability": 0.007,
+    "market_implied_probability": 0.0075,
     "market_price_cents": 1.0,
-    "edge": 0.023,
-    "yes_ask": 0.012,
-    "no_ask": 0.998,
+    "edge": 0.0045000000000000005,
+    "yes_ask": 0.01,
+    "no_ask": 0.995,
     "fee_per_contract": 0.01,
-    "ev_per_contract": -0.03800000000000003,
+    "ev_per_contract": -0.017000000000000008,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "I lean NO (my prob 3%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
-    "prob_delta_vs_prev": 0.015,
+    "lean_note": "no +EV value bet at the ask (my prob 1%, modal NO) — staying out.",
+    "prob_delta_vs_prev": -0.018,
     "trigger": "scheduled",
-    "strategy_id": "L0-local-single",
+    "strategy_id": "S0-single",
     "proposed_probability": null,
     "adversarial_verdict": "",
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "All US-Iran engagement is in neutral venues (Geneva/Switzerland/Rome), not Tehran; no House member traveling to Iran; physically near-unprecedented. Corrected down from local overestimate.",
+    "rationale_summary": "Any 1 of 435 members lifts the floor above a named principal, but active conflict + logistics make a 7-day Iran trip very unlikely.",
     "key_drivers": [
-      "talks in neutral venues not Tehran",
-      "no House travel to Iran",
-      "near-unprecedented"
+      "435-member pool",
+      "travel warnings",
+      "logistics"
     ],
     "reference_classes": [
-      "US officials physically visiting Iran post-1979"
+      "House member trips to adversary states rare"
     ],
     "research_refs": [
-      "https://www.timesofisrael.com/as-talks-resume-rubio-vance-accuse-iran-of-trying-to-restart-its-nuclear-program/"
+      "https://www.npr.org/2026/06/19/nx-s1-5863544/trump-us-iran-agreement"
     ]
   },
   "history": [
@@ -116,6 +116,43 @@
       ],
       "research_refs": [
         "https://www.timesofisrael.com/as-talks-resume-rubio-vance-accuse-iran-of-trying-to-restart-its-nuclear-program/"
+      ]
+    },
+    {
+      "as_of": "2026-06-23T18:37:15Z",
+      "my_probability": 0.012,
+      "my_confidence": "medium",
+      "market_implied_probability": 0.0075,
+      "market_price_cents": 1.0,
+      "edge": 0.0045000000000000005,
+      "yes_ask": 0.01,
+      "no_ask": 0.995,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": -0.017000000000000008,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "no +EV value bet at the ask (my prob 1%, modal NO) — staying out.",
+      "prob_delta_vs_prev": -0.018,
+      "trigger": "scheduled",
+      "strategy_id": "S0-single",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "Any 1 of 435 members lifts the floor above a named principal, but active conflict + logistics make a 7-day Iran trip very unlikely.",
+      "key_drivers": [
+        "435-member pool",
+        "travel warnings",
+        "logistics"
+      ],
+      "reference_classes": [
+        "House member trips to adversary states rare"
+      ],
+      "research_refs": [
+        "https://www.npr.org/2026/06/19/nx-s1-5863544/trump-us-iran-agreement"
       ]
     }
   ],

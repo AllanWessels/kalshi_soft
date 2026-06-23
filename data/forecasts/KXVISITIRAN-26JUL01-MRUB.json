@@ -5,40 +5,39 @@
   "category": "politics",
   "close_time": "2026-07-01T14:00:00Z",
   "current": {
-    "as_of": "2026-06-19T19:12:38Z",
-    "my_probability": 0.01,
+    "as_of": "2026-06-23T18:37:15Z",
+    "my_probability": 0.005,
     "my_confidence": "high",
-    "market_implied_probability": 0.009,
-    "market_price_cents": 1.0,
-    "edge": 0.0010000000000000009,
-    "yes_ask": 0.012,
-    "no_ask": 0.995,
+    "market_implied_probability": 0.005,
+    "market_price_cents": null,
+    "edge": 0.0,
+    "yes_ask": 0.008,
+    "no_ask": 0.998,
     "fee_per_contract": 0.01,
-    "ev_per_contract": -0.015000000000000005,
+    "ev_per_contract": -0.013000000000000001,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "I lean NO (my prob 1%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
-    "prob_delta_vs_prev": -0.002,
+    "lean_note": "no +EV value bet at the ask (my prob 0%, modal NO) — staying out.",
+    "prob_delta_vs_prev": -0.005,
     "trigger": "scheduled",
-    "strategy_id": "L0-local-single",
+    "strategy_id": "S0-single",
     "proposed_probability": null,
     "adversarial_verdict": "",
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "No US Secretary of State has visited Iran since 1979; 2026 talks held in neutral venues (Geneva); no plan to travel to Tehran.",
+    "rationale_summary": "No sitting US SecState has set foot in Iran since 1979; a Tehran trip in 7 days amid a fragile ceasefire is effectively impossible.",
     "key_drivers": [
-      "no SoS visit since 1979",
-      "neutral-venue talks",
-      "no Tehran plan"
+      "no US-Iran relations",
+      "no precedent"
     ],
     "reference_classes": [
-      "US officials physically visiting Iran post-1979"
+      "US SecState visits to Iran since 1979 = zero"
     ],
     "research_refs": [
-      "https://www.timesofisrael.com/as-talks-resume-rubio-vance-accuse-iran-of-trying-to-restart-its-nuclear-program/"
+      "https://www.npr.org/2026/06/19/nx-s1-5863544/trump-us-iran-agreement"
     ]
   },
   "history": [
@@ -116,6 +115,42 @@
       ],
       "research_refs": [
         "https://www.timesofisrael.com/as-talks-resume-rubio-vance-accuse-iran-of-trying-to-restart-its-nuclear-program/"
+      ]
+    },
+    {
+      "as_of": "2026-06-23T18:37:15Z",
+      "my_probability": 0.005,
+      "my_confidence": "high",
+      "market_implied_probability": 0.005,
+      "market_price_cents": null,
+      "edge": 0.0,
+      "yes_ask": 0.008,
+      "no_ask": 0.998,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": -0.013000000000000001,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "no +EV value bet at the ask (my prob 0%, modal NO) — staying out.",
+      "prob_delta_vs_prev": -0.005,
+      "trigger": "scheduled",
+      "strategy_id": "S0-single",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "No sitting US SecState has set foot in Iran since 1979; a Tehran trip in 7 days amid a fragile ceasefire is effectively impossible.",
+      "key_drivers": [
+        "no US-Iran relations",
+        "no precedent"
+      ],
+      "reference_classes": [
+        "US SecState visits to Iran since 1979 = zero"
+      ],
+      "research_refs": [
+        "https://www.npr.org/2026/06/19/nx-s1-5863544/trump-us-iran-agreement"
       ]
     }
   ],

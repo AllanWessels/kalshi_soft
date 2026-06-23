@@ -3,42 +3,40 @@
   "ticker": "KXLAGODAYS-26JUN-2",
   "title": "Will Trump make 2 trips to Mar-a-Lago as President in Jun 2026?",
   "category": "politics",
-  "close_time": "2026-07-01T14:00:00Z",
+  "close_time": "2026-07-01T04:00:00Z",
   "current": {
-    "as_of": "2026-06-19T19:12:38Z",
-    "my_probability": 0.03,
-    "my_confidence": "medium",
+    "as_of": "2026-06-23T18:37:44Z",
+    "my_probability": 0.01,
+    "my_confidence": "high",
     "market_implied_probability": 0.005,
-    "market_price_cents": 1.0,
-    "edge": 0.024999999999999998,
+    "market_price_cents": null,
+    "edge": 0.005,
     "yes_ask": 0.01,
     "no_ask": 1.0,
-    "fee_per_contract": 0.0,
-    "ev_per_contract": -0.030000000000000027,
+    "fee_per_contract": 0.01,
+    "ev_per_contract": -0.01,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "I lean NO (my prob 3%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
-    "prob_delta_vs_prev": 0.009999999999999998,
-    "trigger": "scheduled",
-    "strategy_id": "L0-local-single",
+    "lean_note": "no +EV value bet at the ask (my prob 1%, modal NO) — staying out.",
+    "prob_delta_vs_prev": -0.019999999999999997,
+    "trigger": "near_close",
+    "strategy_id": "S0-single",
     "proposed_probability": null,
     "adversarial_verdict": "",
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "Two June Mar-a-Lago trips highly unlikely given summer Bedminster pattern + Iran war in DC; corrected down from incoherent local estimate.",
+    "rationale_summary": "Two distinct Palm Beach trips in the remaining ~7 days is near-impossible.",
     "key_drivers": [
-      "summer Bedminster",
-      "Iran war",
-      "2 trips needs unlikely double travel"
+      "summer pattern"
     ],
     "reference_classes": [
-      "monthly Mar-a-Lago trip counts"
+      "late-month conditional run-rate"
     ],
     "research_refs": [
-      "https://patch.com/new-jersey/bridgewater/donald-trump-may-be-returning-bedminster-summer"
+      "https://en.wikipedia.org/wiki/List_of_presidential_trips_made_by_Donald_Trump_(2026)"
     ]
   },
   "history": [
@@ -111,6 +109,41 @@
       ],
       "research_refs": [
         "https://patch.com/new-jersey/bridgewater/donald-trump-may-be-returning-bedminster-summer"
+      ]
+    },
+    {
+      "as_of": "2026-06-23T18:37:44Z",
+      "my_probability": 0.01,
+      "my_confidence": "high",
+      "market_implied_probability": 0.005,
+      "market_price_cents": null,
+      "edge": 0.005,
+      "yes_ask": 0.01,
+      "no_ask": 1.0,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": -0.01,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "no +EV value bet at the ask (my prob 1%, modal NO) — staying out.",
+      "prob_delta_vs_prev": -0.019999999999999997,
+      "trigger": "near_close",
+      "strategy_id": "S0-single",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "Two distinct Palm Beach trips in the remaining ~7 days is near-impossible.",
+      "key_drivers": [
+        "summer pattern"
+      ],
+      "reference_classes": [
+        "late-month conditional run-rate"
+      ],
+      "research_refs": [
+        "https://en.wikipedia.org/wiki/List_of_presidential_trips_made_by_Donald_Trump_(2026)"
       ]
     }
   ],

@@ -3,43 +3,42 @@
   "ticker": "KXLAGODAYS-26JUN-0",
   "title": "Will Trump make 0 trips to Mar-a-Lago as President in Jun 2026?",
   "category": "politics",
-  "close_time": "2026-07-01T14:00:00Z",
+  "close_time": "2026-07-01T04:00:00Z",
   "current": {
-    "as_of": "2026-06-19T19:12:38Z",
-    "my_probability": 0.82,
-    "my_confidence": "medium",
-    "market_implied_probability": 0.955,
+    "as_of": "2026-06-23T18:37:44Z",
+    "my_probability": 0.93,
+    "my_confidence": "high",
+    "market_implied_probability": 0.965,
     "market_price_cents": 96.0,
-    "edge": -0.135,
-    "yes_ask": 0.96,
-    "no_ask": 0.05,
+    "edge": -0.03499999999999992,
+    "yes_ask": 0.97,
+    "no_ask": 0.04,
     "fee_per_contract": 0.01,
-    "ev_per_contract": -0.15000000000000002,
+    "ev_per_contract": 0.01999999999999995,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "I lean YES (my prob 82%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
-    "prob_delta_vs_prev": -0.06000000000000005,
-    "trigger": "scheduled",
-    "strategy_id": "L0-local-single",
+    "lean_note": "no +EV value bet at the ask (my prob 93%, modal YES) — staying out.",
+    "prob_delta_vs_prev": 0.1100000000000001,
+    "trigger": "near_close",
+    "strategy_id": "S0-single",
     "proposed_probability": null,
     "adversarial_verdict": "",
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "Summer = Bedminster not Mar-a-Lago (skips Florida heat); Iran war kept him in DC through the June 14 ceasefire; no reported June trip. 0 trips most likely.",
+    "rationale_summary": "Zero Mar-a-Lago trips through ~June 23 (75% of month), confirmed summer-Bedminster pattern, and a crisis-driven DC posture leave almost no path to a trip in the final week.",
     "key_drivers": [
-      "summer Bedminster preference",
-      "Iran war kept him in DC",
-      "no reported June trip"
+      "0 trips so far",
+      "summer Bedminster pattern",
+      "Iran crisis DC posture"
     ],
     "reference_classes": [
-      "Trump summer travel pattern",
-      "monthly Mar-a-Lago trip counts"
+      "Trump summer Mar-a-Lago visits rare; late-month run-rate"
     ],
     "research_refs": [
-      "https://patch.com/new-jersey/bridgewater/donald-trump-may-be-returning-bedminster-summer"
+      "https://en.wikipedia.org/wiki/List_of_presidential_trips_made_by_Donald_Trump_(2026)"
     ]
   },
   "history": [
@@ -119,6 +118,43 @@
       ],
       "research_refs": [
         "https://patch.com/new-jersey/bridgewater/donald-trump-may-be-returning-bedminster-summer"
+      ]
+    },
+    {
+      "as_of": "2026-06-23T18:37:44Z",
+      "my_probability": 0.93,
+      "my_confidence": "high",
+      "market_implied_probability": 0.965,
+      "market_price_cents": 96.0,
+      "edge": -0.03499999999999992,
+      "yes_ask": 0.97,
+      "no_ask": 0.04,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": 0.01999999999999995,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "no +EV value bet at the ask (my prob 93%, modal YES) — staying out.",
+      "prob_delta_vs_prev": 0.1100000000000001,
+      "trigger": "near_close",
+      "strategy_id": "S0-single",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "Zero Mar-a-Lago trips through ~June 23 (75% of month), confirmed summer-Bedminster pattern, and a crisis-driven DC posture leave almost no path to a trip in the final week.",
+      "key_drivers": [
+        "0 trips so far",
+        "summer Bedminster pattern",
+        "Iran crisis DC posture"
+      ],
+      "reference_classes": [
+        "Trump summer Mar-a-Lago visits rare; late-month run-rate"
+      ],
+      "research_refs": [
+        "https://en.wikipedia.org/wiki/List_of_presidential_trips_made_by_Donald_Trump_(2026)"
       ]
     }
   ],

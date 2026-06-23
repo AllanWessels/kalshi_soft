@@ -3,41 +3,41 @@
   "ticker": "KXLAGODAYS-26JUN-1",
   "title": "Will Trump make 1 trips to Mar-a-Lago as President in Jun 2026?",
   "category": "politics",
-  "close_time": "2026-07-01T14:00:00Z",
+  "close_time": "2026-07-01T04:00:00Z",
   "current": {
-    "as_of": "2026-06-19T19:12:38Z",
-    "my_probability": 0.13,
-    "my_confidence": "medium",
-    "market_implied_probability": 0.055,
-    "market_price_cents": 6.0,
-    "edge": 0.07500000000000001,
-    "yes_ask": 0.06,
-    "no_ask": 0.95,
+    "as_of": "2026-06-23T18:37:44Z",
+    "my_probability": 0.055,
+    "my_confidence": "high",
+    "market_implied_probability": 0.035,
+    "market_price_cents": 4.0,
+    "edge": 0.019999999999999997,
+    "yes_ask": 0.04,
+    "no_ask": 0.97,
     "fee_per_contract": 0.01,
-    "ev_per_contract": -0.08999999999999996,
+    "ev_per_contract": 0.004999999999999999,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "I lean NO (my prob 13%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
-    "prob_delta_vs_prev": 0.03,
-    "trigger": "scheduled",
-    "strategy_id": "L0-local-single",
+    "lean_note": "no +EV value bet at the ask (my prob 6%, modal NO) — staying out.",
+    "prob_delta_vs_prev": -0.07500000000000001,
+    "trigger": "near_close",
+    "strategy_id": "S0-single",
     "proposed_probability": null,
     "adversarial_verdict": "",
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "Coherence with P(0 trips)~0.82: residual mass for exactly 1 trip is modest. Summer/war suppress Florida travel.",
+    "rationale_summary": "Only a single unplanned last-weekend dash to low-season Mar-a-Lago could yield one trip, against every active signal.",
     "key_drivers": [
-      "coherence with high P(0)",
-      "summer suppression of FL travel"
+      "summer pattern",
+      "one weekend left"
     ],
     "reference_classes": [
-      "monthly Mar-a-Lago trip counts"
+      "late-month conditional run-rate"
     ],
     "research_refs": [
-      "https://patch.com/new-jersey/bridgewater/donald-trump-may-be-returning-bedminster-summer"
+      "https://en.wikipedia.org/wiki/List_of_presidential_trips_made_by_Donald_Trump_(2026)"
     ]
   },
   "history": [
@@ -110,6 +110,42 @@
       ],
       "research_refs": [
         "https://patch.com/new-jersey/bridgewater/donald-trump-may-be-returning-bedminster-summer"
+      ]
+    },
+    {
+      "as_of": "2026-06-23T18:37:44Z",
+      "my_probability": 0.055,
+      "my_confidence": "high",
+      "market_implied_probability": 0.035,
+      "market_price_cents": 4.0,
+      "edge": 0.019999999999999997,
+      "yes_ask": 0.04,
+      "no_ask": 0.97,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": 0.004999999999999999,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "no +EV value bet at the ask (my prob 6%, modal NO) — staying out.",
+      "prob_delta_vs_prev": -0.07500000000000001,
+      "trigger": "near_close",
+      "strategy_id": "S0-single",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "Only a single unplanned last-weekend dash to low-season Mar-a-Lago could yield one trip, against every active signal.",
+      "key_drivers": [
+        "summer pattern",
+        "one weekend left"
+      ],
+      "reference_classes": [
+        "late-month conditional run-rate"
+      ],
+      "research_refs": [
+        "https://en.wikipedia.org/wiki/List_of_presidential_trips_made_by_Donald_Trump_(2026)"
       ]
     }
   ],

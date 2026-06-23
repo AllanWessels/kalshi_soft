@@ -5,22 +5,22 @@
   "category": "politics",
   "close_time": "2026-07-14T03:59:00Z",
   "current": {
-    "as_of": "2026-06-19T21:12:55Z",
-    "my_probability": 0.03,
-    "my_confidence": "medium",
-    "market_implied_probability": 0.043,
-    "market_price_cents": 4.0,
-    "edge": -0.012999999999999998,
-    "yes_ask": 0.045,
-    "no_ask": 0.959,
+    "as_of": "2026-06-23T18:42:18Z",
+    "my_probability": 0.04,
+    "my_confidence": "high",
+    "market_implied_probability": 0.034,
+    "market_price_cents": 3.0,
+    "edge": 0.005999999999999998,
+    "yes_ask": 0.037,
+    "no_ask": 0.969,
     "fee_per_contract": 0.01,
-    "ev_per_contract": 0.0010000000000000096,
+    "ev_per_contract": -0.0069999999999999975,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "I lean NO (my prob 3%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
-    "prob_delta_vs_prev": null,
+    "lean_note": "no +EV value bet at the ask (my prob 4%, modal NO) — staying out.",
+    "prob_delta_vs_prev": 0.010000000000000002,
     "trigger": "scheduled",
     "strategy_id": "S0-single",
     "proposed_probability": null,
@@ -28,18 +28,18 @@
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "Presumptive nominee, uncontested primary (Mills suspended), explicitly refusing to withdraw and claiming strength despite controversies. Frontrunner voluntary exit in a ~3.5wk window is ~1-3%; small tail for escalating scandal/party pressure.",
+    "rationale_summary": "Platner won the nomination ~72% on June 9 with the scandals already public and is actively campaigning against Collins; a just-elected defiant nominee dropping out within a 3-week window is very rare, residual is new-bombshell tail risk.",
     "key_drivers": [
-      "explicit refusal to withdraw",
-      "uncontested primary",
-      "narrow window",
-      "unevidenced scandal tail"
+      "won primary 72%",
+      "scandals priced in",
+      "defiant",
+      "active campaign"
     ],
     "reference_classes": [
-      "frontrunner voluntary withdrawal in narrow window (very low)"
+      "nominees withdrawing post-nomination over scandal ~1-3%"
     ],
     "research_refs": [
-      "https://www.npr.org/2026/06/05/nx-s1-5847926/platner-controversy-senate-maine-primary-election"
+      "https://www.nbcnews.com/politics/2026-election/maine-senate-primary-winners-platner-collins-midterms-rcna348480"
     ]
   },
   "history": [
@@ -79,6 +79,44 @@
       ],
       "research_refs": [
         "https://www.npr.org/2026/06/05/nx-s1-5847926/platner-controversy-senate-maine-primary-election"
+      ]
+    },
+    {
+      "as_of": "2026-06-23T18:42:18Z",
+      "my_probability": 0.04,
+      "my_confidence": "high",
+      "market_implied_probability": 0.034,
+      "market_price_cents": 3.0,
+      "edge": 0.005999999999999998,
+      "yes_ask": 0.037,
+      "no_ask": 0.969,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": -0.0069999999999999975,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "no +EV value bet at the ask (my prob 4%, modal NO) — staying out.",
+      "prob_delta_vs_prev": 0.010000000000000002,
+      "trigger": "scheduled",
+      "strategy_id": "S0-single",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "Platner won the nomination ~72% on June 9 with the scandals already public and is actively campaigning against Collins; a just-elected defiant nominee dropping out within a 3-week window is very rare, residual is new-bombshell tail risk.",
+      "key_drivers": [
+        "won primary 72%",
+        "scandals priced in",
+        "defiant",
+        "active campaign"
+      ],
+      "reference_classes": [
+        "nominees withdrawing post-nomination over scandal ~1-3%"
+      ],
+      "research_refs": [
+        "https://www.nbcnews.com/politics/2026-election/maine-senate-primary-winners-platner-collins-midterms-rcna348480"
       ]
     }
   ],

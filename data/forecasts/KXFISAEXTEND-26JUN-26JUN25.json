@@ -5,41 +5,40 @@
   "category": "politics",
   "close_time": "2026-06-25T14:00:00Z",
   "current": {
-    "as_of": "2026-06-19T19:12:38Z",
-    "my_probability": 0.06,
-    "my_confidence": "medium",
-    "market_implied_probability": 0.015,
-    "market_price_cents": 2.0,
-    "edge": 0.045,
-    "yes_ask": 0.02,
-    "no_ask": 0.99,
+    "as_of": "2026-06-23T18:37:43Z",
+    "my_probability": 0.012,
+    "my_confidence": "high",
+    "market_implied_probability": 0.005,
+    "market_price_cents": null,
+    "edge": 0.007,
+    "yes_ask": 0.01,
+    "no_ask": 1.0,
     "fee_per_contract": 0.01,
-    "ev_per_contract": -0.060000000000000046,
+    "ev_per_contract": -0.008,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "I lean NO (my prob 6%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
-    "prob_delta_vs_prev": null,
+    "lean_note": "no +EV value bet at the ask (my prob 1%, modal NO) — staying out.",
+    "prob_delta_vs_prev": -0.048,
     "trigger": "scheduled",
-    "strategy_id": "L0-local-single",
+    "strategy_id": "S0-single",
     "proposed_probability": null,
     "adversarial_verdict": "",
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "702 in active lapse: House failed short extension 198-218, Senate stalled 47-52, 'lapse assured', Dems blocking over Pulte DNI. No path to law in 6 days.",
+    "rationale_summary": "With 702 surveillance locked in via March 2026 FISC certifications through March 2027 (no urgency) and the House having just failed 198-218 amid an unresolved standoff, both chambers passing + signature in ~2 days is near-impossible.",
     "key_drivers": [
-      "House extension failed 198-218",
-      "Senate motion failed 47-52",
-      "program lapsed",
-      "Pulte standoff"
+      "FISC certs remove urgency",
+      "House failed 198-218",
+      "2-day window"
     ],
     "reference_classes": [
-      "lapsed-authority reauth within a short window"
+      "contested bill becoming law within 2 days of failed vote ~0"
     ],
     "research_refs": [
-      "https://rollcall.com/2026/06/05/fisa-reauthorization-stalls-in-early-morning-senate-vote/"
+      "https://www.axios.com/2026/06/11/fisa-section-702-expiration-pulte-trump-johnson"
     ]
   },
   "history": [
@@ -79,6 +78,43 @@
       ],
       "research_refs": [
         "https://rollcall.com/2026/06/05/fisa-reauthorization-stalls-in-early-morning-senate-vote/"
+      ]
+    },
+    {
+      "as_of": "2026-06-23T18:37:43Z",
+      "my_probability": 0.012,
+      "my_confidence": "high",
+      "market_implied_probability": 0.005,
+      "market_price_cents": null,
+      "edge": 0.007,
+      "yes_ask": 0.01,
+      "no_ask": 1.0,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": -0.008,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "no +EV value bet at the ask (my prob 1%, modal NO) — staying out.",
+      "prob_delta_vs_prev": -0.048,
+      "trigger": "scheduled",
+      "strategy_id": "S0-single",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "With 702 surveillance locked in via March 2026 FISC certifications through March 2027 (no urgency) and the House having just failed 198-218 amid an unresolved standoff, both chambers passing + signature in ~2 days is near-impossible.",
+      "key_drivers": [
+        "FISC certs remove urgency",
+        "House failed 198-218",
+        "2-day window"
+      ],
+      "reference_classes": [
+        "contested bill becoming law within 2 days of failed vote ~0"
+      ],
+      "research_refs": [
+        "https://www.axios.com/2026/06/11/fisa-section-702-expiration-pulte-trump-johnson"
       ]
     }
   ],

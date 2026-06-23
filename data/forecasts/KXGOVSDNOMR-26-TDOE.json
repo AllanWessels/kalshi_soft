@@ -5,35 +5,41 @@
   "category": "politics",
   "close_time": "2026-11-03T15:00:00Z",
   "current": {
-    "as_of": "2026-06-22T22:51:14Z",
-    "my_probability": 0.42,
-    "my_confidence": "medium",
-    "market_implied_probability": 0.525,
-    "market_price_cents": null,
-    "edge": -0.10500000000000004,
-    "yes_ask": 0.53,
-    "no_ask": 0.48,
+    "as_of": "2026-06-23T18:37:44Z",
+    "my_probability": 0.48,
+    "my_confidence": "low",
+    "market_implied_probability": 0.495,
+    "market_price_cents": 49.0,
+    "edge": -0.015000000000000013,
+    "yes_ask": 0.5,
+    "no_ask": 0.51,
     "fee_per_contract": 0.02,
-    "ev_per_contract": 0.08000000000000008,
-    "limit_price": 0.47,
-    "ev_limit_per_contract": 0.09,
+    "ev_per_contract": -0.009999999999999992,
+    "limit_price": null,
+    "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "11pt gap vs a liquid market without high confidence — more likely my error than edge",
-    "prob_delta_vs_prev": 0.14999999999999997,
-    "trigger": "scheduled",
+    "lean_note": "no +EV value bet at the ask (my prob 48%, modal NO) — staying out.",
+    "prob_delta_vs_prev": 0.06,
+    "trigger": "near_close",
     "strategy_id": "S0-single",
     "proposed_probability": null,
     "adversarial_verdict": "",
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "Jul 28 two-way runoff: Doeden 31% plurality vs incumbent Rhoden 25% in round 1, with Johnson (23%) + Hansen (21%) eliminated. Reasoning the runoff independently: Johnson's mainstream-conservative bloc likely breaks toward the incumbent, Hansen's populists split -> Doeden lands ~42-48%. Market drifted up to ~0.525 (Doeden strengthening). REVISING my prior 0.27 fade UPWARD: that 17.5pt fade was over-confident, the exact unjustified-market-divergence pattern from the URAN post-mortem. Calibrated ~0.42, medium confidence; not a justified fade of a liquid runoff market.",
-    "key_drivers": [],
-    "reference_classes": [
-      "two-way primary runoffs: plurality outsider vs consolidating establishment; eliminated-candidate vote transfer"
+    "rationale_summary": "Doeden led round 1 (31 vs 25) and the anti-establishment lane (~52%) slightly outnumbers the establishment lane, but Johnson's bloc breaks toward incumbent Rhoden in the July 28 runoff — a genuine coin flip.",
+    "key_drivers": [
+      "Doeden round-1 lead",
+      "anti-establishment lane 52%",
+      "Johnson voters to Rhoden"
     ],
-    "research_refs": []
+    "reference_classes": [
+      "outsider vs establishment-incumbent runoff consolidation"
+    ],
+    "research_refs": [
+      "https://southdakotasearchlight.com/2026/06/03/partial-returns-show-runoff-likely-needed-to-decide-south-dakota-republican-governor-primary/"
+    ]
   },
   "history": [
     {
@@ -187,6 +193,43 @@
         "two-way primary runoffs: plurality outsider vs consolidating establishment; eliminated-candidate vote transfer"
       ],
       "research_refs": []
+    },
+    {
+      "as_of": "2026-06-23T18:37:44Z",
+      "my_probability": 0.48,
+      "my_confidence": "low",
+      "market_implied_probability": 0.495,
+      "market_price_cents": 49.0,
+      "edge": -0.015000000000000013,
+      "yes_ask": 0.5,
+      "no_ask": 0.51,
+      "fee_per_contract": 0.02,
+      "ev_per_contract": -0.009999999999999992,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "no +EV value bet at the ask (my prob 48%, modal NO) — staying out.",
+      "prob_delta_vs_prev": 0.06,
+      "trigger": "near_close",
+      "strategy_id": "S0-single",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "Doeden led round 1 (31 vs 25) and the anti-establishment lane (~52%) slightly outnumbers the establishment lane, but Johnson's bloc breaks toward incumbent Rhoden in the July 28 runoff — a genuine coin flip.",
+      "key_drivers": [
+        "Doeden round-1 lead",
+        "anti-establishment lane 52%",
+        "Johnson voters to Rhoden"
+      ],
+      "reference_classes": [
+        "outsider vs establishment-incumbent runoff consolidation"
+      ],
+      "research_refs": [
+        "https://southdakotasearchlight.com/2026/06/03/partial-returns-show-runoff-likely-needed-to-decide-south-dakota-republican-governor-primary/"
+      ]
     }
   ],
   "position": {

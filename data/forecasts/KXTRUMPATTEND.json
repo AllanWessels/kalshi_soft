@@ -5,41 +5,45 @@
   "category": "politics",
   "close_time": "2026-07-20T14:00:00Z",
   "current": {
-    "as_of": "2026-06-19T19:12:39Z",
-    "my_probability": 0.85,
-    "my_confidence": "medium",
-    "market_implied_probability": 0.815,
-    "market_price_cents": 82.0,
-    "edge": 0.03500000000000003,
-    "yes_ask": 0.82,
-    "no_ask": 0.19,
-    "fee_per_contract": 0.02,
-    "ev_per_contract": 0.010000000000000026,
-    "limit_price": null,
-    "ev_limit_per_contract": null,
-    "lean": "NONE",
+    "as_of": "2026-06-23T18:45:12Z",
+    "my_probability": 0.95,
+    "my_confidence": "high",
+    "market_implied_probability": 0.89,
+    "market_price_cents": 89.0,
+    "edge": 0.05999999999999994,
+    "yes_ask": 0.9,
+    "no_ask": 0.12,
+    "fee_per_contract": 0.01,
+    "ev_per_contract": 0.03999999999999993,
+    "limit_price": 0.88,
+    "ev_limit_per_contract": 0.06,
+    "lean": "YES",
     "conviction": "low",
-    "lean_note": "I lean YES (my prob 85%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
-    "prob_delta_vs_prev": null,
+    "lean_note": null,
+    "prob_delta_vs_prev": 0.09999999999999998,
     "trigger": "scheduled",
-    "strategy_id": "L0-local-single",
-    "proposed_probability": null,
-    "adversarial_verdict": "",
-    "adversarial_challenged_prob": null,
-    "adversarial_concerns": [],
-    "adversarial_model": "",
-    "rationale_summary": "Trump plans to attend (WH 'holding' his schedule); FIFA wants him to present the trophy; precedent at Club World Cup; marquee US-hosted event he is motivated to attend. Residual scheduling/security/health risk a month out.",
+    "strategy_id": "S0-single",
+    "proposed_probability": 0.95,
+    "adversarial_verdict": "revise",
+    "adversarial_challenged_prob": 0.92,
+    "adversarial_concerns": [
+      "Divergence from market (6%) may reflect unmodeled tail risks (e.g., political/crisis events) not adequately addressed in reasoning",
+      "Precedent cited (2025 Club World Cup) is a single data point with potentially different stakes/logistics",
+      "Assumes ceremonial role guarantees attendance without accounting for potential changes in Trump's public schedule or health"
+    ],
+    "adversarial_model": "qwen3:14b-q4_K_M",
+    "rationale_summary": "Sitting president with a publicly confirmed ceremonial role (Infantino: Trump will help hand over the trophy), stated intent + schedule held, trivial NJ logistics, and direct precedent attending the 2025 Club World Cup final at the same venue; residual is acute crisis tail risk.",
     "key_drivers": [
-      "WH holding the date",
-      "FIFA trophy-presentation role",
-      "Club World Cup precedent",
-      "strong personal motivation"
+      "confirmed trophy role",
+      "schedule held",
+      "2025 precedent",
+      "easy logistics"
     ],
     "reference_classes": [
-      "stated-intention attendance at marquee events ~1 month out"
+      "president attending pre-committed domestic ceremonial event ~95-98%"
     ],
     "research_refs": [
-      "https://www.nbcnewyork.com/world-cup/trump-world-cup-final-fifa-metlife-stadium/6512369/"
+      "https://sports.yahoo.com/soccer/article/fifa-president-says-donald-trump-will-help-present-world-cup-trophy-to-winning-team-142350279.html"
     ]
   },
   "history": [
@@ -80,21 +84,67 @@
       "research_refs": [
         "https://www.nbcnewyork.com/world-cup/trump-world-cup-final-fifa-metlife-stadium/6512369/"
       ]
+    },
+    {
+      "as_of": "2026-06-23T18:45:12Z",
+      "my_probability": 0.95,
+      "my_confidence": "high",
+      "market_implied_probability": 0.89,
+      "market_price_cents": 89.0,
+      "edge": 0.05999999999999994,
+      "yes_ask": 0.9,
+      "no_ask": 0.12,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": 0.03999999999999993,
+      "limit_price": 0.88,
+      "ev_limit_per_contract": 0.06,
+      "lean": "YES",
+      "conviction": "low",
+      "lean_note": null,
+      "prob_delta_vs_prev": 0.09999999999999998,
+      "trigger": "scheduled",
+      "strategy_id": "S0-single",
+      "proposed_probability": 0.95,
+      "adversarial_verdict": "revise",
+      "adversarial_challenged_prob": 0.92,
+      "adversarial_concerns": [
+        "Divergence from market (6%) may reflect unmodeled tail risks (e.g., political/crisis events) not adequately addressed in reasoning",
+        "Precedent cited (2025 Club World Cup) is a single data point with potentially different stakes/logistics",
+        "Assumes ceremonial role guarantees attendance without accounting for potential changes in Trump's public schedule or health"
+      ],
+      "adversarial_model": "qwen3:14b-q4_K_M",
+      "rationale_summary": "Sitting president with a publicly confirmed ceremonial role (Infantino: Trump will help hand over the trophy), stated intent + schedule held, trivial NJ logistics, and direct precedent attending the 2025 Club World Cup final at the same venue; residual is acute crisis tail risk.",
+      "key_drivers": [
+        "confirmed trophy role",
+        "schedule held",
+        "2025 precedent",
+        "easy logistics"
+      ],
+      "reference_classes": [
+        "president attending pre-committed domestic ceremonial event ~95-98%"
+      ],
+      "research_refs": [
+        "https://sports.yahoo.com/soccer/article/fifa-president-says-donald-trump-will-help-present-world-cup-trophy-to-winning-team-142350279.html"
+      ]
     }
   ],
   "position": {
-    "entered": false,
-    "entry_as_of": "",
-    "entry_side": "",
-    "entry_probability": 0.0,
-    "entry_price": 0.0,
-    "entry_market_implied": null,
-    "entry_confidence": "",
-    "entry_conviction": "",
-    "entry_gap": null,
-    "adversarial_verdict": "",
-    "adversarial_challenged_prob": null,
-    "adversarial_concerns": [],
-    "adversarial_model": ""
+    "entered": true,
+    "entry_as_of": "2026-06-23T18:45:12Z",
+    "entry_side": "YES",
+    "entry_probability": 0.95,
+    "entry_price": 0.9,
+    "entry_market_implied": 0.89,
+    "entry_confidence": "high",
+    "entry_conviction": "low",
+    "entry_gap": 0.06,
+    "adversarial_verdict": "revise",
+    "adversarial_challenged_prob": 0.92,
+    "adversarial_concerns": [
+      "Divergence from market (6%) may reflect unmodeled tail risks (e.g., political/crisis events) not adequately addressed in reasoning",
+      "Precedent cited (2025 Club World Cup) is a single data point with potentially different stakes/logistics",
+      "Assumes ceremonial role guarantees attendance without accounting for potential changes in Trump's public schedule or health"
+    ],
+    "adversarial_model": "qwen3:14b-q4_K_M"
   }
 }

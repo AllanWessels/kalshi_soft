@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-06-22T22:55:57Z",
+  "generated_at": "2026-06-23T18:45:33Z",
   "n_resolved": 25,
   "guardrails": {
     "min_n": 20,
     "max_step": 0.05
   },
-  "mode": "observe",
+  "mode": "apply",
   "proposals": [
     {
       "knob": "max_market_disagreement",

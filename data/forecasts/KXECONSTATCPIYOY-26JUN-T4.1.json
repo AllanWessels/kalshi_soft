@@ -5,37 +5,36 @@
   "category": "economy",
   "close_time": "2026-07-14T12:29:00Z",
   "current": {
-    "as_of": "2026-06-19T19:12:39Z",
-    "my_probability": 0.2,
-    "my_confidence": "low",
-    "market_implied_probability": 0.02,
-    "market_price_cents": 2.0,
-    "edge": 0.18000000000000002,
-    "yes_ask": 0.03,
+    "as_of": "2026-06-23T18:36:51Z",
+    "my_probability": 0.06,
+    "my_confidence": "medium",
+    "market_implied_probability": 0.03,
+    "market_price_cents": 3.0,
+    "edge": 0.03,
+    "yes_ask": 0.05,
     "no_ask": 0.99,
     "fee_per_contract": 0.01,
-    "ev_per_contract": -0.19999999999999996,
+    "ev_per_contract": -0.060000000000000046,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "I lean NO (my prob 20%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
-    "prob_delta_vs_prev": null,
+    "lean_note": "no +EV value bet at the ask (my prob 6%, modal NO) — staying out.",
+    "prob_delta_vs_prev": -0.14,
     "trigger": "scheduled",
-    "strategy_id": "L0-local-single",
+    "strategy_id": "S0-single",
     "proposed_probability": null,
     "adversarial_verdict": "",
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "May YoY 4.2%, only 0.1pp above the 4.1% threshold; post-ceasefire energy reversal makes a sub-4.1% June print quite achievable. Local model (0.65) under-weighted that; the two CPI markets coherently price a sharp June disinflation, so I defer substantially while keeping residual chance energy doesn't fully reverse within June.",
+    "rationale_summary": "If YoY drops it likely passes below 4.1 toward ~3.9-4.0; thin mass exactly at 4.1.",
     "key_drivers": [
-      "May YoY 4.2% only 0.1pp over threshold",
       "energy reversal",
-      "coherent disinflation signal across both CPI markets"
+      "YoY drop"
     ],
     "reference_classes": [
-      "one-month YoY moves near a threshold"
+      "single-decimal YoY bucket mass"
     ],
     "research_refs": [
       "https://www.cnbc.com/2026/06/10/cpi-inflation-report-may-2026.html"
@@ -74,6 +73,42 @@
       ],
       "reference_classes": [
         "one-month YoY moves near a threshold"
+      ],
+      "research_refs": [
+        "https://www.cnbc.com/2026/06/10/cpi-inflation-report-may-2026.html"
+      ]
+    },
+    {
+      "as_of": "2026-06-23T18:36:51Z",
+      "my_probability": 0.06,
+      "my_confidence": "medium",
+      "market_implied_probability": 0.03,
+      "market_price_cents": 3.0,
+      "edge": 0.03,
+      "yes_ask": 0.05,
+      "no_ask": 0.99,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": -0.060000000000000046,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "no +EV value bet at the ask (my prob 6%, modal NO) — staying out.",
+      "prob_delta_vs_prev": -0.14,
+      "trigger": "scheduled",
+      "strategy_id": "S0-single",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "If YoY drops it likely passes below 4.1 toward ~3.9-4.0; thin mass exactly at 4.1.",
+      "key_drivers": [
+        "energy reversal",
+        "YoY drop"
+      ],
+      "reference_classes": [
+        "single-decimal YoY bucket mass"
       ],
       "research_refs": [
         "https://www.cnbc.com/2026/06/10/cpi-inflation-report-may-2026.html"

@@ -5,37 +5,36 @@
   "category": "economy",
   "close_time": "2026-07-02T12:29:00Z",
   "current": {
-    "as_of": "2026-06-19T19:12:39Z",
-    "my_probability": 0.92,
+    "as_of": "2026-06-23T18:36:51Z",
+    "my_probability": 0.95,
     "my_confidence": "high",
-    "market_implied_probability": 0.93,
-    "market_price_cents": 93.0,
-    "edge": -0.010000000000000009,
-    "yes_ask": 0.94,
-    "no_ask": 0.08,
+    "market_implied_probability": 0.915,
+    "market_price_cents": 92.0,
+    "edge": 0.03499999999999992,
+    "yes_ask": 0.92,
+    "no_ask": 0.09,
     "fee_per_contract": 0.01,
-    "ev_per_contract": -0.02999999999999991,
+    "ev_per_contract": 0.019999999999999914,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "I lean YES (my prob 92%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
-    "prob_delta_vs_prev": -0.010000000000000009,
+    "lean_note": "no +EV value bet at the ask (my prob 95%, modal YES) — staying out.",
+    "prob_delta_vs_prev": 0.029999999999999916,
     "trigger": "scheduled",
-    "strategy_id": "L0-local-single",
+    "strategy_id": "S0-single",
     "proposed_probability": null,
     "adversarial_verdict": "",
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "May 2026 U-3 = 4.3%, in a 4.3-4.5% range since Jul 2025; no sign of a drop below 4.1% in June. Very likely above 4.1%.",
+    "rationale_summary": "U-3 pinned 4.3-4.5% for 11 months with solid May payrolls; a drop to <=4.1% would break the regime with no signal.",
     "key_drivers": [
-      "May 4.3%",
-      "stable 4.3-4.5% range",
-      "no rapid improvement"
+      "sticky 4.3-4.5 range",
+      "172k May payrolls"
     ],
     "reference_classes": [
-      "month-to-month U-3 persistence"
+      "month-over-month U-3 moves rarely >=0.2pt"
     ],
     "research_refs": [
       "https://www.bls.gov/news.release/empsit.nr0.htm"
@@ -114,6 +113,42 @@
       ],
       "reference_classes": [
         "month-to-month U-3 persistence"
+      ],
+      "research_refs": [
+        "https://www.bls.gov/news.release/empsit.nr0.htm"
+      ]
+    },
+    {
+      "as_of": "2026-06-23T18:36:51Z",
+      "my_probability": 0.95,
+      "my_confidence": "high",
+      "market_implied_probability": 0.915,
+      "market_price_cents": 92.0,
+      "edge": 0.03499999999999992,
+      "yes_ask": 0.92,
+      "no_ask": 0.09,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": 0.019999999999999914,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "no +EV value bet at the ask (my prob 95%, modal YES) — staying out.",
+      "prob_delta_vs_prev": 0.029999999999999916,
+      "trigger": "scheduled",
+      "strategy_id": "S0-single",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "U-3 pinned 4.3-4.5% for 11 months with solid May payrolls; a drop to <=4.1% would break the regime with no signal.",
+      "key_drivers": [
+        "sticky 4.3-4.5 range",
+        "172k May payrolls"
+      ],
+      "reference_classes": [
+        "month-over-month U-3 moves rarely >=0.2pt"
       ],
       "research_refs": [
         "https://www.bls.gov/news.release/empsit.nr0.htm"

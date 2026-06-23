@@ -1,45 +1,44 @@
 {
   "schema_version": 1,
   "ticker": "KXGOVOKNOMR-26-GDRU",
-  "title": "Will Genter Drummond be the Republican nominee for Governor in Oklahoma?",
+  "title": "OK GOP Governor nominee: Gentner Drummond (YES)",
   "category": "politics",
   "close_time": "2026-11-03T15:00:00Z",
   "current": {
-    "as_of": "2026-06-19T21:12:55Z",
-    "my_probability": 0.43,
+    "as_of": "2026-06-23T18:37:44Z",
+    "my_probability": 0.3,
     "my_confidence": "low",
-    "market_implied_probability": 0.205,
-    "market_price_cents": 21.0,
-    "edge": 0.225,
-    "yes_ask": 0.21,
-    "no_ask": 0.8,
+    "market_implied_probability": 0.225,
+    "market_price_cents": 22.0,
+    "edge": 0.07499999999999998,
+    "yes_ask": 0.23,
+    "no_ask": 0.78,
     "fee_per_contract": 0.02,
-    "ev_per_contract": -0.24999999999999997,
+    "ev_per_contract": -0.10000000000000007,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "I lean NO (my prob 43%) but it isn't +EV at the ask — no value bet (betting the other side would contradict my forecast).",
-    "prob_delta_vs_prev": null,
-    "trigger": "scheduled",
+    "lean_note": "no +EV value bet at the ask (my prob 30%, modal NO) — staying out.",
+    "prob_delta_vs_prev": -0.08000000000000002,
+    "trigger": "near_close",
     "strategy_id": "S0-single",
     "proposed_probability": null,
     "adversarial_verdict": "",
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "2-way Aug25 runoff after a 0.3pt R1 tie (Drummond first). Freed America-First Merrick bloc + Trump endorsement + low-turnout runoff tilt modestly to Mazzei; Drummond offsets via top name ID + institutional backing. Slightly below even (~0.43).",
+    "rationale_summary": "Drummond led round 1 narrowly (26.3 vs 26.0) with AG name-ID, but Trump's active Mazzei endorsement + anti-Drummond attacks in deep-red OK tilt the Aug 25 runoff toward Mazzei; I sit slightly above market on Drummond.",
     "key_drivers": [
-      "R1 was 0.3pt tie",
-      "Merrick bloc leans Mazzei",
-      "Trump endorsement+low turnout favor insurgent",
-      "Drummond name ID offsets"
+      "Trump endorsed Mazzei",
+      "Drummond round-1 lead+name ID",
+      "low-turnout base runoff"
     ],
     "reference_classes": [
-      "plurality leader vs Trump-endorsed challenger in deep-red runoff"
+      "Trump-endorsed deep-red runoff win rate; first-round leader in 2-way runoff"
     ],
     "research_refs": [
-      "https://www.notus.org/2026-election/gentner-drummond-mike-mazzei-oklahoma-runoff"
+      "https://www.kosu.org/2026-oklahoma-governor-primary-election-results"
     ]
   },
   "history": [
@@ -79,6 +78,87 @@
       ],
       "research_refs": [
         "https://www.notus.org/2026-election/gentner-drummond-mike-mazzei-oklahoma-runoff"
+      ]
+    },
+    {
+      "as_of": "2026-06-23T18:34:34Z",
+      "my_probability": 0.38,
+      "my_confidence": "medium",
+      "market_implied_probability": null,
+      "market_price_cents": null,
+      "edge": null,
+      "yes_ask": null,
+      "no_ask": null,
+      "fee_per_contract": null,
+      "ev_per_contract": null,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": null,
+      "prob_delta_vs_prev": -0.04999999999999999,
+      "trigger": "event_driven",
+      "strategy_id": "S1-ensemble3",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "Complement of Mazzei (head-to-head runoff, sums to ~1). Drummond narrowly led round one (26.3% vs 26.0%) and has sitting-AG name ID, but the near-tie neutralizes the leader edge while Trump's active 'FAKE Republican' attacks plus a low-turnout, base-skewed runoff electorate in a maximally Trump-loyal state tilt the field toward Mazzei; Stitt declining to back Drummond removes establishment-consolidation support.",
+      "key_drivers": [
+        "incumbent_office_name_id",
+        "first_round_leader",
+        "statewide_recognition",
+        "trump_opposition_headwind",
+        "no_stitt_backing"
+      ],
+      "reference_classes": [
+        "first_round_leader_in_runoff",
+        "statewide_officeholder_advantage",
+        "establishment_vs_maga_runoff"
+      ],
+      "research_refs": [
+        "nbcnews.com/politics/2026-election",
+        "notus.org/2026-election/gentner-drummond-mike-mazzei-oklahoma-runoff",
+        "oudaily.com Trump targets Drummond runoff 2026-06-22",
+        "en.wikipedia.org/wiki/2026_Oklahoma_gubernatorial_election"
+      ]
+    },
+    {
+      "as_of": "2026-06-23T18:37:44Z",
+      "my_probability": 0.3,
+      "my_confidence": "low",
+      "market_implied_probability": 0.225,
+      "market_price_cents": 22.0,
+      "edge": 0.07499999999999998,
+      "yes_ask": 0.23,
+      "no_ask": 0.78,
+      "fee_per_contract": 0.02,
+      "ev_per_contract": -0.10000000000000007,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "no +EV value bet at the ask (my prob 30%, modal NO) — staying out.",
+      "prob_delta_vs_prev": -0.08000000000000002,
+      "trigger": "near_close",
+      "strategy_id": "S0-single",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "Drummond led round 1 narrowly (26.3 vs 26.0) with AG name-ID, but Trump's active Mazzei endorsement + anti-Drummond attacks in deep-red OK tilt the Aug 25 runoff toward Mazzei; I sit slightly above market on Drummond.",
+      "key_drivers": [
+        "Trump endorsed Mazzei",
+        "Drummond round-1 lead+name ID",
+        "low-turnout base runoff"
+      ],
+      "reference_classes": [
+        "Trump-endorsed deep-red runoff win rate; first-round leader in 2-way runoff"
+      ],
+      "research_refs": [
+        "https://www.kosu.org/2026-oklahoma-governor-primary-election-results"
       ]
     }
   ],

@@ -3,24 +3,24 @@
   "ticker": "KXCOLOMBIAPRES-26-AESP",
   "title": "Will Abelardo de la Espriella win the next Colombian presidential election?",
   "category": "politics",
-  "close_time": "2026-06-25T04:00:00Z",
+  "close_time": "2027-05-31T14:00:00Z",
   "current": {
-    "as_of": "2026-06-22T14:09:52Z",
-    "my_probability": 0.96,
-    "my_confidence": "medium",
-    "market_implied_probability": 0.981,
+    "as_of": "2026-06-23T18:37:15Z",
+    "my_probability": 0.965,
+    "my_confidence": "high",
+    "market_implied_probability": 0.985,
     "market_price_cents": 98.0,
-    "edge": -0.02100000000000002,
-    "yes_ask": 0.985,
-    "no_ask": 0.023,
+    "edge": -0.020000000000000018,
+    "yes_ask": 0.988,
+    "no_ask": 0.018,
     "fee_per_contract": 0.01,
-    "ev_per_contract": -0.035000000000000024,
+    "ev_per_contract": 0.007000000000000032,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
     "lean_note": "no +EV value bet at the ask (my prob 96%, modal YES) — staying out.",
-    "prob_delta_vs_prev": 0.38,
+    "prob_delta_vs_prev": 0.0050000000000000044,
     "trigger": "near_close",
     "strategy_id": "S0-single",
     "proposed_probability": null,
@@ -28,21 +28,18 @@
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "Declared winner of the June 21 runoff (preliminary 49.65% vs Cepeda 48.70%, ~0.95pt, record 12.9M votes). Declared narrow presidential results are essentially never reversed by a loser's challenge (Mexico 2006, Peru 2021, US 2000/2020 held); ~1pt margin is recount-proof. Small residual for preliminary/contested status. Modal = YES; no fade of an even-higher market.",
+    "rationale_summary": "De la Espriella won the June 21 runoff by ~249K votes (49.66 vs 48.70) with 99.96% counted; no Colombian presidential recount has reversed a result. Cepeda's broad challenge is the only tail.",
     "key_drivers": [
-      "declared winner + record turnout",
-      "~0.95pt recount-proof margin",
-      "near-zero overturn base rate",
-      "vow-to-challenge non-diagnostic",
-      "results preliminary"
+      "249K absolute margin",
+      "99.96% counted",
+      "no precedent for reversal",
+      "Cepeda challenge"
     ],
     "reference_classes": [
-      "declared narrow presidential losers who challenge",
-      "litigated results that held",
-      "rare genuine reruns"
+      "preliminary leader becomes certified winner ~97-99%"
     ],
     "research_refs": [
-      "https://www.cbsnews.com/news/colombia-electionn-runoff-ivan-cepeda-abelardo-de-la-espriella/"
+      "https://www.aljazeera.com/news/2026/6/22/colombian-right-wing-candidate-de-la-espriella-wins-tight-presidential-race"
     ]
   },
   "history": [
@@ -124,6 +121,44 @@
       ],
       "research_refs": [
         "https://www.cbsnews.com/news/colombia-electionn-runoff-ivan-cepeda-abelardo-de-la-espriella/"
+      ]
+    },
+    {
+      "as_of": "2026-06-23T18:37:15Z",
+      "my_probability": 0.965,
+      "my_confidence": "high",
+      "market_implied_probability": 0.985,
+      "market_price_cents": 98.0,
+      "edge": -0.020000000000000018,
+      "yes_ask": 0.988,
+      "no_ask": 0.018,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": 0.007000000000000032,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "no +EV value bet at the ask (my prob 96%, modal YES) — staying out.",
+      "prob_delta_vs_prev": 0.0050000000000000044,
+      "trigger": "near_close",
+      "strategy_id": "S0-single",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "De la Espriella won the June 21 runoff by ~249K votes (49.66 vs 48.70) with 99.96% counted; no Colombian presidential recount has reversed a result. Cepeda's broad challenge is the only tail.",
+      "key_drivers": [
+        "249K absolute margin",
+        "99.96% counted",
+        "no precedent for reversal",
+        "Cepeda challenge"
+      ],
+      "reference_classes": [
+        "preliminary leader becomes certified winner ~97-99%"
+      ],
+      "research_refs": [
+        "https://www.aljazeera.com/news/2026/6/22/colombian-right-wing-candidate-de-la-espriella-wins-tight-presidential-race"
       ]
     }
   ],
