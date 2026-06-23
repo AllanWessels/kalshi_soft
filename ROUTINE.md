@@ -10,25 +10,32 @@ cloned fresh and `data/` holds your memory from prior runs. Read and follow
   the math, storage, and rendering. Always go through the scripts — never hand-edit `data/`.
 - **Anti-anchoring:** never look at a market's Kalshi price until you have written your own
   probability first (enforced by the order of steps below).
-- **Parallelize (project directive):** the **forecasting** step fans out to **Opus** subagents
-  (one independent forecaster per perspective/market); you (Opus) orchestrate and synthesize. Pass
-  `model: opus` explicitly. Retrieval is *not* an Opus subagent — the orchestrator runs the web
-  tool-calls inline and Qwen condenses them (see the model-routing rule below).
+- **Model routing (2026-06-23, supersedes the prior Opus-only rule): Qwen does EVERYTHING — always.**
+  The local open-weight model (`lib/local_llm.py`, Qwen) does ALL of: (1) **retrieval condensation**
+  (`extract_evidence`), (2) **forecasting** (`forecast_ensemble` — see below), and (3) **adversarial
+  analysis** (the in-loop `challenge` gate, Step 5, and the blind post-mortem `critique`, Step 6b).
+  **No Anthropic model (Opus / Sonnet / Haiku / Fable) forms a forecast, and you spawn NO model
+  subagents.** The orchestrator (this session) is pure plumbing: it runs the web tool-calls inline
+  (Qwen has no browser), calls the Qwen functions, and records. The web tool-calls themselves stay
+  with the orchestrator; raw results pipe straight into `extract_evidence` so only condensed notes
+  flow onward. **Hard dependency:** if `local_llm` is DOWN, the loop CANNOT forecast — skip the
+  research/forecast steps, still rebuild the report + commit, and report the outage (Step 0).
+- **Confidence is EARNED by ensemble, not asserted.** Because a single small model is weakly
+  calibrated, every market is forecast by `lib.local_llm.forecast_ensemble` — **N=5 independent Qwen
+  passes at temperature>0**, fused by median. Tight agreement → `high` confidence, wide spread → `low`
+  (a thin evidence base of <5 sources also caps confidence at `medium`). This is what lets a lean
+  clear the `min_confidence_for_lean` floor without weakening any risk gate.
+- **Source breadth (HARD RULE):** every market must draw on **> 5 disparate sources** (distinct
+  orgs/types, primary-first). Consult `data/source_registry.json` for per-domain sources + non-partisan
+  reliability ratings; cross-check any single-source claim before it enters a forecast.
 - **This loop is an EXPERIMENT (project directive).** Every forecast is produced by a registered
-  *strategy arm* (`lib/strategies.py`) and tagged with its `strategy_id`; every resolution scores
-  that arm on **both Brier skill and realized profit**. We do not assume which forecasting topology
-  is best — the scoreboard discovers it. See SKILL §0.
-- **Model routing (fixed): Qwen = retrieval + adversarial analysis; Opus = forecasting.** The local
-  open-weight model (`lib/local_llm.py`, Qwen) does two jobs and *only* these two: (1) **retrieval
-  condensation** — turning raw web results into compact *quoted* evidence notes (`extract_evidence`),
-  and (2) **adversarial analysis** — the in-loop decision **challenge gate** (`challenge`, Step 5) and
-  the blind **post-mortem critic** (`critique`, Step 6b). **All forecasting runs on Opus** — never the
-  local model, never Sonnet. Qwen is not trusted to *form* a forecast, only to compress evidence and to
-  attack a forecast Opus has formed. The web tool-calls themselves (Qwen has no browser) are run **by
-  the orchestrator inline**, not by an Opus retrieval subagent; the raw results are piped straight to
-  `extract_evidence` so only the condensed notes flow onward. If the local endpoint is **down**, fall
-  back to an Opus retrieval/critic agent so the pipeline never hard-breaks — but that is a degraded
-  fallback, not the steady state.
+  *strategy arm* (`lib/strategies.py`, now the local-Qwen `LQ*` arms) and tagged with its
+  `strategy_id`; every resolution scores that arm on **both Brier skill and realized profit**. The
+  scoreboard discovers which local topology (ensemble size, crowd-adjust, red-team) wins. See SKILL §0.
+- **Adversarial caveat (known trade-off):** with Qwen now forecasting, the `challenge` gate and
+  post-mortem `critic` are Qwen-reviewing-Qwen (same family), weaker than the old cross-family check.
+  Mitigate by running the challenge at a different temperature/framing; the EV floor, ≤5pt fade cap,
+  and URAN ceiling remain the binding risk gates.
 - **Never grade your own work.** Post-mortems run through an **adversarial panel** (blind local
   Critic → Claude Defender → Claude Judge), not single-agent self-judging. See Step 6b.
 - Degrade gracefully: if a step fails, log it and continue to the report + commit steps so every
@@ -50,14 +57,13 @@ python3 -c "from lib import local_llm, config; print('local_llm', 'UP' if (confi
 If `refresh_market` prints `kalshi UNREACHABLE`, skip the research/resolution steps that need the
 API, jump to Step 7 (build report from existing state), Step 8, Step 9, and exit. Otherwise continue.
 
-**Local-LLM mode:** if the healthcheck prints `local_llm UP`, retrieval condensation **and** the
-adversarial passes (challenge gate, post-mortem critic) run locally (free), and the per-run cap can
-**relax** (see Step 3) — local retrieval offloads the bulk web work so more markets fit in a run.
-Forecasting is **always Opus** regardless of this flag, so the **≤4-concurrent-wave rule (Step 4c) is
-the real burst throttle**, not the cap. If it prints `local_llm DOWN`, the pipeline still works via the
-**Opus fallback** retrieval/critic agents (degraded), the per-run cap stays at its default, and the
-post-mortem critic is **skipped/deferred** rather than run same-family (Step 6b). Note which mode
-you're in for the Step 8 log.
+**Local-LLM mode (now a HARD dependency):** Qwen does retrieval, forecasting, AND adversarial work,
+so `local_llm UP` is REQUIRED to forecast. If it prints `local_llm UP`, proceed — everything runs
+locally and free, and the per-run cap is bounded only by wall-clock (ensemble passes are sequential
+Qwen calls on the home GPU), not by token cost. If it prints `local_llm DOWN`, the loop **cannot
+forecast**: skip Steps 2–6, jump to Step 7 (rebuild report from existing state), Step 8, Step 9, and
+report the outage. There is no Anthropic-model fallback — that is the point of the all-Qwen routing.
+Note the mode in the Step 8 log.
 
 ## Step 1 — Discover
 ```
@@ -105,26 +111,21 @@ so nothing is lost. Always keep `--event-driven` overrides inside the kept set e
 dropping a less-urgent cadence market. Note in the Step 8 log how many were deferred
 (`reforecast_deferred`) — the `--summary` line reports this directly.
 
-**Cap relaxation when `local_llm UP` (Step 0):** with Qwen doing the heavy web condensation, the
-per-run volume pressure eases, so when an explicit `/update N` was **not** given you may raise the
-default (e.g. `--limit 20`) up to the full due list. Note that **forecasting is still Opus** even when
-local is UP, so the throttle that actually matters is the **wave rule below** (≤4 concurrent Opus
-forecasters) — it always binds, UP or DOWN. On the Opus-fallback path (local DOWN) keep the default 12.
+**Cap is now wall-clock-bound, not token-bound.** Forecasting is free local Qwen, so there is no
+Anthropic burst limit to respect and no wave rule. The only throttle is how many sequential Qwen
+ensemble calls finish in a reasonable run (each market = ~5 `forecast` passes). `/update N` sets the
+target; default 12 when no N is given. Deferred markets carry over automatically.
 
-## Step 4 — Research & forecast each due market (RETRIEVE local → assign arm → FAN OUT in WAVES)
+## Step 4 — Research & forecast each due market (RETRIEVE → assign arm → ENSEMBLE-FORECAST on Qwen)
 
 ### Step 4a — Retrieval tier (Qwen evidence notes, free)
-For each due market, gather web evidence and condense it to compact, *quoted* structured notes
-**before** any Opus forecasting — so raw pages never enter the forecaster's context.
-- **`local_llm UP` (steady state):** the **orchestrator** runs the web searches/fetches inline
-  (Qwen has no browser, so the tool-call mechanic must live with the orchestrator — do **not** spend
-  an Opus retrieval subagent on this), then pipes the raw results through
-  `lib.local_llm.extract_evidence(question, raw_results, as_of=...)` to get `EvidenceNotes` (claims
-  with verbatim source quotes, base rates, key uncertainties). Hand the **notes**, not the raw pages,
-  to the Opus forecasters. Retrieval is Qwen's job — never route forecasting through it.
-- **`local_llm DOWN` (degraded):** fall back to an Opus retrieval agent that returns the same notes
-  shape.
-The notes carry source quotes so the Opus forecaster can verify rather than blindly trust a small model.
+For each due market, the **orchestrator** runs the web searches/fetches inline from **> 5 disparate
+sources** (distinct orgs/types, primary-first — see `data/source_registry.json`; cross-check any
+single-source claim). Then pipe the raw results through
+`lib.local_llm.extract_evidence(question, raw_results, as_of=...)` to get `EvidenceNotes` (claims with
+verbatim quotes, base rates, key uncertainties). Only the condensed notes flow onward — raw pages never
+enter the forecaster context. There is no model subagent for retrieval; the orchestrator owns the web
+tool-calls (Qwen has no browser).
 
 ### Step 4b — Assign the strategy arm (the experiment)
 For each due market, pick its arm:
@@ -139,31 +140,25 @@ The arm config tells you **how many independent forecasters to spawn** (`n_forec
 Selection is round-robin while cold, epsilon-greedy on `by_strategy` skill+ROI once arms have a
 record. Carry the chosen `strategy_id` to Step 5.
 
-### Step 4c — Forecast (FAN OUT to Opus, IN WAVES)
-**Dispatch Opus subagents in bounded waves of at most 4 at a time** — never all at once. This is
-the concurrency throttle that keeps the run under Anthropic's burst limits (a single 20-wide
-fan-out is what got the org rate-limited). For an arm with `n_forecasters > 1`, the independent
-forecasters for a market also count toward the ≤4 concurrent budget.
+### Step 4c — Forecast (Qwen ENSEMBLE — no subagents)
+**No model subagents. Forecasting is `lib.local_llm.forecast_ensemble`** — N independent Qwen passes
+(N = the arm's `n_forecasters`, default 5) at temperature>0, fused by median, with confidence earned
+from agreement (tight spread → `high`, wide → `low`; <5 sources caps at `medium`). The forecaster
+sees the evidence notes ONLY, never the Kalshi price (anti-anchoring). Per market:
 
-> **Wave protocol (MANDATORY):** issue at most **4** `Task`/subagent calls in one message, then
-> **wait for all 4 to return** before issuing the next batch of ≤4. Do **not** start a new wave
-> until the previous wave's agents have all completed. Never put more than 4 subagent calls in a
-> single message.
+```
+python3 -c "
+from lib import local_llm, strategies, scoring, store, json as _j  # arm already chosen in 4b
+notes = ...   # EvidenceNotes from 4a (pass via a temp file or inline)
+r = local_llm.forecast_ensemble(QUESTION, notes, n=ARM_N, as_of=AS_OF, n_sources=NUM_SOURCES)
+print(r['my_probability'], r['my_confidence'], r['stdev'], r['rationale_summary'])"
+```
 
-Give each worker the market title + ticker + resolution rules + the **evidence notes from 4a** and
-this instruction:
-
-> Follow `.claude/skills/superforecasting/SKILL.md` steps 1–4 and 6. Form an INDEPENDENT
-> probability from the supplied evidence notes: decompose the question, establish base rates /
-> reference classes, weigh ≥3 independent perspectives, run a pre-mortem. **Do NOT look up the
-> Kalshi market price.** Return a structured result: `my_probability` (granular), `my_confidence`
-> (low/med/high), `rationale_summary` (1–3 sentences), `key_drivers`, `reference_classes`,
-> `research_refs` (URLs).
-
-For a multi-forecaster arm, combine the returned probabilities with
-`strategies.combine(probs, arm, market_price=None)` (anti-anchoring: do not pass the price yet).
-If the arm sets `redteam`, run one adversarial red-team pass on the combined estimate before
-committing. Then **you (Opus), per market**, execute SKILL step 5 (anti-anchoring):
+In practice the orchestrator: writes the notes to a scratch JSON, calls `forecast_ensemble` (n =
+arm `n_forecasters`), then for a multi-pass arm the ensemble already aggregates; if the arm sets
+`crowd_adjust_weight`, apply `strategies.combine(r['probs'], arm, market_price)` AFTER the price is
+revealed; if it sets `redteam`, run one `local_llm.challenge`-style pass on the fused estimate before
+committing. Then execute SKILL step 5 (anti-anchoring):
 ```
 python3 scripts/refresh_market.py --ticker <TICKER>      # NOW look at the price + asks + fees
 ```

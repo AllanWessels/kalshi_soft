@@ -133,14 +133,15 @@ def _extract_json_block(text: str) -> dict:
         raise LocalLLMError(f"could not parse JSON object: {e}") from e
 
 
-def complete_json(system: str, user: str, *, max_tokens: int = 1024) -> dict:
+def complete_json(system: str, user: str, *, max_tokens: int = 1024,
+                  temperature: float = 0.0) -> dict:
     """Chat with a JSON-only instruction and return the parsed object."""
     messages = [
         {"role": "system", "content": system +
          "\n\nRespond with ONE valid JSON object and nothing else. No prose, no markdown."},
         {"role": "user", "content": user},
     ]
-    return _extract_json_block(chat(messages, max_tokens=max_tokens))
+    return _extract_json_block(chat(messages, max_tokens=max_tokens, temperature=temperature))
 
 
 # ---------------------------------------------------------------------------
@@ -226,7 +227,13 @@ def critique(
 
 
 # ---------------------------------------------------------------------------
-# Forecasting tier — LOCAL model as forecaster (the L* strategy arms)
+# Forecasting tier — LOCAL model (Qwen) is the FORECASTER for every market.
+# PROJECT DIRECTIVE (model routing, 2026-06-23): Qwen does EVERYTHING — retrieval
+# condensation, forecasting, and adversarial gating. No Anthropic models form forecasts.
+# High confidence is *earned* by running an ENSEMBLE of independent passes (see
+# forecast_ensemble): tight agreement -> high, wide spread -> low. This recovers the
+# calibration a single small model loses and is what lets a lean clear the
+# min_confidence_for_lean floor without weakening any risk gate.
 # ---------------------------------------------------------------------------
 
 _FORECASTER_SYSTEM = (
@@ -239,11 +246,13 @@ _FORECASTER_SYSTEM = (
 )
 
 
-def forecast(question: str, evidence_notes: dict, *, as_of: str = "") -> dict:
-    """LOCAL-model forecaster (the L* arms). Returns
+def forecast(question: str, evidence_notes: dict, *, as_of: str = "",
+             temperature: float = 0.0) -> dict:
+    """LOCAL-model (Qwen) forecaster — ONE pass. Returns
     ``{"my_probability": float, "my_confidence": "low|medium|high",
     "rationale_summary": str, "key_drivers": [str], "reference_classes": [str]}``.
-    Raises LocalLLMError so the orchestrator can fall back to an Opus forecaster."""
+    Raises LocalLLMError on transport/parse failure. For a calibrated estimate use
+    ``forecast_ensemble`` (multiple passes at temperature>0)."""
     import json as _json
     # /no_think: Qwen3 is a hybrid reasoning model — without this it spends the token
     # budget on a <think> block and can return no JSON. These structured tasks don't
@@ -256,7 +265,7 @@ def forecast(question: str, evidence_notes: dict, *, as_of: str = "") -> dict:
         '"rationale_summary": str, "key_drivers": [str], "reference_classes": [str]}\n/no_think'
     )
     # Local model is free + unmetered — cap is just truncation headroom, not a budget.
-    out = complete_json(_FORECASTER_SYSTEM, user, max_tokens=2048)
+    out = complete_json(_FORECASTER_SYSTEM, user, max_tokens=2048, temperature=temperature)
     # Clamp + validate the probability so a malformed value can't poison the record.
     p = out.get("my_probability")
     if not isinstance(p, (int, float)) or not (0.0 <= float(p) <= 1.0):
@@ -264,6 +273,70 @@ def forecast(question: str, evidence_notes: dict, *, as_of: str = "") -> dict:
     out["my_probability"] = float(p)
     out.setdefault("my_confidence", "low")
     return out
+
+
+def forecast_ensemble(question: str, evidence_notes: dict, *, n: int = 5,
+                      as_of: str = "", temperature: float = 0.7,
+                      n_sources: Optional[int] = None) -> dict:
+    """Run ``n`` INDEPENDENT Qwen forecasts (temperature>0 for diversity) and fuse them.
+
+    Confidence is EARNED from agreement, not asserted by one small model:
+      - spread_confidence: pstdev(probs) <=0.05 -> high, <=0.12 -> medium, else low.
+      - if ``n_sources`` is given, a thin evidence base (<5 disparate sources) caps
+        confidence at 'medium' (the >5-disparate-sources rule).
+    Returns ``{"probs": [...], "n": int, "n_requested": int, "mean", "median",
+    "stdev", "my_probability" (=median, robust to an outlier pass), "my_confidence",
+    "spread_confidence", "rationale_summary", "key_drivers", "reference_classes",
+    "samples": [...]}``. Raises LocalLLMError only if EVERY pass fails."""
+    import statistics
+    probs: list[float] = []
+    samples: list[dict] = []
+    for i in range(max(1, n)):
+        try:
+            # Vary temperature slightly per pass to avoid collapsed/degenerate agreement.
+            out = forecast(question, evidence_notes, as_of=as_of,
+                           temperature=round(temperature + 0.05 * (i % 3), 3))
+        except LocalLLMError:
+            continue
+        probs.append(out["my_probability"])
+        samples.append(out)
+    if not probs:
+        raise LocalLLMError("forecast_ensemble: every pass failed")
+
+    mean = statistics.fmean(probs)
+    median = statistics.median(probs)
+    stdev = statistics.pstdev(probs) if len(probs) > 1 else 0.0
+    if stdev <= 0.05:
+        spread_conf = "high"
+    elif stdev <= 0.12:
+        spread_conf = "medium"
+    else:
+        spread_conf = "low"
+
+    confidence = spread_conf
+    # A single pass cannot earn 'high' (no agreement signal yet).
+    if len(probs) < 3 and confidence == "high":
+        confidence = "medium"
+    # The >5-disparate-sources rule: a thin evidence base caps confidence at medium.
+    if n_sources is not None and n_sources < 5 and confidence == "high":
+        confidence = "medium"
+
+    best = max(samples, key=lambda s: len(str(s.get("rationale_summary", ""))))
+    return {
+        "probs": probs,
+        "n": len(probs),
+        "n_requested": max(1, n),
+        "mean": round(mean, 4),
+        "median": round(median, 4),
+        "stdev": round(stdev, 4),
+        "my_probability": round(median, 4),  # median is robust to one rogue pass
+        "my_confidence": confidence,
+        "spread_confidence": spread_conf,
+        "rationale_summary": best.get("rationale_summary", ""),
+        "key_drivers": best.get("key_drivers", []),
+        "reference_classes": best.get("reference_classes", []),
+        "samples": samples,
+    }
 
 
 # ---------------------------------------------------------------------------

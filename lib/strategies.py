@@ -37,34 +37,53 @@ class Strategy:
     crowd_adjust_weight: float = 0.0   # 0..1 weight pulled toward the market price
     debate_rounds: int = 0             # 0 = no debate (independent estimation)
     redteam: bool = False              # adversarial critic pass before committing
-    forecaster_model: str = "opus"     # forecaster model — ALWAYS "opus" (see directive below)
+    forecaster_model: str = "qwen"     # forecaster model — Qwen (local) for ALL arms (see directive)
 
 
 # The seed arms. Ordered so the round-robin selector cycles through them.
-# PROJECT DIRECTIVE (model routing, fixed): **forecasting is always Opus** — never the local
-# model, never Sonnet. Qwen (local) is used only for RETRIEVAL condensation and ADVERSARIAL
-# analysis (the in-loop challenge gate + the blind post-mortem critic), not for forming forecasts.
-# The experiment therefore varies forecasting *topology* (how many Opus forecasters, how they are
-# aggregated, crowd-adjust, red-team) — NOT which model forecasts. The former local-forecaster
-# arms (L0/L1) are retired; historical L* records remain in the scoreboard but are never re-selected.
+# PROJECT DIRECTIVE (model routing, 2026-06-23 — supersedes the prior Opus-only rule):
+# **Qwen (local) does EVERYTHING** — retrieval condensation, FORECASTING, and adversarial
+# gating. No Anthropic model (Opus/Sonnet/Haiku/Fable) forms a forecast. Because a single
+# small model is weakly calibrated, every live arm is an ENSEMBLE of independent Qwen passes
+# (lib.local_llm.forecast_ensemble): tight agreement -> high confidence, wide spread -> low.
+# The experiment now varies *local* topology (ensemble size, crowd-adjust, red-team). The
+# Opus S* arms below are RETIRED from selection (kept only so historical S* records resolve);
+# _ARM_IDS / select_strategy never return them.
 REGISTRY: dict[str, Strategy] = {
+    # --- LIVE local-Qwen arms (selected) ---
+    "LQ5-ensemble5": Strategy(
+        "LQ5-ensemble5", "5 independent Qwen forecasters -> trimmed mean (baseline)",
+        n_forecasters=5, aggregation="trimmed_mean", forecaster_model="qwen"),
+    "LQ5C-ensemble5-crowd": Strategy(
+        "LQ5C-ensemble5-crowd", "LQ5 + crowd-adjust 30% toward the market price",
+        n_forecasters=5, aggregation="trimmed_mean", crowd_adjust_weight=0.30,
+        forecaster_model="qwen"),
+    "LQ5R-ensemble5-redteam": Strategy(
+        "LQ5R-ensemble5-redteam", "LQ5 + adversarial red-team pass before commit",
+        n_forecasters=5, aggregation="trimmed_mean", redteam=True, forecaster_model="qwen"),
+    "LQ1-single": Strategy(
+        "LQ1-single", "Single Qwen forecaster, no aggregation (cheap baseline)",
+        n_forecasters=1, aggregation="mean", forecaster_model="qwen"),
+    # --- RETIRED Opus arms (never selected; kept for historical record resolution) ---
     "S0-single": Strategy(
-        "S0-single", "Single Opus forecaster, no aggregation (baseline)",
+        "S0-single", "[RETIRED] Single Opus forecaster, no aggregation",
         n_forecasters=1, aggregation="mean", forecaster_model="opus"),
     "S1-ensemble3": Strategy(
-        "S1-ensemble3", "3 independent Opus forecasters -> trimmed mean",
+        "S1-ensemble3", "[RETIRED] 3 independent Opus forecasters -> trimmed mean",
         n_forecasters=3, aggregation="trimmed_mean", forecaster_model="opus"),
     "S2-ensemble3-crowd": Strategy(
-        "S2-ensemble3-crowd", "S1 + crowd-adjust 30% toward the market price",
+        "S2-ensemble3-crowd", "[RETIRED] S1 + crowd-adjust 30% toward the market price",
         n_forecasters=3, aggregation="trimmed_mean", crowd_adjust_weight=0.30,
         forecaster_model="opus"),
     "S3-ensemble3-redteam": Strategy(
-        "S3-ensemble3-redteam", "S1 + adversarial red-team pass before commit",
+        "S3-ensemble3-redteam", "[RETIRED] S1 + adversarial red-team pass before commit",
         n_forecasters=3, aggregation="trimmed_mean", redteam=True, forecaster_model="opus"),
 }
 
-DEFAULT_STRATEGY = "S1-ensemble3"
-_ARM_IDS = list(REGISTRY.keys())
+# Only local-Qwen arms are ever selected. S* remain in REGISTRY for record resolution.
+_LIVE_ARM_IDS = ["LQ5-ensemble5", "LQ5C-ensemble5-crowd", "LQ5R-ensemble5-redteam", "LQ1-single"]
+DEFAULT_STRATEGY = "LQ5-ensemble5"
+_ARM_IDS = list(_LIVE_ARM_IDS)
 
 
 def get(strategy_id: str) -> Optional[Strategy]:
@@ -147,8 +166,9 @@ def select_strategy(
     if not by_strategy_stats:
         return REGISTRY[_ARM_IDS[_ticker_index(ticker, len(_ARM_IDS))]]
 
-    # Rank arms that have any evidence by skill, then ROI.
-    rated = {k: v for k, v in by_strategy_stats.items() if k in REGISTRY and v.get("n", 0) > 0}
+    # Rank arms that have any evidence by skill, then ROI. Only LIVE (local-Qwen) arms are
+    # eligible — retired Opus S* arms with historical records must never be re-selected.
+    rated = {k: v for k, v in by_strategy_stats.items() if k in _LIVE_ARM_IDS and v.get("n", 0) > 0}
     if not rated:
         return REGISTRY[_ARM_IDS[_ticker_index(ticker, len(_ARM_IDS))]]
 
@@ -197,14 +217,17 @@ if __name__ == "__main__":
     b = select_strategy("KXFOO-26")
     check("select_deterministic", a.id == b.id and a.id in REGISTRY)
 
-    # selection with stats exploits the best arm for most tickers
+    # selection with stats exploits the best LIVE arm for most tickers, and never
+    # re-selects a retired Opus arm even if it has the best historical record.
     stats = {
-        "S0-single": {"skill_vs_market": -0.02, "roi": -0.1, "n": 5},
-        "S1-ensemble3": {"skill_vs_market": 0.05, "roi": 0.2, "n": 5},
-        "S2-ensemble3-crowd": {"skill_vs_market": 0.03, "roi": 0.1, "n": 5},
+        "S1-ensemble3": {"skill_vs_market": 0.99, "roi": 0.99, "n": 50},  # retired -> ignored
+        "LQ1-single": {"skill_vs_market": -0.02, "roi": -0.1, "n": 5},
+        "LQ5-ensemble5": {"skill_vs_market": 0.05, "roi": 0.2, "n": 5},
+        "LQ5C-ensemble5-crowd": {"skill_vs_market": 0.03, "roi": 0.1, "n": 5},
     }
     exploited = [select_strategy(f"KXT{i}", stats).id for i in range(20)]
-    check("select_exploits_best", exploited.count("S1-ensemble3") >= 10)
+    check("select_exploits_best", exploited.count("LQ5-ensemble5") >= 10)
+    check("select_never_retired", "S1-ensemble3" not in exploited)
 
     if errors:
         print("STRATEGIES TEST FAILURES:", ", ".join(errors))

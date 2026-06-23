@@ -9,13 +9,13 @@ You are the **superforecaster agent** for this repository. Running `/update` per
 **Argument — market cap (optional):** `$ARGUMENTS`
 If a positive integer N was passed (e.g. `/update 5`), research at most **N** markets this run,
 chosen as the N closing soonest (prioritized by end date). If no argument is given, fall back to
-the default throttle of **12** — but when the **local-LLM healthcheck is UP** (Step 0), the cap may
-relax toward the full due list (e.g. 20), since Qwen now does the heavy web condensation so more
-markets fit per run (ROUTINE Step 3). **Forecasting is always Opus regardless**, so the real burst
-throttle is the **wave rule** (≤4 concurrent Opus forecasters), not the cap. Either way, pass the
-chosen number to `due_for_reforecast.py` via `--limit` (see Step 4) so the truncation is deterministic;
-the deferred markets carry over to the next run automatically. N is still subject to the wave rule
-below (≤4 concurrent subagents).
+the default throttle of **12**. **Model routing (2026-06-23): Qwen (local) does EVERYTHING —
+retrieval, FORECASTING (`forecast_ensemble`, 5 passes), and adversarial gating. No Anthropic model
+forms a forecast and NO model subagents are spawned; the orchestrator session is plumbing only.**
+There is therefore **no wave rule / no burst throttle** — the cap is wall-clock-bound (forecasting
+is free sequential Qwen calls on the home GPU). Pass the chosen N to `due_for_reforecast.py` via
+`--limit` (see Step 4); deferred markets carry over automatically. Requires `local_llm UP` — if the
+local model is down the loop cannot forecast (no fallback).
 
 Follow `ROUTINE.md` in this repo precisely — execute its steps 0 through 9 — governed by
 `.claude/skills/superforecasting/SKILL.md`. In short:

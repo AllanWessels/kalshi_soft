@@ -24,16 +24,23 @@ both so the system *learns which arm wins, per category* from its own record. Wh
 run, honor the arm assigned to each market (ROUTINE Step 4b) — that's how the experiment accrues
 signal. Don't collapse everything to one method because it "feels" best; let the scoreboard decide.
 
-**Model routing (fixed — not part of the experiment).** Two models, two jobs:
-- **Qwen (local) = retrieval + adversarial analysis.** It condenses raw web results into quoted
-  evidence notes (`extract_evidence`), runs the in-loop decision **challenge gate** that can veto a
-  lean before commit (`challenge`, step 5/§ gate), and runs the **blind post-mortem critic**
-  (`critique`). It compresses evidence and *attacks* forecasts — it never forms them.
-- **Opus = forecasting.** Every probability is formed by Opus (single arm or an Opus ensemble),
-  working only from the Qwen-condensed notes. **Never** forecast on the local model; **never** Sonnet.
-What the strategy arms vary is forecasting *topology* (how many Opus forecasters, aggregation,
-crowd-adjust, red-team), **not** which model forecasts. The retired `L*` (local-forecaster) arms are
-gone; if `local_llm` is down, an Opus agent covers retrieval/critic as a degraded fallback only.
+**Model routing (2026-06-23 — supersedes the prior Opus-only rule).** **Qwen (local) does
+EVERYTHING:** retrieval condensation (`extract_evidence`), **forecasting** (`forecast_ensemble`),
+the in-loop **challenge gate** (`challenge`), and the blind **post-mortem critic** (`critique`).
+**No Anthropic model (Opus/Sonnet/Haiku/Fable) forms a forecast, and no model subagents are spawned.**
+The orchestrator is plumbing: it runs web tool-calls inline and calls the Qwen functions.
+- **Forecasting = ENSEMBLE.** A single small model is weakly calibrated, so every probability is the
+  median of **N independent Qwen passes** (`forecast_ensemble`, N = arm `n_forecasters`, default 5) at
+  temperature>0. Confidence is *earned* from agreement: tight spread → `high`, wide → `low`; a thin
+  evidence base (<5 disparate sources) caps confidence at `medium`.
+- The strategy arms now vary *local* topology (ensemble size, crowd-adjust, red-team) — the live `LQ*`
+  arms; the Opus `S*` arms are retired from selection.
+- **Hard dependency:** if `local_llm` is down the loop cannot forecast (no Anthropic fallback) — it
+  rebuilds the report and commits only.
+- **Known trade-off:** the challenge gate / post-mortem critic are now Qwen-on-Qwen (same family),
+  weaker than the old cross-family check; the EV floor, ≤5pt fade cap, and URAN ceiling are the
+  binding risk gates. Source breadth (**>5 disparate sources/market**, see `data/source_registry.json`)
+  is mandatory to lift forecast quality.
 
 ## Scope: what to forecast (and what not)
 - **Forecast:** elections, nominations, legislation, approval, appointments; awards, box

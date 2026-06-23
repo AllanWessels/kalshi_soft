@@ -84,7 +84,9 @@ MAX_MARKET_DISAGREEMENT = 0.20
 # Watchlist / discovery thresholds
 # ---------------------------------------------------------------------------
 
-WATCHLIST_CAP = 30
+WATCHLIST_CAP = 100   # 2026-06-23: 30->100. Qwen forecasting is free/local, so we widen the
+                      # funnel toward soft/inefficiently-priced markets (more shots at in-band
+                      # edges) without per-market token cost. Risk gates unchanged.
 
 # Tuned so a healthy pool (~tens) of soft markets passes, which the agent then
 # curates down to WATCHLIST_CAP. Soft markets are thinner than sports/crypto, so
