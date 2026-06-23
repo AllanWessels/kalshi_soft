@@ -5,22 +5,22 @@
   "category": "politics",
   "close_time": "2026-11-03T15:00:00Z",
   "current": {
-    "as_of": "2026-06-23T18:37:44Z",
-    "my_probability": 0.3,
+    "as_of": "2026-06-23T19:19:13Z",
+    "my_probability": 0.42,
     "my_confidence": "low",
     "market_implied_probability": 0.225,
     "market_price_cents": 22.0,
-    "edge": 0.07499999999999998,
+    "edge": 0.19499999999999998,
     "yes_ask": 0.23,
     "no_ask": 0.78,
     "fee_per_contract": 0.02,
-    "ev_per_contract": -0.10000000000000007,
+    "ev_per_contract": -0.21999999999999995,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "no +EV value bet at the ask (my prob 30%, modal NO) — staying out.",
-    "prob_delta_vs_prev": -0.08000000000000002,
+    "lean_note": "no +EV value bet at the ask (my prob 42%, modal NO) — staying out.",
+    "prob_delta_vs_prev": 0.03999999999999998,
     "trigger": "near_close",
     "strategy_id": "S0-single",
     "proposed_probability": null,
@@ -28,17 +28,20 @@
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "Drummond led round 1 narrowly (26.3 vs 26.0) with AG name-ID, but Trump's active Mazzei endorsement + anti-Drummond attacks in deep-red OK tilt the Aug 25 runoff toward Mazzei; I sit slightly above market on Drummond.",
+    "rationale_summary": "Deep read: Drummond led round 1, has AG name-ID, money parity (~$2.5M loans+record donors) and the establishment Keating bloc; Trump's active anti-Drummond attacks are a real headwind but his endorsement win-rate drops to ~50-60% vs a strong statewide opponent. I sit above market on Drummond but short of calling him favorite.",
     "key_drivers": [
-      "Trump endorsed Mazzei",
       "Drummond round-1 lead+name ID",
-      "low-turnout base runoff"
+      "Keating establishment bloc",
+      "Trump endorsement weaker vs strong opponent",
+      "Aug-25 low turnout"
     ],
     "reference_classes": [
-      "Trump-endorsed deep-red runoff win rate; first-round leader in 2-way runoff"
+      "Trump-endorsed runoff vs strong statewide official ~50-60%"
     ],
     "research_refs": [
-      "https://www.kosu.org/2026-oklahoma-governor-primary-election-results"
+      "https://en.wikipedia.org/wiki/2026_Oklahoma_gubernatorial_election",
+      "https://www.kosu.org/politics/2026-06-16/mazzei-drummond-advance-to-runoff-election-for-oklahoma-governor",
+      "https://oklahomavoice.com/2026/06/10/oklahoma-governor-candidates-funnel-22-million-in-personal-money-to-campaigns/"
     ]
   },
   "history": [
@@ -125,22 +128,22 @@
       ]
     },
     {
-      "as_of": "2026-06-23T18:37:44Z",
-      "my_probability": 0.3,
+      "as_of": "2026-06-23T19:19:13Z",
+      "my_probability": 0.42,
       "my_confidence": "low",
       "market_implied_probability": 0.225,
       "market_price_cents": 22.0,
-      "edge": 0.07499999999999998,
+      "edge": 0.19499999999999998,
       "yes_ask": 0.23,
       "no_ask": 0.78,
       "fee_per_contract": 0.02,
-      "ev_per_contract": -0.10000000000000007,
+      "ev_per_contract": -0.21999999999999995,
       "limit_price": null,
       "ev_limit_per_contract": null,
       "lean": "NONE",
       "conviction": "low",
-      "lean_note": "no +EV value bet at the ask (my prob 30%, modal NO) — staying out.",
-      "prob_delta_vs_prev": -0.08000000000000002,
+      "lean_note": "no +EV value bet at the ask (my prob 42%, modal NO) — staying out.",
+      "prob_delta_vs_prev": 0.03999999999999998,
       "trigger": "near_close",
       "strategy_id": "S0-single",
       "proposed_probability": null,
@@ -148,17 +151,20 @@
       "adversarial_challenged_prob": null,
       "adversarial_concerns": [],
       "adversarial_model": "",
-      "rationale_summary": "Drummond led round 1 narrowly (26.3 vs 26.0) with AG name-ID, but Trump's active Mazzei endorsement + anti-Drummond attacks in deep-red OK tilt the Aug 25 runoff toward Mazzei; I sit slightly above market on Drummond.",
+      "rationale_summary": "Deep read: Drummond led round 1, has AG name-ID, money parity (~$2.5M loans+record donors) and the establishment Keating bloc; Trump's active anti-Drummond attacks are a real headwind but his endorsement win-rate drops to ~50-60% vs a strong statewide opponent. I sit above market on Drummond but short of calling him favorite.",
       "key_drivers": [
-        "Trump endorsed Mazzei",
         "Drummond round-1 lead+name ID",
-        "low-turnout base runoff"
+        "Keating establishment bloc",
+        "Trump endorsement weaker vs strong opponent",
+        "Aug-25 low turnout"
       ],
       "reference_classes": [
-        "Trump-endorsed deep-red runoff win rate; first-round leader in 2-way runoff"
+        "Trump-endorsed runoff vs strong statewide official ~50-60%"
       ],
       "research_refs": [
-        "https://www.kosu.org/2026-oklahoma-governor-primary-election-results"
+        "https://en.wikipedia.org/wiki/2026_Oklahoma_gubernatorial_election",
+        "https://www.kosu.org/politics/2026-06-16/mazzei-drummond-advance-to-runoff-election-for-oklahoma-governor",
+        "https://oklahomavoice.com/2026/06/10/oklahoma-governor-candidates-funnel-22-million-in-personal-money-to-campaigns/"
       ]
     }
   ],

@@ -5,22 +5,22 @@
   "category": "politics",
   "close_time": "2026-07-01T14:00:00Z",
   "current": {
-    "as_of": "2026-06-23T18:37:15Z",
-    "my_probability": 0.012,
-    "my_confidence": "medium",
+    "as_of": "2026-06-23T19:13:02Z",
+    "my_probability": 0.02,
+    "my_confidence": "high",
     "market_implied_probability": 0.0075,
     "market_price_cents": 1.0,
-    "edge": 0.0045000000000000005,
+    "edge": 0.0125,
     "yes_ask": 0.01,
     "no_ask": 0.995,
     "fee_per_contract": 0.01,
-    "ev_per_contract": -0.017000000000000008,
+    "ev_per_contract": 0.0,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "no +EV value bet at the ask (my prob 1%, modal NO) — staying out.",
-    "prob_delta_vs_prev": -0.018,
+    "lean_note": "no +EV value bet at the ask (my prob 2%, modal NO) — staying out.",
+    "prob_delta_vs_prev": -0.009999999999999998,
     "trigger": "scheduled",
     "strategy_id": "S0-single",
     "proposed_probability": null,
@@ -28,17 +28,18 @@
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "Any 1 of 435 members lifts the floor above a named principal, but active conflict + logistics make a 7-day Iran trip very unlikely.",
+    "rationale_summary": "No US House member has visited Iran since 1979 and none is reported planning one; the slight bump only reflects the 435-member pool and unannounced-visit tail risk.",
     "key_drivers": [
       "435-member pool",
-      "travel warnings",
-      "logistics"
+      "no precedent",
+      "travel warnings"
     ],
     "reference_classes": [
-      "House member trips to adversary states rare"
+      "House member trips to Iran since 1979 ~ zero"
     ],
     "research_refs": [
-      "https://www.npr.org/2026/06/19/nx-s1-5863544/trump-us-iran-agreement"
+      "https://www.cfr.org",
+      "https://history.state.gov"
     ]
   },
   "history": [
@@ -119,22 +120,22 @@
       ]
     },
     {
-      "as_of": "2026-06-23T18:37:15Z",
-      "my_probability": 0.012,
-      "my_confidence": "medium",
+      "as_of": "2026-06-23T19:13:02Z",
+      "my_probability": 0.02,
+      "my_confidence": "high",
       "market_implied_probability": 0.0075,
       "market_price_cents": 1.0,
-      "edge": 0.0045000000000000005,
+      "edge": 0.0125,
       "yes_ask": 0.01,
       "no_ask": 0.995,
       "fee_per_contract": 0.01,
-      "ev_per_contract": -0.017000000000000008,
+      "ev_per_contract": 0.0,
       "limit_price": null,
       "ev_limit_per_contract": null,
       "lean": "NONE",
       "conviction": "low",
-      "lean_note": "no +EV value bet at the ask (my prob 1%, modal NO) — staying out.",
-      "prob_delta_vs_prev": -0.018,
+      "lean_note": "no +EV value bet at the ask (my prob 2%, modal NO) — staying out.",
+      "prob_delta_vs_prev": -0.009999999999999998,
       "trigger": "scheduled",
       "strategy_id": "S0-single",
       "proposed_probability": null,
@@ -142,17 +143,18 @@
       "adversarial_challenged_prob": null,
       "adversarial_concerns": [],
       "adversarial_model": "",
-      "rationale_summary": "Any 1 of 435 members lifts the floor above a named principal, but active conflict + logistics make a 7-day Iran trip very unlikely.",
+      "rationale_summary": "No US House member has visited Iran since 1979 and none is reported planning one; the slight bump only reflects the 435-member pool and unannounced-visit tail risk.",
       "key_drivers": [
         "435-member pool",
-        "travel warnings",
-        "logistics"
+        "no precedent",
+        "travel warnings"
       ],
       "reference_classes": [
-        "House member trips to adversary states rare"
+        "House member trips to Iran since 1979 ~ zero"
       ],
       "research_refs": [
-        "https://www.npr.org/2026/06/19/nx-s1-5863544/trump-us-iran-agreement"
+        "https://www.cfr.org",
+        "https://history.state.gov"
       ]
     }
   ],

@@ -5,22 +5,22 @@
   "category": "politics",
   "close_time": "2026-07-07T13:59:00Z",
   "current": {
-    "as_of": "2026-06-23T18:30:52Z",
-    "my_probability": 0.09,
-    "my_confidence": "medium",
-    "market_implied_probability": 0.0225,
+    "as_of": "2026-06-23T19:13:02Z",
+    "my_probability": 0.04,
+    "my_confidence": "high",
+    "market_implied_probability": 0.021,
     "market_price_cents": 2.0,
-    "edge": 0.0675,
-    "yes_ask": 0.024,
-    "no_ask": 0.979,
+    "edge": 0.019,
+    "yes_ask": 0.022,
+    "no_ask": 0.98,
     "fee_per_contract": 0.01,
-    "ev_per_contract": -0.07899999999999995,
+    "ev_per_contract": 0.008000000000000002,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "no +EV value bet at the ask (my prob 9%, modal NO) — staying out.",
-    "prob_delta_vs_prev": 0.039999999999999994,
+    "lean_note": "no +EV value bet at the ask (my prob 4%, modal NO) — staying out.",
+    "prob_delta_vs_prev": -0.010000000000000002,
     "trigger": "near_close",
     "strategy_id": "S0-single",
     "proposed_probability": null,
@@ -28,23 +28,21 @@
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "A 7-day moving average cannot cross 60 on one good day; needs ~7 days far above the best post-war day (55) while the latest reading collapsed to 12 amid a fresh June 22 closure. Recovery is real but choppy and far below the 100+ pre-war norm.",
+    "rationale_summary": "IMF PortWatch 7-day MA was ~2.6 on Jun 14; commercial daily transit calls have recovered only to ~12-35/day vs a ~94/day baseline, and Iran re-declared closure Jun 20-21. A smoothed 7-day MA in the mid-teens cannot mechanically reach 60 within ~7 days.",
     "key_drivers": [
-      "7day-MA smoothing",
-      "volatile low dailies 12-55",
-      "fragile days-old ceasefire",
-      "short 7-day window",
-      "latent backlog surge upside"
+      "MA ~2.6 Jun14",
+      "dailies 12-35 vs 94 baseline",
+      "7-day MA lag",
+      "Jun20-21 re-closure"
     ],
     "reference_classes": [
-      "post-disruption chokepoint normalization weeks-not-days",
-      "fragile ceasefire early relapse",
-      "smoothed MA threshold crossing short window"
+      "post-disruption chokepoint recovery weeks-not-days",
+      "MA crossing dynamics"
     ],
     "research_refs": [
-      "https://en.wikipedia.org/wiki/2026_Strait_of_Hormuz_crisis",
-      "https://www.cnbc.com/2026/06/19/iran-oil-tanker-traffic-strait-hormuz-gulf-vlcc.html",
-      "https://portwatch.imf.org"
+      "https://portwatch.imf.org/pages/chokepoint6",
+      "https://www.aljazeera.com/economy/2026/6/22/shipping-stalls-in-strait-of-hormuz-after-iran-declares-key-waterway-shut",
+      "https://www.argusmedia.com"
     ]
   },
   "history": [
@@ -241,22 +239,22 @@
       ]
     },
     {
-      "as_of": "2026-06-23T18:30:52Z",
-      "my_probability": 0.09,
-      "my_confidence": "medium",
-      "market_implied_probability": 0.0225,
+      "as_of": "2026-06-23T19:13:02Z",
+      "my_probability": 0.04,
+      "my_confidence": "high",
+      "market_implied_probability": 0.021,
       "market_price_cents": 2.0,
-      "edge": 0.0675,
-      "yes_ask": 0.024,
-      "no_ask": 0.979,
+      "edge": 0.019,
+      "yes_ask": 0.022,
+      "no_ask": 0.98,
       "fee_per_contract": 0.01,
-      "ev_per_contract": -0.07899999999999995,
+      "ev_per_contract": 0.008000000000000002,
       "limit_price": null,
       "ev_limit_per_contract": null,
       "lean": "NONE",
       "conviction": "low",
-      "lean_note": "no +EV value bet at the ask (my prob 9%, modal NO) — staying out.",
-      "prob_delta_vs_prev": 0.039999999999999994,
+      "lean_note": "no +EV value bet at the ask (my prob 4%, modal NO) — staying out.",
+      "prob_delta_vs_prev": -0.010000000000000002,
       "trigger": "near_close",
       "strategy_id": "S0-single",
       "proposed_probability": null,
@@ -264,23 +262,21 @@
       "adversarial_challenged_prob": null,
       "adversarial_concerns": [],
       "adversarial_model": "",
-      "rationale_summary": "A 7-day moving average cannot cross 60 on one good day; needs ~7 days far above the best post-war day (55) while the latest reading collapsed to 12 amid a fresh June 22 closure. Recovery is real but choppy and far below the 100+ pre-war norm.",
+      "rationale_summary": "IMF PortWatch 7-day MA was ~2.6 on Jun 14; commercial daily transit calls have recovered only to ~12-35/day vs a ~94/day baseline, and Iran re-declared closure Jun 20-21. A smoothed 7-day MA in the mid-teens cannot mechanically reach 60 within ~7 days.",
       "key_drivers": [
-        "7day-MA smoothing",
-        "volatile low dailies 12-55",
-        "fragile days-old ceasefire",
-        "short 7-day window",
-        "latent backlog surge upside"
+        "MA ~2.6 Jun14",
+        "dailies 12-35 vs 94 baseline",
+        "7-day MA lag",
+        "Jun20-21 re-closure"
       ],
       "reference_classes": [
-        "post-disruption chokepoint normalization weeks-not-days",
-        "fragile ceasefire early relapse",
-        "smoothed MA threshold crossing short window"
+        "post-disruption chokepoint recovery weeks-not-days",
+        "MA crossing dynamics"
       ],
       "research_refs": [
-        "https://en.wikipedia.org/wiki/2026_Strait_of_Hormuz_crisis",
-        "https://www.cnbc.com/2026/06/19/iran-oil-tanker-traffic-strait-hormuz-gulf-vlcc.html",
-        "https://portwatch.imf.org"
+        "https://portwatch.imf.org/pages/chokepoint6",
+        "https://www.aljazeera.com/economy/2026/6/22/shipping-stalls-in-strait-of-hormuz-after-iran-declares-key-waterway-shut",
+        "https://www.argusmedia.com"
       ]
     }
   ],

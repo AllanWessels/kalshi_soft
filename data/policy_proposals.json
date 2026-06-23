@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-23T18:45:33Z",
+  "generated_at": "2026-06-23T19:26:14Z",
   "n_resolved": 25,
   "guardrails": {
     "min_n": 20,
@@ -9,11 +9,11 @@
   "proposals": [
     {
       "knob": "max_market_disagreement",
-      "current": 0.1,
+      "current": 0.05,
       "proposed": 0.05,
       "n": 25,
-      "guardrail": "AUTO_OK",
-      "rationale": "Counterfactual ROI falls monotonically as the fade widens and is profitable only at/under 5pt -> tighten the fade gate toward the band that actually pays.",
+      "guardrail": "INSUFFICIENT_DATA",
+      "rationale": "Counterfactual ROI falls monotonically as the fade widens and is profitable only at/under 5pt -> tighten the fade gate toward the band that actually pays. (already at/again the target — no move)",
       "evidence": {
         "0-5pt": {
           "n": 16,
@@ -51,11 +51,11 @@
     },
     {
       "knob": "hard_gap_ceiling",
-      "current": 0.25,
+      "current": 0.2,
       "proposed": 0.2,
       "n": 25,
-      "guardrail": "AUTO_OK",
-      "rationale": "The widest fades (20pt+) lost catastrophically (ROI<=-50%) -> lower the absolute ceiling so even high-confidence cannot take a fade that wide. This is the URAN guard learned from the record.",
+      "guardrail": "INSUFFICIENT_DATA",
+      "rationale": "The widest fades (20pt+) lost catastrophically (ROI<=-50%) -> lower the absolute ceiling so even high-confidence cannot take a fade that wide. This is the URAN guard learned from the record. (already at/again the target — no move)",
       "evidence": {
         "20pt+": {
           "n": 2,

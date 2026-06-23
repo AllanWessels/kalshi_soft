@@ -5,22 +5,22 @@
   "category": "politics",
   "close_time": "2026-11-03T15:00:00Z",
   "current": {
-    "as_of": "2026-06-23T18:37:44Z",
-    "my_probability": 0.7,
+    "as_of": "2026-06-23T19:19:13Z",
+    "my_probability": 0.58,
     "my_confidence": "low",
     "market_implied_probability": 0.775,
     "market_price_cents": 78.0,
-    "edge": -0.07500000000000007,
+    "edge": -0.19500000000000006,
     "yes_ask": 0.78,
     "no_ask": 0.23,
     "fee_per_contract": 0.02,
-    "ev_per_contract": -0.10000000000000007,
+    "ev_per_contract": -0.22000000000000006,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "no +EV value bet at the ask (my prob 70%, modal YES) — staying out.",
-    "prob_delta_vs_prev": 0.07999999999999996,
+    "lean_note": "no +EV value bet at the ask (my prob 58%, modal YES) — staying out.",
+    "prob_delta_vs_prev": -0.040000000000000036,
     "trigger": "near_close",
     "strategy_id": "S0-single",
     "proposed_probability": null,
@@ -28,17 +28,17 @@
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "Trump's COMPLETE-and-TOTAL endorsement + attacks on Drummond in maximally Trump-loyal OK favor Mazzei, though Drummond's round-1 lead/name-ID keep it from a lock; I sit slightly below market.",
+    "rationale_summary": "Active Trump endorsement+attacks and ~$11M self-funding favor Mazzei in a low-turnout deep-red runoff, but Drummond's name-ID/money parity and the establishment bloc make it closer than the market's 0.775; I sit well below market.",
     "key_drivers": [
-      "Trump endorsement",
-      "base-skewed runoff",
-      "self-funding"
+      "Trump endorsement+attacks",
+      "self-funding",
+      "MAGA runoff turnout"
     ],
     "reference_classes": [
       "Trump-endorsed deep-red runoff win rate"
     ],
     "research_refs": [
-      "https://www.kosu.org/2026-oklahoma-governor-primary-election-results"
+      "https://www.news9.com/oklahoma-politics/president-trump-drummond-fake-republican-oklahoma-governor-race"
     ]
   },
   "history": [
@@ -207,22 +207,22 @@
       ]
     },
     {
-      "as_of": "2026-06-23T18:37:44Z",
-      "my_probability": 0.7,
+      "as_of": "2026-06-23T19:19:13Z",
+      "my_probability": 0.58,
       "my_confidence": "low",
       "market_implied_probability": 0.775,
       "market_price_cents": 78.0,
-      "edge": -0.07500000000000007,
+      "edge": -0.19500000000000006,
       "yes_ask": 0.78,
       "no_ask": 0.23,
       "fee_per_contract": 0.02,
-      "ev_per_contract": -0.10000000000000007,
+      "ev_per_contract": -0.22000000000000006,
       "limit_price": null,
       "ev_limit_per_contract": null,
       "lean": "NONE",
       "conviction": "low",
-      "lean_note": "no +EV value bet at the ask (my prob 70%, modal YES) — staying out.",
-      "prob_delta_vs_prev": 0.07999999999999996,
+      "lean_note": "no +EV value bet at the ask (my prob 58%, modal YES) — staying out.",
+      "prob_delta_vs_prev": -0.040000000000000036,
       "trigger": "near_close",
       "strategy_id": "S0-single",
       "proposed_probability": null,
@@ -230,17 +230,17 @@
       "adversarial_challenged_prob": null,
       "adversarial_concerns": [],
       "adversarial_model": "",
-      "rationale_summary": "Trump's COMPLETE-and-TOTAL endorsement + attacks on Drummond in maximally Trump-loyal OK favor Mazzei, though Drummond's round-1 lead/name-ID keep it from a lock; I sit slightly below market.",
+      "rationale_summary": "Active Trump endorsement+attacks and ~$11M self-funding favor Mazzei in a low-turnout deep-red runoff, but Drummond's name-ID/money parity and the establishment bloc make it closer than the market's 0.775; I sit well below market.",
       "key_drivers": [
-        "Trump endorsement",
-        "base-skewed runoff",
-        "self-funding"
+        "Trump endorsement+attacks",
+        "self-funding",
+        "MAGA runoff turnout"
       ],
       "reference_classes": [
         "Trump-endorsed deep-red runoff win rate"
       ],
       "research_refs": [
-        "https://www.kosu.org/2026-oklahoma-governor-primary-election-results"
+        "https://www.news9.com/oklahoma-politics/president-trump-drummond-fake-republican-oklahoma-governor-race"
       ]
     }
   ],

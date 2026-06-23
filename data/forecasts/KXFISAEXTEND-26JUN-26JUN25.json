@@ -5,22 +5,22 @@
   "category": "politics",
   "close_time": "2026-06-25T14:00:00Z",
   "current": {
-    "as_of": "2026-06-23T18:37:43Z",
-    "my_probability": 0.012,
+    "as_of": "2026-06-23T19:19:13Z",
+    "my_probability": 0.02,
     "my_confidence": "high",
     "market_implied_probability": 0.005,
     "market_price_cents": null,
-    "edge": 0.007,
+    "edge": 0.015,
     "yes_ask": 0.01,
     "no_ask": 1.0,
     "fee_per_contract": 0.01,
-    "ev_per_contract": -0.008,
+    "ev_per_contract": 0.0,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "no +EV value bet at the ask (my prob 1%, modal NO) — staying out.",
-    "prob_delta_vs_prev": -0.048,
+    "lean_note": "no +EV value bet at the ask (my prob 2%, modal NO) — staying out.",
+    "prob_delta_vs_prev": -0.039999999999999994,
     "trigger": "scheduled",
     "strategy_id": "S0-single",
     "proposed_probability": null,
@@ -28,17 +28,20 @@
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "With 702 surveillance locked in via March 2026 FISC certifications through March 2027 (no urgency) and the House having just failed 198-218 amid an unresolved standoff, both chambers passing + signature in ~2 days is near-impossible.",
+    "rationale_summary": "Only scheduled FISA item in-window is a June 24 closed Senate Intel briefing (not a vote); three-way veto stack (Pulte ouster demand, Trump's SAVE Act add-on, GOP warrant holdouts), Clayton off-ramp killed Jun 17, and FISC certs run to ~Mar 2027 removing urgency. Both chambers + signature in ~2 days is near-impossible.",
     "key_drivers": [
-      "FISC certs remove urgency",
-      "House failed 198-218",
-      "2-day window"
+      "no bill on floor",
+      "three-way standoff",
+      "FISC certs to Mar2027",
+      "closed briefing not a vote"
     ],
     "reference_classes": [
-      "contested bill becoming law within 2 days of failed vote ~0"
+      "contested bill law within 2 days of failed vote ~0"
     ],
     "research_refs": [
-      "https://www.axios.com/2026/06/11/fisa-section-702-expiration-pulte-trump-johnson"
+      "https://www.congress.gov",
+      "https://www.brennancenter.org",
+      "https://apnews.com"
     ]
   },
   "history": [
@@ -81,22 +84,22 @@
       ]
     },
     {
-      "as_of": "2026-06-23T18:37:43Z",
-      "my_probability": 0.012,
+      "as_of": "2026-06-23T19:19:13Z",
+      "my_probability": 0.02,
       "my_confidence": "high",
       "market_implied_probability": 0.005,
       "market_price_cents": null,
-      "edge": 0.007,
+      "edge": 0.015,
       "yes_ask": 0.01,
       "no_ask": 1.0,
       "fee_per_contract": 0.01,
-      "ev_per_contract": -0.008,
+      "ev_per_contract": 0.0,
       "limit_price": null,
       "ev_limit_per_contract": null,
       "lean": "NONE",
       "conviction": "low",
-      "lean_note": "no +EV value bet at the ask (my prob 1%, modal NO) — staying out.",
-      "prob_delta_vs_prev": -0.048,
+      "lean_note": "no +EV value bet at the ask (my prob 2%, modal NO) — staying out.",
+      "prob_delta_vs_prev": -0.039999999999999994,
       "trigger": "scheduled",
       "strategy_id": "S0-single",
       "proposed_probability": null,
@@ -104,17 +107,20 @@
       "adversarial_challenged_prob": null,
       "adversarial_concerns": [],
       "adversarial_model": "",
-      "rationale_summary": "With 702 surveillance locked in via March 2026 FISC certifications through March 2027 (no urgency) and the House having just failed 198-218 amid an unresolved standoff, both chambers passing + signature in ~2 days is near-impossible.",
+      "rationale_summary": "Only scheduled FISA item in-window is a June 24 closed Senate Intel briefing (not a vote); three-way veto stack (Pulte ouster demand, Trump's SAVE Act add-on, GOP warrant holdouts), Clayton off-ramp killed Jun 17, and FISC certs run to ~Mar 2027 removing urgency. Both chambers + signature in ~2 days is near-impossible.",
       "key_drivers": [
-        "FISC certs remove urgency",
-        "House failed 198-218",
-        "2-day window"
+        "no bill on floor",
+        "three-way standoff",
+        "FISC certs to Mar2027",
+        "closed briefing not a vote"
       ],
       "reference_classes": [
-        "contested bill becoming law within 2 days of failed vote ~0"
+        "contested bill law within 2 days of failed vote ~0"
       ],
       "research_refs": [
-        "https://www.axios.com/2026/06/11/fisa-section-702-expiration-pulte-trump-johnson"
+        "https://www.congress.gov",
+        "https://www.brennancenter.org",
+        "https://apnews.com"
       ]
     }
   ],

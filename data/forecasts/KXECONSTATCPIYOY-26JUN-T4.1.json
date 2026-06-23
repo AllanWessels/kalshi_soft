@@ -5,13 +5,13 @@
   "category": "economy",
   "close_time": "2026-07-14T12:29:00Z",
   "current": {
-    "as_of": "2026-06-23T18:36:51Z",
+    "as_of": "2026-06-23T19:12:23Z",
     "my_probability": 0.06,
     "my_confidence": "medium",
-    "market_implied_probability": 0.03,
+    "market_implied_probability": 0.035,
     "market_price_cents": 3.0,
-    "edge": 0.03,
-    "yes_ask": 0.05,
+    "edge": 0.024999999999999994,
+    "yes_ask": 0.06,
     "no_ask": 0.99,
     "fee_per_contract": 0.01,
     "ev_per_contract": -0.060000000000000046,
@@ -28,16 +28,16 @@
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "If YoY drops it likely passes below 4.1 toward ~3.9-4.0; thin mass exactly at 4.1.",
+    "rationale_summary": "4.1% needs ~+0.2% MoM, two-three tenths above my energy-driven estimate; a tail given the ceasefire oil collapse.",
     "key_drivers": [
       "energy reversal",
       "YoY drop"
     ],
     "reference_classes": [
-      "single-decimal YoY bucket mass"
+      "exact-value bucket mass"
     ],
     "research_refs": [
-      "https://www.cnbc.com/2026/06/10/cpi-inflation-report-may-2026.html"
+      "https://tradingeconomics.com/united-states/inflation-cpi"
     ]
   },
   "history": [
@@ -79,13 +79,13 @@
       ]
     },
     {
-      "as_of": "2026-06-23T18:36:51Z",
+      "as_of": "2026-06-23T19:12:23Z",
       "my_probability": 0.06,
       "my_confidence": "medium",
-      "market_implied_probability": 0.03,
+      "market_implied_probability": 0.035,
       "market_price_cents": 3.0,
-      "edge": 0.03,
-      "yes_ask": 0.05,
+      "edge": 0.024999999999999994,
+      "yes_ask": 0.06,
       "no_ask": 0.99,
       "fee_per_contract": 0.01,
       "ev_per_contract": -0.060000000000000046,
@@ -102,16 +102,16 @@
       "adversarial_challenged_prob": null,
       "adversarial_concerns": [],
       "adversarial_model": "",
-      "rationale_summary": "If YoY drops it likely passes below 4.1 toward ~3.9-4.0; thin mass exactly at 4.1.",
+      "rationale_summary": "4.1% needs ~+0.2% MoM, two-three tenths above my energy-driven estimate; a tail given the ceasefire oil collapse.",
       "key_drivers": [
         "energy reversal",
         "YoY drop"
       ],
       "reference_classes": [
-        "single-decimal YoY bucket mass"
+        "exact-value bucket mass"
       ],
       "research_refs": [
-        "https://www.cnbc.com/2026/06/10/cpi-inflation-report-may-2026.html"
+        "https://tradingeconomics.com/united-states/inflation-cpi"
       ]
     }
   ],

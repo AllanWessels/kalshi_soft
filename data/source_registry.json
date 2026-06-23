@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "purpose": "Operational registry of research sources for the superforecasting loop. Each market forecast must draw on > 5 DISPARATE sources (distinct organizations/source-types). Use this to (a) prefer primary/official sources, (b) weight by reliability, (c) balance ideological lean by pulling across the spectrum.",
+  "reliability_scale": {
+    "5": "Primary/official or non-partisan statistical authority; the data IS the resolution source or is the system of record.",
+    "4": "Wire service or nonpartisan aggregator with high factual-reporting record; minimal interpretation.",
+    "3": "Established outlet with reporting (verify claims vs a primary); apply bias balance.",
+    "2": "Opinion/analysis, partisan-commissioned, or market-signal (not fact); use as one input only, never alone.",
+    "1": "Low-reliability / unverified aggregator or AI-summary layer; must be cross-checked before use."
+  },
+  "rating_basis": "Reliability anchored to SOURCE TYPE plus external, methodology-based assessments: Ad Fontes Media (reliability score), AllSides (left/center/right bias), Media Bias/Fact Check (factual rating), and FiveThirtyEight/ABC pollster grades for pollsters. Ratings reflect those external frameworks, NOT the operator's political opinion. Bias labels are descriptive (where a source sits), not endorsements.",
+  "global_rules": [
+    "> 5 disparate sources per market; record the list with the forecast.",
+    "Prefer reliability>=4 primary/official sources for any fact that drives the number.",
+    "Any single-source claim must be corroborated by a second, independent source before it enters a forecast (the EOWEEK 'June 11 EOs' artifact came from an uncorroborated AI search-summary).",
+    "For contested/political facts, pull at least one left-leaning AND one right-leaning outlet plus a center/wire source; do not let one lean dominate.",
+    "Betting/prediction markets are a signal (reliability 2-3), never a fact source; note them but weight by liquidity.",
+    "Treat the WebSearch result summary as reliability 1 (an AI compression layer) — open the underlying links / WebFetch the primary."
+  ],
+  "domains": {
+    "economics_data": [
+      {"name": "BLS (Bureau of Labor Statistics) news releases", "url": "https://www.bls.gov", "type": "official-statistical", "reliability": 5, "bias": "none/center", "use": "CPI, U-3/employment situation; the resolution source for CPI/U-3 markets"},
+      {"name": "Cleveland Fed Inflation Nowcast", "url": "https://www.clevelandfed.org/indicators-and-data/inflation-nowcasting", "type": "official-model", "reliability": 5, "bias": "none/center", "use": "forward MoM/YoY CPI & PCE nowcast (daily, oil+gas driven)"},
+      {"name": "EIA (Energy Information Administration)", "url": "https://www.eia.gov", "type": "official-statistical", "reliability": 5, "bias": "none/center", "use": "gasoline/energy prices feeding CPI energy component"},
+      {"name": "AAA Gas Prices", "url": "https://gasprices.aaa.com", "type": "industry-data", "reliability": 4, "bias": "none", "use": "real-time retail gasoline (CPI energy proxy)"},
+      {"name": "BEA (Bureau of Economic Analysis)", "url": "https://www.bea.gov", "type": "official-statistical", "reliability": 5, "bias": "none/center", "use": "PCE, GDP"},
+      {"name": "Trading Economics", "url": "https://tradingeconomics.com", "type": "data-aggregator", "reliability": 3, "bias": "none", "use": "consensus forecasts + historical series (verify vs primary)"},
+      {"name": "Reuters / Bloomberg / CNBC economics", "url": "https://www.reuters.com", "type": "wire/finance", "reliability": 4, "bias": "center", "use": "bank consensus, market reaction"}
+    ],
+    "elections_politics": [
+      {"name": "Ballotpedia", "url": "https://ballotpedia.org", "type": "nonpartisan-reference", "reliability": 4, "bias": "center", "use": "candidates, primary/runoff dates, results, thresholds"},
+      {"name": "Official Secretary of State / election authority results", "url": "", "type": "official", "reliability": 5, "bias": "none", "use": "certified/preliminary vote counts (system of record)"},
+      {"name": "FiveThirtyEight pollster ratings + averages", "url": "https://projects.fivethirtyeight.com/pollster-ratings/", "type": "nonpartisan-analysis", "reliability": 4, "bias": "center", "use": "weight individual polls by grade; discount partisan-commissioned polls"},
+      {"name": "AP / Reuters election desks", "url": "https://apnews.com", "type": "wire", "reliability": 5, "bias": "center", "use": "race calls, results"},
+      {"name": "Local/state outlets (e.g. SD Searchlight, NonDoc, KOSU)", "url": "", "type": "local-reporting", "reliability": 3, "bias": "varies", "use": "ground-level race dynamics, endorsements, vote redistribution"},
+      {"name": "Polymarket / PredictIt (non-Kalshi)", "url": "https://polymarket.com", "type": "prediction-market", "reliability": 3, "bias": "narrative-prone", "use": "independent market signal; weight by liquidity, never as fact"},
+      {"name": "Cross-spectrum outlet pair (e.g. WSJ/Fox + NYT/WaPo + Al Jazeera)", "url": "", "type": "established-outlet", "reliability": 3, "bias": "pull one left + one right + center", "use": "balance lean on contested political facts"}
+    ],
+    "film_tv_ratings": [
+      {"name": "Rotten Tomatoes (Tomatometer page)", "url": "https://www.rottentomatoes.com", "type": "metric-of-record", "reliability": 5, "bias": "none", "use": "THE resolution source for KXRT-* markets; read the live score + review count"},
+      {"name": "Metacritic", "url": "https://www.metacritic.com", "type": "metric", "reliability": 4, "bias": "none", "use": "corroborating critic aggregate; cross-check trajectory"},
+      {"name": "Trade press (THR, Variety, Deadline)", "url": "https://www.hollywoodreporter.com", "type": "industry-press", "reliability": 4, "bias": "center", "use": "first reactions, embargo timing, tracking"},
+      {"name": "Box-office tracking (Box Office Mojo, The Numbers)", "url": "https://www.boxofficemojo.com", "type": "industry-data", "reliability": 4, "bias": "none", "use": "tracking/sentiment proxy"}
+    ],
+    "geopolitics_foreign": [
+      {"name": "Primary statements (White House, State Dept, FIFA, foreign govts)", "url": "https://www.whitehouse.gov", "type": "primary", "reliability": 5, "bias": "self-interested but authoritative on intent", "use": "official intent, signed documents, schedules"},
+      {"name": "Reuters / AP / AFP wires", "url": "https://www.reuters.com", "type": "wire", "reliability": 5, "bias": "center", "use": "breaking facts on conflict/diplomacy"},
+      {"name": "Federal Register", "url": "https://www.federalregister.gov", "type": "official", "reliability": 5, "bias": "none", "use": "executive orders (count + dates), rules"},
+      {"name": "CFR / Brennan Center / nonpartisan think tanks", "url": "https://www.cfr.org", "type": "analysis", "reliability": 4, "bias": "center", "use": "context, base rates, legal status (e.g. FISA certifications)"},
+      {"name": "IMF PortWatch", "url": "https://portwatch.imf.org", "type": "official-data", "reliability": 5, "bias": "none", "use": "resolution source for Strait-of-Hormuz transit-call markets"},
+      {"name": "Cross-spectrum + regional outlets (Al Jazeera, BBC, WSJ)", "url": "", "type": "established-outlet", "reliability": 3, "bias": "pull multiple leans", "use": "balance framing on contested geopolitics"}
+    ]
+  }
+}

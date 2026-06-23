@@ -5,22 +5,22 @@
   "category": "politics",
   "close_time": "2027-05-31T14:00:00Z",
   "current": {
-    "as_of": "2026-06-23T18:37:15Z",
-    "my_probability": 0.035,
+    "as_of": "2026-06-23T19:13:02Z",
+    "my_probability": 0.02,
     "my_confidence": "high",
-    "market_implied_probability": 0.012,
+    "market_implied_probability": 0.009,
     "market_price_cents": 1.0,
-    "edge": 0.023000000000000003,
-    "yes_ask": 0.017,
-    "no_ask": 0.993,
+    "edge": 0.011000000000000001,
+    "yes_ask": 0.013,
+    "no_ask": 0.995,
     "fee_per_contract": 0.01,
-    "ev_per_contract": 0.008000000000000002,
+    "ev_per_contract": -0.002999999999999999,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "no +EV value bet at the ask (my prob 4%, modal NO) — staying out.",
-    "prob_delta_vs_prev": 0.0050000000000000044,
+    "lean_note": "no +EV value bet at the ask (my prob 2%, modal NO) — staying out.",
+    "prob_delta_vs_prev": -0.009999999999999998,
     "trigger": "near_close",
     "strategy_id": "S0-single",
     "proposed_probability": null,
@@ -28,16 +28,17 @@
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "Cepeda trails by ~249K votes; overturning a sub-1pt national result via challenge is essentially unprecedented in Colombia.",
+    "rationale_summary": "Cepeda trails by ~250,830 with 99.99% counted; 57,189 reclamaciones recovered only ~273 votes and CNE rejected his recount request. No certified sub-1pt national presidential result has been overturned by challenge in modern democracies.",
     "key_drivers": [
-      "trails 249K",
-      "challenge filed"
+      "trails 250830",
+      "recount rejected",
+      "reclamaciones netted 273"
     ],
     "reference_classes": [
-      "recount reversals of presidential results <3%"
+      "recount reversals of presidential results <2%"
     ],
     "research_refs": [
-      "https://www.cbsnews.com/news/colombia-electionn-runoff-ivan-cepeda-abelardo-de-la-espriella/"
+      "https://www.elcolombiano.com/colombia/cne-descarta-reconteo-voto-exterior-solicitado-ivan-cepeda-HN38064737"
     ]
   },
   "history": [
@@ -121,22 +122,22 @@
       ]
     },
     {
-      "as_of": "2026-06-23T18:37:15Z",
-      "my_probability": 0.035,
+      "as_of": "2026-06-23T19:13:02Z",
+      "my_probability": 0.02,
       "my_confidence": "high",
-      "market_implied_probability": 0.012,
+      "market_implied_probability": 0.009,
       "market_price_cents": 1.0,
-      "edge": 0.023000000000000003,
-      "yes_ask": 0.017,
-      "no_ask": 0.993,
+      "edge": 0.011000000000000001,
+      "yes_ask": 0.013,
+      "no_ask": 0.995,
       "fee_per_contract": 0.01,
-      "ev_per_contract": 0.008000000000000002,
+      "ev_per_contract": -0.002999999999999999,
       "limit_price": null,
       "ev_limit_per_contract": null,
       "lean": "NONE",
       "conviction": "low",
-      "lean_note": "no +EV value bet at the ask (my prob 4%, modal NO) — staying out.",
-      "prob_delta_vs_prev": 0.0050000000000000044,
+      "lean_note": "no +EV value bet at the ask (my prob 2%, modal NO) — staying out.",
+      "prob_delta_vs_prev": -0.009999999999999998,
       "trigger": "near_close",
       "strategy_id": "S0-single",
       "proposed_probability": null,
@@ -144,16 +145,17 @@
       "adversarial_challenged_prob": null,
       "adversarial_concerns": [],
       "adversarial_model": "",
-      "rationale_summary": "Cepeda trails by ~249K votes; overturning a sub-1pt national result via challenge is essentially unprecedented in Colombia.",
+      "rationale_summary": "Cepeda trails by ~250,830 with 99.99% counted; 57,189 reclamaciones recovered only ~273 votes and CNE rejected his recount request. No certified sub-1pt national presidential result has been overturned by challenge in modern democracies.",
       "key_drivers": [
-        "trails 249K",
-        "challenge filed"
+        "trails 250830",
+        "recount rejected",
+        "reclamaciones netted 273"
       ],
       "reference_classes": [
-        "recount reversals of presidential results <3%"
+        "recount reversals of presidential results <2%"
       ],
       "research_refs": [
-        "https://www.cbsnews.com/news/colombia-electionn-runoff-ivan-cepeda-abelardo-de-la-espriella/"
+        "https://www.elcolombiano.com/colombia/cne-descarta-reconteo-voto-exterior-solicitado-ivan-cepeda-HN38064737"
       ]
     }
   ],

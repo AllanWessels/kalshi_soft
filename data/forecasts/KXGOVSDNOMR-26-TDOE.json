@@ -5,22 +5,22 @@
   "category": "politics",
   "close_time": "2026-11-03T15:00:00Z",
   "current": {
-    "as_of": "2026-06-23T18:37:44Z",
-    "my_probability": 0.48,
+    "as_of": "2026-06-23T19:19:13Z",
+    "my_probability": 0.42,
     "my_confidence": "low",
     "market_implied_probability": 0.495,
     "market_price_cents": 49.0,
-    "edge": -0.015000000000000013,
+    "edge": -0.07500000000000001,
     "yes_ask": 0.5,
     "no_ask": 0.51,
     "fee_per_contract": 0.02,
-    "ev_per_contract": -0.009999999999999992,
-    "limit_price": null,
-    "ev_limit_per_contract": null,
+    "ev_per_contract": 0.05000000000000006,
+    "limit_price": 0.5,
+    "ev_limit_per_contract": 0.06,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "no +EV value bet at the ask (my prob 48%, modal NO) — staying out.",
-    "prob_delta_vs_prev": 0.06,
+    "lean_note": "low confidence below the medium floor — estimate too uncertain to fade the market",
+    "prob_delta_vs_prev": 0.0,
     "trigger": "near_close",
     "strategy_id": "S0-single",
     "proposed_probability": null,
@@ -28,17 +28,19 @@
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "Doeden led round 1 (31 vs 25) and the anti-establishment lane (~52%) slightly outnumbers the establishment lane, but Johnson's bloc breaks toward incumbent Rhoden in the July 28 runoff — a genuine coin flip.",
+    "rationale_summary": "Deep read: named establishment defectors (Paulson, Rehfeldt, SD Retailers, Odenbach) consolidate Johnson's bloc toward incumbent Rhoden; Doeden's plurality (31%) is ceiling-capped and no Trump endorsement. Turnout intensity is his upside. Rhoden favored, Doeden live.",
     "key_drivers": [
-      "Doeden round-1 lead",
-      "anti-establishment lane 52%",
-      "Johnson voters to Rhoden"
+      "Johnson bloc to Rhoden",
+      "Doeden capped ceiling",
+      "no Trump endorsement",
+      "low-turnout intensity upside"
     ],
     "reference_classes": [
-      "outsider vs establishment-incumbent runoff consolidation"
+      "incumbent vs insurgent runoff consolidation 60-70% incumbent"
     ],
     "research_refs": [
-      "https://southdakotasearchlight.com/2026/06/03/partial-returns-show-runoff-likely-needed-to-decide-south-dakota-republican-governor-primary/"
+      "https://www.kotatv.com/2026/06/07/where-backers-losing-campaigns-are-shifting-support-ahead-south-dakotas-governor-runoff/",
+      "https://www.thedakotascout.com/p/johnson-wont-endorse-rhoden-or-doeden"
     ]
   },
   "history": [
@@ -195,22 +197,22 @@
       "research_refs": []
     },
     {
-      "as_of": "2026-06-23T18:37:44Z",
-      "my_probability": 0.48,
+      "as_of": "2026-06-23T19:19:13Z",
+      "my_probability": 0.42,
       "my_confidence": "low",
       "market_implied_probability": 0.495,
       "market_price_cents": 49.0,
-      "edge": -0.015000000000000013,
+      "edge": -0.07500000000000001,
       "yes_ask": 0.5,
       "no_ask": 0.51,
       "fee_per_contract": 0.02,
-      "ev_per_contract": -0.009999999999999992,
-      "limit_price": null,
-      "ev_limit_per_contract": null,
+      "ev_per_contract": 0.05000000000000006,
+      "limit_price": 0.5,
+      "ev_limit_per_contract": 0.06,
       "lean": "NONE",
       "conviction": "low",
-      "lean_note": "no +EV value bet at the ask (my prob 48%, modal NO) — staying out.",
-      "prob_delta_vs_prev": 0.06,
+      "lean_note": "low confidence below the medium floor — estimate too uncertain to fade the market",
+      "prob_delta_vs_prev": 0.0,
       "trigger": "near_close",
       "strategy_id": "S0-single",
       "proposed_probability": null,
@@ -218,17 +220,19 @@
       "adversarial_challenged_prob": null,
       "adversarial_concerns": [],
       "adversarial_model": "",
-      "rationale_summary": "Doeden led round 1 (31 vs 25) and the anti-establishment lane (~52%) slightly outnumbers the establishment lane, but Johnson's bloc breaks toward incumbent Rhoden in the July 28 runoff — a genuine coin flip.",
+      "rationale_summary": "Deep read: named establishment defectors (Paulson, Rehfeldt, SD Retailers, Odenbach) consolidate Johnson's bloc toward incumbent Rhoden; Doeden's plurality (31%) is ceiling-capped and no Trump endorsement. Turnout intensity is his upside. Rhoden favored, Doeden live.",
       "key_drivers": [
-        "Doeden round-1 lead",
-        "anti-establishment lane 52%",
-        "Johnson voters to Rhoden"
+        "Johnson bloc to Rhoden",
+        "Doeden capped ceiling",
+        "no Trump endorsement",
+        "low-turnout intensity upside"
       ],
       "reference_classes": [
-        "outsider vs establishment-incumbent runoff consolidation"
+        "incumbent vs insurgent runoff consolidation 60-70% incumbent"
       ],
       "research_refs": [
-        "https://southdakotasearchlight.com/2026/06/03/partial-returns-show-runoff-likely-needed-to-decide-south-dakota-republican-governor-primary/"
+        "https://www.kotatv.com/2026/06/07/where-backers-losing-campaigns-are-shifting-support-ahead-south-dakotas-governor-runoff/",
+        "https://www.thedakotascout.com/p/johnson-wont-endorse-rhoden-or-doeden"
       ]
     }
   ],

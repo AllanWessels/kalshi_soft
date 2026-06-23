@@ -5,22 +5,22 @@
   "category": "politics",
   "close_time": "2026-07-01T04:00:00Z",
   "current": {
-    "as_of": "2026-06-23T18:37:44Z",
-    "my_probability": 0.055,
+    "as_of": "2026-06-23T19:19:13Z",
+    "my_probability": 0.045,
     "my_confidence": "high",
     "market_implied_probability": 0.035,
     "market_price_cents": 4.0,
-    "edge": 0.019999999999999997,
+    "edge": 0.009999999999999995,
     "yes_ask": 0.04,
     "no_ask": 0.97,
     "fee_per_contract": 0.01,
-    "ev_per_contract": 0.004999999999999999,
+    "ev_per_contract": -0.005000000000000003,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "no +EV value bet at the ask (my prob 6%, modal NO) — staying out.",
-    "prob_delta_vs_prev": -0.07500000000000001,
+    "lean_note": "no +EV value bet at the ask (my prob 4%, modal NO) — staying out.",
+    "prob_delta_vs_prev": -0.085,
     "trigger": "near_close",
     "strategy_id": "S0-single",
     "proposed_probability": null,
@@ -28,16 +28,16 @@
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "Only a single unplanned last-weekend dash to low-season Mar-a-Lago could yield one trip, against every active signal.",
+    "rationale_summary": "Only path is an unscheduled one-off Palm Beach trip in Jun 24-30 overriding the closed-club summer pattern.",
     "key_drivers": [
-      "summer pattern",
+      "seasonal closure",
       "one weekend left"
     ],
     "reference_classes": [
-      "late-month conditional run-rate"
+      "off-season one-off trip rare"
     ],
     "research_refs": [
-      "https://en.wikipedia.org/wiki/List_of_presidential_trips_made_by_Donald_Trump_(2026)"
+      "https://rollcall.com/factbase/trump/calendar/"
     ]
   },
   "history": [
@@ -113,22 +113,22 @@
       ]
     },
     {
-      "as_of": "2026-06-23T18:37:44Z",
-      "my_probability": 0.055,
+      "as_of": "2026-06-23T19:19:13Z",
+      "my_probability": 0.045,
       "my_confidence": "high",
       "market_implied_probability": 0.035,
       "market_price_cents": 4.0,
-      "edge": 0.019999999999999997,
+      "edge": 0.009999999999999995,
       "yes_ask": 0.04,
       "no_ask": 0.97,
       "fee_per_contract": 0.01,
-      "ev_per_contract": 0.004999999999999999,
+      "ev_per_contract": -0.005000000000000003,
       "limit_price": null,
       "ev_limit_per_contract": null,
       "lean": "NONE",
       "conviction": "low",
-      "lean_note": "no +EV value bet at the ask (my prob 6%, modal NO) — staying out.",
-      "prob_delta_vs_prev": -0.07500000000000001,
+      "lean_note": "no +EV value bet at the ask (my prob 4%, modal NO) — staying out.",
+      "prob_delta_vs_prev": -0.085,
       "trigger": "near_close",
       "strategy_id": "S0-single",
       "proposed_probability": null,
@@ -136,16 +136,16 @@
       "adversarial_challenged_prob": null,
       "adversarial_concerns": [],
       "adversarial_model": "",
-      "rationale_summary": "Only a single unplanned last-weekend dash to low-season Mar-a-Lago could yield one trip, against every active signal.",
+      "rationale_summary": "Only path is an unscheduled one-off Palm Beach trip in Jun 24-30 overriding the closed-club summer pattern.",
       "key_drivers": [
-        "summer pattern",
+        "seasonal closure",
         "one weekend left"
       ],
       "reference_classes": [
-        "late-month conditional run-rate"
+        "off-season one-off trip rare"
       ],
       "research_refs": [
-        "https://en.wikipedia.org/wiki/List_of_presidential_trips_made_by_Donald_Trump_(2026)"
+        "https://rollcall.com/factbase/trump/calendar/"
       ]
     }
   ],

@@ -5,47 +5,43 @@
   "category": "culture",
   "close_time": "2026-07-20T14:00:00Z",
   "current": {
-    "as_of": "2026-06-23T18:42:41Z",
-    "my_probability": 0.34,
+    "as_of": "2026-06-23T19:23:27Z",
+    "my_probability": 0.3,
     "my_confidence": "medium",
-    "market_implied_probability": 0.425,
-    "market_price_cents": 43.0,
-    "edge": -0.08499999999999996,
-    "yes_ask": 0.44,
+    "market_implied_probability": 0.42,
+    "market_price_cents": 42.0,
+    "edge": -0.12,
+    "yes_ask": 0.43,
     "no_ask": 0.59,
     "fee_per_contract": 0.02,
-    "ev_per_contract": 0.04999999999999995,
-    "limit_price": 0.56,
-    "ev_limit_per_contract": 0.08,
-    "lean": "NO",
+    "ev_per_contract": 0.08999999999999998,
+    "limit_price": 0.57,
+    "ev_limit_per_contract": 0.11,
+    "lean": "NONE",
     "conviction": "low",
-    "lean_note": null,
-    "prob_delta_vs_prev": -0.21000000000000002,
+    "lean_note": "12pt gap vs a liquid market without high confidence — more likely my error than edge",
+    "prob_delta_vs_prev": -0.25000000000000006,
     "trigger": "scheduled",
     "strategy_id": "S0-single",
-    "proposed_probability": 0.34,
-    "adversarial_verdict": "revise",
-    "adversarial_challenged_prob": 0.34,
-    "adversarial_concerns": [
-      "Small sample size of Nolan's films (only 6 examples cited, with mixed outcomes)",
-      "Assumes negative trailer buzz is a reliable predictor without quantifying its historical impact on box office",
-      "Market may incorporate broader data (e.g., studio marketing spend, release timing) not addressed in reasoning",
-      "Overweights outlier performances (e.g., Tenet 69) while ignoring other variables like streaming windows"
-    ],
-    "adversarial_model": "qwen3:14b-q4_K_M",
-    "rationale_summary": "Strict >90 bar: only ~half of Nolan's recent majors cleared 90 (Oppenheimer 93/Dunkirk 92/TDK 94 vs Inception 87/Interstellar 73/Tenet 69), and a big spectacle adaptation with negative trailer buzz skews toward the lower band.",
+    "proposed_probability": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": "",
+    "rationale_summary": "Strict >=91% bar; among Nolan's large-event films only ~2 of 8 (~25%) cleared 91 (Interstellar 73, Tenet 70 are his maximalist swings). Resolution is the matured-count Monday after wide release, which strips opening-weekend inflation (Tenet 87%->70%). RT shows 0 reviews yet.",
     "key_drivers": [
-      "strict >90 bar",
-      "Nolan split track record",
-      "negative promo buzz",
-      "epic-genre risk"
+      "strict 91 bar",
+      "Nolan large-event ~25% clear 91",
+      "matured-count resolution strips honeymoon",
+      "negative trailer buzz"
     ],
     "reference_classes": [
-      "Nolan last 6 majors 50% >90",
-      "epic adaptations historically <90"
+      "Nolan large-budget films >=91% ~25%; opening-to-final RT decay"
     ],
     "research_refs": [
-      "https://collider.com/the-odyssey-reactions-casting-lupita-nyongo-elliot-page/"
+      "https://editorial.rottentomatoes.com/guide/all-christopher-nolan-movies-ranked-by-tomatometer/",
+      "https://www.rottentomatoes.com/m/the_odyssey_2026",
+      "https://variety.com/2026/film/news/the-odyssey-amc-app-ticket-demand-christopher-nolan-epic-1236766869/"
     ]
   },
   "history": [
@@ -88,47 +84,43 @@
       ]
     },
     {
-      "as_of": "2026-06-23T18:42:41Z",
-      "my_probability": 0.34,
+      "as_of": "2026-06-23T19:23:27Z",
+      "my_probability": 0.3,
       "my_confidence": "medium",
-      "market_implied_probability": 0.425,
-      "market_price_cents": 43.0,
-      "edge": -0.08499999999999996,
-      "yes_ask": 0.44,
+      "market_implied_probability": 0.42,
+      "market_price_cents": 42.0,
+      "edge": -0.12,
+      "yes_ask": 0.43,
       "no_ask": 0.59,
       "fee_per_contract": 0.02,
-      "ev_per_contract": 0.04999999999999995,
-      "limit_price": 0.56,
-      "ev_limit_per_contract": 0.08,
-      "lean": "NO",
+      "ev_per_contract": 0.08999999999999998,
+      "limit_price": 0.57,
+      "ev_limit_per_contract": 0.11,
+      "lean": "NONE",
       "conviction": "low",
-      "lean_note": null,
-      "prob_delta_vs_prev": -0.21000000000000002,
+      "lean_note": "12pt gap vs a liquid market without high confidence — more likely my error than edge",
+      "prob_delta_vs_prev": -0.25000000000000006,
       "trigger": "scheduled",
       "strategy_id": "S0-single",
-      "proposed_probability": 0.34,
-      "adversarial_verdict": "revise",
-      "adversarial_challenged_prob": 0.34,
-      "adversarial_concerns": [
-        "Small sample size of Nolan's films (only 6 examples cited, with mixed outcomes)",
-        "Assumes negative trailer buzz is a reliable predictor without quantifying its historical impact on box office",
-        "Market may incorporate broader data (e.g., studio marketing spend, release timing) not addressed in reasoning",
-        "Overweights outlier performances (e.g., Tenet 69) while ignoring other variables like streaming windows"
-      ],
-      "adversarial_model": "qwen3:14b-q4_K_M",
-      "rationale_summary": "Strict >90 bar: only ~half of Nolan's recent majors cleared 90 (Oppenheimer 93/Dunkirk 92/TDK 94 vs Inception 87/Interstellar 73/Tenet 69), and a big spectacle adaptation with negative trailer buzz skews toward the lower band.",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "Strict >=91% bar; among Nolan's large-event films only ~2 of 8 (~25%) cleared 91 (Interstellar 73, Tenet 70 are his maximalist swings). Resolution is the matured-count Monday after wide release, which strips opening-weekend inflation (Tenet 87%->70%). RT shows 0 reviews yet.",
       "key_drivers": [
-        "strict >90 bar",
-        "Nolan split track record",
-        "negative promo buzz",
-        "epic-genre risk"
+        "strict 91 bar",
+        "Nolan large-event ~25% clear 91",
+        "matured-count resolution strips honeymoon",
+        "negative trailer buzz"
       ],
       "reference_classes": [
-        "Nolan last 6 majors 50% >90",
-        "epic adaptations historically <90"
+        "Nolan large-budget films >=91% ~25%; opening-to-final RT decay"
       ],
       "research_refs": [
-        "https://collider.com/the-odyssey-reactions-casting-lupita-nyongo-elliot-page/"
+        "https://editorial.rottentomatoes.com/guide/all-christopher-nolan-movies-ranked-by-tomatometer/",
+        "https://www.rottentomatoes.com/m/the_odyssey_2026",
+        "https://variety.com/2026/film/news/the-odyssey-amc-app-ticket-demand-christopher-nolan-epic-1236766869/"
       ]
     }
   ],

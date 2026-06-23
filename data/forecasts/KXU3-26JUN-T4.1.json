@@ -5,22 +5,22 @@
   "category": "economy",
   "close_time": "2026-07-02T12:29:00Z",
   "current": {
-    "as_of": "2026-06-23T18:36:51Z",
-    "my_probability": 0.95,
+    "as_of": "2026-06-23T19:12:23Z",
+    "my_probability": 0.93,
     "my_confidence": "high",
     "market_implied_probability": 0.915,
     "market_price_cents": 92.0,
-    "edge": 0.03499999999999992,
+    "edge": 0.015000000000000013,
     "yes_ask": 0.92,
     "no_ask": 0.09,
     "fee_per_contract": 0.01,
-    "ev_per_contract": 0.019999999999999914,
+    "ev_per_contract": 8.673617379884035e-18,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "no +EV value bet at the ask (my prob 95%, modal YES) — staying out.",
-    "prob_delta_vs_prev": 0.029999999999999916,
+    "lean_note": "no +EV value bet at the ask (my prob 93%, modal YES) — staying out.",
+    "prob_delta_vs_prev": 0.010000000000000009,
     "trigger": "scheduled",
     "strategy_id": "S0-single",
     "proposed_probability": null,
@@ -28,16 +28,18 @@
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "U-3 pinned 4.3-4.5% for 11 months with solid May payrolls; a drop to <=4.1% would break the regime with no signal.",
+    "rationale_summary": "U-3 has printed 4.3-4.5% every month since mid-2025 (May 4.3%, June consensus 4.3-4.4%); a sub-4.1% print needs a multi-tenth downside surprise with no catalyst.",
     "key_drivers": [
       "sticky 4.3-4.5 range",
-      "172k May payrolls"
+      "consensus 4.3-4.4",
+      "+172k May payrolls"
     ],
     "reference_classes": [
-      "month-over-month U-3 moves rarely >=0.2pt"
+      "rounded U-3 moves >=0.2pt single month <15%"
     ],
     "research_refs": [
-      "https://www.bls.gov/news.release/empsit.nr0.htm"
+      "https://www.bls.gov/news.release/empsit.nr0.htm",
+      "https://tradingeconomics.com"
     ]
   },
   "history": [
@@ -119,22 +121,22 @@
       ]
     },
     {
-      "as_of": "2026-06-23T18:36:51Z",
-      "my_probability": 0.95,
+      "as_of": "2026-06-23T19:12:23Z",
+      "my_probability": 0.93,
       "my_confidence": "high",
       "market_implied_probability": 0.915,
       "market_price_cents": 92.0,
-      "edge": 0.03499999999999992,
+      "edge": 0.015000000000000013,
       "yes_ask": 0.92,
       "no_ask": 0.09,
       "fee_per_contract": 0.01,
-      "ev_per_contract": 0.019999999999999914,
+      "ev_per_contract": 8.673617379884035e-18,
       "limit_price": null,
       "ev_limit_per_contract": null,
       "lean": "NONE",
       "conviction": "low",
-      "lean_note": "no +EV value bet at the ask (my prob 95%, modal YES) — staying out.",
-      "prob_delta_vs_prev": 0.029999999999999916,
+      "lean_note": "no +EV value bet at the ask (my prob 93%, modal YES) — staying out.",
+      "prob_delta_vs_prev": 0.010000000000000009,
       "trigger": "scheduled",
       "strategy_id": "S0-single",
       "proposed_probability": null,
@@ -142,16 +144,18 @@
       "adversarial_challenged_prob": null,
       "adversarial_concerns": [],
       "adversarial_model": "",
-      "rationale_summary": "U-3 pinned 4.3-4.5% for 11 months with solid May payrolls; a drop to <=4.1% would break the regime with no signal.",
+      "rationale_summary": "U-3 has printed 4.3-4.5% every month since mid-2025 (May 4.3%, June consensus 4.3-4.4%); a sub-4.1% print needs a multi-tenth downside surprise with no catalyst.",
       "key_drivers": [
         "sticky 4.3-4.5 range",
-        "172k May payrolls"
+        "consensus 4.3-4.4",
+        "+172k May payrolls"
       ],
       "reference_classes": [
-        "month-over-month U-3 moves rarely >=0.2pt"
+        "rounded U-3 moves >=0.2pt single month <15%"
       ],
       "research_refs": [
-        "https://www.bls.gov/news.release/empsit.nr0.htm"
+        "https://www.bls.gov/news.release/empsit.nr0.htm",
+        "https://tradingeconomics.com"
       ]
     }
   ],

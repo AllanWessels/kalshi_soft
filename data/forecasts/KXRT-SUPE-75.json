@@ -5,22 +5,22 @@
   "category": "culture",
   "close_time": "2026-06-29T14:00:00Z",
   "current": {
-    "as_of": "2026-06-23T18:42:18Z",
-    "my_probability": 0.38,
-    "my_confidence": "low",
+    "as_of": "2026-06-23T19:23:27Z",
+    "my_probability": 0.17,
+    "my_confidence": "medium",
     "market_implied_probability": 0.1,
     "market_price_cents": 10.0,
-    "edge": 0.28,
+    "edge": 0.07,
     "yes_ask": 0.12,
     "no_ask": 0.92,
     "fee_per_contract": 0.01,
-    "ev_per_contract": -0.31000000000000005,
+    "ev_per_contract": -0.10000000000000007,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "no +EV value bet at the ask (my prob 38%, modal NO) — staying out.",
-    "prob_delta_vs_prev": -0.18000000000000005,
+    "lean_note": "no +EV value bet at the ask (my prob 17%, modal NO) — staying out.",
+    "prob_delta_vs_prev": -0.39,
     "trigger": "near_close",
     "strategy_id": "S0-single",
     "proposed_probability": null,
@@ -28,20 +28,21 @@
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "Split reactions (universal Alcock praise vs recurring bland-villain knock) cluster mixed-positive DCU films ~60-80% straddling the 75 line; one outlet predicts 76%. I sit above the market's ~10% but below my forecaster's 0.43 given downward score-drift and sliding tracking.",
+    "rationale_summary": "RT page shows 0 reviews yet (embargo ~Jun 24-25). Premiere reactions are mixed-to-negative (premiere tally ~4 pos/6 lukewarm/5 neg; 'bland villain/dull/underwhelming'), praise narrow to Alcock/Momoa; comps Brave New World ~47% and The Marvels ~62%. Base rate for clearing 76% from this profile ~15-25%, with scores drifting down as volume grows.",
     "key_drivers": [
-      "Alcock praise upside",
-      "bland-villain knock",
-      "76% industry prediction",
-      "wide-release score drift",
-      "sliding tracking"
+      "0 reviews yet",
+      "mixed-negative premiere reactions",
+      "narrow praise",
+      "comps below 76",
+      "downward drift"
     ],
     "reference_classes": [
-      "mixed-positive DCU launches 60-80%",
-      "opening-to-wide RT drift down 3-8pts"
+      "mixed-pre-embargo+one-standout-perf clearing 76% ~15-25%"
     ],
     "research_refs": [
-      "https://www.hollywoodreporter.com/movies/movie-news/supergirl-first-reactions-reviews-1236625339/"
+      "https://www.rottentomatoes.com/m/supergirl_2026",
+      "https://deadline.com/2026/06/supergirl-first-reactions-milly-alcock-jason-momoa-david-corenswet-1236963084/",
+      "https://variety.com/2026/film/news/supergirl-first-reactions-milly-alcock-1236784950/"
     ]
   },
   "history": [
@@ -164,22 +165,22 @@
       ]
     },
     {
-      "as_of": "2026-06-23T18:42:18Z",
-      "my_probability": 0.38,
-      "my_confidence": "low",
+      "as_of": "2026-06-23T19:23:27Z",
+      "my_probability": 0.17,
+      "my_confidence": "medium",
       "market_implied_probability": 0.1,
       "market_price_cents": 10.0,
-      "edge": 0.28,
+      "edge": 0.07,
       "yes_ask": 0.12,
       "no_ask": 0.92,
       "fee_per_contract": 0.01,
-      "ev_per_contract": -0.31000000000000005,
+      "ev_per_contract": -0.10000000000000007,
       "limit_price": null,
       "ev_limit_per_contract": null,
       "lean": "NONE",
       "conviction": "low",
-      "lean_note": "no +EV value bet at the ask (my prob 38%, modal NO) — staying out.",
-      "prob_delta_vs_prev": -0.18000000000000005,
+      "lean_note": "no +EV value bet at the ask (my prob 17%, modal NO) — staying out.",
+      "prob_delta_vs_prev": -0.39,
       "trigger": "near_close",
       "strategy_id": "S0-single",
       "proposed_probability": null,
@@ -187,20 +188,21 @@
       "adversarial_challenged_prob": null,
       "adversarial_concerns": [],
       "adversarial_model": "",
-      "rationale_summary": "Split reactions (universal Alcock praise vs recurring bland-villain knock) cluster mixed-positive DCU films ~60-80% straddling the 75 line; one outlet predicts 76%. I sit above the market's ~10% but below my forecaster's 0.43 given downward score-drift and sliding tracking.",
+      "rationale_summary": "RT page shows 0 reviews yet (embargo ~Jun 24-25). Premiere reactions are mixed-to-negative (premiere tally ~4 pos/6 lukewarm/5 neg; 'bland villain/dull/underwhelming'), praise narrow to Alcock/Momoa; comps Brave New World ~47% and The Marvels ~62%. Base rate for clearing 76% from this profile ~15-25%, with scores drifting down as volume grows.",
       "key_drivers": [
-        "Alcock praise upside",
-        "bland-villain knock",
-        "76% industry prediction",
-        "wide-release score drift",
-        "sliding tracking"
+        "0 reviews yet",
+        "mixed-negative premiere reactions",
+        "narrow praise",
+        "comps below 76",
+        "downward drift"
       ],
       "reference_classes": [
-        "mixed-positive DCU launches 60-80%",
-        "opening-to-wide RT drift down 3-8pts"
+        "mixed-pre-embargo+one-standout-perf clearing 76% ~15-25%"
       ],
       "research_refs": [
-        "https://www.hollywoodreporter.com/movies/movie-news/supergirl-first-reactions-reviews-1236625339/"
+        "https://www.rottentomatoes.com/m/supergirl_2026",
+        "https://deadline.com/2026/06/supergirl-first-reactions-milly-alcock-jason-momoa-david-corenswet-1236963084/",
+        "https://variety.com/2026/film/news/supergirl-first-reactions-milly-alcock-1236784950/"
       ]
     }
   ],

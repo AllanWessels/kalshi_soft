@@ -5,22 +5,22 @@
   "category": "economy",
   "close_time": "2026-07-14T12:25:00Z",
   "current": {
-    "as_of": "2026-06-23T18:36:51Z",
-    "my_probability": 0.06,
+    "as_of": "2026-06-23T19:12:23Z",
+    "my_probability": 0.12,
     "my_confidence": "medium",
     "market_implied_probability": 0.055,
     "market_price_cents": 6.0,
-    "edge": 0.0049999999999999975,
+    "edge": 0.065,
     "yes_ask": 0.07,
     "no_ask": 0.96,
     "fee_per_contract": 0.01,
-    "ev_per_contract": -0.03000000000000002,
+    "ev_per_contract": -0.08999999999999996,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "no +EV value bet at the ask (my prob 6%, modal NO) — staying out.",
-    "prob_delta_vs_prev": -0.04000000000000001,
+    "lean_note": "no +EV value bet at the ask (my prob 12%, modal NO) — staying out.",
+    "prob_delta_vs_prev": 0.01999999999999999,
     "trigger": "scheduled",
     "strategy_id": "S0-single",
     "proposed_probability": null,
@@ -28,15 +28,15 @@
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "MoM > 0.2% unlikely given June energy crash.",
+    "rationale_summary": "MoM >0.2% needs roughly flat-to-positive energy plus firm core; the documented ~13% gasoline drop makes that a clear tail.",
     "key_drivers": [
-      "energy collapse"
+      "gasoline collapse"
     ],
     "reference_classes": [
-      "energy-driven CPI swings"
+      "post-oil-shock reversal months"
     ],
     "research_refs": [
-      "https://www.aljazeera.com/economy/2026/6/18/oil-prices-fall-stocks-rally"
+      "https://gasprices.aaa.com"
     ]
   },
   "history": [
@@ -84,22 +84,22 @@
       ]
     },
     {
-      "as_of": "2026-06-23T18:36:51Z",
-      "my_probability": 0.06,
+      "as_of": "2026-06-23T19:12:23Z",
+      "my_probability": 0.12,
       "my_confidence": "medium",
       "market_implied_probability": 0.055,
       "market_price_cents": 6.0,
-      "edge": 0.0049999999999999975,
+      "edge": 0.065,
       "yes_ask": 0.07,
       "no_ask": 0.96,
       "fee_per_contract": 0.01,
-      "ev_per_contract": -0.03000000000000002,
+      "ev_per_contract": -0.08999999999999996,
       "limit_price": null,
       "ev_limit_per_contract": null,
       "lean": "NONE",
       "conviction": "low",
-      "lean_note": "no +EV value bet at the ask (my prob 6%, modal NO) — staying out.",
-      "prob_delta_vs_prev": -0.04000000000000001,
+      "lean_note": "no +EV value bet at the ask (my prob 12%, modal NO) — staying out.",
+      "prob_delta_vs_prev": 0.01999999999999999,
       "trigger": "scheduled",
       "strategy_id": "S0-single",
       "proposed_probability": null,
@@ -107,15 +107,15 @@
       "adversarial_challenged_prob": null,
       "adversarial_concerns": [],
       "adversarial_model": "",
-      "rationale_summary": "MoM > 0.2% unlikely given June energy crash.",
+      "rationale_summary": "MoM >0.2% needs roughly flat-to-positive energy plus firm core; the documented ~13% gasoline drop makes that a clear tail.",
       "key_drivers": [
-        "energy collapse"
+        "gasoline collapse"
       ],
       "reference_classes": [
-        "energy-driven CPI swings"
+        "post-oil-shock reversal months"
       ],
       "research_refs": [
-        "https://www.aljazeera.com/economy/2026/6/18/oil-prices-fall-stocks-rally"
+        "https://gasprices.aaa.com"
       ]
     }
   ],

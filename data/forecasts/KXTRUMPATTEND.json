@@ -5,7 +5,7 @@
   "category": "politics",
   "close_time": "2026-07-20T14:00:00Z",
   "current": {
-    "as_of": "2026-06-23T18:45:12Z",
+    "as_of": "2026-06-23T19:25:53Z",
     "my_probability": 0.95,
     "my_confidence": "high",
     "market_implied_probability": 0.89,
@@ -27,23 +27,26 @@
     "adversarial_verdict": "revise",
     "adversarial_challenged_prob": 0.92,
     "adversarial_concerns": [
-      "Divergence from market (6%) may reflect unmodeled tail risks (e.g., political/crisis events) not adequately addressed in reasoning",
-      "Precedent cited (2025 Club World Cup) is a single data point with potentially different stakes/logistics",
-      "Assumes ceremonial role guarantees attendance without accounting for potential changes in Trump's public schedule or health"
+      "Divergence from liquid market implies unaccounted risk; forecaster assumes crowd is wrong without credible evidence",
+      "Residual 5% attributed to vague '26-day horizon' factors without quantified impact",
+      "Overconfidence in 'triple-confirmed' claims ignores potential for misinformation or misinterpretation of statements"
     ],
     "adversarial_model": "qwen3:14b-q4_K_M",
-    "rationale_summary": "Sitting president with a publicly confirmed ceremonial role (Infantino: Trump will help hand over the trophy), stated intent + schedule held, trivial NJ logistics, and direct precedent attending the 2025 Club World Cup final at the same venue; residual is acute crisis tail risk.",
+    "rationale_summary": "Triple-confirmed: Infantino stated day-of (Jun 23) he and Trump will jointly present the trophy; WH holding the July 19 date; Trump attended the 2025 Club World Cup final at the same MetLife venue and handed the trophy. NSSE security is an enabler; trivial NJ logistics. Residual ~5% is the 26-day horizon (US-Iran security, age 80).",
     "key_drivers": [
-      "confirmed trophy role",
-      "schedule held",
-      "2025 precedent",
-      "easy logistics"
+      "Infantino day-of confirmation",
+      "WH date held",
+      "2025 same-venue precedent",
+      "NSSE security enabler"
     ],
     "reference_classes": [
-      "president attending pre-committed domestic ceremonial event ~95-98%"
+      "president follow-through on stated easy-logistics appearance ~4wks out 92-97%",
+      "Trump major-event attendance near-universal"
     ],
     "research_refs": [
-      "https://sports.yahoo.com/soccer/article/fifa-president-says-donald-trump-will-help-present-world-cup-trophy-to-winning-team-142350279.html"
+      "https://www.espn.com/soccer/story/_/id/49154827/donald-trump-present-world-cup-trophy-final-fifa-boss-gianni-infantino-confirms",
+      "https://www.nbcnewyork.com/world-cup/trump-world-cup-final-fifa-metlife-stadium/6512369/",
+      "https://www.cnn.com/2025/07/14/sport/donald-trump-club-world-cup-final-chelsea-psg-spt"
     ]
   },
   "history": [
@@ -86,7 +89,7 @@
       ]
     },
     {
-      "as_of": "2026-06-23T18:45:12Z",
+      "as_of": "2026-06-23T19:25:53Z",
       "my_probability": 0.95,
       "my_confidence": "high",
       "market_implied_probability": 0.89,
@@ -108,23 +111,26 @@
       "adversarial_verdict": "revise",
       "adversarial_challenged_prob": 0.92,
       "adversarial_concerns": [
-        "Divergence from market (6%) may reflect unmodeled tail risks (e.g., political/crisis events) not adequately addressed in reasoning",
-        "Precedent cited (2025 Club World Cup) is a single data point with potentially different stakes/logistics",
-        "Assumes ceremonial role guarantees attendance without accounting for potential changes in Trump's public schedule or health"
+        "Divergence from liquid market implies unaccounted risk; forecaster assumes crowd is wrong without credible evidence",
+        "Residual 5% attributed to vague '26-day horizon' factors without quantified impact",
+        "Overconfidence in 'triple-confirmed' claims ignores potential for misinformation or misinterpretation of statements"
       ],
       "adversarial_model": "qwen3:14b-q4_K_M",
-      "rationale_summary": "Sitting president with a publicly confirmed ceremonial role (Infantino: Trump will help hand over the trophy), stated intent + schedule held, trivial NJ logistics, and direct precedent attending the 2025 Club World Cup final at the same venue; residual is acute crisis tail risk.",
+      "rationale_summary": "Triple-confirmed: Infantino stated day-of (Jun 23) he and Trump will jointly present the trophy; WH holding the July 19 date; Trump attended the 2025 Club World Cup final at the same MetLife venue and handed the trophy. NSSE security is an enabler; trivial NJ logistics. Residual ~5% is the 26-day horizon (US-Iran security, age 80).",
       "key_drivers": [
-        "confirmed trophy role",
-        "schedule held",
-        "2025 precedent",
-        "easy logistics"
+        "Infantino day-of confirmation",
+        "WH date held",
+        "2025 same-venue precedent",
+        "NSSE security enabler"
       ],
       "reference_classes": [
-        "president attending pre-committed domestic ceremonial event ~95-98%"
+        "president follow-through on stated easy-logistics appearance ~4wks out 92-97%",
+        "Trump major-event attendance near-universal"
       ],
       "research_refs": [
-        "https://sports.yahoo.com/soccer/article/fifa-president-says-donald-trump-will-help-present-world-cup-trophy-to-winning-team-142350279.html"
+        "https://www.espn.com/soccer/story/_/id/49154827/donald-trump-present-world-cup-trophy-final-fifa-boss-gianni-infantino-confirms",
+        "https://www.nbcnewyork.com/world-cup/trump-world-cup-final-fifa-metlife-stadium/6512369/",
+        "https://www.cnn.com/2025/07/14/sport/donald-trump-club-world-cup-final-chelsea-psg-spt"
       ]
     }
   ],

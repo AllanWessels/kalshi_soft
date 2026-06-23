@@ -5,22 +5,22 @@
   "category": "economy",
   "close_time": "2026-07-14T12:25:00Z",
   "current": {
-    "as_of": "2026-06-23T18:36:51Z",
-    "my_probability": 0.09,
+    "as_of": "2026-06-23T19:12:23Z",
+    "my_probability": 0.25,
     "my_confidence": "medium",
     "market_implied_probability": 0.09,
     "market_price_cents": 9.0,
-    "edge": 0.0,
+    "edge": 0.16,
     "yes_ask": 0.11,
     "no_ask": 0.93,
     "fee_per_contract": 0.01,
-    "ev_per_contract": -0.03000000000000002,
+    "ev_per_contract": -0.19000000000000006,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "no +EV value bet at the ask (my prob 9%, modal NO) — staying out.",
-    "prob_delta_vs_prev": -0.31000000000000005,
+    "lean_note": "no +EV value bet at the ask (my prob 25%, modal NO) — staying out.",
+    "prob_delta_vs_prev": -0.15000000000000002,
     "trigger": "scheduled",
     "strategy_id": "S0-single",
     "proposed_probability": null,
@@ -28,16 +28,17 @@
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "Energy reversal in June drags headline MoM toward/below zero; market-consistent.",
+    "rationale_summary": "A positive June headline needs gasoline's SA decline to be far milder than the ~9-13% the primary weekly data implies; sticky core (+0.2%) alone can't offset it, so YES unlikely but above market.",
     "key_drivers": [
-      "energy collapse",
+      "gasoline collapse",
       "core floor"
     ],
     "reference_classes": [
-      "energy-driven CPI swings"
+      "post-oil-shock reversal months"
     ],
     "research_refs": [
-      "https://www.aljazeera.com/economy/2026/6/18/oil-prices-fall-stocks-rally"
+      "https://gasprices.aaa.com",
+      "https://www.eia.gov/petroleum/gasdiesel"
     ]
   },
   "history": [
@@ -81,22 +82,22 @@
       ]
     },
     {
-      "as_of": "2026-06-23T18:36:51Z",
-      "my_probability": 0.09,
+      "as_of": "2026-06-23T19:12:23Z",
+      "my_probability": 0.25,
       "my_confidence": "medium",
       "market_implied_probability": 0.09,
       "market_price_cents": 9.0,
-      "edge": 0.0,
+      "edge": 0.16,
       "yes_ask": 0.11,
       "no_ask": 0.93,
       "fee_per_contract": 0.01,
-      "ev_per_contract": -0.03000000000000002,
+      "ev_per_contract": -0.19000000000000006,
       "limit_price": null,
       "ev_limit_per_contract": null,
       "lean": "NONE",
       "conviction": "low",
-      "lean_note": "no +EV value bet at the ask (my prob 9%, modal NO) — staying out.",
-      "prob_delta_vs_prev": -0.31000000000000005,
+      "lean_note": "no +EV value bet at the ask (my prob 25%, modal NO) — staying out.",
+      "prob_delta_vs_prev": -0.15000000000000002,
       "trigger": "scheduled",
       "strategy_id": "S0-single",
       "proposed_probability": null,
@@ -104,16 +105,17 @@
       "adversarial_challenged_prob": null,
       "adversarial_concerns": [],
       "adversarial_model": "",
-      "rationale_summary": "Energy reversal in June drags headline MoM toward/below zero; market-consistent.",
+      "rationale_summary": "A positive June headline needs gasoline's SA decline to be far milder than the ~9-13% the primary weekly data implies; sticky core (+0.2%) alone can't offset it, so YES unlikely but above market.",
       "key_drivers": [
-        "energy collapse",
+        "gasoline collapse",
         "core floor"
       ],
       "reference_classes": [
-        "energy-driven CPI swings"
+        "post-oil-shock reversal months"
       ],
       "research_refs": [
-        "https://www.aljazeera.com/economy/2026/6/18/oil-prices-fall-stocks-rally"
+        "https://gasprices.aaa.com",
+        "https://www.eia.gov/petroleum/gasdiesel"
       ]
     }
   ],

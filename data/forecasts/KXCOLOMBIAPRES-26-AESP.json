@@ -5,22 +5,22 @@
   "category": "politics",
   "close_time": "2027-05-31T14:00:00Z",
   "current": {
-    "as_of": "2026-06-23T18:37:15Z",
-    "my_probability": 0.965,
+    "as_of": "2026-06-23T19:13:02Z",
+    "my_probability": 0.975,
     "my_confidence": "high",
-    "market_implied_probability": 0.985,
+    "market_implied_probability": 0.9855,
     "market_price_cents": 98.0,
-    "edge": -0.020000000000000018,
-    "yes_ask": 0.988,
+    "edge": -0.010500000000000065,
+    "yes_ask": 0.989,
     "no_ask": 0.018,
     "fee_per_contract": 0.01,
-    "ev_per_contract": 0.007000000000000032,
+    "ev_per_contract": -0.0029999999999999766,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "no +EV value bet at the ask (my prob 96%, modal YES) — staying out.",
-    "prob_delta_vs_prev": 0.0050000000000000044,
+    "lean_note": "no +EV value bet at the ask (my prob 98%, modal YES) — staying out.",
+    "prob_delta_vs_prev": 0.015000000000000013,
     "trigger": "near_close",
     "strategy_id": "S0-single",
     "proposed_probability": null,
@@ -28,18 +28,20 @@
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "De la Espriella won the June 21 runoff by ~249K votes (49.66 vs 48.70) with 99.96% counted; no Colombian presidential recount has reversed a result. Cepeda's broad challenge is the only tail.",
+    "rationale_summary": "Official escrutinio 99.99% counted (~10 of 118,350 tables left), 99.997% preconteo match, de la Espriella +~250,830 votes; CNE rejected Cepeda's recount and his reclamaciones netted only ~273 votes. Reversal mathematically foreclosed.",
     "key_drivers": [
-      "249K absolute margin",
-      "99.96% counted",
-      "no precedent for reversal",
-      "Cepeda challenge"
+      "escrutinio 99.99% done",
+      "+250830 margin",
+      "CNE rejected recount",
+      "IRI validated"
     ],
     "reference_classes": [
-      "preliminary leader becomes certified winner ~97-99%"
+      "certified sub-1pt presidential result overturned <2%"
     ],
     "research_refs": [
-      "https://www.aljazeera.com/news/2026/6/22/colombian-right-wing-candidate-de-la-espriella-wins-tight-presidential-race"
+      "https://www.eltiempo.com/politica/elecciones-colombia-2026",
+      "https://www.iri.org/resources/iri-preliminary-statement-of-colombias-2026-presidential-elections-2/",
+      "https://www.elcolombiano.com/colombia/cne-descarta-reconteo-voto-exterior-solicitado-ivan-cepeda-HN38064737"
     ]
   },
   "history": [
@@ -124,22 +126,22 @@
       ]
     },
     {
-      "as_of": "2026-06-23T18:37:15Z",
-      "my_probability": 0.965,
+      "as_of": "2026-06-23T19:13:02Z",
+      "my_probability": 0.975,
       "my_confidence": "high",
-      "market_implied_probability": 0.985,
+      "market_implied_probability": 0.9855,
       "market_price_cents": 98.0,
-      "edge": -0.020000000000000018,
-      "yes_ask": 0.988,
+      "edge": -0.010500000000000065,
+      "yes_ask": 0.989,
       "no_ask": 0.018,
       "fee_per_contract": 0.01,
-      "ev_per_contract": 0.007000000000000032,
+      "ev_per_contract": -0.0029999999999999766,
       "limit_price": null,
       "ev_limit_per_contract": null,
       "lean": "NONE",
       "conviction": "low",
-      "lean_note": "no +EV value bet at the ask (my prob 96%, modal YES) — staying out.",
-      "prob_delta_vs_prev": 0.0050000000000000044,
+      "lean_note": "no +EV value bet at the ask (my prob 98%, modal YES) — staying out.",
+      "prob_delta_vs_prev": 0.015000000000000013,
       "trigger": "near_close",
       "strategy_id": "S0-single",
       "proposed_probability": null,
@@ -147,18 +149,20 @@
       "adversarial_challenged_prob": null,
       "adversarial_concerns": [],
       "adversarial_model": "",
-      "rationale_summary": "De la Espriella won the June 21 runoff by ~249K votes (49.66 vs 48.70) with 99.96% counted; no Colombian presidential recount has reversed a result. Cepeda's broad challenge is the only tail.",
+      "rationale_summary": "Official escrutinio 99.99% counted (~10 of 118,350 tables left), 99.997% preconteo match, de la Espriella +~250,830 votes; CNE rejected Cepeda's recount and his reclamaciones netted only ~273 votes. Reversal mathematically foreclosed.",
       "key_drivers": [
-        "249K absolute margin",
-        "99.96% counted",
-        "no precedent for reversal",
-        "Cepeda challenge"
+        "escrutinio 99.99% done",
+        "+250830 margin",
+        "CNE rejected recount",
+        "IRI validated"
       ],
       "reference_classes": [
-        "preliminary leader becomes certified winner ~97-99%"
+        "certified sub-1pt presidential result overturned <2%"
       ],
       "research_refs": [
-        "https://www.aljazeera.com/news/2026/6/22/colombian-right-wing-candidate-de-la-espriella-wins-tight-presidential-race"
+        "https://www.eltiempo.com/politica/elecciones-colombia-2026",
+        "https://www.iri.org/resources/iri-preliminary-statement-of-colombias-2026-presidential-elections-2/",
+        "https://www.elcolombiano.com/colombia/cne-descarta-reconteo-voto-exterior-solicitado-ivan-cepeda-HN38064737"
       ]
     }
   ],

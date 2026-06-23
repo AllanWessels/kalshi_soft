@@ -5,22 +5,22 @@
   "category": "economy",
   "close_time": "2026-07-14T12:25:00Z",
   "current": {
-    "as_of": "2026-06-23T18:36:51Z",
-    "my_probability": 0.22,
-    "my_confidence": "medium",
+    "as_of": "2026-06-23T19:12:23Z",
+    "my_probability": 0.44,
+    "my_confidence": "low",
     "market_implied_probability": 0.225,
     "market_price_cents": 22.0,
-    "edge": -0.0050000000000000044,
+    "edge": 0.215,
     "yes_ask": 0.23,
     "no_ask": 0.78,
     "fee_per_contract": 0.02,
-    "ev_per_contract": -0.02,
+    "ev_per_contract": -0.23999999999999996,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "no +EV value bet at the ask (my prob 22%, modal NO) — staying out.",
-    "prob_delta_vs_prev": -0.13999999999999999,
+    "lean_note": "no +EV value bet at the ask (my prob 44%, modal NO) — staying out.",
+    "prob_delta_vs_prev": 0.08000000000000002,
     "trigger": "scheduled",
     "strategy_id": "S0-single",
     "proposed_probability": null,
@@ -28,19 +28,21 @@
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "Post-ceasefire oil crash (Brent ~$78, ~20% off 2026 highs, near pre-war) makes June energy a large negative CPI contributor, flipping headline MoM likely negative; defer to market over my initial upward-momentum read.",
+    "rationale_summary": "Bottom-up from primary gasoline data (AAA -13.3% MoM to $3.93; EIA WTI $95->$73): June headline CPI center ~-0.1% MoM, sitting right on this threshold, so P(>=0.0%) is near a coin flip — meaningfully above market, but a wide fade.",
     "key_drivers": [
-      "energy collapse",
-      "oil ~20% off highs",
-      "core +0.25 floor",
-      "seasonal adj"
+      "gasoline -13% MoM (AAA/EIA)",
+      "core +0.2 floor",
+      "SA seasonal",
+      "threshold rounding"
     ],
     "reference_classes": [
-      "energy-driven monthly CPI swings",
-      "post-shock price reversal"
+      "post-oil-shock reversal months",
+      "single-decimal rounding at threshold"
     ],
     "research_refs": [
-      "https://www.aljazeera.com/economy/2026/6/18/oil-prices-fall-stocks-rally"
+      "https://gasprices.aaa.com",
+      "https://www.eia.gov/petroleum/gasdiesel",
+      "https://www.bls.gov/news.release/cpi.nr0.htm"
     ]
   },
   "history": [
@@ -84,22 +86,22 @@
       ]
     },
     {
-      "as_of": "2026-06-23T18:36:51Z",
-      "my_probability": 0.22,
-      "my_confidence": "medium",
+      "as_of": "2026-06-23T19:12:23Z",
+      "my_probability": 0.44,
+      "my_confidence": "low",
       "market_implied_probability": 0.225,
       "market_price_cents": 22.0,
-      "edge": -0.0050000000000000044,
+      "edge": 0.215,
       "yes_ask": 0.23,
       "no_ask": 0.78,
       "fee_per_contract": 0.02,
-      "ev_per_contract": -0.02,
+      "ev_per_contract": -0.23999999999999996,
       "limit_price": null,
       "ev_limit_per_contract": null,
       "lean": "NONE",
       "conviction": "low",
-      "lean_note": "no +EV value bet at the ask (my prob 22%, modal NO) — staying out.",
-      "prob_delta_vs_prev": -0.13999999999999999,
+      "lean_note": "no +EV value bet at the ask (my prob 44%, modal NO) — staying out.",
+      "prob_delta_vs_prev": 0.08000000000000002,
       "trigger": "scheduled",
       "strategy_id": "S0-single",
       "proposed_probability": null,
@@ -107,19 +109,21 @@
       "adversarial_challenged_prob": null,
       "adversarial_concerns": [],
       "adversarial_model": "",
-      "rationale_summary": "Post-ceasefire oil crash (Brent ~$78, ~20% off 2026 highs, near pre-war) makes June energy a large negative CPI contributor, flipping headline MoM likely negative; defer to market over my initial upward-momentum read.",
+      "rationale_summary": "Bottom-up from primary gasoline data (AAA -13.3% MoM to $3.93; EIA WTI $95->$73): June headline CPI center ~-0.1% MoM, sitting right on this threshold, so P(>=0.0%) is near a coin flip — meaningfully above market, but a wide fade.",
       "key_drivers": [
-        "energy collapse",
-        "oil ~20% off highs",
-        "core +0.25 floor",
-        "seasonal adj"
+        "gasoline -13% MoM (AAA/EIA)",
+        "core +0.2 floor",
+        "SA seasonal",
+        "threshold rounding"
       ],
       "reference_classes": [
-        "energy-driven monthly CPI swings",
-        "post-shock price reversal"
+        "post-oil-shock reversal months",
+        "single-decimal rounding at threshold"
       ],
       "research_refs": [
-        "https://www.aljazeera.com/economy/2026/6/18/oil-prices-fall-stocks-rally"
+        "https://gasprices.aaa.com",
+        "https://www.eia.gov/petroleum/gasdiesel",
+        "https://www.bls.gov/news.release/cpi.nr0.htm"
       ]
     }
   ],

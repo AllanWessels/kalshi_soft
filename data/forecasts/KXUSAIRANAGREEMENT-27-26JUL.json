@@ -5,22 +5,22 @@
   "category": "politics",
   "close_time": "2026-07-01T14:00:00Z",
   "current": {
-    "as_of": "2026-06-23T18:37:15Z",
-    "my_probability": 0.03,
+    "as_of": "2026-06-23T19:13:02Z",
+    "my_probability": 0.04,
     "my_confidence": "high",
     "market_implied_probability": 0.015,
     "market_price_cents": 2.0,
-    "edge": 0.015,
+    "edge": 0.025,
     "yes_ask": 0.02,
     "no_ask": 0.99,
     "fee_per_contract": 0.01,
-    "ev_per_contract": -1.734723475976807e-18,
+    "ev_per_contract": 0.01,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "no +EV value bet at the ask (my prob 3%, modal NO) — staying out.",
-    "prob_delta_vs_prev": -0.020000000000000004,
+    "lean_note": "no +EV value bet at the ask (my prob 4%, modal NO) — staying out.",
+    "prob_delta_vs_prev": -0.010000000000000002,
     "trigger": "scheduled",
     "strategy_id": "S0-single",
     "proposed_probability": null,
@@ -28,17 +28,19 @@
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "A comprehensive nuclear deal within ~7 days is near-impossible while enrichment (the core dispute) is openly unresolved; the live MOU is explicitly not a nuclear deal.",
+    "rationale_summary": "June 17 Islamabad MOU is a war-ending ceasefire, not a nuclear deal; the June 21-22 Switzerland round produced only a 60-day roadmap (~late Aug) with enrichment and IAEA access still disputed as of June 23.",
     "key_drivers": [
-      "enrichment impasse",
       "MOU not nuclear deal",
-      "7-day window"
+      "60-day roadmap",
+      "enrichment unresolved"
     ],
     "reference_classes": [
-      "nuclear deal negotiation timelines (months-years)"
+      "nuclear-deal timelines (JCPOA ~20 months)"
     ],
     "research_refs": [
-      "https://www.npr.org/2026/06/19/nx-s1-5863544/trump-us-iran-agreement"
+      "https://www.cfr.org",
+      "https://commonslibrary.parliament.uk",
+      "https://history.state.gov"
     ]
   },
   "history": [
@@ -155,22 +157,22 @@
       ]
     },
     {
-      "as_of": "2026-06-23T18:37:15Z",
-      "my_probability": 0.03,
+      "as_of": "2026-06-23T19:13:02Z",
+      "my_probability": 0.04,
       "my_confidence": "high",
       "market_implied_probability": 0.015,
       "market_price_cents": 2.0,
-      "edge": 0.015,
+      "edge": 0.025,
       "yes_ask": 0.02,
       "no_ask": 0.99,
       "fee_per_contract": 0.01,
-      "ev_per_contract": -1.734723475976807e-18,
+      "ev_per_contract": 0.01,
       "limit_price": null,
       "ev_limit_per_contract": null,
       "lean": "NONE",
       "conviction": "low",
-      "lean_note": "no +EV value bet at the ask (my prob 3%, modal NO) — staying out.",
-      "prob_delta_vs_prev": -0.020000000000000004,
+      "lean_note": "no +EV value bet at the ask (my prob 4%, modal NO) — staying out.",
+      "prob_delta_vs_prev": -0.010000000000000002,
       "trigger": "scheduled",
       "strategy_id": "S0-single",
       "proposed_probability": null,
@@ -178,17 +180,19 @@
       "adversarial_challenged_prob": null,
       "adversarial_concerns": [],
       "adversarial_model": "",
-      "rationale_summary": "A comprehensive nuclear deal within ~7 days is near-impossible while enrichment (the core dispute) is openly unresolved; the live MOU is explicitly not a nuclear deal.",
+      "rationale_summary": "June 17 Islamabad MOU is a war-ending ceasefire, not a nuclear deal; the June 21-22 Switzerland round produced only a 60-day roadmap (~late Aug) with enrichment and IAEA access still disputed as of June 23.",
       "key_drivers": [
-        "enrichment impasse",
         "MOU not nuclear deal",
-        "7-day window"
+        "60-day roadmap",
+        "enrichment unresolved"
       ],
       "reference_classes": [
-        "nuclear deal negotiation timelines (months-years)"
+        "nuclear-deal timelines (JCPOA ~20 months)"
       ],
       "research_refs": [
-        "https://www.npr.org/2026/06/19/nx-s1-5863544/trump-us-iran-agreement"
+        "https://www.cfr.org",
+        "https://commonslibrary.parliament.uk",
+        "https://history.state.gov"
       ]
     }
   ],

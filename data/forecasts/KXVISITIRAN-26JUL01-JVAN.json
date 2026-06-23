@@ -5,22 +5,22 @@
   "category": "politics",
   "close_time": "2026-07-01T14:00:00Z",
   "current": {
-    "as_of": "2026-06-23T18:37:15Z",
-    "my_probability": 0.004,
+    "as_of": "2026-06-23T19:13:02Z",
+    "my_probability": 0.01,
     "my_confidence": "high",
     "market_implied_probability": 0.0045,
     "market_price_cents": null,
-    "edge": -0.0004999999999999996,
+    "edge": 0.0055000000000000005,
     "yes_ask": 0.007,
     "no_ask": 0.998,
     "fee_per_contract": 0.01,
-    "ev_per_contract": -0.012000000000000002,
+    "ev_per_contract": -0.007,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "no +EV value bet at the ask (my prob 0%, modal NO) — staying out.",
-    "prob_delta_vs_prev": -0.016,
+    "lean_note": "no +EV value bet at the ask (my prob 1%, modal NO) — staying out.",
+    "prob_delta_vs_prev": -0.01,
     "trigger": "scheduled",
     "strategy_id": "S0-single",
     "proposed_probability": null,
@@ -28,16 +28,17 @@
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "A sitting VP in Iran is unprecedented and less plausible than a SecState visit.",
+    "rationale_summary": "Vance personally led the US delegation in Switzerland on Jun 21-22 (confirmed off Iranian soil); a sitting VP on Iranian soil days after a war is unprecedented.",
     "key_drivers": [
-      "no precedent",
-      "security"
+      "Vance in Switzerland",
+      "no precedent"
     ],
     "reference_classes": [
-      "VP visits to adversary mid-conflict = zero"
+      "VP on adversary soil mid-ceasefire = zero"
     ],
     "research_refs": [
-      "https://www.npr.org/2026/06/19/nx-s1-5863544/trump-us-iran-agreement"
+      "https://www.cnbc.com",
+      "https://www.aljazeera.com"
     ]
   },
   "history": [
@@ -79,22 +80,22 @@
       ]
     },
     {
-      "as_of": "2026-06-23T18:37:15Z",
-      "my_probability": 0.004,
+      "as_of": "2026-06-23T19:13:02Z",
+      "my_probability": 0.01,
       "my_confidence": "high",
       "market_implied_probability": 0.0045,
       "market_price_cents": null,
-      "edge": -0.0004999999999999996,
+      "edge": 0.0055000000000000005,
       "yes_ask": 0.007,
       "no_ask": 0.998,
       "fee_per_contract": 0.01,
-      "ev_per_contract": -0.012000000000000002,
+      "ev_per_contract": -0.007,
       "limit_price": null,
       "ev_limit_per_contract": null,
       "lean": "NONE",
       "conviction": "low",
-      "lean_note": "no +EV value bet at the ask (my prob 0%, modal NO) — staying out.",
-      "prob_delta_vs_prev": -0.016,
+      "lean_note": "no +EV value bet at the ask (my prob 1%, modal NO) — staying out.",
+      "prob_delta_vs_prev": -0.01,
       "trigger": "scheduled",
       "strategy_id": "S0-single",
       "proposed_probability": null,
@@ -102,16 +103,17 @@
       "adversarial_challenged_prob": null,
       "adversarial_concerns": [],
       "adversarial_model": "",
-      "rationale_summary": "A sitting VP in Iran is unprecedented and less plausible than a SecState visit.",
+      "rationale_summary": "Vance personally led the US delegation in Switzerland on Jun 21-22 (confirmed off Iranian soil); a sitting VP on Iranian soil days after a war is unprecedented.",
       "key_drivers": [
-        "no precedent",
-        "security"
+        "Vance in Switzerland",
+        "no precedent"
       ],
       "reference_classes": [
-        "VP visits to adversary mid-conflict = zero"
+        "VP on adversary soil mid-ceasefire = zero"
       ],
       "research_refs": [
-        "https://www.npr.org/2026/06/19/nx-s1-5863544/trump-us-iran-agreement"
+        "https://www.cnbc.com",
+        "https://www.aljazeera.com"
       ]
     }
   ],
