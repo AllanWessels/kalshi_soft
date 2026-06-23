@@ -5,36 +5,41 @@
   "category": "politics",
   "close_time": "2026-07-01T04:00:00Z",
   "current": {
-    "as_of": "2026-06-23T19:19:13Z",
-    "my_probability": 0.045,
+    "as_of": "2026-06-23T20:43:24Z",
+    "my_probability": 0.15,
     "my_confidence": "high",
     "market_implied_probability": 0.035,
     "market_price_cents": 4.0,
-    "edge": 0.009999999999999995,
+    "edge": 0.11499999999999999,
     "yes_ask": 0.04,
     "no_ask": 0.97,
     "fee_per_contract": 0.01,
-    "ev_per_contract": -0.005000000000000003,
-    "limit_price": null,
-    "ev_limit_per_contract": null,
+    "ev_per_contract": 0.09999999999999999,
+    "limit_price": 0.03,
+    "ev_limit_per_contract": 0.11,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "no +EV value bet at the ask (my prob 4%, modal NO) — staying out.",
-    "prob_delta_vs_prev": -0.085,
+    "lean_note": "ADVERSARIAL VETO: The position assumes a speculative 'unexpected Florida event' without credible triggers, while market pricing reflects deeper institutional knowledge of seasonal patterns and historical inactivity. The forecaster's confidence is disproporti",
+    "prob_delta_vs_prev": 0.01999999999999999,
     "trigger": "near_close",
-    "strategy_id": "S0-single",
-    "proposed_probability": null,
-    "adversarial_verdict": "",
-    "adversarial_challenged_prob": null,
-    "adversarial_concerns": [],
-    "adversarial_model": "",
-    "rationale_summary": "Only path is an unscheduled one-off Palm Beach trip in Jun 24-30 overriding the closed-club summer pattern.",
+    "strategy_id": "LQ5-ensemble5",
+    "proposed_probability": 0.15,
+    "adversarial_verdict": "veto",
+    "adversarial_challenged_prob": 0.15,
+    "adversarial_concerns": [
+      "Divergence of 0.115 from liquid market implies unaccounted risk; market may already price in seasonal closure and low base rates",
+      "High confidence not justified by thin evidence (single narrow-window scenario)",
+      "Base-rate neglect: historical data shows zero trips through June 23, yet probability assumes plausibility without concrete triggers"
+    ],
+    "adversarial_model": "qwen3:14b-q4_K_M",
+    "rationale_summary": "Base rate of off-season one-off Mar-a-Lago trips is low, but a single unscheduled trip during June 24-30 remains plausible if an unexpected Florida event occurs. Zero trips recorded through June 23, with seasonal closure reducing likelihood, but final weekend leaves a narrow window for a rare occurr",
     "key_drivers": [
-      "seasonal closure",
-      "one weekend left"
+      "seasonal closure reducing trip likelihood",
+      "unscheduled Florida event possibility"
     ],
     "reference_classes": [
-      "off-season one-off trip rare"
+      "off-season Mar-a-Lago visit frequency",
+      "unscheduled political travel patterns"
     ],
     "research_refs": [
       "https://rollcall.com/factbase/trump/calendar/"
@@ -113,36 +118,41 @@
       ]
     },
     {
-      "as_of": "2026-06-23T19:19:13Z",
-      "my_probability": 0.045,
+      "as_of": "2026-06-23T20:43:24Z",
+      "my_probability": 0.15,
       "my_confidence": "high",
       "market_implied_probability": 0.035,
       "market_price_cents": 4.0,
-      "edge": 0.009999999999999995,
+      "edge": 0.11499999999999999,
       "yes_ask": 0.04,
       "no_ask": 0.97,
       "fee_per_contract": 0.01,
-      "ev_per_contract": -0.005000000000000003,
-      "limit_price": null,
-      "ev_limit_per_contract": null,
+      "ev_per_contract": 0.09999999999999999,
+      "limit_price": 0.03,
+      "ev_limit_per_contract": 0.11,
       "lean": "NONE",
       "conviction": "low",
-      "lean_note": "no +EV value bet at the ask (my prob 4%, modal NO) — staying out.",
-      "prob_delta_vs_prev": -0.085,
+      "lean_note": "ADVERSARIAL VETO: The position assumes a speculative 'unexpected Florida event' without credible triggers, while market pricing reflects deeper institutional knowledge of seasonal patterns and historical inactivity. The forecaster's confidence is disproporti",
+      "prob_delta_vs_prev": 0.01999999999999999,
       "trigger": "near_close",
-      "strategy_id": "S0-single",
-      "proposed_probability": null,
-      "adversarial_verdict": "",
-      "adversarial_challenged_prob": null,
-      "adversarial_concerns": [],
-      "adversarial_model": "",
-      "rationale_summary": "Only path is an unscheduled one-off Palm Beach trip in Jun 24-30 overriding the closed-club summer pattern.",
+      "strategy_id": "LQ5-ensemble5",
+      "proposed_probability": 0.15,
+      "adversarial_verdict": "veto",
+      "adversarial_challenged_prob": 0.15,
+      "adversarial_concerns": [
+        "Divergence of 0.115 from liquid market implies unaccounted risk; market may already price in seasonal closure and low base rates",
+        "High confidence not justified by thin evidence (single narrow-window scenario)",
+        "Base-rate neglect: historical data shows zero trips through June 23, yet probability assumes plausibility without concrete triggers"
+      ],
+      "adversarial_model": "qwen3:14b-q4_K_M",
+      "rationale_summary": "Base rate of off-season one-off Mar-a-Lago trips is low, but a single unscheduled trip during June 24-30 remains plausible if an unexpected Florida event occurs. Zero trips recorded through June 23, with seasonal closure reducing likelihood, but final weekend leaves a narrow window for a rare occurr",
       "key_drivers": [
-        "seasonal closure",
-        "one weekend left"
+        "seasonal closure reducing trip likelihood",
+        "unscheduled Florida event possibility"
       ],
       "reference_classes": [
-        "off-season one-off trip rare"
+        "off-season Mar-a-Lago visit frequency",
+        "unscheduled political travel patterns"
       ],
       "research_refs": [
         "https://rollcall.com/factbase/trump/calendar/"

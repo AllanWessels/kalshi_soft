@@ -5,44 +5,47 @@
   "category": "culture",
   "close_time": "2026-06-29T14:00:00Z",
   "current": {
-    "as_of": "2026-06-23T19:23:27Z",
-    "my_probability": 0.17,
-    "my_confidence": "medium",
-    "market_implied_probability": 0.1,
-    "market_price_cents": 10.0,
-    "edge": 0.07,
-    "yes_ask": 0.12,
-    "no_ask": 0.92,
+    "as_of": "2026-06-23T20:28:27Z",
+    "my_probability": 0.22,
+    "my_confidence": "high",
+    "market_implied_probability": 0.075,
+    "market_price_cents": 8.0,
+    "edge": 0.14500000000000002,
+    "yes_ask": 0.09,
+    "no_ask": 0.94,
     "fee_per_contract": 0.01,
-    "ev_per_contract": -0.10000000000000007,
-    "limit_price": null,
-    "ev_limit_per_contract": null,
-    "lean": "NONE",
-    "conviction": "low",
-    "lean_note": "no +EV value bet at the ask (my prob 17%, modal NO) — staying out.",
-    "prob_delta_vs_prev": -0.39,
+    "ev_per_contract": 0.12000000000000001,
+    "limit_price": 0.06,
+    "ev_limit_per_contract": 0.15,
+    "lean": "YES",
+    "conviction": "high",
+    "lean_note": null,
+    "prob_delta_vs_prev": -0.3400000000000001,
     "trigger": "near_close",
-    "strategy_id": "S0-single",
-    "proposed_probability": null,
-    "adversarial_verdict": "",
-    "adversarial_challenged_prob": null,
-    "adversarial_concerns": [],
-    "adversarial_model": "",
-    "rationale_summary": "RT page shows 0 reviews yet (embargo ~Jun 24-25). Premiere reactions are mixed-to-negative (premiere tally ~4 pos/6 lukewarm/5 neg; 'bland villain/dull/underwhelming'), praise narrow to Alcock/Momoa; comps Brave New World ~47% and The Marvels ~62%. Base rate for clearing 76% from this profile ~15-25%, with scores drifting down as volume grows.",
+    "strategy_id": "LQ5-ensemble5",
+    "proposed_probability": 0.22,
+    "adversarial_verdict": "revise",
+    "adversarial_challenged_prob": 0.15,
+    "adversarial_concerns": [
+      "Divergence from liquid market implies unaccounted risk",
+      "Base rate (15-25%) aligns with market's 7.5% if adjusted for embargo uncertainty",
+      "Small-N volatility and timing ambiguity justify lower confidence"
+    ],
+    "adversarial_model": "qwen3:14b-q4_K_M",
+    "rationale_summary": "Mixed-to-negative premiere reactions, comparable films scoring below 76%, and RT scores drifting downward with more reviews all weigh against a high score. Base rate suggests 15-25% chance for mixed pre-embargo films with a standout performance, but small-N volatility and embargo timing uncertainty ",
     "key_drivers": [
-      "0 reviews yet",
-      "mixed-negative premiere reactions",
-      "narrow praise",
-      "comps below 76",
-      "downward drift"
+      "premiere reception",
+      "reference class scores",
+      "embargo timing",
+      "review volume growth"
     ],
     "reference_classes": [
-      "mixed-pre-embargo+one-standout-perf clearing 76% ~15-25%"
+      "mixed-to-positive films scoring below 76%",
+      "mixed pre-embargo films with standout performances"
     ],
     "research_refs": [
       "https://www.rottentomatoes.com/m/supergirl_2026",
-      "https://deadline.com/2026/06/supergirl-first-reactions-milly-alcock-jason-momoa-david-corenswet-1236963084/",
-      "https://variety.com/2026/film/news/supergirl-first-reactions-milly-alcock-1236784950/"
+      "https://deadline.com/2026/06/supergirl-first-reactions-milly-alcock-jason-momoa-david-corenswet-1236963084/"
     ]
   },
   "history": [
@@ -165,60 +168,67 @@
       ]
     },
     {
-      "as_of": "2026-06-23T19:23:27Z",
-      "my_probability": 0.17,
-      "my_confidence": "medium",
-      "market_implied_probability": 0.1,
-      "market_price_cents": 10.0,
-      "edge": 0.07,
-      "yes_ask": 0.12,
-      "no_ask": 0.92,
+      "as_of": "2026-06-23T20:28:27Z",
+      "my_probability": 0.22,
+      "my_confidence": "high",
+      "market_implied_probability": 0.075,
+      "market_price_cents": 8.0,
+      "edge": 0.14500000000000002,
+      "yes_ask": 0.09,
+      "no_ask": 0.94,
       "fee_per_contract": 0.01,
-      "ev_per_contract": -0.10000000000000007,
-      "limit_price": null,
-      "ev_limit_per_contract": null,
-      "lean": "NONE",
-      "conviction": "low",
-      "lean_note": "no +EV value bet at the ask (my prob 17%, modal NO) — staying out.",
-      "prob_delta_vs_prev": -0.39,
+      "ev_per_contract": 0.12000000000000001,
+      "limit_price": 0.06,
+      "ev_limit_per_contract": 0.15,
+      "lean": "YES",
+      "conviction": "high",
+      "lean_note": null,
+      "prob_delta_vs_prev": -0.3400000000000001,
       "trigger": "near_close",
-      "strategy_id": "S0-single",
-      "proposed_probability": null,
-      "adversarial_verdict": "",
-      "adversarial_challenged_prob": null,
-      "adversarial_concerns": [],
-      "adversarial_model": "",
-      "rationale_summary": "RT page shows 0 reviews yet (embargo ~Jun 24-25). Premiere reactions are mixed-to-negative (premiere tally ~4 pos/6 lukewarm/5 neg; 'bland villain/dull/underwhelming'), praise narrow to Alcock/Momoa; comps Brave New World ~47% and The Marvels ~62%. Base rate for clearing 76% from this profile ~15-25%, with scores drifting down as volume grows.",
+      "strategy_id": "LQ5-ensemble5",
+      "proposed_probability": 0.22,
+      "adversarial_verdict": "revise",
+      "adversarial_challenged_prob": 0.15,
+      "adversarial_concerns": [
+        "Divergence from liquid market implies unaccounted risk",
+        "Base rate (15-25%) aligns with market's 7.5% if adjusted for embargo uncertainty",
+        "Small-N volatility and timing ambiguity justify lower confidence"
+      ],
+      "adversarial_model": "qwen3:14b-q4_K_M",
+      "rationale_summary": "Mixed-to-negative premiere reactions, comparable films scoring below 76%, and RT scores drifting downward with more reviews all weigh against a high score. Base rate suggests 15-25% chance for mixed pre-embargo films with a standout performance, but small-N volatility and embargo timing uncertainty ",
       "key_drivers": [
-        "0 reviews yet",
-        "mixed-negative premiere reactions",
-        "narrow praise",
-        "comps below 76",
-        "downward drift"
+        "premiere reception",
+        "reference class scores",
+        "embargo timing",
+        "review volume growth"
       ],
       "reference_classes": [
-        "mixed-pre-embargo+one-standout-perf clearing 76% ~15-25%"
+        "mixed-to-positive films scoring below 76%",
+        "mixed pre-embargo films with standout performances"
       ],
       "research_refs": [
         "https://www.rottentomatoes.com/m/supergirl_2026",
-        "https://deadline.com/2026/06/supergirl-first-reactions-milly-alcock-jason-momoa-david-corenswet-1236963084/",
-        "https://variety.com/2026/film/news/supergirl-first-reactions-milly-alcock-1236784950/"
+        "https://deadline.com/2026/06/supergirl-first-reactions-milly-alcock-jason-momoa-david-corenswet-1236963084/"
       ]
     }
   ],
   "position": {
-    "entered": false,
-    "entry_as_of": "",
-    "entry_side": "",
-    "entry_probability": 0.0,
-    "entry_price": 0.0,
-    "entry_market_implied": null,
-    "entry_confidence": "",
-    "entry_conviction": "",
-    "entry_gap": null,
-    "adversarial_verdict": "",
-    "adversarial_challenged_prob": null,
-    "adversarial_concerns": [],
-    "adversarial_model": ""
+    "entered": true,
+    "entry_as_of": "2026-06-23T20:28:27Z",
+    "entry_side": "YES",
+    "entry_probability": 0.22,
+    "entry_price": 0.09,
+    "entry_market_implied": 0.075,
+    "entry_confidence": "high",
+    "entry_conviction": "high",
+    "entry_gap": 0.145,
+    "adversarial_verdict": "revise",
+    "adversarial_challenged_prob": 0.15,
+    "adversarial_concerns": [
+      "Divergence from liquid market implies unaccounted risk",
+      "Base rate (15-25%) aligns with market's 7.5% if adjusted for embargo uncertainty",
+      "Small-N volatility and timing ambiguity justify lower confidence"
+    ],
+    "adversarial_model": "qwen3:14b-q4_K_M"
   }
 }

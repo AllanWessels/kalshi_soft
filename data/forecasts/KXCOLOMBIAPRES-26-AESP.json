@@ -5,16 +5,16 @@
   "category": "politics",
   "close_time": "2027-05-31T14:00:00Z",
   "current": {
-    "as_of": "2026-06-23T19:13:02Z",
+    "as_of": "2026-06-23T20:30:30Z",
     "my_probability": 0.975,
-    "my_confidence": "high",
-    "market_implied_probability": 0.9855,
+    "my_confidence": "low",
+    "market_implied_probability": 0.982,
     "market_price_cents": 98.0,
-    "edge": -0.010500000000000065,
-    "yes_ask": 0.989,
-    "no_ask": 0.018,
+    "edge": -0.007000000000000006,
+    "yes_ask": 0.984,
+    "no_ask": 0.02,
     "fee_per_contract": 0.01,
-    "ev_per_contract": -0.0029999999999999766,
+    "ev_per_contract": -0.01900000000000001,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
@@ -22,25 +22,24 @@
     "lean_note": "no +EV value bet at the ask (my prob 98%, modal YES) — staying out.",
     "prob_delta_vs_prev": 0.015000000000000013,
     "trigger": "near_close",
-    "strategy_id": "S0-single",
+    "strategy_id": "LQ5-ensemble5",
     "proposed_probability": null,
     "adversarial_verdict": "",
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "Official escrutinio 99.99% counted (~10 of 118,350 tables left), 99.997% preconteo match, de la Espriella +~250,830 votes; CNE rejected Cepeda's recount and his reclamaciones netted only ~273 votes. Reversal mathematically foreclosed.",
+    "rationale_summary": "De la Espriella's lead (0.96%) with 99.99% counted and CNE's rejection of Cepeda's recount request strongly support certification. Base rate of <2% for sub-1-point reversals applies, but IRI validation and narrow margin (just under 1%) suggest low reversal risk. Certification timing uncertainty (~Ju",
     "key_drivers": [
-      "escrutinio 99.99% done",
-      "+250830 margin",
-      "CNE rejected recount",
-      "IRI validated"
+      "CNE's rejection of recount request",
+      "IRI validation of process integrity",
+      "Sub-1-point margin aligning with <2% reversal base rate"
     ],
     "reference_classes": [
-      "certified sub-1pt presidential result overturned <2%"
+      "Certified sub-1-point national presidential results reversed by challenge (<2%)",
+      "Colombian presidential election certification timelines"
     ],
     "research_refs": [
       "https://www.eltiempo.com/politica/elecciones-colombia-2026",
-      "https://www.iri.org/resources/iri-preliminary-statement-of-colombias-2026-presidential-elections-2/",
       "https://www.elcolombiano.com/colombia/cne-descarta-reconteo-voto-exterior-solicitado-ivan-cepeda-HN38064737"
     ]
   },
@@ -126,16 +125,16 @@
       ]
     },
     {
-      "as_of": "2026-06-23T19:13:02Z",
+      "as_of": "2026-06-23T20:30:30Z",
       "my_probability": 0.975,
-      "my_confidence": "high",
-      "market_implied_probability": 0.9855,
+      "my_confidence": "low",
+      "market_implied_probability": 0.982,
       "market_price_cents": 98.0,
-      "edge": -0.010500000000000065,
-      "yes_ask": 0.989,
-      "no_ask": 0.018,
+      "edge": -0.007000000000000006,
+      "yes_ask": 0.984,
+      "no_ask": 0.02,
       "fee_per_contract": 0.01,
-      "ev_per_contract": -0.0029999999999999766,
+      "ev_per_contract": -0.01900000000000001,
       "limit_price": null,
       "ev_limit_per_contract": null,
       "lean": "NONE",
@@ -143,25 +142,24 @@
       "lean_note": "no +EV value bet at the ask (my prob 98%, modal YES) — staying out.",
       "prob_delta_vs_prev": 0.015000000000000013,
       "trigger": "near_close",
-      "strategy_id": "S0-single",
+      "strategy_id": "LQ5-ensemble5",
       "proposed_probability": null,
       "adversarial_verdict": "",
       "adversarial_challenged_prob": null,
       "adversarial_concerns": [],
       "adversarial_model": "",
-      "rationale_summary": "Official escrutinio 99.99% counted (~10 of 118,350 tables left), 99.997% preconteo match, de la Espriella +~250,830 votes; CNE rejected Cepeda's recount and his reclamaciones netted only ~273 votes. Reversal mathematically foreclosed.",
+      "rationale_summary": "De la Espriella's lead (0.96%) with 99.99% counted and CNE's rejection of Cepeda's recount request strongly support certification. Base rate of <2% for sub-1-point reversals applies, but IRI validation and narrow margin (just under 1%) suggest low reversal risk. Certification timing uncertainty (~Ju",
       "key_drivers": [
-        "escrutinio 99.99% done",
-        "+250830 margin",
-        "CNE rejected recount",
-        "IRI validated"
+        "CNE's rejection of recount request",
+        "IRI validation of process integrity",
+        "Sub-1-point margin aligning with <2% reversal base rate"
       ],
       "reference_classes": [
-        "certified sub-1pt presidential result overturned <2%"
+        "Certified sub-1-point national presidential results reversed by challenge (<2%)",
+        "Colombian presidential election certification timelines"
       ],
       "research_refs": [
         "https://www.eltiempo.com/politica/elecciones-colombia-2026",
-        "https://www.iri.org/resources/iri-preliminary-statement-of-colombias-2026-presidential-elections-2/",
         "https://www.elcolombiano.com/colombia/cne-descarta-reconteo-voto-exterior-solicitado-ivan-cepeda-HN38064737"
       ]
     }

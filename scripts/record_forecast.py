@@ -340,8 +340,13 @@ def main(argv: list[str] | None = None) -> None:
                     _gap = (abs(args.prob - args.market_implied)
                             if args.market_implied is not None else 0.0)
                     _extreme_fade = _gap > pol.hard_gap_ceiling
-                    veto_binding = pol.adversarial_veto_binding and (
-                        confidence_for_gate != "high" or _extreme_fade)
+                    # 2026-06-23: the forecaster is now local Qwen, whose ensemble "high"
+                    # is pass-to-pass self-agreement (NOT Opus-grade calibration). The old
+                    # high-confidence advisory carve-out let that false-high bypass the gate
+                    # — reopening the URAN trap (a 14B model vetoing itself, then overriding
+                    # its own veto on "confidence"). Carve-out REMOVED: a veto is BINDING at
+                    # every confidence level. _extreme_fade retained for clarity/audit.
+                    veto_binding = pol.adversarial_veto_binding
                     if adversarial_verdict == "veto" and veto_binding:
                         lean = "NONE"
                         conviction = "low"

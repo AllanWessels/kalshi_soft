@@ -5,37 +5,43 @@
   "category": "politics",
   "close_time": "2026-11-03T15:00:00Z",
   "current": {
-    "as_of": "2026-06-23T19:19:13Z",
-    "my_probability": 0.58,
-    "my_confidence": "low",
+    "as_of": "2026-06-23T20:36:41Z",
+    "my_probability": 0.65,
+    "my_confidence": "high",
     "market_implied_probability": 0.775,
     "market_price_cents": 78.0,
-    "edge": -0.19500000000000006,
+    "edge": -0.125,
     "yes_ask": 0.78,
     "no_ask": 0.23,
     "fee_per_contract": 0.02,
-    "ev_per_contract": -0.22000000000000006,
-    "limit_price": null,
-    "ev_limit_per_contract": null,
-    "lean": "NONE",
-    "conviction": "low",
-    "lean_note": "no +EV value bet at the ask (my prob 58%, modal YES) — staying out.",
-    "prob_delta_vs_prev": -0.040000000000000036,
+    "ev_per_contract": 0.09999999999999996,
+    "limit_price": 0.22,
+    "ev_limit_per_contract": 0.11,
+    "lean": "NO",
+    "conviction": "medium",
+    "lean_note": null,
+    "prob_delta_vs_prev": 0.030000000000000027,
     "trigger": "near_close",
-    "strategy_id": "S0-single",
-    "proposed_probability": null,
-    "adversarial_verdict": "",
-    "adversarial_challenged_prob": null,
-    "adversarial_concerns": [],
-    "adversarial_model": "",
-    "rationale_summary": "Active Trump endorsement+attacks and ~$11M self-funding favor Mazzei in a low-turnout deep-red runoff, but Drummond's name-ID/money parity and the establishment bloc make it closer than the market's 0.775; I sit well below market.",
+    "strategy_id": "LQ5-ensemble5",
+    "proposed_probability": 0.65,
+    "adversarial_verdict": "revise",
+    "adversarial_challenged_prob": 0.65,
+    "adversarial_concerns": [
+      "Base rates for Trump-endorsed runoff candidates are incomplete/uncertain",
+      "Narrow first-round lead may not translate to runoff dominance",
+      "Market implies higher 'YES' probability; forecaster's divergence lacks credible justification for liquid market"
+    ],
+    "adversarial_model": "qwen3:14b-q4_K_M",
+    "rationale_summary": "Trump's endorsement and heavy self-funding give Mazzei significant advantages in a low-turnout August runoff, but Drummond's narrow first-round lead (26.3-26.0) and established name recognition as AG suggest competitive resistance. Base rates for Trump-endorsed deep-red runoff candidates are favorab",
     "key_drivers": [
-      "Trump endorsement+attacks",
-      "self-funding",
-      "MAGA runoff turnout"
+      "Trump endorsement strength in Oklahoma",
+      "Mazzei's $11M self-funding advantage",
+      "Drummond's first-round performance and AG name ID",
+      "August runoff's low-turnout dynamics"
     ],
     "reference_classes": [
-      "Trump-endorsed deep-red runoff win rate"
+      "Trump-endorsed deep-red runoff candidates vs non-elite opponents",
+      "Self-funded vs establishment-backed candidates in low-turnout primaries"
     ],
     "research_refs": [
       "https://www.news9.com/oklahoma-politics/president-trump-drummond-fake-republican-oklahoma-governor-race"
@@ -207,37 +213,43 @@
       ]
     },
     {
-      "as_of": "2026-06-23T19:19:13Z",
-      "my_probability": 0.58,
-      "my_confidence": "low",
+      "as_of": "2026-06-23T20:36:41Z",
+      "my_probability": 0.65,
+      "my_confidence": "high",
       "market_implied_probability": 0.775,
       "market_price_cents": 78.0,
-      "edge": -0.19500000000000006,
+      "edge": -0.125,
       "yes_ask": 0.78,
       "no_ask": 0.23,
       "fee_per_contract": 0.02,
-      "ev_per_contract": -0.22000000000000006,
-      "limit_price": null,
-      "ev_limit_per_contract": null,
-      "lean": "NONE",
-      "conviction": "low",
-      "lean_note": "no +EV value bet at the ask (my prob 58%, modal YES) — staying out.",
-      "prob_delta_vs_prev": -0.040000000000000036,
+      "ev_per_contract": 0.09999999999999996,
+      "limit_price": 0.22,
+      "ev_limit_per_contract": 0.11,
+      "lean": "NO",
+      "conviction": "medium",
+      "lean_note": null,
+      "prob_delta_vs_prev": 0.030000000000000027,
       "trigger": "near_close",
-      "strategy_id": "S0-single",
-      "proposed_probability": null,
-      "adversarial_verdict": "",
-      "adversarial_challenged_prob": null,
-      "adversarial_concerns": [],
-      "adversarial_model": "",
-      "rationale_summary": "Active Trump endorsement+attacks and ~$11M self-funding favor Mazzei in a low-turnout deep-red runoff, but Drummond's name-ID/money parity and the establishment bloc make it closer than the market's 0.775; I sit well below market.",
+      "strategy_id": "LQ5-ensemble5",
+      "proposed_probability": 0.65,
+      "adversarial_verdict": "revise",
+      "adversarial_challenged_prob": 0.65,
+      "adversarial_concerns": [
+        "Base rates for Trump-endorsed runoff candidates are incomplete/uncertain",
+        "Narrow first-round lead may not translate to runoff dominance",
+        "Market implies higher 'YES' probability; forecaster's divergence lacks credible justification for liquid market"
+      ],
+      "adversarial_model": "qwen3:14b-q4_K_M",
+      "rationale_summary": "Trump's endorsement and heavy self-funding give Mazzei significant advantages in a low-turnout August runoff, but Drummond's narrow first-round lead (26.3-26.0) and established name recognition as AG suggest competitive resistance. Base rates for Trump-endorsed deep-red runoff candidates are favorab",
       "key_drivers": [
-        "Trump endorsement+attacks",
-        "self-funding",
-        "MAGA runoff turnout"
+        "Trump endorsement strength in Oklahoma",
+        "Mazzei's $11M self-funding advantage",
+        "Drummond's first-round performance and AG name ID",
+        "August runoff's low-turnout dynamics"
       ],
       "reference_classes": [
-        "Trump-endorsed deep-red runoff win rate"
+        "Trump-endorsed deep-red runoff candidates vs non-elite opponents",
+        "Self-funded vs establishment-backed candidates in low-turnout primaries"
       ],
       "research_refs": [
         "https://www.news9.com/oklahoma-politics/president-trump-drummond-fake-republican-oklahoma-governor-race"
@@ -245,18 +257,22 @@
     }
   ],
   "position": {
-    "entered": false,
-    "entry_as_of": "",
-    "entry_side": "",
-    "entry_probability": 0.0,
-    "entry_price": 0.0,
-    "entry_market_implied": null,
-    "entry_confidence": "",
-    "entry_conviction": "",
-    "entry_gap": null,
-    "adversarial_verdict": "",
-    "adversarial_challenged_prob": null,
-    "adversarial_concerns": [],
-    "adversarial_model": ""
+    "entered": true,
+    "entry_as_of": "2026-06-23T20:36:41Z",
+    "entry_side": "NO",
+    "entry_probability": 0.65,
+    "entry_price": 0.23,
+    "entry_market_implied": 0.775,
+    "entry_confidence": "high",
+    "entry_conviction": "medium",
+    "entry_gap": 0.125,
+    "adversarial_verdict": "revise",
+    "adversarial_challenged_prob": 0.65,
+    "adversarial_concerns": [
+      "Base rates for Trump-endorsed runoff candidates are incomplete/uncertain",
+      "Narrow first-round lead may not translate to runoff dominance",
+      "Market implies higher 'YES' probability; forecaster's divergence lacks credible justification for liquid market"
+    ],
+    "adversarial_model": "qwen3:14b-q4_K_M"
   }
 }

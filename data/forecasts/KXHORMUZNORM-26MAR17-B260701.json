@@ -5,44 +5,47 @@
   "category": "politics",
   "close_time": "2026-07-07T13:59:00Z",
   "current": {
-    "as_of": "2026-06-23T19:13:02Z",
-    "my_probability": 0.04,
+    "as_of": "2026-06-23T20:26:26Z",
+    "my_probability": 0.15,
     "my_confidence": "high",
-    "market_implied_probability": 0.021,
+    "market_implied_probability": 0.02,
     "market_price_cents": 2.0,
-    "edge": 0.019,
-    "yes_ask": 0.022,
-    "no_ask": 0.98,
+    "edge": 0.13,
+    "yes_ask": 0.021,
+    "no_ask": 0.981,
     "fee_per_contract": 0.01,
-    "ev_per_contract": 0.008000000000000002,
-    "limit_price": null,
-    "ev_limit_per_contract": null,
+    "ev_per_contract": 0.11900000000000001,
+    "limit_price": 0.019,
+    "ev_limit_per_contract": 0.121,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "no +EV value bet at the ask (my prob 4%, modal NO) — staying out.",
-    "prob_delta_vs_prev": -0.010000000000000002,
+    "lean_note": "ADVERSARIAL VETO: The forecaster's high confidence in a 0.15 probability rests on vague historical analogies and unproven assumptions about recovery timelines, while the market's 0.02 implies a fundamentally different assessment of risk. Without concrete evi",
+    "prob_delta_vs_prev": 0.09999999999999999,
     "trigger": "near_close",
-    "strategy_id": "S0-single",
-    "proposed_probability": null,
-    "adversarial_verdict": "",
-    "adversarial_challenged_prob": null,
-    "adversarial_concerns": [],
-    "adversarial_model": "",
-    "rationale_summary": "IMF PortWatch 7-day MA was ~2.6 on Jun 14; commercial daily transit calls have recovered only to ~12-35/day vs a ~94/day baseline, and Iran re-declared closure Jun 20-21. A smoothed 7-day MA in the mid-teens cannot mechanically reach 60 within ~7 days.",
+    "strategy_id": "LQ5-ensemble5",
+    "proposed_probability": 0.15,
+    "adversarial_verdict": "veto",
+    "adversarial_challenged_prob": 0.15,
+    "adversarial_concerns": [
+      "Divergence of 0.13 from liquid market implies unexplained edge; forecaster provides no credible evidence for this gap",
+      "Historical recovery timelines cited lack specificity (e.g., 'weeks-to-months' without quantified benchmarks)",
+      "Assumes hypothetical ceasefire scenario without addressing market's implicit assumptions about conflict resolution timelines",
+      "Base-rate neglect: fails to compare current situation to historical chokepoint disruptions with similar severity"
+    ],
+    "adversarial_model": "qwen3:14b-q4_K_M",
+    "rationale_summary": "Post-disruption recovery at chokepoints like Hormuz takes weeks-to-months, not days. As of June 14, the 7-day MA was 2.57, and daily transits remain far below pre-war baselines (~94/day). Recent Iranian closure (June 20-21) likely prolonged stagnation. Even with a hypothetical ceasefire, historical ",
     "key_drivers": [
-      "MA ~2.6 Jun14",
-      "dailies 12-35 vs 94 baseline",
-      "7-day MA lag",
-      "Jun20-21 re-closure"
+      "ceasefire durability",
+      "actual PortWatch MA trends",
+      "duration of recent Iranian closure"
     ],
     "reference_classes": [
-      "post-disruption chokepoint recovery weeks-not-days",
-      "MA crossing dynamics"
+      "post-conflict maritime chokepoint recovery",
+      "regional geopolitical disruption impacts on shipping"
     ],
     "research_refs": [
       "https://portwatch.imf.org/pages/chokepoint6",
-      "https://www.aljazeera.com/economy/2026/6/22/shipping-stalls-in-strait-of-hormuz-after-iran-declares-key-waterway-shut",
-      "https://www.argusmedia.com"
+      "https://www.aljazeera.com/economy/2026/6/22/shipping-stalls-in-strait-of-hormuz-after-iran-declares-key-waterway-shut"
     ]
   },
   "history": [
@@ -239,44 +242,47 @@
       ]
     },
     {
-      "as_of": "2026-06-23T19:13:02Z",
-      "my_probability": 0.04,
+      "as_of": "2026-06-23T20:26:26Z",
+      "my_probability": 0.15,
       "my_confidence": "high",
-      "market_implied_probability": 0.021,
+      "market_implied_probability": 0.02,
       "market_price_cents": 2.0,
-      "edge": 0.019,
-      "yes_ask": 0.022,
-      "no_ask": 0.98,
+      "edge": 0.13,
+      "yes_ask": 0.021,
+      "no_ask": 0.981,
       "fee_per_contract": 0.01,
-      "ev_per_contract": 0.008000000000000002,
-      "limit_price": null,
-      "ev_limit_per_contract": null,
+      "ev_per_contract": 0.11900000000000001,
+      "limit_price": 0.019,
+      "ev_limit_per_contract": 0.121,
       "lean": "NONE",
       "conviction": "low",
-      "lean_note": "no +EV value bet at the ask (my prob 4%, modal NO) — staying out.",
-      "prob_delta_vs_prev": -0.010000000000000002,
+      "lean_note": "ADVERSARIAL VETO: The forecaster's high confidence in a 0.15 probability rests on vague historical analogies and unproven assumptions about recovery timelines, while the market's 0.02 implies a fundamentally different assessment of risk. Without concrete evi",
+      "prob_delta_vs_prev": 0.09999999999999999,
       "trigger": "near_close",
-      "strategy_id": "S0-single",
-      "proposed_probability": null,
-      "adversarial_verdict": "",
-      "adversarial_challenged_prob": null,
-      "adversarial_concerns": [],
-      "adversarial_model": "",
-      "rationale_summary": "IMF PortWatch 7-day MA was ~2.6 on Jun 14; commercial daily transit calls have recovered only to ~12-35/day vs a ~94/day baseline, and Iran re-declared closure Jun 20-21. A smoothed 7-day MA in the mid-teens cannot mechanically reach 60 within ~7 days.",
+      "strategy_id": "LQ5-ensemble5",
+      "proposed_probability": 0.15,
+      "adversarial_verdict": "veto",
+      "adversarial_challenged_prob": 0.15,
+      "adversarial_concerns": [
+        "Divergence of 0.13 from liquid market implies unexplained edge; forecaster provides no credible evidence for this gap",
+        "Historical recovery timelines cited lack specificity (e.g., 'weeks-to-months' without quantified benchmarks)",
+        "Assumes hypothetical ceasefire scenario without addressing market's implicit assumptions about conflict resolution timelines",
+        "Base-rate neglect: fails to compare current situation to historical chokepoint disruptions with similar severity"
+      ],
+      "adversarial_model": "qwen3:14b-q4_K_M",
+      "rationale_summary": "Post-disruption recovery at chokepoints like Hormuz takes weeks-to-months, not days. As of June 14, the 7-day MA was 2.57, and daily transits remain far below pre-war baselines (~94/day). Recent Iranian closure (June 20-21) likely prolonged stagnation. Even with a hypothetical ceasefire, historical ",
       "key_drivers": [
-        "MA ~2.6 Jun14",
-        "dailies 12-35 vs 94 baseline",
-        "7-day MA lag",
-        "Jun20-21 re-closure"
+        "ceasefire durability",
+        "actual PortWatch MA trends",
+        "duration of recent Iranian closure"
       ],
       "reference_classes": [
-        "post-disruption chokepoint recovery weeks-not-days",
-        "MA crossing dynamics"
+        "post-conflict maritime chokepoint recovery",
+        "regional geopolitical disruption impacts on shipping"
       ],
       "research_refs": [
         "https://portwatch.imf.org/pages/chokepoint6",
-        "https://www.aljazeera.com/economy/2026/6/22/shipping-stalls-in-strait-of-hormuz-after-iran-declares-key-waterway-shut",
-        "https://www.argusmedia.com"
+        "https://www.aljazeera.com/economy/2026/6/22/shipping-stalls-in-strait-of-hormuz-after-iran-declares-key-waterway-shut"
       ]
     }
   ],

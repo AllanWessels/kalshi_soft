@@ -5,37 +5,42 @@
   "category": "politics",
   "close_time": "2026-06-27T14:00:00Z",
   "current": {
-    "as_of": "2026-06-23T18:40:02Z",
-    "my_probability": 0.03,
+    "as_of": "2026-06-23T20:33:13Z",
+    "my_probability": 0.05,
     "my_confidence": "high",
     "market_implied_probability": 0.005,
-    "market_price_cents": null,
-    "edge": 0.024999999999999998,
+    "market_price_cents": 0.0,
+    "edge": 0.045000000000000005,
     "yes_ask": 0.01,
     "no_ask": 1.0,
     "fee_per_contract": 0.01,
-    "ev_per_contract": 0.009999999999999997,
-    "limit_price": null,
-    "ev_limit_per_contract": null,
+    "ev_per_contract": 0.03,
+    "limit_price": 0.0,
+    "ev_limit_per_contract": 0.05,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "no +EV value bet at the ask (my prob 3%, modal NO) — staying out.",
-    "prob_delta_vs_prev": 0.0,
+    "lean_note": "ADVERSARIAL VETO: The forecaster's edge depends on assuming federal records are complete, but the market's 0.005 implies it accounts for unrecorded events. The proposed position ignores this discrepancy, overestimates confidence in incomplete data, and fails",
+    "prob_delta_vs_prev": 0.020000000000000004,
     "trigger": "near_close",
-    "strategy_id": "S0-single",
-    "proposed_probability": null,
-    "adversarial_verdict": "",
-    "adversarial_challenged_prob": null,
-    "adversarial_concerns": [],
-    "adversarial_model": "",
-    "rationale_summary": "White House EO-signing events near this window are dated Jun 3 and Jun 22 (both outside Jun 7-13); no EO-signing falls in the window, and the market's ~0.5% YES (untaken 1c YES) confirms zero EOs that week.",
+    "strategy_id": "LQ5-ensemble5",
+    "proposed_probability": 0.05,
+    "adversarial_verdict": "veto",
+    "adversarial_challenged_prob": 0.05,
+    "adversarial_concerns": [
+      "Assumes no unrecorded EOs despite acknowledging theoretical possibility",
+      "Relies on adjacent dates' EOs as evidence without addressing temporal clustering risks",
+      "Base-rate neglect: ignores historical frequency of unrecorded EO signings"
+    ],
+    "adversarial_model": "qwen3:14b-q4_K_M",
+    "rationale_summary": "Federal records show no EO signings between Jun 7-13, 2026. While unrecorded signings remain a theoretical possibility, the absence of any documented events in the window and the presence of signed EOs on adjacent dates (Jun 3 and Jun 22) strongly suggest no activity. Key uncertainty lies in potenti",
     "key_drivers": [
-      "WH signings Jun3 & Jun22",
-      "none in window",
-      "market near-certain NO"
+      "Explicit absence of EO-signing events in the Jun 7-13 window per federal records",
+      "Presence of signed EOs on dates immediately before and after the window",
+      "Low but non-zero possibility of unrecorded mid-window signings"
     ],
     "reference_classes": [
-      "weekly EO-count resolves on federal record"
+      "Historical EO signing frequency by presidential administration",
+      "Accuracy of federal record-keeping for executive actions"
     ],
     "research_refs": [
       "https://www.whitehouse.gov/presidential-actions/executive-orders/"
@@ -122,37 +127,42 @@
       ]
     },
     {
-      "as_of": "2026-06-23T18:40:02Z",
-      "my_probability": 0.03,
+      "as_of": "2026-06-23T20:33:13Z",
+      "my_probability": 0.05,
       "my_confidence": "high",
       "market_implied_probability": 0.005,
-      "market_price_cents": null,
-      "edge": 0.024999999999999998,
+      "market_price_cents": 0.0,
+      "edge": 0.045000000000000005,
       "yes_ask": 0.01,
       "no_ask": 1.0,
       "fee_per_contract": 0.01,
-      "ev_per_contract": 0.009999999999999997,
-      "limit_price": null,
-      "ev_limit_per_contract": null,
+      "ev_per_contract": 0.03,
+      "limit_price": 0.0,
+      "ev_limit_per_contract": 0.05,
       "lean": "NONE",
       "conviction": "low",
-      "lean_note": "no +EV value bet at the ask (my prob 3%, modal NO) — staying out.",
-      "prob_delta_vs_prev": 0.0,
+      "lean_note": "ADVERSARIAL VETO: The forecaster's edge depends on assuming federal records are complete, but the market's 0.005 implies it accounts for unrecorded events. The proposed position ignores this discrepancy, overestimates confidence in incomplete data, and fails",
+      "prob_delta_vs_prev": 0.020000000000000004,
       "trigger": "near_close",
-      "strategy_id": "S0-single",
-      "proposed_probability": null,
-      "adversarial_verdict": "",
-      "adversarial_challenged_prob": null,
-      "adversarial_concerns": [],
-      "adversarial_model": "",
-      "rationale_summary": "White House EO-signing events near this window are dated Jun 3 and Jun 22 (both outside Jun 7-13); no EO-signing falls in the window, and the market's ~0.5% YES (untaken 1c YES) confirms zero EOs that week.",
+      "strategy_id": "LQ5-ensemble5",
+      "proposed_probability": 0.05,
+      "adversarial_verdict": "veto",
+      "adversarial_challenged_prob": 0.05,
+      "adversarial_concerns": [
+        "Assumes no unrecorded EOs despite acknowledging theoretical possibility",
+        "Relies on adjacent dates' EOs as evidence without addressing temporal clustering risks",
+        "Base-rate neglect: ignores historical frequency of unrecorded EO signings"
+      ],
+      "adversarial_model": "qwen3:14b-q4_K_M",
+      "rationale_summary": "Federal records show no EO signings between Jun 7-13, 2026. While unrecorded signings remain a theoretical possibility, the absence of any documented events in the window and the presence of signed EOs on adjacent dates (Jun 3 and Jun 22) strongly suggest no activity. Key uncertainty lies in potenti",
       "key_drivers": [
-        "WH signings Jun3 & Jun22",
-        "none in window",
-        "market near-certain NO"
+        "Explicit absence of EO-signing events in the Jun 7-13 window per federal records",
+        "Presence of signed EOs on dates immediately before and after the window",
+        "Low but non-zero possibility of unrecorded mid-window signings"
       ],
       "reference_classes": [
-        "weekly EO-count resolves on federal record"
+        "Historical EO signing frequency by presidential administration",
+        "Accuracy of federal record-keeping for executive actions"
       ],
       "research_refs": [
         "https://www.whitehouse.gov/presidential-actions/executive-orders/"

@@ -5,43 +5,41 @@
   "category": "politics",
   "close_time": "2026-11-03T15:00:00Z",
   "current": {
-    "as_of": "2026-06-23T19:19:13Z",
-    "my_probability": 0.42,
-    "my_confidence": "low",
+    "as_of": "2026-06-23T20:34:42Z",
+    "my_probability": 0.55,
+    "my_confidence": "high",
     "market_implied_probability": 0.225,
     "market_price_cents": 22.0,
-    "edge": 0.19499999999999998,
+    "edge": 0.32500000000000007,
     "yes_ask": 0.23,
     "no_ask": 0.78,
     "fee_per_contract": 0.02,
-    "ev_per_contract": -0.21999999999999995,
-    "limit_price": null,
-    "ev_limit_per_contract": null,
+    "ev_per_contract": 0.30000000000000004,
+    "limit_price": 0.22,
+    "ev_limit_per_contract": 0.31,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "no +EV value bet at the ask (my prob 42%, modal NO) — staying out.",
-    "prob_delta_vs_prev": 0.03999999999999998,
+    "lean_note": "33pt gap exceeds the hard ceiling (20pt) — beyond this divergence from a liquid market, even high confidence is treated as model error, not edge",
+    "prob_delta_vs_prev": 0.17000000000000004,
     "trigger": "near_close",
-    "strategy_id": "S0-single",
+    "strategy_id": "LQ5-ensemble5",
     "proposed_probability": null,
     "adversarial_verdict": "",
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "Deep read: Drummond led round 1, has AG name-ID, money parity (~$2.5M loans+record donors) and the establishment Keating bloc; Trump's active anti-Drummond attacks are a real headwind but his endorsement win-rate drops to ~50-60% vs a strong statewide opponent. I sit above market on Drummond but short of calling him favorite.",
+    "rationale_summary": "Drummond's narrow first-round lead (26.3% vs 26.0%) suggests a weak but non-zero signal, while Trump's endorsement of Mazzei (and attacks on Drummond) introduces headwinds. However, establishment support for Drummond and the weaker-than-usual effectiveness of Trump's endorsement against a well-funde",
     "key_drivers": [
-      "Drummond round-1 lead+name ID",
-      "Keating establishment bloc",
-      "Trump endorsement weaker vs strong opponent",
-      "Aug-25 low turnout"
+      "narrow first-round lead",
+      "Trump endorsement dynamics",
+      "establishment bloc alignment"
     ],
     "reference_classes": [
-      "Trump-endorsed runoff vs strong statewide official ~50-60%"
+      "first-round runoff leader vs strong opponent",
+      "Trump-endorsed candidate in deep-red state"
     ],
     "research_refs": [
-      "https://en.wikipedia.org/wiki/2026_Oklahoma_gubernatorial_election",
-      "https://www.kosu.org/politics/2026-06-16/mazzei-drummond-advance-to-runoff-election-for-oklahoma-governor",
-      "https://oklahomavoice.com/2026/06/10/oklahoma-governor-candidates-funnel-22-million-in-personal-money-to-campaigns/"
+      "https://www.kosu.org/politics/2026-06-16/mazzei-drummond-advance-to-runoff-election-for-oklahoma-governor"
     ]
   },
   "history": [
@@ -128,43 +126,41 @@
       ]
     },
     {
-      "as_of": "2026-06-23T19:19:13Z",
-      "my_probability": 0.42,
-      "my_confidence": "low",
+      "as_of": "2026-06-23T20:34:42Z",
+      "my_probability": 0.55,
+      "my_confidence": "high",
       "market_implied_probability": 0.225,
       "market_price_cents": 22.0,
-      "edge": 0.19499999999999998,
+      "edge": 0.32500000000000007,
       "yes_ask": 0.23,
       "no_ask": 0.78,
       "fee_per_contract": 0.02,
-      "ev_per_contract": -0.21999999999999995,
-      "limit_price": null,
-      "ev_limit_per_contract": null,
+      "ev_per_contract": 0.30000000000000004,
+      "limit_price": 0.22,
+      "ev_limit_per_contract": 0.31,
       "lean": "NONE",
       "conviction": "low",
-      "lean_note": "no +EV value bet at the ask (my prob 42%, modal NO) — staying out.",
-      "prob_delta_vs_prev": 0.03999999999999998,
+      "lean_note": "33pt gap exceeds the hard ceiling (20pt) — beyond this divergence from a liquid market, even high confidence is treated as model error, not edge",
+      "prob_delta_vs_prev": 0.17000000000000004,
       "trigger": "near_close",
-      "strategy_id": "S0-single",
+      "strategy_id": "LQ5-ensemble5",
       "proposed_probability": null,
       "adversarial_verdict": "",
       "adversarial_challenged_prob": null,
       "adversarial_concerns": [],
       "adversarial_model": "",
-      "rationale_summary": "Deep read: Drummond led round 1, has AG name-ID, money parity (~$2.5M loans+record donors) and the establishment Keating bloc; Trump's active anti-Drummond attacks are a real headwind but his endorsement win-rate drops to ~50-60% vs a strong statewide opponent. I sit above market on Drummond but short of calling him favorite.",
+      "rationale_summary": "Drummond's narrow first-round lead (26.3% vs 26.0%) suggests a weak but non-zero signal, while Trump's endorsement of Mazzei (and attacks on Drummond) introduces headwinds. However, establishment support for Drummond and the weaker-than-usual effectiveness of Trump's endorsement against a well-funde",
       "key_drivers": [
-        "Drummond round-1 lead+name ID",
-        "Keating establishment bloc",
-        "Trump endorsement weaker vs strong opponent",
-        "Aug-25 low turnout"
+        "narrow first-round lead",
+        "Trump endorsement dynamics",
+        "establishment bloc alignment"
       ],
       "reference_classes": [
-        "Trump-endorsed runoff vs strong statewide official ~50-60%"
+        "first-round runoff leader vs strong opponent",
+        "Trump-endorsed candidate in deep-red state"
       ],
       "research_refs": [
-        "https://en.wikipedia.org/wiki/2026_Oklahoma_gubernatorial_election",
-        "https://www.kosu.org/politics/2026-06-16/mazzei-drummond-advance-to-runoff-election-for-oklahoma-governor",
-        "https://oklahomavoice.com/2026/06/10/oklahoma-governor-candidates-funnel-22-million-in-personal-money-to-campaigns/"
+        "https://www.kosu.org/politics/2026-06-16/mazzei-drummond-advance-to-runoff-election-for-oklahoma-governor"
       ]
     }
   ],

@@ -5,37 +5,42 @@
   "category": "politics",
   "close_time": "2026-07-01T04:00:00Z",
   "current": {
-    "as_of": "2026-06-23T19:19:13Z",
-    "my_probability": 0.95,
+    "as_of": "2026-06-23T20:41:40Z",
+    "my_probability": 0.92,
     "my_confidence": "high",
     "market_implied_probability": 0.965,
     "market_price_cents": 96.0,
-    "edge": -0.015000000000000013,
+    "edge": -0.04499999999999993,
     "yes_ask": 0.97,
     "no_ask": 0.04,
     "fee_per_contract": 0.01,
-    "ev_per_contract": 4.336808689942018e-17,
-    "limit_price": null,
-    "ev_limit_per_contract": null,
-    "lean": "NONE",
+    "ev_per_contract": 0.029999999999999957,
+    "limit_price": 0.03,
+    "ev_limit_per_contract": 0.04,
+    "lean": "NO",
     "conviction": "low",
-    "lean_note": "no +EV value bet at the ask (my prob 95%, modal YES) — staying out.",
-    "prob_delta_vs_prev": 0.13,
+    "lean_note": null,
+    "prob_delta_vs_prev": 0.10000000000000009,
     "trigger": "near_close",
-    "strategy_id": "S0-single",
-    "proposed_probability": null,
-    "adversarial_verdict": "",
-    "adversarial_challenged_prob": null,
-    "adversarial_concerns": [],
-    "adversarial_model": "",
-    "rationale_summary": "Zero Mar-a-Lago visits Jun 1-23 across two independent trackers (Wikipedia + Factba.se); the club is in seasonal summer closure (late May-Nov, confirmed by local A1A road-reopening) with Bedminster/Camp David the warm-month base. A first FL trip in the final week is highly unlikely.",
+    "strategy_id": "LQ5-ensemble5",
+    "proposed_probability": 0.92,
+    "adversarial_verdict": "revise",
+    "adversarial_challenged_prob": 0.88,
+    "adversarial_concerns": [
+      "Divergence from liquid market implies unaccounted information; two sources may not outweigh crowd-sourced market wisdom",
+      "Base rate of unscheduled trips assumed zero but historical data may show non-zero occurrences",
+      "Seasonal closure logic assumes strict adherence without considering exceptional circumstances"
+    ],
+    "adversarial_model": "qwen3:14b-q4_K_M",
+    "rationale_summary": "Strong evidence of zero visits from June 1-23 (two independent sources) combined with Mar-a-Lago's seasonal closure during summer months. Only ~7 days remain in June, but the closure reduces likelihood of last-week visits. Key uncertainty is potential unscheduled trip, though base rate of ~0 summer ",
     "key_drivers": [
-      "0 trips Jun1-23",
-      "seasonal club closure",
-      "Bedminster/Camp David substitution"
+      "Seasonal closure of Mar-a-Lago",
+      "Zero recorded visits in first 23 days",
+      "Summer-month visit base rate of ~0"
     ],
     "reference_classes": [
-      "Trump summer-month Mar-a-Lago visits ~0"
+      "Summer-month Mar-a-Lago visit frequency",
+      "Unscheduled presidential travel patterns"
     ],
     "research_refs": [
       "https://en.wikipedia.org/wiki/List_of_presidential_trips_made_by_Donald_Trump_(2026)",
@@ -122,37 +127,42 @@
       ]
     },
     {
-      "as_of": "2026-06-23T19:19:13Z",
-      "my_probability": 0.95,
+      "as_of": "2026-06-23T20:41:40Z",
+      "my_probability": 0.92,
       "my_confidence": "high",
       "market_implied_probability": 0.965,
       "market_price_cents": 96.0,
-      "edge": -0.015000000000000013,
+      "edge": -0.04499999999999993,
       "yes_ask": 0.97,
       "no_ask": 0.04,
       "fee_per_contract": 0.01,
-      "ev_per_contract": 4.336808689942018e-17,
-      "limit_price": null,
-      "ev_limit_per_contract": null,
-      "lean": "NONE",
+      "ev_per_contract": 0.029999999999999957,
+      "limit_price": 0.03,
+      "ev_limit_per_contract": 0.04,
+      "lean": "NO",
       "conviction": "low",
-      "lean_note": "no +EV value bet at the ask (my prob 95%, modal YES) — staying out.",
-      "prob_delta_vs_prev": 0.13,
+      "lean_note": null,
+      "prob_delta_vs_prev": 0.10000000000000009,
       "trigger": "near_close",
-      "strategy_id": "S0-single",
-      "proposed_probability": null,
-      "adversarial_verdict": "",
-      "adversarial_challenged_prob": null,
-      "adversarial_concerns": [],
-      "adversarial_model": "",
-      "rationale_summary": "Zero Mar-a-Lago visits Jun 1-23 across two independent trackers (Wikipedia + Factba.se); the club is in seasonal summer closure (late May-Nov, confirmed by local A1A road-reopening) with Bedminster/Camp David the warm-month base. A first FL trip in the final week is highly unlikely.",
+      "strategy_id": "LQ5-ensemble5",
+      "proposed_probability": 0.92,
+      "adversarial_verdict": "revise",
+      "adversarial_challenged_prob": 0.88,
+      "adversarial_concerns": [
+        "Divergence from liquid market implies unaccounted information; two sources may not outweigh crowd-sourced market wisdom",
+        "Base rate of unscheduled trips assumed zero but historical data may show non-zero occurrences",
+        "Seasonal closure logic assumes strict adherence without considering exceptional circumstances"
+      ],
+      "adversarial_model": "qwen3:14b-q4_K_M",
+      "rationale_summary": "Strong evidence of zero visits from June 1-23 (two independent sources) combined with Mar-a-Lago's seasonal closure during summer months. Only ~7 days remain in June, but the closure reduces likelihood of last-week visits. Key uncertainty is potential unscheduled trip, though base rate of ~0 summer ",
       "key_drivers": [
-        "0 trips Jun1-23",
-        "seasonal club closure",
-        "Bedminster/Camp David substitution"
+        "Seasonal closure of Mar-a-Lago",
+        "Zero recorded visits in first 23 days",
+        "Summer-month visit base rate of ~0"
       ],
       "reference_classes": [
-        "Trump summer-month Mar-a-Lago visits ~0"
+        "Summer-month Mar-a-Lago visit frequency",
+        "Unscheduled presidential travel patterns"
       ],
       "research_refs": [
         "https://en.wikipedia.org/wiki/List_of_presidential_trips_made_by_Donald_Trump_(2026)",
@@ -161,18 +171,22 @@
     }
   ],
   "position": {
-    "entered": false,
-    "entry_as_of": "",
-    "entry_side": "",
-    "entry_probability": 0.0,
-    "entry_price": 0.0,
-    "entry_market_implied": null,
-    "entry_confidence": "",
-    "entry_conviction": "",
-    "entry_gap": null,
-    "adversarial_verdict": "",
-    "adversarial_challenged_prob": null,
-    "adversarial_concerns": [],
-    "adversarial_model": ""
+    "entered": true,
+    "entry_as_of": "2026-06-23T20:41:40Z",
+    "entry_side": "NO",
+    "entry_probability": 0.92,
+    "entry_price": 0.04,
+    "entry_market_implied": 0.965,
+    "entry_confidence": "high",
+    "entry_conviction": "low",
+    "entry_gap": 0.045,
+    "adversarial_verdict": "revise",
+    "adversarial_challenged_prob": 0.88,
+    "adversarial_concerns": [
+      "Divergence from liquid market implies unaccounted information; two sources may not outweigh crowd-sourced market wisdom",
+      "Base rate of unscheduled trips assumed zero but historical data may show non-zero occurrences",
+      "Seasonal closure logic assumes strict adherence without considering exceptional circumstances"
+    ],
+    "adversarial_model": "qwen3:14b-q4_K_M"
   }
 }

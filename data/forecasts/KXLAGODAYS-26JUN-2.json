@@ -5,35 +5,37 @@
   "category": "politics",
   "close_time": "2026-07-01T04:00:00Z",
   "current": {
-    "as_of": "2026-06-23T19:19:13Z",
-    "my_probability": 0.004,
+    "as_of": "2026-06-23T20:44:23Z",
+    "my_probability": 0.01,
     "my_confidence": "high",
     "market_implied_probability": 0.005,
-    "market_price_cents": null,
-    "edge": -0.001,
+    "market_price_cents": 0.0,
+    "edge": 0.005,
     "yes_ask": 0.01,
     "no_ask": 1.0,
-    "fee_per_contract": 0.0,
-    "ev_per_contract": -0.0040000000000000036,
+    "fee_per_contract": 0.01,
+    "ev_per_contract": -0.01,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "no +EV value bet at the ask (my prob 0%, modal NO) — staying out.",
-    "prob_delta_vs_prev": -0.026,
+    "lean_note": "no +EV value bet at the ask (my prob 1%, modal NO) — staying out.",
+    "prob_delta_vs_prev": -0.019999999999999997,
     "trigger": "near_close",
-    "strategy_id": "S0-single",
+    "strategy_id": "LQ5-ensemble5",
     "proposed_probability": null,
     "adversarial_verdict": "",
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "Two trips in the final ~7 days during off-season is near-impossible given no FL activity all month.",
+    "rationale_summary": "Seasonal closure of Mar-a-Lago during summer makes any visits impossible, directly contradicting the 'exactly 2 trips' claim. Base rate of two off-season trips in seven days is near-impossible, reinforcing zero probability.",
     "key_drivers": [
-      "seasonal closure"
+      "Seasonal closure of Mar-a-Lago",
+      "Impracticality of two trips in seven days"
     ],
     "reference_classes": [
-      "off-season trips rare"
+      "Two off-season FL trips in 7 days near-impossible",
+      "Seasonal closure eliminating visit possibility"
     ],
     "research_refs": [
       "https://rollcall.com/factbase/trump/calendar/"
@@ -112,35 +114,37 @@
       ]
     },
     {
-      "as_of": "2026-06-23T19:19:13Z",
-      "my_probability": 0.004,
+      "as_of": "2026-06-23T20:44:23Z",
+      "my_probability": 0.01,
       "my_confidence": "high",
       "market_implied_probability": 0.005,
-      "market_price_cents": null,
-      "edge": -0.001,
+      "market_price_cents": 0.0,
+      "edge": 0.005,
       "yes_ask": 0.01,
       "no_ask": 1.0,
-      "fee_per_contract": 0.0,
-      "ev_per_contract": -0.0040000000000000036,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": -0.01,
       "limit_price": null,
       "ev_limit_per_contract": null,
       "lean": "NONE",
       "conviction": "low",
-      "lean_note": "no +EV value bet at the ask (my prob 0%, modal NO) — staying out.",
-      "prob_delta_vs_prev": -0.026,
+      "lean_note": "no +EV value bet at the ask (my prob 1%, modal NO) — staying out.",
+      "prob_delta_vs_prev": -0.019999999999999997,
       "trigger": "near_close",
-      "strategy_id": "S0-single",
+      "strategy_id": "LQ5-ensemble5",
       "proposed_probability": null,
       "adversarial_verdict": "",
       "adversarial_challenged_prob": null,
       "adversarial_concerns": [],
       "adversarial_model": "",
-      "rationale_summary": "Two trips in the final ~7 days during off-season is near-impossible given no FL activity all month.",
+      "rationale_summary": "Seasonal closure of Mar-a-Lago during summer makes any visits impossible, directly contradicting the 'exactly 2 trips' claim. Base rate of two off-season trips in seven days is near-impossible, reinforcing zero probability.",
       "key_drivers": [
-        "seasonal closure"
+        "Seasonal closure of Mar-a-Lago",
+        "Impracticality of two trips in seven days"
       ],
       "reference_classes": [
-        "off-season trips rare"
+        "Two off-season FL trips in 7 days near-impossible",
+        "Seasonal closure eliminating visit possibility"
       ],
       "research_refs": [
         "https://rollcall.com/factbase/trump/calendar/"
