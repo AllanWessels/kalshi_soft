@@ -296,26 +296,35 @@ _FORECASTER_SYSTEM = (
 
 
 def forecast(question: str, evidence_notes: dict, *, as_of: str = "",
-             temperature: float = 0.0, model: Optional[str] = None) -> dict:
+             temperature: float = 0.0, model: Optional[str] = None,
+             error_memory: str = "") -> dict:
     """LOCAL-model forecaster — ONE pass. Returns
     ``{"my_probability": float, "my_confidence": "low|medium|high",
     "rationale_summary": str, "key_drivers": [str], "reference_classes": [str]}``.
     Raises LocalLLMError on transport/parse failure. For a calibrated estimate use
     ``forecast_ensemble`` (multiple passes at temperature>0). ``model`` selects the
     forecaster (defaults to ``config.LOCAL_LLM_MODEL``); the arm passes its model tag so
-    different local models compete on the scoreboard."""
+    different local models compete on the scoreboard. ``error_memory`` is an optional prompt
+    block of the forecaster's most-similar PAST MISSES (see lib.error_memory) — in-context
+    learning from its own track record; it refines, never overrides, anti-anchoring."""
     import json as _json
     # Thinking is suppressed centrally (config.LOCAL_LLM_SUPPRESS_THINKING -> reasoning_effort
     # "none"), so a hybrid reasoning model can't blow the budget on a <think> block. The
     # budget below is generous truncation headroom (free + unmetered), not a cost cap.
+    em_block = f"\n{error_memory}\n" if error_memory else ""
     user = (
         f"QUESTION: {question}\n"
         f"AS_OF: {as_of}\n\n"
-        f"EVIDENCE NOTES (JSON):\n{_json.dumps(evidence_notes, indent=2)}\n\n"
+        f"EVIDENCE NOTES (JSON):\n{_json.dumps(evidence_notes, indent=2)}\n"
+        f"{em_block}\n"
         'OUTPUT JSON: {"my_probability": <0-1 float>, "my_confidence": "low|medium|high", '
         '"rationale_summary": str, "key_drivers": [str], "reference_classes": [str]}'
     )
-    out = complete_json(_FORECASTER_SYSTEM, user, max_tokens=3072, temperature=temperature,
+    system = _FORECASTER_SYSTEM
+    if error_memory:
+        system += (" You are also given LESSONS FROM YOUR PAST MISSES on similar questions; "
+                   "treat them as method guidance to avoid repeating prior errors, not as evidence.")
+    out = complete_json(system, user, max_tokens=3072, temperature=temperature,
                         model=model)
     # Clamp + validate the probability so a malformed value can't poison the record.
     p = out.get("my_probability")
@@ -328,7 +337,8 @@ def forecast(question: str, evidence_notes: dict, *, as_of: str = "",
 
 def forecast_ensemble(question: str, evidence_notes: dict, *, n: int = 5,
                       as_of: str = "", temperature: float = 0.7,
-                      n_sources: Optional[int] = None, model: Optional[str] = None) -> dict:
+                      n_sources: Optional[int] = None, model: Optional[str] = None,
+                      error_memory: str = "") -> dict:
     """Run ``n`` INDEPENDENT Qwen forecasts (temperature>0 for diversity) and fuse them.
 
     Confidence is EARNED from agreement, not asserted by one small model:
@@ -346,7 +356,8 @@ def forecast_ensemble(question: str, evidence_notes: dict, *, n: int = 5,
         try:
             # Vary temperature slightly per pass to avoid collapsed/degenerate agreement.
             out = forecast(question, evidence_notes, as_of=as_of,
-                           temperature=round(temperature + 0.05 * (i % 3), 3), model=model)
+                           temperature=round(temperature + 0.05 * (i % 3), 3), model=model,
+                           error_memory=error_memory)
         except LocalLLMError:
             continue
         probs.append(out["my_probability"])

@@ -1,0 +1,7 @@
+# Ollama Modelfile — import the merged + re-quantized GGUF as a competing forecaster arm.
+# After llama-factory `export` merges the adapter and you convert to GGUF (llama.cpp
+# convert + quantize), point FROM at that .gguf, then: `ollama create kalshi-qwen3_14b-q4_K_M_lora -f Modelfile`
+FROM ./qwen3_14b-q4_K_M_lora.gguf
+PARAMETER temperature 0.7
+# Match the live forecaster's thinking-suppression so the ensemble budget is not blown.
+PARAMETER num_ctx 8192

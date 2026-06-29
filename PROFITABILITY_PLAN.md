@@ -41,6 +41,22 @@ the learning loop is what must make the ensemble beat the price.
    (min 3 resolved). No skill ⇒ track the market ⇒ no edge ⇒ no bet. **Position-taking emerges from
    learning, not a hardcoded gate** — this is what ties the loop directly to profitability.
 
+**WIRED AT FORECAST TIME (2026-06-29):** the learning policy is no longer just recomputed — it now
+shapes every recorded forecast (`scripts/ab_forecast.py` Phase D): the arm's aggregated probability is
+recalibrated for its model and shrunk toward the price by measured segment skill. On the current
+record exactly ONE segment has earned a deviation — `politics / us-governor-primary` (n=3,
+**alpha=0.344**); everywhere else alpha=0, so we track the price and take no position. That is the
+emergence working as designed. Two more learning levers shipped alongside it:
+- **Error-memory injection** (`lib/error_memory.py`) — before forecasting each market, the forecaster
+  is shown its most-similar PAST MISSES (markets where it failed to beat the price) + the post-mortem
+  lesson, in-context, so it stops repeating avoidable errors. Same block feeds both Qwen and Mistral.
+- **LoRA fine-tune scaffold** (`scripts/build_lora_dataset.py`, `scripts/lora_finetune.py`,
+  `docs/LORA.md`) — leakage-aware SFT export (beat-market ⇒ reinforce own prob; lost ⇒ defer to the
+  crowd price; never the raw outcome). Training is NOT run (corpus small, no backend on-box); the
+  scaffold gates on corpus size and a future LoRA arm must beat the stock model on the held-out record.
+The 3-way shadow A/B (adding an Opus forecaster) was deliberately deferred as too expensive; the
+shadow stays Qwen-vs-Mistral.
+
 ## The methods (what we're adding/replacing, and why)
 
 Current learning: 5× ensemble (variance), policy-knob learner (when to bet), strategy bandit

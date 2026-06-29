@@ -1,0 +1,18 @@
+{
+  "schema": "openai-messages",
+  "built_at": "2026-06-29T19:31:42Z",
+  "n_resolved": 31,
+  "n_examples": 31,
+  "n_skipped_no_baseline": 0,
+  "n_train": 30,
+  "n_val": 1,
+  "n_reinforce_beat_market": 10,
+  "n_defer_to_crowd": 21,
+  "val_frac": 0.15,
+  "below_min_n": false,
+  "min_n": 20,
+  "target_rule": "beat-market -> own committed prob; lost -> market price; no baseline -> skip",
+  "leakage_note": "targets never encode the realized outcome directly (see build_lora_dataset.py docstring)",
+  "base_model_qwen": "qwen3:14b-q4_K_M",
+  "base_model_mistral": "mistral-small:24b"
+}
