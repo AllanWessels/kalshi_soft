@@ -32,9 +32,17 @@ LESSONS_PATH = DATA_DIR / "lessons.json"
 RUN_LOG_PATH = DATA_DIR / "run_log.jsonl"
 DB_PATH = DATA_DIR / "forecasts.db"          # SQLite analysis mirror (gitignored, rebuilt from JSON)
 
-# Skill self-revision: only fold a lesson into SKILL.md once the same pattern_tag
-# recurs across at least this many resolved markets (never on a single outcome).
+# Skill self-revision (2026-06-29): now AUTONOMOUS — the loop re-drafts the
+# auto-maintained heuristics section of SKILL.md from the resolved record every run that
+# produced new lessons, with NO human gate. This constant is retained only as an advisory
+# annotation in the patterns view (how many times a tag has recurred); it no longer gates
+# the revision. A bounded, Qwen-drafted, git-committed edit is reversible by design.
 SKILL_REVISION_MIN_PATTERN = 3
+# Marker fence for the section the autonomous reviser owns inside SKILL.md. Everything
+# between these lines is machine-managed; the rest of the SKILL is hand-authored.
+SKILL_AUTO_BEGIN = "<!-- AUTO-HEURISTICS:BEGIN -->"
+SKILL_AUTO_END = "<!-- AUTO-HEURISTICS:END -->"
+SKILL_PATH = REPO_ROOT / ".claude" / "skills" / "superforecasting" / "SKILL.md"
 LATEST_PDF_PATH = REPORTS_DIR / "latest.pdf"
 
 
@@ -136,17 +144,43 @@ def cadence_days_for(days_to_close: float) -> float:
 # Base URL is env-overridable so a tunnel / hosted endpoint is a drop-in later.
 LOCAL_LLM_BASE_URL = os.environ.get("LOCAL_LLM_BASE_URL", "http://localhost:11434/v1").strip()
 LOCAL_LLM_MODEL = os.environ.get("LOCAL_LLM_MODEL", "qwen3:14b-q4_K_M").strip()
-LOCAL_LLM_TIMEOUT_S = 60
+LOCAL_LLM_TIMEOUT_S = 120          # raised 60->120: a cold model load + a full pass can exceed 60s
 LOCAL_LLM_API_KEY = os.environ.get("LOCAL_LLM_API_KEY", "ollama").strip()  # Ollama ignores it
 
-# Per-role model routing. PROJECT DIRECTIVE: only two model families are used in
-# this project — Opus (frontier Claude) and Qwen (local open-weight). NEVER Sonnet.
-# Forecasting runs on Opus; a local-Qwen forecaster ARM is measured head-to-head on
-# the scoreboard (see lib/strategies). Retrieval + adversarial critic run on Qwen.
-MODEL_FORECASTER = "opus"     # the N independent Claude forecasters (strategy arms)
-MODEL_CRITIC = "local"        # blind adversarial critic -> local Qwen (different family)
-MODEL_DEFENDER = "opus"       # argues what was right / unforeseeable
-MODEL_JUDGE = "opus"          # reads critic+defender, issues verdict + lesson
+# Alternate forecaster model (2026-06-29): a non-reasoning ~24B that fits 16GB VRAM, wired as
+# its own strategy arm so it competes head-to-head with Qwen3-14B on the Brier+ROI scoreboard.
+LOCAL_LLM_MODEL_MISTRAL = os.environ.get("LOCAL_LLM_MODEL_MISTRAL", "mistral-small:24b").strip()
+
+# Thinking-suppression (2026-06-29 — fixes the dropped-pass bug). Qwen3 is a HYBRID reasoning
+# model; left unconstrained it emits an 8k-token <think> block that blows the output budget
+# (finish_reason=length) and returns truncated/empty JSON — the intermittent ensemble-pass
+# failures. The inline "/no_think" string is NOT reliably honored on the OpenAI-compatible
+# endpoint; the field that IS honored by Ollama is reasoning_effort="none" (verified: 4s + clean
+# JSON vs 47s + truncated). We send that on every structured call. Harmless to non-reasoning
+# models (Mistral ignores it). chat_template_kwargs is the vLLM equivalent, sent for portability.
+LOCAL_LLM_SUPPRESS_THINKING = os.environ.get("LOCAL_LLM_SUPPRESS_THINKING", "1").strip().lower() \
+    not in ("0", "false", "no", "off", "")
+
+# Per-role model routing. PROJECT DIRECTIVE (2026-06-29): Qwen (local open-weight) does
+# ALL of the cognitive work — web RETRIEVAL (it drives the browser via lib/retrieval —
+# search/fetch/condense), FORECASTING (forecast_ensemble), and the blind adversarial
+# CRITIC. Opus (frontier Claude) is reduced to PLUMBING ONLY (run scripts, record, commit)
+# plus the two post-mortem panel roles that must be a different family from the Qwen critic:
+# DEFENDER and JUDGE. NEVER Sonnet.
+MODEL_RETRIEVER = "local"     # Qwen drives web search/fetch + evidence condensation
+MODEL_FORECASTER = "local"    # Qwen ensemble forms every probability (strategy arms)
+MODEL_CRITIC = "local"        # blind adversarial critic -> local Qwen
+MODEL_DEFENDER = "opus"       # Opus: argues what was right / unforeseeable
+MODEL_JUDGE = "opus"          # Opus: reads critic+defender, issues verdict + lesson
+
+# Web search backend for Qwen's browser (lib/retrieval). Keyless by default:
+#   "auto"     -> SearXNG if SEARXNG_URL is set, else Google News RSS (keyless).
+#   "searxng"  -> force the self-hosted SearXNG JSON API at SEARXNG_URL.
+#   "news"     -> force Google News RSS.
+# A keyed API (Brave/Tavily/Serper) or self-hosted SearXNG can be dropped in here later
+# without touching callers.
+SEARCH_BACKEND = os.environ.get("SEARCH_BACKEND", "auto").strip().lower()
+SEARXNG_URL = os.environ.get("SEARXNG_URL", "").strip()
 
 # Post-mortem panel rubric: fixed BEFORE resolution so the judge can't retrofit
 # "good reasoning" onto a lucky/unlucky outcome.

@@ -24,17 +24,27 @@ both so the system *learns which arm wins, per category* from its own record. Wh
 run, honor the arm assigned to each market (ROUTINE Step 4b) — that's how the experiment accrues
 signal. Don't collapse everything to one method because it "feels" best; let the scoreboard decide.
 
-**Model routing (2026-06-23 — supersedes the prior Opus-only rule).** **Qwen (local) does
-EVERYTHING:** retrieval condensation (`extract_evidence`), **forecasting** (`forecast_ensemble`),
-the in-loop **challenge gate** (`challenge`), and the blind **post-mortem critic** (`critique`).
-**No Anthropic model (Opus/Sonnet/Haiku/Fable) forms a forecast, and no model subagents are spawned.**
-The orchestrator is plumbing: it runs web tool-calls inline and calls the Qwen functions.
+**Model routing (2026-06-29 — Qwen does ALL cognition, Opus is pure plumbing).** **Qwen (local)
+does EVERYTHING:** **web RETRIEVAL** — Qwen drives its own browser via `lib/retrieval.gather_evidence`
+(it issues the `web_search`/`wiki_lookup`/`web_fetch` tool-calls itself, reaches >5 disparate sources,
+and condenses to quoted `EvidenceNotes`) — **forecasting** (`forecast_ensemble`), the in-loop
+**challenge gate** (`challenge`), the blind **post-mortem critic** (`critique`), and the **autonomous
+SKILL revision** (`revise_skill`). **No Anthropic model forms a forecast or runs a web search.** Opus's
+ONLY jobs are: (a) running the deterministic scripts, recording, and committing (plumbing), and (b) the
+two post-mortem panel roles that must be a *different family* than the Qwen critic — **Defender** and
+**Judge**. No model subagents are spawned for retrieval or forecasting.
 - **Forecasting = ENSEMBLE.** A single small model is weakly calibrated, so every probability is the
   median of **N independent Qwen passes** (`forecast_ensemble`, N = arm `n_forecasters`, default 5) at
   temperature>0. Confidence is *earned* from agreement: tight spread → `high`, wide → `low`; a thin
   evidence base (<5 disparate sources) caps confidence at `medium`.
-- The strategy arms now vary *local* topology (ensemble size, crowd-adjust, red-team) — the live `LQ*`
-  arms; the Opus `S*` arms are retired from selection.
+- The strategy arms vary *local* topology (ensemble size, crowd-adjust, red-team) AND the local model
+  itself — the live `LQ*` Qwen3-14B arms plus `LQM5-mistral24` (Mistral-Small-24B), competing
+  head-to-head on the Brier+ROI scoreboard via `strategies.resolve_forecaster_model(arm)`. The Opus
+  `S*` arms are retired from selection.
+- **Reasoning suppressed for reliability:** Qwen3 is a hybrid reasoning model; every structured call
+  sets `reasoning_effort="none"` (`config.LOCAL_LLM_SUPPRESS_THINKING`) so it can't burn the output
+  budget on a `<think>` block and return truncated JSON — the fix for intermittently-dropped ensemble
+  passes. Truncated/unparseable passes auto-retry once.
 - **Hard dependency:** if `local_llm` is down the loop cannot forecast (no Anthropic fallback) — it
   rebuilds the report and commits only.
 - **Known trade-off:** the challenge gate / post-mortem critic are now Qwen-on-Qwen (same family),
@@ -209,10 +219,31 @@ therefore run as a panel (ROUTINE Step 6b, `scripts/postmortem.py`):
 - **Defender** (Claude) argues what was right / whether the outcome was unforeseeable; **Judge**
   (Claude) rules per-rubric and writes one actionable lesson + `pattern_tag`, recording where critic
   and defender disagreed (that gap is the signal worth keeping).
-- **Self-revision rule (pattern-gated AND human-gated):** only a `pattern_tag` that recurs across
-  ≥`SKILL_REVISION_MIN_PATTERN` (3) resolved markets is eligible to change THIS SKILL — and even then
-  the edit is a **proposal surfaced to the user** (`postmortem.py patterns`), never an autonomous
-  rewrite. One resolution is a single noisy data point (§4a applies to learning, not just forecasting).
+- **Self-revision rule (AUTONOMOUS, 2026-06-29).** The SKILL revises itself as often as the record
+  warrants — **no human gate**. After any run that records new lessons, `postmortem.py revise-skill`
+  has **Qwen re-draft the auto-maintained heuristics block below** (`revise_skill`) from the resolved
+  track record, and the orchestrator writes it in and commits it. The edit is bounded (≤12 one-line
+  heuristics, machine-managed region only), git-versioned, and therefore reversible. It **refines**
+  the method; it can never override the anti-anchoring protocol or a risk gate. `SKILL_REVISION_MIN_PATTERN`
+  is now only an advisory recurrence annotation in `postmortem.py patterns`, not a gate.
+
+### Learned heuristics (auto-maintained — do not hand-edit between the markers)
+<!-- AUTO-HEURISTICS:BEGIN -->
+- Never move a forecast materially on a single noisy data point; require corroboration and weight by reliability.
+- Diverge below a liquid market only with a specific, verifiable reason; narrative ≠ evidence of formal dissent.
+- Anchor to strong institutional base rates, not division rhetoric or unverified assumptions.
+- During active supply disruptions, anchor flow estimates to the suppressed regime, not assumed recovery.
+- Avoid entering positions on small divergences from liquid markets resting on unverified assumptions.
+- For verbatim-utterance markets, forecast only with confirmed quotes; topical salience ≠ evidence.
+- Treat 80pt fades against liquid markets as model error; use hard_gap_ceiling to block extreme fades.
+- Do not recommend fading liquid markets on low-confidence estimates without corroboration.
+- Verify assumptions before entering positions, especially in contested or crisis contexts.
+- Require documented reasons for divergence from liquid markets pricing strong base rates.
+- Use hard_gap_ceiling to enforce resolution rules for verbatim markets regardless of confidence.
+- Anchor to data-confirming regimes (e.g., Hormuz norms) during active blockades, not optimistic scenarios.
+
+_Auto-maintained by `postmortem.py revise-skill` from 4 resolved-market lesson(s); reversible via git._
+<!-- AUTO-HEURISTICS:END -->
 
 ## Non-negotiables
 1. Independent estimate before the market price — always.

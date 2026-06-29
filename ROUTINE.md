@@ -10,16 +10,19 @@ cloned fresh and `data/` holds your memory from prior runs. Read and follow
   the math, storage, and rendering. Always go through the scripts — never hand-edit `data/`.
 - **Anti-anchoring:** never look at a market's Kalshi price until you have written your own
   probability first (enforced by the order of steps below).
-- **Model routing (2026-06-23, supersedes the prior Opus-only rule): Qwen does EVERYTHING — always.**
-  The local open-weight model (`lib/local_llm.py`, Qwen) does ALL of: (1) **retrieval condensation**
-  (`extract_evidence`), (2) **forecasting** (`forecast_ensemble` — see below), and (3) **adversarial
-  analysis** (the in-loop `challenge` gate, Step 5, and the blind post-mortem `critique`, Step 6b).
-  **No Anthropic model (Opus / Sonnet / Haiku / Fable) forms a forecast, and you spawn NO model
-  subagents.** The orchestrator (this session) is pure plumbing: it runs the web tool-calls inline
-  (Qwen has no browser), calls the Qwen functions, and records. The web tool-calls themselves stay
-  with the orchestrator; raw results pipe straight into `extract_evidence` so only condensed notes
-  flow onward. **Hard dependency:** if `local_llm` is DOWN, the loop CANNOT forecast — skip the
-  research/forecast steps, still rebuild the report + commit, and report the outage (Step 0).
+- **Model routing (2026-06-29 — Qwen does ALL cognition; Opus is pure plumbing + Defender/Judge).**
+  The local open-weight model (`lib/local_llm.py` + `lib/retrieval.py`, Qwen) does ALL of:
+  (1) **web RETRIEVAL** — Qwen *drives its own browser* via `lib.retrieval.gather_evidence`: it issues
+  the `web_search`/`wiki_lookup`/`web_fetch` tool-calls itself (keyless backends: Google News RSS +
+  Wikipedia), reaches **>5 disparate sources**, and condenses to quoted `EvidenceNotes`; (2)
+  **forecasting** (`forecast_ensemble` — see below); (3) **adversarial analysis** (the in-loop
+  `challenge` gate, Step 5, and the blind post-mortem `critique`, Step 6b); and (4) **autonomous SKILL
+  revision** (`revise_skill`, Step 6b). **No Anthropic model forms a forecast or runs a web search.**
+  **Opus's ONLY jobs:** (a) running the deterministic scripts, recording, committing (plumbing), and
+  (b) the post-mortem **Defender** and **Judge** roles (different family from the Qwen critic). You
+  spawn NO model subagents for retrieval or forecasting. **Hard dependency:** if `local_llm` is DOWN,
+  the loop CANNOT retrieve or forecast — skip the research/forecast steps, still rebuild the report +
+  commit, and report the outage (Step 0).
 - **Confidence is EARNED by ensemble, not asserted.** Because a single small model is weakly
   calibrated, every market is forecast by `lib.local_llm.forecast_ensemble` — **N=5 independent Qwen
   passes at temperature>0**, fused by median. Tight agreement → `high` confidence, wide spread → `low`
@@ -118,14 +121,18 @@ target; default 12 when no N is given. Deferred markets carry over automatically
 
 ## Step 4 — Research & forecast each due market (RETRIEVE → assign arm → ENSEMBLE-FORECAST on Qwen)
 
-### Step 4a — Retrieval tier (Qwen evidence notes, free)
-For each due market, the **orchestrator** runs the web searches/fetches inline from **> 5 disparate
-sources** (distinct orgs/types, primary-first — see `data/source_registry.json`; cross-check any
-single-source claim). Then pipe the raw results through
-`lib.local_llm.extract_evidence(question, raw_results, as_of=...)` to get `EvidenceNotes` (claims with
-verbatim quotes, base rates, key uncertainties). Only the condensed notes flow onward — raw pages never
-enter the forecaster context. There is no model subagent for retrieval; the orchestrator owns the web
-tool-calls (Qwen has no browser).
+### Step 4a — Retrieval tier (Qwen drives its own browser, free)
+For each due market, **Qwen does the retrieval itself** — the orchestrator does NOT run WebSearch/
+WebFetch. Call `lib.retrieval.gather_evidence(question, as_of=..., min_sources=5)`: the local model
+issues its own `web_search`/`wiki_lookup`/`web_fetch` tool-calls against keyless backends (Google News
+RSS for current events, Wikipedia for base rates), reaches **> 5 disparate sources** (distinct
+publishers — the returned `n_sources` proves it), reads the most informative pages, and returns
+`EvidenceNotes` (claims with verbatim quotes, base rates, key uncertainties, `sources_consulted`,
+`n_sources`). Only the condensed notes flow onward — raw pages never enter the forecaster context.
+Pass `notes["n_sources"]` to `forecast_ensemble` (thin base <5 caps confidence at `medium`). If
+`gather_evidence` raises (model unreachable), the run cannot forecast — defer per Step 0.
+The orchestrator owns the web tool-calls only as a last-resort fallback for an offline local model
+(`lib.local_llm.extract_evidence` over raw text); in normal operation it never browses.
 
 ### Step 4b — Assign the strategy arm (the experiment)
 For each due market, pick its arm:
@@ -140,17 +147,22 @@ The arm config tells you **how many independent forecasters to spawn** (`n_forec
 Selection is round-robin while cold, epsilon-greedy on `by_strategy` skill+ROI once arms have a
 record. Carry the chosen `strategy_id` to Step 5.
 
-### Step 4c — Forecast (Qwen ENSEMBLE — no subagents)
-**No model subagents. Forecasting is `lib.local_llm.forecast_ensemble`** — N independent Qwen passes
+### Step 4c — Forecast (local ENSEMBLE — no subagents)
+**No model subagents. Forecasting is `lib.local_llm.forecast_ensemble`** — N independent local passes
 (N = the arm's `n_forecasters`, default 5) at temperature>0, fused by median, with confidence earned
-from agreement (tight spread → `high`, wide → `low`; <5 sources caps at `medium`). The forecaster
-sees the evidence notes ONLY, never the Kalshi price (anti-anchoring). Per market:
+from agreement (tight spread → `high`, wide → `low`; <5 sources caps at `medium`). **Pass the arm's
+model** via `strategies.resolve_forecaster_model(arm)` so the assigned arm decides WHICH local model
+forecasts (Qwen3-14B by default, or Mistral-Small-24B for the `LQM5-mistral24` arm) — that is how the
+scoreboard compares models head-to-head. Thinking is suppressed centrally (`reasoning_effort="none"`)
+so every pass returns clean JSON; truncated passes auto-retry once. The forecaster sees the evidence
+notes ONLY, never the Kalshi price (anti-anchoring). Per market:
 
 ```
 python3 -c "
 from lib import local_llm, strategies, scoring, store, json as _j  # arm already chosen in 4b
 notes = ...   # EvidenceNotes from 4a (pass via a temp file or inline)
-r = local_llm.forecast_ensemble(QUESTION, notes, n=ARM_N, as_of=AS_OF, n_sources=NUM_SOURCES)
+mdl = strategies.resolve_forecaster_model(ARM)   # None -> default Qwen; Mistral tag for LQM5
+r = local_llm.forecast_ensemble(QUESTION, notes, n=ARM_N, as_of=AS_OF, n_sources=NUM_SOURCES, model=mdl)
 print(r['my_probability'], r['my_confidence'], r['stdev'], r['rationale_summary'])"
 ```
 
@@ -214,15 +226,17 @@ Run the three-role panel via `scripts/postmortem.py` for each newly-resolved mar
      --judge-verdict "<judge ruling>" --disagreement "<where critic/defender diverged>" \
      --right ".." --wrong ".." --lesson "<actionable takeaway>"
    ```
-5. **SKILL revision is human-gated and pattern-gated.** Never edit the SKILL on one outcome. Check
-   eligible patterns:
+5. **SKILL revision is AUTONOMOUS (2026-06-29 — no human gate).** After recording lessons, fold them
+   into the method automatically:
    ```
-   python3 scripts/postmortem.py patterns
+   python3 scripts/postmortem.py revise-skill
    ```
-   Only a `pattern_tag` that has recurred across ≥ `config.SKILL_REVISION_MIN_PATTERN` (3) resolved
-   markets is eligible, and even then the edit is a **proposal for the user** — surface it in your
-   summary; do not auto-edit `.claude/skills/superforecasting/SKILL.md`. A single resolution is one
-   noisy data point — same discipline as forecasting (SKILL §4a).
+   Qwen (`local_llm.revise_skill`) re-drafts the **auto-maintained heuristics block** (between the
+   `AUTO-HEURISTICS` markers) of `.claude/skills/superforecasting/SKILL.md` from the resolved track
+   record — a bounded (≤12 one-line heuristics), git-committed, reversible edit that **refines** the
+   method and can never override the anti-anchoring protocol or a risk gate. It runs as often as the
+   record warrants. `postmortem.py patterns` is now only an advisory recurrence view, not a gate.
+   Surface the revision (heuristics changed + rationale) in your summary.
 
 ## Step 6c — Autonomous learning pass (the system tunes its own decision policy)
 Always run this (it's cheap and self-gating):

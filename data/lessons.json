@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-06-22T22:47:10Z",
+  "updated_at": "2026-06-29T16:50:56Z",
   "lessons": [
     {
       "id": "feedback-001",
@@ -18,7 +18,7 @@
       "what_went_wrong": "Swung Feenstra 22pts on a single primary poll + unsanctioned straw polls.",
       "lesson": "Never move a forecast materially on one noisy data point (esp. a single poll); weight by reliability and require corroboration. Don't recommend fading a liquid market on a low-confidence estimate.",
       "pattern_tag": "overreaction-and-confidence",
-      "applied_to_skill": false,
+      "applied_to_skill": true,
       "critic_model": "",
       "rubric_scores": {},
       "judge_verdict": "",
@@ -40,7 +40,7 @@
       "what_went_wrong": "Let a vivid 'division' narrative pull the estimate below a liquid market pricing a strong base rate of 0 dissents, without a specific documented reason for the divergence.",
       "lesson": "When diverging below a liquid market that is pricing a strong institutional base rate, require a specific, verifiable reason; narrative of 'division' is not evidence of a formally recorded dissent. Anchor on the base rate.",
       "pattern_tag": "unjustified-market-divergence",
-      "applied_to_skill": false,
+      "applied_to_skill": true,
       "critic_model": "qwen3:14b-q4_K_M",
       "rubric_scores": {
         "base_rate_established": {
@@ -75,7 +75,7 @@
       "what_went_wrong": "Anchored to a hoped-for recovery instead of the prevailing crisis-suppressed regime, and took a position despite only a coin-flip-level divergence from a liquid market built on an unverified assumption.",
       "lesson": "During an active supply-disruption crisis, anchor flow estimates to the SUPPRESSED regime, not an assumed recovery, until data confirms normalization; and do not enter a position when divergence from a liquid market is small and rests on an unverified assumption.",
       "pattern_tag": "unjustified-market-divergence",
-      "applied_to_skill": false,
+      "applied_to_skill": true,
       "critic_model": "qwen3:14b-q4_K_M",
       "rubric_scores": {
         "base_rate_established": {
@@ -110,7 +110,7 @@
       "what_went_wrong": "Substituted topical salience for the verbatim-quote resolution rule; asserted 'already said it at the G7 Jun 18' without confirming it against the resolution source; took a 0.99 forecast (80pt fade) against a liquid market at 18% that was carrying real information.",
       "lesson": "For KXTRUMPSAY-style verbatim-utterance markets, resolution is a literal tracked quote from the resolution source, NOT topical salience — never forecast above the market without a CONFIRMED verbatim quote, and treat any 80pt fade against a liquid market as model error. This is exactly the case the new hard_gap_ceiling now hard-blocks regardless of confidence.",
       "pattern_tag": "unjustified-market-divergence",
-      "applied_to_skill": false,
+      "applied_to_skill": true,
       "critic_model": "qwen3:14b-q4_K_M",
       "rubric_scores": {
         "base_rate_established": true,

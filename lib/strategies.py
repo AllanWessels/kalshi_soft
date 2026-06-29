@@ -37,7 +37,7 @@ class Strategy:
     crowd_adjust_weight: float = 0.0   # 0..1 weight pulled toward the market price
     debate_rounds: int = 0             # 0 = no debate (independent estimation)
     redteam: bool = False              # adversarial critic pass before committing
-    forecaster_model: str = "qwen"     # forecaster model — Qwen (local) for ALL arms (see directive)
+    forecaster_model: str = "qwen"     # forecaster family: "qwen" | "mistral" (local) | "opus" (retired)
 
 
 # The seed arms. Ordered so the round-robin selector cycles through them.
@@ -64,6 +64,12 @@ REGISTRY: dict[str, Strategy] = {
     "LQ1-single": Strategy(
         "LQ1-single", "Single Qwen forecaster, no aggregation (cheap baseline)",
         n_forecasters=1, aggregation="mean", forecaster_model="qwen"),
+    # --- LIVE Mistral arm (2026-06-29): non-reasoning ~24B that fits 16GB VRAM. Wired so a
+    #     larger, better-calibrated local model competes head-to-head with Qwen3-14B on the
+    #     Brier+ROI scoreboard — we MEASURE which forecasts better rather than assuming. ---
+    "LQM5-mistral24": Strategy(
+        "LQM5-mistral24", "5 independent Mistral-Small-24B forecasters -> trimmed mean",
+        n_forecasters=5, aggregation="trimmed_mean", forecaster_model="mistral"),
     # --- RETIRED Opus arms (never selected; kept for historical record resolution) ---
     "S0-single": Strategy(
         "S0-single", "[RETIRED] Single Opus forecaster, no aggregation",
@@ -80,14 +86,27 @@ REGISTRY: dict[str, Strategy] = {
         n_forecasters=3, aggregation="trimmed_mean", redteam=True, forecaster_model="opus"),
 }
 
-# Only local-Qwen arms are ever selected. S* remain in REGISTRY for record resolution.
-_LIVE_ARM_IDS = ["LQ5-ensemble5", "LQ5C-ensemble5-crowd", "LQ5R-ensemble5-redteam", "LQ1-single"]
+# Only LIVE local arms are ever selected. S* remain in REGISTRY for record resolution.
+_LIVE_ARM_IDS = ["LQ5-ensemble5", "LQ5C-ensemble5-crowd", "LQ5R-ensemble5-redteam",
+                 "LQ1-single", "LQM5-mistral24"]
 DEFAULT_STRATEGY = "LQ5-ensemble5"
 _ARM_IDS = list(_LIVE_ARM_IDS)
 
 
 def get(strategy_id: str) -> Optional[Strategy]:
     return REGISTRY.get(strategy_id)
+
+
+def resolve_forecaster_model(strategy: Strategy) -> Optional[str]:
+    """Map an arm's ``forecaster_model`` family to the concrete local model tag to pass to
+    ``local_llm.forecast_ensemble(..., model=...)``. ``None`` => the default Qwen
+    (``config.LOCAL_LLM_MODEL``). Lazy-imports config to keep this module import-pure.
+    Retired ``opus`` arms return None (they are never selected anyway)."""
+    fam = (strategy.forecaster_model or "qwen").lower()
+    if fam == "mistral":
+        from . import config
+        return config.LOCAL_LLM_MODEL_MISTRAL
+    return None  # qwen/opus -> default model (config.LOCAL_LLM_MODEL)
 
 
 # ---------------------------------------------------------------------------

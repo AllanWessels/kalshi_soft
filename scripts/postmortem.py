@@ -11,17 +11,20 @@ own work; instead a three-role panel does:
 
 This script is stdlib + local-LLM only (no Claude SDK): the Claude roles are sub-
 agents the Opus orchestrator spawns between subcommands. The script's jobs are to
-(1) assemble the blind input packet, (2) run the local critic with graceful Sonnet
-fallback, (3) persist the final adversarial Lesson, and (4) surface batch pattern-
-mining candidates for human-gated SKILL revision.
+(1) assemble the blind input packet, (2) run the local critic (deferred if local is
+down — never a same-family fallback), (3) persist the final adversarial Lesson, and
+(4) AUTONOMOUSLY revise the SKILL's auto-maintained heuristics from the resolved record
+(`revise-skill`, no human gate — project directive 2026-06-29).
 
 Subcommands
 -----------
-gather   --ticker T                 -> print the blind post-mortem packet (JSON)
-critic   --ticker T                 -> run the LOCAL blind critic; print verdict JSON
-                                       (status="fallback" if the local model is down)
-record   --ticker T --lesson ... --judge-verdict ...   -> append the adversarial Lesson
-patterns                            -> list pattern_tags eligible for SKILL revision
+gather       --ticker T             -> print the blind post-mortem packet (JSON)
+critic       --ticker T             -> run the LOCAL blind critic; print verdict JSON
+                                       (status="skipped" if the local model is down)
+record       --ticker T --lesson ... --judge-verdict ...   -> append the adversarial Lesson
+patterns                            -> list pattern_tag recurrence (advisory annotation)
+revise-skill                        -> AUTONOMOUS: Qwen re-drafts the auto-maintained
+                                       heuristics block in SKILL.md from the resolved record
 
 Flow (orchestrator):
   packet = gather; critic_out = critic (or spawn Sonnet critic on fallback);
@@ -182,32 +185,103 @@ def cmd_record(args) -> int:
           f"(critic={args.critic_model or '-'}, pattern={args.pattern_tag or '-'}).")
     if args.pattern_tag:
         n = counts.get(args.pattern_tag, 0)
-        gate = config.SKILL_REVISION_MIN_PATTERN
-        if n >= gate:
-            print(f"  ⚠ pattern '{args.pattern_tag}' recurred {n}x (>= {gate}) — "
-                  f"eligible for human-gated SKILL.md revision (run: postmortem.py patterns).")
-        else:
-            print(f"  pattern '{args.pattern_tag}' count = {n} "
-                  f"(SKILL revision triggers at {gate}; never revise on fewer).")
+        print(f"  pattern '{args.pattern_tag}' count = {n}. "
+              f"Run `postmortem.py revise-skill` to fold lessons into SKILL.md autonomously.")
+    return 0
+
+
+# ---------------------------------------------------------------------------
+# Autonomous SKILL revision (no human gate) — ROUTINE Step 6b tail.
+# ---------------------------------------------------------------------------
+
+def _read_skill() -> str:
+    return config.SKILL_PATH.read_text(encoding="utf-8")
+
+
+def _splice_auto_section(skill_text: str, new_block: str) -> str:
+    """Replace the content between the AUTO-HEURISTICS markers. If the markers are
+    missing, append a fresh fenced section at the end of the file."""
+    begin, end = config.SKILL_AUTO_BEGIN, config.SKILL_AUTO_END
+    fenced = f"{begin}\n{new_block}\n{end}"
+    if begin in skill_text and end in skill_text:
+        pre = skill_text[: skill_text.index(begin)]
+        post = skill_text[skill_text.index(end) + len(end):]
+        return pre + fenced + post
+    return (skill_text.rstrip() + "\n\n### Learned heuristics (auto-maintained)\n"
+            + fenced + "\n")
+
+
+def cmd_revise_skill(args) -> int:
+    """AUTONOMOUS SKILL revision: have Qwen re-draft the auto-maintained heuristics block
+    from the resolved-market lessons, write it into SKILL.md, and mark those lessons
+    applied. No human gate (project directive 2026-06-29). Skips quietly if the local
+    model is down or there are no lessons."""
+    lf = store.load_lessons()
+    lessons = lf.lessons
+    if not lessons:
+        print("revise-skill: no lessons yet — nothing to fold in.")
+        return 0
+    if not config.local_llm_enabled() or not local_llm.ping(timeout=3.0):
+        print("revise-skill: local model down — SKILL revision DEFERRED to a later run.")
+        return 0
+
+    skill_text = _read_skill()
+    begin, end = config.SKILL_AUTO_BEGIN, config.SKILL_AUTO_END
+    current = ""
+    if begin in skill_text and end in skill_text:
+        current = skill_text[skill_text.index(begin) + len(begin): skill_text.index(end)].strip()
+
+    lesson_dicts = [{
+        "pattern_tag": l.pattern_tag, "category": l.category,
+        "what_went_right": l.what_went_right, "what_went_wrong": l.what_went_wrong,
+        "lesson": l.lesson, "judge_verdict": l.judge_verdict,
+        "beat_market": l.beat_market,
+    } for l in lessons]
+
+    try:
+        draft = local_llm.revise_skill(current, lesson_dicts)
+    except local_llm.LocalLLMError as e:
+        print(f"revise-skill: Qwen draft failed ({e}) — SKILL unchanged this run.")
+        return 0
+
+    heuristics = draft.get("heuristics", [])
+    if not heuristics:
+        print("revise-skill: Qwen proposed no heuristics — SKILL unchanged.")
+        return 0
+    block = "\n".join(f"- {h}" for h in heuristics)
+    block += (f"\n\n_Auto-maintained by `postmortem.py revise-skill` from "
+              f"{len(lessons)} resolved-market lesson(s); reversible via git._")
+
+    new_text = _splice_auto_section(skill_text, block)
+    if new_text == skill_text:
+        print("revise-skill: heuristics unchanged — SKILL left as-is.")
+        return 0
+    config.SKILL_PATH.write_text(new_text, encoding="utf-8")
+
+    # Mark every lesson folded in (so `patterns` shows them as applied).
+    for l in lf.lessons:
+        l.applied_to_skill = True
+    store.save_lessons(lf)
+
+    print(f"revise-skill: SKILL.md updated — {len(heuristics)} heuristic(s). "
+          f"{draft.get('rationale','')}")
+    for h in heuristics:
+        print(f"  - {h}")
     return 0
 
 
 def cmd_patterns(args) -> int:
-    """Batch pattern-mining: pattern_tags that recur >= threshold and are not yet
-    folded into the SKILL. These are PROPOSALS — SKILL edits stay human-gated."""
+    """Advisory pattern recurrence view. SKILL revision is now AUTONOMOUS (run
+    `revise-skill`); this is just a recurrence annotation, no longer a gate."""
     counts = store.pattern_counts()
-    gate = config.SKILL_REVISION_MIN_PATTERN
     lessons = store.load_lessons().lessons
     applied = {l.pattern_tag for l in lessons if l.applied_to_skill and l.pattern_tag}
-    eligible = {
-        tag: n for tag, n in counts.items()
-        if tag and n >= gate and tag not in applied
-    }
     out = {
-        "skill_revision_min_pattern": gate,
-        "eligible_patterns": dict(sorted(eligible.items(), key=lambda kv: -kv[1])),
-        "note": "PROPOSALS only — SKILL.md revision is human-gated; mark lessons "
-                "applied_to_skill once folded in.",
+        "advisory_recurrence_threshold": config.SKILL_REVISION_MIN_PATTERN,
+        "pattern_counts": dict(sorted(counts.items(), key=lambda kv: -kv[1])),
+        "already_folded_in": sorted(t for t in applied if t),
+        "note": "SKILL revision is AUTONOMOUS (no human gate) — `revise-skill` re-drafts the "
+                "auto-maintained heuristics block every run with new lessons.",
     }
     print(json.dumps(out, indent=2))
     return 0
@@ -242,8 +316,12 @@ def main() -> int:
                    help="where critic and defender diverged")
     r.set_defaults(func=cmd_record)
 
-    pat = sub.add_parser("patterns", help="list pattern_tags eligible for SKILL revision")
+    pat = sub.add_parser("patterns", help="advisory pattern-recurrence view (no longer a gate)")
     pat.set_defaults(func=cmd_patterns)
+
+    rs = sub.add_parser("revise-skill",
+                        help="AUTONOMOUS: Qwen re-drafts the auto-maintained heuristics in SKILL.md")
+    rs.set_defaults(func=cmd_revise_skill)
 
     args = p.parse_args()
     return args.func(args)

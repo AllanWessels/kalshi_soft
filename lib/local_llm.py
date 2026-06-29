@@ -48,6 +48,26 @@ def _url(path: str) -> str:
     return f"{config.LOCAL_LLM_BASE_URL.rstrip('/')}/{path.lstrip('/')}"
 
 
+def _base_payload(messages: list[dict], *, model: Optional[str], temperature: float,
+                  max_tokens: int) -> dict:
+    """Build the chat payload, injecting thinking-suppression so a hybrid reasoning model
+    (Qwen3) cannot burn the output budget on a <think> block and return truncated JSON.
+    ``reasoning_effort="none"`` is the field Ollama's OpenAI endpoint honors;
+    ``chat_template_kwargs`` is the vLLM equivalent (ignored elsewhere). Both are harmless
+    to non-reasoning models (Mistral)."""
+    payload: dict = {
+        "model": model or config.LOCAL_LLM_MODEL,
+        "messages": messages,
+        "temperature": temperature,
+        "max_tokens": max_tokens,
+        "stream": False,
+    }
+    if config.LOCAL_LLM_SUPPRESS_THINKING:
+        payload["reasoning_effort"] = "none"
+        payload["chat_template_kwargs"] = {"enable_thinking": False}
+    return payload
+
+
 def _post(path: str, payload: dict, timeout: Optional[float] = None) -> dict:
     data = json.dumps(payload).encode("utf-8")
     req = urllib.request.Request(
@@ -98,18 +118,35 @@ def chat(
 ) -> str:
     """Single chat completion -> assistant text. Raises LocalLLMError on transport
     failure or a malformed response shape."""
-    payload = {
-        "model": model or config.LOCAL_LLM_MODEL,
-        "messages": messages,
-        "temperature": temperature,
-        "max_tokens": max_tokens,
-        "stream": False,
-    }
+    payload = _base_payload(messages, model=model, temperature=temperature, max_tokens=max_tokens)
     resp = _post("chat/completions", payload, timeout=timeout)
     try:
         return resp["choices"][0]["message"]["content"]
     except (KeyError, IndexError, TypeError) as e:
         raise LocalLLMError(f"unexpected chat response shape: {resp!r}") from e
+
+
+def chat_tools(
+    messages: list[dict],
+    *,
+    tools: Optional[list[dict]] = None,
+    model: Optional[str] = None,
+    temperature: float = 0.2,
+    max_tokens: int = 4000,
+    timeout: Optional[float] = None,
+) -> dict:
+    """Chat completion that may return tool calls. Returns the raw assistant *message*
+    dict (``{"content": str, "tool_calls": [...] }``) so the caller can run an agentic
+    tool-use loop (see ``lib.retrieval.gather_evidence``). Passing ``tools=None`` forces a
+    plain text turn. Raises LocalLLMError on transport / shape failure."""
+    payload = _base_payload(messages, model=model, temperature=temperature, max_tokens=max_tokens)
+    if tools:
+        payload["tools"] = tools
+    resp = _post("chat/completions", payload, timeout=timeout)
+    try:
+        return resp["choices"][0]["message"]
+    except (KeyError, IndexError, TypeError) as e:
+        raise LocalLLMError(f"unexpected chat_tools response shape: {resp!r}") from e
 
 
 def _extract_json_block(text: str) -> dict:
@@ -134,14 +171,26 @@ def _extract_json_block(text: str) -> dict:
 
 
 def complete_json(system: str, user: str, *, max_tokens: int = 1024,
-                  temperature: float = 0.0) -> dict:
-    """Chat with a JSON-only instruction and return the parsed object."""
+                  temperature: float = 0.0, model: Optional[str] = None,
+                  retries: int = 1) -> dict:
+    """Chat with a JSON-only instruction and return the parsed object.
+
+    Retries once by default on an unparseable/truncated body (with thinking suppressed
+    these are rare, but a single retry absorbs the occasional malformed pass instead of
+    dropping it — what used to silently shrink the forecast ensemble)."""
     messages = [
         {"role": "system", "content": system +
          "\n\nRespond with ONE valid JSON object and nothing else. No prose, no markdown."},
         {"role": "user", "content": user},
     ]
-    return _extract_json_block(chat(messages, max_tokens=max_tokens, temperature=temperature))
+    last: Optional[LocalLLMError] = None
+    for _ in range(max(1, retries + 1)):
+        try:
+            return _extract_json_block(
+                chat(messages, max_tokens=max_tokens, temperature=temperature, model=model))
+        except LocalLLMError as e:
+            last = e
+    raise last if last else LocalLLMError("complete_json: exhausted retries")
 
 
 # ---------------------------------------------------------------------------
@@ -247,25 +296,27 @@ _FORECASTER_SYSTEM = (
 
 
 def forecast(question: str, evidence_notes: dict, *, as_of: str = "",
-             temperature: float = 0.0) -> dict:
-    """LOCAL-model (Qwen) forecaster — ONE pass. Returns
+             temperature: float = 0.0, model: Optional[str] = None) -> dict:
+    """LOCAL-model forecaster — ONE pass. Returns
     ``{"my_probability": float, "my_confidence": "low|medium|high",
     "rationale_summary": str, "key_drivers": [str], "reference_classes": [str]}``.
     Raises LocalLLMError on transport/parse failure. For a calibrated estimate use
-    ``forecast_ensemble`` (multiple passes at temperature>0)."""
+    ``forecast_ensemble`` (multiple passes at temperature>0). ``model`` selects the
+    forecaster (defaults to ``config.LOCAL_LLM_MODEL``); the arm passes its model tag so
+    different local models compete on the scoreboard."""
     import json as _json
-    # /no_think: Qwen3 is a hybrid reasoning model — without this it spends the token
-    # budget on a <think> block and can return no JSON. These structured tasks don't
-    # need chain-of-thought, and disabling it is faster + cheaper.
+    # Thinking is suppressed centrally (config.LOCAL_LLM_SUPPRESS_THINKING -> reasoning_effort
+    # "none"), so a hybrid reasoning model can't blow the budget on a <think> block. The
+    # budget below is generous truncation headroom (free + unmetered), not a cost cap.
     user = (
         f"QUESTION: {question}\n"
         f"AS_OF: {as_of}\n\n"
         f"EVIDENCE NOTES (JSON):\n{_json.dumps(evidence_notes, indent=2)}\n\n"
         'OUTPUT JSON: {"my_probability": <0-1 float>, "my_confidence": "low|medium|high", '
-        '"rationale_summary": str, "key_drivers": [str], "reference_classes": [str]}\n/no_think'
+        '"rationale_summary": str, "key_drivers": [str], "reference_classes": [str]}'
     )
-    # Local model is free + unmetered — cap is just truncation headroom, not a budget.
-    out = complete_json(_FORECASTER_SYSTEM, user, max_tokens=2048, temperature=temperature)
+    out = complete_json(_FORECASTER_SYSTEM, user, max_tokens=3072, temperature=temperature,
+                        model=model)
     # Clamp + validate the probability so a malformed value can't poison the record.
     p = out.get("my_probability")
     if not isinstance(p, (int, float)) or not (0.0 <= float(p) <= 1.0):
@@ -277,7 +328,7 @@ def forecast(question: str, evidence_notes: dict, *, as_of: str = "",
 
 def forecast_ensemble(question: str, evidence_notes: dict, *, n: int = 5,
                       as_of: str = "", temperature: float = 0.7,
-                      n_sources: Optional[int] = None) -> dict:
+                      n_sources: Optional[int] = None, model: Optional[str] = None) -> dict:
     """Run ``n`` INDEPENDENT Qwen forecasts (temperature>0 for diversity) and fuse them.
 
     Confidence is EARNED from agreement, not asserted by one small model:
@@ -295,7 +346,7 @@ def forecast_ensemble(question: str, evidence_notes: dict, *, n: int = 5,
         try:
             # Vary temperature slightly per pass to avoid collapsed/degenerate agreement.
             out = forecast(question, evidence_notes, as_of=as_of,
-                           temperature=round(temperature + 0.05 * (i % 3), 3))
+                           temperature=round(temperature + 0.05 * (i % 3), 3), model=model)
         except LocalLLMError:
             continue
         probs.append(out["my_probability"])
@@ -401,6 +452,47 @@ def challenge(
         out["challenged_probability"] = float(cp)
     else:
         out["challenged_probability"] = None
+    return out
+
+
+# ---------------------------------------------------------------------------
+# Autonomous SKILL revision — fold recurring lessons into the method, no human gate.
+# PROJECT DIRECTIVE (2026-06-29): the SKILL self-revises as often as necessary. Qwen
+# drafts a bounded "Learned heuristics (auto-maintained)" block from the resolved
+# track record; the orchestrator (plumbing) writes it into SKILL.md and commits.
+# ---------------------------------------------------------------------------
+
+_SKILL_REVISE_SYSTEM = (
+    "You maintain the 'Learned heuristics (auto-maintained)' section of a superforecaster's "
+    "method file. You are given the CURRENT auto-section and the system's recent resolved-market "
+    "lessons (each with a pattern tag, what went right/wrong, and an actionable takeaway). "
+    "Rewrite the auto-section so it captures the DURABLE, GENERALIZABLE heuristics the record "
+    "supports — favor patterns that recur, drop one-off noise, keep each heuristic to one "
+    "imperative sentence. This guidance must not contradict core anti-anchoring / risk-gate "
+    "discipline; it refines, never overrides. Be concise: at most 12 bullet heuristics."
+)
+
+
+def revise_skill(current_section: str, lessons: list[dict], *, max_tokens: int = 2000) -> dict:
+    """Qwen drafts the updated auto-maintained heuristics block from resolved lessons.
+
+    Returns ``{"heuristics": [str, ...], "changed": bool, "rationale": str}``. Raises
+    LocalLLMError on transport/parse failure so the caller can skip the revision this run."""
+    import json as _json
+    lesson_blob = _json.dumps(lessons[-40:], indent=1)  # bound the context to recent lessons
+    user = (
+        f"CURRENT AUTO-SECTION:\n{current_section or '(empty)'}\n\n"
+        f"RESOLVED-MARKET LESSONS (most recent last):\n{lesson_blob}\n\n"
+        'OUTPUT JSON: {"heuristics": [str, ...], "changed": bool, '
+        '"rationale": "one line on what you changed and why"}\n/no_think'
+    )
+    out = complete_json(_SKILL_REVISE_SYSTEM, user, max_tokens=max_tokens)
+    heur = out.get("heuristics")
+    if not isinstance(heur, list):
+        raise LocalLLMError(f"revise_skill returned no heuristics list: {out!r}")
+    out["heuristics"] = [str(h).strip() for h in heur if str(h).strip()][:12]
+    out.setdefault("changed", True)
+    out.setdefault("rationale", "")
     return out
 
 
