@@ -5,22 +5,22 @@
   "category": "politics",
   "close_time": "2026-06-15T14:00:00Z",
   "current": {
-    "as_of": "2026-06-29T18:34:16Z",
-    "my_probability": 0.3167,
+    "as_of": "2026-06-29T20:42:38Z",
+    "my_probability": 0.0075,
     "my_confidence": "high",
-    "market_implied_probability": 0.0065,
+    "market_implied_probability": 0.0075,
     "market_price_cents": 1.0,
-    "edge": 0.3102,
-    "yes_ask": 0.007,
-    "no_ask": 0.994,
+    "edge": 0.0,
+    "yes_ask": 0.008,
+    "no_ask": 0.993,
     "fee_per_contract": 0.01,
-    "ev_per_contract": 0.29969999999999997,
-    "limit_price": 0.006,
-    "ev_limit_per_contract": 0.3007,
+    "ev_per_contract": -0.010499999999999945,
+    "limit_price": null,
+    "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "31pt gap exceeds the hard ceiling (20pt) — beyond this divergence from a liquid market, even high confidence is treated as model error, not edge",
-    "prob_delta_vs_prev": 0.1667,
+    "lean_note": "no +EV value bet at the ask (my prob 1%, modal NO) — staying out.",
+    "prob_delta_vs_prev": -0.1425,
     "trigger": "scheduled",
     "strategy_id": "LQ5-ensemble5",
     "proposed_probability": null,
@@ -28,26 +28,24 @@
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "The evidence suggests that traffic through the Strait of Hormuz has been significantly disrupted and that it may not return to normal until late 2026 or later. Multiple sources, including CNBC and Statista, report that traffic has virtually stopped or is only trickling through. Kalshi traders have predicted traffic would not return to normal until July or even August or later. These signals imply ",
+    "rationale_summary": "The lack of recent data from IMF PortWatch and the absence of relevant information from consulted sources suggest limited evidence of a significant increase in transit calls through the Strait of Hormuz before July 1, 2026. Past forecasts on similar questions have shown a tendency to overestimate recovery in flow metrics during periods of uncertainty, so a conservative estimate is applied here. Th",
     "key_drivers": [
-      "Disruption and slow recovery of traffic through the Strait of Hormuz as reported by multiple sources.",
-      "Kalshi trader predictions indicating delayed return to normal traffic levels.",
-      "Uncertainty around geopolitical tensions and conflicts affecting shipping routes."
+      "Geopolitical stability in the region",
+      "Supply chain dynamics",
+      "IMF PortWatch data reporting trends"
     ],
     "reference_classes": [
-      "Shipping disruptions and their impact on global supply chains",
-      "as analyzed by Euromonitor.",
-      "Historical patterns of shipping recovery following geopolitical or economic shocks."
+      "Transit flow metrics during geopolitical crises",
+      "Supply chain recovery post-disruption",
+      "Historical transit data from the Strait of Hormuz"
     ],
     "research_refs": [
       "CNBC",
       "Coinbase",
-      "Covers.com",
       "Cryptopolitan",
-      "Euromonitor",
-      "MacroMicro",
-      "Statista",
-      "farmdoc daily"
+      "Proactive Investors",
+      "farmdoc daily",
+      "gambling911.com"
     ]
   },
   "history": [
@@ -288,22 +286,22 @@
       ]
     },
     {
-      "as_of": "2026-06-29T18:34:16Z",
-      "my_probability": 0.3167,
+      "as_of": "2026-06-29T20:42:38Z",
+      "my_probability": 0.0075,
       "my_confidence": "high",
-      "market_implied_probability": 0.0065,
+      "market_implied_probability": 0.0075,
       "market_price_cents": 1.0,
-      "edge": 0.3102,
-      "yes_ask": 0.007,
-      "no_ask": 0.994,
+      "edge": 0.0,
+      "yes_ask": 0.008,
+      "no_ask": 0.993,
       "fee_per_contract": 0.01,
-      "ev_per_contract": 0.29969999999999997,
-      "limit_price": 0.006,
-      "ev_limit_per_contract": 0.3007,
+      "ev_per_contract": -0.010499999999999945,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
       "lean": "NONE",
       "conviction": "low",
-      "lean_note": "31pt gap exceeds the hard ceiling (20pt) — beyond this divergence from a liquid market, even high confidence is treated as model error, not edge",
-      "prob_delta_vs_prev": 0.1667,
+      "lean_note": "no +EV value bet at the ask (my prob 1%, modal NO) — staying out.",
+      "prob_delta_vs_prev": -0.1425,
       "trigger": "scheduled",
       "strategy_id": "LQ5-ensemble5",
       "proposed_probability": null,
@@ -311,26 +309,24 @@
       "adversarial_challenged_prob": null,
       "adversarial_concerns": [],
       "adversarial_model": "",
-      "rationale_summary": "The evidence suggests that traffic through the Strait of Hormuz has been significantly disrupted and that it may not return to normal until late 2026 or later. Multiple sources, including CNBC and Statista, report that traffic has virtually stopped or is only trickling through. Kalshi traders have predicted traffic would not return to normal until July or even August or later. These signals imply ",
+      "rationale_summary": "The lack of recent data from IMF PortWatch and the absence of relevant information from consulted sources suggest limited evidence of a significant increase in transit calls through the Strait of Hormuz before July 1, 2026. Past forecasts on similar questions have shown a tendency to overestimate recovery in flow metrics during periods of uncertainty, so a conservative estimate is applied here. Th",
       "key_drivers": [
-        "Disruption and slow recovery of traffic through the Strait of Hormuz as reported by multiple sources.",
-        "Kalshi trader predictions indicating delayed return to normal traffic levels.",
-        "Uncertainty around geopolitical tensions and conflicts affecting shipping routes."
+        "Geopolitical stability in the region",
+        "Supply chain dynamics",
+        "IMF PortWatch data reporting trends"
       ],
       "reference_classes": [
-        "Shipping disruptions and their impact on global supply chains",
-        "as analyzed by Euromonitor.",
-        "Historical patterns of shipping recovery following geopolitical or economic shocks."
+        "Transit flow metrics during geopolitical crises",
+        "Supply chain recovery post-disruption",
+        "Historical transit data from the Strait of Hormuz"
       ],
       "research_refs": [
         "CNBC",
         "Coinbase",
-        "Covers.com",
         "Cryptopolitan",
-        "Euromonitor",
-        "MacroMicro",
-        "Statista",
-        "farmdoc daily"
+        "Proactive Investors",
+        "farmdoc daily",
+        "gambling911.com"
       ]
     }
   ],

@@ -5,22 +5,22 @@
   "category": "politics",
   "close_time": "2026-07-01T14:00:00Z",
   "current": {
-    "as_of": "2026-06-29T18:34:31Z",
-    "my_probability": 0.5335,
+    "as_of": "2026-06-29T20:42:41Z",
+    "my_probability": 0.005,
     "my_confidence": "high",
     "market_implied_probability": 0.005,
     "market_price_cents": 0.0,
-    "edge": 0.5285,
+    "edge": 0.0,
     "yes_ask": 0.01,
     "no_ask": 1.0,
-    "fee_per_contract": 0.01,
-    "ev_per_contract": 0.5135,
-    "limit_price": 0.0,
-    "ev_limit_per_contract": 0.5335,
+    "fee_per_contract": 0.0,
+    "ev_per_contract": -0.0050000000000000044,
+    "limit_price": null,
+    "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "53pt gap exceeds the hard ceiling (20pt) — beyond this divergence from a liquid market, even high confidence is treated as model error, not edge",
-    "prob_delta_vs_prev": 0.4935,
+    "lean_note": "no +EV value bet at the ask (my prob 0%, modal NO) — staying out.",
+    "prob_delta_vs_prev": -0.035,
     "trigger": "scheduled",
     "strategy_id": "LQ5C-ensemble5-crowd",
     "proposed_probability": null,
@@ -28,27 +28,28 @@
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "The evidence suggests that a 14-point agreement between the U.S. and Iran was reached, with provisions on Iran's nuclear program and specific issues like enriched uranium and the Strait of Hormuz. However, there are also reports of renewed hostilities and criticism of the deal, which could impact its stability. The presence of multiple sources and the specificity of the agreement increase the prob",
+    "rationale_summary": "Recent evidence from multiple credible sources indicates significant progress in US-Iran talks, including agreement on a roadmap for a final deal, resumption of nuclear inspections, and temporary sanctions relief. However, historical challenges with implementation and verification, along with ongoing regional tensions such as the conflict in Lebanon, introduce uncertainty. The evidence suggests a ",
     "key_drivers": [
-      "The existence of a 14-point agreement between the U.S. and Iran.",
-      "Provisions on Iran's nuclear program and specific geopolitical issues.",
-      "Renewed hostilities and criticism of the deal.",
-      "Potential edits to the deal by Trump and the impact of ongoing tensions."
+      "Recent progress in talks and agreement on a roadmap for a final deal",
+      "Resumption of nuclear inspections and temporary sanctions relief",
+      "Historical challenges with implementation and verification",
+      "Ongoing regional tensions",
+      "such as the conflict in Lebanon"
     ],
     "reference_classes": [
-      "Historically complex and subject-to-change nuclear deals between the U.S. and Iran.",
-      "Previous attempts at reaching nuclear agreements with varying success."
+      "Nuclear agreements between the US and Iran",
+      "Diplomatic negotiations involving sanctions and verification",
+      "Geopolitical conflicts impacting diplomatic progress"
     ],
     "research_refs": [
-      "ABC News",
-      "ABC News - Breaking News",
-      "Latest News and Videos",
-      "Axios",
+      "AP News",
+      "Al Jazeera",
       "BBC",
-      "Britannica",
+      "Bloomberg.com",
       "CBS News",
       "CNBC",
-      "CNN"
+      "Carnegie Endowment for International Peace",
+      "Council on Foreign Relations"
     ]
   },
   "history": [
@@ -204,22 +205,22 @@
       ]
     },
     {
-      "as_of": "2026-06-29T18:34:31Z",
-      "my_probability": 0.5335,
+      "as_of": "2026-06-29T20:42:41Z",
+      "my_probability": 0.005,
       "my_confidence": "high",
       "market_implied_probability": 0.005,
       "market_price_cents": 0.0,
-      "edge": 0.5285,
+      "edge": 0.0,
       "yes_ask": 0.01,
       "no_ask": 1.0,
-      "fee_per_contract": 0.01,
-      "ev_per_contract": 0.5135,
-      "limit_price": 0.0,
-      "ev_limit_per_contract": 0.5335,
+      "fee_per_contract": 0.0,
+      "ev_per_contract": -0.0050000000000000044,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
       "lean": "NONE",
       "conviction": "low",
-      "lean_note": "53pt gap exceeds the hard ceiling (20pt) — beyond this divergence from a liquid market, even high confidence is treated as model error, not edge",
-      "prob_delta_vs_prev": 0.4935,
+      "lean_note": "no +EV value bet at the ask (my prob 0%, modal NO) — staying out.",
+      "prob_delta_vs_prev": -0.035,
       "trigger": "scheduled",
       "strategy_id": "LQ5C-ensemble5-crowd",
       "proposed_probability": null,
@@ -227,27 +228,28 @@
       "adversarial_challenged_prob": null,
       "adversarial_concerns": [],
       "adversarial_model": "",
-      "rationale_summary": "The evidence suggests that a 14-point agreement between the U.S. and Iran was reached, with provisions on Iran's nuclear program and specific issues like enriched uranium and the Strait of Hormuz. However, there are also reports of renewed hostilities and criticism of the deal, which could impact its stability. The presence of multiple sources and the specificity of the agreement increase the prob",
+      "rationale_summary": "Recent evidence from multiple credible sources indicates significant progress in US-Iran talks, including agreement on a roadmap for a final deal, resumption of nuclear inspections, and temporary sanctions relief. However, historical challenges with implementation and verification, along with ongoing regional tensions such as the conflict in Lebanon, introduce uncertainty. The evidence suggests a ",
       "key_drivers": [
-        "The existence of a 14-point agreement between the U.S. and Iran.",
-        "Provisions on Iran's nuclear program and specific geopolitical issues.",
-        "Renewed hostilities and criticism of the deal.",
-        "Potential edits to the deal by Trump and the impact of ongoing tensions."
+        "Recent progress in talks and agreement on a roadmap for a final deal",
+        "Resumption of nuclear inspections and temporary sanctions relief",
+        "Historical challenges with implementation and verification",
+        "Ongoing regional tensions",
+        "such as the conflict in Lebanon"
       ],
       "reference_classes": [
-        "Historically complex and subject-to-change nuclear deals between the U.S. and Iran.",
-        "Previous attempts at reaching nuclear agreements with varying success."
+        "Nuclear agreements between the US and Iran",
+        "Diplomatic negotiations involving sanctions and verification",
+        "Geopolitical conflicts impacting diplomatic progress"
       ],
       "research_refs": [
-        "ABC News",
-        "ABC News - Breaking News",
-        "Latest News and Videos",
-        "Axios",
+        "AP News",
+        "Al Jazeera",
         "BBC",
-        "Britannica",
+        "Bloomberg.com",
         "CBS News",
         "CNBC",
-        "CNN"
+        "Carnegie Endowment for International Peace",
+        "Council on Foreign Relations"
       ]
     }
   ],

@@ -5,22 +5,22 @@
   "category": "politics",
   "close_time": "2026-06-30T14:00:00Z",
   "current": {
-    "as_of": "2026-06-29T18:34:25Z",
-    "my_probability": 0.15,
+    "as_of": "2026-06-29T20:42:39Z",
+    "my_probability": 0.5696,
     "my_confidence": "high",
     "market_implied_probability": 0.785,
     "market_price_cents": 78.0,
-    "edge": -0.635,
+    "edge": -0.21540000000000004,
     "yes_ask": 0.79,
     "no_ask": 0.22,
     "fee_per_contract": 0.02,
-    "ev_per_contract": 0.61,
+    "ev_per_contract": 0.1904,
     "limit_price": 0.21,
-    "ev_limit_per_contract": 0.62,
+    "ev_limit_per_contract": 0.2004,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "64pt gap exceeds the hard ceiling (20pt) — beyond this divergence from a liquid market, even high confidence is treated as model error, not edge",
-    "prob_delta_vs_prev": -0.5,
+    "lean_note": "22pt gap exceeds the hard ceiling (20pt) — beyond this divergence from a liquid market, even high confidence is treated as model error, not edge",
+    "prob_delta_vs_prev": -0.08040000000000003,
     "trigger": "scheduled",
     "strategy_id": "LQ5-ensemble5",
     "proposed_probability": null,
@@ -28,14 +28,15 @@
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "There is currently no significant evidence or public indication that Mike Mazzei is positioning himself as a candidate for the Republican nomination for Governor in Oklahoma. The absence of news coverage or statements from Mazzei or his campaign suggests that he is not a prominent figure in the race at this time.",
+    "rationale_summary": "The evidence provided does not include any specific information about Mike Mazzei's current status, campaign activity, or support within the Oklahoma Republican Party. The lack of direct evidence makes it difficult to assess his likelihood of being the nominee. The reference class of similar political nomination races suggests that without clear signals of endorsement, fundraising, or strong publi",
     "key_drivers": [
-      "Lack of public announcements or campaign activity from Mike Mazzei",
-      "No news coverage indicating his involvement in the race"
+      "Lack of direct evidence on Mazzei's campaign status",
+      "Absence of endorsements or public support data",
+      "Typical low probability for candidates without strong political capital"
     ],
     "reference_classes": [
-      "Candidates who have not announced their candidacy",
-      "Little-known figures in gubernatorial races"
+      "Republican gubernatorial nomination races in states with competitive primaries",
+      "Candidates without clear political backing or fundraising success"
     ],
     "research_refs": [
       "KOCO",
@@ -45,7 +46,7 @@
       "Oklahoma Voice",
       "PBS",
       "The Journal Record",
-      "The Oklahoman"
+      "The New York Times"
     ]
   },
   "history": [
@@ -257,22 +258,22 @@
       ]
     },
     {
-      "as_of": "2026-06-29T18:34:25Z",
-      "my_probability": 0.15,
+      "as_of": "2026-06-29T20:42:39Z",
+      "my_probability": 0.5696,
       "my_confidence": "high",
       "market_implied_probability": 0.785,
       "market_price_cents": 78.0,
-      "edge": -0.635,
+      "edge": -0.21540000000000004,
       "yes_ask": 0.79,
       "no_ask": 0.22,
       "fee_per_contract": 0.02,
-      "ev_per_contract": 0.61,
+      "ev_per_contract": 0.1904,
       "limit_price": 0.21,
-      "ev_limit_per_contract": 0.62,
+      "ev_limit_per_contract": 0.2004,
       "lean": "NONE",
       "conviction": "low",
-      "lean_note": "64pt gap exceeds the hard ceiling (20pt) — beyond this divergence from a liquid market, even high confidence is treated as model error, not edge",
-      "prob_delta_vs_prev": -0.5,
+      "lean_note": "22pt gap exceeds the hard ceiling (20pt) — beyond this divergence from a liquid market, even high confidence is treated as model error, not edge",
+      "prob_delta_vs_prev": -0.08040000000000003,
       "trigger": "scheduled",
       "strategy_id": "LQ5-ensemble5",
       "proposed_probability": null,
@@ -280,14 +281,15 @@
       "adversarial_challenged_prob": null,
       "adversarial_concerns": [],
       "adversarial_model": "",
-      "rationale_summary": "There is currently no significant evidence or public indication that Mike Mazzei is positioning himself as a candidate for the Republican nomination for Governor in Oklahoma. The absence of news coverage or statements from Mazzei or his campaign suggests that he is not a prominent figure in the race at this time.",
+      "rationale_summary": "The evidence provided does not include any specific information about Mike Mazzei's current status, campaign activity, or support within the Oklahoma Republican Party. The lack of direct evidence makes it difficult to assess his likelihood of being the nominee. The reference class of similar political nomination races suggests that without clear signals of endorsement, fundraising, or strong publi",
       "key_drivers": [
-        "Lack of public announcements or campaign activity from Mike Mazzei",
-        "No news coverage indicating his involvement in the race"
+        "Lack of direct evidence on Mazzei's campaign status",
+        "Absence of endorsements or public support data",
+        "Typical low probability for candidates without strong political capital"
       ],
       "reference_classes": [
-        "Candidates who have not announced their candidacy",
-        "Little-known figures in gubernatorial races"
+        "Republican gubernatorial nomination races in states with competitive primaries",
+        "Candidates without clear political backing or fundraising success"
       ],
       "research_refs": [
         "KOCO",
@@ -297,7 +299,7 @@
         "Oklahoma Voice",
         "PBS",
         "The Journal Record",
-        "The Oklahoman"
+        "The New York Times"
       ]
     }
   ],

@@ -5,53 +5,49 @@
   "category": "politics",
   "close_time": "2026-07-01T14:00:00Z",
   "current": {
-    "as_of": "2026-06-29T18:34:42Z",
-    "my_probability": 0.1933,
+    "as_of": "2026-06-29T20:42:42Z",
+    "my_probability": 0.0035,
     "my_confidence": "high",
     "market_implied_probability": 0.0035,
     "market_price_cents": 0.0,
-    "edge": 0.1898,
+    "edge": 0.0,
     "yes_ask": 0.004,
     "no_ask": 0.997,
     "fee_per_contract": 0.01,
-    "ev_per_contract": 0.1793,
-    "limit_price": 0.003,
-    "ev_limit_per_contract": 0.1803,
+    "ev_per_contract": -0.010499999999999945,
+    "limit_price": null,
+    "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "ADVERSARIAL VETO: The forecast is overconfident and lacks sufficient evidence to justify the proposed probability. The divergence from the market is large and not supported by the reasoning provided, which is incomplete and speculative.",
-    "prob_delta_vs_prev": 0.1833,
+    "lean_note": "no +EV value bet at the ask (my prob 0%, modal NO) — staying out.",
+    "prob_delta_vs_prev": -0.006500000000000001,
     "trigger": "scheduled",
     "strategy_id": "LQ5-ensemble5",
-    "proposed_probability": 0.1933,
-    "adversarial_verdict": "veto",
-    "adversarial_challenged_prob": 0.1933,
-    "adversarial_concerns": [
-      "The proposed probability is significantly higher than the market-implied probability (0.19 vs 0.0035), suggesting a major divergence that is not justified by the evidence provided.",
-      "The reasoning is vague and lacks specific, credible evidence to support the claim that JD Vance is likely to visit Iran before July 1, 2026.",
-      "The statement about 'road map' is incomplete and does not provide sufficient context or evidence to support the forecast.",
-      "There is no clear indication that diplomatic efforts are progressing to a point that would necessitate a high-level visit from JD Vance before 2026."
-    ],
-    "adversarial_model": "qwen3:14b-q4_K_M",
-    "rationale_summary": "The evidence suggests that JD Vance's visits to Iran have been postponed or delayed multiple times, and there is no clear indication that he will visit Iran before July 1, 2026. The diplomatic efforts between the U.S. and Iran are ongoing but uncertain, with delays and shifting priorities complicating any definitive timeline. While there are signs of progress in peace talks, such as the 'road map'",
+    "proposed_probability": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": "",
+    "rationale_summary": "The evidence indicates that Vice President JD Vance has been engaged in diplomatic discussions related to Iran, but all reported interactions have occurred in third-party locations or through intermediaries. There is no confirmed report of Vance visiting Iran, and historical precedent suggests that U.S. officials typically avoid direct visits to Iran during active diplomatic negotiations. The lack",
     "key_drivers": [
-      "Postponements and delays in Vance's scheduled diplomatic engagements with Iran",
-      "Uncertainty in the timeline of U.S.-Iran peace talks",
-      "Shifting diplomatic priorities and political considerations affecting Vance's travel plans"
+      "No confirmed reports of Vance visiting Iran",
+      "Historical precedent of U.S. officials avoiding direct visits to Iran during negotiations",
+      "Diplomatic interactions conducted through intermediaries or third-party locations"
     ],
     "reference_classes": [
-      "Diplomatic efforts between the U.S. and Iran",
-      "Historical patterns of U.S. officials' visits to Iran during periods of diplomatic engagement"
+      "U.S. vice presidential diplomatic engagements with Iran",
+      "Diplomatic negotiations involving Iran and the U.S."
     ],
     "research_refs": [
+      "ABC News - Breaking News",
+      "Latest News and Videos",
       "Al Jazeera",
       "Axios",
       "CBS News",
-      "CNBC",
-      "CNN",
-      "Crypto Briefing",
       "Euronews",
-      "NBC 7 San Diego"
+      "NBC 7 San Diego",
+      "NBC Los Angeles",
+      "NBC News"
     ]
   },
   "history": [
@@ -130,53 +126,49 @@
       ]
     },
     {
-      "as_of": "2026-06-29T18:34:42Z",
-      "my_probability": 0.1933,
+      "as_of": "2026-06-29T20:42:42Z",
+      "my_probability": 0.0035,
       "my_confidence": "high",
       "market_implied_probability": 0.0035,
       "market_price_cents": 0.0,
-      "edge": 0.1898,
+      "edge": 0.0,
       "yes_ask": 0.004,
       "no_ask": 0.997,
       "fee_per_contract": 0.01,
-      "ev_per_contract": 0.1793,
-      "limit_price": 0.003,
-      "ev_limit_per_contract": 0.1803,
+      "ev_per_contract": -0.010499999999999945,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
       "lean": "NONE",
       "conviction": "low",
-      "lean_note": "ADVERSARIAL VETO: The forecast is overconfident and lacks sufficient evidence to justify the proposed probability. The divergence from the market is large and not supported by the reasoning provided, which is incomplete and speculative.",
-      "prob_delta_vs_prev": 0.1833,
+      "lean_note": "no +EV value bet at the ask (my prob 0%, modal NO) — staying out.",
+      "prob_delta_vs_prev": -0.006500000000000001,
       "trigger": "scheduled",
       "strategy_id": "LQ5-ensemble5",
-      "proposed_probability": 0.1933,
-      "adversarial_verdict": "veto",
-      "adversarial_challenged_prob": 0.1933,
-      "adversarial_concerns": [
-        "The proposed probability is significantly higher than the market-implied probability (0.19 vs 0.0035), suggesting a major divergence that is not justified by the evidence provided.",
-        "The reasoning is vague and lacks specific, credible evidence to support the claim that JD Vance is likely to visit Iran before July 1, 2026.",
-        "The statement about 'road map' is incomplete and does not provide sufficient context or evidence to support the forecast.",
-        "There is no clear indication that diplomatic efforts are progressing to a point that would necessitate a high-level visit from JD Vance before 2026."
-      ],
-      "adversarial_model": "qwen3:14b-q4_K_M",
-      "rationale_summary": "The evidence suggests that JD Vance's visits to Iran have been postponed or delayed multiple times, and there is no clear indication that he will visit Iran before July 1, 2026. The diplomatic efforts between the U.S. and Iran are ongoing but uncertain, with delays and shifting priorities complicating any definitive timeline. While there are signs of progress in peace talks, such as the 'road map'",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "The evidence indicates that Vice President JD Vance has been engaged in diplomatic discussions related to Iran, but all reported interactions have occurred in third-party locations or through intermediaries. There is no confirmed report of Vance visiting Iran, and historical precedent suggests that U.S. officials typically avoid direct visits to Iran during active diplomatic negotiations. The lack",
       "key_drivers": [
-        "Postponements and delays in Vance's scheduled diplomatic engagements with Iran",
-        "Uncertainty in the timeline of U.S.-Iran peace talks",
-        "Shifting diplomatic priorities and political considerations affecting Vance's travel plans"
+        "No confirmed reports of Vance visiting Iran",
+        "Historical precedent of U.S. officials avoiding direct visits to Iran during negotiations",
+        "Diplomatic interactions conducted through intermediaries or third-party locations"
       ],
       "reference_classes": [
-        "Diplomatic efforts between the U.S. and Iran",
-        "Historical patterns of U.S. officials' visits to Iran during periods of diplomatic engagement"
+        "U.S. vice presidential diplomatic engagements with Iran",
+        "Diplomatic negotiations involving Iran and the U.S."
       ],
       "research_refs": [
+        "ABC News - Breaking News",
+        "Latest News and Videos",
         "Al Jazeera",
         "Axios",
         "CBS News",
-        "CNBC",
-        "CNN",
-        "Crypto Briefing",
         "Euronews",
-        "NBC 7 San Diego"
+        "NBC 7 San Diego",
+        "NBC Los Angeles",
+        "NBC News"
       ]
     }
   ],

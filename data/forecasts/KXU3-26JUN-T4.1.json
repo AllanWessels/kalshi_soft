@@ -5,22 +5,22 @@
   "category": "economy",
   "close_time": "2026-07-02T14:00:00Z",
   "current": {
-    "as_of": "2026-06-29T18:34:47Z",
-    "my_probability": 0.36,
+    "as_of": "2026-06-29T20:42:42Z",
+    "my_probability": 0.905,
     "my_confidence": "high",
     "market_implied_probability": 0.905,
     "market_price_cents": 90.0,
-    "edge": -0.545,
+    "edge": 0.0,
     "yes_ask": 0.91,
     "no_ask": 0.1,
     "fee_per_contract": 0.01,
-    "ev_per_contract": 0.53,
-    "limit_price": 0.09,
-    "ev_limit_per_contract": 0.54,
+    "ev_per_contract": -0.015000000000000005,
+    "limit_price": null,
+    "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "55pt gap exceeds the hard ceiling (20pt) — beyond this divergence from a liquid market, even high confidence is treated as model error, not edge",
-    "prob_delta_vs_prev": -0.5700000000000001,
+    "lean_note": "no +EV value bet at the ask (my prob 90%, modal YES) — staying out.",
+    "prob_delta_vs_prev": -0.025000000000000022,
     "trigger": "scheduled",
     "strategy_id": "LQ5-ensemble5",
     "proposed_probability": null,
@@ -28,28 +28,26 @@
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "The evidence suggests mixed signals about the U.S. labor market in May 2026. While some reports indicate strong job gains and stable unemployment rates, others highlight underlying labor market slack and regional variations. The fact that Hawaii's unemployment rate was 2.5% in May might suggest a relatively strong labor market in some regions, but it is not representative of the national trend. Th",
+    "rationale_summary": "The evidence suggests mixed signals regarding the U.S. labor market in May 2026. While some reports highlight strong job gains and stable unemployment rates, others indicate underlying labor market slack. The key uncertainty lies in whether the headline jobs numbers fully capture the true state of the labor market. Additionally, regional variations, such as Arizona's softening labor market, may af",
     "key_drivers": [
-      "Mixed signals from labor market reports (both positive and negative)",
-      "Regional variations in unemployment and job growth",
-      "The potential for headline jobs numbers to mask underlying labor market slack",
-      "The importance of alternative measures like U-6 in understanding labor underutilization"
+      "Mixed signals from headline jobs numbers and underlying labor market slack",
+      "Regional variations in labor market performance (e.g.",
+      "Arizona)",
+      "Potential underreporting of labor market challenges"
     ],
     "reference_classes": [
-      "Historical U.S. labor market trends with periods of strong job growth and labor market slack",
-      "Regional unemployment rates and their impact on national statistics",
-      "Alternative measures of labor underutilization (e.g.",
-      "U-6 rate)"
+      "U-3 vs. U-6 Rates: Unemployment & Underemployment",
+      "Alternative Measures of Labor Underutilization in New York — 2025"
     ],
     "research_refs": [
       "ARLnow",
       "AZ FREE NEWS",
-      "BBC",
+      "Barron's",
       "Britannica",
       "Bureau of Labor Statistics",
       "Bureau of Labor Statistics (.gov)",
-      "BusinessWorld Online",
-      "CNBC"
+      "CNBC",
+      "Center for American Progress"
     ]
   },
   "history": [
@@ -169,22 +167,22 @@
       ]
     },
     {
-      "as_of": "2026-06-29T18:34:47Z",
-      "my_probability": 0.36,
+      "as_of": "2026-06-29T20:42:42Z",
+      "my_probability": 0.905,
       "my_confidence": "high",
       "market_implied_probability": 0.905,
       "market_price_cents": 90.0,
-      "edge": -0.545,
+      "edge": 0.0,
       "yes_ask": 0.91,
       "no_ask": 0.1,
       "fee_per_contract": 0.01,
-      "ev_per_contract": 0.53,
-      "limit_price": 0.09,
-      "ev_limit_per_contract": 0.54,
+      "ev_per_contract": -0.015000000000000005,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
       "lean": "NONE",
       "conviction": "low",
-      "lean_note": "55pt gap exceeds the hard ceiling (20pt) — beyond this divergence from a liquid market, even high confidence is treated as model error, not edge",
-      "prob_delta_vs_prev": -0.5700000000000001,
+      "lean_note": "no +EV value bet at the ask (my prob 90%, modal YES) — staying out.",
+      "prob_delta_vs_prev": -0.025000000000000022,
       "trigger": "scheduled",
       "strategy_id": "LQ5-ensemble5",
       "proposed_probability": null,
@@ -192,28 +190,26 @@
       "adversarial_challenged_prob": null,
       "adversarial_concerns": [],
       "adversarial_model": "",
-      "rationale_summary": "The evidence suggests mixed signals about the U.S. labor market in May 2026. While some reports indicate strong job gains and stable unemployment rates, others highlight underlying labor market slack and regional variations. The fact that Hawaii's unemployment rate was 2.5% in May might suggest a relatively strong labor market in some regions, but it is not representative of the national trend. Th",
+      "rationale_summary": "The evidence suggests mixed signals regarding the U.S. labor market in May 2026. While some reports highlight strong job gains and stable unemployment rates, others indicate underlying labor market slack. The key uncertainty lies in whether the headline jobs numbers fully capture the true state of the labor market. Additionally, regional variations, such as Arizona's softening labor market, may af",
       "key_drivers": [
-        "Mixed signals from labor market reports (both positive and negative)",
-        "Regional variations in unemployment and job growth",
-        "The potential for headline jobs numbers to mask underlying labor market slack",
-        "The importance of alternative measures like U-6 in understanding labor underutilization"
+        "Mixed signals from headline jobs numbers and underlying labor market slack",
+        "Regional variations in labor market performance (e.g.",
+        "Arizona)",
+        "Potential underreporting of labor market challenges"
       ],
       "reference_classes": [
-        "Historical U.S. labor market trends with periods of strong job growth and labor market slack",
-        "Regional unemployment rates and their impact on national statistics",
-        "Alternative measures of labor underutilization (e.g.",
-        "U-6 rate)"
+        "U-3 vs. U-6 Rates: Unemployment & Underemployment",
+        "Alternative Measures of Labor Underutilization in New York — 2025"
       ],
       "research_refs": [
         "ARLnow",
         "AZ FREE NEWS",
-        "BBC",
+        "Barron's",
         "Britannica",
         "Bureau of Labor Statistics",
         "Bureau of Labor Statistics (.gov)",
-        "BusinessWorld Online",
-        "CNBC"
+        "CNBC",
+        "Center for American Progress"
       ]
     }
   ],

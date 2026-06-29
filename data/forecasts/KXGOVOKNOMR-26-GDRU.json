@@ -5,52 +5,49 @@
   "category": "politics",
   "close_time": "2026-06-30T14:00:00Z",
   "current": {
-    "as_of": "2026-06-29T18:34:25Z",
-    "my_probability": 0.15,
+    "as_of": "2026-06-29T20:42:39Z",
+    "my_probability": 0.1889,
     "my_confidence": "high",
     "market_implied_probability": 0.205,
     "market_price_cents": 20.0,
-    "edge": -0.05499999999999999,
+    "edge": -0.016099999999999975,
     "yes_ask": 0.21,
     "no_ask": 0.8,
     "fee_per_contract": 0.02,
-    "ev_per_contract": 0.029999999999999933,
-    "limit_price": 0.79,
-    "ev_limit_per_contract": 0.04,
+    "ev_per_contract": -0.008900000000000113,
+    "limit_price": null,
+    "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "ADVERSARIAL VETO: The position is overconfident and lacks sufficient evidence to justify the high confidence level. The divergence from the market is small, but the forecaster's reasoning does not convincingly establish an edge over the market, which may be ",
-    "prob_delta_vs_prev": -0.4,
+    "lean_note": "no +EV value bet at the ask (my prob 19%, modal NO) — staying out.",
+    "prob_delta_vs_prev": -0.36110000000000003,
     "trigger": "scheduled",
     "strategy_id": "LQ5-ensemble5",
-    "proposed_probability": 0.15,
-    "adversarial_verdict": "veto",
-    "adversarial_challenged_prob": 0.15,
-    "adversarial_concerns": [
-      "The forecaster assumes that the lack of public statements or news coverage equates to lack of intent, but candidates often remain quiet until later stages.",
-      "The market-implied probability (0.205) suggests a higher likelihood than the forecaster's 0.15, indicating potential underestimation of latent support or strategic positioning.",
-      "The forecaster does not account for indirect signals, such as endorsements, fundraising activity, or private meetings, which could indicate interest in the race."
-    ],
-    "adversarial_model": "qwen3:14b-q4_K_M",
-    "rationale_summary": "There is currently no substantial evidence suggesting that Genter Drummond is positioning himself as a candidate for the Republican nomination for Governor of Oklahoma. The absence of direct statements from Drummond or his campaign, combined with the lack of news coverage indicating his involvement in the race, makes it unlikely at this stage. However, the political landscape can shift rapidly, an",
+    "proposed_probability": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": "",
+    "rationale_summary": "The evidence provided does not include direct information about Genter Drummond's political ambitions or actions related to the Republican nomination for Governor in Oklahoma. Without specific data on his campaign efforts, endorsements, or primary results, it is difficult to assess his likelihood of becoming the nominee. The base rate for any individual becoming a gubernatorial nominee is low, esp",
     "key_drivers": [
-      "Lack of public statements from Genter Drummond",
-      "No news coverage indicating his candidacy",
-      "No official campaign announcements"
+      "Absence of direct evidence on Genter Drummond's political activity",
+      "No information on primary competition or endorsements",
+      "Limited scope of sources consulted"
     ],
     "reference_classes": [
-      "Incumbent politicians running for re-election",
-      "New candidates entering gubernatorial races with limited visibility"
+      "Likelihood of any individual becoming a gubernatorial nominee without campaign data",
+      "Primary election outcomes in Oklahoma",
+      "Republican nomination processes in competitive states"
     ],
     "research_refs": [
+      "C-SPAN",
       "KOCO",
       "KOSU",
       "KXII",
+      "NonDoc",
       "OU Daily",
       "Oklahoma Voice",
-      "The Journal Record",
-      "The New York Times",
-      "Tulsa Flyer"
+      "The Journal Record"
     ]
   },
   "history": [
@@ -175,52 +172,49 @@
       ]
     },
     {
-      "as_of": "2026-06-29T18:34:25Z",
-      "my_probability": 0.15,
+      "as_of": "2026-06-29T20:42:39Z",
+      "my_probability": 0.1889,
       "my_confidence": "high",
       "market_implied_probability": 0.205,
       "market_price_cents": 20.0,
-      "edge": -0.05499999999999999,
+      "edge": -0.016099999999999975,
       "yes_ask": 0.21,
       "no_ask": 0.8,
       "fee_per_contract": 0.02,
-      "ev_per_contract": 0.029999999999999933,
-      "limit_price": 0.79,
-      "ev_limit_per_contract": 0.04,
+      "ev_per_contract": -0.008900000000000113,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
       "lean": "NONE",
       "conviction": "low",
-      "lean_note": "ADVERSARIAL VETO: The position is overconfident and lacks sufficient evidence to justify the high confidence level. The divergence from the market is small, but the forecaster's reasoning does not convincingly establish an edge over the market, which may be ",
-      "prob_delta_vs_prev": -0.4,
+      "lean_note": "no +EV value bet at the ask (my prob 19%, modal NO) — staying out.",
+      "prob_delta_vs_prev": -0.36110000000000003,
       "trigger": "scheduled",
       "strategy_id": "LQ5-ensemble5",
-      "proposed_probability": 0.15,
-      "adversarial_verdict": "veto",
-      "adversarial_challenged_prob": 0.15,
-      "adversarial_concerns": [
-        "The forecaster assumes that the lack of public statements or news coverage equates to lack of intent, but candidates often remain quiet until later stages.",
-        "The market-implied probability (0.205) suggests a higher likelihood than the forecaster's 0.15, indicating potential underestimation of latent support or strategic positioning.",
-        "The forecaster does not account for indirect signals, such as endorsements, fundraising activity, or private meetings, which could indicate interest in the race."
-      ],
-      "adversarial_model": "qwen3:14b-q4_K_M",
-      "rationale_summary": "There is currently no substantial evidence suggesting that Genter Drummond is positioning himself as a candidate for the Republican nomination for Governor of Oklahoma. The absence of direct statements from Drummond or his campaign, combined with the lack of news coverage indicating his involvement in the race, makes it unlikely at this stage. However, the political landscape can shift rapidly, an",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "The evidence provided does not include direct information about Genter Drummond's political ambitions or actions related to the Republican nomination for Governor in Oklahoma. Without specific data on his campaign efforts, endorsements, or primary results, it is difficult to assess his likelihood of becoming the nominee. The base rate for any individual becoming a gubernatorial nominee is low, esp",
       "key_drivers": [
-        "Lack of public statements from Genter Drummond",
-        "No news coverage indicating his candidacy",
-        "No official campaign announcements"
+        "Absence of direct evidence on Genter Drummond's political activity",
+        "No information on primary competition or endorsements",
+        "Limited scope of sources consulted"
       ],
       "reference_classes": [
-        "Incumbent politicians running for re-election",
-        "New candidates entering gubernatorial races with limited visibility"
+        "Likelihood of any individual becoming a gubernatorial nominee without campaign data",
+        "Primary election outcomes in Oklahoma",
+        "Republican nomination processes in competitive states"
       ],
       "research_refs": [
+        "C-SPAN",
         "KOCO",
         "KOSU",
         "KXII",
+        "NonDoc",
         "OU Daily",
         "Oklahoma Voice",
-        "The Journal Record",
-        "The New York Times",
-        "Tulsa Flyer"
+        "The Journal Record"
       ]
     }
   ],

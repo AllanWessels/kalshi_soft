@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-06-29T18:05:31Z",
+  "updated_at": "2026-06-29T20:26:50Z",
   "cap": 30,
   "markets": [
     {
@@ -154,36 +154,6 @@
       "reforecast_cadence_days": 3.0
     },
     {
-      "ticker": "KXFISAEXTEND-26JUN-26JUN25",
-      "event_ticker": "KXFISAEXTEND-26MAY",
-      "title": "Will legislation that reauthorizes FISA Section 702 authority become law before Jun 25, 2026?",
-      "category": "politics",
-      "close_time": "2026-07-01T14:00:00Z",
-      "added_at": "2026-06-19T18:47:55Z",
-      "liquidity_snapshot": {
-        "volume_24h": 8182.05,
-        "open_interest": 13610.59,
-        "spread_cents": 1.0
-      },
-      "status": "resolved",
-      "reforecast_cadence_days": 3.0
-    },
-    {
-      "ticker": "KXEOWEEK-26JUN13-0",
-      "event_ticker": "KXEOWEEK-26JUN13",
-      "title": "Will the President sign more than 0 Executive Orders between Jun 7, 2026 and Jun 13, 2026?",
-      "category": "politics",
-      "close_time": "2026-06-27T14:00:00Z",
-      "added_at": "2026-06-19T18:47:55Z",
-      "liquidity_snapshot": {
-        "volume_24h": 2036.52,
-        "open_interest": 19248.73,
-        "spread_cents": 1.0
-      },
-      "status": "resolved",
-      "reforecast_cadence_days": 3.0
-    },
-    {
       "ticker": "KXPLATNERDROPOUT-26",
       "event_ticker": "KXPLATNERDROPOUT-26",
       "title": "Will Graham Platner drop out of the 2026 United States Senate election in Maine before Jul 14, 2026?",
@@ -259,21 +229,6 @@
       "reforecast_cadence_days": 7.0
     },
     {
-      "ticker": "KXRT-SUPE-75",
-      "event_ticker": "KXRT-SUPE",
-      "title": "Supergirl Rotten Tomatoes score?",
-      "category": "culture",
-      "close_time": "2026-06-22T14:00:00Z",
-      "added_at": "2026-06-19T20:50:22Z",
-      "liquidity_snapshot": {
-        "volume_24h": 2816.21,
-        "open_interest": 11639.73,
-        "spread_cents": 4.0
-      },
-      "status": "resolved",
-      "reforecast_cadence_days": 0.0
-    },
-    {
       "ticker": "KXRT-ODY-90",
       "event_ticker": "KXRT-ODY",
       "title": "The Odyssey Rotten Tomatoes score?",
@@ -331,51 +286,6 @@
         "spread_cents": 1.0
       },
       "status": "active",
-      "reforecast_cadence_days": 3.0
-    },
-    {
-      "ticker": "KXCOLOMBIAPRES-26-ICAS",
-      "event_ticker": "KXCOLOMBIAPRES-26",
-      "title": "Will Iván Cepeda Castro win the next Colombian presidential election?",
-      "category": "politics",
-      "close_time": "2026-06-25T04:00:00Z",
-      "added_at": "2026-06-19T21:52:22Z",
-      "liquidity_snapshot": {
-        "volume_24h": 68091.47,
-        "open_interest": 385305.09,
-        "spread_cents": 1.0
-      },
-      "status": "resolved",
-      "reforecast_cadence_days": 0.0
-    },
-    {
-      "ticker": "KXCOLOMBIAPRES-26-AESP",
-      "event_ticker": "KXCOLOMBIAPRES-26",
-      "title": "Will Abelardo de la Espriella win the next Colombian presidential election?",
-      "category": "politics",
-      "close_time": "2026-06-25T04:00:00Z",
-      "added_at": "2026-06-19T21:52:22Z",
-      "liquidity_snapshot": {
-        "volume_24h": 31804.9,
-        "open_interest": 349245.65,
-        "spread_cents": 1.0
-      },
-      "status": "resolved",
-      "reforecast_cadence_days": 0.0
-    },
-    {
-      "ticker": "KXNY13D-26-AESP",
-      "event_ticker": "KXNY13D-26",
-      "title": "Will Adriano Espaillat be the Democratic nominee for NY-13?",
-      "category": "politics",
-      "close_time": "2026-06-30T14:00:00Z",
-      "added_at": "2026-06-19T21:52:22Z",
-      "liquidity_snapshot": {
-        "volume_24h": 18761.79,
-        "open_interest": 90495.23,
-        "spread_cents": 1.0
-      },
-      "status": "resolved",
       "reforecast_cadence_days": 3.0
     },
     {

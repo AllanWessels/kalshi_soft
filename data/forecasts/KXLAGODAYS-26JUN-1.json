@@ -5,22 +5,22 @@
   "category": "politics",
   "close_time": "2026-06-30T14:00:00Z",
   "current": {
-    "as_of": "2026-06-29T18:34:31Z",
-    "my_probability": 0.5,
+    "as_of": "2026-06-29T20:42:40Z",
+    "my_probability": 0.005,
     "my_confidence": "high",
     "market_implied_probability": 0.005,
     "market_price_cents": 0.0,
-    "edge": 0.495,
+    "edge": 0.0,
     "yes_ask": 0.01,
     "no_ask": 1.0,
-    "fee_per_contract": 0.01,
-    "ev_per_contract": 0.48,
-    "limit_price": 0.0,
-    "ev_limit_per_contract": 0.5,
+    "fee_per_contract": 0.0,
+    "ev_per_contract": -0.0050000000000000044,
+    "limit_price": null,
+    "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "50pt gap exceeds the hard ceiling (20pt) — beyond this divergence from a liquid market, even high confidence is treated as model error, not edge",
-    "prob_delta_vs_prev": 0.35,
+    "lean_note": "no +EV value bet at the ask (my prob 0%, modal NO) — staying out.",
+    "prob_delta_vs_prev": -0.145,
     "trigger": "scheduled",
     "strategy_id": "LQ5-ensemble5",
     "proposed_probability": null,
@@ -28,25 +28,24 @@
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "The evidence provided does not directly address whether Trump will make 1 trip to Mar-a-Lago in June 2026. The only relevant information is about Trump's son potentially buying waterfront land in West Palm, which is unrelated to the number of trips to Mar-a-Lago. With no direct evidence or historical context about Trump's travel patterns to Mar-a-Lago as President, the probability is estimated as ",
+    "rationale_summary": "The base rate from Citizens for Responsibility and Ethics in Washington indicates that Trump has visited his properties on 37% of his days in office. However, there is no specific information about his schedule for June 2026, and the percentage may not directly translate to this specific period due to potential changes in his schedule or circumstances. No other evidence directly supports or refute",
     "key_drivers": [
-      "No direct evidence about Trump's travel plans to Mar-a-Lago in June 2026",
-      "Lack of historical data on Trump's trips to Mar-a-Lago as President"
+      "Base rate of Trump's visits to Mar-a-Lago",
+      "Lack of specific information about June 2026 schedule"
     ],
     "reference_classes": [
-      "Presidential travel patterns to private residences",
-      "Public statements or records about Trump's activities at Mar-a-Lago"
+      "Frequency of presidential visits to personal properties",
+      "Schedule uncertainty in political figures"
     ],
     "research_refs": [
-      "ABC News - Breaking News",
-      "Latest News and Videos",
       "Al Jazeera",
-      "BBC",
       "Business Insider",
-      "C-SPAN",
-      "CNN",
-      "Chicago Tribune",
-      "Citizens for Responsibility and Ethics in Washington"
+      "Citizens for Responsibility and Ethics in Washington",
+      "National News Desk",
+      "PBS",
+      "Palm Beach Daily News",
+      "Politico",
+      "Snopes.com"
     ]
   },
   "history": [
@@ -163,22 +162,22 @@
       ]
     },
     {
-      "as_of": "2026-06-29T18:34:31Z",
-      "my_probability": 0.5,
+      "as_of": "2026-06-29T20:42:40Z",
+      "my_probability": 0.005,
       "my_confidence": "high",
       "market_implied_probability": 0.005,
       "market_price_cents": 0.0,
-      "edge": 0.495,
+      "edge": 0.0,
       "yes_ask": 0.01,
       "no_ask": 1.0,
-      "fee_per_contract": 0.01,
-      "ev_per_contract": 0.48,
-      "limit_price": 0.0,
-      "ev_limit_per_contract": 0.5,
+      "fee_per_contract": 0.0,
+      "ev_per_contract": -0.0050000000000000044,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
       "lean": "NONE",
       "conviction": "low",
-      "lean_note": "50pt gap exceeds the hard ceiling (20pt) — beyond this divergence from a liquid market, even high confidence is treated as model error, not edge",
-      "prob_delta_vs_prev": 0.35,
+      "lean_note": "no +EV value bet at the ask (my prob 0%, modal NO) — staying out.",
+      "prob_delta_vs_prev": -0.145,
       "trigger": "scheduled",
       "strategy_id": "LQ5-ensemble5",
       "proposed_probability": null,
@@ -186,25 +185,24 @@
       "adversarial_challenged_prob": null,
       "adversarial_concerns": [],
       "adversarial_model": "",
-      "rationale_summary": "The evidence provided does not directly address whether Trump will make 1 trip to Mar-a-Lago in June 2026. The only relevant information is about Trump's son potentially buying waterfront land in West Palm, which is unrelated to the number of trips to Mar-a-Lago. With no direct evidence or historical context about Trump's travel patterns to Mar-a-Lago as President, the probability is estimated as ",
+      "rationale_summary": "The base rate from Citizens for Responsibility and Ethics in Washington indicates that Trump has visited his properties on 37% of his days in office. However, there is no specific information about his schedule for June 2026, and the percentage may not directly translate to this specific period due to potential changes in his schedule or circumstances. No other evidence directly supports or refute",
       "key_drivers": [
-        "No direct evidence about Trump's travel plans to Mar-a-Lago in June 2026",
-        "Lack of historical data on Trump's trips to Mar-a-Lago as President"
+        "Base rate of Trump's visits to Mar-a-Lago",
+        "Lack of specific information about June 2026 schedule"
       ],
       "reference_classes": [
-        "Presidential travel patterns to private residences",
-        "Public statements or records about Trump's activities at Mar-a-Lago"
+        "Frequency of presidential visits to personal properties",
+        "Schedule uncertainty in political figures"
       ],
       "research_refs": [
-        "ABC News - Breaking News",
-        "Latest News and Videos",
         "Al Jazeera",
-        "BBC",
         "Business Insider",
-        "C-SPAN",
-        "CNN",
-        "Chicago Tribune",
-        "Citizens for Responsibility and Ethics in Washington"
+        "Citizens for Responsibility and Ethics in Washington",
+        "National News Desk",
+        "PBS",
+        "Palm Beach Daily News",
+        "Politico",
+        "Snopes.com"
       ]
     }
   ],

@@ -5,44 +5,37 @@
   "category": "politics",
   "close_time": "2026-07-01T14:00:00Z",
   "current": {
-    "as_of": "2026-06-29T18:34:46Z",
-    "my_probability": 0.12,
+    "as_of": "2026-06-29T20:42:42Z",
+    "my_probability": 0.002,
     "my_confidence": "high",
     "market_implied_probability": 0.002,
     "market_price_cents": 0.0,
-    "edge": 0.118,
+    "edge": 0.0,
     "yes_ask": 0.003,
     "no_ask": 0.999,
     "fee_per_contract": 0.01,
-    "ev_per_contract": 0.107,
-    "limit_price": 0.001,
-    "ev_limit_per_contract": 0.109,
+    "ev_per_contract": -0.011,
+    "limit_price": null,
+    "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "ADVERSARIAL VETO: The position is overconfident and lacks a credible edge over the market, which has already priced in a much lower probability. The reasoning is speculative and does not justify the proposed probability.",
-    "prob_delta_vs_prev": 0.11,
+    "lean_note": "no +EV value bet at the ask (my prob 0%, modal NO) — staying out.",
+    "prob_delta_vs_prev": -0.008,
     "trigger": "scheduled",
     "strategy_id": "LQ5-ensemble5",
-    "proposed_probability": 0.12,
-    "adversarial_verdict": "veto",
-    "adversarial_challenged_prob": 0.12,
-    "adversarial_concerns": [
-      "The proposed probability (0.12) is vastly higher than the market-implied probability (0.002), indicating a significant divergence that lacks justification.",
-      "The reasoning does not provide sufficient evidence to support a probability that is over 50 times higher than the market's implied probability.",
-      "The forecaster assumes Rubio's involvement in discussions around the Iran deal implies a likelihood of him visiting Iran, but this is a logical leap without evidence of intent or opportunity."
-    ],
-    "adversarial_model": "qwen3:14b-q4_K_M",
-    "rationale_summary": "The base rate indicates that U.S.-Iran diplomatic efforts have historically faced significant challenges due to mutual distrust and regional tensions. Recent evidence suggests that U.S.-Iran peace talks are in question due to recent Gulf attacks, and Gulf allies have concerns about any Iran deal, which may hinder diplomatic progress. While Rubio is involved in discussions around the Iran deal, the",
+    "proposed_probability": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": "",
+    "rationale_summary": "As of June 29, 2026, there is no confirmed evidence or news indicating that Marco Rubio has visited Iran or is planning to do so before July 1, 2026. The absence of any verbatim statements or official announcements suggests a very low likelihood of such an event occurring. Given the political context and Rubio's historical stance on Iran, the probability remains low.",
     "key_drivers": [
-      "Historical challenges in U.S.-Iran diplomacy",
-      "Recent Gulf attacks complicating peace talks",
-      "Gulf allies' concerns about Iran deals",
-      "No direct evidence of Rubio visiting Iran"
+      "Lack of confirmed evidence or announcements",
+      "Historical political stance on Iran"
     ],
     "reference_classes": [
-      "U.S.-Iran diplomatic engagement outcomes",
-      "Diplomatic efforts involving Gulf allies",
-      "Historical Senate member foreign policy engagement"
+      "Politician travel to high-risk or politically sensitive countries",
+      "U.S. senator diplomatic engagements"
     ],
     "research_refs": [
       "Al Jazeera",
@@ -50,9 +43,9 @@
       "Los Angeles Times",
       "NPR",
       "Reuters",
-      "The Guardian",
-      "The Jerusalem Post",
-      "The New York Times"
+      "The New York Times",
+      "The Times of Israel",
+      "The Washington Post"
     ]
   },
   "history": [
@@ -170,44 +163,37 @@
       ]
     },
     {
-      "as_of": "2026-06-29T18:34:46Z",
-      "my_probability": 0.12,
+      "as_of": "2026-06-29T20:42:42Z",
+      "my_probability": 0.002,
       "my_confidence": "high",
       "market_implied_probability": 0.002,
       "market_price_cents": 0.0,
-      "edge": 0.118,
+      "edge": 0.0,
       "yes_ask": 0.003,
       "no_ask": 0.999,
       "fee_per_contract": 0.01,
-      "ev_per_contract": 0.107,
-      "limit_price": 0.001,
-      "ev_limit_per_contract": 0.109,
+      "ev_per_contract": -0.011,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
       "lean": "NONE",
       "conviction": "low",
-      "lean_note": "ADVERSARIAL VETO: The position is overconfident and lacks a credible edge over the market, which has already priced in a much lower probability. The reasoning is speculative and does not justify the proposed probability.",
-      "prob_delta_vs_prev": 0.11,
+      "lean_note": "no +EV value bet at the ask (my prob 0%, modal NO) — staying out.",
+      "prob_delta_vs_prev": -0.008,
       "trigger": "scheduled",
       "strategy_id": "LQ5-ensemble5",
-      "proposed_probability": 0.12,
-      "adversarial_verdict": "veto",
-      "adversarial_challenged_prob": 0.12,
-      "adversarial_concerns": [
-        "The proposed probability (0.12) is vastly higher than the market-implied probability (0.002), indicating a significant divergence that lacks justification.",
-        "The reasoning does not provide sufficient evidence to support a probability that is over 50 times higher than the market's implied probability.",
-        "The forecaster assumes Rubio's involvement in discussions around the Iran deal implies a likelihood of him visiting Iran, but this is a logical leap without evidence of intent or opportunity."
-      ],
-      "adversarial_model": "qwen3:14b-q4_K_M",
-      "rationale_summary": "The base rate indicates that U.S.-Iran diplomatic efforts have historically faced significant challenges due to mutual distrust and regional tensions. Recent evidence suggests that U.S.-Iran peace talks are in question due to recent Gulf attacks, and Gulf allies have concerns about any Iran deal, which may hinder diplomatic progress. While Rubio is involved in discussions around the Iran deal, the",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "As of June 29, 2026, there is no confirmed evidence or news indicating that Marco Rubio has visited Iran or is planning to do so before July 1, 2026. The absence of any verbatim statements or official announcements suggests a very low likelihood of such an event occurring. Given the political context and Rubio's historical stance on Iran, the probability remains low.",
       "key_drivers": [
-        "Historical challenges in U.S.-Iran diplomacy",
-        "Recent Gulf attacks complicating peace talks",
-        "Gulf allies' concerns about Iran deals",
-        "No direct evidence of Rubio visiting Iran"
+        "Lack of confirmed evidence or announcements",
+        "Historical political stance on Iran"
       ],
       "reference_classes": [
-        "U.S.-Iran diplomatic engagement outcomes",
-        "Diplomatic efforts involving Gulf allies",
-        "Historical Senate member foreign policy engagement"
+        "Politician travel to high-risk or politically sensitive countries",
+        "U.S. senator diplomatic engagements"
       ],
       "research_refs": [
         "Al Jazeera",
@@ -215,9 +201,9 @@
         "Los Angeles Times",
         "NPR",
         "Reuters",
-        "The Guardian",
-        "The Jerusalem Post",
-        "The New York Times"
+        "The New York Times",
+        "The Times of Israel",
+        "The Washington Post"
       ]
     }
   ],
