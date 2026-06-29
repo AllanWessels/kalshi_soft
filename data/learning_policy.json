@@ -1,0 +1,82 @@
+{
+  "n_resolved": 31,
+  "recalibration": {
+    "mistral": {
+      "k": 1.0,
+      "n": 0
+    },
+    "qwen": {
+      "k": 0.8797,
+      "n": 7
+    },
+    "opus": {
+      "k": 0.8014,
+      "n": 11
+    }
+  },
+  "segment_skill": {
+    "politics / us-governor": {
+      "n": 1,
+      "skill": 1e-05
+    },
+    "politics / us-governor-primary": {
+      "n": 3,
+      "skill": 0.01718
+    },
+    "politics / mayoral": {
+      "n": 2,
+      "skill": 0.00475
+    },
+    "politics / us-senate": {
+      "n": 4,
+      "skill": -0.00929
+    },
+    "politics / foreign-election": {
+      "n": 1,
+      "skill": 0.02272
+    },
+    "economy / jobs-unemployment": {
+      "n": 1,
+      "skill": 0.00509
+    },
+    "economy / fed-rates": {
+      "n": 6,
+      "skill": -0.01277
+    },
+    "politics / legislation": {
+      "n": 2,
+      "skill": -0.00041
+    },
+    "politics / foreign-policy": {
+      "n": 3,
+      "skill": -0.00673
+    },
+    "culture / box-office": {
+      "n": 3,
+      "skill": -0.0153
+    },
+    "statements / other-statements": {
+      "n": 1,
+      "skill": -0.08599
+    },
+    "politics / us-president": {
+      "n": 3,
+      "skill": -0.0253
+    },
+    "politics / primary-nomination": {
+      "n": 1,
+      "skill": -0.00713
+    }
+  },
+  "model_weights": {
+    "opus": 0.08041374373418965,
+    "qwen": 0.40158609575285054
+  },
+  "params": {
+    "K_CAL": 25,
+    "K_WEIGHT": 8,
+    "K_ALPHA": 10,
+    "SKILL_FULL": 0.05
+  },
+  "updated_at": "2026-06-29T19:16:57Z"
+}

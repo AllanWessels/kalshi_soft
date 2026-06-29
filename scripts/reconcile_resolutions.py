@@ -305,6 +305,14 @@ def reconcile(dry_run: bool = False) -> None:
         store.save_resolutions(resolutions)
         calibration = scoring.compute_calibration(resolutions.resolved)
         store.save_calibration(calibration)
+        # Recompute the LEARNING POLICY (recalibration + per-segment/model trust + shrink-to-
+        # market) from the freshly-scored record so the next run forecasts better — distinct from
+        # the betting-policy learner (learn_policy.py). See lib/learning.py.
+        try:
+            from lib import learning
+            learning.save(learning.compute_policy(resolutions.resolved))
+        except Exception as exc:  # never let the learning recompute break reconcile
+            print(f"reconcile: learning-policy recompute skipped ({exc})", file=sys.stderr)
 
     # ------------------------------------------------------------------
     # 5. Human summary.

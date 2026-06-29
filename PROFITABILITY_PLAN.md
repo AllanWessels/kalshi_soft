@@ -23,6 +23,24 @@ win, (3) become measurably better than the price there, and (4) only deploy capi
 *earned, measured* skill. If local models cannot beat the market anywhere, the all-local thesis is
 falsified and we change the forecaster or sunset.
 
+## Betting policy ≠ learning policy (user correction, 2026-06-29)
+
+The lever is **NOT** a smarter *betting* policy (when to act on a forecast — the EV/gap gates in
+`learn_policy.py`). No betting policy can rescue a forecaster worse than the price. The lever is a
+**learning policy**: make the *forecasts themselves* better from resolved outcomes. The record proves
+this — historically **even Opus lost to the market** (S-arms skill ≈ −0.12, worse than Qwen −0.09), so
+adding a bigger model alone won't fix it. We use **3 forecasters (Qwen + Mistral + Opus)** for diversity;
+the learning loop is what must make the ensemble beat the price.
+
+**Built: `lib/learning.py` — the learning policy** (recomputed every reconcile, persisted to
+`data/learning_policy.json`):
+1. **Recalibration** per model (logit-temperature fit to outcomes, shrunk at low n). Already learned
+   Qwen k=0.88 / Opus k=0.80 — both overconfident, now corrected.
+2. **Segment × model trust** — learned ensemble weights (Qwen 0.40 ≫ Opus 0.08 from realized Brier).
+3. **Shrink-to-market** — deviate from the price only by our *measured, shrunk* skill in that segment
+   (min 3 resolved). No skill ⇒ track the market ⇒ no edge ⇒ no bet. **Position-taking emerges from
+   learning, not a hardcoded gate** — this is what ties the loop directly to profitability.
+
 ## The methods (what we're adding/replacing, and why)
 
 Current learning: 5× ensemble (variance), policy-knob learner (when to bet), strategy bandit
