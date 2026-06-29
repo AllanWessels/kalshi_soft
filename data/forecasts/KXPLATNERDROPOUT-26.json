@@ -3,44 +3,51 @@
   "ticker": "KXPLATNERDROPOUT-26",
   "title": "Will Graham Platner drop out of the 2026 United States Senate election in Maine before Jul 14, 2026?",
   "category": "politics",
-  "close_time": "2026-07-14T03:59:00Z",
+  "close_time": "2026-07-14T14:00:00Z",
   "current": {
-    "as_of": "2026-06-23T19:23:27Z",
-    "my_probability": 0.06,
-    "my_confidence": "medium",
-    "market_implied_probability": 0.034,
-    "market_price_cents": 3.0,
-    "edge": 0.025999999999999995,
-    "yes_ask": 0.037,
-    "no_ask": 0.969,
+    "as_of": "2026-06-29T18:34:54Z",
+    "my_probability": 0.15,
+    "my_confidence": "high",
+    "market_implied_probability": 0.017,
+    "market_price_cents": 2.0,
+    "edge": 0.133,
+    "yes_ask": 0.023,
+    "no_ask": 0.989,
     "fee_per_contract": 0.01,
-    "ev_per_contract": -0.03900000000000003,
-    "limit_price": null,
-    "ev_limit_per_contract": null,
+    "ev_per_contract": 0.117,
+    "limit_price": 0.011,
+    "ev_limit_per_contract": 0.129,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "no +EV value bet at the ask (my prob 6%, modal NO) — staying out.",
-    "prob_delta_vs_prev": 0.03,
+    "lean_note": "ADVERSARIAL VETO: The forecast lacks sufficient evidence to support a high confidence in a 'yes' outcome. The absence of public information does not constitute evidence of low probability, and the divergence from the market suggests overconfidence. The posit",
+    "prob_delta_vs_prev": 0.09,
     "trigger": "scheduled",
-    "strategy_id": "S0-single",
-    "proposed_probability": null,
-    "adversarial_verdict": "",
-    "adversarial_challenged_prob": null,
-    "adversarial_concerns": [],
-    "adversarial_model": "",
-    "rationale_summary": "Won nomination ~72% on June 9 with scandals already public, publicly defiant, party has no mechanism to force exit. Maine's ballot-replacement deadline is 5pm July 13 (inside the window), which mechanically concentrates any drop-out into these 3 weeks, lifting the tail from ~2% to ~6%; no fresh post-June-10 shock found.",
+    "strategy_id": "LQ5-ensemble5",
+    "proposed_probability": 0.15,
+    "adversarial_verdict": "veto",
+    "adversarial_challenged_prob": 0.15,
+    "adversarial_concerns": [
+      "The forecast assumes that the absence of public evidence equates to low probability, but this ignores the possibility of private or unreported factors that could influence Platner's decision.",
+      "The divergence from the market-implied probability (0.017) suggests overconfidence in the forecast's assessment.",
+      "There is no credible evidence or reasoning provided to justify a high confidence level in a 'yes' outcome when the market implies a much lower probability."
+    ],
+    "adversarial_model": "qwen3:14b-q4_K_M",
+    "rationale_summary": "There is currently no public evidence of any scandal or issue involving Graham Platner that would suggest he is likely to drop out of the 2026 Senate election in Maine before July 14, 2026. The lack of news coverage or reports from reputable sources indicates that no major developments have occurred that would compel him to withdraw. However, the absence of information does not rule out the possib",
     "key_drivers": [
-      "won 72% post-scandal",
-      "defiant",
-      "no force mechanism",
-      "July13 replacement deadline in-window"
+      "No public scandal or issue reported",
+      "No indication of internal pressures or health concerns"
     ],
     "reference_classes": [
-      "just-nominated scandal candidate dropping in 3wk window <3%; deadline concentrates the mass"
+      "Candidates dropping out due to scandals",
+      "Candidates dropping out due to health or personal issues"
     ],
     "research_refs": [
-      "https://www.maine.gov/sos/sites/maine.gov.sos/files/inline-files/2026%20Candidates%20Guide%20to%20Ballot%20Access%20Final.pdf",
-      "https://www.nbcnews.com/politics/2026-election/democrats-new-graham-platner-controversy-maine-rcna348538"
+      "NBC News",
+      "The Hill",
+      "The New York Times",
+      "The Portland Press Herald",
+      "USA Today",
+      "newscentermaine.com"
     ]
   },
   "history": [
@@ -119,6 +126,52 @@
       "research_refs": [
         "https://www.maine.gov/sos/sites/maine.gov.sos/files/inline-files/2026%20Candidates%20Guide%20to%20Ballot%20Access%20Final.pdf",
         "https://www.nbcnews.com/politics/2026-election/democrats-new-graham-platner-controversy-maine-rcna348538"
+      ]
+    },
+    {
+      "as_of": "2026-06-29T18:34:54Z",
+      "my_probability": 0.15,
+      "my_confidence": "high",
+      "market_implied_probability": 0.017,
+      "market_price_cents": 2.0,
+      "edge": 0.133,
+      "yes_ask": 0.023,
+      "no_ask": 0.989,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": 0.117,
+      "limit_price": 0.011,
+      "ev_limit_per_contract": 0.129,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "ADVERSARIAL VETO: The forecast lacks sufficient evidence to support a high confidence in a 'yes' outcome. The absence of public information does not constitute evidence of low probability, and the divergence from the market suggests overconfidence. The posit",
+      "prob_delta_vs_prev": 0.09,
+      "trigger": "scheduled",
+      "strategy_id": "LQ5-ensemble5",
+      "proposed_probability": 0.15,
+      "adversarial_verdict": "veto",
+      "adversarial_challenged_prob": 0.15,
+      "adversarial_concerns": [
+        "The forecast assumes that the absence of public evidence equates to low probability, but this ignores the possibility of private or unreported factors that could influence Platner's decision.",
+        "The divergence from the market-implied probability (0.017) suggests overconfidence in the forecast's assessment.",
+        "There is no credible evidence or reasoning provided to justify a high confidence level in a 'yes' outcome when the market implies a much lower probability."
+      ],
+      "adversarial_model": "qwen3:14b-q4_K_M",
+      "rationale_summary": "There is currently no public evidence of any scandal or issue involving Graham Platner that would suggest he is likely to drop out of the 2026 Senate election in Maine before July 14, 2026. The lack of news coverage or reports from reputable sources indicates that no major developments have occurred that would compel him to withdraw. However, the absence of information does not rule out the possib",
+      "key_drivers": [
+        "No public scandal or issue reported",
+        "No indication of internal pressures or health concerns"
+      ],
+      "reference_classes": [
+        "Candidates dropping out due to scandals",
+        "Candidates dropping out due to health or personal issues"
+      ],
+      "research_refs": [
+        "NBC News",
+        "The Hill",
+        "The New York Times",
+        "The Portland Press Herald",
+        "USA Today",
+        "newscentermaine.com"
       ]
     }
   ],

@@ -1,51 +1,53 @@
 {
   "schema_version": 1,
   "ticker": "KXHORMUZNORM-26MAR17-B260701",
-  "title": "Will the 7-day moving average of transit calls through the Strait of Hormuz (IMF PortWatch) be above 60 before July 1, 2026?",
+  "title": "Will the 7-day moving average of transit calls through the Strait of Hormuz as reported by the IMF PortWatch be above 60 before July 1, 2026?",
   "category": "politics",
-  "close_time": "2026-07-07T13:59:00Z",
+  "close_time": "2026-06-15T14:00:00Z",
   "current": {
-    "as_of": "2026-06-23T20:26:26Z",
-    "my_probability": 0.15,
+    "as_of": "2026-06-29T18:34:16Z",
+    "my_probability": 0.3167,
     "my_confidence": "high",
-    "market_implied_probability": 0.02,
-    "market_price_cents": 2.0,
-    "edge": 0.13,
-    "yes_ask": 0.021,
-    "no_ask": 0.981,
+    "market_implied_probability": 0.0065,
+    "market_price_cents": 1.0,
+    "edge": 0.3102,
+    "yes_ask": 0.007,
+    "no_ask": 0.994,
     "fee_per_contract": 0.01,
-    "ev_per_contract": 0.11900000000000001,
-    "limit_price": 0.019,
-    "ev_limit_per_contract": 0.121,
+    "ev_per_contract": 0.29969999999999997,
+    "limit_price": 0.006,
+    "ev_limit_per_contract": 0.3007,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "ADVERSARIAL VETO: The forecaster's high confidence in a 0.15 probability rests on vague historical analogies and unproven assumptions about recovery timelines, while the market's 0.02 implies a fundamentally different assessment of risk. Without concrete evi",
-    "prob_delta_vs_prev": 0.09999999999999999,
-    "trigger": "near_close",
+    "lean_note": "31pt gap exceeds the hard ceiling (20pt) — beyond this divergence from a liquid market, even high confidence is treated as model error, not edge",
+    "prob_delta_vs_prev": 0.1667,
+    "trigger": "scheduled",
     "strategy_id": "LQ5-ensemble5",
-    "proposed_probability": 0.15,
-    "adversarial_verdict": "veto",
-    "adversarial_challenged_prob": 0.15,
-    "adversarial_concerns": [
-      "Divergence of 0.13 from liquid market implies unexplained edge; forecaster provides no credible evidence for this gap",
-      "Historical recovery timelines cited lack specificity (e.g., 'weeks-to-months' without quantified benchmarks)",
-      "Assumes hypothetical ceasefire scenario without addressing market's implicit assumptions about conflict resolution timelines",
-      "Base-rate neglect: fails to compare current situation to historical chokepoint disruptions with similar severity"
-    ],
-    "adversarial_model": "qwen3:14b-q4_K_M",
-    "rationale_summary": "Post-disruption recovery at chokepoints like Hormuz takes weeks-to-months, not days. As of June 14, the 7-day MA was 2.57, and daily transits remain far below pre-war baselines (~94/day). Recent Iranian closure (June 20-21) likely prolonged stagnation. Even with a hypothetical ceasefire, historical ",
+    "proposed_probability": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": "",
+    "rationale_summary": "The evidence suggests that traffic through the Strait of Hormuz has been significantly disrupted and that it may not return to normal until late 2026 or later. Multiple sources, including CNBC and Statista, report that traffic has virtually stopped or is only trickling through. Kalshi traders have predicted traffic would not return to normal until July or even August or later. These signals imply ",
     "key_drivers": [
-      "ceasefire durability",
-      "actual PortWatch MA trends",
-      "duration of recent Iranian closure"
+      "Disruption and slow recovery of traffic through the Strait of Hormuz as reported by multiple sources.",
+      "Kalshi trader predictions indicating delayed return to normal traffic levels.",
+      "Uncertainty around geopolitical tensions and conflicts affecting shipping routes."
     ],
     "reference_classes": [
-      "post-conflict maritime chokepoint recovery",
-      "regional geopolitical disruption impacts on shipping"
+      "Shipping disruptions and their impact on global supply chains",
+      "as analyzed by Euromonitor.",
+      "Historical patterns of shipping recovery following geopolitical or economic shocks."
     ],
     "research_refs": [
-      "https://portwatch.imf.org/pages/chokepoint6",
-      "https://www.aljazeera.com/economy/2026/6/22/shipping-stalls-in-strait-of-hormuz-after-iran-declares-key-waterway-shut"
+      "CNBC",
+      "Coinbase",
+      "Covers.com",
+      "Cryptopolitan",
+      "Euromonitor",
+      "MacroMicro",
+      "Statista",
+      "farmdoc daily"
     ]
   },
   "history": [
@@ -283,6 +285,52 @@
       "research_refs": [
         "https://portwatch.imf.org/pages/chokepoint6",
         "https://www.aljazeera.com/economy/2026/6/22/shipping-stalls-in-strait-of-hormuz-after-iran-declares-key-waterway-shut"
+      ]
+    },
+    {
+      "as_of": "2026-06-29T18:34:16Z",
+      "my_probability": 0.3167,
+      "my_confidence": "high",
+      "market_implied_probability": 0.0065,
+      "market_price_cents": 1.0,
+      "edge": 0.3102,
+      "yes_ask": 0.007,
+      "no_ask": 0.994,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": 0.29969999999999997,
+      "limit_price": 0.006,
+      "ev_limit_per_contract": 0.3007,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "31pt gap exceeds the hard ceiling (20pt) — beyond this divergence from a liquid market, even high confidence is treated as model error, not edge",
+      "prob_delta_vs_prev": 0.1667,
+      "trigger": "scheduled",
+      "strategy_id": "LQ5-ensemble5",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "The evidence suggests that traffic through the Strait of Hormuz has been significantly disrupted and that it may not return to normal until late 2026 or later. Multiple sources, including CNBC and Statista, report that traffic has virtually stopped or is only trickling through. Kalshi traders have predicted traffic would not return to normal until July or even August or later. These signals imply ",
+      "key_drivers": [
+        "Disruption and slow recovery of traffic through the Strait of Hormuz as reported by multiple sources.",
+        "Kalshi trader predictions indicating delayed return to normal traffic levels.",
+        "Uncertainty around geopolitical tensions and conflicts affecting shipping routes."
+      ],
+      "reference_classes": [
+        "Shipping disruptions and their impact on global supply chains",
+        "as analyzed by Euromonitor.",
+        "Historical patterns of shipping recovery following geopolitical or economic shocks."
+      ],
+      "research_refs": [
+        "CNBC",
+        "Coinbase",
+        "Covers.com",
+        "Cryptopolitan",
+        "Euromonitor",
+        "MacroMicro",
+        "Statista",
+        "farmdoc daily"
       ]
     }
   ],

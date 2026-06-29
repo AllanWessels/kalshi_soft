@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-23T20:48:19Z",
-  "n_resolved": 25,
+  "generated_at": "2026-06-29T18:37:38Z",
+  "n_resolved": 31,
   "guardrails": {
     "min_n": 20,
     "max_step": 0.05
@@ -10,26 +10,26 @@
     {
       "knob": "max_market_disagreement",
       "current": 0.05,
-      "proposed": 0.05,
-      "n": 25,
+      "proposed": null,
+      "n": 31,
       "guardrail": "INSUFFICIENT_DATA",
-      "rationale": "Counterfactual ROI falls monotonically as the fade widens and is profitable only at/under 5pt -> tighten the fade gate toward the band that actually pays. (already at/again the target — no move)",
+      "rationale": "No coherent 'wider fades lose' ladder yet (signal not monotone / tail band not negative).",
       "evidence": {
         "0-5pt": {
-          "n": 16,
+          "n": 17,
           "cf_pnl": 0.977,
-          "cf_staked": 15.023,
-          "cf_roi": 0.06503361512347733,
+          "cf_staked": 16.023,
+          "cf_roi": 0.06097484865505835,
           "cf_win_rate": 1.0,
           "max_drawdown": -0.007999999999999998
         },
         "5-10pt": {
-          "n": 3,
-          "cf_pnl": -0.27,
-          "cf_staked": 2.27,
-          "cf_roi": -0.11894273127753305,
-          "cf_win_rate": 0.6666666666666666,
-          "max_drawdown": -0.8
+          "n": 6,
+          "cf_pnl": -1.33,
+          "cf_staked": 4.33,
+          "cf_roi": -0.3071593533487298,
+          "cf_win_rate": 0.5,
+          "max_drawdown": -1.33
         },
         "10-20pt": {
           "n": 4,
@@ -40,11 +40,11 @@
           "max_drawdown": -2.113
         },
         "20pt+": {
-          "n": 2,
-          "cf_pnl": -0.55,
-          "cf_staked": 0.55,
-          "cf_roi": -1.0,
-          "cf_win_rate": 0.0,
+          "n": 4,
+          "cf_pnl": -0.32,
+          "cf_staked": 2.32,
+          "cf_roi": -0.13793103448275865,
+          "cf_win_rate": 0.5,
           "max_drawdown": -0.55
         }
       }
@@ -52,17 +52,17 @@
     {
       "knob": "hard_gap_ceiling",
       "current": 0.2,
-      "proposed": 0.2,
-      "n": 25,
+      "proposed": null,
+      "n": 31,
       "guardrail": "INSUFFICIENT_DATA",
-      "rationale": "The widest fades (20pt+) lost catastrophically (ROI<=-50%) -> lower the absolute ceiling so even high-confidence cannot take a fade that wide. This is the URAN guard learned from the record. (already at/again the target — no move)",
+      "rationale": "No catastrophic wide-fade band yet — the absolute ceiling stays put.",
       "evidence": {
         "20pt+": {
-          "n": 2,
-          "cf_pnl": -0.55,
-          "cf_staked": 0.55,
-          "cf_roi": -1.0,
-          "cf_win_rate": 0.0,
+          "n": 4,
+          "cf_pnl": -0.32,
+          "cf_staked": 2.32,
+          "cf_roi": -0.13793103448275865,
+          "cf_win_rate": 0.5,
           "max_drawdown": -0.55
         },
         "10-20pt": {
@@ -78,34 +78,34 @@
     {
       "knob": "min_confidence_for_lean",
       "current": "medium",
-      "proposed": "high",
-      "n": 25,
-      "guardrail": "HUMAN_GATE",
-      "rationale": "medium-confidence ROI -24% (n=7) while high-confidence profits 2% (n=15) -> raise the lean floor to 'high'. Held for human sign-off until the medium tier has >= 10 resolved samples (has 7) — won't eliminate a tier on a thin sample.",
+      "proposed": null,
+      "n": 31,
+      "guardrail": "INSUFFICIENT_DATA",
+      "rationale": "Confidence gating evidence inconclusive (or floor already raised).",
       "evidence": {
         "high": {
-          "n": 15,
-          "cf_pnl": 0.21700000000000008,
-          "cf_staked": 13.783,
-          "cf_roi": 0.015744032503809048,
-          "cf_win_rate": 0.9333333333333333,
-          "max_drawdown": -0.16
+          "n": 16,
+          "cf_pnl": -0.33299999999999996,
+          "cf_staked": 14.333,
+          "cf_roi": -0.02323309844414986,
+          "cf_win_rate": 0.875,
+          "max_drawdown": -0.7100000000000001
         },
         "medium": {
-          "n": 7,
-          "cf_pnl": -1.2330000000000003,
-          "cf_staked": 5.2330000000000005,
-          "cf_roi": -0.2356201031912861,
-          "cf_win_rate": 0.5714285714285714,
+          "n": 11,
+          "cf_pnl": -1.0030000000000001,
+          "cf_staked": 9.003,
+          "cf_roi": -0.11140730867488616,
+          "cf_win_rate": 0.7272727272727273,
           "max_drawdown": -1.743
         },
         "low": {
-          "n": 3,
-          "cf_pnl": -0.94,
-          "cf_staked": 1.94,
-          "cf_roi": -0.4845360824742268,
-          "cf_win_rate": 0.3333333333333333,
-          "max_drawdown": -0.94
+          "n": 4,
+          "cf_pnl": -1.45,
+          "cf_staked": 2.45,
+          "cf_roi": -0.5918367346938775,
+          "cf_win_rate": 0.25,
+          "max_drawdown": -1.45
         }
       }
     },
@@ -113,11 +113,11 @@
       "knob": "adversarial_veto_binding",
       "current": true,
       "proposed": null,
-      "n": 4,
+      "n": 5,
       "guardrail": "INSUFFICIENT_DATA",
-      "rationale": "Veto precision becomes learnable once vetoed/revised positions resolve; 4 resolved position(s) carry a verdict so far.",
+      "rationale": "Veto precision becomes learnable once vetoed/revised positions resolve; 5 resolved position(s) carry a verdict so far.",
       "evidence": {
-        "resolved_with_verdict": 4
+        "resolved_with_verdict": 5
       }
     }
   ]

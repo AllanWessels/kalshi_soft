@@ -1,47 +1,51 @@
 {
   "schema_version": 1,
   "ticker": "KXRT-ODY-90",
-  "title": "The Odyssey Rotten Tomatoes score (>=90%)?",
+  "title": "The Odyssey Rotten Tomatoes score?",
   "category": "culture",
   "close_time": "2026-07-20T14:00:00Z",
   "current": {
-    "as_of": "2026-06-23T19:23:27Z",
-    "my_probability": 0.3,
-    "my_confidence": "medium",
-    "market_implied_probability": 0.42,
-    "market_price_cents": 42.0,
-    "edge": -0.12,
-    "yes_ask": 0.43,
-    "no_ask": 0.59,
+    "as_of": "2026-06-29T18:34:54Z",
+    "my_probability": 0.5,
+    "my_confidence": "high",
+    "market_implied_probability": 0.47,
+    "market_price_cents": 47.0,
+    "edge": 0.030000000000000027,
+    "yes_ask": 0.48,
+    "no_ask": 0.54,
     "fee_per_contract": 0.02,
-    "ev_per_contract": 0.08999999999999998,
-    "limit_price": 0.57,
-    "ev_limit_per_contract": 0.11,
+    "ev_per_contract": 1.734723475976807e-17,
+    "limit_price": null,
+    "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "12pt gap vs a liquid market without high confidence — more likely my error than edge",
-    "prob_delta_vs_prev": -0.25000000000000006,
+    "lean_note": "no +EV value bet at the ask (my prob 50%, modal YES) — staying out.",
+    "prob_delta_vs_prev": 0.2,
     "trigger": "scheduled",
-    "strategy_id": "S0-single",
+    "strategy_id": "LQ5-ensemble5",
     "proposed_probability": null,
     "adversarial_verdict": "",
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "Strict >=91% bar; among Nolan's large-event films only ~2 of 8 (~25%) cleared 91 (Interstellar 73, Tenet 70 are his maximalist swings). Resolution is the matured-count Monday after wide release, which strips opening-weekend inflation (Tenet 87%->70%). RT shows 0 reviews yet.",
+    "rationale_summary": "The evidence notes indicate that as of 2026-08-14, there is no information available about the Rotten Tomatoes score for The Odyssey (2026) in the provided search results. While the film is confirmed to be directed by Christopher Nolan, this does not provide any direct insight into its Rotten Tomatoes score. The base rate suggests that scores for other films are available, but not for this specifi",
     "key_drivers": [
-      "strict 91 bar",
-      "Nolan large-event ~25% clear 91",
-      "matured-count resolution strips honeymoon",
-      "negative trailer buzz"
+      "Lack of information in the provided sources",
+      "Confirmation of the film's director but not its score"
     ],
     "reference_classes": [
-      "Nolan large-budget films >=91% ~25%; opening-to-final RT decay"
+      "Rotten Tomatoes scores for other films",
+      "Availability of critical information in media sources"
     ],
     "research_refs": [
-      "https://editorial.rottentomatoes.com/guide/all-christopher-nolan-movies-ranked-by-tomatometer/",
-      "https://www.rottentomatoes.com/m/the_odyssey_2026",
-      "https://variety.com/2026/film/news/the-odyssey-amc-app-ticket-demand-christopher-nolan-epic-1236766869/"
+      "Awards Daily",
+      "Coinbase",
+      "Collider",
+      "Cosmic Book News",
+      "Gold Derby",
+      "High On Films",
+      "IMDb",
+      "MovieWeb"
     ]
   },
   "history": [
@@ -121,6 +125,50 @@
         "https://editorial.rottentomatoes.com/guide/all-christopher-nolan-movies-ranked-by-tomatometer/",
         "https://www.rottentomatoes.com/m/the_odyssey_2026",
         "https://variety.com/2026/film/news/the-odyssey-amc-app-ticket-demand-christopher-nolan-epic-1236766869/"
+      ]
+    },
+    {
+      "as_of": "2026-06-29T18:34:54Z",
+      "my_probability": 0.5,
+      "my_confidence": "high",
+      "market_implied_probability": 0.47,
+      "market_price_cents": 47.0,
+      "edge": 0.030000000000000027,
+      "yes_ask": 0.48,
+      "no_ask": 0.54,
+      "fee_per_contract": 0.02,
+      "ev_per_contract": 1.734723475976807e-17,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "no +EV value bet at the ask (my prob 50%, modal YES) — staying out.",
+      "prob_delta_vs_prev": 0.2,
+      "trigger": "scheduled",
+      "strategy_id": "LQ5-ensemble5",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "The evidence notes indicate that as of 2026-08-14, there is no information available about the Rotten Tomatoes score for The Odyssey (2026) in the provided search results. While the film is confirmed to be directed by Christopher Nolan, this does not provide any direct insight into its Rotten Tomatoes score. The base rate suggests that scores for other films are available, but not for this specifi",
+      "key_drivers": [
+        "Lack of information in the provided sources",
+        "Confirmation of the film's director but not its score"
+      ],
+      "reference_classes": [
+        "Rotten Tomatoes scores for other films",
+        "Availability of critical information in media sources"
+      ],
+      "research_refs": [
+        "Awards Daily",
+        "Coinbase",
+        "Collider",
+        "Cosmic Book News",
+        "Gold Derby",
+        "High On Films",
+        "IMDb",
+        "MovieWeb"
       ]
     }
   ],

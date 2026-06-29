@@ -5,42 +5,50 @@
   "category": "politics",
   "close_time": "2026-07-01T14:00:00Z",
   "current": {
-    "as_of": "2026-06-23T19:13:02Z",
-    "my_probability": 0.04,
+    "as_of": "2026-06-29T18:34:31Z",
+    "my_probability": 0.5335,
     "my_confidence": "high",
-    "market_implied_probability": 0.015,
-    "market_price_cents": 2.0,
-    "edge": 0.025,
-    "yes_ask": 0.02,
-    "no_ask": 0.99,
+    "market_implied_probability": 0.005,
+    "market_price_cents": 0.0,
+    "edge": 0.5285,
+    "yes_ask": 0.01,
+    "no_ask": 1.0,
     "fee_per_contract": 0.01,
-    "ev_per_contract": 0.01,
-    "limit_price": null,
-    "ev_limit_per_contract": null,
+    "ev_per_contract": 0.5135,
+    "limit_price": 0.0,
+    "ev_limit_per_contract": 0.5335,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "no +EV value bet at the ask (my prob 4%, modal NO) — staying out.",
-    "prob_delta_vs_prev": -0.010000000000000002,
+    "lean_note": "53pt gap exceeds the hard ceiling (20pt) — beyond this divergence from a liquid market, even high confidence is treated as model error, not edge",
+    "prob_delta_vs_prev": 0.4935,
     "trigger": "scheduled",
-    "strategy_id": "S0-single",
+    "strategy_id": "LQ5C-ensemble5-crowd",
     "proposed_probability": null,
     "adversarial_verdict": "",
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "June 17 Islamabad MOU is a war-ending ceasefire, not a nuclear deal; the June 21-22 Switzerland round produced only a 60-day roadmap (~late Aug) with enrichment and IAEA access still disputed as of June 23.",
+    "rationale_summary": "The evidence suggests that a 14-point agreement between the U.S. and Iran was reached, with provisions on Iran's nuclear program and specific issues like enriched uranium and the Strait of Hormuz. However, there are also reports of renewed hostilities and criticism of the deal, which could impact its stability. The presence of multiple sources and the specificity of the agreement increase the prob",
     "key_drivers": [
-      "MOU not nuclear deal",
-      "60-day roadmap",
-      "enrichment unresolved"
+      "The existence of a 14-point agreement between the U.S. and Iran.",
+      "Provisions on Iran's nuclear program and specific geopolitical issues.",
+      "Renewed hostilities and criticism of the deal.",
+      "Potential edits to the deal by Trump and the impact of ongoing tensions."
     ],
     "reference_classes": [
-      "nuclear-deal timelines (JCPOA ~20 months)"
+      "Historically complex and subject-to-change nuclear deals between the U.S. and Iran.",
+      "Previous attempts at reaching nuclear agreements with varying success."
     ],
     "research_refs": [
-      "https://www.cfr.org",
-      "https://commonslibrary.parliament.uk",
-      "https://history.state.gov"
+      "ABC News",
+      "ABC News - Breaking News",
+      "Latest News and Videos",
+      "Axios",
+      "BBC",
+      "Britannica",
+      "CBS News",
+      "CNBC",
+      "CNN"
     ]
   },
   "history": [
@@ -193,6 +201,53 @@
         "https://www.cfr.org",
         "https://commonslibrary.parliament.uk",
         "https://history.state.gov"
+      ]
+    },
+    {
+      "as_of": "2026-06-29T18:34:31Z",
+      "my_probability": 0.5335,
+      "my_confidence": "high",
+      "market_implied_probability": 0.005,
+      "market_price_cents": 0.0,
+      "edge": 0.5285,
+      "yes_ask": 0.01,
+      "no_ask": 1.0,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": 0.5135,
+      "limit_price": 0.0,
+      "ev_limit_per_contract": 0.5335,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "53pt gap exceeds the hard ceiling (20pt) — beyond this divergence from a liquid market, even high confidence is treated as model error, not edge",
+      "prob_delta_vs_prev": 0.4935,
+      "trigger": "scheduled",
+      "strategy_id": "LQ5C-ensemble5-crowd",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "The evidence suggests that a 14-point agreement between the U.S. and Iran was reached, with provisions on Iran's nuclear program and specific issues like enriched uranium and the Strait of Hormuz. However, there are also reports of renewed hostilities and criticism of the deal, which could impact its stability. The presence of multiple sources and the specificity of the agreement increase the prob",
+      "key_drivers": [
+        "The existence of a 14-point agreement between the U.S. and Iran.",
+        "Provisions on Iran's nuclear program and specific geopolitical issues.",
+        "Renewed hostilities and criticism of the deal.",
+        "Potential edits to the deal by Trump and the impact of ongoing tensions."
+      ],
+      "reference_classes": [
+        "Historically complex and subject-to-change nuclear deals between the U.S. and Iran.",
+        "Previous attempts at reaching nuclear agreements with varying success."
+      ],
+      "research_refs": [
+        "ABC News",
+        "ABC News - Breaking News",
+        "Latest News and Videos",
+        "Axios",
+        "BBC",
+        "Britannica",
+        "CBS News",
+        "CNBC",
+        "CNN"
       ]
     }
   ],

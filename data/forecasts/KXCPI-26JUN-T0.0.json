@@ -3,42 +3,50 @@
   "ticker": "KXCPI-26JUN-T0.0",
   "title": "Will CPI rise more than 0.0% in June 2026?",
   "category": "economy",
-  "close_time": "2026-07-14T12:25:00Z",
+  "close_time": "2026-07-14T13:56:00Z",
   "current": {
-    "as_of": "2026-06-23T19:12:23Z",
-    "my_probability": 0.25,
-    "my_confidence": "medium",
-    "market_implied_probability": 0.09,
-    "market_price_cents": 9.0,
-    "edge": 0.16,
-    "yes_ask": 0.11,
-    "no_ask": 0.93,
+    "as_of": "2026-06-29T18:34:48Z",
+    "my_probability": 0.92,
+    "my_confidence": "high",
+    "market_implied_probability": 0.035,
+    "market_price_cents": 4.0,
+    "edge": 0.885,
+    "yes_ask": 0.04,
+    "no_ask": 0.97,
     "fee_per_contract": 0.01,
-    "ev_per_contract": -0.19000000000000006,
-    "limit_price": null,
-    "ev_limit_per_contract": null,
+    "ev_per_contract": 0.87,
+    "limit_price": 0.03,
+    "ev_limit_per_contract": 0.88,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "no +EV value bet at the ask (my prob 25%, modal NO) — staying out.",
-    "prob_delta_vs_prev": -0.15000000000000002,
+    "lean_note": "88pt gap exceeds the hard ceiling (20pt) — beyond this divergence from a liquid market, even high confidence is treated as model error, not edge",
+    "prob_delta_vs_prev": 0.67,
     "trigger": "scheduled",
-    "strategy_id": "S0-single",
+    "strategy_id": "LQ5-ensemble5",
     "proposed_probability": null,
     "adversarial_verdict": "",
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "A positive June headline needs gasoline's SA decline to be far milder than the ~9-13% the primary weekly data implies; sticky core (+0.2%) alone can't offset it, so YES unlikely but above market.",
+    "rationale_summary": "The evidence strongly supports the likelihood of CPI rising more than 0.0% in June 2026. The May 2026 CPI is projected to rise 4.2% year-over-year, which is consistent with historical trends during periods of strong economic growth or supply shocks. Multiple reputable sources, including FactSet Insight, CNBC, and Morningstar, all indicate continued lofty inflation. These projections are also align",
     "key_drivers": [
-      "gasoline collapse",
-      "core floor"
+      "Year-over-year CPI increase in May 2026",
+      "Historical inflation trends",
+      "Forecasts from multiple reputable sources"
     ],
     "reference_classes": [
-      "post-oil-shock reversal months"
+      "Historical CPI fluctuations (2%-5% annually)",
+      "Inflation during periods of economic growth or supply shocks"
     ],
     "research_refs": [
-      "https://gasprices.aaa.com",
-      "https://www.eia.gov/petroleum/gasdiesel"
+      "CNBC",
+      "FactSet Insight",
+      "GoldSilver",
+      "LiteFinance",
+      "Morningstar",
+      "OECD",
+      "Philadelphia Federal Reserve Bank",
+      "Realtor.com"
     ]
   },
   "history": [
@@ -116,6 +124,51 @@
       "research_refs": [
         "https://gasprices.aaa.com",
         "https://www.eia.gov/petroleum/gasdiesel"
+      ]
+    },
+    {
+      "as_of": "2026-06-29T18:34:48Z",
+      "my_probability": 0.92,
+      "my_confidence": "high",
+      "market_implied_probability": 0.035,
+      "market_price_cents": 4.0,
+      "edge": 0.885,
+      "yes_ask": 0.04,
+      "no_ask": 0.97,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": 0.87,
+      "limit_price": 0.03,
+      "ev_limit_per_contract": 0.88,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "88pt gap exceeds the hard ceiling (20pt) — beyond this divergence from a liquid market, even high confidence is treated as model error, not edge",
+      "prob_delta_vs_prev": 0.67,
+      "trigger": "scheduled",
+      "strategy_id": "LQ5-ensemble5",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "The evidence strongly supports the likelihood of CPI rising more than 0.0% in June 2026. The May 2026 CPI is projected to rise 4.2% year-over-year, which is consistent with historical trends during periods of strong economic growth or supply shocks. Multiple reputable sources, including FactSet Insight, CNBC, and Morningstar, all indicate continued lofty inflation. These projections are also align",
+      "key_drivers": [
+        "Year-over-year CPI increase in May 2026",
+        "Historical inflation trends",
+        "Forecasts from multiple reputable sources"
+      ],
+      "reference_classes": [
+        "Historical CPI fluctuations (2%-5% annually)",
+        "Inflation during periods of economic growth or supply shocks"
+      ],
+      "research_refs": [
+        "CNBC",
+        "FactSet Insight",
+        "GoldSilver",
+        "LiteFinance",
+        "Morningstar",
+        "OECD",
+        "Philadelphia Federal Reserve Bank",
+        "Realtor.com"
       ]
     }
   ],

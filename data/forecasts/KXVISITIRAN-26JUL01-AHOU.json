@@ -5,41 +5,52 @@
   "category": "politics",
   "close_time": "2026-07-01T14:00:00Z",
   "current": {
-    "as_of": "2026-06-23T19:13:02Z",
-    "my_probability": 0.02,
+    "as_of": "2026-06-29T18:34:36Z",
+    "my_probability": 0.15,
     "my_confidence": "high",
-    "market_implied_probability": 0.0075,
-    "market_price_cents": 1.0,
-    "edge": 0.0125,
-    "yes_ask": 0.01,
-    "no_ask": 0.995,
+    "market_implied_probability": 0.0025,
+    "market_price_cents": 0.0,
+    "edge": 0.1475,
+    "yes_ask": 0.003,
+    "no_ask": 0.998,
     "fee_per_contract": 0.01,
-    "ev_per_contract": 0.0,
-    "limit_price": null,
-    "ev_limit_per_contract": null,
+    "ev_per_contract": 0.13699999999999998,
+    "limit_price": 0.002,
+    "ev_limit_per_contract": 0.138,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "no +EV value bet at the ask (my prob 2%, modal NO) — staying out.",
-    "prob_delta_vs_prev": -0.009999999999999998,
+    "lean_note": "ADVERSARIAL VETO: The position is overconfident and lacks sufficient evidence to justify the proposed probability. The divergence from the market is not supported by credible reasoning, and the edge is not real due to the lack of actionable information or ev",
+    "prob_delta_vs_prev": 0.13,
     "trigger": "scheduled",
-    "strategy_id": "S0-single",
-    "proposed_probability": null,
-    "adversarial_verdict": "",
-    "adversarial_challenged_prob": null,
-    "adversarial_concerns": [],
-    "adversarial_model": "",
-    "rationale_summary": "No US House member has visited Iran since 1979 and none is reported planning one; the slight bump only reflects the 435-member pool and unannounced-visit tail risk.",
+    "strategy_id": "LQ5-ensemble5",
+    "proposed_probability": 0.15,
+    "adversarial_verdict": "veto",
+    "adversarial_challenged_prob": 0.15,
+    "adversarial_concerns": [
+      "The proposed probability (0.15) is significantly higher than the market-implied probability (0.0025), indicating a large divergence that is not justified by the evidence provided.",
+      "The reasoning relies on vague claims about 'dynamic international relations' and 'unreported diplomatic efforts' without specific, credible sources or evidence to support the claim that a visit is likely.",
+      "The forecaster assumes a level of confidence (high) that is not substantiated by the thin and speculative nature of the evidence."
+    ],
+    "adversarial_model": "qwen3:14b-q4_K_M",
+    "rationale_summary": "Historically, U.S. House members have rarely visited Iran due to the politically sensitive nature of such trips. No specific evidence of planned visits between 2025 and 2026 has been found in the consulted sources. However, the possibility cannot be ruled out entirely due to the dynamic nature of international relations and potential unreported diplomatic efforts.",
     "key_drivers": [
-      "435-member pool",
-      "no precedent",
-      "travel warnings"
+      "Historical rarity of such visits",
+      "No direct evidence of planned visits",
+      "Potential for unreported diplomatic activity"
     ],
     "reference_classes": [
-      "House member trips to Iran since 1979 ~ zero"
+      "Diplomatic visits by U.S. legislators to politically sensitive countries",
+      "Legislative travel patterns involving Middle Eastern nations"
     ],
     "research_refs": [
-      "https://www.cfr.org",
-      "https://history.state.gov"
+      "Bankrate",
+      "CBS News",
+      "Chatham House",
+      "Euronews",
+      "Fathom Journal",
+      "Fortune",
+      "J.P. Morgan",
+      "NPR"
     ]
   },
   "history": [
@@ -155,6 +166,55 @@
       "research_refs": [
         "https://www.cfr.org",
         "https://history.state.gov"
+      ]
+    },
+    {
+      "as_of": "2026-06-29T18:34:36Z",
+      "my_probability": 0.15,
+      "my_confidence": "high",
+      "market_implied_probability": 0.0025,
+      "market_price_cents": 0.0,
+      "edge": 0.1475,
+      "yes_ask": 0.003,
+      "no_ask": 0.998,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": 0.13699999999999998,
+      "limit_price": 0.002,
+      "ev_limit_per_contract": 0.138,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "ADVERSARIAL VETO: The position is overconfident and lacks sufficient evidence to justify the proposed probability. The divergence from the market is not supported by credible reasoning, and the edge is not real due to the lack of actionable information or ev",
+      "prob_delta_vs_prev": 0.13,
+      "trigger": "scheduled",
+      "strategy_id": "LQ5-ensemble5",
+      "proposed_probability": 0.15,
+      "adversarial_verdict": "veto",
+      "adversarial_challenged_prob": 0.15,
+      "adversarial_concerns": [
+        "The proposed probability (0.15) is significantly higher than the market-implied probability (0.0025), indicating a large divergence that is not justified by the evidence provided.",
+        "The reasoning relies on vague claims about 'dynamic international relations' and 'unreported diplomatic efforts' without specific, credible sources or evidence to support the claim that a visit is likely.",
+        "The forecaster assumes a level of confidence (high) that is not substantiated by the thin and speculative nature of the evidence."
+      ],
+      "adversarial_model": "qwen3:14b-q4_K_M",
+      "rationale_summary": "Historically, U.S. House members have rarely visited Iran due to the politically sensitive nature of such trips. No specific evidence of planned visits between 2025 and 2026 has been found in the consulted sources. However, the possibility cannot be ruled out entirely due to the dynamic nature of international relations and potential unreported diplomatic efforts.",
+      "key_drivers": [
+        "Historical rarity of such visits",
+        "No direct evidence of planned visits",
+        "Potential for unreported diplomatic activity"
+      ],
+      "reference_classes": [
+        "Diplomatic visits by U.S. legislators to politically sensitive countries",
+        "Legislative travel patterns involving Middle Eastern nations"
+      ],
+      "research_refs": [
+        "Bankrate",
+        "CBS News",
+        "Chatham House",
+        "Euronews",
+        "Fathom Journal",
+        "Fortune",
+        "J.P. Morgan",
+        "NPR"
       ]
     }
   ],

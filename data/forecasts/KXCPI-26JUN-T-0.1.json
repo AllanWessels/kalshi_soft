@@ -3,46 +3,51 @@
   "ticker": "KXCPI-26JUN-T-0.1",
   "title": "Will CPI rise more than -0.1% in June 2026?",
   "category": "economy",
-  "close_time": "2026-07-14T12:25:00Z",
+  "close_time": "2026-07-14T13:56:00Z",
   "current": {
-    "as_of": "2026-06-23T19:12:23Z",
-    "my_probability": 0.44,
+    "as_of": "2026-06-29T18:34:47Z",
+    "my_probability": 0.4833,
     "my_confidence": "low",
-    "market_implied_probability": 0.225,
-    "market_price_cents": 22.0,
-    "edge": 0.215,
-    "yes_ask": 0.23,
-    "no_ask": 0.78,
-    "fee_per_contract": 0.02,
-    "ev_per_contract": -0.23999999999999996,
+    "market_implied_probability": 0.15,
+    "market_price_cents": 15.0,
+    "edge": 0.33330000000000004,
+    "yes_ask": 0.16,
+    "no_ask": 0.86,
+    "fee_per_contract": 0.01,
+    "ev_per_contract": -0.35330000000000006,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "no +EV value bet at the ask (my prob 44%, modal NO) — staying out.",
-    "prob_delta_vs_prev": 0.08000000000000002,
+    "lean_note": "no +EV value bet at the ask (my prob 48%, modal NO) — staying out.",
+    "prob_delta_vs_prev": 0.043300000000000005,
     "trigger": "scheduled",
-    "strategy_id": "S0-single",
+    "strategy_id": "LQ5-ensemble5",
     "proposed_probability": null,
     "adversarial_verdict": "",
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "Bottom-up from primary gasoline data (AAA -13.3% MoM to $3.93; EIA WTI $95->$73): June headline CPI center ~-0.1% MoM, sitting right on this threshold, so P(>=0.0%) is near a coin flip — meaningfully above market, but a wide fade.",
+    "rationale_summary": "The base rate for CPI changes in June is historically modest, with mixed trends depending on seasonality and economic conditions. While no direct evidence of CPI rising more than -0.1% in June 2026 was found in the sources consulted, the absence of strong deflationary signals and the general trend of stable inflation in recent forecasts suggests a moderate likelihood of CPI rising above -0.1%. Key",
     "key_drivers": [
-      "gasoline -13% MoM (AAA/EIA)",
-      "core +0.2 floor",
-      "SA seasonal",
-      "threshold rounding"
+      "inflation expectations",
+      "energy prices",
+      "labor market dynamics"
     ],
     "reference_classes": [
-      "post-oil-shock reversal months",
-      "single-decimal rounding at threshold"
+      "historical CPI trends in June",
+      "inflation forecasts for 2026",
+      "seasonal CPI fluctuations"
     ],
     "research_refs": [
-      "https://gasprices.aaa.com",
-      "https://www.eia.gov/petroleum/gasdiesel",
-      "https://www.bls.gov/news.release/cpi.nr0.htm"
+      "CNBC",
+      "DailyForex",
+      "FactSet Insight",
+      "GoldSilver",
+      "LiteFinance",
+      "Morningstar",
+      "OECD",
+      "Parliamentary Budget Officer"
     ]
   },
   "history": [
@@ -124,6 +129,52 @@
         "https://gasprices.aaa.com",
         "https://www.eia.gov/petroleum/gasdiesel",
         "https://www.bls.gov/news.release/cpi.nr0.htm"
+      ]
+    },
+    {
+      "as_of": "2026-06-29T18:34:47Z",
+      "my_probability": 0.4833,
+      "my_confidence": "low",
+      "market_implied_probability": 0.15,
+      "market_price_cents": 15.0,
+      "edge": 0.33330000000000004,
+      "yes_ask": 0.16,
+      "no_ask": 0.86,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": -0.35330000000000006,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "no +EV value bet at the ask (my prob 48%, modal NO) — staying out.",
+      "prob_delta_vs_prev": 0.043300000000000005,
+      "trigger": "scheduled",
+      "strategy_id": "LQ5-ensemble5",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "The base rate for CPI changes in June is historically modest, with mixed trends depending on seasonality and economic conditions. While no direct evidence of CPI rising more than -0.1% in June 2026 was found in the sources consulted, the absence of strong deflationary signals and the general trend of stable inflation in recent forecasts suggests a moderate likelihood of CPI rising above -0.1%. Key",
+      "key_drivers": [
+        "inflation expectations",
+        "energy prices",
+        "labor market dynamics"
+      ],
+      "reference_classes": [
+        "historical CPI trends in June",
+        "inflation forecasts for 2026",
+        "seasonal CPI fluctuations"
+      ],
+      "research_refs": [
+        "CNBC",
+        "DailyForex",
+        "FactSet Insight",
+        "GoldSilver",
+        "LiteFinance",
+        "Morningstar",
+        "OECD",
+        "Parliamentary Budget Officer"
       ]
     }
   ],

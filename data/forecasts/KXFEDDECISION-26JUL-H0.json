@@ -3,48 +3,50 @@
   "ticker": "KXFEDDECISION-26JUL-H0",
   "title": "Will the Federal Reserve Hike rates by 0bps at their July 2026 meeting?",
   "category": "economy",
-  "close_time": "2026-07-29T17:59:00Z",
+  "close_time": "2026-07-29T18:05:00Z",
   "current": {
-    "as_of": "2026-06-19T22:01:12Z",
-    "my_probability": 0.8,
+    "as_of": "2026-06-29T18:34:55Z",
+    "my_probability": 0.7833,
     "my_confidence": "medium",
-    "market_implied_probability": 0.745,
-    "market_price_cents": 75.0,
-    "edge": 0.05500000000000005,
-    "yes_ask": 0.75,
-    "no_ask": 0.26,
+    "market_implied_probability": 0.815,
+    "market_price_cents": 82.0,
+    "edge": -0.03169999999999995,
+    "yes_ask": 0.82,
+    "no_ask": 0.19,
     "fee_per_contract": 0.02,
-    "ev_per_contract": 0.030000000000000044,
+    "ev_per_contract": -0.05669999999999996,
     "limit_price": null,
     "ev_limit_per_contract": null,
-    "lean": "YES",
+    "lean": "NONE",
     "conviction": "low",
-    "lean_note": null,
-    "prob_delta_vs_prev": null,
+    "lean_note": "no +EV value bet at the ask (my prob 78%, modal YES) — staying out.",
+    "prob_delta_vs_prev": -0.016700000000000048,
     "trigger": "scheduled",
-    "strategy_id": "S0-single",
-    "proposed_probability": 0.8,
-    "adversarial_verdict": "revise",
-    "adversarial_challenged_prob": 0.77,
-    "adversarial_concerns": [
-      "Divergence from liquid market implies unexplained edge; market folds path risk into one meeting but forecaster assumes persistence without addressing Fed's explicit patience signal",
-      "Base-rate of 85% persistence after hold is cited but not reconciled with market's 74.5% (which may include delayed action risk)",
-      "Overconfidence in 0.8 vs market 0.745 without credible justification for tighter distribution"
-    ],
-    "adversarial_model": "qwen3:14b-q4_K_M",
-    "rationale_summary": "June was a UNANIMOUS hold; next-meeting persistence after a unanimous hold is ~85%. The 9/8 dot split is full-year, not July-specific (any hike can land later). Persistent 3.6% PCE removes cut risk but Fed signaled patience. ~0.80, slightly above market 0.745 (which folds path risk into one meeting).",
+    "strategy_id": "LQ5-ensemble5",
+    "proposed_probability": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": "",
+    "rationale_summary": "The base rate for a 0bps rate hike by the Federal Reserve during a meeting is historically low, as the Fed typically adjusts rates in response to economic conditions. However, in a scenario where inflation is under control, unemployment is stable, and economic growth is moderate, the Fed may opt for a pause. The current economic environment as of June 2026 appears to align with such conditions, su",
     "key_drivers": [
-      "unanimous June hold -> high next-meeting persistence",
-      "dot split is full-year not July",
-      "PCE persistence biases alt to hike not cut",
-      "market underweights single-meeting inertia"
+      "inflation trends",
+      "unemployment rates",
+      "economic growth forecasts"
     ],
     "reference_classes": [
-      "FOMC outcome after a unanimous hold",
-      "per-meeting realization of a year-level dot move"
+      "historical Fed rate decisions during periods of economic stability",
+      "rate decisions during low-inflation environments"
     ],
     "research_refs": [
-      "https://www.federalreserve.gov/monetarypolicy/fomcminutes20260429.htm"
+      "Advisor Perspectives",
+      "CNBC",
+      "Chase Bank",
+      "Intellectia AI",
+      "Investopedia",
+      "Morningstar",
+      "Reuters",
+      "Stock Titan"
     ]
   },
   "history": [
@@ -89,6 +91,51 @@
       ],
       "research_refs": [
         "https://www.federalreserve.gov/monetarypolicy/fomcminutes20260429.htm"
+      ]
+    },
+    {
+      "as_of": "2026-06-29T18:34:55Z",
+      "my_probability": 0.7833,
+      "my_confidence": "medium",
+      "market_implied_probability": 0.815,
+      "market_price_cents": 82.0,
+      "edge": -0.03169999999999995,
+      "yes_ask": 0.82,
+      "no_ask": 0.19,
+      "fee_per_contract": 0.02,
+      "ev_per_contract": -0.05669999999999996,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "no +EV value bet at the ask (my prob 78%, modal YES) — staying out.",
+      "prob_delta_vs_prev": -0.016700000000000048,
+      "trigger": "scheduled",
+      "strategy_id": "LQ5-ensemble5",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "The base rate for a 0bps rate hike by the Federal Reserve during a meeting is historically low, as the Fed typically adjusts rates in response to economic conditions. However, in a scenario where inflation is under control, unemployment is stable, and economic growth is moderate, the Fed may opt for a pause. The current economic environment as of June 2026 appears to align with such conditions, su",
+      "key_drivers": [
+        "inflation trends",
+        "unemployment rates",
+        "economic growth forecasts"
+      ],
+      "reference_classes": [
+        "historical Fed rate decisions during periods of economic stability",
+        "rate decisions during low-inflation environments"
+      ],
+      "research_refs": [
+        "Advisor Perspectives",
+        "CNBC",
+        "Chase Bank",
+        "Intellectia AI",
+        "Investopedia",
+        "Morningstar",
+        "Reuters",
+        "Stock Titan"
       ]
     }
   ],

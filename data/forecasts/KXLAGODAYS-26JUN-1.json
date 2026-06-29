@@ -3,46 +3,50 @@
   "ticker": "KXLAGODAYS-26JUN-1",
   "title": "Will Trump make 1 trips to Mar-a-Lago as President in Jun 2026?",
   "category": "politics",
-  "close_time": "2026-07-01T04:00:00Z",
+  "close_time": "2026-06-30T14:00:00Z",
   "current": {
-    "as_of": "2026-06-23T20:43:24Z",
-    "my_probability": 0.15,
+    "as_of": "2026-06-29T18:34:31Z",
+    "my_probability": 0.5,
     "my_confidence": "high",
-    "market_implied_probability": 0.035,
-    "market_price_cents": 4.0,
-    "edge": 0.11499999999999999,
-    "yes_ask": 0.04,
-    "no_ask": 0.97,
+    "market_implied_probability": 0.005,
+    "market_price_cents": 0.0,
+    "edge": 0.495,
+    "yes_ask": 0.01,
+    "no_ask": 1.0,
     "fee_per_contract": 0.01,
-    "ev_per_contract": 0.09999999999999999,
-    "limit_price": 0.03,
-    "ev_limit_per_contract": 0.11,
+    "ev_per_contract": 0.48,
+    "limit_price": 0.0,
+    "ev_limit_per_contract": 0.5,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "ADVERSARIAL VETO: The position assumes a speculative 'unexpected Florida event' without credible triggers, while market pricing reflects deeper institutional knowledge of seasonal patterns and historical inactivity. The forecaster's confidence is disproporti",
-    "prob_delta_vs_prev": 0.01999999999999999,
-    "trigger": "near_close",
+    "lean_note": "50pt gap exceeds the hard ceiling (20pt) — beyond this divergence from a liquid market, even high confidence is treated as model error, not edge",
+    "prob_delta_vs_prev": 0.35,
+    "trigger": "scheduled",
     "strategy_id": "LQ5-ensemble5",
-    "proposed_probability": 0.15,
-    "adversarial_verdict": "veto",
-    "adversarial_challenged_prob": 0.15,
-    "adversarial_concerns": [
-      "Divergence of 0.115 from liquid market implies unaccounted risk; market may already price in seasonal closure and low base rates",
-      "High confidence not justified by thin evidence (single narrow-window scenario)",
-      "Base-rate neglect: historical data shows zero trips through June 23, yet probability assumes plausibility without concrete triggers"
-    ],
-    "adversarial_model": "qwen3:14b-q4_K_M",
-    "rationale_summary": "Base rate of off-season one-off Mar-a-Lago trips is low, but a single unscheduled trip during June 24-30 remains plausible if an unexpected Florida event occurs. Zero trips recorded through June 23, with seasonal closure reducing likelihood, but final weekend leaves a narrow window for a rare occurr",
+    "proposed_probability": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": "",
+    "rationale_summary": "The evidence provided does not directly address whether Trump will make 1 trip to Mar-a-Lago in June 2026. The only relevant information is about Trump's son potentially buying waterfront land in West Palm, which is unrelated to the number of trips to Mar-a-Lago. With no direct evidence or historical context about Trump's travel patterns to Mar-a-Lago as President, the probability is estimated as ",
     "key_drivers": [
-      "seasonal closure reducing trip likelihood",
-      "unscheduled Florida event possibility"
+      "No direct evidence about Trump's travel plans to Mar-a-Lago in June 2026",
+      "Lack of historical data on Trump's trips to Mar-a-Lago as President"
     ],
     "reference_classes": [
-      "off-season Mar-a-Lago visit frequency",
-      "unscheduled political travel patterns"
+      "Presidential travel patterns to private residences",
+      "Public statements or records about Trump's activities at Mar-a-Lago"
     ],
     "research_refs": [
-      "https://rollcall.com/factbase/trump/calendar/"
+      "ABC News - Breaking News",
+      "Latest News and Videos",
+      "Al Jazeera",
+      "BBC",
+      "Business Insider",
+      "C-SPAN",
+      "CNN",
+      "Chicago Tribune",
+      "Citizens for Responsibility and Ethics in Washington"
     ]
   },
   "history": [
@@ -156,6 +160,51 @@
       ],
       "research_refs": [
         "https://rollcall.com/factbase/trump/calendar/"
+      ]
+    },
+    {
+      "as_of": "2026-06-29T18:34:31Z",
+      "my_probability": 0.5,
+      "my_confidence": "high",
+      "market_implied_probability": 0.005,
+      "market_price_cents": 0.0,
+      "edge": 0.495,
+      "yes_ask": 0.01,
+      "no_ask": 1.0,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": 0.48,
+      "limit_price": 0.0,
+      "ev_limit_per_contract": 0.5,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "50pt gap exceeds the hard ceiling (20pt) — beyond this divergence from a liquid market, even high confidence is treated as model error, not edge",
+      "prob_delta_vs_prev": 0.35,
+      "trigger": "scheduled",
+      "strategy_id": "LQ5-ensemble5",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "The evidence provided does not directly address whether Trump will make 1 trip to Mar-a-Lago in June 2026. The only relevant information is about Trump's son potentially buying waterfront land in West Palm, which is unrelated to the number of trips to Mar-a-Lago. With no direct evidence or historical context about Trump's travel patterns to Mar-a-Lago as President, the probability is estimated as ",
+      "key_drivers": [
+        "No direct evidence about Trump's travel plans to Mar-a-Lago in June 2026",
+        "Lack of historical data on Trump's trips to Mar-a-Lago as President"
+      ],
+      "reference_classes": [
+        "Presidential travel patterns to private residences",
+        "Public statements or records about Trump's activities at Mar-a-Lago"
+      ],
+      "research_refs": [
+        "ABC News - Breaking News",
+        "Latest News and Videos",
+        "Al Jazeera",
+        "BBC",
+        "Business Insider",
+        "C-SPAN",
+        "CNN",
+        "Chicago Tribune",
+        "Citizens for Responsibility and Ethics in Washington"
       ]
     }
   ],

@@ -1,45 +1,56 @@
 {
   "schema_version": 1,
   "ticker": "KXGOVOKNOMR-26-GDRU",
-  "title": "OK GOP Governor nominee: Gentner Drummond (YES)",
+  "title": "Will Genter Drummond be the Republican nominee for Governor in Oklahoma?",
   "category": "politics",
-  "close_time": "2026-11-03T15:00:00Z",
+  "close_time": "2026-06-30T14:00:00Z",
   "current": {
-    "as_of": "2026-06-23T20:34:42Z",
-    "my_probability": 0.55,
+    "as_of": "2026-06-29T18:34:25Z",
+    "my_probability": 0.15,
     "my_confidence": "high",
-    "market_implied_probability": 0.225,
-    "market_price_cents": 22.0,
-    "edge": 0.32500000000000007,
-    "yes_ask": 0.23,
-    "no_ask": 0.78,
+    "market_implied_probability": 0.205,
+    "market_price_cents": 20.0,
+    "edge": -0.05499999999999999,
+    "yes_ask": 0.21,
+    "no_ask": 0.8,
     "fee_per_contract": 0.02,
-    "ev_per_contract": 0.30000000000000004,
-    "limit_price": 0.22,
-    "ev_limit_per_contract": 0.31,
+    "ev_per_contract": 0.029999999999999933,
+    "limit_price": 0.79,
+    "ev_limit_per_contract": 0.04,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "33pt gap exceeds the hard ceiling (20pt) — beyond this divergence from a liquid market, even high confidence is treated as model error, not edge",
-    "prob_delta_vs_prev": 0.17000000000000004,
-    "trigger": "near_close",
+    "lean_note": "ADVERSARIAL VETO: The position is overconfident and lacks sufficient evidence to justify the high confidence level. The divergence from the market is small, but the forecaster's reasoning does not convincingly establish an edge over the market, which may be ",
+    "prob_delta_vs_prev": -0.4,
+    "trigger": "scheduled",
     "strategy_id": "LQ5-ensemble5",
-    "proposed_probability": null,
-    "adversarial_verdict": "",
-    "adversarial_challenged_prob": null,
-    "adversarial_concerns": [],
-    "adversarial_model": "",
-    "rationale_summary": "Drummond's narrow first-round lead (26.3% vs 26.0%) suggests a weak but non-zero signal, while Trump's endorsement of Mazzei (and attacks on Drummond) introduces headwinds. However, establishment support for Drummond and the weaker-than-usual effectiveness of Trump's endorsement against a well-funde",
+    "proposed_probability": 0.15,
+    "adversarial_verdict": "veto",
+    "adversarial_challenged_prob": 0.15,
+    "adversarial_concerns": [
+      "The forecaster assumes that the lack of public statements or news coverage equates to lack of intent, but candidates often remain quiet until later stages.",
+      "The market-implied probability (0.205) suggests a higher likelihood than the forecaster's 0.15, indicating potential underestimation of latent support or strategic positioning.",
+      "The forecaster does not account for indirect signals, such as endorsements, fundraising activity, or private meetings, which could indicate interest in the race."
+    ],
+    "adversarial_model": "qwen3:14b-q4_K_M",
+    "rationale_summary": "There is currently no substantial evidence suggesting that Genter Drummond is positioning himself as a candidate for the Republican nomination for Governor of Oklahoma. The absence of direct statements from Drummond or his campaign, combined with the lack of news coverage indicating his involvement in the race, makes it unlikely at this stage. However, the political landscape can shift rapidly, an",
     "key_drivers": [
-      "narrow first-round lead",
-      "Trump endorsement dynamics",
-      "establishment bloc alignment"
+      "Lack of public statements from Genter Drummond",
+      "No news coverage indicating his candidacy",
+      "No official campaign announcements"
     ],
     "reference_classes": [
-      "first-round runoff leader vs strong opponent",
-      "Trump-endorsed candidate in deep-red state"
+      "Incumbent politicians running for re-election",
+      "New candidates entering gubernatorial races with limited visibility"
     ],
     "research_refs": [
-      "https://www.kosu.org/politics/2026-06-16/mazzei-drummond-advance-to-runoff-election-for-oklahoma-governor"
+      "KOCO",
+      "KOSU",
+      "KXII",
+      "OU Daily",
+      "Oklahoma Voice",
+      "The Journal Record",
+      "The New York Times",
+      "Tulsa Flyer"
     ]
   },
   "history": [
@@ -161,6 +172,55 @@
       ],
       "research_refs": [
         "https://www.kosu.org/politics/2026-06-16/mazzei-drummond-advance-to-runoff-election-for-oklahoma-governor"
+      ]
+    },
+    {
+      "as_of": "2026-06-29T18:34:25Z",
+      "my_probability": 0.15,
+      "my_confidence": "high",
+      "market_implied_probability": 0.205,
+      "market_price_cents": 20.0,
+      "edge": -0.05499999999999999,
+      "yes_ask": 0.21,
+      "no_ask": 0.8,
+      "fee_per_contract": 0.02,
+      "ev_per_contract": 0.029999999999999933,
+      "limit_price": 0.79,
+      "ev_limit_per_contract": 0.04,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "ADVERSARIAL VETO: The position is overconfident and lacks sufficient evidence to justify the high confidence level. The divergence from the market is small, but the forecaster's reasoning does not convincingly establish an edge over the market, which may be ",
+      "prob_delta_vs_prev": -0.4,
+      "trigger": "scheduled",
+      "strategy_id": "LQ5-ensemble5",
+      "proposed_probability": 0.15,
+      "adversarial_verdict": "veto",
+      "adversarial_challenged_prob": 0.15,
+      "adversarial_concerns": [
+        "The forecaster assumes that the lack of public statements or news coverage equates to lack of intent, but candidates often remain quiet until later stages.",
+        "The market-implied probability (0.205) suggests a higher likelihood than the forecaster's 0.15, indicating potential underestimation of latent support or strategic positioning.",
+        "The forecaster does not account for indirect signals, such as endorsements, fundraising activity, or private meetings, which could indicate interest in the race."
+      ],
+      "adversarial_model": "qwen3:14b-q4_K_M",
+      "rationale_summary": "There is currently no substantial evidence suggesting that Genter Drummond is positioning himself as a candidate for the Republican nomination for Governor of Oklahoma. The absence of direct statements from Drummond or his campaign, combined with the lack of news coverage indicating his involvement in the race, makes it unlikely at this stage. However, the political landscape can shift rapidly, an",
+      "key_drivers": [
+        "Lack of public statements from Genter Drummond",
+        "No news coverage indicating his candidacy",
+        "No official campaign announcements"
+      ],
+      "reference_classes": [
+        "Incumbent politicians running for re-election",
+        "New candidates entering gubernatorial races with limited visibility"
+      ],
+      "research_refs": [
+        "KOCO",
+        "KOSU",
+        "KXII",
+        "OU Daily",
+        "Oklahoma Voice",
+        "The Journal Record",
+        "The New York Times",
+        "Tulsa Flyer"
       ]
     }
   ],

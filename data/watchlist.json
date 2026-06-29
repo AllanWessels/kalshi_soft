@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-06-23T18:21:23Z",
+  "updated_at": "2026-06-29T18:05:31Z",
   "cap": 30,
   "markets": [
     {
@@ -165,7 +165,7 @@
         "open_interest": 13610.59,
         "spread_cents": 1.0
       },
-      "status": "active",
+      "status": "resolved",
       "reforecast_cadence_days": 3.0
     },
     {
@@ -180,7 +180,7 @@
         "open_interest": 19248.73,
         "spread_cents": 1.0
       },
-      "status": "active",
+      "status": "resolved",
       "reforecast_cadence_days": 3.0
     },
     {
@@ -270,7 +270,7 @@
         "open_interest": 11639.73,
         "spread_cents": 4.0
       },
-      "status": "active",
+      "status": "resolved",
       "reforecast_cadence_days": 0.0
     },
     {
@@ -345,7 +345,7 @@
         "open_interest": 385305.09,
         "spread_cents": 1.0
       },
-      "status": "active",
+      "status": "resolved",
       "reforecast_cadence_days": 0.0
     },
     {
@@ -360,7 +360,7 @@
         "open_interest": 349245.65,
         "spread_cents": 1.0
       },
-      "status": "active",
+      "status": "resolved",
       "reforecast_cadence_days": 0.0
     },
     {
@@ -375,7 +375,7 @@
         "open_interest": 90495.23,
         "spread_cents": 1.0
       },
-      "status": "active",
+      "status": "resolved",
       "reforecast_cadence_days": 3.0
     },
     {

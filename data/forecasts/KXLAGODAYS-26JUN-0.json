@@ -3,48 +3,52 @@
   "ticker": "KXLAGODAYS-26JUN-0",
   "title": "Will Trump make 0 trips to Mar-a-Lago as President in Jun 2026?",
   "category": "politics",
-  "close_time": "2026-07-01T04:00:00Z",
+  "close_time": "2026-06-30T14:00:00Z",
   "current": {
-    "as_of": "2026-06-23T20:41:40Z",
-    "my_probability": 0.92,
+    "as_of": "2026-06-29T18:34:30Z",
+    "my_probability": 0.2167,
     "my_confidence": "high",
-    "market_implied_probability": 0.965,
-    "market_price_cents": 96.0,
-    "edge": -0.04499999999999993,
-    "yes_ask": 0.97,
-    "no_ask": 0.04,
+    "market_implied_probability": 0.995,
+    "market_price_cents": 100.0,
+    "edge": -0.7783,
+    "yes_ask": 1.0,
+    "no_ask": 0.01,
     "fee_per_contract": 0.01,
-    "ev_per_contract": 0.029999999999999957,
-    "limit_price": 0.03,
-    "ev_limit_per_contract": 0.04,
-    "lean": "NO",
+    "ev_per_contract": 0.7633,
+    "limit_price": 0.0,
+    "ev_limit_per_contract": 0.7833,
+    "lean": "NONE",
     "conviction": "low",
-    "lean_note": null,
-    "prob_delta_vs_prev": 0.10000000000000009,
-    "trigger": "near_close",
+    "lean_note": "78pt gap exceeds the hard ceiling (20pt) — beyond this divergence from a liquid market, even high confidence is treated as model error, not edge",
+    "prob_delta_vs_prev": -0.7033,
+    "trigger": "scheduled",
     "strategy_id": "LQ5-ensemble5",
-    "proposed_probability": 0.92,
-    "adversarial_verdict": "revise",
-    "adversarial_challenged_prob": 0.88,
-    "adversarial_concerns": [
-      "Divergence from liquid market implies unaccounted information; two sources may not outweigh crowd-sourced market wisdom",
-      "Base rate of unscheduled trips assumed zero but historical data may show non-zero occurrences",
-      "Seasonal closure logic assumes strict adherence without considering exceptional circumstances"
-    ],
-    "adversarial_model": "qwen3:14b-q4_K_M",
-    "rationale_summary": "Strong evidence of zero visits from June 1-23 (two independent sources) combined with Mar-a-Lago's seasonal closure during summer months. Only ~7 days remain in June, but the closure reduces likelihood of last-week visits. Key uncertainty is potential unscheduled trip, though base rate of ~0 summer ",
+    "proposed_probability": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": "",
+    "rationale_summary": "Based on the evidence, Trump has a history of visiting Mar-a-Lago for political and personal reasons, and there is a report indicating he is headed back to Mar-a-Lago for a crypto conference. However, the question specifically focuses on whether he will make 0 trips in June 2026, and there is no direct confirmation of a trip during this exact timeframe. The uncertainty lies in the timing and purpo",
     "key_drivers": [
-      "Seasonal closure of Mar-a-Lago",
-      "Zero recorded visits in first 23 days",
-      "Summer-month visit base rate of ~0"
+      "Report of Trump heading back to Mar-a-Lago for a crypto conference",
+      "Historical pattern of frequent visits to Mar-a-Lago",
+      "Lack of direct confirmation of a trip in June 2026",
+      "Uncertainty regarding political and personal schedules"
     ],
     "reference_classes": [
-      "Summer-month Mar-a-Lago visit frequency",
-      "Unscheduled presidential travel patterns"
+      "High-profile individual travel patterns",
+      "Political figure visitation habits to personal properties",
+      "Event-driven travel schedules"
     ],
     "research_refs": [
-      "https://en.wikipedia.org/wiki/List_of_presidential_trips_made_by_Donald_Trump_(2026)",
-      "https://rollcall.com/factbase/trump/calendar/"
+      "Al Jazeera",
+      "BBC",
+      "CNBC",
+      "Chicago Tribune",
+      "NPR",
+      "PBS",
+      "Palm Beach Daily News",
+      "Politico"
     ]
   },
   "history": [
@@ -167,6 +171,53 @@
       "research_refs": [
         "https://en.wikipedia.org/wiki/List_of_presidential_trips_made_by_Donald_Trump_(2026)",
         "https://rollcall.com/factbase/trump/calendar/"
+      ]
+    },
+    {
+      "as_of": "2026-06-29T18:34:30Z",
+      "my_probability": 0.2167,
+      "my_confidence": "high",
+      "market_implied_probability": 0.995,
+      "market_price_cents": 100.0,
+      "edge": -0.7783,
+      "yes_ask": 1.0,
+      "no_ask": 0.01,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": 0.7633,
+      "limit_price": 0.0,
+      "ev_limit_per_contract": 0.7833,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "78pt gap exceeds the hard ceiling (20pt) — beyond this divergence from a liquid market, even high confidence is treated as model error, not edge",
+      "prob_delta_vs_prev": -0.7033,
+      "trigger": "scheduled",
+      "strategy_id": "LQ5-ensemble5",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "Based on the evidence, Trump has a history of visiting Mar-a-Lago for political and personal reasons, and there is a report indicating he is headed back to Mar-a-Lago for a crypto conference. However, the question specifically focuses on whether he will make 0 trips in June 2026, and there is no direct confirmation of a trip during this exact timeframe. The uncertainty lies in the timing and purpo",
+      "key_drivers": [
+        "Report of Trump heading back to Mar-a-Lago for a crypto conference",
+        "Historical pattern of frequent visits to Mar-a-Lago",
+        "Lack of direct confirmation of a trip in June 2026",
+        "Uncertainty regarding political and personal schedules"
+      ],
+      "reference_classes": [
+        "High-profile individual travel patterns",
+        "Political figure visitation habits to personal properties",
+        "Event-driven travel schedules"
+      ],
+      "research_refs": [
+        "Al Jazeera",
+        "BBC",
+        "CNBC",
+        "Chicago Tribune",
+        "NPR",
+        "PBS",
+        "Palm Beach Daily News",
+        "Politico"
       ]
     }
   ],

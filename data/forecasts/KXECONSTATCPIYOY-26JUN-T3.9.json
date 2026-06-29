@@ -1,45 +1,52 @@
 {
   "schema_version": 1,
   "ticker": "KXECONSTATCPIYOY-26JUN-T3.9",
-  "title": "CPI year-over-year in Jun 2026 (>3.9%)?",
+  "title": "CPI year-over-year in Jun 2026?",
   "category": "economy",
-  "close_time": "2026-07-14T12:29:00Z",
+  "close_time": "2026-07-14T14:00:00Z",
   "current": {
-    "as_of": "2026-06-23T19:12:23Z",
-    "my_probability": 0.3,
+    "as_of": "2026-06-29T18:34:48Z",
+    "my_probability": 0.4267,
     "my_confidence": "low",
-    "market_implied_probability": 0.17,
-    "market_price_cents": 17.0,
-    "edge": 0.12999999999999998,
-    "yes_ask": 0.19,
-    "no_ask": 0.85,
+    "market_implied_probability": 0.08,
+    "market_price_cents": 8.0,
+    "edge": 0.3467,
+    "yes_ask": 0.09,
+    "no_ask": 0.93,
     "fee_per_contract": 0.01,
-    "ev_per_contract": -0.16000000000000003,
+    "ev_per_contract": -0.36670000000000014,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "no +EV value bet at the ask (my prob 30%, modal NO) — staying out.",
-    "prob_delta_vs_prev": 0.0,
+    "lean_note": "no +EV value bet at the ask (my prob 43%, modal NO) — staying out.",
+    "prob_delta_vs_prev": 0.12670000000000003,
     "trigger": "scheduled",
-    "strategy_id": "S0-single",
+    "strategy_id": "LQM5-mistral24",
     "proposed_probability": null,
     "adversarial_verdict": "",
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "3.9% is the modal single-decimal YoY bucket (Trading Economics point forecast; ~0.0% MoM off the +0.3% June-2025 base), though probability is thin across exact buckets and my MoM center tilts slightly toward 3.8%.",
+    "rationale_summary": "Base rate inferred from historical CPI data and current economic trends suggesting moderate inflation. Limited specific evidence available for June 2026, so relying heavily on base rates and general economic indicators.",
     "key_drivers": [
-      "energy YoY reversal",
-      "June-2025 base roll-off +0.3",
-      "TE forecast 3.9"
+      "Historical CPI trends",
+      "Economic forecasts",
+      "General market sentiment"
     ],
     "reference_classes": [
-      "realized YoY lands in modal bucket ~30-35%"
+      "CPI year-over-year changes in recent years",
+      "Economic growth rate predictions for 2026"
     ],
     "research_refs": [
-      "https://tradingeconomics.com/united-states/inflation-cpi",
-      "https://www.bls.gov/news.release/cpi.nr0.htm"
+      "Bureau of Labor Statistics",
+      "CNBC",
+      "Chase Bank",
+      "FOREX.com",
+      "FactSet Insight",
+      "OECD",
+      "Reuters",
+      "U.S. Travel Association"
     ]
   },
   "history": [
@@ -118,6 +125,51 @@
       "research_refs": [
         "https://tradingeconomics.com/united-states/inflation-cpi",
         "https://www.bls.gov/news.release/cpi.nr0.htm"
+      ]
+    },
+    {
+      "as_of": "2026-06-29T18:34:48Z",
+      "my_probability": 0.4267,
+      "my_confidence": "low",
+      "market_implied_probability": 0.08,
+      "market_price_cents": 8.0,
+      "edge": 0.3467,
+      "yes_ask": 0.09,
+      "no_ask": 0.93,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": -0.36670000000000014,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "no +EV value bet at the ask (my prob 43%, modal NO) — staying out.",
+      "prob_delta_vs_prev": 0.12670000000000003,
+      "trigger": "scheduled",
+      "strategy_id": "LQM5-mistral24",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "Base rate inferred from historical CPI data and current economic trends suggesting moderate inflation. Limited specific evidence available for June 2026, so relying heavily on base rates and general economic indicators.",
+      "key_drivers": [
+        "Historical CPI trends",
+        "Economic forecasts",
+        "General market sentiment"
+      ],
+      "reference_classes": [
+        "CPI year-over-year changes in recent years",
+        "Economic growth rate predictions for 2026"
+      ],
+      "research_refs": [
+        "Bureau of Labor Statistics",
+        "CNBC",
+        "Chase Bank",
+        "FOREX.com",
+        "FactSet Insight",
+        "OECD",
+        "Reuters",
+        "U.S. Travel Association"
       ]
     }
   ],

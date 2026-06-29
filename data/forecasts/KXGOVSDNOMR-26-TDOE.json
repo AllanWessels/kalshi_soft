@@ -3,46 +3,54 @@
   "ticker": "KXGOVSDNOMR-26-TDOE",
   "title": "Will Toby Doeden be the Republican nominee for Governor in South Dakota?",
   "category": "politics",
-  "close_time": "2026-11-03T15:00:00Z",
+  "close_time": "2026-06-30T14:00:00Z",
   "current": {
-    "as_of": "2026-06-23T20:39:37Z",
-    "my_probability": 0.35,
+    "as_of": "2026-06-29T18:34:30Z",
+    "my_probability": 0.45,
     "my_confidence": "high",
-    "market_implied_probability": 0.495,
-    "market_price_cents": 50.0,
-    "edge": -0.14500000000000002,
-    "yes_ask": 0.5,
-    "no_ask": 0.51,
+    "market_implied_probability": 0.575,
+    "market_price_cents": 57.0,
+    "edge": -0.12499999999999994,
+    "yes_ask": 0.58,
+    "no_ask": 0.43,
     "fee_per_contract": 0.02,
-    "ev_per_contract": 0.12000000000000001,
-    "limit_price": 0.5,
-    "ev_limit_per_contract": 0.13,
-    "lean": "NO",
-    "conviction": "high",
-    "lean_note": null,
-    "prob_delta_vs_prev": -0.07,
-    "trigger": "near_close",
+    "ev_per_contract": 0.10000000000000005,
+    "limit_price": 0.42,
+    "ev_limit_per_contract": 0.11,
+    "lean": "NONE",
+    "conviction": "low",
+    "lean_note": "ADVERSARIAL VETO: The forecaster's position is overconfident and lacks a credible justification for diverging from the market-implied probability. The reasoning is incomplete and does not convincingly establish that the 'NO' position is more likely than the ",
+    "prob_delta_vs_prev": 0.10000000000000003,
+    "trigger": "scheduled",
     "strategy_id": "LQ5-ensemble5",
-    "proposed_probability": 0.35,
-    "adversarial_verdict": "revise",
-    "adversarial_challenged_prob": 0.25,
+    "proposed_probability": 0.45,
+    "adversarial_verdict": "veto",
+    "adversarial_challenged_prob": 0.45,
     "adversarial_concerns": [
-      "Divergence of 14.5% from liquid market implies unaccounted factors; base rates alone insufficient to justify 35% vs market's 50.5%",
-      "High confidence not warranted by sparse, one-sided evidence (no analysis of turnout dynamics, polling trends, or Rhoden's momentum drivers)",
-      "Lack of Trump endorsement is a single factor; market may already price this in with broader context"
+      "The position diverges significantly from the market-implied probability (0.575) without a credible explanation for the gap.",
+      "The reasoning highlights uncertainty but does not provide sufficient evidence to justify a high confidence in the 'NO' position.",
+      "The forecaster assumes Doeden is a strong contender but fails to address why the market would assign a higher probability to his nomination."
     ],
     "adversarial_model": "qwen3:14b-q4_K_M",
-    "rationale_summary": "Doeden's first-round lead (31% vs Rhoden's 25%) suggests initial momentum, but base rates indicate incumbents typically consolidate 60-70% in runoff primaries. Establishment backing shifting to Rhoden and Doeden's lack of Trump endorsement cap his ceiling at ~31%, while turnout dynamics remain uncer",
+    "rationale_summary": "Toby Doeden is one of two Republican candidates advancing to the gubernatorial runoff, indicating he is a strong contender. However, the runoff is the first-ever in South Dakota's gubernatorial race, which introduces uncertainty regarding voter behavior and campaign dynamics. While Doeden has a diverse business background, the outcome will depend on factors such as voter preferences, campaign stra",
     "key_drivers": [
-      "Establishment backing consolidation toward Rhoden",
-      "Absence of Trump endorsement limiting Doeden's ceiling",
-      "Runoff turnout intensity favoring insurgent or incumbent"
+      "Outcome of the runoff election",
+      "Voter preferences on key issues such as prison policy",
+      "Campaign strategies of both candidates"
     ],
     "reference_classes": [
-      "Incumbent vs insurgent 2-way runoff: incumbent consolidates ~60-70%"
+      "Competitive Republican gubernatorial primaries in South Dakota",
+      "First-ever gubernatorial runoff elections in South Dakota"
     ],
     "research_refs": [
-      "https://www.kotatv.com/2026/06/07/where-backers-losing-campaigns-are-shifting-support-ahead-south-dakotas-governor-runoff/"
+      "Ballotpedia News",
+      "Dakota News Now",
+      "NBC News",
+      "News From The States",
+      "SDPB",
+      "South Dakota News Watch",
+      "South Dakota Searchlight",
+      "The New York Times"
     ]
   },
   "history": [
@@ -237,6 +245,55 @@
       ],
       "research_refs": [
         "https://www.kotatv.com/2026/06/07/where-backers-losing-campaigns-are-shifting-support-ahead-south-dakotas-governor-runoff/"
+      ]
+    },
+    {
+      "as_of": "2026-06-29T18:34:30Z",
+      "my_probability": 0.45,
+      "my_confidence": "high",
+      "market_implied_probability": 0.575,
+      "market_price_cents": 57.0,
+      "edge": -0.12499999999999994,
+      "yes_ask": 0.58,
+      "no_ask": 0.43,
+      "fee_per_contract": 0.02,
+      "ev_per_contract": 0.10000000000000005,
+      "limit_price": 0.42,
+      "ev_limit_per_contract": 0.11,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "ADVERSARIAL VETO: The forecaster's position is overconfident and lacks a credible justification for diverging from the market-implied probability. The reasoning is incomplete and does not convincingly establish that the 'NO' position is more likely than the ",
+      "prob_delta_vs_prev": 0.10000000000000003,
+      "trigger": "scheduled",
+      "strategy_id": "LQ5-ensemble5",
+      "proposed_probability": 0.45,
+      "adversarial_verdict": "veto",
+      "adversarial_challenged_prob": 0.45,
+      "adversarial_concerns": [
+        "The position diverges significantly from the market-implied probability (0.575) without a credible explanation for the gap.",
+        "The reasoning highlights uncertainty but does not provide sufficient evidence to justify a high confidence in the 'NO' position.",
+        "The forecaster assumes Doeden is a strong contender but fails to address why the market would assign a higher probability to his nomination."
+      ],
+      "adversarial_model": "qwen3:14b-q4_K_M",
+      "rationale_summary": "Toby Doeden is one of two Republican candidates advancing to the gubernatorial runoff, indicating he is a strong contender. However, the runoff is the first-ever in South Dakota's gubernatorial race, which introduces uncertainty regarding voter behavior and campaign dynamics. While Doeden has a diverse business background, the outcome will depend on factors such as voter preferences, campaign stra",
+      "key_drivers": [
+        "Outcome of the runoff election",
+        "Voter preferences on key issues such as prison policy",
+        "Campaign strategies of both candidates"
+      ],
+      "reference_classes": [
+        "Competitive Republican gubernatorial primaries in South Dakota",
+        "First-ever gubernatorial runoff elections in South Dakota"
+      ],
+      "research_refs": [
+        "Ballotpedia News",
+        "Dakota News Now",
+        "NBC News",
+        "News From The States",
+        "SDPB",
+        "South Dakota News Watch",
+        "South Dakota Searchlight",
+        "The New York Times"
       ]
     }
   ],

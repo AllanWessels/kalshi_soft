@@ -3,42 +3,51 @@
   "ticker": "KXLAGODAYS-26JUN-2",
   "title": "Will Trump make 2 trips to Mar-a-Lago as President in Jun 2026?",
   "category": "politics",
-  "close_time": "2026-07-01T04:00:00Z",
+  "close_time": "2026-06-30T14:00:00Z",
   "current": {
-    "as_of": "2026-06-23T20:44:23Z",
-    "my_probability": 0.01,
+    "as_of": "2026-06-29T18:34:31Z",
+    "my_probability": 0.5335,
     "my_confidence": "high",
     "market_implied_probability": 0.005,
     "market_price_cents": 0.0,
-    "edge": 0.005,
+    "edge": 0.5285,
     "yes_ask": 0.01,
     "no_ask": 1.0,
     "fee_per_contract": 0.01,
-    "ev_per_contract": -0.01,
-    "limit_price": null,
-    "ev_limit_per_contract": null,
+    "ev_per_contract": 0.5135,
+    "limit_price": 0.0,
+    "ev_limit_per_contract": 0.5335,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "no +EV value bet at the ask (my prob 1%, modal NO) — staying out.",
-    "prob_delta_vs_prev": -0.019999999999999997,
-    "trigger": "near_close",
-    "strategy_id": "LQ5-ensemble5",
+    "lean_note": "53pt gap exceeds the hard ceiling (20pt) — beyond this divergence from a liquid market, even high confidence is treated as model error, not edge",
+    "prob_delta_vs_prev": 0.5235,
+    "trigger": "scheduled",
+    "strategy_id": "LQ5C-ensemble5-crowd",
     "proposed_probability": null,
     "adversarial_verdict": "",
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "Seasonal closure of Mar-a-Lago during summer makes any visits impossible, directly contradicting the 'exactly 2 trips' claim. Base rate of two off-season trips in seven days is near-impossible, reinforcing zero probability.",
+    "rationale_summary": "Based on the evidence, Trump has visited Mar-a-Lago multiple times in 2026, including at least 24 times as of March 2026, suggesting a strong pattern of frequent visits. However, the exact number of trips in June 2026 is not specified, and there is limited information on his schedule for that specific period. While the evidence supports that he is active in Florida and has plans for events such as",
     "key_drivers": [
-      "Seasonal closure of Mar-a-Lago",
-      "Impracticality of two trips in seven days"
+      "Trump's frequent visits to Mar-a-Lago as of March 2026",
+      "Planned events in Florida (e.g.",
+      "crypto conference) that may influence his schedule",
+      "Uncertainty in the specific number of trips in June 2026"
     ],
     "reference_classes": [
-      "Two off-season FL trips in 7 days near-impossible",
-      "Seasonal closure eliminating visit possibility"
+      "Frequent presidential visits to Mar-a-Lago in 2026",
+      "Presidential travel patterns during active campaign or event periods"
     ],
     "research_refs": [
-      "https://rollcall.com/factbase/trump/calendar/"
+      "Al Jazeera",
+      "Anadolu Ajansı",
+      "Business Insider",
+      "CNN",
+      "Citizens for Responsibility and Ethics in Washington",
+      "Daytona Beach News-Journal",
+      "NPR",
+      "PBS"
     ]
   },
   "history": [
@@ -148,6 +157,52 @@
       ],
       "research_refs": [
         "https://rollcall.com/factbase/trump/calendar/"
+      ]
+    },
+    {
+      "as_of": "2026-06-29T18:34:31Z",
+      "my_probability": 0.5335,
+      "my_confidence": "high",
+      "market_implied_probability": 0.005,
+      "market_price_cents": 0.0,
+      "edge": 0.5285,
+      "yes_ask": 0.01,
+      "no_ask": 1.0,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": 0.5135,
+      "limit_price": 0.0,
+      "ev_limit_per_contract": 0.5335,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "53pt gap exceeds the hard ceiling (20pt) — beyond this divergence from a liquid market, even high confidence is treated as model error, not edge",
+      "prob_delta_vs_prev": 0.5235,
+      "trigger": "scheduled",
+      "strategy_id": "LQ5C-ensemble5-crowd",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "Based on the evidence, Trump has visited Mar-a-Lago multiple times in 2026, including at least 24 times as of March 2026, suggesting a strong pattern of frequent visits. However, the exact number of trips in June 2026 is not specified, and there is limited information on his schedule for that specific period. While the evidence supports that he is active in Florida and has plans for events such as",
+      "key_drivers": [
+        "Trump's frequent visits to Mar-a-Lago as of March 2026",
+        "Planned events in Florida (e.g.",
+        "crypto conference) that may influence his schedule",
+        "Uncertainty in the specific number of trips in June 2026"
+      ],
+      "reference_classes": [
+        "Frequent presidential visits to Mar-a-Lago in 2026",
+        "Presidential travel patterns during active campaign or event periods"
+      ],
+      "research_refs": [
+        "Al Jazeera",
+        "Anadolu Ajansı",
+        "Business Insider",
+        "CNN",
+        "Citizens for Responsibility and Ethics in Washington",
+        "Daytona Beach News-Journal",
+        "NPR",
+        "PBS"
       ]
     }
   ],

@@ -5,48 +5,49 @@
   "category": "politics",
   "close_time": "2026-07-20T14:00:00Z",
   "current": {
-    "as_of": "2026-06-23T19:25:53Z",
-    "my_probability": 0.95,
+    "as_of": "2026-06-29T18:34:54Z",
+    "my_probability": 0.84,
     "my_confidence": "high",
-    "market_implied_probability": 0.89,
-    "market_price_cents": 89.0,
-    "edge": 0.05999999999999994,
-    "yes_ask": 0.9,
-    "no_ask": 0.12,
+    "market_implied_probability": 0.835,
+    "market_price_cents": 84.0,
+    "edge": 0.0050000000000000044,
+    "yes_ask": 0.84,
+    "no_ask": 0.17,
     "fee_per_contract": 0.01,
-    "ev_per_contract": 0.03999999999999993,
-    "limit_price": 0.88,
-    "ev_limit_per_contract": 0.06,
-    "lean": "YES",
+    "ev_per_contract": -0.01,
+    "limit_price": null,
+    "ev_limit_per_contract": null,
+    "lean": "NONE",
     "conviction": "low",
-    "lean_note": null,
-    "prob_delta_vs_prev": 0.09999999999999998,
+    "lean_note": "no +EV value bet at the ask (my prob 84%, modal YES) — staying out.",
+    "prob_delta_vs_prev": -0.10999999999999999,
     "trigger": "scheduled",
-    "strategy_id": "S0-single",
-    "proposed_probability": 0.95,
-    "adversarial_verdict": "revise",
-    "adversarial_challenged_prob": 0.92,
-    "adversarial_concerns": [
-      "Divergence from liquid market implies unaccounted risk; forecaster assumes crowd is wrong without credible evidence",
-      "Residual 5% attributed to vague '26-day horizon' factors without quantified impact",
-      "Overconfidence in 'triple-confirmed' claims ignores potential for misinformation or misinterpretation of statements"
-    ],
-    "adversarial_model": "qwen3:14b-q4_K_M",
-    "rationale_summary": "Triple-confirmed: Infantino stated day-of (Jun 23) he and Trump will jointly present the trophy; WH holding the July 19 date; Trump attended the 2025 Club World Cup final at the same MetLife venue and handed the trophy. NSSE security is an enabler; trivial NJ logistics. Residual ~5% is the 26-day horizon (US-Iran security, age 80).",
+    "strategy_id": "LQ5-ensemble5",
+    "proposed_probability": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": "",
+    "rationale_summary": "Multiple credible sources, including FOX 5 New York, The Tribune, The News Mill, and Al Jazeera, confirm or strongly suggest that Donald J. Trump will attend the 2026 FIFA World Cup Final, including reports that he will hand out the trophy at a match in New Jersey. Additional evidence includes his confirmed attendance at the World Cup draw and his active involvement in related commentary. While th",
     "key_drivers": [
-      "Infantino day-of confirmation",
-      "WH date held",
-      "2025 same-venue precedent",
-      "NSSE security enabler"
+      "Multiple sources confirming Trump's attendance at World Cup events",
+      "Report of Trump handing out the trophy at a match in New Jersey",
+      "Trump’s active involvement and commentary on the World Cup",
+      "Confirmed attendance at the World Cup draw"
     ],
     "reference_classes": [
-      "president follow-through on stated easy-logistics appearance ~4wks out 92-97%",
-      "Trump major-event attendance near-universal"
+      "Public appearances by high-profile political figures at major international sporting events",
+      "Attendance by U.S. political leaders at global sports events hosted in the U.S."
     ],
     "research_refs": [
-      "https://www.espn.com/soccer/story/_/id/49154827/donald-trump-present-world-cup-trophy-final-fifa-boss-gianni-infantino-confirms",
-      "https://www.nbcnewyork.com/world-cup/trump-world-cup-final-fifa-metlife-stadium/6512369/",
-      "https://www.cnn.com/2025/07/14/sport/donald-trump-club-world-cup-final-chelsea-psg-spt"
+      "AL.com",
+      "Al Jazeera",
+      "FOX 5 New York",
+      "Hindustan Times",
+      "Impakter",
+      "Inside The Games",
+      "LiveNOW from FOX",
+      "People.com"
     ]
   },
   "history": [
@@ -131,6 +132,52 @@
         "https://www.espn.com/soccer/story/_/id/49154827/donald-trump-present-world-cup-trophy-final-fifa-boss-gianni-infantino-confirms",
         "https://www.nbcnewyork.com/world-cup/trump-world-cup-final-fifa-metlife-stadium/6512369/",
         "https://www.cnn.com/2025/07/14/sport/donald-trump-club-world-cup-final-chelsea-psg-spt"
+      ]
+    },
+    {
+      "as_of": "2026-06-29T18:34:54Z",
+      "my_probability": 0.84,
+      "my_confidence": "high",
+      "market_implied_probability": 0.835,
+      "market_price_cents": 84.0,
+      "edge": 0.0050000000000000044,
+      "yes_ask": 0.84,
+      "no_ask": 0.17,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": -0.01,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "no +EV value bet at the ask (my prob 84%, modal YES) — staying out.",
+      "prob_delta_vs_prev": -0.10999999999999999,
+      "trigger": "scheduled",
+      "strategy_id": "LQ5-ensemble5",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "Multiple credible sources, including FOX 5 New York, The Tribune, The News Mill, and Al Jazeera, confirm or strongly suggest that Donald J. Trump will attend the 2026 FIFA World Cup Final, including reports that he will hand out the trophy at a match in New Jersey. Additional evidence includes his confirmed attendance at the World Cup draw and his active involvement in related commentary. While th",
+      "key_drivers": [
+        "Multiple sources confirming Trump's attendance at World Cup events",
+        "Report of Trump handing out the trophy at a match in New Jersey",
+        "Trump’s active involvement and commentary on the World Cup",
+        "Confirmed attendance at the World Cup draw"
+      ],
+      "reference_classes": [
+        "Public appearances by high-profile political figures at major international sporting events",
+        "Attendance by U.S. political leaders at global sports events hosted in the U.S."
+      ],
+      "research_refs": [
+        "AL.com",
+        "Al Jazeera",
+        "FOX 5 New York",
+        "Hindustan Times",
+        "Impakter",
+        "Inside The Games",
+        "LiveNOW from FOX",
+        "People.com"
       ]
     }
   ],

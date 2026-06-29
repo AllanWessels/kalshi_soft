@@ -3,41 +3,52 @@
   "ticker": "KXECONSTATCPIYOY-26JUN-T4.1",
   "title": "CPI year-over-year in Jun 2026?",
   "category": "economy",
-  "close_time": "2026-07-14T12:29:00Z",
+  "close_time": "2026-07-14T14:00:00Z",
   "current": {
-    "as_of": "2026-06-23T19:12:23Z",
-    "my_probability": 0.06,
-    "my_confidence": "medium",
-    "market_implied_probability": 0.035,
-    "market_price_cents": 3.0,
-    "edge": 0.024999999999999994,
-    "yes_ask": 0.06,
-    "no_ask": 0.99,
+    "as_of": "2026-06-29T18:34:49Z",
+    "my_probability": 0.64,
+    "my_confidence": "low",
+    "market_implied_probability": 0.04,
+    "market_price_cents": 4.0,
+    "edge": 0.6,
+    "yes_ask": 0.08,
+    "no_ask": 1.0,
     "fee_per_contract": 0.01,
-    "ev_per_contract": -0.060000000000000046,
-    "limit_price": null,
-    "ev_limit_per_contract": null,
+    "ev_per_contract": 0.55,
+    "limit_price": 0.0,
+    "ev_limit_per_contract": 0.64,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "no +EV value bet at the ask (my prob 6%, modal NO) — staying out.",
-    "prob_delta_vs_prev": -0.14,
+    "lean_note": "low confidence below the medium floor — estimate too uncertain to fade the market",
+    "prob_delta_vs_prev": 0.5800000000000001,
     "trigger": "scheduled",
-    "strategy_id": "S0-single",
+    "strategy_id": "LQ5-ensemble5",
     "proposed_probability": null,
     "adversarial_verdict": "",
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "4.1% needs ~+0.2% MoM, two-three tenths above my energy-driven estimate; a tail given the ceasefire oil collapse.",
+    "rationale_summary": "The question asks for the year-over-year CPI in June 2026, but no specific evidence or data points were provided in the 'facts' field of the evidence notes. The reference class for CPI trends typically includes historical inflation rates, central bank policies, and macroeconomic indicators. While sources like the Bureau of Labor Statistics and OECD are consulted, there is insufficient granular dat",
     "key_drivers": [
-      "energy reversal",
-      "YoY drop"
+      "Historical CPI trends",
+      "Central bank monetary policy",
+      "Macroeconomic conditions",
+      "Energy and commodity prices"
     ],
     "reference_classes": [
-      "exact-value bucket mass"
+      "Historical year-over-year CPI data",
+      "Inflation forecasts from economic institutions",
+      "Macroeconomic indicators influencing inflation"
     ],
     "research_refs": [
-      "https://tradingeconomics.com/united-states/inflation-cpi"
+      "Bureau of Labor Statistics",
+      "CNBC",
+      "Chase Bank",
+      "FOREX.com",
+      "FactSet Insight",
+      "OECD",
+      "Reuters",
+      "U.S. Travel Association"
     ]
   },
   "history": [
@@ -112,6 +123,53 @@
       ],
       "research_refs": [
         "https://tradingeconomics.com/united-states/inflation-cpi"
+      ]
+    },
+    {
+      "as_of": "2026-06-29T18:34:49Z",
+      "my_probability": 0.64,
+      "my_confidence": "low",
+      "market_implied_probability": 0.04,
+      "market_price_cents": 4.0,
+      "edge": 0.6,
+      "yes_ask": 0.08,
+      "no_ask": 1.0,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": 0.55,
+      "limit_price": 0.0,
+      "ev_limit_per_contract": 0.64,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "low confidence below the medium floor — estimate too uncertain to fade the market",
+      "prob_delta_vs_prev": 0.5800000000000001,
+      "trigger": "scheduled",
+      "strategy_id": "LQ5-ensemble5",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "The question asks for the year-over-year CPI in June 2026, but no specific evidence or data points were provided in the 'facts' field of the evidence notes. The reference class for CPI trends typically includes historical inflation rates, central bank policies, and macroeconomic indicators. While sources like the Bureau of Labor Statistics and OECD are consulted, there is insufficient granular dat",
+      "key_drivers": [
+        "Historical CPI trends",
+        "Central bank monetary policy",
+        "Macroeconomic conditions",
+        "Energy and commodity prices"
+      ],
+      "reference_classes": [
+        "Historical year-over-year CPI data",
+        "Inflation forecasts from economic institutions",
+        "Macroeconomic indicators influencing inflation"
+      ],
+      "research_refs": [
+        "Bureau of Labor Statistics",
+        "CNBC",
+        "Chase Bank",
+        "FOREX.com",
+        "FactSet Insight",
+        "OECD",
+        "Reuters",
+        "U.S. Travel Association"
       ]
     }
   ],

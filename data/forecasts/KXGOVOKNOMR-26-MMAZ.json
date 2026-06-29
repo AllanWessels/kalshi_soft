@@ -1,50 +1,51 @@
 {
   "schema_version": 1,
   "ticker": "KXGOVOKNOMR-26-MMAZ",
-  "title": "OK GOP Governor nominee: Mike Mazzei (YES)",
+  "title": "Will Mike Mazzei be the Republican nominee for Governor in Oklahoma?",
   "category": "politics",
-  "close_time": "2026-11-03T15:00:00Z",
+  "close_time": "2026-06-30T14:00:00Z",
   "current": {
-    "as_of": "2026-06-23T20:36:41Z",
-    "my_probability": 0.65,
+    "as_of": "2026-06-29T18:34:25Z",
+    "my_probability": 0.15,
     "my_confidence": "high",
-    "market_implied_probability": 0.775,
+    "market_implied_probability": 0.785,
     "market_price_cents": 78.0,
-    "edge": -0.125,
-    "yes_ask": 0.78,
-    "no_ask": 0.23,
+    "edge": -0.635,
+    "yes_ask": 0.79,
+    "no_ask": 0.22,
     "fee_per_contract": 0.02,
-    "ev_per_contract": 0.09999999999999996,
-    "limit_price": 0.22,
-    "ev_limit_per_contract": 0.11,
-    "lean": "NO",
-    "conviction": "medium",
-    "lean_note": null,
-    "prob_delta_vs_prev": 0.030000000000000027,
-    "trigger": "near_close",
+    "ev_per_contract": 0.61,
+    "limit_price": 0.21,
+    "ev_limit_per_contract": 0.62,
+    "lean": "NONE",
+    "conviction": "low",
+    "lean_note": "64pt gap exceeds the hard ceiling (20pt) — beyond this divergence from a liquid market, even high confidence is treated as model error, not edge",
+    "prob_delta_vs_prev": -0.5,
+    "trigger": "scheduled",
     "strategy_id": "LQ5-ensemble5",
-    "proposed_probability": 0.65,
-    "adversarial_verdict": "revise",
-    "adversarial_challenged_prob": 0.65,
-    "adversarial_concerns": [
-      "Base rates for Trump-endorsed runoff candidates are incomplete/uncertain",
-      "Narrow first-round lead may not translate to runoff dominance",
-      "Market implies higher 'YES' probability; forecaster's divergence lacks credible justification for liquid market"
-    ],
-    "adversarial_model": "qwen3:14b-q4_K_M",
-    "rationale_summary": "Trump's endorsement and heavy self-funding give Mazzei significant advantages in a low-turnout August runoff, but Drummond's narrow first-round lead (26.3-26.0) and established name recognition as AG suggest competitive resistance. Base rates for Trump-endorsed deep-red runoff candidates are favorab",
+    "proposed_probability": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": "",
+    "rationale_summary": "There is currently no significant evidence or public indication that Mike Mazzei is positioning himself as a candidate for the Republican nomination for Governor in Oklahoma. The absence of news coverage or statements from Mazzei or his campaign suggests that he is not a prominent figure in the race at this time.",
     "key_drivers": [
-      "Trump endorsement strength in Oklahoma",
-      "Mazzei's $11M self-funding advantage",
-      "Drummond's first-round performance and AG name ID",
-      "August runoff's low-turnout dynamics"
+      "Lack of public announcements or campaign activity from Mike Mazzei",
+      "No news coverage indicating his involvement in the race"
     ],
     "reference_classes": [
-      "Trump-endorsed deep-red runoff candidates vs non-elite opponents",
-      "Self-funded vs establishment-backed candidates in low-turnout primaries"
+      "Candidates who have not announced their candidacy",
+      "Little-known figures in gubernatorial races"
     ],
     "research_refs": [
-      "https://www.news9.com/oklahoma-politics/president-trump-drummond-fake-republican-oklahoma-governor-race"
+      "KOCO",
+      "KOSU",
+      "KXII",
+      "NonDoc",
+      "Oklahoma Voice",
+      "PBS",
+      "The Journal Record",
+      "The Oklahoman"
     ]
   },
   "history": [
@@ -253,6 +254,50 @@
       ],
       "research_refs": [
         "https://www.news9.com/oklahoma-politics/president-trump-drummond-fake-republican-oklahoma-governor-race"
+      ]
+    },
+    {
+      "as_of": "2026-06-29T18:34:25Z",
+      "my_probability": 0.15,
+      "my_confidence": "high",
+      "market_implied_probability": 0.785,
+      "market_price_cents": 78.0,
+      "edge": -0.635,
+      "yes_ask": 0.79,
+      "no_ask": 0.22,
+      "fee_per_contract": 0.02,
+      "ev_per_contract": 0.61,
+      "limit_price": 0.21,
+      "ev_limit_per_contract": 0.62,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "64pt gap exceeds the hard ceiling (20pt) — beyond this divergence from a liquid market, even high confidence is treated as model error, not edge",
+      "prob_delta_vs_prev": -0.5,
+      "trigger": "scheduled",
+      "strategy_id": "LQ5-ensemble5",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "There is currently no significant evidence or public indication that Mike Mazzei is positioning himself as a candidate for the Republican nomination for Governor in Oklahoma. The absence of news coverage or statements from Mazzei or his campaign suggests that he is not a prominent figure in the race at this time.",
+      "key_drivers": [
+        "Lack of public announcements or campaign activity from Mike Mazzei",
+        "No news coverage indicating his involvement in the race"
+      ],
+      "reference_classes": [
+        "Candidates who have not announced their candidacy",
+        "Little-known figures in gubernatorial races"
+      ],
+      "research_refs": [
+        "KOCO",
+        "KOSU",
+        "KXII",
+        "NonDoc",
+        "Oklahoma Voice",
+        "PBS",
+        "The Journal Record",
+        "The Oklahoman"
       ]
     }
   ],
