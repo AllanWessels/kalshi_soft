@@ -119,7 +119,17 @@ Anthropic burst limit to respect and no wave rule. The only throttle is how many
 ensemble calls finish in a reasonable run (each market = ~5 `forecast` passes). `/update N` sets the
 target; default 12 when no N is given. Deferred markets carry over automatically.
 
-## Step 4 — Research & forecast each due market (RETRIEVE → assign arm → ENSEMBLE-FORECAST on Qwen)
+## Step 4 — Research & forecast each due market (RETRIEVE → assign arm → ENSEMBLE-FORECAST)
+
+> **STANDARD PATH while the shadow A/B is active (user directive 2026-06-29):** run
+> `python3 scripts/ab_forecast.py --limit N`. It executes Steps 4a–5 for the whole due set:
+> shared Qwen retrieval, then forecasts EVERY market with **both Qwen and Mistral** on the same
+> evidence, records the assigned arm officially (adversarial gate + entry-lock), and persists both
+> blind forecasts to `data/ab_shadow.jsonl`. `scripts/ab_score.py` resolves the Qwen-vs-Mistral
+> Brier head-to-head as those markets settle; the dual pass **auto-disables** once the Mistral arm
+> reaches `SHADOW_AB_TARGET_RESOLUTIONS` (25). The manual 4a–4c below documents what that script does.
+> **Profitability is the governing objective — see `PROFITABILITY_PLAN.md`** (concentrate on
+> measured positive-skill segments; we currently lose to the market on Brier and must fix that).
 
 ### Step 4a — Retrieval tier (Qwen drives its own browser, free)
 For each due market, **Qwen does the retrieval itself** — the orchestrator does NOT run WebSearch/

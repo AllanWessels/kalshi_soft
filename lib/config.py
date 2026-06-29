@@ -151,6 +151,15 @@ LOCAL_LLM_API_KEY = os.environ.get("LOCAL_LLM_API_KEY", "ollama").strip()  # Oll
 # its own strategy arm so it competes head-to-head with Qwen3-14B on the Brier+ROI scoreboard.
 LOCAL_LLM_MODEL_MISTRAL = os.environ.get("LOCAL_LLM_MODEL_MISTRAL", "mistral-small:24b").strip()
 
+# Shadow A/B (user directive 2026-06-29): until the Mistral arm has accumulated enough RESOLVED
+# markets to score a real Brier+ROI head-to-head, forecast EVERY due market with BOTH Qwen and
+# Mistral on the same evidence (shared retrieval) and persist both blind forecasts to
+# AB_SHADOW_PATH. When these markets resolve, ab_score.py computes both models' Brier so we learn
+# which forecaster is actually better — not just which is more confident. Auto-disables once the
+# Mistral arm reaches the target so we stop paying the 2nd-model wall-clock once the answer is in.
+AB_SHADOW_PATH = DATA_DIR / "ab_shadow.jsonl"
+SHADOW_AB_TARGET_RESOLUTIONS = int(os.environ.get("SHADOW_AB_TARGET_RESOLUTIONS", "25"))
+
 # Thinking-suppression (2026-06-29 — fixes the dropped-pass bug). Qwen3 is a HYBRID reasoning
 # model; left unconstrained it emits an 8k-token <think> block that blows the output budget
 # (finish_reason=length) and returns truncated/empty JSON — the intermittent ensemble-pass
