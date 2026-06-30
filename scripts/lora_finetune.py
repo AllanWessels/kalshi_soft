@@ -157,7 +157,7 @@ def main() -> int:
     mf_path = _write_ollama_modelfile(base_tag)
     backend = _backend_available()
 
-    print(f"\nWrote training configs:")
+    print("\nWrote training configs:")
     print(f"  - {cfg_path}")
     print(f"  - {info_path}")
     print(f"  - {mf_path}")

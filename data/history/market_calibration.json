@@ -1,0 +1,407 @@
+{
+  "cells": {
+    "statements|95-100c|mid": {
+      "a": 1.9835,
+      "b": 1.1802,
+      "n": 3575,
+      "brier_raw": 0.00013,
+      "brier_cal": 0.0
+    },
+    "statements|0-5c|mid": {
+      "a": 1.9835,
+      "b": 1.0818,
+      "n": 3571,
+      "brier_raw": 0.00042,
+      "brier_cal": 0.00028
+    },
+    "statements|0-5c|thin": {
+      "a": 1.8957,
+      "b": -1.0748,
+      "n": 515,
+      "brier_raw": 0.00021,
+      "brier_cal": 0.0
+    },
+    "politics|95-100c|mid": {
+      "a": 1.4408,
+      "b": -1.058,
+      "n": 447,
+      "brier_raw": 0.00221,
+      "brier_cal": 0.00213
+    },
+    "politics|0-5c|mid": {
+      "a": 1.4784,
+      "b": -1.1482,
+      "n": 1330,
+      "brier_raw": 0.00086,
+      "brier_cal": 0.00075
+    },
+    "statements|95-100c|deep": {
+      "a": 1.5887,
+      "b": -1.1773,
+      "n": 3112,
+      "brier_raw": 0.0004,
+      "brier_cal": 0.00031
+    },
+    "statements|0-5c|deep": {
+      "a": 1.9861,
+      "b": -1.1833,
+      "n": 4246,
+      "brier_raw": 0.00012,
+      "brier_cal": 0.0
+    },
+    "culture|0-5c|deep": {
+      "a": 1.9511,
+      "b": -1.1413,
+      "n": 1166,
+      "brier_raw": 0.00015,
+      "brier_cal": 0.0
+    },
+    "culture|95-100c|deep": {
+      "a": 1.8891,
+      "b": 1.0669,
+      "n": 481,
+      "brier_raw": 0.00025,
+      "brier_cal": 0.0
+    },
+    "politics|0-5c|deep": {
+      "a": 1.9474,
+      "b": -1.1369,
+      "n": 1081,
+      "brier_raw": 0.00011,
+      "brier_cal": 0.0
+    },
+    "culture|0-5c|mid": {
+      "a": 1.2908,
+      "b": -0.5815,
+      "n": 1890,
+      "brier_raw": 0.00172,
+      "brier_cal": 0.00158
+    },
+    "culture|0-5c|thin": {
+      "a": 1.3916,
+      "b": 0.6853,
+      "n": 2797,
+      "brier_raw": 0.00646,
+      "brier_cal": 0.00636
+    },
+    "culture|5-15c|mid": {
+      "a": 1.225,
+      "b": -0.6,
+      "n": 180,
+      "brier_raw": 0.02019,
+      "brier_cal": 0.01628
+    },
+    "culture|95-100c|mid": {
+      "a": 1.1855,
+      "b": -1.1128,
+      "n": 766,
+      "brier_raw": 0.01363,
+      "brier_cal": 0.01339
+    },
+    "culture|5-15c|thin": {
+      "a": 0.9061,
+      "b": -1.1268,
+      "n": 923,
+      "brier_raw": 0.03311,
+      "brier_cal": 0.03042
+    },
+    "politics|0-5c|thin": {
+      "a": 1.8235,
+      "b": -0.9882,
+      "n": 280,
+      "brier_raw": 0.00033,
+      "brier_cal": 0.0
+    },
+    "politics|95-100c|deep": {
+      "a": 1.0896,
+      "b": -1.075,
+      "n": 516,
+      "brier_raw": 0.01502,
+      "brier_cal": 0.0148
+    },
+    "politics|95-100c|thin": {
+      "a": 0.7429,
+      "b": 0.5143,
+      "n": 45,
+      "brier_raw": 0.04407,
+      "brier_cal": 0.04332
+    },
+    "economy|0-5c|mid": {
+      "a": 0.7276,
+      "b": -0.8173,
+      "n": 593,
+      "brier_raw": 0.01982,
+      "brier_cal": 0.01978
+    },
+    "economy|0-5c|deep": {
+      "a": 1.8575,
+      "b": -1.029,
+      "n": 361,
+      "brier_raw": 0.00033,
+      "brier_cal": 0.0
+    },
+    "economy|35-65c|deep": {
+      "a": 0.6628,
+      "b": -0.0,
+      "n": 77,
+      "brier_raw": 0.2582,
+      "brier_cal": 0.25156
+    },
+    "economy|85-95c|deep": {
+      "a": 0.8463,
+      "b": 0.6146,
+      "n": 63,
+      "brier_raw": 0.06156,
+      "brier_cal": 0.05956
+    },
+    "economy|95-100c|mid": {
+      "a": 0.7189,
+      "b": 0.937,
+      "n": 893,
+      "brier_raw": 0.01861,
+      "brier_cal": 0.0186
+    },
+    "economy|95-100c|thin": {
+      "a": 0.6236,
+      "b": 0.0941,
+      "n": 958,
+      "brier_raw": 0.06349,
+      "brier_cal": 0.0608
+    },
+    "economy|5-15c|thin": {
+      "a": 1.255,
+      "b": 0.935,
+      "n": 340,
+      "brier_raw": 0.09819,
+      "brier_cal": 0.09666
+    },
+    "economy|0-5c|thin": {
+      "a": 0.4448,
+      "b": -0.9254,
+      "n": 744,
+      "brier_raw": 0.07073,
+      "brier_cal": 0.06817
+    },
+    "economy|5-15c|mid": {
+      "a": 0.5765,
+      "b": -0.8471,
+      "n": 144,
+      "brier_raw": 0.08895,
+      "brier_cal": 0.08809
+    },
+    "economy|15-35c|deep": {
+      "a": 1.589,
+      "b": 0.4712,
+      "n": 86,
+      "brier_raw": 0.13666,
+      "brier_cal": 0.12971
+    },
+    "economy|95-100c|deep": {
+      "a": 1.4138,
+      "b": -0.9931,
+      "n": 288,
+      "brier_raw": 0.01033,
+      "brier_cal": 0.01026
+    },
+    "statements|5-15c|mid": {
+      "a": 1.761,
+      "b": -0.9131,
+      "n": 191,
+      "brier_raw": 0.00685,
+      "brier_cal": 1e-05
+    },
+    "economy|15-35c|mid": {
+      "a": 0.8154,
+      "b": -0.4308,
+      "n": 96,
+      "brier_raw": 0.14844,
+      "brier_cal": 0.14473
+    },
+    "economy|85-95c|mid": {
+      "a": 1.2824,
+      "b": -0.8471,
+      "n": 144,
+      "brier_raw": 0.10736,
+      "brier_cal": 0.10528
+    },
+    "culture|5-15c|deep": {
+      "a": 1.4118,
+      "b": -0.4941,
+      "n": 42,
+      "brier_raw": 0.00656,
+      "brier_cal": 1e-05
+    },
+    "culture|35-65c|mid": {
+      "a": 1.0879,
+      "b": -0.1318,
+      "n": 47,
+      "brier_raw": 0.23838,
+      "brier_cal": 0.23315
+    },
+    "economy|35-65c|thin": {
+      "a": 1.6939,
+      "b": -0.0,
+      "n": 202,
+      "brier_raw": 0.23203,
+      "brier_cal": 0.22722
+    },
+    "economy|65-85c|thin": {
+      "a": 0.5572,
+      "b": 0.1476,
+      "n": 169,
+      "brier_raw": 0.23871,
+      "brier_cal": 0.22632
+    },
+    "economy|15-35c|thin": {
+      "a": 0.9241,
+      "b": 0.0759,
+      "n": 189,
+      "brier_raw": 0.19839,
+      "brier_cal": 0.19647
+    },
+    "economy|65-85c|mid": {
+      "a": 0.6195,
+      "b": 0.1268,
+      "n": 104,
+      "brier_raw": 0.23278,
+      "brier_cal": 0.22229
+    },
+    "economy|35-65c|mid": {
+      "a": 1.0618,
+      "b": -0.1854,
+      "n": 97,
+      "brier_raw": 0.24199,
+      "brier_cal": 0.2378
+    },
+    "economy|85-95c|thin": {
+      "a": 1.3917,
+      "b": -0.7834,
+      "n": 217,
+      "brier_raw": 0.08247,
+      "brier_cal": 0.08233
+    },
+    "statements|15-35c|mid": {
+      "a": 1.1949,
+      "b": -0.5846,
+      "n": 57,
+      "brier_raw": 0.08264,
+      "brier_cal": 0.04985
+    },
+    "politics|5-15c|mid": {
+      "a": 1.3953,
+      "b": 0.5271,
+      "n": 47,
+      "brier_raw": 0.02246,
+      "brier_cal": 0.02014
+    },
+    "culture|65-85c|mid": {
+      "a": 1.0909,
+      "b": -0.4091,
+      "n": 50,
+      "brier_raw": 0.24885,
+      "brier_cal": 0.22878
+    },
+    "culture|95-100c|thin": {
+      "a": 0.8086,
+      "b": -1.1483,
+      "n": 1332,
+      "brier_raw": 0.1019,
+      "brier_cal": 0.0855
+    },
+    "culture|35-65c|thin": {
+      "a": 0.497,
+      "b": -1.0059,
+      "n": 311,
+      "brier_raw": 0.26558,
+      "brier_cal": 0.16382
+    },
+    "culture|85-95c|mid": {
+      "a": 0.6769,
+      "b": 0.2692,
+      "n": 70,
+      "brier_raw": 0.17579,
+      "brier_cal": 0.16301
+    },
+    "culture|85-95c|thin": {
+      "a": 0.539,
+      "b": -0.7683,
+      "n": 199,
+      "brier_raw": 0.44274,
+      "brier_cal": 0.25594
+    },
+    "culture|15-35c|mid": {
+      "a": 1.2857,
+      "b": 0.4,
+      "n": 80,
+      "brier_raw": 0.16787,
+      "brier_cal": 0.167
+    },
+    "culture|15-35c|thin": {
+      "a": 1.777,
+      "b": -0.0,
+      "n": 209,
+      "brier_raw": 0.08528,
+      "brier_cal": 0.06344
+    },
+    "culture|65-85c|thin": {
+      "a": 0.6119,
+      "b": -0.9313,
+      "n": 208,
+      "brier_raw": 0.40033,
+      "brier_cal": 0.21161
+    },
+    "economy|5-15c|deep": {
+      "a": 1.125,
+      "b": -0.75,
+      "n": 100,
+      "brier_raw": 0.02474,
+      "brier_cal": 0.01964
+    },
+    "economy|65-85c|deep": {
+      "a": 1.0,
+      "b": -0.1143,
+      "n": 80,
+      "brier_raw": 0.20118,
+      "brier_cal": 0.1995
+    },
+    "statements|5-15c|deep": {
+      "a": 1.4645,
+      "b": 0.5677,
+      "n": 64,
+      "brier_raw": 0.0321,
+      "brier_cal": 0.02975
+    },
+    "statements|5-15c|thin": {
+      "a": 1.3517,
+      "b": -0.7034,
+      "n": 85,
+      "brier_raw": 0.01767,
+      "brier_cal": 0.01174
+    },
+    "statements|15-35c|thin": {
+      "a": 1.4545,
+      "b": -0.5455,
+      "n": 50,
+      "brier_raw": 0.04834,
+      "brier_cal": 0.0009
+    },
+    "statements|95-100c|thin": {
+      "a": 1.0,
+      "b": -0.7168,
+      "n": 89,
+      "brier_raw": 0.02109,
+      "brier_cal": 0.01952
+    },
+    "politics|5-15c|thin": {
+      "a": 1.4545,
+      "b": -0.5455,
+      "n": 50,
+      "brier_raw": 0.00526,
+      "brier_cal": 1e-05
+    }
+  },
+  "params": {
+    "K_CELL": 60,
+    "MIN_CELL_N": 40
+  }
+}

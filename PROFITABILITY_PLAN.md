@@ -23,6 +23,35 @@ win, (3) become measurably better than the price there, and (4) only deploy capi
 *earned, measured* skill. If local models cannot beat the market anywhere, the all-local thesis is
 falsified and we change the forecaster or sunset.
 
+## Phase 0.5 — HISTORY BACKTEST: first out-of-sample edge found (2026-06-30)
+
+User directive: the learning universe is not just our 31 resolved markets — *go get history*. Done.
+`scripts/harvest_history.py` pulled **36,408 settled soft markets** (6,994 series; Politics/Elections/
+Entertainment/Economics/World/Mentions), each carrying its pre-settlement price + binary outcome.
+This is leakage-free (price-vs-outcome arithmetic, no model) and **zero-token** (pure Kalshi API).
+
+**What history says (the structural edge):**
+- The crowd is efficient *in aggregate* (Brier 0.0295, ECE 0.020) but carries a systematic
+  **YES-overpricing / favorite-longshot bias** (mean bias −0.020), strongest in **culture** (ECE 0.051).
+- A per-cell **market-calibration map** (shrunk Platt scaling, `lib/atlas.py`), fit on a 70% TRAIN split
+  and scored on the held-out 30% (**n=10,861**), **BEATS the raw market out-of-sample**: Brier
+  0.0293 → 0.0257 (~12% relative). First time anything here has beaten the price with real power.
+- `scripts/backtest_history.py` (out-of-sample, after Kalshi fees): **+22% ROI on 1,798 trades**.
+  But the edge **decays monotonically with liquidity** (by traded volume): vol<50 +38% (paper — can't
+  fill), 50–500 +32%, **500–5k +9.6% (tradeable, real)**, **>5k −1.7% (efficient — edge dies)**.
+
+**The deployable thesis (precise, evidence-backed):** fade the over-priced side in **under-covered,
+mid-liquidity** soft markets (concentrated in culture; OI/volume roughly 50–5k), and **stop trading
+liquid markets entirely** — they're efficient and we lose. The market-calibration map is the new
+leakage-free **prior/anchor** for the forecaster; `scripts/atlas_screen.py` already flags live
+candidates that sit in a corrected, positive-EV cell (29/150 on the current watchlist).
+
+**Honest caveats (do NOT over-trust the headline):** the backtest fills at the recorded implied price
+with no spread/slippage beyond fees — an UPPER bound, and the fattest cells are the least liquid where
+that assumption is weakest. The +10% mid-liquidity band is the defensible number. Next: validate
+against real order-book spreads, wire the calibration map as the forecaster anchor (vs raw price),
+and gate live capital to the mid-liquidity, positive-OOS-ROI cells only.
+
 ## Betting policy ≠ learning policy (user correction, 2026-06-29)
 
 The lever is **NOT** a smarter *betting* policy (when to act on a forecast — the EV/gap gates in

@@ -20,3 +20,7 @@ data/scratch/
 data/*.db
 *.sqlite
 *.sqlite3
+data/history/markets.jsonl
+data/history/_harvest.log
+data/history/_smoke.jsonl
+data/history/_harvested_series.json

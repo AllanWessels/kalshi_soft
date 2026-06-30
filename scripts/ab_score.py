@@ -10,7 +10,9 @@ scored markets the result is provisional (printed as such). Read-only; safe to r
 `shadow_active()` is the gate the loop checks: True while the Mistral arm still needs data.
 """
 from __future__ import annotations
-import json, statistics, sys
+import json
+import statistics
+import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from lib import store, config
