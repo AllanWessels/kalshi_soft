@@ -268,6 +268,24 @@ pass rewrites the rules that *define* a good decision *after* outcomes land. The
 is the one at the **locked entry** (`Position`), not the latest re-forecast — performance is scored
 against that committed point (entry-lock, option A).
 
+## Step 6d — Trade recommendations (route the structural edge into TRACKED positions)
+The LLM forecaster loses to the price, so its leans are correctly ~zero — but that must not mean
+**zero trades**, or there is no profit. The history-learned market-calibration edge (`lib/atlas`)
+**beat the market out-of-sample** and nets positive after fees in the mid-liquidity band; this step
+routes THAT edge into explicit, scored position recommendations. Always run both:
+```
+python3 scripts/score_recommendations.py     # score prior open recs against any new resolutions
+python3 scripts/recommend_trades.py --max 10  # emit + LOG this cycle's basket to the ledger
+```
+`recommend_trades.py` screens candidates → keeps only **mid open-interest** markets in a **corrected**
+cell with **+EV after fee AND half-spread** → appends each to `data/trade_recommendations.jsonl`
+(idempotent per ticker+day). `score_recommendations.py` looks up each open rec's settled outcome and
+records realized P&L + whether the calibrated prob beat the market (Brier) → the **LIVE accuracy
+record** of the edge (the backtest was OOS-historical; this is OOS-forward; verdict needs ≥15 resolved).
+Surface in the Step "summary": the new basket (with explicit BUY-NO/YES + entry limit) and the running
+recommendation scoreboard (win-rate, realized ROI, beat-market rate). Size small & equal — the basket
+is a correlated longshot-fade, one thematic position, high win-rate with tail risk on the rare hit.
+
 ## Step 7 — Build the report
 ```
 python3 scripts/build_report.py
