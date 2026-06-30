@@ -201,6 +201,21 @@ POSTMORTEM_RUBRIC = (
 )
 
 
+def market_calibration_enabled() -> bool:
+    """Whether the history-learned market-calibration anchor is applied at forecast time
+    (env USE_MARKET_CALIBRATION, default on).
+
+    When on, the forecaster's market PRIOR is the per-cell, history-calibrated price (lib/atlas:
+    the favorite-longshot / YES-overpricing correction that beat the raw market out-of-sample,
+    Brier 0.0293->0.0257 on n=10,861 held-out settled markets) instead of the raw price. It is
+    identity wherever no cell qualifies (n<MIN_CELL_N) or the cell is efficient, so it can only
+    help where history showed a real, shrunk mispricing. The RAW price is still recorded as the
+    market-implied so EV/leans are computed against the true tradeable price. Reversible by design.
+    """
+    v = os.environ.get("USE_MARKET_CALIBRATION", "1").strip().lower()
+    return v not in ("0", "false", "no", "off", "")
+
+
 def local_llm_enabled() -> bool:
     """Whether the local-LLM tier is opted in (env LOCAL_LLM_ENABLED, default on).
 

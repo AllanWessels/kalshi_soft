@@ -19,7 +19,7 @@ import subprocess
 import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from lib import retrieval, local_llm, strategies, scoring, store, schemas, config, learning, error_memory, taxonomy
+from lib import retrieval, local_llm, strategies, scoring, store, schemas, config, learning, error_memory, taxonomy, atlas
 
 try:
     from scripts.ab_score import shadow_active
@@ -47,6 +47,9 @@ def main():
     lessons = store.load_lessons().lessons
     by_strat = scoring.compute_calibration(resolved).by_strategy
     lp = learning.LearningPolicy()          # learned recalibration + segment trust + shrink-to-market
+    cmap = atlas.CalibrationMap.load() if config.market_calibration_enabled() else atlas.CalibrationMap({})
+    if cmap.cells:
+        print(f"market-calibration anchor ON ({len(cmap.cells)} history-learned cells)")
     cache = {}
 
     # Phase AB: shared Qwen retrieval + Qwen forecast (model resident). Before forecasting each
@@ -94,6 +97,14 @@ def main():
             except Exception as e:
                 print(f"{tk}: price fetch failed ({e})"); continue
             mi = px.get("market_implied_probability")
+            # History-calibrated market PRIOR: correct the raw price by the per-cell, OOS-validated
+            # favorite-longshot map (lib/atlas). Identity where no cell qualifies, so safe. We anchor
+            # the learning blend to this corrected price but still RECORD the raw mi as market-implied
+            # so EV/leans trade against the true price; the (mi_anchor - mi) gap IS the structural edge.
+            oi = float(c["m"].get("open_interest") or px.get("open_interest") or 0.0)
+            cat = c["m"].get("category", "") or "?"
+            cal = cmap.calibrate(cat, mi, oi) if mi is not None else {"calibrated": mi, "corrected": False}
+            mi_anchor = cal["calibrated"] if mi is not None else None
             # Arm aggregation first (the arm's own topology: ensemble agg + any crowd-adjust).
             prob_arm = strategies.combine(official["probs"], arm, market_price=mi) if official.get("probs") else official["my_probability"]
             # Then the LEARNING POLICY on top: recalibrate this model's prob and shrink toward the
@@ -104,9 +115,10 @@ def main():
             fam = learning._family(arm.id)
             subcat = taxonomy.classify_subcategory(tk, c["m"]["title"], c["m"].get("category", ""))
             segment = f"{c['m'].get('category','')} / {subcat}" if subcat else (c["m"].get("category", "") or "?")
-            blended = lp.blend({fam: prob_arm}, segment, mi)
+            blended = lp.blend({fam: prob_arm}, segment, mi_anchor)
             prob = blended["final"] if blended.get("final") is not None else prob_arm
-            print(f"   {tk} arm={arm.id} prob_arm={prob_arm:.4f} -> final={prob:.4f} (seg='{segment}' alpha={blended.get('alpha')})", flush=True)
+            cal_tag = f" cal={mi:.3f}->{mi_anchor:.3f}[{cal['key']}]" if cal.get("corrected") else ""
+            print(f"   {tk} arm={arm.id} prob_arm={prob_arm:.4f} -> final={prob:.4f} (seg='{segment}' alpha={blended.get('alpha')}){cal_tag}", flush=True)
             refs = ",".join((c["notes"].get("sources_consulted") or [])[:8])
             cmd = ["python3", "scripts/record_forecast.py", "--ticker", tk, "--prob", f"{prob:.4f}",
                    "--confidence", official["my_confidence"], "--trigger", "scheduled",
@@ -127,6 +139,8 @@ def main():
                 # learning-policy audit: what the arm said vs what we recorded after recalibrate+shrink
                 "segment": segment, "prob_arm": round(prob_arm, 4), "prob_final": round(prob, 4),
                 "policy_alpha": blended.get("alpha"), "policy_calibrated": blended.get("calibrated"),
+                # history market-calibration audit: raw price, corrected anchor, the cell, did it move
+                "mkt_cal_anchor": mi_anchor, "mkt_cal_corrected": cal.get("corrected"), "mkt_cal_cell": cal.get("key"),
                 "error_memory_used": bool(c.get("em")),
                 "qwen_p": qf and qf["my_probability"], "qwen_conf": qf and qf["my_confidence"], "qwen_stdev": qf and qf["stdev"],
                 "mistral_p": mf and mf["my_probability"], "mistral_conf": mf and mf["my_confidence"], "mistral_stdev": mf and mf["stdev"]}) + "\n")

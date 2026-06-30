@@ -65,31 +65,39 @@ def main() -> int:
         info = cmap.calibrate(cat, p, liq)
         p_cal = info["calibrated"]
         fee = _fee(p)
+        # Real execution cost: you cross HALF the bid/ask spread to enter. candidates carry
+        # spread_cents, so subtract spread/2 (in dollars) — the honesty gate before any capital.
+        half_spread = float(c.get("spread_cents", 0) or 0) / 200.0
         ev_yes = p_cal - p - fee
         ev_no = (p - p_cal) - fee
         ev, side = (ev_yes, "YES") if ev_yes >= ev_no else (ev_no, "NO")
+        ev_net = ev - half_spread          # EV after crossing the spread
         key = cell_key(cat, p, liq)
         scored.append({
             "ticker": c.get("ticker"), "title": (c.get("title") or "")[:46],
-            "cat": cat, "price": p, "p_cal": p_cal, "ev": ev, "side": side,
+            "cat": cat, "price": p, "p_cal": p_cal, "ev": ev, "ev_net": ev_net,
+            "spread": float(c.get("spread_cents", 0) or 0), "side": side,
             "beatable": key in beatable, "corrected": info["corrected"],
         })
 
-    scored.sort(key=lambda s: -s["ev"])
-    print(f"screened {len(scored)} candidates against history-learned edge\n")
-    print(f"  {'ticker':<30} {'cat':<10} {'px':<5} {'cal':<5} {'side':<4} {'EV':<7} flags")
+    scored.sort(key=lambda s: -s["ev_net"])
+    print(f"screened {len(scored)} candidates against history-learned edge "
+          f"(EV_net = after fee AND half-spread)\n")
+    print(f"  {'ticker':<30} {'cat':<10} {'px':<5} {'cal':<5} {'side':<4} {'EV':<7} {'EV_net':<7} {'spr':<4} flags")
     shown = 0
     for s in scored:
         if shown >= args.top:
             break
         if not s["corrected"]:
             continue
-        flags = ("BEATABLE " if s["beatable"] else "") + (f"EV+{s['ev']:.2f}" if s["ev"] >= config.MIN_PROFITABLE_EV else "")
+        flags = ("BEATABLE " if s["beatable"] else "") + ("TRADEABLE" if s["ev_net"] >= config.MIN_PROFITABLE_EV else "")
         print(f"  {s['ticker']:<30} {s['cat']:<10} {s['price']:<5.2f} {s['p_cal']:<5.2f} "
-              f"{s['side']:<4} {s['ev']:+.3f} {flags}")
+              f"{s['side']:<4} {s['ev']:+.3f}  {s['ev_net']:+.3f}  {int(s['spread']):<4} {flags}")
         shown += 1
-    actionable = [s for s in scored if s["corrected"] and s["ev"] >= config.MIN_PROFITABLE_EV]
-    print(f"\n{len(actionable)} candidates clear the post-fee EV bar in a history-corrected cell.")
+    gross = [s for s in scored if s["corrected"] and s["ev"] >= config.MIN_PROFITABLE_EV]
+    net = [s for s in scored if s["corrected"] and s["ev_net"] >= config.MIN_PROFITABLE_EV]
+    print(f"\n{len(gross)} clear the post-fee EV bar; {len(net)} STILL clear it after crossing the spread "
+          f"(the real tradeable set).")
     return 0
 
 
