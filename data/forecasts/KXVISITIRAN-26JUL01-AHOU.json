@@ -5,22 +5,22 @@
   "category": "politics",
   "close_time": "2026-07-01T14:00:00Z",
   "current": {
-    "as_of": "2026-06-29T20:42:41Z",
-    "my_probability": 0.0025,
+    "as_of": "2026-06-30T15:47:59Z",
+    "my_probability": 0.0,
     "my_confidence": "high",
-    "market_implied_probability": 0.0025,
+    "market_implied_probability": 0.0015,
     "market_price_cents": 0.0,
-    "edge": 0.0,
-    "yes_ask": 0.003,
-    "no_ask": 0.998,
+    "edge": -0.0015,
+    "yes_ask": 0.002,
+    "no_ask": 0.999,
     "fee_per_contract": 0.01,
-    "ev_per_contract": -0.010499999999999945,
+    "ev_per_contract": -0.009,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
     "lean_note": "no +EV value bet at the ask (my prob 0%, modal NO) — staying out.",
-    "prob_delta_vs_prev": -0.0175,
+    "prob_delta_vs_prev": -0.0025,
     "trigger": "scheduled",
     "strategy_id": "LQ5-ensemble5",
     "proposed_probability": null,
@@ -28,29 +28,26 @@
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "Despite ongoing diplomatic discussions between the U.S. and Iran, there is no evidence of any U.S. House member planning a visit to Iran by July 1, 2026. The available evidence suggests that negotiations are ongoing but face significant obstacles, including regional tensions and domestic political dynamics. Historical trends indicate limited direct engagement by U.S. officials with Iran due to pol",
+    "rationale_summary": "There is currently no evidence of any U.S. House member visiting Iran before July 1, 2026. However, given the historical precedent of U.S. officials engaging in diplomatic outreach to Iran, especially during periods of political change or negotiation, there remains a non-trivial possibility that a House member might make such a visit. The lack of confirmed news or statements does not rule out the ",
     "key_drivers": [
-      "Ongoing diplomatic negotiations with Iran are not yet at a stage that would warrant a visit from a U.S. House member.",
-      "Regional tensions",
-      "such as Israel’s actions in Lebanon",
-      "have delayed or postponed U.S.-Iran talks.",
-      "Historically",
-      "U.S. Congress has had limited direct engagement with Iran due to poli"
+      "Absence of confirmed reports or statements about such a visit",
+      "Historical precedent of U.S. officials engaging with Iran in diplomatic contexts",
+      "Potential for unexpected political developments influencing such actions"
     ],
     "reference_classes": [
-      "U.S. diplomatic engagement with Iran under similar geopolitical conditions",
-      "Congressional visits to countries with which the U.S. has tense or adversarial relations"
+      "Diplomatic visits by U.S. officials to countries with which the U.S. has tense relations",
+      "Legislative outreach to foreign nations in the context of policy discussions"
     ],
     "research_refs": [
-      "ABC News",
       "ABC News - Breaking News",
       "Latest News and Videos",
       "AP News",
-      "BBC",
       "CBS News",
       "NPR",
       "Nebraska Examiner",
-      "North Dakota Monitor"
+      "North Dakota Monitor",
+      "PBS",
+      "Politico"
     ]
   },
   "history": [
@@ -215,6 +212,52 @@
         "NPR",
         "Nebraska Examiner",
         "North Dakota Monitor"
+      ]
+    },
+    {
+      "as_of": "2026-06-30T15:47:59Z",
+      "my_probability": 0.0,
+      "my_confidence": "high",
+      "market_implied_probability": 0.0015,
+      "market_price_cents": 0.0,
+      "edge": -0.0015,
+      "yes_ask": 0.002,
+      "no_ask": 0.999,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": -0.009,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "no +EV value bet at the ask (my prob 0%, modal NO) — staying out.",
+      "prob_delta_vs_prev": -0.0025,
+      "trigger": "scheduled",
+      "strategy_id": "LQ5-ensemble5",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "There is currently no evidence of any U.S. House member visiting Iran before July 1, 2026. However, given the historical precedent of U.S. officials engaging in diplomatic outreach to Iran, especially during periods of political change or negotiation, there remains a non-trivial possibility that a House member might make such a visit. The lack of confirmed news or statements does not rule out the ",
+      "key_drivers": [
+        "Absence of confirmed reports or statements about such a visit",
+        "Historical precedent of U.S. officials engaging with Iran in diplomatic contexts",
+        "Potential for unexpected political developments influencing such actions"
+      ],
+      "reference_classes": [
+        "Diplomatic visits by U.S. officials to countries with which the U.S. has tense relations",
+        "Legislative outreach to foreign nations in the context of policy discussions"
+      ],
+      "research_refs": [
+        "ABC News - Breaking News",
+        "Latest News and Videos",
+        "AP News",
+        "CBS News",
+        "NPR",
+        "Nebraska Examiner",
+        "North Dakota Monitor",
+        "PBS",
+        "Politico"
       ]
     }
   ],

@@ -5,22 +5,22 @@
   "category": "politics",
   "close_time": "2026-06-15T14:00:00Z",
   "current": {
-    "as_of": "2026-06-29T20:42:38Z",
-    "my_probability": 0.0075,
+    "as_of": "2026-06-30T15:47:56Z",
+    "my_probability": 0.0,
     "my_confidence": "high",
-    "market_implied_probability": 0.0075,
-    "market_price_cents": 1.0,
-    "edge": 0.0,
-    "yes_ask": 0.008,
-    "no_ask": 0.993,
+    "market_implied_probability": 0.0045,
+    "market_price_cents": 0.0,
+    "edge": -0.0045,
+    "yes_ask": 0.006,
+    "no_ask": 0.997,
     "fee_per_contract": 0.01,
-    "ev_per_contract": -0.010499999999999945,
+    "ev_per_contract": -0.0069999999999999975,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "no +EV value bet at the ask (my prob 1%, modal NO) — staying out.",
-    "prob_delta_vs_prev": -0.1425,
+    "lean_note": "no +EV value bet at the ask (my prob 0%, modal NO) — staying out.",
+    "prob_delta_vs_prev": -0.0075,
     "trigger": "scheduled",
     "strategy_id": "LQ5-ensemble5",
     "proposed_probability": null,
@@ -28,24 +28,26 @@
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "The lack of recent data from IMF PortWatch and the absence of relevant information from consulted sources suggest limited evidence of a significant increase in transit calls through the Strait of Hormuz before July 1, 2026. Past forecasts on similar questions have shown a tendency to overestimate recovery in flow metrics during periods of uncertainty, so a conservative estimate is applied here. Th",
+    "rationale_summary": "The evidence notes indicate a lack of direct data or recent reports on transit calls through the Strait of Hormuz as of June 30, 2026, with no specific figures provided. This absence of data, combined with the lessons from past misses, suggests that any assumption about a recovery or increase in transit calls should be treated cautiously. The probability is anchored to the possibility of suppresse",
     "key_drivers": [
-      "Geopolitical stability in the region",
-      "Supply chain dynamics",
-      "IMF PortWatch data reporting trends"
+      "lack of current data on transit calls",
+      "historical suppression during crises",
+      "uncertainty around normalization timing"
     ],
     "reference_classes": [
-      "Transit flow metrics during geopolitical crises",
-      "Supply chain recovery post-disruption",
-      "Historical transit data from the Strait of Hormuz"
+      "supply-disruption crisis impact on shipping",
+      "unverified assumptions about recovery",
+      "low-confidence forecasts in data-scarce environments"
     ],
     "research_refs": [
       "CNBC",
       "Coinbase",
       "Cryptopolitan",
-      "Proactive Investors",
-      "farmdoc daily",
-      "gambling911.com"
+      "ISS Africa",
+      "MacroMicro",
+      "Statista",
+      "The Common Sense",
+      "farmdoc daily"
     ]
   },
   "history": [
@@ -327,6 +329,52 @@
         "Proactive Investors",
         "farmdoc daily",
         "gambling911.com"
+      ]
+    },
+    {
+      "as_of": "2026-06-30T15:47:56Z",
+      "my_probability": 0.0,
+      "my_confidence": "high",
+      "market_implied_probability": 0.0045,
+      "market_price_cents": 0.0,
+      "edge": -0.0045,
+      "yes_ask": 0.006,
+      "no_ask": 0.997,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": -0.0069999999999999975,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "no +EV value bet at the ask (my prob 0%, modal NO) — staying out.",
+      "prob_delta_vs_prev": -0.0075,
+      "trigger": "scheduled",
+      "strategy_id": "LQ5-ensemble5",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "The evidence notes indicate a lack of direct data or recent reports on transit calls through the Strait of Hormuz as of June 30, 2026, with no specific figures provided. This absence of data, combined with the lessons from past misses, suggests that any assumption about a recovery or increase in transit calls should be treated cautiously. The probability is anchored to the possibility of suppresse",
+      "key_drivers": [
+        "lack of current data on transit calls",
+        "historical suppression during crises",
+        "uncertainty around normalization timing"
+      ],
+      "reference_classes": [
+        "supply-disruption crisis impact on shipping",
+        "unverified assumptions about recovery",
+        "low-confidence forecasts in data-scarce environments"
+      ],
+      "research_refs": [
+        "CNBC",
+        "Coinbase",
+        "Cryptopolitan",
+        "ISS Africa",
+        "MacroMicro",
+        "Statista",
+        "The Common Sense",
+        "farmdoc daily"
       ]
     }
   ],

@@ -5,22 +5,22 @@
   "category": "politics",
   "close_time": "2026-06-30T14:00:00Z",
   "current": {
-    "as_of": "2026-06-29T20:42:40Z",
-    "my_probability": 0.005,
+    "as_of": "2026-06-30T15:47:58Z",
+    "my_probability": 0.0,
     "my_confidence": "high",
     "market_implied_probability": 0.005,
     "market_price_cents": 0.0,
-    "edge": 0.0,
+    "edge": -0.005,
     "yes_ask": 0.01,
     "no_ask": 1.0,
     "fee_per_contract": 0.0,
-    "ev_per_contract": -0.0050000000000000044,
+    "ev_per_contract": 0.0,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
     "lean_note": "no +EV value bet at the ask (my prob 0%, modal NO) — staying out.",
-    "prob_delta_vs_prev": -0.145,
+    "prob_delta_vs_prev": -0.005,
     "trigger": "scheduled",
     "strategy_id": "LQ5-ensemble5",
     "proposed_probability": null,
@@ -28,24 +28,26 @@
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "The base rate from Citizens for Responsibility and Ethics in Washington indicates that Trump has visited his properties on 37% of his days in office. However, there is no specific information about his schedule for June 2026, and the percentage may not directly translate to this specific period due to potential changes in his schedule or circumstances. No other evidence directly supports or refute",
+    "rationale_summary": "Based on the evidence, Trump has already visited Mar-a-Lago multiple times in 2026, including at least 24 visits as of March 2026, and there are additional reports indicating he is expected to return during a crypto conference. This suggests a high likelihood that he will make at least one more trip to Mar-a-Lago by June 2026. The key uncertainties relate to the exact number of trips and potential",
     "key_drivers": [
-      "Base rate of Trump's visits to Mar-a-Lago",
-      "Lack of specific information about June 2026 schedule"
+      "Multiple confirmed visits to Mar-a-Lago in 2026",
+      "including over 24 visits as of March 2026.",
+      "Expected return to Mar-a-Lago during a crypto conference in April 2026.",
+      "Continued activity in Florida and public appearances suggest ongoing interest in Mar-a-Lago."
     ],
     "reference_classes": [
-      "Frequency of presidential visits to personal properties",
-      "Schedule uncertainty in political figures"
+      "Frequent political figure visits to personal properties during presidential terms.",
+      "Presidential use of private residences for political and public engagement."
     ],
     "research_refs": [
       "Al Jazeera",
+      "Anadolu Ajansı",
       "Business Insider",
+      "CNN",
       "Citizens for Responsibility and Ethics in Washington",
-      "National News Desk",
-      "PBS",
-      "Palm Beach Daily News",
-      "Politico",
-      "Snopes.com"
+      "Daytona Beach News-Journal",
+      "NPR",
+      "PBS"
     ]
   },
   "history": [
@@ -203,6 +205,52 @@
         "Palm Beach Daily News",
         "Politico",
         "Snopes.com"
+      ]
+    },
+    {
+      "as_of": "2026-06-30T15:47:58Z",
+      "my_probability": 0.0,
+      "my_confidence": "high",
+      "market_implied_probability": 0.005,
+      "market_price_cents": 0.0,
+      "edge": -0.005,
+      "yes_ask": 0.01,
+      "no_ask": 1.0,
+      "fee_per_contract": 0.0,
+      "ev_per_contract": 0.0,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "no +EV value bet at the ask (my prob 0%, modal NO) — staying out.",
+      "prob_delta_vs_prev": -0.005,
+      "trigger": "scheduled",
+      "strategy_id": "LQ5-ensemble5",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "Based on the evidence, Trump has already visited Mar-a-Lago multiple times in 2026, including at least 24 visits as of March 2026, and there are additional reports indicating he is expected to return during a crypto conference. This suggests a high likelihood that he will make at least one more trip to Mar-a-Lago by June 2026. The key uncertainties relate to the exact number of trips and potential",
+      "key_drivers": [
+        "Multiple confirmed visits to Mar-a-Lago in 2026",
+        "including over 24 visits as of March 2026.",
+        "Expected return to Mar-a-Lago during a crypto conference in April 2026.",
+        "Continued activity in Florida and public appearances suggest ongoing interest in Mar-a-Lago."
+      ],
+      "reference_classes": [
+        "Frequent political figure visits to personal properties during presidential terms.",
+        "Presidential use of private residences for political and public engagement."
+      ],
+      "research_refs": [
+        "Al Jazeera",
+        "Anadolu Ajansı",
+        "Business Insider",
+        "CNN",
+        "Citizens for Responsibility and Ethics in Washington",
+        "Daytona Beach News-Journal",
+        "NPR",
+        "PBS"
       ]
     }
   ],

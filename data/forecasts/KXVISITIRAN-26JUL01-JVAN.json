@@ -5,22 +5,22 @@
   "category": "politics",
   "close_time": "2026-07-01T14:00:00Z",
   "current": {
-    "as_of": "2026-06-29T20:42:42Z",
-    "my_probability": 0.0035,
+    "as_of": "2026-06-30T15:47:59Z",
+    "my_probability": 0.0,
     "my_confidence": "high",
     "market_implied_probability": 0.0035,
     "market_price_cents": 0.0,
-    "edge": 0.0,
+    "edge": -0.0035,
     "yes_ask": 0.004,
     "no_ask": 0.997,
     "fee_per_contract": 0.01,
-    "ev_per_contract": -0.010499999999999945,
+    "ev_per_contract": -0.0069999999999999975,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
     "lean_note": "no +EV value bet at the ask (my prob 0%, modal NO) — staying out.",
-    "prob_delta_vs_prev": -0.006500000000000001,
+    "prob_delta_vs_prev": -0.0035,
     "trigger": "scheduled",
     "strategy_id": "LQ5-ensemble5",
     "proposed_probability": null,
@@ -28,26 +28,27 @@
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "The evidence indicates that Vice President JD Vance has been engaged in diplomatic discussions related to Iran, but all reported interactions have occurred in third-party locations or through intermediaries. There is no confirmed report of Vance visiting Iran, and historical precedent suggests that U.S. officials typically avoid direct visits to Iran during active diplomatic negotiations. The lack",
+    "rationale_summary": "JD Vance is engaged in diplomatic efforts with Iran, including talks on nuclear programs and potential military coordination, but there is no direct evidence or confirmed statements indicating that he will visit Iran before July 1, 2026. The evidence points to ongoing dialogue rather than a specific visit. Base rates suggest that diplomatic talks do not always translate into physical visits by hig",
     "key_drivers": [
-      "No confirmed reports of Vance visiting Iran",
-      "Historical precedent of U.S. officials avoiding direct visits to Iran during negotiations",
-      "Diplomatic interactions conducted through intermediaries or third-party locations"
+      "Ongoing diplomatic engagement with Iran",
+      "but no confirmation of a visit.",
+      "Lack of direct evidence or statements indicating a planned visit.",
+      "Historical base rates suggest that diplomatic talks do not always lead to physical visits."
     ],
     "reference_classes": [
-      "U.S. vice presidential diplomatic engagements with Iran",
-      "Diplomatic negotiations involving Iran and the U.S."
+      "Diplomatic talks between the US and Iran that do not result in high-level visits.",
+      "Vice Presidential engagement in international negotiations without direct travel to the involved country."
     ],
     "research_refs": [
       "ABC News - Breaking News",
       "Latest News and Videos",
       "Al Jazeera",
       "Axios",
+      "BBC",
       "CBS News",
-      "Euronews",
+      "CNBC",
       "NBC 7 San Diego",
-      "NBC Los Angeles",
-      "NBC News"
+      "Orange County Register"
     ]
   },
   "history": [
@@ -169,6 +170,53 @@
         "NBC 7 San Diego",
         "NBC Los Angeles",
         "NBC News"
+      ]
+    },
+    {
+      "as_of": "2026-06-30T15:47:59Z",
+      "my_probability": 0.0,
+      "my_confidence": "high",
+      "market_implied_probability": 0.0035,
+      "market_price_cents": 0.0,
+      "edge": -0.0035,
+      "yes_ask": 0.004,
+      "no_ask": 0.997,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": -0.0069999999999999975,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "no +EV value bet at the ask (my prob 0%, modal NO) — staying out.",
+      "prob_delta_vs_prev": -0.0035,
+      "trigger": "scheduled",
+      "strategy_id": "LQ5-ensemble5",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "JD Vance is engaged in diplomatic efforts with Iran, including talks on nuclear programs and potential military coordination, but there is no direct evidence or confirmed statements indicating that he will visit Iran before July 1, 2026. The evidence points to ongoing dialogue rather than a specific visit. Base rates suggest that diplomatic talks do not always translate into physical visits by hig",
+      "key_drivers": [
+        "Ongoing diplomatic engagement with Iran",
+        "but no confirmation of a visit.",
+        "Lack of direct evidence or statements indicating a planned visit.",
+        "Historical base rates suggest that diplomatic talks do not always lead to physical visits."
+      ],
+      "reference_classes": [
+        "Diplomatic talks between the US and Iran that do not result in high-level visits.",
+        "Vice Presidential engagement in international negotiations without direct travel to the involved country."
+      ],
+      "research_refs": [
+        "ABC News - Breaking News",
+        "Latest News and Videos",
+        "Al Jazeera",
+        "Axios",
+        "BBC",
+        "CBS News",
+        "CNBC",
+        "NBC 7 San Diego",
+        "Orange County Register"
       ]
     }
   ],

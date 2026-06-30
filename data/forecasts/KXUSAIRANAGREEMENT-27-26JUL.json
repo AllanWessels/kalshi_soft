@@ -5,22 +5,22 @@
   "category": "politics",
   "close_time": "2026-07-01T14:00:00Z",
   "current": {
-    "as_of": "2026-06-29T20:42:41Z",
-    "my_probability": 0.005,
+    "as_of": "2026-06-30T15:47:59Z",
+    "my_probability": 0.0,
     "my_confidence": "high",
     "market_implied_probability": 0.005,
     "market_price_cents": 0.0,
-    "edge": 0.0,
+    "edge": -0.005,
     "yes_ask": 0.01,
     "no_ask": 1.0,
     "fee_per_contract": 0.0,
-    "ev_per_contract": -0.0050000000000000044,
+    "ev_per_contract": 0.0,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
     "lean_note": "no +EV value bet at the ask (my prob 0%, modal NO) — staying out.",
-    "prob_delta_vs_prev": -0.035,
+    "prob_delta_vs_prev": -0.005,
     "trigger": "scheduled",
     "strategy_id": "LQ5C-ensemble5-crowd",
     "proposed_probability": null,
@@ -28,28 +28,29 @@
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "Recent evidence from multiple credible sources indicates significant progress in US-Iran talks, including agreement on a roadmap for a final deal, resumption of nuclear inspections, and temporary sanctions relief. However, historical challenges with implementation and verification, along with ongoing regional tensions such as the conflict in Lebanon, introduce uncertainty. The evidence suggests a ",
+    "rationale_summary": "The base rate of US-Iran nuclear deals historically indicates a low likelihood of successful agreements due to mutual distrust and geopolitical tensions. Recent evidence suggests that while discussions are ongoing, there are significant challenges and no clear signs of compromise from either side. Trump's involvement and edits to potential agreements indicate continued US skepticism or hesitation,",
     "key_drivers": [
-      "Recent progress in talks and agreement on a roadmap for a final deal",
-      "Resumption of nuclear inspections and temporary sanctions relief",
-      "Historical challenges with implementation and verification",
-      "Ongoing regional tensions",
-      "such as the conflict in Lebanon"
+      "Mutual distrust between the US and Iran",
+      "Domestic political pressures in the US",
+      "Trump's influence on the negotiation process",
+      "Lack of significant progress in Iran's nuclear program",
+      "Potential role of international actors in mediation"
     ],
     "reference_classes": [
-      "Nuclear agreements between the US and Iran",
-      "Diplomatic negotiations involving sanctions and verification",
-      "Geopolitical conflicts impacting diplomatic progress"
+      "Historical US-Iran nuclear negotiations with mixed outcomes",
+      "Successful and failed international nuclear agreements",
+      "Geopolitical negotiations involving high levels of distrust"
     ],
     "research_refs": [
-      "AP News",
-      "Al Jazeera",
+      "ABC News",
+      "ABC News - Breaking News",
+      "Latest News and Videos",
+      "Axios",
       "BBC",
-      "Bloomberg.com",
+      "Britannica",
       "CBS News",
       "CNBC",
-      "Carnegie Endowment for International Peace",
-      "Council on Foreign Relations"
+      "CNN"
     ]
   },
   "history": [
@@ -250,6 +251,55 @@
         "CNBC",
         "Carnegie Endowment for International Peace",
         "Council on Foreign Relations"
+      ]
+    },
+    {
+      "as_of": "2026-06-30T15:47:59Z",
+      "my_probability": 0.0,
+      "my_confidence": "high",
+      "market_implied_probability": 0.005,
+      "market_price_cents": 0.0,
+      "edge": -0.005,
+      "yes_ask": 0.01,
+      "no_ask": 1.0,
+      "fee_per_contract": 0.0,
+      "ev_per_contract": 0.0,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "no +EV value bet at the ask (my prob 0%, modal NO) — staying out.",
+      "prob_delta_vs_prev": -0.005,
+      "trigger": "scheduled",
+      "strategy_id": "LQ5C-ensemble5-crowd",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "The base rate of US-Iran nuclear deals historically indicates a low likelihood of successful agreements due to mutual distrust and geopolitical tensions. Recent evidence suggests that while discussions are ongoing, there are significant challenges and no clear signs of compromise from either side. Trump's involvement and edits to potential agreements indicate continued US skepticism or hesitation,",
+      "key_drivers": [
+        "Mutual distrust between the US and Iran",
+        "Domestic political pressures in the US",
+        "Trump's influence on the negotiation process",
+        "Lack of significant progress in Iran's nuclear program",
+        "Potential role of international actors in mediation"
+      ],
+      "reference_classes": [
+        "Historical US-Iran nuclear negotiations with mixed outcomes",
+        "Successful and failed international nuclear agreements",
+        "Geopolitical negotiations involving high levels of distrust"
+      ],
+      "research_refs": [
+        "ABC News",
+        "ABC News - Breaking News",
+        "Latest News and Videos",
+        "Axios",
+        "BBC",
+        "Britannica",
+        "CBS News",
+        "CNBC",
+        "CNN"
       ]
     }
   ],

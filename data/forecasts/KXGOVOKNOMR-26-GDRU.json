@@ -5,7 +5,7 @@
   "category": "politics",
   "close_time": "2026-06-30T14:00:00Z",
   "current": {
-    "as_of": "2026-06-29T20:42:39Z",
+    "as_of": "2026-06-30T15:47:56Z",
     "my_probability": 0.1889,
     "my_confidence": "high",
     "market_implied_probability": 0.205,
@@ -20,7 +20,7 @@
     "lean": "NONE",
     "conviction": "low",
     "lean_note": "no +EV value bet at the ask (my prob 19%, modal NO) — staying out.",
-    "prob_delta_vs_prev": -0.36110000000000003,
+    "prob_delta_vs_prev": 0.0,
     "trigger": "scheduled",
     "strategy_id": "LQ5-ensemble5",
     "proposed_probability": null,
@@ -28,26 +28,26 @@
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "The evidence provided does not include direct information about Genter Drummond's political ambitions or actions related to the Republican nomination for Governor in Oklahoma. Without specific data on his campaign efforts, endorsements, or primary results, it is difficult to assess his likelihood of becoming the nominee. The base rate for any individual becoming a gubernatorial nominee is low, esp",
+    "rationale_summary": "There is currently no direct evidence in the provided sources indicating that Genter Drummond is the Republican nominee for Governor in Oklahoma. The base rate for any specific individual becoming a gubernatorial nominee in a state is typically low unless they are a prominent political figure or have already established a strong campaign. No recent news or statements about Drummond's candidacy or ",
     "key_drivers": [
-      "Absence of direct evidence on Genter Drummond's political activity",
-      "No information on primary competition or endorsements",
-      "Limited scope of sources consulted"
+      "Lack of direct evidence of candidacy",
+      "No recent endorsements or campaign announcements",
+      "No indication of political momentum"
     ],
     "reference_classes": [
-      "Likelihood of any individual becoming a gubernatorial nominee without campaign data",
-      "Primary election outcomes in Oklahoma",
-      "Republican nomination processes in competitive states"
+      "Likelihood of a non-prominent candidate becoming a gubernatorial nominee",
+      "Absence of campaign activity or media coverage",
+      "Historical low probability for underdog candidates in primary elections"
     ],
     "research_refs": [
-      "C-SPAN",
       "KOCO",
       "KOSU",
       "KXII",
-      "NonDoc",
+      "News 9",
       "OU Daily",
       "Oklahoma Voice",
-      "The Journal Record"
+      "The Journal Record",
+      "The Oklahoman"
     ]
   },
   "history": [
@@ -215,6 +215,52 @@
         "OU Daily",
         "Oklahoma Voice",
         "The Journal Record"
+      ]
+    },
+    {
+      "as_of": "2026-06-30T15:47:56Z",
+      "my_probability": 0.1889,
+      "my_confidence": "high",
+      "market_implied_probability": 0.205,
+      "market_price_cents": 20.0,
+      "edge": -0.016099999999999975,
+      "yes_ask": 0.21,
+      "no_ask": 0.8,
+      "fee_per_contract": 0.02,
+      "ev_per_contract": -0.008900000000000113,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "no +EV value bet at the ask (my prob 19%, modal NO) — staying out.",
+      "prob_delta_vs_prev": 0.0,
+      "trigger": "scheduled",
+      "strategy_id": "LQ5-ensemble5",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "There is currently no direct evidence in the provided sources indicating that Genter Drummond is the Republican nominee for Governor in Oklahoma. The base rate for any specific individual becoming a gubernatorial nominee in a state is typically low unless they are a prominent political figure or have already established a strong campaign. No recent news or statements about Drummond's candidacy or ",
+      "key_drivers": [
+        "Lack of direct evidence of candidacy",
+        "No recent endorsements or campaign announcements",
+        "No indication of political momentum"
+      ],
+      "reference_classes": [
+        "Likelihood of a non-prominent candidate becoming a gubernatorial nominee",
+        "Absence of campaign activity or media coverage",
+        "Historical low probability for underdog candidates in primary elections"
+      ],
+      "research_refs": [
+        "KOCO",
+        "KOSU",
+        "KXII",
+        "News 9",
+        "OU Daily",
+        "Oklahoma Voice",
+        "The Journal Record",
+        "The Oklahoman"
       ]
     }
   ],

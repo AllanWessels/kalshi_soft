@@ -79,14 +79,24 @@ def _build_market_obj(ticker: str, client: kalshi_client.KalshiClient) -> dict[s
 
     # --- volume / OI ---------------------------------------------------------
     # Kalshi may expose these under various key names; try the known ones.
-    volume_24h: Optional[float] = (
-        market.get("volume_24h")
-        or market.get("volume24h")
-        or market.get("daily_volume")
+    # Kalshi market objects carry these as fixed-point strings (*_fp); the bare keys are usually
+    # absent, so include the _fp fallbacks or OI/volume come back None (which mis-tiers the
+    # history-calibration anchor to "thin"). _fp helper parses the string to float.
+    def _fp(*keys):
+        for k in keys:
+            v = market.get(k)
+            if v is not None:
+                try:
+                    return float(v)
+                except (ValueError, TypeError):
+                    continue
+        return None
+
+    volume_24h: Optional[float] = _fp(
+        "volume_24h", "volume24h", "daily_volume", "volume_24h_fp",
     )
-    open_interest: Optional[float] = (
-        market.get("open_interest")
-        or market.get("open_interest_value")
+    open_interest: Optional[float] = _fp(
+        "open_interest", "open_interest_value", "open_interest_fp",
     )
 
     return {

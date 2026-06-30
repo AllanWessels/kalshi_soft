@@ -5,22 +5,22 @@
   "category": "politics",
   "close_time": "2026-06-30T14:00:00Z",
   "current": {
-    "as_of": "2026-06-29T20:42:40Z",
-    "my_probability": 0.995,
+    "as_of": "2026-06-30T15:47:57Z",
+    "my_probability": 0.9884,
     "my_confidence": "high",
     "market_implied_probability": 0.995,
     "market_price_cents": 100.0,
-    "edge": 0.0,
+    "edge": -0.00660000000000005,
     "yes_ask": 1.0,
     "no_ask": 0.01,
-    "fee_per_contract": 0.0,
-    "ev_per_contract": -0.0050000000000000044,
+    "fee_per_contract": 0.01,
+    "ev_per_contract": -0.008399999999999946,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "no +EV value bet at the ask (my prob 100%, modal YES) — staying out.",
-    "prob_delta_vs_prev": 0.07499999999999996,
+    "lean_note": "no +EV value bet at the ask (my prob 99%, modal YES) — staying out.",
+    "prob_delta_vs_prev": -0.00660000000000005,
     "trigger": "scheduled",
     "strategy_id": "LQ5-ensemble5",
     "proposed_probability": null,
@@ -28,15 +28,16 @@
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "Based on the evidence, Trump has a history of frequent visits to Mar-a-Lago, with multiple reports indicating trips during the 2026 social season and a crypto conference. However, the specific claim is about making zero trips in June 2026, which is a narrow timeframe not directly confirmed by the evidence. The key uncertainties include his public schedule and other commitments, and there is no exp",
+    "rationale_summary": "The evidence suggests that Trump has a consistent pattern of visiting Mar-a-Lago, with recent reports indicating he is headed back during a crypto conference and has been present there in May 2026. However, one source indicates he did not take a usual trip to Mar-a-Lago in early April 2026, suggesting variability in his schedule. The uncertainty around political and diplomatic events, as well as t",
     "key_drivers": [
-      "Trump's history of frequent visits to Mar-a-Lago",
-      "Reports of trips during the 2026 social season and crypto conference",
-      "Lack of direct evidence confirming zero trips in June 2026"
+      "Recent reports of Trump heading to Mar-a-Lago during a crypto conference in April 2026.",
+      "Presence at Mar-a-Lago in May 2026 as noted by The Palm Beach Post.",
+      "Absence of a usual Friday trip to Mar-a-Lago in early April 2026.",
+      "Uncertainty regarding specific plans for 2026 and potential political/diplomat"
     ],
     "reference_classes": [
-      "Presidential travel patterns and public schedule commitments",
-      "Frequency of visits to private properties by political figures"
+      "Presidential travel patterns to private residences for political and personal purposes.",
+      "Historical frequency of Trump’s visits to Mar-a-Lago."
     ],
     "research_refs": [
       "Al Jazeera",
@@ -204,6 +205,52 @@
       "reference_classes": [
         "Presidential travel patterns and public schedule commitments",
         "Frequency of visits to private properties by political figures"
+      ],
+      "research_refs": [
+        "Al Jazeera",
+        "BBC",
+        "CNBC",
+        "Chicago Tribune",
+        "NPR",
+        "PBS",
+        "Palm Beach Daily News",
+        "Politico"
+      ]
+    },
+    {
+      "as_of": "2026-06-30T15:47:57Z",
+      "my_probability": 0.9884,
+      "my_confidence": "high",
+      "market_implied_probability": 0.995,
+      "market_price_cents": 100.0,
+      "edge": -0.00660000000000005,
+      "yes_ask": 1.0,
+      "no_ask": 0.01,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": -0.008399999999999946,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "no +EV value bet at the ask (my prob 99%, modal YES) — staying out.",
+      "prob_delta_vs_prev": -0.00660000000000005,
+      "trigger": "scheduled",
+      "strategy_id": "LQ5-ensemble5",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "The evidence suggests that Trump has a consistent pattern of visiting Mar-a-Lago, with recent reports indicating he is headed back during a crypto conference and has been present there in May 2026. However, one source indicates he did not take a usual trip to Mar-a-Lago in early April 2026, suggesting variability in his schedule. The uncertainty around political and diplomatic events, as well as t",
+      "key_drivers": [
+        "Recent reports of Trump heading to Mar-a-Lago during a crypto conference in April 2026.",
+        "Presence at Mar-a-Lago in May 2026 as noted by The Palm Beach Post.",
+        "Absence of a usual Friday trip to Mar-a-Lago in early April 2026.",
+        "Uncertainty regarding specific plans for 2026 and potential political/diplomat"
+      ],
+      "reference_classes": [
+        "Presidential travel patterns to private residences for political and personal purposes.",
+        "Historical frequency of Trump’s visits to Mar-a-Lago."
       ],
       "research_refs": [
         "Al Jazeera",

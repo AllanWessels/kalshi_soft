@@ -5,16 +5,16 @@
   "category": "politics",
   "close_time": "2026-06-30T14:00:00Z",
   "current": {
-    "as_of": "2026-06-29T20:42:40Z",
-    "my_probability": 0.005,
-    "my_confidence": "high",
+    "as_of": "2026-06-30T15:47:58Z",
+    "my_probability": 0.0,
+    "my_confidence": "medium",
     "market_implied_probability": 0.005,
     "market_price_cents": 0.0,
-    "edge": 0.0,
+    "edge": -0.005,
     "yes_ask": 0.01,
     "no_ask": 1.0,
     "fee_per_contract": 0.0,
-    "ev_per_contract": -0.0050000000000000044,
+    "ev_per_contract": 0.0,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
@@ -28,25 +28,28 @@
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "Based on multiple confirmed reports from credible sources (White House, CNN, WPEC, Palm Beach Daily News, etc.) between February and April 2026, Trump has been making regular appearances and hosting events at Mar-a-Lago. This establishes a pattern of activity that suggests he is likely to make at least two trips to Mar-a-Lago by June 2026. However, the exact schedule may be subject to change due t",
+    "rationale_summary": "Multiple reports indicate that Trump has visited Mar-a-Lago multiple times in 2026, including one specifically noted as the 24th visit. However, there is also evidence that he skipped his usual Friday trips to Mar-a-Lago in 2026, suggesting some variability in his schedule. Given his history of frequent visits and the reported 24th visit, it is plausible that he will make at least two trips by Jun",
     "key_drivers": [
-      "Confirmed appearances and events at Mar-a-Lago between Feb 2026 and Apr 2026",
-      "Pattern of regular use of Mar-a-Lago for political and business activities",
-      "Potential for schedule changes based on current events"
+      "Multiple confirmed visits to Mar-a-Lago in 2026",
+      "including a 24th visit as of March 2026.",
+      "Evidence of skipped usual Friday trips to Mar-a-Lago",
+      "indicating potential variability in schedule.",
+      "Trump's travel schedule in 2026 includes both Mar-a-Lago visits and nationwide trips",
+      "which could influence th"
     ],
     "reference_classes": [
-      "Presidential use of personal properties for political and public events",
-      "Frequency of high-profile political figures visiting their private properties"
+      "Presidential travel patterns to private residences or political hubs.",
+      "Frequency of visits to Mar-a-Lago by Trump in prior years and similar time frames."
     ],
     "research_refs": [
       "Al Jazeera",
       "BBC",
-      "C-SPAN",
       "CNBC",
-      "CNN",
       "Chicago Tribune",
+      "HuffPost",
       "NPR",
-      "PBS"
+      "Palm Beach Daily News",
+      "PennLive.com"
     ]
   },
   "history": [
@@ -201,6 +204,54 @@
         "Chicago Tribune",
         "NPR",
         "PBS"
+      ]
+    },
+    {
+      "as_of": "2026-06-30T15:47:58Z",
+      "my_probability": 0.0,
+      "my_confidence": "medium",
+      "market_implied_probability": 0.005,
+      "market_price_cents": 0.0,
+      "edge": -0.005,
+      "yes_ask": 0.01,
+      "no_ask": 1.0,
+      "fee_per_contract": 0.0,
+      "ev_per_contract": 0.0,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "no +EV value bet at the ask (my prob 0%, modal NO) — staying out.",
+      "prob_delta_vs_prev": -0.005,
+      "trigger": "scheduled",
+      "strategy_id": "LQ5C-ensemble5-crowd",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "Multiple reports indicate that Trump has visited Mar-a-Lago multiple times in 2026, including one specifically noted as the 24th visit. However, there is also evidence that he skipped his usual Friday trips to Mar-a-Lago in 2026, suggesting some variability in his schedule. Given his history of frequent visits and the reported 24th visit, it is plausible that he will make at least two trips by Jun",
+      "key_drivers": [
+        "Multiple confirmed visits to Mar-a-Lago in 2026",
+        "including a 24th visit as of March 2026.",
+        "Evidence of skipped usual Friday trips to Mar-a-Lago",
+        "indicating potential variability in schedule.",
+        "Trump's travel schedule in 2026 includes both Mar-a-Lago visits and nationwide trips",
+        "which could influence th"
+      ],
+      "reference_classes": [
+        "Presidential travel patterns to private residences or political hubs.",
+        "Frequency of visits to Mar-a-Lago by Trump in prior years and similar time frames."
+      ],
+      "research_refs": [
+        "Al Jazeera",
+        "BBC",
+        "CNBC",
+        "Chicago Tribune",
+        "HuffPost",
+        "NPR",
+        "Palm Beach Daily News",
+        "PennLive.com"
       ]
     }
   ],

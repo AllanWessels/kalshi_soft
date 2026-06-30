@@ -5,22 +5,22 @@
   "category": "politics",
   "close_time": "2026-06-30T14:00:00Z",
   "current": {
-    "as_of": "2026-06-29T20:42:39Z",
-    "my_probability": 0.5341,
+    "as_of": "2026-06-30T15:47:57Z",
+    "my_probability": 0.5275,
     "my_confidence": "high",
-    "market_implied_probability": 0.575,
-    "market_price_cents": 57.0,
-    "edge": -0.040899999999999936,
-    "yes_ask": 0.58,
-    "no_ask": 0.43,
+    "market_implied_probability": 0.565,
+    "market_price_cents": 56.0,
+    "edge": -0.03749999999999998,
+    "yes_ask": 0.57,
+    "no_ask": 0.44,
     "fee_per_contract": 0.02,
-    "ev_per_contract": 0.015899999999999987,
+    "ev_per_contract": 0.012500000000000028,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
     "lean_note": "no +EV value bet at the ask (my prob 53%, modal YES) — staying out.",
-    "prob_delta_vs_prev": 0.18410000000000004,
+    "prob_delta_vs_prev": -0.00660000000000005,
     "trigger": "scheduled",
     "strategy_id": "LQ5-ensemble5",
     "proposed_probability": null,
@@ -28,23 +28,23 @@
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "The evidence indicates that Toby Doeden is in a runoff with Larry Rhoden for the Republican nomination in South Dakota, which is a first in the state’s history. While the outcome is uncertain, there is no clear evidence favoring one candidate over the other. The base rate suggests that such runoffs are rare, but the current situation is unprecedented, which introduces significant uncertainty. The ",
+    "rationale_summary": "The evidence indicates that Toby Doeden has advanced to the runoff in the Republican governor primary, but there is currently no definitive information about the final outcome. The runoff is likely to be competitive, with shifting loyalties and lower turnout potentially influencing the result. While Doeden is a strong contender, the presence of another candidate (Rhoden) and the uncertainty around",
     "key_drivers": [
-      "First-ever gubernatorial runoff in South Dakota adds unpredictability.",
-      "Lack of clear polling or voter preference data.",
-      "Candidates’ positions on key issues like prison policy may influence undecided voters."
+      "Doeden's advancement to the runoff",
+      "Uncertainty around voter turnout and shifting loyalties",
+      "Competitiveness of the runoff between Doeden and Rhoden"
     ],
     "reference_classes": [
-      "First-time primary runoffs in historically non-competitive states.",
-      "Candidates with similar name recognition and issue focus in competitive races."
+      "Republican primaries in South Dakota with multiple candidates",
+      "Runoff elections in South Dakota where no candidate secures a majority in the initial primary"
     ],
     "research_refs": [
       "Ballotpedia News",
-      "CBS News",
+      "CAWP",
       "Dakota News Now",
       "NBC News",
       "News From The States",
-      "SDPB",
+      "PBS",
       "South Dakota News Watch",
       "South Dakota Searchlight"
     ]
@@ -284,6 +284,51 @@
         "NBC News",
         "News From The States",
         "SDPB",
+        "South Dakota News Watch",
+        "South Dakota Searchlight"
+      ]
+    },
+    {
+      "as_of": "2026-06-30T15:47:57Z",
+      "my_probability": 0.5275,
+      "my_confidence": "high",
+      "market_implied_probability": 0.565,
+      "market_price_cents": 56.0,
+      "edge": -0.03749999999999998,
+      "yes_ask": 0.57,
+      "no_ask": 0.44,
+      "fee_per_contract": 0.02,
+      "ev_per_contract": 0.012500000000000028,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "no +EV value bet at the ask (my prob 53%, modal YES) — staying out.",
+      "prob_delta_vs_prev": -0.00660000000000005,
+      "trigger": "scheduled",
+      "strategy_id": "LQ5-ensemble5",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "The evidence indicates that Toby Doeden has advanced to the runoff in the Republican governor primary, but there is currently no definitive information about the final outcome. The runoff is likely to be competitive, with shifting loyalties and lower turnout potentially influencing the result. While Doeden is a strong contender, the presence of another candidate (Rhoden) and the uncertainty around",
+      "key_drivers": [
+        "Doeden's advancement to the runoff",
+        "Uncertainty around voter turnout and shifting loyalties",
+        "Competitiveness of the runoff between Doeden and Rhoden"
+      ],
+      "reference_classes": [
+        "Republican primaries in South Dakota with multiple candidates",
+        "Runoff elections in South Dakota where no candidate secures a majority in the initial primary"
+      ],
+      "research_refs": [
+        "Ballotpedia News",
+        "CAWP",
+        "Dakota News Now",
+        "NBC News",
+        "News From The States",
+        "PBS",
         "South Dakota News Watch",
         "South Dakota Searchlight"
       ]

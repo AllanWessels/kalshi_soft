@@ -5,22 +5,22 @@
   "category": "politics",
   "close_time": "2026-07-01T14:00:00Z",
   "current": {
-    "as_of": "2026-06-29T20:42:42Z",
-    "my_probability": 0.002,
+    "as_of": "2026-06-30T15:48:00Z",
+    "my_probability": 0.0,
     "my_confidence": "high",
     "market_implied_probability": 0.002,
     "market_price_cents": 0.0,
-    "edge": 0.0,
+    "edge": -0.002,
     "yes_ask": 0.003,
     "no_ask": 0.999,
     "fee_per_contract": 0.01,
-    "ev_per_contract": -0.011,
+    "ev_per_contract": -0.009,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
     "lean_note": "no +EV value bet at the ask (my prob 0%, modal NO) — staying out.",
-    "prob_delta_vs_prev": -0.008,
+    "prob_delta_vs_prev": -0.002,
     "trigger": "scheduled",
     "strategy_id": "LQ5-ensemble5",
     "proposed_probability": null,
@@ -28,24 +28,26 @@
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "As of June 29, 2026, there is no confirmed evidence or news indicating that Marco Rubio has visited Iran or is planning to do so before July 1, 2026. The absence of any verbatim statements or official announcements suggests a very low likelihood of such an event occurring. Given the political context and Rubio's historical stance on Iran, the probability remains low.",
+    "rationale_summary": "The evidence suggests there is some level of U.S.-Iran engagement (e.g., Trump’s claim of talks in Qatar), but other reports indicate ongoing conflict and uncertainty about the feasibility of talks. Marco Rubio’s involvement is not directly mentioned, but his political alignment with Trump and potential interest in foreign policy matters could influence his actions. However, this is speculative gi",
     "key_drivers": [
-      "Lack of confirmed evidence or announcements",
-      "Historical political stance on Iran"
+      "U.S.-Iran diplomatic engagement (or lack thereof) as of late June 2026",
+      "Marco Rubio’s political alignment with Trump and potential interest in foreign policy",
+      "Historical patterns of U.S.-Iran relations and limited diplomatic interactions"
     ],
     "reference_classes": [
-      "Politician travel to high-risk or politically sensitive countries",
-      "U.S. senator diplomatic engagements"
+      "U.S.-Iran diplomatic engagement during periods of conflict",
+      "High-profile U.S. politicians’ international travel during tense geopolitical moments"
     ],
     "research_refs": [
+      "ABC News - Breaking News",
+      "Latest News and Videos",
+      "AP News",
       "Al Jazeera",
-      "France 24",
-      "Los Angeles Times",
-      "NPR",
-      "Reuters",
-      "The New York Times",
-      "The Times of Israel",
-      "The Washington Post"
+      "Axios",
+      "BBC",
+      "C-SPAN",
+      "CNBC",
+      "CNN"
     ]
   },
   "history": [
@@ -204,6 +206,52 @@
         "The New York Times",
         "The Times of Israel",
         "The Washington Post"
+      ]
+    },
+    {
+      "as_of": "2026-06-30T15:48:00Z",
+      "my_probability": 0.0,
+      "my_confidence": "high",
+      "market_implied_probability": 0.002,
+      "market_price_cents": 0.0,
+      "edge": -0.002,
+      "yes_ask": 0.003,
+      "no_ask": 0.999,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": -0.009,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "no +EV value bet at the ask (my prob 0%, modal NO) — staying out.",
+      "prob_delta_vs_prev": -0.002,
+      "trigger": "scheduled",
+      "strategy_id": "LQ5-ensemble5",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "The evidence suggests there is some level of U.S.-Iran engagement (e.g., Trump’s claim of talks in Qatar), but other reports indicate ongoing conflict and uncertainty about the feasibility of talks. Marco Rubio’s involvement is not directly mentioned, but his political alignment with Trump and potential interest in foreign policy matters could influence his actions. However, this is speculative gi",
+      "key_drivers": [
+        "U.S.-Iran diplomatic engagement (or lack thereof) as of late June 2026",
+        "Marco Rubio’s political alignment with Trump and potential interest in foreign policy",
+        "Historical patterns of U.S.-Iran relations and limited diplomatic interactions"
+      ],
+      "reference_classes": [
+        "U.S.-Iran diplomatic engagement during periods of conflict",
+        "High-profile U.S. politicians’ international travel during tense geopolitical moments"
+      ],
+      "research_refs": [
+        "ABC News - Breaking News",
+        "Latest News and Videos",
+        "AP News",
+        "Al Jazeera",
+        "Axios",
+        "BBC",
+        "C-SPAN",
+        "CNBC",
+        "CNN"
       ]
     }
   ],
