@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-06-29T20:26:50Z",
+  "updated_at": "2026-07-02T20:37:27Z",
   "cap": 30,
   "markets": [
     {
@@ -15,7 +15,7 @@
         "open_interest": 471838.3,
         "spread_cents": 1.0
       },
-      "status": "active",
+      "status": "resolved",
       "reforecast_cadence_days": 7.0
     },
     {
@@ -75,7 +75,7 @@
         "open_interest": 7057.81,
         "spread_cents": 1.0
       },
-      "status": "active",
+      "status": "resolved",
       "reforecast_cadence_days": 3.0
     },
     {
@@ -90,7 +90,7 @@
         "open_interest": 25589.88,
         "spread_cents": 2.0
       },
-      "status": "active",
+      "status": "resolved",
       "reforecast_cadence_days": 3.0
     },
     {
@@ -105,7 +105,7 @@
         "open_interest": 64872.08,
         "spread_cents": 1.0
       },
-      "status": "active",
+      "status": "resolved",
       "reforecast_cadence_days": 3.0
     },
     {
@@ -120,7 +120,7 @@
         "open_interest": 65201.48,
         "spread_cents": 2.0
       },
-      "status": "active",
+      "status": "resolved",
       "reforecast_cadence_days": 3.0
     },
     {
@@ -135,7 +135,7 @@
         "open_interest": 41996.88,
         "spread_cents": 1.0
       },
-      "status": "active",
+      "status": "resolved",
       "reforecast_cadence_days": 3.0
     },
     {
@@ -150,7 +150,7 @@
         "open_interest": 58799.18,
         "spread_cents": 1.0
       },
-      "status": "active",
+      "status": "resolved",
       "reforecast_cadence_days": 3.0
     },
     {
@@ -210,7 +210,7 @@
         "open_interest": 79329.56,
         "spread_cents": 1.0
       },
-      "status": "active",
+      "status": "resolved",
       "reforecast_cadence_days": 3.0
     },
     {

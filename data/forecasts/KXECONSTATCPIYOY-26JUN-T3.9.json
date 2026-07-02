@@ -5,22 +5,22 @@
   "category": "economy",
   "close_time": "2026-07-14T14:00:00Z",
   "current": {
-    "as_of": "2026-06-29T18:34:48Z",
-    "my_probability": 0.4267,
+    "as_of": "2026-07-02T20:53:26Z",
+    "my_probability": 0.0977,
     "my_confidence": "low",
-    "market_implied_probability": 0.08,
-    "market_price_cents": 8.0,
-    "edge": 0.3467,
-    "yes_ask": 0.09,
-    "no_ask": 0.93,
+    "market_implied_probability": 0.155,
+    "market_price_cents": 16.0,
+    "edge": -0.057300000000000004,
+    "yes_ask": 0.17,
+    "no_ask": 0.86,
     "fee_per_contract": 0.01,
-    "ev_per_contract": -0.36670000000000014,
-    "limit_price": null,
-    "ev_limit_per_contract": null,
+    "ev_per_contract": 0.0323,
+    "limit_price": 0.83,
+    "ev_limit_per_contract": 0.0623,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "no +EV value bet at the ask (my prob 43%, modal NO) — staying out.",
-    "prob_delta_vs_prev": 0.12670000000000003,
+    "lean_note": "low confidence below the medium floor — estimate too uncertain to fade the market",
+    "prob_delta_vs_prev": -0.329,
     "trigger": "scheduled",
     "strategy_id": "LQM5-mistral24",
     "proposed_probability": null,
@@ -28,25 +28,21 @@
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "Base rate inferred from historical CPI data and current economic trends suggesting moderate inflation. Limited specific evidence available for June 2026, so relying heavily on base rates and general economic indicators.",
+    "rationale_summary": "Base rate for CPI y/y is around 2% from 2015-2026 and has not been lower than 1% since 1978. The data gap at the time of evidence makes it hard to update with any incremental data. This question was asked on Jul 2, 2026 but no sources have reported on June 2026 CPI yet; there is no way to log >=3 independent reports. There are no other similar questions to compare to, so we cannot use any historic",
     "key_drivers": [
-      "Historical CPI trends",
-      "Economic forecasts",
-      "General market sentiment"
+      "Historical data",
+      "Data-gap at time of evidence"
     ],
-    "reference_classes": [
-      "CPI year-over-year changes in recent years",
-      "Economic growth rate predictions for 2026"
-    ],
+    "reference_classes": [],
     "research_refs": [
       "Bureau of Labor Statistics",
       "CNBC",
+      "Center for American Progress",
+      "Centraal Bureau voor de Statistiek | CBS",
       "Chase Bank",
-      "FOREX.com",
       "FactSet Insight",
-      "OECD",
-      "Reuters",
-      "U.S. Travel Association"
+      "IndexBox",
+      "RankiaPro"
     ]
   },
   "history": [
@@ -170,6 +166,47 @@
         "OECD",
         "Reuters",
         "U.S. Travel Association"
+      ]
+    },
+    {
+      "as_of": "2026-07-02T20:53:26Z",
+      "my_probability": 0.0977,
+      "my_confidence": "low",
+      "market_implied_probability": 0.155,
+      "market_price_cents": 16.0,
+      "edge": -0.057300000000000004,
+      "yes_ask": 0.17,
+      "no_ask": 0.86,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": 0.0323,
+      "limit_price": 0.83,
+      "ev_limit_per_contract": 0.0623,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "low confidence below the medium floor — estimate too uncertain to fade the market",
+      "prob_delta_vs_prev": -0.329,
+      "trigger": "scheduled",
+      "strategy_id": "LQM5-mistral24",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "Base rate for CPI y/y is around 2% from 2015-2026 and has not been lower than 1% since 1978. The data gap at the time of evidence makes it hard to update with any incremental data. This question was asked on Jul 2, 2026 but no sources have reported on June 2026 CPI yet; there is no way to log >=3 independent reports. There are no other similar questions to compare to, so we cannot use any historic",
+      "key_drivers": [
+        "Historical data",
+        "Data-gap at time of evidence"
+      ],
+      "reference_classes": [],
+      "research_refs": [
+        "Bureau of Labor Statistics",
+        "CNBC",
+        "Center for American Progress",
+        "Centraal Bureau voor de Statistiek | CBS",
+        "Chase Bank",
+        "FactSet Insight",
+        "IndexBox",
+        "RankiaPro"
       ]
     }
   ],

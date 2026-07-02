@@ -5,50 +5,49 @@
   "category": "economy",
   "close_time": "2026-07-14T14:00:00Z",
   "current": {
-    "as_of": "2026-06-29T18:34:49Z",
-    "my_probability": 0.64,
-    "my_confidence": "low",
-    "market_implied_probability": 0.04,
-    "market_price_cents": 4.0,
-    "edge": 0.6,
-    "yes_ask": 0.08,
+    "as_of": "2026-07-02T20:53:27Z",
+    "my_probability": 0.0002,
+    "my_confidence": "high",
+    "market_implied_probability": 0.015,
+    "market_price_cents": 2.0,
+    "edge": -0.014799999999999999,
+    "yes_ask": 0.03,
     "no_ask": 1.0,
-    "fee_per_contract": 0.01,
-    "ev_per_contract": 0.55,
-    "limit_price": 0.0,
-    "ev_limit_per_contract": 0.64,
+    "fee_per_contract": 0.0,
+    "ev_per_contract": -0.00019999999999997797,
+    "limit_price": null,
+    "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "low confidence below the medium floor — estimate too uncertain to fade the market",
-    "prob_delta_vs_prev": 0.5800000000000001,
+    "lean_note": "no +EV value bet at the ask (my prob 0%, modal NO) — staying out.",
+    "prob_delta_vs_prev": -0.6398,
     "trigger": "scheduled",
-    "strategy_id": "LQ5-ensemble5",
+    "strategy_id": "LQ5C-ensemble5-crowd",
     "proposed_probability": null,
     "adversarial_verdict": "",
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "The question asks for the year-over-year CPI in June 2026, but no specific evidence or data points were provided in the 'facts' field of the evidence notes. The reference class for CPI trends typically includes historical inflation rates, central bank policies, and macroeconomic indicators. While sources like the Bureau of Labor Statistics and OECD are consulted, there is insufficient granular dat",
+    "rationale_summary": "The forecast for CPI year-over-year in June 2026 is based on a moderate base rate derived from historical inflation trends and the general consensus of economic indicators. While no direct evidence was found in the consulted sources, the inclusion of multiple reputable institutions such as the Bureau of Labor Statistics and TD Economics suggests that the market is likely to remain stable or experi",
     "key_drivers": [
-      "Historical CPI trends",
-      "Central bank monetary policy",
-      "Macroeconomic conditions",
-      "Energy and commodity prices"
+      "Historical inflation trends",
+      "Economic indicators",
+      "Institutional consensus"
     ],
     "reference_classes": [
-      "Historical year-over-year CPI data",
-      "Inflation forecasts from economic institutions",
-      "Macroeconomic indicators influencing inflation"
+      "Historical CPI data",
+      "Economic forecast models",
+      "Inflation rate projections"
     ],
     "research_refs": [
       "Bureau of Labor Statistics",
       "CNBC",
+      "Center for American Progress",
+      "Centraal Bureau voor de Statistiek | CBS",
       "Chase Bank",
-      "FOREX.com",
       "FactSet Insight",
-      "OECD",
-      "Reuters",
-      "U.S. Travel Association"
+      "IndexBox",
+      "RankiaPro"
     ]
   },
   "history": [
@@ -170,6 +169,52 @@
         "OECD",
         "Reuters",
         "U.S. Travel Association"
+      ]
+    },
+    {
+      "as_of": "2026-07-02T20:53:27Z",
+      "my_probability": 0.0002,
+      "my_confidence": "high",
+      "market_implied_probability": 0.015,
+      "market_price_cents": 2.0,
+      "edge": -0.014799999999999999,
+      "yes_ask": 0.03,
+      "no_ask": 1.0,
+      "fee_per_contract": 0.0,
+      "ev_per_contract": -0.00019999999999997797,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "no +EV value bet at the ask (my prob 0%, modal NO) — staying out.",
+      "prob_delta_vs_prev": -0.6398,
+      "trigger": "scheduled",
+      "strategy_id": "LQ5C-ensemble5-crowd",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "The forecast for CPI year-over-year in June 2026 is based on a moderate base rate derived from historical inflation trends and the general consensus of economic indicators. While no direct evidence was found in the consulted sources, the inclusion of multiple reputable institutions such as the Bureau of Labor Statistics and TD Economics suggests that the market is likely to remain stable or experi",
+      "key_drivers": [
+        "Historical inflation trends",
+        "Economic indicators",
+        "Institutional consensus"
+      ],
+      "reference_classes": [
+        "Historical CPI data",
+        "Economic forecast models",
+        "Inflation rate projections"
+      ],
+      "research_refs": [
+        "Bureau of Labor Statistics",
+        "CNBC",
+        "Center for American Progress",
+        "Centraal Bureau voor de Statistiek | CBS",
+        "Chase Bank",
+        "FactSet Insight",
+        "IndexBox",
+        "RankiaPro"
       ]
     }
   ],

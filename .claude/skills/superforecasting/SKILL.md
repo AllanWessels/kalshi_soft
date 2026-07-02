@@ -242,7 +242,7 @@ therefore run as a panel (ROUTINE Step 6b, `scripts/postmortem.py`):
 - Use hard_gap_ceiling to enforce resolution rules for verbatim markets regardless of confidence.
 - Anchor to data-confirming regimes (e.g., Hormuz norms) during active blockades, not optimistic scenarios.
 
-_Auto-maintained by `postmortem.py revise-skill` from 8 resolved-market lesson(s); reversible via git._
+_Auto-maintained by `postmortem.py revise-skill` from 14 resolved-market lesson(s); reversible via git._
 <!-- AUTO-HEURISTICS:END -->
 
 ## Non-negotiables

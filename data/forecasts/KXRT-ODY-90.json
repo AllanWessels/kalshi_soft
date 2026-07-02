@@ -5,47 +5,48 @@
   "category": "culture",
   "close_time": "2026-07-20T14:00:00Z",
   "current": {
-    "as_of": "2026-06-29T18:34:54Z",
-    "my_probability": 0.5,
+    "as_of": "2026-07-02T20:53:28Z",
+    "my_probability": 0.435,
     "my_confidence": "high",
-    "market_implied_probability": 0.47,
-    "market_price_cents": 47.0,
-    "edge": 0.030000000000000027,
-    "yes_ask": 0.48,
-    "no_ask": 0.54,
+    "market_implied_probability": 0.435,
+    "market_price_cents": 44.0,
+    "edge": 0.0,
+    "yes_ask": 0.44,
+    "no_ask": 0.57,
     "fee_per_contract": 0.02,
-    "ev_per_contract": 1.734723475976807e-17,
+    "ev_per_contract": -0.025000000000000005,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "no +EV value bet at the ask (my prob 50%, modal YES) — staying out.",
-    "prob_delta_vs_prev": 0.2,
+    "lean_note": "no +EV value bet at the ask (my prob 44%, modal NO) — staying out.",
+    "prob_delta_vs_prev": -0.065,
     "trigger": "scheduled",
-    "strategy_id": "LQ5-ensemble5",
+    "strategy_id": "LQ5C-ensemble5-crowd",
     "proposed_probability": null,
     "adversarial_verdict": "",
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "The evidence notes indicate that as of 2026-08-14, there is no information available about the Rotten Tomatoes score for The Odyssey (2026) in the provided search results. While the film is confirmed to be directed by Christopher Nolan, this does not provide any direct insight into its Rotten Tomatoes score. The base rate suggests that scores for other films are available, but not for this specifi",
+    "rationale_summary": "The Rotten Tomatoes score for 'The Odyssey' (2026) is not available in the provided sources as of 2026-06-29. While it is typical for major films to have scores shortly after release, the lack of information suggests the film may not have been released yet or the score may not have been published. Base rates suggest high critical acclaim for Christopher Nolan films, but this does not directly tran",
     "key_drivers": [
-      "Lack of information in the provided sources",
-      "Confirmation of the film's director but not its score"
+      "Lack of available information on the Rotten Tomatoes score as of 2026-06-29",
+      "Typical availability of Rotten Tomatoes scores for major films post-release",
+      "Potential for high critical acclaim based on director's track record"
     ],
     "reference_classes": [
-      "Rotten Tomatoes scores for other films",
-      "Availability of critical information in media sources"
+      "Rotten Tomatoes scores for major films released in the same year",
+      "Critical reception of films directed by Christopher Nolan"
     ],
     "research_refs": [
       "Awards Daily",
-      "Coinbase",
       "Collider",
       "Cosmic Book News",
-      "Gold Derby",
+      "GamesRadar+",
       "High On Films",
       "IMDb",
-      "MovieWeb"
+      "MovieWeb",
+      "Rotten Tomatoes"
     ]
   },
   "history": [
@@ -169,6 +170,51 @@
         "High On Films",
         "IMDb",
         "MovieWeb"
+      ]
+    },
+    {
+      "as_of": "2026-07-02T20:53:28Z",
+      "my_probability": 0.435,
+      "my_confidence": "high",
+      "market_implied_probability": 0.435,
+      "market_price_cents": 44.0,
+      "edge": 0.0,
+      "yes_ask": 0.44,
+      "no_ask": 0.57,
+      "fee_per_contract": 0.02,
+      "ev_per_contract": -0.025000000000000005,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "no +EV value bet at the ask (my prob 44%, modal NO) — staying out.",
+      "prob_delta_vs_prev": -0.065,
+      "trigger": "scheduled",
+      "strategy_id": "LQ5C-ensemble5-crowd",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "The Rotten Tomatoes score for 'The Odyssey' (2026) is not available in the provided sources as of 2026-06-29. While it is typical for major films to have scores shortly after release, the lack of information suggests the film may not have been released yet or the score may not have been published. Base rates suggest high critical acclaim for Christopher Nolan films, but this does not directly tran",
+      "key_drivers": [
+        "Lack of available information on the Rotten Tomatoes score as of 2026-06-29",
+        "Typical availability of Rotten Tomatoes scores for major films post-release",
+        "Potential for high critical acclaim based on director's track record"
+      ],
+      "reference_classes": [
+        "Rotten Tomatoes scores for major films released in the same year",
+        "Critical reception of films directed by Christopher Nolan"
+      ],
+      "research_refs": [
+        "Awards Daily",
+        "Collider",
+        "Cosmic Book News",
+        "GamesRadar+",
+        "High On Films",
+        "IMDb",
+        "MovieWeb",
+        "Rotten Tomatoes"
       ]
     }
   ],

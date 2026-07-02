@@ -5,49 +5,49 @@
   "category": "economy",
   "close_time": "2026-07-14T13:56:00Z",
   "current": {
-    "as_of": "2026-06-29T18:34:47Z",
-    "my_probability": 0.4833,
-    "my_confidence": "low",
-    "market_implied_probability": 0.15,
-    "market_price_cents": 15.0,
-    "edge": 0.33330000000000004,
-    "yes_ask": 0.16,
-    "no_ask": 0.86,
+    "as_of": "2026-07-02T20:53:25Z",
+    "my_probability": 0.0454,
+    "my_confidence": "medium",
+    "market_implied_probability": 0.115,
+    "market_price_cents": 12.0,
+    "edge": -0.0696,
+    "yes_ask": 0.12,
+    "no_ask": 0.89,
     "fee_per_contract": 0.01,
-    "ev_per_contract": -0.35330000000000006,
-    "limit_price": null,
-    "ev_limit_per_contract": null,
+    "ev_per_contract": 0.05459999999999999,
+    "limit_price": 0.88,
+    "ev_limit_per_contract": 0.0646,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "no +EV value bet at the ask (my prob 48%, modal NO) — staying out.",
-    "prob_delta_vs_prev": 0.043300000000000005,
+    "lean_note": "7pt gap vs a liquid market without high confidence — more likely my error than edge",
+    "prob_delta_vs_prev": -0.4379,
     "trigger": "scheduled",
-    "strategy_id": "LQ5-ensemble5",
+    "strategy_id": "LQ5C-ensemble5-crowd",
     "proposed_probability": null,
     "adversarial_verdict": "",
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "The base rate for CPI changes in June is historically modest, with mixed trends depending on seasonality and economic conditions. While no direct evidence of CPI rising more than -0.1% in June 2026 was found in the sources consulted, the absence of strong deflationary signals and the general trend of stable inflation in recent forecasts suggests a moderate likelihood of CPI rising above -0.1%. Key",
+    "rationale_summary": "The base rate for CPI changes in a given month typically ranges between -0.5% and +0.5%, with a median close to 0%. Evidence from multiple economic indicators and forecasts, though not explicitly stating June 2026 CPI, suggests a general trend of moderate inflation or deflation. The lack of specific data points for June 2026 means the probability is estimated based on historical patterns and gener",
     "key_drivers": [
-      "inflation expectations",
-      "energy prices",
-      "labor market dynamics"
+      "historical CPI trends",
+      "general inflation expectations",
+      "economic indicator forecasts"
     ],
     "reference_classes": [
-      "historical CPI trends in June",
-      "inflation forecasts for 2026",
-      "seasonal CPI fluctuations"
+      "monthly CPI changes",
+      "economic indicator forecasts",
+      "inflationary trends"
     ],
     "research_refs": [
       "CNBC",
-      "DailyForex",
       "FactSet Insight",
       "GoldSilver",
+      "IndexBox",
+      "Kiplinger",
       "LiteFinance",
       "Morningstar",
-      "OECD",
-      "Parliamentary Budget Officer"
+      "Philadelphia Federal Reserve Bank"
     ]
   },
   "history": [
@@ -175,6 +175,52 @@
         "Morningstar",
         "OECD",
         "Parliamentary Budget Officer"
+      ]
+    },
+    {
+      "as_of": "2026-07-02T20:53:25Z",
+      "my_probability": 0.0454,
+      "my_confidence": "medium",
+      "market_implied_probability": 0.115,
+      "market_price_cents": 12.0,
+      "edge": -0.0696,
+      "yes_ask": 0.12,
+      "no_ask": 0.89,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": 0.05459999999999999,
+      "limit_price": 0.88,
+      "ev_limit_per_contract": 0.0646,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "7pt gap vs a liquid market without high confidence — more likely my error than edge",
+      "prob_delta_vs_prev": -0.4379,
+      "trigger": "scheduled",
+      "strategy_id": "LQ5C-ensemble5-crowd",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "The base rate for CPI changes in a given month typically ranges between -0.5% and +0.5%, with a median close to 0%. Evidence from multiple economic indicators and forecasts, though not explicitly stating June 2026 CPI, suggests a general trend of moderate inflation or deflation. The lack of specific data points for June 2026 means the probability is estimated based on historical patterns and gener",
+      "key_drivers": [
+        "historical CPI trends",
+        "general inflation expectations",
+        "economic indicator forecasts"
+      ],
+      "reference_classes": [
+        "monthly CPI changes",
+        "economic indicator forecasts",
+        "inflationary trends"
+      ],
+      "research_refs": [
+        "CNBC",
+        "FactSet Insight",
+        "GoldSilver",
+        "IndexBox",
+        "Kiplinger",
+        "LiteFinance",
+        "Morningstar",
+        "Philadelphia Federal Reserve Bank"
       ]
     }
   ],

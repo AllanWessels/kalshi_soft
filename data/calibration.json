@@ -1,18 +1,18 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-06-29T18:05:31Z",
-  "n_resolved": 31,
-  "brier_mine_mean": 0.15712016129032258,
-  "brier_market_mean": 0.11219432258064516,
-  "skill_vs_market": -0.044925838709677424,
+  "updated_at": "2026-07-02T20:37:27Z",
+  "n_resolved": 40,
+  "brier_mine_mean": 0.12269047500000001,
+  "brier_market_mean": 0.0878177,
+  "skill_vs_market": -0.03487277500000001,
   "bins": [
     {
       "range": [
         0.0,
         0.1
       ],
-      "n": 13,
-      "mean_forecast": 0.02553846153846154,
+      "n": 20,
+      "mean_forecast": 0.01685,
       "observed_freq": 0.0
     },
     {
@@ -92,23 +92,23 @@
         0.9,
         1.0
       ],
-      "n": 6,
-      "mean_forecast": 0.9541666666666666,
-      "observed_freq": 0.6666666666666666
+      "n": 8,
+      "mean_forecast": 0.9564,
+      "observed_freq": 0.75
     }
   ],
   "by_category": {
     "politics": {
-      "n": 20,
-      "brier_mine_mean": 0.14903125,
-      "brier_market_mean": 0.14404745,
-      "skill_vs_market": -0.0049838000000000104
+      "n": 27,
+      "brier_mine_mean": 0.11157755555555555,
+      "brier_market_mean": 0.10756974074074074,
+      "skill_vs_market": -0.004007814814814811
     },
     "economy": {
-      "n": 7,
-      "brier_mine_mean": 0.05131428571428572,
-      "brier_market_mean": 0.030139285714285712,
-      "skill_vs_market": -0.02117500000000001
+      "n": 9,
+      "brier_mine_mean": 0.040458333333333346,
+      "brier_market_mean": 0.024691666666666667,
+      "skill_vs_market": -0.01576666666666668
     },
     "culture": {
       "n": 3,
@@ -155,16 +155,16 @@
       "skill_vs_market": 0.24989999999999984
     },
     "economy / jobs-unemployment": {
-      "n": 1,
-      "brier_mine_mean": 0.019600000000000003,
-      "brier_market_mean": 0.07562500000000001,
-      "skill_vs_market": 0.056025000000000005
+      "n": 2,
+      "brier_mine_mean": 0.012249999999999997,
+      "brier_market_mean": 0.043325,
+      "skill_vs_market": 0.031075000000000005
     },
     "economy / fed-rates": {
-      "n": 6,
-      "brier_mine_mean": 0.05660000000000001,
-      "brier_market_mean": 0.022558333333333333,
-      "skill_vs_market": -0.03404166666666668
+      "n": 7,
+      "brier_mine_mean": 0.048517857142857154,
+      "brier_market_mean": 0.019367857142857138,
+      "skill_vs_market": -0.029150000000000016
     },
     "politics / legislation": {
       "n": 2,
@@ -173,10 +173,10 @@
       "skill_vs_market": -0.0024749999999999998
     },
     "politics / foreign-policy": {
-      "n": 3,
-      "brier_mine_mean": 0.145,
-      "brier_market_mean": 0.11581666666666666,
-      "skill_vs_market": -0.029183333333333325
+      "n": 4,
+      "brier_mine_mean": 0.11234999999999999,
+      "brier_market_mean": 0.09211875,
+      "skill_vs_market": -0.020231249999999992
     },
     "culture / box-office": {
       "n": 3,
@@ -191,24 +191,30 @@
       "skill_vs_market": -0.945875
     },
     "politics / us-president": {
-      "n": 3,
-      "brier_mine_mean": 0.12093333333333334,
-      "brier_market_mean": 0.011291666666666667,
-      "skill_vs_market": -0.10964166666666667
+      "n": 6,
+      "brier_mine_mean": 0.06326666666666667,
+      "brier_market_mean": 0.005970833333333334,
+      "skill_vs_market": -0.05729583333333333
     },
     "politics / primary-nomination": {
       "n": 1,
       "brier_mine_mean": 0.31360000000000005,
       "brier_market_mean": 0.235225,
       "skill_vs_market": -0.07837500000000006
+    },
+    "politics / other-politics": {
+      "n": 3,
+      "brier_mine_mean": 0.00025633333333333335,
+      "brier_market_mean": 0.000153,
+      "skill_vs_market": -0.00010333333333333334
     }
   },
   "by_strategy": {
     "untagged": {
-      "n": 13,
-      "brier_mine_mean": 0.1450173076923077,
-      "brier_market_mean": 0.17998453846153847,
-      "skill_vs_market": 0.03496723076923078
+      "n": 14,
+      "brier_mine_mean": 0.1346607142857143,
+      "brier_market_mean": 0.16714457142857145,
+      "skill_vs_market": 0.03248385714285715
     },
     "S0-single": {
       "n": 9,
@@ -229,21 +235,27 @@
       "skill_vs_market": -0.16512500000000008
     },
     "LQ5-ensemble5": {
-      "n": 5,
-      "brier_mine_mean": 0.14496,
-      "brier_market_mean": 0.054945,
-      "skill_vs_market": -0.09001500000000001
+      "n": 11,
+      "brier_mine_mean": 0.06789718181818181,
+      "brier_market_mean": 0.026187181818181818,
+      "skill_vs_market": -0.04171
+    },
+    "LQ5C-ensemble5-crowd": {
+      "n": 2,
+      "brier_mine_mean": 0.0073999999999999995,
+      "brier_market_mean": 0.010562500000000002,
+      "skill_vs_market": 0.003162500000000003
     }
   },
   "profit_by_category": {
     "politics": {
-      "n_trades": 4,
-      "total_pnl": -0.8500000000000001,
-      "total_staked": 2.85,
-      "roi": -0.29824561403508776,
-      "win_rate": 0.5,
-      "avg_clv": -0.013749999999999998,
-      "max_drawdown": -0.8500000000000001
+      "n_trades": 5,
+      "total_pnl": -0.9,
+      "total_staked": 2.9,
+      "roi": -0.3103448275862069,
+      "win_rate": 0.4,
+      "avg_clv": -0.018,
+      "max_drawdown": -0.9000000000000001
     },
     "economy": {
       "n_trades": 1,
@@ -327,6 +339,15 @@
       "win_rate": 0.0,
       "avg_clv": -0.024999999999999994,
       "max_drawdown": -0.22999999999999998
+    },
+    "politics / us-president": {
+      "n_trades": 1,
+      "total_pnl": -0.05,
+      "total_staked": 0.05,
+      "roi": -1.0,
+      "win_rate": 0.0,
+      "avg_clv": -0.034999999999999996,
+      "max_drawdown": -0.05
     }
   },
   "profit_by_strategy": {
@@ -358,48 +379,48 @@
       "max_drawdown": -0.5900000000000001
     },
     "LQ5-ensemble5": {
-      "n_trades": 1,
-      "total_pnl": -0.09999999999999999,
-      "total_staked": 0.09999999999999999,
+      "n_trades": 2,
+      "total_pnl": -0.15,
+      "total_staked": 0.15,
       "roi": -1.0,
       "win_rate": 0.0,
-      "avg_clv": -0.015,
-      "max_drawdown": -0.09999999999999999
+      "avg_clv": -0.024999999999999998,
+      "max_drawdown": -0.15
     }
   },
   "profitability": {
     "cf_overall": {
-      "n": 31,
-      "cf_pnl": -2.786,
-      "cf_staked": 25.786,
-      "cf_roi": -0.1080431241759094,
-      "cf_win_rate": 0.7419354838709677,
+      "n": 40,
+      "cf_pnl": -2.54,
+      "cf_staked": 34.54,
+      "cf_roi": -0.07353792704111176,
+      "cf_win_rate": 0.8,
       "max_drawdown": -2.7859999999999996
     },
     "cf_by_taken": {
       "gated/none": {
-        "n": 22,
-        "cf_pnl": -2.036,
-        "cf_staked": 20.036,
-        "cf_roi": -0.10161708923936913,
-        "cf_win_rate": 0.8181818181818182,
+        "n": 30,
+        "cf_pnl": -1.8099999999999998,
+        "cf_staked": 27.81,
+        "cf_roi": -0.06508450197770586,
+        "cf_win_rate": 0.8666666666666667,
         "max_drawdown": -2.265999999999999
       },
       "taken": {
-        "n": 9,
-        "cf_pnl": -0.7500000000000002,
-        "cf_staked": 5.75,
-        "cf_roi": -0.1304347826086957,
-        "cf_win_rate": 0.5555555555555556,
+        "n": 10,
+        "cf_pnl": -0.7300000000000002,
+        "cf_staked": 6.73,
+        "cf_roi": -0.1084695393759287,
+        "cf_win_rate": 0.6,
         "max_drawdown": -1.07
       }
     },
     "cf_by_gap": {
       "0-5pt": {
-        "n": 17,
-        "cf_pnl": 0.977,
-        "cf_staked": 16.023,
-        "cf_roi": 0.06097484865505835,
+        "n": 24,
+        "cf_pnl": 1.193,
+        "cf_staked": 22.807,
+        "cf_roi": 0.0523085017757706,
         "cf_win_rate": 1.0,
         "max_drawdown": -0.007999999999999998
       },
@@ -412,11 +433,11 @@
         "max_drawdown": -2.113
       },
       "5-10pt": {
-        "n": 6,
-        "cf_pnl": -1.33,
-        "cf_staked": 4.33,
-        "cf_roi": -0.3071593533487298,
-        "cf_win_rate": 0.5,
+        "n": 8,
+        "cf_pnl": -1.3,
+        "cf_staked": 6.3,
+        "cf_roi": -0.20634920634920637,
+        "cf_win_rate": 0.625,
         "max_drawdown": -1.33
       },
       "20pt+": {
@@ -430,45 +451,45 @@
     },
     "cf_by_confidence": {
       "high": {
-        "n": 16,
-        "cf_pnl": -0.33299999999999996,
-        "cf_staked": 14.333,
-        "cf_roi": -0.02323309844414986,
-        "cf_win_rate": 0.875,
+        "n": 21,
+        "cf_pnl": -0.22199999999999995,
+        "cf_staked": 19.222,
+        "cf_roi": -0.011549266465508268,
+        "cf_win_rate": 0.9047619047619048,
         "max_drawdown": -0.7100000000000001
       },
       "medium": {
-        "n": 11,
-        "cf_pnl": -1.0030000000000001,
-        "cf_staked": 9.003,
-        "cf_roi": -0.11140730867488616,
-        "cf_win_rate": 0.7272727272727273,
+        "n": 13,
+        "cf_pnl": -0.8780000000000002,
+        "cf_staked": 10.878,
+        "cf_roi": -0.08071336642765216,
+        "cf_win_rate": 0.7692307692307693,
         "max_drawdown": -1.743
       },
       "low": {
-        "n": 4,
-        "cf_pnl": -1.45,
-        "cf_staked": 2.45,
-        "cf_roi": -0.5918367346938775,
-        "cf_win_rate": 0.25,
+        "n": 6,
+        "cf_pnl": -1.44,
+        "cf_staked": 4.4399999999999995,
+        "cf_roi": -0.32432432432432434,
+        "cf_win_rate": 0.5,
         "max_drawdown": -1.45
       }
     },
     "cf_by_category": {
       "politics": {
-        "n": 20,
-        "cf_pnl": -1.606,
-        "cf_staked": 17.606,
-        "cf_roi": -0.09121890264682495,
-        "cf_win_rate": 0.8,
+        "n": 27,
+        "cf_pnl": -1.45,
+        "cf_staked": 24.45,
+        "cf_roi": -0.05930470347648262,
+        "cf_win_rate": 0.8518518518518519,
         "max_drawdown": -2.591
       },
       "economy": {
-        "n": 7,
-        "cf_pnl": -0.10999999999999996,
-        "cf_staked": 6.11,
-        "cf_roi": -0.018003273322422252,
-        "cf_win_rate": 0.8571428571428571,
+        "n": 9,
+        "cf_pnl": -0.01999999999999997,
+        "cf_staked": 8.02,
+        "cf_roi": -0.002493765586034909,
+        "cf_win_rate": 0.8888888888888888,
         "max_drawdown": -0.39
       },
       "culture": {
@@ -490,11 +511,11 @@
     },
     "cf_by_strategy": {
       "untagged": {
-        "n": 13,
+        "n": 14,
         "cf_pnl": -1.786,
-        "cf_staked": 11.786,
-        "cf_roi": -0.15153572034617344,
-        "cf_win_rate": 0.7692307692307693,
+        "cf_staked": 12.786,
+        "cf_roi": -0.1396840294071641,
+        "cf_win_rate": 0.7857142857142857,
         "max_drawdown": -2.341
       },
       "S0-single": {
@@ -522,12 +543,20 @@
         "max_drawdown": -0.39
       },
       "LQ5-ensemble5": {
-        "n": 5,
-        "cf_pnl": -0.8300000000000001,
-        "cf_staked": 3.83,
-        "cf_roi": -0.21671018276762405,
-        "cf_win_rate": 0.6,
+        "n": 11,
+        "cf_pnl": -0.714,
+        "cf_staked": 9.714,
+        "cf_roi": -0.07350216182828906,
+        "cf_win_rate": 0.8181818181818182,
         "max_drawdown": -0.8300000000000001
+      },
+      "LQ5C-ensemble5-crowd": {
+        "n": 2,
+        "cf_pnl": 0.13,
+        "cf_staked": 1.87,
+        "cf_roi": 0.06951871657754011,
+        "cf_win_rate": 1.0,
+        "max_drawdown": 0.0
       }
     }
   }

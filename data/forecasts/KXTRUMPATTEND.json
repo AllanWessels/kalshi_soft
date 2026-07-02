@@ -5,49 +5,48 @@
   "category": "politics",
   "close_time": "2026-07-20T14:00:00Z",
   "current": {
-    "as_of": "2026-06-29T18:34:54Z",
-    "my_probability": 0.84,
-    "my_confidence": "high",
-    "market_implied_probability": 0.835,
-    "market_price_cents": 84.0,
-    "edge": 0.0050000000000000044,
-    "yes_ask": 0.84,
-    "no_ask": 0.17,
+    "as_of": "2026-07-02T20:53:28Z",
+    "my_probability": 0.865,
+    "my_confidence": "medium",
+    "market_implied_probability": 0.865,
+    "market_price_cents": 86.0,
+    "edge": 0.0,
+    "yes_ask": 0.87,
+    "no_ask": 0.14,
     "fee_per_contract": 0.01,
-    "ev_per_contract": -0.01,
+    "ev_per_contract": -0.015000000000000005,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "no +EV value bet at the ask (my prob 84%, modal YES) — staying out.",
-    "prob_delta_vs_prev": -0.10999999999999999,
+    "lean_note": "no +EV value bet at the ask (my prob 86%, modal YES) — staying out.",
+    "prob_delta_vs_prev": 0.025000000000000022,
     "trigger": "scheduled",
-    "strategy_id": "LQ5-ensemble5",
+    "strategy_id": "LQ5C-ensemble5-crowd",
     "proposed_probability": null,
     "adversarial_verdict": "",
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "Multiple credible sources, including FOX 5 New York, The Tribune, The News Mill, and Al Jazeera, confirm or strongly suggest that Donald J. Trump will attend the 2026 FIFA World Cup Final, including reports that he will hand out the trophy at a match in New Jersey. Additional evidence includes his confirmed attendance at the World Cup draw and his active involvement in related commentary. While th",
+    "rationale_summary": "The base rate for a former U.S. president attending a non-U.S. international sporting event is low, especially one as high-profile as the FIFA World Cup Final. There is no direct evidence in the provided sources indicating Trump's attendance. While he may have a history of high-profile engagements, there is no clear indication of a specific event-related invitation or public commitment to attend. ",
     "key_drivers": [
-      "Multiple sources confirming Trump's attendance at World Cup events",
-      "Report of Trump handing out the trophy at a match in New Jersey",
-      "Trump’s active involvement and commentary on the World Cup",
-      "Confirmed attendance at the World Cup draw"
+      "Absence of confirmed invitation or public commitment",
+      "Low base rate for former U.S. presidents attending non-U.S. international sporting events",
+      "No direct evidence in sources"
     ],
     "reference_classes": [
-      "Public appearances by high-profile political figures at major international sporting events",
-      "Attendance by U.S. political leaders at global sports events hosted in the U.S."
+      "Former U.S. president attending international sporting events",
+      "High-profile individual attending major global events without public commitment"
     ],
     "research_refs": [
-      "AL.com",
       "Al Jazeera",
+      "Business News Nigeria",
+      "Deccan Chronicle",
       "FOX 5 New York",
       "Hindustan Times",
       "Impakter",
-      "Inside The Games",
-      "LiveNOW from FOX",
-      "People.com"
+      "Politico",
+      "The Big Lead"
     ]
   },
   "history": [
@@ -178,6 +177,51 @@
         "Inside The Games",
         "LiveNOW from FOX",
         "People.com"
+      ]
+    },
+    {
+      "as_of": "2026-07-02T20:53:28Z",
+      "my_probability": 0.865,
+      "my_confidence": "medium",
+      "market_implied_probability": 0.865,
+      "market_price_cents": 86.0,
+      "edge": 0.0,
+      "yes_ask": 0.87,
+      "no_ask": 0.14,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": -0.015000000000000005,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "no +EV value bet at the ask (my prob 86%, modal YES) — staying out.",
+      "prob_delta_vs_prev": 0.025000000000000022,
+      "trigger": "scheduled",
+      "strategy_id": "LQ5C-ensemble5-crowd",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "The base rate for a former U.S. president attending a non-U.S. international sporting event is low, especially one as high-profile as the FIFA World Cup Final. There is no direct evidence in the provided sources indicating Trump's attendance. While he may have a history of high-profile engagements, there is no clear indication of a specific event-related invitation or public commitment to attend. ",
+      "key_drivers": [
+        "Absence of confirmed invitation or public commitment",
+        "Low base rate for former U.S. presidents attending non-U.S. international sporting events",
+        "No direct evidence in sources"
+      ],
+      "reference_classes": [
+        "Former U.S. president attending international sporting events",
+        "High-profile individual attending major global events without public commitment"
+      ],
+      "research_refs": [
+        "Al Jazeera",
+        "Business News Nigeria",
+        "Deccan Chronicle",
+        "FOX 5 New York",
+        "Hindustan Times",
+        "Impakter",
+        "Politico",
+        "The Big Lead"
       ]
     }
   ],

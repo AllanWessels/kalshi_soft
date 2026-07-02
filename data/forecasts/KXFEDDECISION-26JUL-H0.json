@@ -5,48 +5,40 @@
   "category": "economy",
   "close_time": "2026-07-29T18:05:00Z",
   "current": {
-    "as_of": "2026-06-29T18:34:55Z",
-    "my_probability": 0.7833,
+    "as_of": "2026-07-02T20:53:28Z",
+    "my_probability": 0.9123,
     "my_confidence": "medium",
-    "market_implied_probability": 0.815,
-    "market_price_cents": 82.0,
-    "edge": -0.03169999999999995,
-    "yes_ask": 0.82,
-    "no_ask": 0.19,
-    "fee_per_contract": 0.02,
-    "ev_per_contract": -0.05669999999999996,
+    "market_implied_probability": 0.885,
+    "market_price_cents": 88.0,
+    "edge": 0.02729999999999999,
+    "yes_ask": 0.89,
+    "no_ask": 0.12,
+    "fee_per_contract": 0.01,
+    "ev_per_contract": 0.012299999999999986,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "no +EV value bet at the ask (my prob 78%, modal YES) — staying out.",
-    "prob_delta_vs_prev": -0.016700000000000048,
+    "lean_note": "no +EV value bet at the ask (my prob 91%, modal YES) — staying out.",
+    "prob_delta_vs_prev": 0.129,
     "trigger": "scheduled",
-    "strategy_id": "LQ5-ensemble5",
+    "strategy_id": "LQ5C-ensemble5-crowd",
     "proposed_probability": null,
     "adversarial_verdict": "",
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "The base rate for a 0bps rate hike by the Federal Reserve during a meeting is historically low, as the Fed typically adjusts rates in response to economic conditions. However, in a scenario where inflation is under control, unemployment is stable, and economic growth is moderate, the Fed may opt for a pause. The current economic environment as of June 2026 appears to align with such conditions, su",
+    "rationale_summary": "The evidence points to a high likelihood of the Federal Reserve holding rates steady in July 2026, with odds from the source indicating around 80.5% to 81.5% for no rate hike. This aligns with a reference class of previous Fed meetings where rate hikes were less likely, and the current evidence suggests a continuation of this trend. While there is still some uncertainty, the data supports a high p",
     "key_drivers": [
-      "inflation trends",
-      "unemployment rates",
-      "economic growth forecasts"
+      "rate-hike odds from Polymarket",
+      "historical Fed behavior in similar economic contexts"
     ],
     "reference_classes": [
-      "historical Fed rate decisions during periods of economic stability",
-      "rate decisions during low-inflation environments"
+      "previous Fed rate decisions in periods of economic stability",
+      "rate-hike probabilities from similar market forecasts"
     ],
     "research_refs": [
-      "Advisor Perspectives",
-      "CNBC",
-      "Chase Bank",
-      "Intellectia AI",
-      "Investopedia",
-      "Morningstar",
-      "Reuters",
-      "Stock Titan"
+      "blockchain.news"
     ]
   },
   "history": [
@@ -136,6 +128,43 @@
         "Morningstar",
         "Reuters",
         "Stock Titan"
+      ]
+    },
+    {
+      "as_of": "2026-07-02T20:53:28Z",
+      "my_probability": 0.9123,
+      "my_confidence": "medium",
+      "market_implied_probability": 0.885,
+      "market_price_cents": 88.0,
+      "edge": 0.02729999999999999,
+      "yes_ask": 0.89,
+      "no_ask": 0.12,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": 0.012299999999999986,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "no +EV value bet at the ask (my prob 91%, modal YES) — staying out.",
+      "prob_delta_vs_prev": 0.129,
+      "trigger": "scheduled",
+      "strategy_id": "LQ5C-ensemble5-crowd",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "The evidence points to a high likelihood of the Federal Reserve holding rates steady in July 2026, with odds from the source indicating around 80.5% to 81.5% for no rate hike. This aligns with a reference class of previous Fed meetings where rate hikes were less likely, and the current evidence suggests a continuation of this trend. While there is still some uncertainty, the data supports a high p",
+      "key_drivers": [
+        "rate-hike odds from Polymarket",
+        "historical Fed behavior in similar economic contexts"
+      ],
+      "reference_classes": [
+        "previous Fed rate decisions in periods of economic stability",
+        "rate-hike probabilities from similar market forecasts"
+      ],
+      "research_refs": [
+        "blockchain.news"
       ]
     }
   ],

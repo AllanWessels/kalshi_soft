@@ -5,48 +5,47 @@
   "category": "politics",
   "close_time": "2026-06-30T14:00:00Z",
   "current": {
-    "as_of": "2026-06-30T15:47:57Z",
-    "my_probability": 0.5275,
-    "my_confidence": "high",
-    "market_implied_probability": 0.565,
-    "market_price_cents": 56.0,
-    "edge": -0.03749999999999998,
-    "yes_ask": 0.57,
-    "no_ask": 0.44,
+    "as_of": "2026-07-02T20:53:25Z",
+    "my_probability": 0.4201,
+    "my_confidence": "medium",
+    "market_implied_probability": 0.475,
+    "market_price_cents": 48.0,
+    "edge": -0.054900000000000004,
+    "yes_ask": 0.48,
+    "no_ask": 0.53,
     "fee_per_contract": 0.02,
-    "ev_per_contract": 0.012500000000000028,
-    "limit_price": null,
-    "ev_limit_per_contract": null,
+    "ev_per_contract": 0.029900000000000055,
+    "limit_price": 0.52,
+    "ev_limit_per_contract": 0.0399,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "no +EV value bet at the ask (my prob 53%, modal YES) — staying out.",
-    "prob_delta_vs_prev": -0.00660000000000005,
+    "lean_note": "5pt gap vs a liquid market without high confidence — more likely my error than edge",
+    "prob_delta_vs_prev": -0.1074,
     "trigger": "scheduled",
-    "strategy_id": "LQ5-ensemble5",
+    "strategy_id": "LQ5C-ensemble5-crowd",
     "proposed_probability": null,
     "adversarial_verdict": "",
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "The evidence indicates that Toby Doeden has advanced to the runoff in the Republican governor primary, but there is currently no definitive information about the final outcome. The runoff is likely to be competitive, with shifting loyalties and lower turnout potentially influencing the result. While Doeden is a strong contender, the presence of another candidate (Rhoden) and the uncertainty around",
+    "rationale_summary": "There is currently no direct evidence about Toby Doeden's likelihood to be the Republican nominee for Governor in South Dakota. The absence of specific information about his political positioning, endorsements, or campaign activity suggests a low to moderate probability. The reference class includes candidates with limited public visibility or early-stage campaigns. The probability is not strongly",
     "key_drivers": [
-      "Doeden's advancement to the runoff",
-      "Uncertainty around voter turnout and shifting loyalties",
-      "Competitiveness of the runoff between Doeden and Rhoden"
+      "Lack of direct evidence about Toby Doeden's political activities or endorsements",
+      "No recent news or polling data indicating strong support for him"
     ],
     "reference_classes": [
-      "Republican primaries in South Dakota with multiple candidates",
-      "Runoff elections in South Dakota where no candidate secures a majority in the initial primary"
+      "Candidates with limited public visibility in early-stage campaigns",
+      "Underdog candidates in state-level primaries"
     ],
     "research_refs": [
+      "- Emerson Polling",
+      "Aberdeen Insider",
       "Ballotpedia News",
-      "CAWP",
-      "Dakota News Now",
       "NBC News",
       "News From The States",
-      "PBS",
       "South Dakota News Watch",
-      "South Dakota Searchlight"
+      "South Dakota Searchlight",
+      "The New York Times"
     ]
   },
   "history": [
@@ -331,6 +330,50 @@
         "PBS",
         "South Dakota News Watch",
         "South Dakota Searchlight"
+      ]
+    },
+    {
+      "as_of": "2026-07-02T20:53:25Z",
+      "my_probability": 0.4201,
+      "my_confidence": "medium",
+      "market_implied_probability": 0.475,
+      "market_price_cents": 48.0,
+      "edge": -0.054900000000000004,
+      "yes_ask": 0.48,
+      "no_ask": 0.53,
+      "fee_per_contract": 0.02,
+      "ev_per_contract": 0.029900000000000055,
+      "limit_price": 0.52,
+      "ev_limit_per_contract": 0.0399,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "5pt gap vs a liquid market without high confidence — more likely my error than edge",
+      "prob_delta_vs_prev": -0.1074,
+      "trigger": "scheduled",
+      "strategy_id": "LQ5C-ensemble5-crowd",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "There is currently no direct evidence about Toby Doeden's likelihood to be the Republican nominee for Governor in South Dakota. The absence of specific information about his political positioning, endorsements, or campaign activity suggests a low to moderate probability. The reference class includes candidates with limited public visibility or early-stage campaigns. The probability is not strongly",
+      "key_drivers": [
+        "Lack of direct evidence about Toby Doeden's political activities or endorsements",
+        "No recent news or polling data indicating strong support for him"
+      ],
+      "reference_classes": [
+        "Candidates with limited public visibility in early-stage campaigns",
+        "Underdog candidates in state-level primaries"
+      ],
+      "research_refs": [
+        "- Emerson Polling",
+        "Aberdeen Insider",
+        "Ballotpedia News",
+        "NBC News",
+        "News From The States",
+        "South Dakota News Watch",
+        "South Dakota Searchlight",
+        "The New York Times"
       ]
     }
   ],

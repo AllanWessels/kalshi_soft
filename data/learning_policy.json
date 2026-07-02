@@ -1,17 +1,17 @@
 {
-  "n_resolved": 31,
+  "n_resolved": 40,
   "recalibration": {
     "mistral": {
       "k": 1.0,
       "n": 0
     },
-    "qwen": {
-      "k": 0.8797,
-      "n": 7
-    },
     "opus": {
       "k": 0.8014,
       "n": 11
+    },
+    "qwen": {
+      "k": 0.8125,
+      "n": 15
     }
   },
   "segment_skill": {
@@ -36,20 +36,20 @@
       "skill": 0.02272
     },
     "economy / jobs-unemployment": {
-      "n": 1,
-      "skill": 0.00509
+      "n": 2,
+      "skill": 0.00518
     },
     "economy / fed-rates": {
-      "n": 6,
-      "skill": -0.01277
+      "n": 7,
+      "skill": -0.012
     },
     "politics / legislation": {
       "n": 2,
       "skill": -0.00041
     },
     "politics / foreign-policy": {
-      "n": 3,
-      "skill": -0.00673
+      "n": 4,
+      "skill": -0.00578
     },
     "culture / box-office": {
       "n": 3,
@@ -60,17 +60,21 @@
       "skill": -0.08599
     },
     "politics / us-president": {
-      "n": 3,
-      "skill": -0.0253
+      "n": 6,
+      "skill": -0.02149
     },
     "politics / primary-nomination": {
       "n": 1,
       "skill": -0.00713
+    },
+    "politics / other-politics": {
+      "n": 3,
+      "skill": -2e-05
     }
   },
   "model_weights": {
     "opus": 0.08041374373418965,
-    "qwen": 0.40158609575285054
+    "qwen": 0.5496394541502448
   },
   "params": {
     "K_CAL": 25,
@@ -78,5 +82,5 @@
     "K_ALPHA": 10,
     "SKILL_FULL": 0.05
   },
-  "updated_at": "2026-06-29T19:16:57Z"
+  "updated_at": "2026-07-02T20:37:27Z"
 }

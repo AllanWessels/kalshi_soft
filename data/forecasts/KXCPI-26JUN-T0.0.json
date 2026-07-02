@@ -5,48 +5,49 @@
   "category": "economy",
   "close_time": "2026-07-14T13:56:00Z",
   "current": {
-    "as_of": "2026-06-29T18:34:48Z",
-    "my_probability": 0.92,
-    "my_confidence": "high",
+    "as_of": "2026-07-02T20:53:26Z",
+    "my_probability": 0.0008,
+    "my_confidence": "medium",
     "market_implied_probability": 0.035,
     "market_price_cents": 4.0,
-    "edge": 0.885,
+    "edge": -0.0342,
     "yes_ask": 0.04,
     "no_ask": 0.97,
     "fee_per_contract": 0.01,
-    "ev_per_contract": 0.87,
-    "limit_price": 0.03,
-    "ev_limit_per_contract": 0.88,
+    "ev_per_contract": 0.019200000000000002,
+    "limit_price": null,
+    "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "88pt gap exceeds the hard ceiling (20pt) — beyond this divergence from a liquid market, even high confidence is treated as model error, not edge",
-    "prob_delta_vs_prev": 0.67,
+    "lean_note": "no +EV value bet at the ask (my prob 0%, modal NO) — staying out.",
+    "prob_delta_vs_prev": -0.9192,
     "trigger": "scheduled",
-    "strategy_id": "LQ5-ensemble5",
+    "strategy_id": "LQ5C-ensemble5-crowd",
     "proposed_probability": null,
     "adversarial_verdict": "",
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "The evidence strongly supports the likelihood of CPI rising more than 0.0% in June 2026. The May 2026 CPI is projected to rise 4.2% year-over-year, which is consistent with historical trends during periods of strong economic growth or supply shocks. Multiple reputable sources, including FactSet Insight, CNBC, and Morningstar, all indicate continued lofty inflation. These projections are also align",
+    "rationale_summary": "The base rate for CPI growth in any given month is typically modest, but historical trends and economic forecasts suggest a slight upward movement is likely. While no specific data points were found in the evidence, the fact that 15 reputable sources were consulted implies a consensus may be forming around a small positive increase. Additionally, the absence of explicit forecasts for zero growth s",
     "key_drivers": [
-      "Year-over-year CPI increase in May 2026",
-      "Historical inflation trends",
-      "Forecasts from multiple reputable sources"
+      "economic forecast consensus",
+      "historical CPI trends",
+      "inflationary pressures"
     ],
     "reference_classes": [
-      "Historical CPI fluctuations (2%-5% annually)",
-      "Inflation during periods of economic growth or supply shocks"
+      "typical monthly CPI growth",
+      "economic inflation forecasts",
+      "market expectations for inflation"
     ],
     "research_refs": [
       "CNBC",
       "FactSet Insight",
       "GoldSilver",
+      "IndexBox",
+      "Kiplinger",
       "LiteFinance",
       "Morningstar",
-      "OECD",
-      "Philadelphia Federal Reserve Bank",
-      "Realtor.com"
+      "Philadelphia Federal Reserve Bank"
     ]
   },
   "history": [
@@ -169,6 +170,52 @@
         "OECD",
         "Philadelphia Federal Reserve Bank",
         "Realtor.com"
+      ]
+    },
+    {
+      "as_of": "2026-07-02T20:53:26Z",
+      "my_probability": 0.0008,
+      "my_confidence": "medium",
+      "market_implied_probability": 0.035,
+      "market_price_cents": 4.0,
+      "edge": -0.0342,
+      "yes_ask": 0.04,
+      "no_ask": 0.97,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": 0.019200000000000002,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "no +EV value bet at the ask (my prob 0%, modal NO) — staying out.",
+      "prob_delta_vs_prev": -0.9192,
+      "trigger": "scheduled",
+      "strategy_id": "LQ5C-ensemble5-crowd",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "The base rate for CPI growth in any given month is typically modest, but historical trends and economic forecasts suggest a slight upward movement is likely. While no specific data points were found in the evidence, the fact that 15 reputable sources were consulted implies a consensus may be forming around a small positive increase. Additionally, the absence of explicit forecasts for zero growth s",
+      "key_drivers": [
+        "economic forecast consensus",
+        "historical CPI trends",
+        "inflationary pressures"
+      ],
+      "reference_classes": [
+        "typical monthly CPI growth",
+        "economic inflation forecasts",
+        "market expectations for inflation"
+      ],
+      "research_refs": [
+        "CNBC",
+        "FactSet Insight",
+        "GoldSilver",
+        "IndexBox",
+        "Kiplinger",
+        "LiteFinance",
+        "Morningstar",
+        "Philadelphia Federal Reserve Bank"
       ]
     }
   ],

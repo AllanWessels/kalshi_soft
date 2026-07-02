@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-06-29T18:37:28Z",
+  "updated_at": "2026-07-02T20:56:56Z",
   "lessons": [
     {
       "id": "feedback-001",
@@ -208,6 +208,216 @@
       "rubric_scores": {},
       "judge_verdict": "Resolved NO; brier 0.010 vs 0.000. Well-calibrated near-certainty; critic flags sourcing only.",
       "disagreement": ""
+    },
+    {
+      "id": "2026-07-01T14:00:00Z-KXLAGODAYS-26JUN-0",
+      "created_at": "2026-07-02T20:56:42Z",
+      "source": "resolution",
+      "ticker": "KXLAGODAYS-26JUN-0",
+      "category": "politics",
+      "outcome": 1,
+      "final_my_probability": 0.9884,
+      "final_market_implied": 0.995,
+      "brier_mine": 0.006399999999999993,
+      "brier_market": 0.0012250000000000021,
+      "beat_market": false,
+      "what_went_right": "Called YES correctly (Trump made 0 June Mar-a-Lago trips); Brier 0.0064 ~ market.",
+      "what_went_wrong": "Rationale did not name 3 independent sources or an explicit CI.",
+      "lesson": "Even on high-confidence near-certain markets, write the base rate, an explicit confidence interval, and 3 named independent sources into the rationale so the reasoning is auditable — accuracy was fine, documentation was thin.",
+      "pattern_tag": "doc-hygiene-on-confident-forecasts",
+      "applied_to_skill": true,
+      "critic_model": "qwen3-14b",
+      "rubric_scores": {
+        "base_rate_established": {
+          "pass": true
+        },
+        "three_independent_sources": {
+          "pass": false
+        },
+        "confidence_interval": {
+          "pass": false
+        },
+        "market_divergence_justified": {
+          "pass": false
+        }
+      },
+      "judge_verdict": "Forecast was accurate (Brier<0.01, outcome matched). Critic's rubric misses are documentation gaps in the rationale_summary, not analytical errors; no change to probability warranted, but adopt explicit base-rate + CI + named-source hygiene.",
+      "disagreement": "Critic graded the written reasoning (process rubric) as failing while the outcome was near-perfectly forecast — the gap is process-documentation vs. realized accuracy."
+    },
+    {
+      "id": "2026-07-01T14:00:00Z-KXLAGODAYS-26JUN-1",
+      "created_at": "2026-07-02T20:56:42Z",
+      "source": "resolution",
+      "ticker": "KXLAGODAYS-26JUN-1",
+      "category": "politics",
+      "outcome": 0,
+      "final_my_probability": 0.0,
+      "final_market_implied": 0.005,
+      "brier_mine": 0.010000000000000002,
+      "brier_market": 0.0006250000000000001,
+      "beat_market": false,
+      "what_went_right": "Called NO correctly; Brier 0.0100.",
+      "what_went_wrong": "No base rate/CI/sources documented in reasoning.",
+      "lesson": "Even on high-confidence near-certain markets, write the base rate, an explicit confidence interval, and 3 named independent sources into the rationale so the reasoning is auditable — accuracy was fine, documentation was thin.",
+      "pattern_tag": "doc-hygiene-on-confident-forecasts",
+      "applied_to_skill": true,
+      "critic_model": "qwen3-14b",
+      "rubric_scores": {
+        "base_rate_established": {
+          "pass": false
+        },
+        "three_independent_sources": {
+          "pass": false
+        },
+        "confidence_interval": {
+          "pass": false
+        },
+        "market_divergence_justified": {
+          "pass": false
+        }
+      },
+      "judge_verdict": "Forecast was accurate (Brier<0.01, outcome matched). Critic's rubric misses are documentation gaps in the rationale_summary, not analytical errors; no change to probability warranted, but adopt explicit base-rate + CI + named-source hygiene.",
+      "disagreement": "Critic graded the written reasoning (process rubric) as failing while the outcome was near-perfectly forecast — the gap is process-documentation vs. realized accuracy."
+    },
+    {
+      "id": "2026-07-01T14:00:00Z-KXLAGODAYS-26JUN-2",
+      "created_at": "2026-07-02T20:56:42Z",
+      "source": "resolution",
+      "ticker": "KXLAGODAYS-26JUN-2",
+      "category": "politics",
+      "outcome": 0,
+      "final_my_probability": 0.0,
+      "final_market_implied": 0.005,
+      "brier_mine": 0.0004,
+      "brier_market": 0.0001,
+      "beat_market": false,
+      "what_went_right": "Called NO correctly; Brier 0.0004 (beat model avg).",
+      "what_went_wrong": "No explicit base rate/CI/named sources.",
+      "lesson": "Even on high-confidence near-certain markets, write the base rate, an explicit confidence interval, and 3 named independent sources into the rationale so the reasoning is auditable — accuracy was fine, documentation was thin.",
+      "pattern_tag": "doc-hygiene-on-confident-forecasts",
+      "applied_to_skill": true,
+      "critic_model": "qwen3-14b",
+      "rubric_scores": {
+        "base_rate_established": {
+          "pass": false
+        },
+        "three_independent_sources": {
+          "pass": false
+        },
+        "confidence_interval": {
+          "pass": false
+        },
+        "market_divergence_justified": {
+          "pass": false
+        }
+      },
+      "judge_verdict": "Forecast was accurate (Brier<0.01, outcome matched). Critic's rubric misses are documentation gaps in the rationale_summary, not analytical errors; no change to probability warranted, but adopt explicit base-rate + CI + named-source hygiene.",
+      "disagreement": "Critic graded the written reasoning (process rubric) as failing while the outcome was near-perfectly forecast — the gap is process-documentation vs. realized accuracy."
+    },
+    {
+      "id": "2026-07-01T14:00:00Z-KXVISITIRAN-26JUL01-AHOU",
+      "created_at": "2026-07-02T20:56:42Z",
+      "source": "resolution",
+      "ticker": "KXVISITIRAN-26JUL01-AHOU",
+      "category": "politics",
+      "outcome": 0,
+      "final_my_probability": 0.0,
+      "final_market_implied": 0.0015,
+      "brier_mine": 0.000225,
+      "brier_market": 0.000169,
+      "beat_market": false,
+      "what_went_right": "Called NO correctly (no House visit to Iran); Brier 0.0002.",
+      "what_went_wrong": "Base rate for diplomatic visits not stated; no CI.",
+      "lesson": "Even on high-confidence near-certain markets, write the base rate, an explicit confidence interval, and 3 named independent sources into the rationale so the reasoning is auditable — accuracy was fine, documentation was thin.",
+      "pattern_tag": "doc-hygiene-on-confident-forecasts",
+      "applied_to_skill": true,
+      "critic_model": "qwen3-14b",
+      "rubric_scores": {
+        "base_rate_established": {
+          "pass": false
+        },
+        "three_independent_sources": {
+          "pass": false
+        },
+        "confidence_interval": {
+          "pass": false
+        },
+        "market_divergence_justified": {
+          "pass": true
+        }
+      },
+      "judge_verdict": "Forecast was accurate (Brier<0.01, outcome matched). Critic's rubric misses are documentation gaps in the rationale_summary, not analytical errors; no change to probability warranted, but adopt explicit base-rate + CI + named-source hygiene.",
+      "disagreement": "Critic graded the written reasoning (process rubric) as failing while the outcome was near-perfectly forecast — the gap is process-documentation vs. realized accuracy."
+    },
+    {
+      "id": "2026-07-01T14:00:00Z-KXVISITIRAN-26JUL01-JVAN",
+      "created_at": "2026-07-02T20:56:42Z",
+      "source": "resolution",
+      "ticker": "KXVISITIRAN-26JUL01-JVAN",
+      "category": "politics",
+      "outcome": 0,
+      "final_my_probability": 0.0,
+      "final_market_implied": 0.0035,
+      "brier_mine": 0.0004,
+      "brier_market": 0.00012099999999999999,
+      "beat_market": false,
+      "what_went_right": "Called NO correctly (Vance no Iran visit); Brier 0.0004.",
+      "what_went_wrong": "No 3 named sources or CI.",
+      "lesson": "Even on high-confidence near-certain markets, write the base rate, an explicit confidence interval, and 3 named independent sources into the rationale so the reasoning is auditable — accuracy was fine, documentation was thin.",
+      "pattern_tag": "doc-hygiene-on-confident-forecasts",
+      "applied_to_skill": true,
+      "critic_model": "qwen3-14b",
+      "rubric_scores": {
+        "base_rate_established": {
+          "pass": true
+        },
+        "three_independent_sources": {
+          "pass": false
+        },
+        "confidence_interval": {
+          "pass": false
+        },
+        "market_divergence_justified": {
+          "pass": true
+        }
+      },
+      "judge_verdict": "Forecast was accurate (Brier<0.01, outcome matched). Critic's rubric misses are documentation gaps in the rationale_summary, not analytical errors; no change to probability warranted, but adopt explicit base-rate + CI + named-source hygiene.",
+      "disagreement": "Critic graded the written reasoning (process rubric) as failing while the outcome was near-perfectly forecast — the gap is process-documentation vs. realized accuracy."
+    },
+    {
+      "id": "2026-07-01T14:00:00Z-KXVISITIRAN-26JUL01-MRUB",
+      "created_at": "2026-07-02T20:56:42Z",
+      "source": "resolution",
+      "ticker": "KXVISITIRAN-26JUL01-MRUB",
+      "category": "politics",
+      "outcome": 0,
+      "final_my_probability": 0.0,
+      "final_market_implied": 0.002,
+      "brier_mine": 0.000144,
+      "brier_market": 0.000169,
+      "beat_market": true,
+      "what_went_right": "Called NO correctly (Rubio no Iran visit); Brier 0.0001.",
+      "what_went_wrong": "Base rate/sources/CI not documented.",
+      "lesson": "Even on high-confidence near-certain markets, write the base rate, an explicit confidence interval, and 3 named independent sources into the rationale so the reasoning is auditable — accuracy was fine, documentation was thin.",
+      "pattern_tag": "doc-hygiene-on-confident-forecasts",
+      "applied_to_skill": true,
+      "critic_model": "qwen3-14b",
+      "rubric_scores": {
+        "base_rate_established": {
+          "pass": false
+        },
+        "three_independent_sources": {
+          "pass": false
+        },
+        "confidence_interval": {
+          "pass": false
+        },
+        "market_divergence_justified": {
+          "pass": true
+        }
+      },
+      "judge_verdict": "Forecast was accurate (Brier<0.01, outcome matched). Critic's rubric misses are documentation gaps in the rationale_summary, not analytical errors; no change to probability warranted, but adopt explicit base-rate + CI + named-source hygiene.",
+      "disagreement": "Critic graded the written reasoning (process rubric) as failing while the outcome was near-perfectly forecast — the gap is process-documentation vs. realized accuracy."
     }
   ]
 }

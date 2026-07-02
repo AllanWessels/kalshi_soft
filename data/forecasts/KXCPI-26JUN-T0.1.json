@@ -5,50 +5,49 @@
   "category": "economy",
   "close_time": "2026-07-14T13:56:00Z",
   "current": {
-    "as_of": "2026-06-29T18:34:48Z",
-    "my_probability": 0.7933,
+    "as_of": "2026-07-02T20:53:26Z",
+    "my_probability": 0.0003,
     "my_confidence": "high",
-    "market_implied_probability": 0.025,
+    "market_implied_probability": 0.02,
     "market_price_cents": 2.0,
-    "edge": 0.7683,
-    "yes_ask": 0.03,
-    "no_ask": 0.98,
-    "fee_per_contract": 0.01,
-    "ev_per_contract": 0.7533,
-    "limit_price": 0.02,
-    "ev_limit_per_contract": 0.7633,
+    "edge": -0.0197,
+    "yes_ask": 0.04,
+    "no_ask": 1.0,
+    "fee_per_contract": 0.0,
+    "ev_per_contract": -0.00029999999999996696,
+    "limit_price": null,
+    "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "77pt gap exceeds the hard ceiling (20pt) — beyond this divergence from a liquid market, even high confidence is treated as model error, not edge",
-    "prob_delta_vs_prev": 0.6733,
+    "lean_note": "no +EV value bet at the ask (my prob 0%, modal NO) — staying out.",
+    "prob_delta_vs_prev": -0.793,
     "trigger": "scheduled",
-    "strategy_id": "LQ5-ensemble5",
+    "strategy_id": "LQ5C-ensemble5-crowd",
     "proposed_probability": null,
     "adversarial_verdict": "",
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "The base rate for monthly CPI increases is typically small, often in the range of 0.1% to 0.3% in normal economic conditions. However, given the current global economic environment, including potential inflationary pressures from supply chain disruptions, rising energy prices, and strong consumer demand, the likelihood of a CPI increase exceeding 0.1% in June 2026 is elevated. Multiple sources, th",
+    "rationale_summary": "The evidence suggests that inflation has already peaked in May 2026, with energy prices falling in June, which historically has a significant impact on CPI. Additionally, the Netherlands and Italy have reported slowing inflation rates in June 2026, which supports the notion of a decline in overall inflationary pressure. However, the question is about whether CPI rises more than 0.1% in June 2026, ",
     "key_drivers": [
-      "Global inflationary pressures",
-      "Energy prices",
-      "Consumer demand",
-      "Supply chain disruptions"
+      "energy price changes",
+      "global economic conditions",
+      "historical inflation trends"
     ],
     "reference_classes": [
-      "Historical CPI trends",
-      "Inflation forecasts from major economic institutions",
-      "Global economic outlooks"
+      "historical energy price impact on CPI",
+      "global inflation trends",
+      "Fed response to inflation"
     ],
     "research_refs": [
-      "Atlanta - Federal Reserve Bank",
       "CNBC",
-      "Congressional Budget Office",
-      "Deloitte",
-      "European Central Bank",
+      "CoinDesk",
       "FactSet Insight",
       "GoldSilver",
-      "Investopedia"
+      "IndexBox",
+      "LiteFinance",
+      "Morningstar",
+      "Philadelphia Federal Reserve Bank"
     ]
   },
   "history": [
@@ -175,6 +174,52 @@
         "FactSet Insight",
         "GoldSilver",
         "Investopedia"
+      ]
+    },
+    {
+      "as_of": "2026-07-02T20:53:26Z",
+      "my_probability": 0.0003,
+      "my_confidence": "high",
+      "market_implied_probability": 0.02,
+      "market_price_cents": 2.0,
+      "edge": -0.0197,
+      "yes_ask": 0.04,
+      "no_ask": 1.0,
+      "fee_per_contract": 0.0,
+      "ev_per_contract": -0.00029999999999996696,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "no +EV value bet at the ask (my prob 0%, modal NO) — staying out.",
+      "prob_delta_vs_prev": -0.793,
+      "trigger": "scheduled",
+      "strategy_id": "LQ5C-ensemble5-crowd",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "The evidence suggests that inflation has already peaked in May 2026, with energy prices falling in June, which historically has a significant impact on CPI. Additionally, the Netherlands and Italy have reported slowing inflation rates in June 2026, which supports the notion of a decline in overall inflationary pressure. However, the question is about whether CPI rises more than 0.1% in June 2026, ",
+      "key_drivers": [
+        "energy price changes",
+        "global economic conditions",
+        "historical inflation trends"
+      ],
+      "reference_classes": [
+        "historical energy price impact on CPI",
+        "global inflation trends",
+        "Fed response to inflation"
+      ],
+      "research_refs": [
+        "CNBC",
+        "CoinDesk",
+        "FactSet Insight",
+        "GoldSilver",
+        "IndexBox",
+        "LiteFinance",
+        "Morningstar",
+        "Philadelphia Federal Reserve Bank"
       ]
     }
   ],
