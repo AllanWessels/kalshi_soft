@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-02T20:56:56Z",
+  "updated_at": "2026-07-17T19:47:29Z",
   "lessons": [
     {
       "id": "feedback-001",
@@ -418,6 +418,60 @@
       },
       "judge_verdict": "Forecast was accurate (Brier<0.01, outcome matched). Critic's rubric misses are documentation gaps in the rationale_summary, not analytical errors; no change to probability warranted, but adopt explicit base-rate + CI + named-source hygiene.",
       "disagreement": "Critic graded the written reasoning (process rubric) as failing while the outcome was near-perfectly forecast — the gap is process-documentation vs. realized accuracy."
+    },
+    {
+      "id": "2026-07-14T12:25:00Z-KXCPI-26JUN-T0.1",
+      "created_at": "2026-07-17T19:47:11Z",
+      "source": "resolution",
+      "ticker": "KXCPI-26JUN-T0.1",
+      "category": "economy",
+      "outcome": 0,
+      "final_my_probability": 0.0003,
+      "final_market_implied": 0.02,
+      "brier_mine": 0.010000000000000002,
+      "brier_market": 0.018225,
+      "beat_market": true,
+      "what_went_right": "Correctly priced a near-zero-probability tail threshold; beat market Brier.",
+      "what_went_wrong": "Rationale summary omitted an explicit base rate and confidence interval.",
+      "lesson": "Even on easy directional threshold calls, state the base rate and a rough confidence interval in the rationale so the record is auditable.",
+      "pattern_tag": "process-ci-sources",
+      "applied_to_skill": true,
+      "critic_model": "qwen-local",
+      "rubric_scores": {
+        "base_rate_established": false,
+        "three_independent_sources": true,
+        "confidence_interval": false,
+        "market_divergence_justified": true
+      },
+      "judge_verdict": "Forecast was correct and beat the market on Brier (0.010 vs 0.018); low prob on a +0.1% MoM CPI threshold that did not hit was well-founded given the observed disinflation trend. Critic's flags (no explicit CI, base rate not restated) are process-cosmetic here, not causal to any error.",
+      "disagreement": "Critic penalized missing confidence interval; Defender showed the point estimate was correct and market-beating, so the gap is presentation not accuracy."
+    },
+    {
+      "id": "2026-07-14T12:25:00Z-KXCPI-26JUN-T-0.1",
+      "created_at": "2026-07-17T19:47:12Z",
+      "source": "resolution",
+      "ticker": "KXCPI-26JUN-T-0.1",
+      "category": "economy",
+      "outcome": 0,
+      "final_my_probability": 0.0454,
+      "final_market_implied": 0.115,
+      "brier_mine": 0.1296,
+      "brier_market": 0.093025,
+      "beat_market": false,
+      "what_went_right": "Established a base rate for MoM CPI distribution.",
+      "what_went_wrong": "Diverged from market price without ≥3 independent sources backing the divergence; lost to market on Brier.",
+      "lesson": "On tight CPI/threshold buckets near the distribution mode, do not diverge from market price unless ≥3 independent sources justify it; otherwise anchor closer to the market.",
+      "pattern_tag": "process-ci-sources",
+      "applied_to_skill": true,
+      "critic_model": "qwen-local",
+      "rubric_scores": {
+        "base_rate_established": true,
+        "three_independent_sources": false,
+        "confidence_interval": false,
+        "market_divergence_justified": false
+      },
+      "judge_verdict": "Outcome NO; forecast was directionally acceptable but slightly worse than market on Brier (0.130 vs 0.093). Critic correctly notes the divergence from market-implied (0.115) was not justified with independent sourcing — on a threshold this close to the mode, deferring toward the market price would have scored better.",
+      "disagreement": "Critic flagged unjustified market divergence; Defender concedes the divergence was unearned here (thin sourcing), so critic wins this rubric line."
     }
   ]
 }

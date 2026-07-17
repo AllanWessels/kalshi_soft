@@ -1,17 +1,17 @@
 {
-  "n_resolved": 40,
+  "n_resolved": 47,
   "recalibration": {
-    "mistral": {
-      "k": 1.0,
-      "n": 0
-    },
     "opus": {
       "k": 0.8014,
       "n": 11
     },
+    "mistral": {
+      "k": 1.0,
+      "n": 1
+    },
     "qwen": {
-      "k": 0.8125,
-      "n": 15
+      "k": 0.7946,
+      "n": 21
     }
   },
   "segment_skill": {
@@ -28,8 +28,8 @@
       "skill": 0.00475
     },
     "politics / us-senate": {
-      "n": 4,
-      "skill": -0.00929
+      "n": 5,
+      "skill": -0.01034
     },
     "politics / foreign-election": {
       "n": 1,
@@ -48,8 +48,8 @@
       "skill": -0.00041
     },
     "politics / foreign-policy": {
-      "n": 4,
-      "skill": -0.00578
+      "n": 5,
+      "skill": -0.00516
     },
     "culture / box-office": {
       "n": 3,
@@ -70,11 +70,16 @@
     "politics / other-politics": {
       "n": 3,
       "skill": -2e-05
+    },
+    "economy / inflation-cpi": {
+      "n": 5,
+      "skill": -0.01834
     }
   },
   "model_weights": {
     "opus": 0.08041374373418965,
-    "qwen": 0.5496394541502448
+    "qwen": 0.4754327271863616,
+    "mistral": 0.7925497493467781
   },
   "params": {
     "K_CAL": 25,
@@ -82,5 +87,5 @@
     "K_ALPHA": 10,
     "SKILL_FULL": 0.05
   },
-  "updated_at": "2026-07-02T20:37:27Z"
+  "updated_at": "2026-07-17T19:18:20Z"
 }

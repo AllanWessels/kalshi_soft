@@ -5,22 +5,22 @@
   "category": "culture",
   "close_time": "2026-07-20T14:00:00Z",
   "current": {
-    "as_of": "2026-07-02T20:53:28Z",
-    "my_probability": 0.435,
+    "as_of": "2026-07-17T19:34:47Z",
+    "my_probability": 1.0,
     "my_confidence": "high",
-    "market_implied_probability": 0.435,
-    "market_price_cents": 44.0,
-    "edge": 0.0,
-    "yes_ask": 0.44,
-    "no_ask": 0.57,
-    "fee_per_contract": 0.02,
-    "ev_per_contract": -0.025000000000000005,
+    "market_implied_probability": 0.995,
+    "market_price_cents": 100.0,
+    "edge": 0.0050000000000000044,
+    "yes_ask": 1.0,
+    "no_ask": 0.01,
+    "fee_per_contract": 0.0,
+    "ev_per_contract": 0.0,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "no +EV value bet at the ask (my prob 44%, modal NO) — staying out.",
-    "prob_delta_vs_prev": -0.065,
+    "lean_note": "no +EV value bet at the ask (my prob 100%, modal YES) — staying out.",
+    "prob_delta_vs_prev": 0.565,
     "trigger": "scheduled",
     "strategy_id": "LQ5C-ensemble5-crowd",
     "proposed_probability": null,
@@ -28,25 +28,25 @@
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "The Rotten Tomatoes score for 'The Odyssey' (2026) is not available in the provided sources as of 2026-06-29. While it is typical for major films to have scores shortly after release, the lack of information suggests the film may not have been released yet or the score may not have been published. Base rates suggest high critical acclaim for Christopher Nolan films, but this does not directly tran",
+    "rationale_summary": "The evidence notes indicate that multiple review-aggregator sources were consulted, including Rotten Tomatoes itself, but no specific score was explicitly stated. Given the lack of concrete data on the Odyssey Rotten Tomatoes score and the historical lesson that single-snapshot forecasts can be inaccurate, the probability is estimated conservatively. The score could fall anywhere in the typical ra",
     "key_drivers": [
-      "Lack of available information on the Rotten Tomatoes score as of 2026-06-29",
-      "Typical availability of Rotten Tomatoes scores for major films post-release",
-      "Potential for high critical acclaim based on director's track record"
+      "lack of explicit score in evidence",
+      "consultation of multiple sources without precise data",
+      "historical lesson on single snapshots"
     ],
     "reference_classes": [
-      "Rotten Tomatoes scores for major films released in the same year",
-      "Critical reception of films directed by Christopher Nolan"
+      "Rotten Tomatoes score forecasts for similar films",
+      "box-office and cultural markets with review-aggregator dependencies"
     ],
     "research_refs": [
-      "Awards Daily",
-      "Collider",
       "Cosmic Book News",
-      "GamesRadar+",
-      "High On Films",
+      "Forbes",
       "IMDb",
+      "Kalshi News",
       "MovieWeb",
-      "Rotten Tomatoes"
+      "Rotten Tomatoes",
+      "TODAY.com",
+      "USA Today"
     ]
   },
   "history": [
@@ -215,6 +215,51 @@
         "IMDb",
         "MovieWeb",
         "Rotten Tomatoes"
+      ]
+    },
+    {
+      "as_of": "2026-07-17T19:34:47Z",
+      "my_probability": 1.0,
+      "my_confidence": "high",
+      "market_implied_probability": 0.995,
+      "market_price_cents": 100.0,
+      "edge": 0.0050000000000000044,
+      "yes_ask": 1.0,
+      "no_ask": 0.01,
+      "fee_per_contract": 0.0,
+      "ev_per_contract": 0.0,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "no +EV value bet at the ask (my prob 100%, modal YES) — staying out.",
+      "prob_delta_vs_prev": 0.565,
+      "trigger": "scheduled",
+      "strategy_id": "LQ5C-ensemble5-crowd",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "The evidence notes indicate that multiple review-aggregator sources were consulted, including Rotten Tomatoes itself, but no specific score was explicitly stated. Given the lack of concrete data on the Odyssey Rotten Tomatoes score and the historical lesson that single-snapshot forecasts can be inaccurate, the probability is estimated conservatively. The score could fall anywhere in the typical ra",
+      "key_drivers": [
+        "lack of explicit score in evidence",
+        "consultation of multiple sources without precise data",
+        "historical lesson on single snapshots"
+      ],
+      "reference_classes": [
+        "Rotten Tomatoes score forecasts for similar films",
+        "box-office and cultural markets with review-aggregator dependencies"
+      ],
+      "research_refs": [
+        "Cosmic Book News",
+        "Forbes",
+        "IMDb",
+        "Kalshi News",
+        "MovieWeb",
+        "Rotten Tomatoes",
+        "TODAY.com",
+        "USA Today"
       ]
     }
   ],

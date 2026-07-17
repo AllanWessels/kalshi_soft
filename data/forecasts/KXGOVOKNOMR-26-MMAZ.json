@@ -5,54 +5,49 @@
   "category": "politics",
   "close_time": "2026-06-30T14:00:00Z",
   "current": {
-    "as_of": "2026-07-02T20:53:24Z",
-    "my_probability": 0.6665,
+    "as_of": "2026-07-17T19:34:38Z",
+    "my_probability": 0.5935,
     "my_confidence": "high",
-    "market_implied_probability": 0.775,
-    "market_price_cents": 78.0,
-    "edge": -0.10850000000000004,
-    "yes_ask": 0.78,
-    "no_ask": 0.23,
+    "market_implied_probability": 0.815,
+    "market_price_cents": 82.0,
+    "edge": -0.22149999999999992,
+    "yes_ask": 0.82,
+    "no_ask": 0.19,
     "fee_per_contract": 0.02,
-    "ev_per_contract": 0.0835,
-    "limit_price": 0.22,
-    "ev_limit_per_contract": 0.0935,
+    "ev_per_contract": 0.19649999999999998,
+    "limit_price": 0.18,
+    "ev_limit_per_contract": 0.2065,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "ADVERSARIAL VETO: The forecaster's position is overconfident and lacks sufficient evidence to justify a significant divergence from the market-implied probability. The edge is not convincingly demonstrated, and the reasoning contains gaps that undermine the ",
-    "prob_delta_vs_prev": 0.08679999999999999,
+    "lean_note": "22pt gap exceeds the hard ceiling (20pt) — beyond this divergence from a liquid market, even high confidence is treated as model error, not edge",
+    "prob_delta_vs_prev": -0.07299999999999995,
     "trigger": "scheduled",
     "strategy_id": "LQ5-ensemble5",
-    "proposed_probability": 0.6665,
-    "adversarial_verdict": "veto",
-    "adversarial_challenged_prob": 0.6665,
-    "adversarial_concerns": [
-      "The position diverges significantly from the market-implied probability (0.775), suggesting a potential misjudgment of the current political landscape or underestimation of Trump's influence.",
-      "The reasoning lacks specific, credible evidence to justify the confidence in the 'NO' position, especially given Mazzei's advancement to a runoff and Trump's backing.",
-      "The base rate of Oklahoma's gubernatorial primaries is not fully explained or contextualized, leading to potential base-rate neglect."
-    ],
-    "adversarial_model": "qwen3:14b-q4_K_M",
-    "rationale_summary": "The evidence indicates that Mike Mazzei has advanced to a runoff with AG Drummond, but the outcome of the runoff remains uncertain. While Mazzei has Trump's backing, which could influence voter turnout and support, the impact of outside spending and the strength of AG Drummond's campaign are key factors that remain unresolved. The base rate of Oklahoma's gubernatorial primaries typically involves ",
+    "proposed_probability": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": "",
+    "rationale_summary": "There is currently no direct evidence about Mike Mazzei's candidacy or likelihood of securing the Republican nomination for Governor in Oklahoma. The absence of specific information about his political activity, endorsements, or campaign efforts makes it difficult to assign a higher probability. The base rate for any single individual becoming a gubernatorial nominee is generally low, especially i",
     "key_drivers": [
-      "Outcome of the runoff between AG Drummond and Mike Mazzei",
-      "Impact of outside spending on the runoff election",
-      "Strength of Trump's influence in Oklahoma",
-      "Voter preferences and support for AG Drummond"
+      "Lack of public information on Mazzei's political involvement",
+      "No recent announcements or endorsements",
+      "Competitive nature of Oklahoma's Republican primary field"
     ],
     "reference_classes": [
-      "Oklahoma's gubernatorial primary elections with multiple candidates and runoffs",
-      "Republican primaries in Oklahoma with high outside spending",
-      "Competitive gubernatorial runoffs in other states"
+      "Likelihood of a little-known candidate winning a major party nomination",
+      "Success of underdog candidates in state-level elections",
+      "Nomination probabilities for non-established politicians"
     ],
     "research_refs": [
+      "C-SPAN",
+      "KGOU",
       "KOCO",
       "KOSU",
       "KSWO 7News",
-      "KXII",
       "News 9",
       "NonDoc Media",
-      "Oklahoma Voice",
-      "Oklahoma Watch"
+      "Oklahoma Voice"
     ]
   },
   "history": [
@@ -402,6 +397,52 @@
         "NonDoc Media",
         "Oklahoma Voice",
         "Oklahoma Watch"
+      ]
+    },
+    {
+      "as_of": "2026-07-17T19:34:38Z",
+      "my_probability": 0.5935,
+      "my_confidence": "high",
+      "market_implied_probability": 0.815,
+      "market_price_cents": 82.0,
+      "edge": -0.22149999999999992,
+      "yes_ask": 0.82,
+      "no_ask": 0.19,
+      "fee_per_contract": 0.02,
+      "ev_per_contract": 0.19649999999999998,
+      "limit_price": 0.18,
+      "ev_limit_per_contract": 0.2065,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "22pt gap exceeds the hard ceiling (20pt) — beyond this divergence from a liquid market, even high confidence is treated as model error, not edge",
+      "prob_delta_vs_prev": -0.07299999999999995,
+      "trigger": "scheduled",
+      "strategy_id": "LQ5-ensemble5",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "There is currently no direct evidence about Mike Mazzei's candidacy or likelihood of securing the Republican nomination for Governor in Oklahoma. The absence of specific information about his political activity, endorsements, or campaign efforts makes it difficult to assign a higher probability. The base rate for any single individual becoming a gubernatorial nominee is generally low, especially i",
+      "key_drivers": [
+        "Lack of public information on Mazzei's political involvement",
+        "No recent announcements or endorsements",
+        "Competitive nature of Oklahoma's Republican primary field"
+      ],
+      "reference_classes": [
+        "Likelihood of a little-known candidate winning a major party nomination",
+        "Success of underdog candidates in state-level elections",
+        "Nomination probabilities for non-established politicians"
+      ],
+      "research_refs": [
+        "C-SPAN",
+        "KGOU",
+        "KOCO",
+        "KOSU",
+        "KSWO 7News",
+        "News 9",
+        "NonDoc Media",
+        "Oklahoma Voice"
       ]
     }
   ],

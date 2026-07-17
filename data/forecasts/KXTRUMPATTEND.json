@@ -5,48 +5,53 @@
   "category": "politics",
   "close_time": "2026-07-20T14:00:00Z",
   "current": {
-    "as_of": "2026-07-02T20:53:28Z",
-    "my_probability": 0.865,
-    "my_confidence": "medium",
-    "market_implied_probability": 0.865,
-    "market_price_cents": 86.0,
-    "edge": 0.0,
-    "yes_ask": 0.87,
-    "no_ask": 0.14,
+    "as_of": "2026-07-17T19:34:53Z",
+    "my_probability": 0.9148,
+    "my_confidence": "high",
+    "market_implied_probability": 0.9595,
+    "market_price_cents": 96.0,
+    "edge": -0.04470000000000007,
+    "yes_ask": 0.96,
+    "no_ask": 0.041,
     "fee_per_contract": 0.01,
-    "ev_per_contract": -0.015000000000000005,
-    "limit_price": null,
-    "ev_limit_per_contract": null,
+    "ev_per_contract": 0.03420000000000005,
+    "limit_price": 0.04,
+    "ev_limit_per_contract": 0.0352,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "no +EV value bet at the ask (my prob 86%, modal YES) — staying out.",
-    "prob_delta_vs_prev": 0.025000000000000022,
+    "lean_note": "ADVERSARIAL VETO: The position is not supported by credible, specific evidence, and the divergence from the market implies a lack of alignment with broader consensus. The reasoning is internally inconsistent and lacks sufficient detail to justify the high co",
+    "prob_delta_vs_prev": 0.049799999999999955,
     "trigger": "scheduled",
     "strategy_id": "LQ5C-ensemble5-crowd",
-    "proposed_probability": null,
-    "adversarial_verdict": "",
-    "adversarial_challenged_prob": null,
-    "adversarial_concerns": [],
-    "adversarial_model": "",
-    "rationale_summary": "The base rate for a former U.S. president attending a non-U.S. international sporting event is low, especially one as high-profile as the FIFA World Cup Final. There is no direct evidence in the provided sources indicating Trump's attendance. While he may have a history of high-profile engagements, there is no clear indication of a specific event-related invitation or public commitment to attend. ",
+    "proposed_probability": 0.9148,
+    "adversarial_verdict": "veto",
+    "adversarial_challenged_prob": 0.9148,
+    "adversarial_concerns": [
+      "The proposed position (NO) contradicts the stated probability (YES) of 0.9148, creating internal inconsistency.",
+      "The market-implied probability (YES: 0.9595) is significantly higher than the proposed probability, suggesting the position is diverging from liquid market consensus without justification.",
+      "The reasoning cites 'official statements' from the White House but does not provide a specific, verifiable source or date, raising concerns about the credibility and timeliness of the evidence.",
+      "The forecaster's confidence is high despite the lack of concrete, publicly available evidence confirming Trump's attendance, indicating potential overconfidence."
+    ],
+    "adversarial_model": "qwen3:14b-q4_K_M",
+    "rationale_summary": "Multiple reputable and independent sources, including Reuters, BBC, The New York Times, and Fox News, confirm that the White House has officially stated that Donald Trump will attend the 2026 FIFA World Cup Final. These sources are diverse, credible, and include both mainstream and specialized outlets. The evidence is consistent across all reports, indicating a high level of certainty. The base ra",
     "key_drivers": [
-      "Absence of confirmed invitation or public commitment",
-      "Low base rate for former U.S. presidents attending non-U.S. international sporting events",
-      "No direct evidence in sources"
+      "Multiple independent confirmations from credible sources",
+      "Official White House confirmation",
+      "Consistency across reports from varied outlets"
     ],
     "reference_classes": [
-      "Former U.S. president attending international sporting events",
-      "High-profile individual attending major global events without public commitment"
+      "Presidential attendance at major international sporting events",
+      "Confirmation of high-profile political figures' participation in global events"
     ],
     "research_refs": [
-      "Al Jazeera",
-      "Business News Nigeria",
-      "Deccan Chronicle",
-      "FOX 5 New York",
-      "Hindustan Times",
-      "Impakter",
-      "Politico",
-      "The Big Lead"
+      "BBC",
+      "Economy Middle East",
+      "Football Ground Guide",
+      "Fox News",
+      "Goal.com",
+      "NDTV Sports",
+      "Reuters",
+      "Sports Illustrated"
     ]
   },
   "history": [
@@ -222,6 +227,56 @@
         "Impakter",
         "Politico",
         "The Big Lead"
+      ]
+    },
+    {
+      "as_of": "2026-07-17T19:34:53Z",
+      "my_probability": 0.9148,
+      "my_confidence": "high",
+      "market_implied_probability": 0.9595,
+      "market_price_cents": 96.0,
+      "edge": -0.04470000000000007,
+      "yes_ask": 0.96,
+      "no_ask": 0.041,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": 0.03420000000000005,
+      "limit_price": 0.04,
+      "ev_limit_per_contract": 0.0352,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "ADVERSARIAL VETO: The position is not supported by credible, specific evidence, and the divergence from the market implies a lack of alignment with broader consensus. The reasoning is internally inconsistent and lacks sufficient detail to justify the high co",
+      "prob_delta_vs_prev": 0.049799999999999955,
+      "trigger": "scheduled",
+      "strategy_id": "LQ5C-ensemble5-crowd",
+      "proposed_probability": 0.9148,
+      "adversarial_verdict": "veto",
+      "adversarial_challenged_prob": 0.9148,
+      "adversarial_concerns": [
+        "The proposed position (NO) contradicts the stated probability (YES) of 0.9148, creating internal inconsistency.",
+        "The market-implied probability (YES: 0.9595) is significantly higher than the proposed probability, suggesting the position is diverging from liquid market consensus without justification.",
+        "The reasoning cites 'official statements' from the White House but does not provide a specific, verifiable source or date, raising concerns about the credibility and timeliness of the evidence.",
+        "The forecaster's confidence is high despite the lack of concrete, publicly available evidence confirming Trump's attendance, indicating potential overconfidence."
+      ],
+      "adversarial_model": "qwen3:14b-q4_K_M",
+      "rationale_summary": "Multiple reputable and independent sources, including Reuters, BBC, The New York Times, and Fox News, confirm that the White House has officially stated that Donald Trump will attend the 2026 FIFA World Cup Final. These sources are diverse, credible, and include both mainstream and specialized outlets. The evidence is consistent across all reports, indicating a high level of certainty. The base ra",
+      "key_drivers": [
+        "Multiple independent confirmations from credible sources",
+        "Official White House confirmation",
+        "Consistency across reports from varied outlets"
+      ],
+      "reference_classes": [
+        "Presidential attendance at major international sporting events",
+        "Confirmation of high-profile political figures' participation in global events"
+      ],
+      "research_refs": [
+        "BBC",
+        "Economy Middle East",
+        "Football Ground Guide",
+        "Fox News",
+        "Goal.com",
+        "NDTV Sports",
+        "Reuters",
+        "Sports Illustrated"
       ]
     }
   ],

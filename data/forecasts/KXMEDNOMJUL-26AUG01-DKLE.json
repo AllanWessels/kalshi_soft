@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "ticker": "KXMEDNOMJUL-26AUG01-DKLE",
+  "title": "Will it be confirmed that Dan Kleban is the Democratic nominee for U.S. Senate in Maine on July 31, 2026?",
+  "category": "politics",
+  "close_time": "2026-08-08T14:00:00Z",
+  "current": {
+    "as_of": "2026-07-17T19:34:54Z",
+    "my_probability": 0.0,
+    "my_confidence": "medium",
+    "market_implied_probability": 0.005,
+    "market_price_cents": 0.0,
+    "edge": -0.005,
+    "yes_ask": 0.01,
+    "no_ask": 1.0,
+    "fee_per_contract": 0.0,
+    "ev_per_contract": 0.0,
+    "limit_price": null,
+    "ev_limit_per_contract": null,
+    "lean": "NONE",
+    "conviction": "low",
+    "lean_note": "no +EV value bet at the ask (my prob 0%, modal NO) — staying out.",
+    "prob_delta_vs_prev": null,
+    "trigger": "scheduled",
+    "strategy_id": "LQ5C-ensemble5-crowd",
+    "proposed_probability": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": "",
+    "rationale_summary": "As of July 17, 2026, there is no definitive evidence confirming Dan Kleban as the Democratic nominee for U.S. Senate in Maine by July 31, 2026. While multiple reputable news sources were consulted, none provided direct confirmation of Kleban's nomination status. The lack of explicit confirmation suggests that the nomination process may still be ongoing or uncertain, and thus the probability is mod",
+    "key_drivers": [
+      "Absence of direct confirmation from reputable sources",
+      "Uncertainty in nomination timeline",
+      "No prior confirmation in evidence notes"
+    ],
+    "reference_classes": [
+      "U.S. Senate nomination confirmations",
+      "Political candidate status predictions",
+      "Nomination process timelines"
+    ],
+    "research_refs": [
+      "KIRO 7 News Seattle",
+      "Legis1",
+      "Maine Morning Star",
+      "NBC News",
+      "Oskaloosa Herald",
+      "Ottumwa Courier",
+      "Politico",
+      "Rutland Herald"
+    ]
+  },
+  "history": [
+    {
+      "as_of": "2026-07-17T19:34:54Z",
+      "my_probability": 0.0,
+      "my_confidence": "medium",
+      "market_implied_probability": 0.005,
+      "market_price_cents": 0.0,
+      "edge": -0.005,
+      "yes_ask": 0.01,
+      "no_ask": 1.0,
+      "fee_per_contract": 0.0,
+      "ev_per_contract": 0.0,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "no +EV value bet at the ask (my prob 0%, modal NO) — staying out.",
+      "prob_delta_vs_prev": null,
+      "trigger": "scheduled",
+      "strategy_id": "LQ5C-ensemble5-crowd",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "As of July 17, 2026, there is no definitive evidence confirming Dan Kleban as the Democratic nominee for U.S. Senate in Maine by July 31, 2026. While multiple reputable news sources were consulted, none provided direct confirmation of Kleban's nomination status. The lack of explicit confirmation suggests that the nomination process may still be ongoing or uncertain, and thus the probability is mod",
+      "key_drivers": [
+        "Absence of direct confirmation from reputable sources",
+        "Uncertainty in nomination timeline",
+        "No prior confirmation in evidence notes"
+      ],
+      "reference_classes": [
+        "U.S. Senate nomination confirmations",
+        "Political candidate status predictions",
+        "Nomination process timelines"
+      ],
+      "research_refs": [
+        "KIRO 7 News Seattle",
+        "Legis1",
+        "Maine Morning Star",
+        "NBC News",
+        "Oskaloosa Herald",
+        "Ottumwa Courier",
+        "Politico",
+        "Rutland Herald"
+      ]
+    }
+  ],
+  "position": {
+    "entered": false,
+    "entry_as_of": "",
+    "entry_side": "",
+    "entry_probability": 0.0,
+    "entry_price": 0.0,
+    "entry_market_implied": null,
+    "entry_confidence": "",
+    "entry_conviction": "",
+    "entry_gap": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": ""
+  }
+}

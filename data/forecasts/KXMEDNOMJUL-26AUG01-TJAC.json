@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "ticker": "KXMEDNOMJUL-26AUG01-TJAC",
+  "title": "Will it be confirmed that Troy Jackson is the Democratic nominee for U.S. Senate in Maine on July 31, 2026?",
+  "category": "politics",
+  "close_time": "2026-08-08T14:00:00Z",
+  "current": {
+    "as_of": "2026-07-17T19:34:55Z",
+    "my_probability": 0.885,
+    "my_confidence": "high",
+    "market_implied_probability": 0.885,
+    "market_price_cents": 88.0,
+    "edge": 0.0,
+    "yes_ask": 0.89,
+    "no_ask": 0.12,
+    "fee_per_contract": 0.01,
+    "ev_per_contract": -0.015000000000000005,
+    "limit_price": null,
+    "ev_limit_per_contract": null,
+    "lean": "NONE",
+    "conviction": "low",
+    "lean_note": "no +EV value bet at the ask (my prob 88%, modal YES) — staying out.",
+    "prob_delta_vs_prev": null,
+    "trigger": "scheduled",
+    "strategy_id": "LQ5C-ensemble5-crowd",
+    "proposed_probability": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": "",
+    "rationale_summary": "The evidence indicates that Graham Platner has withdrawn, and the Maine Democratic Party is actively considering multiple candidates to replace him. Troy Jackson is not mentioned as a contender in any of the sources provided, and no confirmation of his nomination has been reported. The absence of any direct mention of Jackson in the evidence, combined with the active search for a replacement, sugg",
+    "key_drivers": [
+      "Graham Platner's withdrawal has created an open race with multiple candidates being considered.",
+      "Troy Jackson is not named in any of the sources as a potential replacement or nominee.",
+      "The Maine Democratic Party is still in the process of selecting a nominee."
+    ],
+    "reference_classes": [
+      "Primary elections where a major candidate withdraws and the party scrambles to find a replacement.",
+      "Senate nomination processes with multiple potential candidates and no clear frontrunner."
+    ],
+    "research_refs": [
+      "ABC News - Breaking News",
+      "Latest News and Videos",
+      "Bangor Daily News",
+      "Los Angeles Times",
+      "Maine Morning Star",
+      "NBC News",
+      "News4JAX",
+      "PBS",
+      "Politico"
+    ]
+  },
+  "history": [
+    {
+      "as_of": "2026-07-17T19:34:55Z",
+      "my_probability": 0.885,
+      "my_confidence": "high",
+      "market_implied_probability": 0.885,
+      "market_price_cents": 88.0,
+      "edge": 0.0,
+      "yes_ask": 0.89,
+      "no_ask": 0.12,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": -0.015000000000000005,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "no +EV value bet at the ask (my prob 88%, modal YES) — staying out.",
+      "prob_delta_vs_prev": null,
+      "trigger": "scheduled",
+      "strategy_id": "LQ5C-ensemble5-crowd",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "The evidence indicates that Graham Platner has withdrawn, and the Maine Democratic Party is actively considering multiple candidates to replace him. Troy Jackson is not mentioned as a contender in any of the sources provided, and no confirmation of his nomination has been reported. The absence of any direct mention of Jackson in the evidence, combined with the active search for a replacement, sugg",
+      "key_drivers": [
+        "Graham Platner's withdrawal has created an open race with multiple candidates being considered.",
+        "Troy Jackson is not named in any of the sources as a potential replacement or nominee.",
+        "The Maine Democratic Party is still in the process of selecting a nominee."
+      ],
+      "reference_classes": [
+        "Primary elections where a major candidate withdraws and the party scrambles to find a replacement.",
+        "Senate nomination processes with multiple potential candidates and no clear frontrunner."
+      ],
+      "research_refs": [
+        "ABC News - Breaking News",
+        "Latest News and Videos",
+        "Bangor Daily News",
+        "Los Angeles Times",
+        "Maine Morning Star",
+        "NBC News",
+        "News4JAX",
+        "PBS",
+        "Politico"
+      ]
+    }
+  ],
+  "position": {
+    "entered": false,
+    "entry_as_of": "",
+    "entry_side": "",
+    "entry_probability": 0.0,
+    "entry_price": 0.0,
+    "entry_market_implied": null,
+    "entry_confidence": "",
+    "entry_conviction": "",
+    "entry_gap": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": ""
+  }
+}

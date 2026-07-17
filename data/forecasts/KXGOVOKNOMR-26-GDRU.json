@@ -5,22 +5,22 @@
   "category": "politics",
   "close_time": "2026-06-30T14:00:00Z",
   "current": {
-    "as_of": "2026-07-02T20:53:15Z",
-    "my_probability": 0.1925,
+    "as_of": "2026-07-17T19:34:38Z",
+    "my_probability": 0.1714,
     "my_confidence": "high",
-    "market_implied_probability": 0.185,
-    "market_price_cents": 18.0,
-    "edge": 0.007500000000000007,
-    "yes_ask": 0.19,
-    "no_ask": 0.82,
-    "fee_per_contract": 0.02,
-    "ev_per_contract": -0.017499999999999998,
+    "market_implied_probability": 0.155,
+    "market_price_cents": 16.0,
+    "edge": 0.016399999999999998,
+    "yes_ask": 0.16,
+    "no_ask": 0.85,
+    "fee_per_contract": 0.01,
+    "ev_per_contract": 0.0013999999999999933,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "no +EV value bet at the ask (my prob 19%, modal NO) — staying out.",
-    "prob_delta_vs_prev": 0.003599999999999992,
+    "lean_note": "no +EV value bet at the ask (my prob 17%, modal NO) — staying out.",
+    "prob_delta_vs_prev": -0.021100000000000008,
     "trigger": "scheduled",
     "strategy_id": "LQ5C-ensemble5-crowd",
     "proposed_probability": null,
@@ -28,25 +28,25 @@
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "There is currently no publicly available evidence indicating that Genter Drummond is a prominent or likely candidate in the Oklahoma Republican gubernatorial race. The lack of specific information about his involvement or support in the race, combined with the absence of direct mentions in the consulted media sources, makes it difficult to assign a higher probability. However, the reference class ",
+    "rationale_summary": "There is currently no public evidence or announcements indicating that Genter Drummond is actively seeking or has secured the Republican nomination for Governor in Oklahoma. The lack of specific information about his candidacy, combined with the typical challenges of becoming a gubernatorial nominee (e.g., campaign organization, fundraising, and primary competition), leads to a low probability. Th",
     "key_drivers": [
-      "Lack of public information on Genter Drummond's candidacy",
-      "No explicit media coverage supporting his nomination",
-      "Typical low probability for underdog candidates in primary races"
+      "Lack of public announcement of candidacy",
+      "No evidence of campaign activity",
+      "Typical difficulty of becoming a gubernatorial nominee"
     ],
     "reference_classes": [
-      "Candidates with limited media presence in gubernatorial races",
-      "Less-known figures in state-level primary elections",
-      "Historical patterns of underdog candidates failing to secure nominations"
+      "Candidates who have not yet announced for office",
+      "Republican gubernatorial nominees in Oklahoma",
+      "Primary candidates without significant public presence"
     ],
     "research_refs": [
+      "C-SPAN",
       "KOCO",
       "KOSU",
-      "KXII",
-      "News 9",
       "NonDoc Media",
       "OU Daily",
       "Oklahoma Voice",
+      "The Frontier",
       "The Journal Record"
     ]
   },
@@ -306,6 +306,52 @@
         "NonDoc Media",
         "OU Daily",
         "Oklahoma Voice",
+        "The Journal Record"
+      ]
+    },
+    {
+      "as_of": "2026-07-17T19:34:38Z",
+      "my_probability": 0.1714,
+      "my_confidence": "high",
+      "market_implied_probability": 0.155,
+      "market_price_cents": 16.0,
+      "edge": 0.016399999999999998,
+      "yes_ask": 0.16,
+      "no_ask": 0.85,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": 0.0013999999999999933,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "no +EV value bet at the ask (my prob 17%, modal NO) — staying out.",
+      "prob_delta_vs_prev": -0.021100000000000008,
+      "trigger": "scheduled",
+      "strategy_id": "LQ5C-ensemble5-crowd",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "There is currently no public evidence or announcements indicating that Genter Drummond is actively seeking or has secured the Republican nomination for Governor in Oklahoma. The lack of specific information about his candidacy, combined with the typical challenges of becoming a gubernatorial nominee (e.g., campaign organization, fundraising, and primary competition), leads to a low probability. Th",
+      "key_drivers": [
+        "Lack of public announcement of candidacy",
+        "No evidence of campaign activity",
+        "Typical difficulty of becoming a gubernatorial nominee"
+      ],
+      "reference_classes": [
+        "Candidates who have not yet announced for office",
+        "Republican gubernatorial nominees in Oklahoma",
+        "Primary candidates without significant public presence"
+      ],
+      "research_refs": [
+        "C-SPAN",
+        "KOCO",
+        "KOSU",
+        "NonDoc Media",
+        "OU Daily",
+        "Oklahoma Voice",
+        "The Frontier",
         "The Journal Record"
       ]
     }

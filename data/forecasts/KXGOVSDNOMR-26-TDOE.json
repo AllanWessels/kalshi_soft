@@ -5,47 +5,55 @@
   "category": "politics",
   "close_time": "2026-06-30T14:00:00Z",
   "current": {
-    "as_of": "2026-07-02T20:53:25Z",
-    "my_probability": 0.4201,
-    "my_confidence": "medium",
-    "market_implied_probability": 0.475,
-    "market_price_cents": 48.0,
-    "edge": -0.054900000000000004,
-    "yes_ask": 0.48,
-    "no_ask": 0.53,
-    "fee_per_contract": 0.02,
-    "ev_per_contract": 0.029900000000000055,
-    "limit_price": 0.52,
-    "ev_limit_per_contract": 0.0399,
+    "as_of": "2026-07-17T19:34:47Z",
+    "my_probability": 0.1617,
+    "my_confidence": "high",
+    "market_implied_probability": 0.0915,
+    "market_price_cents": 9.0,
+    "edge": 0.07020000000000001,
+    "yes_ask": 0.094,
+    "no_ask": 0.911,
+    "fee_per_contract": 0.01,
+    "ev_per_contract": 0.05770000000000001,
+    "limit_price": 0.089,
+    "ev_limit_per_contract": 0.0627,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "5pt gap vs a liquid market without high confidence — more likely my error than edge",
-    "prob_delta_vs_prev": -0.1074,
+    "lean_note": "ADVERSARIAL VETO: The proposed position lacks sufficient evidence to support a high confidence level, and the reasoning does not convincingly establish an edge over the market. The divergence from the market-implied probability is not justified, and the fore",
+    "prob_delta_vs_prev": -0.25839999999999996,
     "trigger": "scheduled",
     "strategy_id": "LQ5C-ensemble5-crowd",
-    "proposed_probability": null,
-    "adversarial_verdict": "",
+    "proposed_probability": 0.1617,
+    "adversarial_verdict": "veto",
     "adversarial_challenged_prob": null,
-    "adversarial_concerns": [],
-    "adversarial_model": "",
-    "rationale_summary": "There is currently no direct evidence about Toby Doeden's likelihood to be the Republican nominee for Governor in South Dakota. The absence of specific information about his political positioning, endorsements, or campaign activity suggests a low to moderate probability. The reference class includes candidates with limited public visibility or early-stage campaigns. The probability is not strongly",
+    "adversarial_concerns": [
+      "The reasoning is incomplete and lacks sufficient evidence to justify a 'high' confidence level.",
+      "The position diverges from the market-implied probability, but no credible justification is provided for this divergence.",
+      "Poll reliability is acknowledged as questionable, yet the forecaster still asserts a high confidence in the outcome.",
+      "The reasoning does not account for the possibility that the market may already incorporate the same information, making the proposed position speculative rather than informed."
+    ],
+    "adversarial_model": "qwen3:14b-q4_K_M",
+    "rationale_summary": "Toby Doeden has advanced to a runoff in the Republican gubernatorial primary, indicating strong initial support. However, recent polling suggests Larry Rhoden leads in the runoff, and Doeden has faced challenges in maintaining consistent favorability. Poll reliability is questionable, especially given disputes from candidates, and runoff outcomes depend heavily on shifting voter preferences and tu",
     "key_drivers": [
-      "Lack of direct evidence about Toby Doeden's political activities or endorsements",
-      "No recent news or polling data indicating strong support for him"
+      "Larry Rhoden's current lead in the runoff poll",
+      "The reliability and potential bias of polling data",
+      "Voter turnout and shifting preferences in the runoff",
+      "Toby Doeden's ability to maintain support ahead of the runoff"
     ],
     "reference_classes": [
-      "Candidates with limited public visibility in early-stage campaigns",
-      "Underdog candidates in state-level primaries"
+      "South Dakota Republican gubernatorial primaries with runoffs",
+      "Candidates who advance to runoffs but face later challenges in polling",
+      "Poll disputes and their impact on voter perception"
     ],
     "research_refs": [
       "- Emerson Polling",
-      "Aberdeen Insider",
-      "Ballotpedia News",
-      "NBC News",
-      "News From The States",
-      "South Dakota News Watch",
-      "South Dakota Searchlight",
-      "The New York Times"
+      "Argus Leader",
+      "Dakota Free Press",
+      "Emerson Polling",
+      "KELOLAND.com",
+      "KOTA Territory News",
+      "KTIV",
+      "News From The States"
     ]
   },
   "history": [
@@ -374,6 +382,58 @@
         "South Dakota News Watch",
         "South Dakota Searchlight",
         "The New York Times"
+      ]
+    },
+    {
+      "as_of": "2026-07-17T19:34:47Z",
+      "my_probability": 0.1617,
+      "my_confidence": "high",
+      "market_implied_probability": 0.0915,
+      "market_price_cents": 9.0,
+      "edge": 0.07020000000000001,
+      "yes_ask": 0.094,
+      "no_ask": 0.911,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": 0.05770000000000001,
+      "limit_price": 0.089,
+      "ev_limit_per_contract": 0.0627,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "ADVERSARIAL VETO: The proposed position lacks sufficient evidence to support a high confidence level, and the reasoning does not convincingly establish an edge over the market. The divergence from the market-implied probability is not justified, and the fore",
+      "prob_delta_vs_prev": -0.25839999999999996,
+      "trigger": "scheduled",
+      "strategy_id": "LQ5C-ensemble5-crowd",
+      "proposed_probability": 0.1617,
+      "adversarial_verdict": "veto",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [
+        "The reasoning is incomplete and lacks sufficient evidence to justify a 'high' confidence level.",
+        "The position diverges from the market-implied probability, but no credible justification is provided for this divergence.",
+        "Poll reliability is acknowledged as questionable, yet the forecaster still asserts a high confidence in the outcome.",
+        "The reasoning does not account for the possibility that the market may already incorporate the same information, making the proposed position speculative rather than informed."
+      ],
+      "adversarial_model": "qwen3:14b-q4_K_M",
+      "rationale_summary": "Toby Doeden has advanced to a runoff in the Republican gubernatorial primary, indicating strong initial support. However, recent polling suggests Larry Rhoden leads in the runoff, and Doeden has faced challenges in maintaining consistent favorability. Poll reliability is questionable, especially given disputes from candidates, and runoff outcomes depend heavily on shifting voter preferences and tu",
+      "key_drivers": [
+        "Larry Rhoden's current lead in the runoff poll",
+        "The reliability and potential bias of polling data",
+        "Voter turnout and shifting preferences in the runoff",
+        "Toby Doeden's ability to maintain support ahead of the runoff"
+      ],
+      "reference_classes": [
+        "South Dakota Republican gubernatorial primaries with runoffs",
+        "Candidates who advance to runoffs but face later challenges in polling",
+        "Poll disputes and their impact on voter perception"
+      ],
+      "research_refs": [
+        "- Emerson Polling",
+        "Argus Leader",
+        "Dakota Free Press",
+        "Emerson Polling",
+        "KELOLAND.com",
+        "KOTA Territory News",
+        "KTIV",
+        "News From The States"
       ]
     }
   ],

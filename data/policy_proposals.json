@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-02T20:55:01Z",
-  "n_resolved": 40,
+  "generated_at": "2026-07-17T19:47:35Z",
+  "n_resolved": 47,
   "guardrails": {
     "min_n": 20,
     "max_step": 0.05
@@ -11,40 +11,40 @@
       "knob": "max_market_disagreement",
       "current": 0.05,
       "proposed": null,
-      "n": 40,
+      "n": 47,
       "guardrail": "INSUFFICIENT_DATA",
       "rationale": "No coherent 'wider fades lose' ladder yet (signal not monotone / tail band not negative).",
       "evidence": {
         "0-5pt": {
-          "n": 24,
-          "cf_pnl": 1.193,
-          "cf_staked": 22.807,
-          "cf_roi": 0.0523085017757706,
-          "cf_win_rate": 1.0,
-          "max_drawdown": -0.007999999999999998
+          "n": 26,
+          "cf_pnl": 0.3440000000000001,
+          "cf_staked": 24.656,
+          "cf_roi": 0.01395197923426347,
+          "cf_win_rate": 0.9615384615384616,
+          "max_drawdown": -0.969
         },
         "5-10pt": {
-          "n": 8,
-          "cf_pnl": -1.3,
-          "cf_staked": 6.3,
-          "cf_roi": -0.20634920634920637,
-          "cf_win_rate": 0.625,
+          "n": 9,
+          "cf_pnl": -1.02,
+          "cf_staked": 7.02,
+          "cf_roi": -0.1452991452991453,
+          "cf_win_rate": 0.6666666666666666,
           "max_drawdown": -1.33
         },
         "10-20pt": {
-          "n": 4,
-          "cf_pnl": -2.113,
-          "cf_staked": 3.113,
-          "cf_roi": -0.67876646321876,
-          "cf_win_rate": 0.25,
+          "n": 7,
+          "cf_pnl": -1.813,
+          "cf_staked": 5.813,
+          "cf_roi": -0.3118871494925168,
+          "cf_win_rate": 0.5714285714285714,
           "max_drawdown": -2.113
         },
         "20pt+": {
-          "n": 4,
-          "cf_pnl": -0.32,
-          "cf_staked": 2.32,
-          "cf_roi": -0.13793103448275865,
-          "cf_win_rate": 0.5,
+          "n": 5,
+          "cf_pnl": -0.22000000000000003,
+          "cf_staked": 3.22,
+          "cf_roi": -0.06832298136645963,
+          "cf_win_rate": 0.6,
           "max_drawdown": -0.55
         }
       }
@@ -53,24 +53,24 @@
       "knob": "hard_gap_ceiling",
       "current": 0.2,
       "proposed": null,
-      "n": 40,
+      "n": 47,
       "guardrail": "INSUFFICIENT_DATA",
       "rationale": "No catastrophic wide-fade band yet — the absolute ceiling stays put.",
       "evidence": {
         "20pt+": {
-          "n": 4,
-          "cf_pnl": -0.32,
-          "cf_staked": 2.32,
-          "cf_roi": -0.13793103448275865,
-          "cf_win_rate": 0.5,
+          "n": 5,
+          "cf_pnl": -0.22000000000000003,
+          "cf_staked": 3.22,
+          "cf_roi": -0.06832298136645963,
+          "cf_win_rate": 0.6,
           "max_drawdown": -0.55
         },
         "10-20pt": {
-          "n": 4,
-          "cf_pnl": -2.113,
-          "cf_staked": 3.113,
-          "cf_roi": -0.67876646321876,
-          "cf_win_rate": 0.25,
+          "n": 7,
+          "cf_pnl": -1.813,
+          "cf_staked": 5.813,
+          "cf_roi": -0.3118871494925168,
+          "cf_win_rate": 0.5714285714285714,
           "max_drawdown": -2.113
         }
       }
@@ -79,32 +79,32 @@
       "knob": "min_confidence_for_lean",
       "current": "medium",
       "proposed": null,
-      "n": 40,
+      "n": 47,
       "guardrail": "INSUFFICIENT_DATA",
       "rationale": "Confidence gating evidence inconclusive (or floor already raised).",
       "evidence": {
         "high": {
-          "n": 21,
-          "cf_pnl": -0.22199999999999995,
-          "cf_staked": 19.222,
-          "cf_roi": -0.011549266465508268,
-          "cf_win_rate": 0.9047619047619048,
+          "n": 22,
+          "cf_pnl": -0.07199999999999993,
+          "cf_staked": 20.072,
+          "cf_roi": -0.003587086488640889,
+          "cf_win_rate": 0.9090909090909091,
           "max_drawdown": -0.7100000000000001
         },
         "medium": {
-          "n": 13,
-          "cf_pnl": -0.8780000000000002,
-          "cf_staked": 10.878,
-          "cf_roi": -0.08071336642765216,
-          "cf_win_rate": 0.7692307692307693,
-          "max_drawdown": -1.743
+          "n": 15,
+          "cf_pnl": -1.727,
+          "cf_staked": 12.727,
+          "cf_roi": -0.13569576490924806,
+          "cf_win_rate": 0.7333333333333333,
+          "max_drawdown": -1.847
         },
         "low": {
-          "n": 6,
-          "cf_pnl": -1.44,
-          "cf_staked": 4.4399999999999995,
-          "cf_roi": -0.32432432432432434,
-          "cf_win_rate": 0.5,
+          "n": 10,
+          "cf_pnl": -0.9099999999999999,
+          "cf_staked": 7.91,
+          "cf_roi": -0.1150442477876106,
+          "cf_win_rate": 0.7,
           "max_drawdown": -1.45
         }
       }
@@ -113,11 +113,11 @@
       "knob": "adversarial_veto_binding",
       "current": true,
       "proposed": null,
-      "n": 6,
+      "n": 7,
       "guardrail": "INSUFFICIENT_DATA",
-      "rationale": "Veto precision becomes learnable once vetoed/revised positions resolve; 6 resolved position(s) carry a verdict so far.",
+      "rationale": "Veto precision becomes learnable once vetoed/revised positions resolve; 7 resolved position(s) carry a verdict so far.",
       "evidence": {
-        "resolved_with_verdict": 6
+        "resolved_with_verdict": 7
       }
     }
   ]

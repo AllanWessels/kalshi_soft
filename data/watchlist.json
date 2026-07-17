@@ -1,23 +1,8 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-02T20:37:27Z",
+  "updated_at": "2026-07-17T19:18:20Z",
   "cap": 30,
   "markets": [
-    {
-      "ticker": "KXUSAIRANAGREEMENT-27-26JUL",
-      "event_ticker": "KXUSAIRANAGREEMENT-27",
-      "title": "Will the US agree to a new Iranian nuclear deal this year?",
-      "category": "politics",
-      "close_time": "2026-07-01T14:00:00Z",
-      "added_at": "2026-05-31T18:10:20Z",
-      "liquidity_snapshot": {
-        "volume_24h": 17245.67,
-        "open_interest": 471838.3,
-        "spread_cents": 1.0
-      },
-      "status": "resolved",
-      "reforecast_cadence_days": 7.0
-    },
     {
       "ticker": "KXGOVSDNOMR-26-TDOE",
       "event_ticker": "KXGOVSDNOMR-26",
@@ -60,98 +45,8 @@
         "open_interest": 1996281.23,
         "spread_cents": 1.0
       },
-      "status": "active",
+      "status": "resolved",
       "reforecast_cadence_days": 0.0
-    },
-    {
-      "ticker": "KXU3-26JUN-T4.1",
-      "event_ticker": "KXU3-26JUN",
-      "title": "Will the unemployment rate (U-3) be above 4.1% in June?",
-      "category": "economy",
-      "close_time": "2026-07-02T14:00:00Z",
-      "added_at": "2026-06-13T10:21:31Z",
-      "liquidity_snapshot": {
-        "volume_24h": 2971.65,
-        "open_interest": 7057.81,
-        "spread_cents": 1.0
-      },
-      "status": "resolved",
-      "reforecast_cadence_days": 3.0
-    },
-    {
-      "ticker": "KXLAGODAYS-26JUN-0",
-      "event_ticker": "KXLAGODAYS-26JUN",
-      "title": "Will Trump make 0 trips to Mar-a-Lago as President in Jun 2026?",
-      "category": "politics",
-      "close_time": "2026-06-30T14:00:00Z",
-      "added_at": "2026-06-13T10:21:31Z",
-      "liquidity_snapshot": {
-        "volume_24h": 2503.72,
-        "open_interest": 25589.88,
-        "spread_cents": 2.0
-      },
-      "status": "resolved",
-      "reforecast_cadence_days": 3.0
-    },
-    {
-      "ticker": "KXLAGODAYS-26JUN-1",
-      "event_ticker": "KXLAGODAYS-26JUN",
-      "title": "Will Trump make 1 trips to Mar-a-Lago as President in Jun 2026?",
-      "category": "politics",
-      "close_time": "2026-06-30T14:00:00Z",
-      "added_at": "2026-06-13T10:21:31Z",
-      "liquidity_snapshot": {
-        "volume_24h": 9114.81,
-        "open_interest": 64872.08,
-        "spread_cents": 1.0
-      },
-      "status": "resolved",
-      "reforecast_cadence_days": 3.0
-    },
-    {
-      "ticker": "KXLAGODAYS-26JUN-2",
-      "event_ticker": "KXLAGODAYS-26JUN",
-      "title": "Will Trump make 2 trips to Mar-a-Lago as President in Jun 2026?",
-      "category": "politics",
-      "close_time": "2026-06-30T14:00:00Z",
-      "added_at": "2026-06-13T10:21:31Z",
-      "liquidity_snapshot": {
-        "volume_24h": 365.0,
-        "open_interest": 65201.48,
-        "spread_cents": 2.0
-      },
-      "status": "resolved",
-      "reforecast_cadence_days": 3.0
-    },
-    {
-      "ticker": "KXVISITIRAN-26JUL01-MRUB",
-      "event_ticker": "KXVISITIRAN",
-      "title": "Will Marco Rubio visit Iran before Jul 1, 2026?",
-      "category": "politics",
-      "close_time": "2026-07-01T14:00:00Z",
-      "added_at": "2026-06-13T10:21:31Z",
-      "liquidity_snapshot": {
-        "volume_24h": 1473.21,
-        "open_interest": 41996.88,
-        "spread_cents": 1.0
-      },
-      "status": "resolved",
-      "reforecast_cadence_days": 3.0
-    },
-    {
-      "ticker": "KXVISITIRAN-26JUL01-AHOU",
-      "event_ticker": "KXVISITIRAN",
-      "title": "Will any U.S. House member visit Iran before Jul 1, 2026?",
-      "category": "politics",
-      "close_time": "2026-07-01T14:00:00Z",
-      "added_at": "2026-06-13T10:21:31Z",
-      "liquidity_snapshot": {
-        "volume_24h": 1849.4,
-        "open_interest": 58799.18,
-        "spread_cents": 1.0
-      },
-      "status": "resolved",
-      "reforecast_cadence_days": 3.0
     },
     {
       "ticker": "KXPLATNERDROPOUT-26",
@@ -165,7 +60,7 @@
         "open_interest": 401024.68,
         "spread_cents": 1.0
       },
-      "status": "active",
+      "status": "resolved",
       "reforecast_cadence_days": 3.0
     },
     {
@@ -180,7 +75,7 @@
         "open_interest": 34954.79,
         "spread_cents": 2.0
       },
-      "status": "active",
+      "status": "resolved",
       "reforecast_cadence_days": 3.0
     },
     {
@@ -194,21 +89,6 @@
         "volume_24h": 9942.69,
         "open_interest": 22434.8,
         "spread_cents": 2.0
-      },
-      "status": "active",
-      "reforecast_cadence_days": 3.0
-    },
-    {
-      "ticker": "KXVISITIRAN-26JUL01-JVAN",
-      "event_ticker": "KXVISITIRAN",
-      "title": "Will JD Vance visit Iran before Jul 1, 2026?",
-      "category": "politics",
-      "close_time": "2026-07-01T14:00:00Z",
-      "added_at": "2026-06-19T18:47:55Z",
-      "liquidity_snapshot": {
-        "volume_24h": 3404.7,
-        "open_interest": 79329.56,
-        "spread_cents": 1.0
       },
       "status": "resolved",
       "reforecast_cadence_days": 3.0
@@ -255,7 +135,7 @@
         "open_interest": 17561.72,
         "spread_cents": 1.0
       },
-      "status": "active",
+      "status": "resolved",
       "reforecast_cadence_days": 3.0
     },
     {
@@ -270,7 +150,7 @@
         "open_interest": 30569.43,
         "spread_cents": 1.0
       },
-      "status": "active",
+      "status": "resolved",
       "reforecast_cadence_days": 3.0
     },
     {
@@ -313,6 +193,96 @@
       "liquidity_snapshot": {
         "volume_24h": 4237.84,
         "open_interest": 34709.64,
+        "spread_cents": 1.0
+      },
+      "status": "resolved",
+      "reforecast_cadence_days": 3.0
+    },
+    {
+      "ticker": "KXMEDNOMJUL-26AUG01-TJAC",
+      "event_ticker": "KXMEDNOMJUL-26AUG01",
+      "title": "Will it be confirmed that Troy Jackson is the Democratic nominee for U.S. Senate in Maine on July 31, 2026?",
+      "category": "politics",
+      "close_time": "2026-08-08T14:00:00Z",
+      "added_at": "2026-07-17T19:17:41Z",
+      "liquidity_snapshot": {
+        "volume_24h": 31708.83,
+        "open_interest": 318188.24,
+        "spread_cents": 1.0
+      },
+      "status": "active",
+      "reforecast_cadence_days": 3.0
+    },
+    {
+      "ticker": "KXMEDNOMJUL-26AUG01-GPLA",
+      "event_ticker": "KXMEDNOMJUL-26AUG01",
+      "title": "Will it be confirmed that Graham Platner is the Democratic nominee for U.S. Senate in Maine on July 31, 2026?",
+      "category": "politics",
+      "close_time": "2026-08-08T14:00:00Z",
+      "added_at": "2026-07-17T19:17:41Z",
+      "liquidity_snapshot": {
+        "volume_24h": 244.15,
+        "open_interest": 361251.65,
+        "spread_cents": 1.0
+      },
+      "status": "active",
+      "reforecast_cadence_days": 3.0
+    },
+    {
+      "ticker": "KXMEDNOMJUL-26AUG01-DKLE",
+      "event_ticker": "KXMEDNOMJUL-26AUG01",
+      "title": "Will it be confirmed that Dan Kleban is the Democratic nominee for U.S. Senate in Maine on July 31, 2026?",
+      "category": "politics",
+      "close_time": "2026-08-08T14:00:00Z",
+      "added_at": "2026-07-17T19:17:41Z",
+      "liquidity_snapshot": {
+        "volume_24h": 14158.6,
+        "open_interest": 117696.34,
+        "spread_cents": 1.0
+      },
+      "status": "active",
+      "reforecast_cadence_days": 3.0
+    },
+    {
+      "ticker": "KXMEDNOMJUL-26AUG01-JWOO",
+      "event_ticker": "KXMEDNOMJUL-26AUG01",
+      "title": "Will it be confirmed that Jordan Wood is the Democratic nominee for U.S. Senate in Maine on July 31, 2026?",
+      "category": "politics",
+      "close_time": "2026-08-08T14:00:00Z",
+      "added_at": "2026-07-17T19:17:41Z",
+      "liquidity_snapshot": {
+        "volume_24h": 11373.06,
+        "open_interest": 144763.76,
+        "spread_cents": 1.0
+      },
+      "status": "active",
+      "reforecast_cadence_days": 3.0
+    },
+    {
+      "ticker": "KXMEDNOMJUL-26AUG01-NSHA",
+      "event_ticker": "KXMEDNOMJUL-26AUG01",
+      "title": "Will it be confirmed that Nirav Shah is the Democratic nominee for U.S. Senate in Maine on July 31, 2026?",
+      "category": "politics",
+      "close_time": "2026-08-08T14:00:00Z",
+      "added_at": "2026-07-17T19:17:41Z",
+      "liquidity_snapshot": {
+        "volume_24h": 10512.76,
+        "open_interest": 136793.82,
+        "spread_cents": 1.0
+      },
+      "status": "active",
+      "reforecast_cadence_days": 3.0
+    },
+    {
+      "ticker": "KXRANKLIST1SONG-26JUL25-IKN",
+      "event_ticker": "KXRANKLIST1SONG-26JUL25",
+      "title": "Will I Knew It, I Knew You be 1 on the Billboard Hot 100 in July 2026?",
+      "category": "culture",
+      "close_time": "2026-07-25T14:00:00Z",
+      "added_at": "2026-07-17T19:17:41Z",
+      "liquidity_snapshot": {
+        "volume_24h": 28534.66,
+        "open_interest": 168147.96,
         "spread_cents": 1.0
       },
       "status": "active",

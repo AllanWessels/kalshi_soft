@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "ticker": "KXMEDNOMJUL-26AUG01-GPLA",
+  "title": "Will it be confirmed that Graham Platner is the Democratic nominee for U.S. Senate in Maine on July 31, 2026?",
+  "category": "politics",
+  "close_time": "2026-08-08T14:00:00Z",
+  "current": {
+    "as_of": "2026-07-17T19:34:54Z",
+    "my_probability": 0.0,
+    "my_confidence": "high",
+    "market_implied_probability": 0.005,
+    "market_price_cents": 0.0,
+    "edge": -0.005,
+    "yes_ask": 0.01,
+    "no_ask": 1.0,
+    "fee_per_contract": 0.0,
+    "ev_per_contract": 0.0,
+    "limit_price": null,
+    "ev_limit_per_contract": null,
+    "lean": "NONE",
+    "conviction": "low",
+    "lean_note": "no +EV value bet at the ask (my prob 0%, modal NO) — staying out.",
+    "prob_delta_vs_prev": null,
+    "trigger": "scheduled",
+    "strategy_id": "LQ5C-ensemble5-crowd",
+    "proposed_probability": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": "",
+    "rationale_summary": "Multiple credible sources from July 14-17, 2026, confirm that Graham Platner has withdrawn from the Senate nomination, with Maine Democrats actively seeking a replacement. While the exact timeline of his withdrawal is unclear, the consensus across multiple reputable outlets indicates that he is no longer the nominee. The base rate of candidates withdrawing and being replaced by party members suppo",
+    "key_drivers": [
+      "Multiple independent sources confirming Graham Platner's withdrawal from the Senate nomination.",
+      "Maine Democrats actively seeking a replacement",
+      "indicating Platner is no longer the nominee.",
+      "Base rate of candidate withdrawals in Senate elections."
+    ],
+    "reference_classes": [
+      "U.S. Senate candidate withdrawals and replacement processes.",
+      "Political nomination transitions in primary elections."
+    ],
+    "research_refs": [
+      "CNN",
+      "Los Angeles Times",
+      "Maine Morning Star",
+      "McAlester News-Capital",
+      "NBC News",
+      "NPR",
+      "Politico",
+      "Roll Call"
+    ]
+  },
+  "history": [
+    {
+      "as_of": "2026-07-17T19:34:54Z",
+      "my_probability": 0.0,
+      "my_confidence": "high",
+      "market_implied_probability": 0.005,
+      "market_price_cents": 0.0,
+      "edge": -0.005,
+      "yes_ask": 0.01,
+      "no_ask": 1.0,
+      "fee_per_contract": 0.0,
+      "ev_per_contract": 0.0,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "no +EV value bet at the ask (my prob 0%, modal NO) — staying out.",
+      "prob_delta_vs_prev": null,
+      "trigger": "scheduled",
+      "strategy_id": "LQ5C-ensemble5-crowd",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "Multiple credible sources from July 14-17, 2026, confirm that Graham Platner has withdrawn from the Senate nomination, with Maine Democrats actively seeking a replacement. While the exact timeline of his withdrawal is unclear, the consensus across multiple reputable outlets indicates that he is no longer the nominee. The base rate of candidates withdrawing and being replaced by party members suppo",
+      "key_drivers": [
+        "Multiple independent sources confirming Graham Platner's withdrawal from the Senate nomination.",
+        "Maine Democrats actively seeking a replacement",
+        "indicating Platner is no longer the nominee.",
+        "Base rate of candidate withdrawals in Senate elections."
+      ],
+      "reference_classes": [
+        "U.S. Senate candidate withdrawals and replacement processes.",
+        "Political nomination transitions in primary elections."
+      ],
+      "research_refs": [
+        "CNN",
+        "Los Angeles Times",
+        "Maine Morning Star",
+        "McAlester News-Capital",
+        "NBC News",
+        "NPR",
+        "Politico",
+        "Roll Call"
+      ]
+    }
+  ],
+  "position": {
+    "entered": false,
+    "entry_as_of": "",
+    "entry_side": "",
+    "entry_probability": 0.0,
+    "entry_price": 0.0,
+    "entry_market_implied": null,
+    "entry_confidence": "",
+    "entry_conviction": "",
+    "entry_gap": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": ""
+  }
+}

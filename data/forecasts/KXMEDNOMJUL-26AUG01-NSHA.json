@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "ticker": "KXMEDNOMJUL-26AUG01-NSHA",
+  "title": "Will it be confirmed that Nirav Shah is the Democratic nominee for U.S. Senate in Maine on July 31, 2026?",
+  "category": "politics",
+  "close_time": "2026-08-08T14:00:00Z",
+  "current": {
+    "as_of": "2026-07-17T19:34:55Z",
+    "my_probability": 0.065,
+    "my_confidence": "high",
+    "market_implied_probability": 0.065,
+    "market_price_cents": 6.0,
+    "edge": 0.0,
+    "yes_ask": 0.07,
+    "no_ask": 0.94,
+    "fee_per_contract": 0.01,
+    "ev_per_contract": -0.014999999999999894,
+    "limit_price": null,
+    "ev_limit_per_contract": null,
+    "lean": "NONE",
+    "conviction": "low",
+    "lean_note": "no +EV value bet at the ask (my prob 6%, modal NO) — staying out.",
+    "prob_delta_vs_prev": null,
+    "trigger": "scheduled",
+    "strategy_id": "LQ5R-ensemble5-redteam",
+    "proposed_probability": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": "",
+    "rationale_summary": "Nirav Shah is currently identified as a U.S. Senate candidate in Maine, but there is no evidence to confirm he will be the Democratic nominee by July 31, 2026. The political landscape in Maine is highly competitive, with multiple candidates vying for the nomination following Graham Platner's exit. The confirmation process depends heavily on primary elections and party conventions, and the current ",
+    "key_drivers": [
+      "Outcome of primary elections and party conventions",
+      "Level of support Nirav Shah receives from key voter groups and party leaders",
+      "Impact of ongoing debates and candidate positioning on voter preferences"
+    ],
+    "reference_classes": [
+      "Competitive Senate races in Maine with frequent shifts in candidate support",
+      "Nomination processes in Senate races involving multiple candidates and party conventions"
+    ],
+    "research_refs": [
+      "ABC News",
+      "ABC News - Breaking News",
+      "Latest News and Videos",
+      "C-SPAN",
+      "CNN",
+      "ClickOnDetroit | WDIV Local 4",
+      "Los Angeles Times",
+      "Maine Morning Star",
+      "Maine Public"
+    ]
+  },
+  "history": [
+    {
+      "as_of": "2026-07-17T19:34:55Z",
+      "my_probability": 0.065,
+      "my_confidence": "high",
+      "market_implied_probability": 0.065,
+      "market_price_cents": 6.0,
+      "edge": 0.0,
+      "yes_ask": 0.07,
+      "no_ask": 0.94,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": -0.014999999999999894,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "no +EV value bet at the ask (my prob 6%, modal NO) — staying out.",
+      "prob_delta_vs_prev": null,
+      "trigger": "scheduled",
+      "strategy_id": "LQ5R-ensemble5-redteam",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "Nirav Shah is currently identified as a U.S. Senate candidate in Maine, but there is no evidence to confirm he will be the Democratic nominee by July 31, 2026. The political landscape in Maine is highly competitive, with multiple candidates vying for the nomination following Graham Platner's exit. The confirmation process depends heavily on primary elections and party conventions, and the current ",
+      "key_drivers": [
+        "Outcome of primary elections and party conventions",
+        "Level of support Nirav Shah receives from key voter groups and party leaders",
+        "Impact of ongoing debates and candidate positioning on voter preferences"
+      ],
+      "reference_classes": [
+        "Competitive Senate races in Maine with frequent shifts in candidate support",
+        "Nomination processes in Senate races involving multiple candidates and party conventions"
+      ],
+      "research_refs": [
+        "ABC News",
+        "ABC News - Breaking News",
+        "Latest News and Videos",
+        "C-SPAN",
+        "CNN",
+        "ClickOnDetroit | WDIV Local 4",
+        "Los Angeles Times",
+        "Maine Morning Star",
+        "Maine Public"
+      ]
+    }
+  ],
+  "position": {
+    "entered": false,
+    "entry_as_of": "",
+    "entry_side": "",
+    "entry_probability": 0.0,
+    "entry_price": 0.0,
+    "entry_market_implied": null,
+    "entry_confidence": "",
+    "entry_conviction": "",
+    "entry_gap": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": ""
+  }
+}
