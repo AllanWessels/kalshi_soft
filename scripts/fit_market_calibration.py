@@ -20,8 +20,11 @@ from lib.atlas import CalibrationMap, stable_hash
 DEFAULT_IN = config.DATA_DIR / "history" / "markets.jsonl"
 
 
-def _load(path):
-    rows = []
+def _stream(path, split=None):
+    """Yield usable rows from the corpus, optionally filtered to a hash split.
+
+    STREAMING (B3): the full-universe corpus is ~9M rows — never materialize it.
+    split: None (all) | "train" (hash%10 < 7) | "test" (hash%10 >= 7)."""
     for line in Path(path).open():
         line = line.strip()
         if not line:
@@ -30,22 +33,26 @@ def _load(path):
             r = json.loads(line)
         except ValueError:
             continue
-        if isinstance(r.get("implied_yes"), (int, float)) and r.get("outcome") in (0, 1):
-            rows.append(r)
-    return rows
+        if not (isinstance(r.get("implied_yes"), (int, float)) and r.get("outcome") in (0, 1)):
+            continue
+        if split is not None:
+            h = stable_hash(r.get("ticker", "")) % 10
+            if (split == "train") != (h < 7):
+                continue
+        yield r
 
 
 def _brier(rows, mapper=None):
-    n = len(rows)
-    if n == 0:
-        return None
+    n = 0
     s = 0.0
     for r in rows:
         p = r["implied_yes"]
         if mapper is not None:
-            p = mapper.calibrate(r.get("category", "?"), r["implied_yes"], r.get("open_interest", 0.0))["calibrated"]
+            p = mapper.calibrate(r.get("category", "?"), r["implied_yes"],
+                                 r.get("open_interest", 0.0), r.get("duration_days"))["calibrated"]
         s += (p - r["outcome"]) ** 2
-    return s / n
+        n += 1
+    return (s / n if n else None), n
 
 
 def main() -> int:
@@ -53,22 +60,16 @@ def main() -> int:
     ap.add_argument("--in", dest="inp", default=str(DEFAULT_IN))
     args = ap.parse_args()
 
-    rows = _load(args.inp)
-    if not rows:
+    # Deterministic 70/30 split, STREAMED (never materialize ~9M rows). md5-based stable_hash,
+    # NOT python hash() — the builtin is randomized per process.
+    cmap = CalibrationMap.fit(_stream(args.inp, "train"))
+    if not cmap.cells:
         print("no corpus — run harvest_history.py first", file=sys.stderr)
         return 2
-    print(f"loaded {len(rows)} settled markets")
-
-    # Deterministic 70/30 split. NB: md5-based stable_hash, NOT python hash() — the builtin is
-    # randomized per process (PYTHONHASHSEED), so the old split silently changed every run.
-    train = [r for r in rows if (stable_hash(r.get("ticker", "")) % 10) < 7]
-    test = [r for r in rows if (stable_hash(r.get("ticker", "")) % 10) >= 7]
-    print(f"train={len(train)}  test={len(test)}")
-
-    cmap = CalibrationMap.fit(train)
-    raw_b = _brier(test)
-    cal_b = _brier(test, cmap)
+    raw_b, n_test = _brier(_stream(args.inp, "test"))
+    cal_b, _ = _brier(_stream(args.inp, "test"), cmap)
     n_cells = len(cmap.cells)
+    print(f"test rows: {n_test}")
     print("\n=== OUT-OF-SAMPLE (test split) ===")
     print(f"  fitted cells (n>=min): {n_cells}")
     print(f"  market raw   Brier: {raw_b:.5f}")
@@ -78,7 +79,7 @@ def main() -> int:
 
     # Ship the full-data fit regardless (the map is identity where no cell qualifies, so it can
     # only help live where history showed a real, shrunk correction).
-    full = CalibrationMap.fit(rows)
+    full = CalibrationMap.fit(_stream(args.inp))
     full.save()
     print(f"\nwrote {len(full.cells)} calibrated cells -> {config.DATA_DIR/'history'/'market_calibration.json'}")
     # Show the strongest corrections (largest |b|, the bias term).

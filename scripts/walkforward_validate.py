@@ -34,8 +34,9 @@ def _fee(price: float) -> float:
     return math.ceil(config.KALSHI_FEE_RATE * price * (1 - price) * 100) / 100.0
 
 
-def _load(path):
-    rows = []
+def _stream(path, month_lt=None, month_eq=None):
+    """Yield usable rows, optionally filtered by close-month. STREAMING (B3): the
+    full-universe corpus is ~9M rows — never materialize it; each fold re-reads the file."""
     for line in Path(path).open():
         line = line.strip()
         if not line:
@@ -44,9 +45,14 @@ def _load(path):
             r = json.loads(line)
         except ValueError:
             continue
-        if isinstance(r.get("implied_yes"), (int, float)) and r.get("outcome") in (0, 1):
-            rows.append(r)
-    return rows
+        if not (isinstance(r.get("implied_yes"), (int, float)) and r.get("outcome") in (0, 1)):
+            continue
+        m = (r.get("close_time") or "")[:7]
+        if month_lt is not None and not (m and m < month_lt):
+            continue
+        if month_eq is not None and m != month_eq:
+            continue
+        yield r
 
 
 def _simulate(rows, cmap, min_ev, agg):
@@ -84,25 +90,31 @@ def main() -> int:
                     help="skip a test month with fewer rows than this")
     args = ap.parse_args()
 
-    rows = _load(args.inp)
-    if not rows:
+    # Pass 1 (streaming): discover close-months + per-month row counts.
+    month_counts: dict = defaultdict(int)
+    total = 0
+    for r in _stream(args.inp):
+        month_counts[(r.get("close_time") or "")[:7]] += 1
+        total += 1
+    if not total:
         print("no corpus — run harvest_history.py first", file=sys.stderr)
         return 2
-    months = sorted({(r.get("close_time") or "")[:7] for r in rows if r.get("close_time")})
-    print(f"loaded {len(rows)} rows across close-months: {months}")
+    months = sorted(m for m in month_counts if m)
+    print(f"{total} usable rows across close-months: "
+          f"{ {m: month_counts[m] for m in months} }")
 
     agg: dict = defaultdict(lambda: {"n": 0, "pnl": 0.0, "staked": 0.0})
     folds = []
-    for i, m in enumerate(months):
-        train = [r for r in rows if (r.get("close_time") or "")[:7] < m]
-        test = [r for r in rows if (r.get("close_time") or "")[:7] == m]
-        if not train or len(test) < args.min_fold_rows:
-            print(f"  fold {m}: skipped (train={len(train)}, test={len(test)})")
+    for m in months:
+        n_train = sum(v for k, v in month_counts.items() if k and k < m)
+        n_test = month_counts[m]
+        if not n_train or n_test < args.min_fold_rows:
+            print(f"  fold {m}: skipped (train={n_train}, test={n_test})")
             continue
-        cmap = CalibrationMap.fit(train)
-        n_trades = _simulate(test, cmap, args.min_ev, agg)
-        folds.append({"month": m, "train": len(train), "test": len(test), "trades": n_trades})
-        print(f"  fold {m}: train={len(train)} test={len(test)} trades={n_trades}")
+        cmap = CalibrationMap.fit(_stream(args.inp, month_lt=m))
+        n_trades = _simulate(_stream(args.inp, month_eq=m), cmap, args.min_ev, agg)
+        folds.append({"month": m, "train": n_train, "test": n_test, "trades": n_trades})
+        print(f"  fold {m}: train={n_train} test={n_test} trades={n_trades}", flush=True)
 
     if not folds:
         print("no usable folds — need >=2 close-months of history", file=sys.stderr)

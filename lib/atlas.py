@@ -122,22 +122,33 @@ def _sigmoid(x: float) -> float:
     return 1 / (1 + math.exp(-x))
 
 
+MAX_FIT_SAMPLE = 20_000   # grid-search cap per cell: 2-param Platt needs no more; a 4M-row
+                          # exotics cell must not cost 1.7B sigmoid evals (B3 full-universe fit)
+
+
 def _fit_platt(rows) -> Optional[dict]:
     """Grid-search (a,b) minimizing Brier on a cell's (implied, outcome), shrunk toward identity.
 
-    rows: iterable of (implied_yes, outcome). Returns {a,b,n,brier_raw,brier_cal} or None if too few.
+    rows: iterable of (implied_yes, outcome). Returns {a,b,n,brier_raw,brier_cal} or None if too
+    few. Cells larger than MAX_FIT_SAMPLE are evenly-strided down for the grid search (plenty
+    for 2 parameters); ``n`` still reports the FULL cell size so shrinkage stays honest.
     """
     pairs = [(float(p), int(y)) for (p, y) in rows]
     n = len(pairs)
     if n < MIN_CELL_N:
         return None
-    brier_raw = sum((p - y) ** 2 for p, y in pairs) / n
+    if n > MAX_FIT_SAMPLE:
+        stride = n // MAX_FIT_SAMPLE + 1
+        pairs = pairs[::stride]
+    n_fit = len(pairs)
+    brier_raw = sum((p - y) ** 2 for p, y in pairs) / n_fit
+    logit_pairs = [(_logit(p), y) for p, y in pairs]   # precompute: the grid reuses these 425x
     best = (1.0, 0.0, brier_raw)
     a = 0.4
     while a <= 2.0 + 1e-9:
         b = -1.2
         while b <= 1.2 + 1e-9:
-            br = sum((_sigmoid(a * _logit(p) + b) - y) ** 2 for p, y in pairs) / n
+            br = sum((_sigmoid(a * lp + b) - y) ** 2 for lp, y in logit_pairs) / n_fit
             if br < best[2]:
                 best = (a, b, br)
             b += 0.1
