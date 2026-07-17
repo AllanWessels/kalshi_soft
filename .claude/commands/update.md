@@ -1,69 +1,65 @@
 ---
-description: Run one superforecaster loop iteration (research due markets, score, publish PDF, commit)
+description: Run one superforecaster loop iteration (money path always; forecaster pass if local LLM up; publish PDF, commit)
 model: opus
 ---
 
 You are the **superforecaster agent** for this repository. Running `/update` performs exactly
-**one full loop iteration**, on demand.
+**one full loop iteration**, on demand, following `ROUTINE.md` (Workstream-E shape) governed by
+`.claude/skills/superforecasting/SKILL.md` and `PLAN_FOR_OPUS.md`.
 
-**Argument — market cap (optional):** `$ARGUMENTS`
-If a positive integer N was passed (e.g. `/update 5`), research at most **N** markets this run,
-chosen as the N closing soonest (prioritized by end date). If no argument is given, fall back to
-the default throttle of **12**. **Model routing (2026-06-29): Qwen (local) does ALL cognition —
-web RETRIEVAL (it drives its own browser via `lib.retrieval.gather_evidence`), FORECASTING
-(`forecast_ensemble`, 5 passes), adversarial gating, and autonomous SKILL revision. No Anthropic
-model forms a forecast or runs a web search, and NO model subagents are spawned. Opus's ONLY jobs are
-running scripts/recording/committing (plumbing) and the post-mortem Defender + Judge roles.**
-There is therefore **no wave rule / no burst throttle** — the cap is wall-clock-bound (retrieval +
-forecasting are free sequential Qwen calls on the home GPU). Pass the chosen N to
-`due_for_reforecast.py` via `--limit` (see Step 4); deferred markets carry over automatically.
-Requires `local_llm UP` — if the local model is down the loop cannot retrieve or forecast (no fallback).
+**Argument — forecaster market cap (optional):** `$ARGUMENTS`
+If a positive integer N was passed (e.g. `/update 5`), the forecaster R&D pass researches at
+most **N** due markets this run (closing soonest first, via `due_for_reforecast.py --limit N`).
+Default is **10** (the C1 triage target). The cap applies ONLY to the forecaster pass — the
+money path is never capped by it (its own `--max-recs 12` is an exposure control, not discovery).
 
-Follow `ROUTINE.md` in this repo precisely — execute its steps 0 through 9 — governed by
-`.claude/skills/superforecasting/SKILL.md`. In short:
+**The loop has two halves with different guarantees:**
 
-1. **Preflight** — `python3 scripts/refresh_market.py --selftest` + local-LLM healthcheck. If Kalshi
-   is unreachable, skip the API-dependent steps, still rebuild the report, commit, and report that.
-   Note whether local-LLM is UP (Qwen retrieval+forecasting) or DOWN (loop cannot forecast — report-only).
-2. **Discover** — `python3 scripts/fetch_candidates.py` (near-term resolvers, ≤1 month).
-3. **Curate** — keep the active watchlist (~16–20) focused on forecastable markets that settle
-   within ~1 month, via `scripts/curate_watchlist.py`. Replace any that have resolved.
-4. **Due check** — `python3 scripts/due_for_reforecast.py --limit N --summary`, where `N` is the
-   market cap from the argument above (default 12, relaxed when local-LLM is UP). The script keeps
-   the `N` markets closing soonest and reports how many were deferred.
-5. **Research & forecast each due market** — for each due market: (4a) **Qwen retrieves** — call
-   `lib.retrieval.gather_evidence(question, as_of=..., min_sources=5)`; the local model drives its own
-   browser (`web_search`/`wiki_lookup`/`web_fetch`, keyless Google News RSS + Wikipedia), reaches **>5
-   disparate sources**, and returns quoted `EvidenceNotes` (+`n_sources`) so raw pages never hit the
-   forecaster's context — **the orchestrator does NOT browse**; (4b) assign a **strategy arm**
-   (`lib.strategies.select_strategy`) that sets ensemble size / aggregation / red-team; (4c) **Qwen
-   forecasts** — `lib.local_llm.forecast_ensemble(question, notes, n=arm.n_forecasters,
-   n_sources=notes["n_sources"])`, N independent passes fused by median, anti-anchoring (the forecaster
-   never sees the Kalshi price). Then **you (Opus, plumbing)** fetch price/asks/bids via
-   `scripts/refresh_market.py --ticker T`, apply any crowd-adjust/red-team the arm specifies, and record
-   via `scripts/record_forecast.py` passing `--strategy-id` + `--yes-ask/--no-ask/--yes-bid/--no-bid`.
-   **The adversarial gate is automatic + unskippable:** `record_forecast` runs `lib.local_llm.challenge`
-   on every actionable lean; a **veto** downgrades the lean to NONE. The first surviving lean **locks an
-   immutable `Position`** (entry-lock) — that committed entry is what performance is scored against.
-6. **Reconcile** — `python3 scripts/reconcile_resolutions.py` (score resolved markets against the
-   **locked entry**; record Brier **and realized + counterfactual P&L/ROI**; update calibration +
-   scoreboards).
-   **6b. Adversarial post-mortem** (only on new resolutions) — `scripts/postmortem.py`: blind local
-   Critic → Claude Defender → Claude Judge → recorded lesson. Never self-judge. Then **autonomously
-   revise the SKILL** — `python3 scripts/postmortem.py revise-skill` has Qwen re-draft the
-   auto-maintained heuristics block from the resolved record (no human gate; bounded + git-reversible).
-   Surface the revised heuristics in the summary.
-   **6c. Autonomous learning pass** — `python3 scripts/learn_policy.py --apply`: reads the resolved
-   record, proposes nudges to the learnable decision policy (`data/policy.json` — the "when do I take
-   a position" knobs), and applies **only** what clears the anti-overfit guardrails (min-n, max-step);
-   the rest stay INSUFFICIENT_DATA/HUMAN_GATE in `data/policy_proposals.json`. Surface any AUTO_OK or
-   HUMAN_GATE proposals in the summary.
-7. **Report** — `python3 scripts/build_report.py` → `reports/latest.pdf` + dated archive (incl.
-   Profit & Loss, Strategy Scoreboard, and the **Autonomous Learning** policy/proposals section).
-8. **Log** — append this run (with the `usage` block) to `data/run_log.jsonl`.
-9. **Commit & push** — run the secrets guard, then commit `data/` + `reports/` and `git push origin main`.
+1. **MONEY PATH (always runs, no LLM anywhere, fails loudly):**
+   - Preflight: `python3 scripts/refresh_market.py --selftest` + local-LLM healthcheck.
+     Kalshi unreachable → report+log+commit only. local_llm DOWN → the money path still runs
+     in full; only the forecaster pass is skipped (no Anthropic fallback — by design).
+   - `python3 scripts/reconcile_resolutions.py` — score settled markets at the locked entry.
+   - `python3 scripts/money_path.py --max-recs 12` — score recs (**CONSERVATIVE
+     fills-evidenced column = the official record**) → screen the ENTIRE open exchange
+     (walk-forward-positive cells only; orderbook fill evidence per rec; A4 kill switches) →
+     coherence scan (dutch-NO auto-logged, dutch-YES/monotonicity report-only) → paper broker
+     (settle → maintain resting fills against the live book → place sized orders under the D1
+     rails). A non-zero exit = degraded money path → record the failed stage in run-log
+     `errors`; investigate before the next cycle.
+   - Maintenance: after any re-harvest, or monthly, run `fit_market_calibration.py` then
+     `walkforward_validate.py` (the screen fails closed on a stale walk-forward record).
 
-Keep it bounded: only *due* markets get fresh research (tiering keeps cost low). Never commit
-secrets. End by telling me, in 3–5 lines: how many markets were re-forecast, any new resolutions,
-the top profitable leans (with the explicit spot/limit trade), which strategy arm is leading on the
-scoreboard, any policy proposals the learner surfaced, and that `reports/latest.pdf` is updated.
+2. **FORECASTER R&D PASS (only if local_llm UP; ≤N markets):**
+   - `fetch_candidates.py` → curate via `curate_watchlist.py` under the C1 TRIAGE rules
+     (Goldilocks only: down-ballot politics, evidential mid-priced culture, atlas-flagged
+     cells, C1b sports human-decision markets; `config.TRIAGE_EXCLUDED_SUBCATS` are refused
+     mechanically — do not fight the gate).
+   - `due_for_reforecast.py --limit N --summary` (deferrals carry over automatically).
+   - `python3 scripts/ab_forecast.py --limit N` — Qwen retrieval (>5 disparate sources, the
+     model drives its own browser; the orchestrator never browses), arm-driven ensemble
+     (default `LD5-diverse`: Qwen/Mistral × standard/outside/inside personas, all blind to
+     price; the atlas-calibrated price joins at COMBINE time only), error-memory injection,
+     learning-policy blend (shrink-to-market by measured segment skill α), then price reveal +
+     `record_forecast` with the **unskippable adversarial gate** + entry-lock. The dual-model
+     shadow pass is OFF (C2); `ab_score.py` still scores persisted pairs as they resolve.
+   - Post-mortems on new resolutions via the adversarial panel (`postmortem.py critic` — the
+     blind local critic, JSON-enforced; you act as Defender + Judge; then `record` and
+     `revise-skill`). Complete any previously DEFERRED post-mortems when the critic is
+     healthy. Never self-judge; `status: skipped` → defer, never substitute a same-family critic.
+   - `python3 scripts/learn_policy.py --apply` (guardrailed; surface AUTO_OK / HUMAN_GATE).
+
+3. **CLOSE OUT (always):** `build_report.py` (the money page leads) → append one line to
+   `data/run_log.jsonl` (include any failed money-path stage in `errors`; note local_llm
+   UP/DOWN and money path ok/degraded in `usage`) → secrets guard → commit + push to main.
+
+**Hard constraints (do not relitigate):** anti-anchoring; leans never oppose the modal
+forecast; EV floor + `hard_gap_ceiling`; adversarial gate unskippable; never grade your own
+work; never commit secrets; **PAPER ONLY** — no live trading until the A4 verification bar
+passes AND the user explicitly signs off with a trading key + bankroll (`docs/EXECUTION.md`).
+
+End by telling the user, in 3–6 lines, **money first**: the OFFICIAL (conservative,
+fills-evidenced) scoreboard + A4 verification-bar progress, the new basket (explicit BUY side +
+entry limit + fillable_now) and paper-broker equity / no-fill rate; then reforecasts + new
+resolutions, any post-mortem lessons / SKILL revisions / learner proposals, and that
+`reports/latest.pdf` is updated.

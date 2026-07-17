@@ -352,6 +352,16 @@ enforced in paper; EXECUTION.md spec reviewed; zero live-order code exists. Est.
 
 ### Workstream E — OPERATING LOOP RESTRUCTURE (money path first-class)
 
+> **STATUS: LANDED 2026-07-17.** `scripts/money_path.py` — the whole structural pipeline
+> (score → screen → coherence → broker) as ONE LLM-free command: every stage always runs,
+> failures print loudly and exit non-zero for the run log. ROUTINE.md rewritten to the
+> two-half shape (money path Steps 1–2 unconditional incl. local_llm DOWN; forecaster R&D
+> pass Steps 3–4 conditional, ≤10 markets; report/log/commit always), with the degradation
+> matrix explicit. `.claude/commands/update.md` rewritten to match (summary leads with the
+> official conservative scoreboard). Smoke-tested: 4/4 stages chain, COMPLETE in fast mode.
+> ALL FIVE WORKSTREAMS A–E ARE NOW LANDED — what remains is accrual (verified fills toward
+> the A4 bar) + the post-harvest refit (B3 harvest still running, >5.5M rows).
+
 New `/update` step order (rewrite `ROUTINE.md` accordingly):
 1. Preflight → 2. Reconcile resolutions + **score recs (conservative)** → 3. **Full-universe screen
 → coherence scan → PaperBroker order maintenance** (the money path, always runs, fails loudly) →
