@@ -31,7 +31,7 @@ from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.units import cm
 from reportlab.lib import colors
 
-from lib import schemas, config, scoring
+from lib import schemas, config, scoring, recledger
 
 # ---------------------------------------------------------------------------
 # Internal helpers
@@ -637,6 +637,154 @@ def _segment_table(title: str, segments: dict, st: dict, label_header: str) -> l
     elems.append(Paragraph(title, st["small"]))
     elems.append(_sp(2))
     elems.append(tbl)
+    return elems
+
+
+_TBL_STYLE = [
+    ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#283593")),
+    ("TEXTCOLOR", (0, 0), (-1, 0), colors.white),
+    ("FONTNAME", (0, 0), (-1, 0), "Helvetica-Bold"),
+    ("FONTSIZE", (0, 0), (-1, -1), 8),
+    ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.HexColor("#EEF2FF"), colors.white]),
+    ("GRID", (0, 0), (-1, -1), 0.3, colors.HexColor("#C5CAE9")),
+    ("TOPPADDING", (0, 0), (-1, -1), 3),
+    ("BOTTOMPADDING", (0, 0), (-1, -1), 3),
+    ("LEFTPADDING", (0, 0), (-1, -1), 4),
+    ("ALIGN", (1, 0), (-1, -1), "CENTER"),
+]
+
+
+def _sb_row(label: str, sb: dict) -> list[str]:
+    n = sb["n_scored"]
+    return [
+        label, f"{sb['n_resolved']}", f"{n}", f"{sb['n_nofill']}",
+        f"{sb['wins']}/{n} ({sb['win_rate']:.0%})" if n else "—",
+        _fmt_dollar(sb["pnl"]) if n else "—",
+        f"${sb['deployed']:.2f}" if n else "—",
+        f"{sb['roi']:+.1%}" if sb["roi"] is not None else "—",
+        f"{sb['beat_market']}/{n}" if n else "—",
+    ]
+
+
+def _build_structural_edge(st: dict) -> list:
+    """THE MONEY PAGE (Workstream A3, PLAN_FOR_OPUS.md).
+
+    The structural/atlas edge is the project's one engine with measured out-of-sample edge; this
+    section is its live, forward verification record — conservative (fills-evidenced) numbers
+    first, legacy/optimistic clearly quarantined, tail stress, and the precommitted verification
+    bar. The user reads ONE artifact; the P&L engine lives on its front page."""
+    elems: list = []
+    rows = recledger.load_rows()
+    elems.append(Paragraph("Structural Edge — the money engine (paper)", st["section"]))
+    if not rows:
+        elems.append(Paragraph("No trade recommendations logged yet.", st["body"]))
+        return elems
+
+    vpol = recledger.load_verification_policy()
+    stress = recledger.compute_stress(rows)
+    vs = recledger.verification_status(rows, vpol, stress)
+
+    elems.append(Paragraph(
+        "Live forward record of the history-learned market-calibration edge "
+        "(<i>lib/atlas</i>: mid-liquidity longshot fades, +EV after fee &amp; half-spread). "
+        "The <b>conservative</b> column is the official number: a rec counts only if the "
+        "rec-time orderbook snapshot proves the limit was marketable, and it fills at the real "
+        "ask. The legacy cohort predates fill evidence and is provisional only. "
+        "<b>All positions are PAPER — no live trading until the verification bar passes and "
+        "the user signs off (constraint 2026-07-17).</b>", st["body"]))
+    elems.append(_sp(4))
+
+    # --- scoreboard table (official first) ---
+    data = [["Cohort", "Resolved", "Scored", "No-fill", "Win rate", "P&L", "Deployed",
+             "ROI", "Beat mkt"]]
+    data.append(_sb_row("VERIFIED (conservative — official)",
+                        recledger.scoreboard(rows, "verified", "conservative")))
+    legacy = recledger.scoreboard(rows, "legacy", "optimistic")
+    if legacy["n_resolved"]:
+        data.append(_sb_row("legacy (optimistic — fills unverified)", legacy))
+    tbl = Table(data, colWidths=[5.6 * cm, 1.6 * cm, 1.4 * cm, 1.4 * cm, 2.2 * cm,
+                                 1.5 * cm, 1.7 * cm, 1.4 * cm, 1.6 * cm])
+    tbl.setStyle(TableStyle(_TBL_STYLE))
+    elems.append(tbl)
+    elems.append(_sp(6))
+
+    # --- verification bar progress ---
+    elems.append(Paragraph(
+        "Verification bar (precommitted, PLAN_FOR_OPUS §A4) — passing unlocks the live-trading "
+        f"<i>conversation</i> only: <b>{'PASSED' if vs['verified'] else 'NOT PASSED'}</b>",
+        st["small"]))
+    vdata = [["Criterion", "Target", "Current", "Pass"]]
+    for name, c in vs["criteria"].items():
+        cur = c["current"]
+        if isinstance(cur, float):
+            cur = f"{cur:+.3f}"
+        elif isinstance(cur, tuple):
+            cur = f"[{cur[0]:+.3f}, {cur[1]:+.3f}]"
+        elif isinstance(cur, dict):
+            cur = ", ".join(f"{k}={v if not isinstance(v, float) else round(v, 3)}"
+                            for k, v in cur.items())
+        # Paragraph cells so long target/current strings wrap instead of overflowing
+        vdata.append([name, Paragraph(str(c["target"]), st["footnote"]),
+                      Paragraph(str(cur), st["footnote"]), "PASS" if c["pass"] else "—"])
+    vtbl = Table(vdata, colWidths=[4.2 * cm, 5.6 * cm, 6.2 * cm, 1.4 * cm])
+    vstyle = list(_TBL_STYLE)
+    for i, (_, c) in enumerate(vs["criteria"].items(), start=1):
+        col = colors.HexColor("#1B5E20") if c["pass"] else colors.HexColor("#9E9E9E")
+        vstyle.append(("TEXTCOLOR", (3, i), (3, i), col))
+    vtbl.setStyle(TableStyle(vstyle))
+    elems.append(vtbl)
+    elems.append(_sp(6))
+
+    # --- tail stress ---
+    if stress:
+        elems.append(Paragraph(
+            f"<b>Tail stress</b> (Monte Carlo, {stress['n_future']} future recs × "
+            f"{stress['trials']} trials, calibrated probabilities as truth): "
+            f"P(ROI&lt;0) = <b>{stress['p_loss']:.1%}</b>; ROI mean {stress['roi_mean']:+.1%} "
+            f"(p5 {stress['roi_p5']:+.1%} / p95 {stress['roi_p95']:+.1%}); expected max "
+            f"drawdown {stress['expected_max_drawdown']:.2f} units; break-even win rate "
+            f"{stress['breakeven_win_rate']:.1%}. A 13-0 start does NOT survive this section "
+            "unexamined: one tail hit erases 3–8 wins.", st["body"]))
+        elems.append(_sp(4))
+
+    # --- per-cell (verified) ---
+    cells = recledger.per_cell(rows, "verified", "conservative")
+    if cells:
+        cdata = [["Cell", "Scored", "Win rate", "P&L", "ROI"]]
+        for cell, sb in sorted(cells.items(), key=lambda kv: -(kv[1]["roi"] or 0)):
+            n = sb["n_scored"]
+            cdata.append([cell, str(n),
+                          f"{sb['win_rate']:.0%}" if n else "—",
+                          _fmt_dollar(sb["pnl"]) if n else "—",
+                          f"{sb['roi']:+.1%}" if sb["roi"] is not None else "—"])
+        ctbl = Table(cdata, colWidths=[7.0 * cm, 1.6 * cm, 2.0 * cm, 2.0 * cm, 2.0 * cm])
+        ctbl.setStyle(TableStyle(_TBL_STYLE))
+        elems.append(Paragraph("Per-cell record (verified cohort — the kill-switch view: "
+                               f"a cell dies at n≥{vpol['cell_kill_min_n']} with ROI&lt;0)",
+                               st["small"]))
+        elems.append(_sp(2))
+        elems.append(ctbl)
+        elems.append(_sp(6))
+
+    # --- open recs ---
+    open_recs = [r for r in rows if r.get("status") != "resolved"]
+    if open_recs:
+        odata = [["Ticker", "Side", "Mkt YES", "Fair", "Entry", "EVnet", "Fillable@rec"]]
+        for r in open_recs[-12:]:
+            ev = r.get("fill_evidence") or {}
+            odata.append([r.get("ticker", "?"), r.get("side", "?"),
+                          f"{r.get('market_yes', 0):.2f}", f"{r.get('calibrated_yes', 0):.2f}",
+                          f"{r.get('entry_limit', 0):.2f}", f"{r.get('ev_net', 0):+.3f}",
+                          ("yes" if ev.get("fillable_now") else
+                           ("resting" if ev else "no evidence"))])
+        otbl = Table(odata, colWidths=[6.4 * cm, 1.2 * cm, 1.6 * cm, 1.4 * cm, 1.4 * cm,
+                                       1.6 * cm, 2.6 * cm])
+        otbl.setStyle(TableStyle(_TBL_STYLE))
+        elems.append(Paragraph("Open recommendations (paper basket — correlated longshot fade; "
+                               "size small &amp; equal; one thematic position)", st["small"]))
+        elems.append(_sp(2))
+        elems.append(otbl)
+
     return elems
 
 
@@ -1648,6 +1796,14 @@ def build_pdf(
     # 1. Cover / summary
     story.extend(_build_cover(watchlist, forecasts, resolutions, calibration, st))
     story.append(_sp(12))
+
+    # 1a. Structural Edge — THE MONEY PAGE (Workstream A3): the one engine with measured edge
+    #     leads the report. Must never block the report from rendering.
+    try:
+        story.extend(_build_structural_edge(st))
+        story.append(_sp(12))
+    except Exception:
+        pass
 
     # 1b. Performance over time + per-segment skill (gated on n_resolved >= 1)
     if calibration.n_resolved >= 1:

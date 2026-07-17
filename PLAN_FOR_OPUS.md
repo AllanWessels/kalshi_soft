@@ -132,6 +132,12 @@ paper record proves fills, survives tail events, and clears the verification bar
 ### Workstream A — VERIFICATION FIRST (make the paper record trustworthy and visible)
 *Nothing else matters until the one profitable engine is honestly measured. Do this first.*
 
+> **STATUS: LANDED 2026-07-17** (`lib/recledger.py` + reworked recommend/score scripts +
+> `stress_recs.py` + report money page + `structural_verification` policy block v8). The 13
+> legacy rows are quarantined (`fills_unverified`); the verified cohort starts at n=0 and the
+> verification clock runs from here. First evidenced rec: fill snapshot shows the current open
+> rec would REST, not fill — the optimistic/conservative gap is real and now measured.
+
 **A1. Fill realism in the rec ledger.**
 - `scripts/recommend_trades.py`: at rec time, fetch the orderbook (`client.get_orderbook(ticker)`)
   and record on each rec row: best bid/ask on the recommended side, top-of-book depth (contracts),

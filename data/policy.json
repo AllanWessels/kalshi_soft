@@ -9,8 +9,8 @@
   "adversarial_veto_binding": true,
   "adversarial_min_veto_precision": 0.0,
   "crowd_adjust_weight_default": 0.3,
-  "updated_at": "2026-06-23T18:45:33Z",
-  "version": 7,
+  "updated_at": "2026-07-17T22:04:15Z",
+  "version": 8,
   "changelog": [
     {
       "at": "2026-06-22T22:41:03Z",
@@ -209,6 +209,37 @@
           "max_drawdown": -2.113
         }
       }
+    },
+    {
+      "at": "2026-07-17T22:04:15Z",
+      "knob": "structural_verification",
+      "old": null,
+      "new": {
+        "verified_min_n": 40,
+        "verified_min_roi": 0.08,
+        "roi_ci_level": 0.9,
+        "min_positive_cells": 3,
+        "stress_max_p_loss": 0.1,
+        "cell_kill_min_n": 15,
+        "global_halt_trailing_n": 30,
+        "global_halt_roi": -0.1,
+        "min_fill_depth_units": 1.0
+      },
+      "reason": "Workstream A4 (PLAN_FOR_OPUS.md): precommitted verification bar for the structural edge \u2014 n>=40 verified-fill resolved recs, conservative ROI>=+8% with 90% bootstrap CI excluding 0, >=3 independently positive cells, tail-event survival or stress P(loss)<10%, hit-rate consistency \u2014 plus per-cell kill switch (n>=15 & ROI<0) and global trailing-30 halt at -10%. Passing the bar unlocks ONLY the live-trading conversation with the user (constraint 2026-07-17: no live trading until verified).",
+      "evidence": {
+        "legacy_cohort_note": "13 resolved recs predate fill evidence; marked fills_unverified, reported as provisional only. Verification clock starts now."
+      }
     }
-  ]
+  ],
+  "structural_verification": {
+    "verified_min_n": 40,
+    "verified_min_roi": 0.08,
+    "roi_ci_level": 0.9,
+    "min_positive_cells": 3,
+    "stress_max_p_loss": 0.1,
+    "cell_kill_min_n": 15,
+    "global_halt_trailing_n": 30,
+    "global_halt_roi": -0.1,
+    "min_fill_depth_units": 1.0
+  }
 }
