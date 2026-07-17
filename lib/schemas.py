@@ -31,7 +31,10 @@ SCHEMA_VERSION = 1
 
 # Soft-market categories this project forecasts. These are OUR canonical labels;
 # Kalshi's own ``series.category`` strings are mapped onto these in config.py.
-CATEGORIES = ("politics", "culture", "statements", "economy")
+# "sports" (C1b, 2026-07-17) admits ONLY the human-decision layer of sports — award votes,
+# personnel moves, rulings, participation announcements. Game outcomes stay blocklisted
+# (config._STOCHASTIC_BLOCKLIST + the sports-decision gate in classify_category).
+CATEGORIES = ("politics", "culture", "statements", "economy", "sports")
 
 CONFIDENCE_LEVELS = ("low", "medium", "high")   # epistemic confidence
 LEANS = ("YES", "NO", "NONE")                   # paper-only direction

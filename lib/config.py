@@ -159,6 +159,12 @@ LOCAL_LLM_MODEL_MISTRAL = os.environ.get("LOCAL_LLM_MODEL_MISTRAL", "mistral-sma
 # Mistral arm reaches the target so we stop paying the 2nd-model wall-clock once the answer is in.
 AB_SHADOW_PATH = DATA_DIR / "ab_shadow.jsonl"
 SHADOW_AB_TARGET_RESOLUTIONS = int(os.environ.get("SHADOW_AB_TARGET_RESOLUTIONS", "25"))
+# Workstream C2 (2026-07-17): the dual-model shadow pass is ENDED early — at 15/25 resolutions
+# both models trail the market by ~0.32 Brier skill and the Qwen-vs-Mistral gap is noise; the
+# question dissolves into the LD5-diverse arm where BOTH models sit as ensemble members and the
+# strategy scoreboard keeps attributing per-arm results. ab_score.py continues scoring the
+# already-persisted shadow pairs as they resolve. Re-enable via env to resume the dual pass.
+SHADOW_AB_ENABLED = os.environ.get("SHADOW_AB_ENABLED", "0").strip().lower() in ("1", "true", "yes")
 
 # Thinking-suppression (2026-06-29 — fixes the dropped-pass bug). Qwen3 is a HYBRID reasoning
 # model; left unconstrained it emits an 8k-token <think> block that blows the output budget
@@ -312,6 +318,56 @@ _STOCHASTIC_BLOCKLIST = (
     "dow close", "eth/usd", "btc/usd",
 )
 
+# --- Sports HUMAN-DECISION carve-out (Workstream C1b, PLAN_FOR_OPUS.md, 2026-07-17) ---
+# Scope rule: a sports market is forecastable iff resolution runs through HUMAN DELIBERATION
+# (award electorates, front-office decisions, league rulings, participation announcements) —
+# never through play on the field. Game outcomes are the most efficiently priced crowd
+# forecasts in existence; judgmentally attacking them is triage-negligence. These markets are
+# structurally identical to down-ballot nominations — the one segment with measured positive
+# skill. Same earning bar as everywhere: zero positions until a segment reaches n>=10 resolved
+# with positive skill (learning-policy alpha); permanently barred if negative at n>=10.
+_SPORTS_SIGNALS = (
+    "nfl", "nba", "mlb", "nhl", "ncaa", "soccer", "premier league", "ufc",
+    "super bowl", "world series", "stanley cup", "golf", "tennis", "f1",
+    "football", "basketball", "baseball", "hockey", "olympic", "fifa", "league",
+)
+_SPORTS_DECISION_SIGNALS = (
+    # award votes (elections with a known electorate)
+    "mvp", "cy young", "heisman", "ballon d'or", "rookie of the year", "coach of the year",
+    "hall of fame", "all-star", "defensive player of the year",
+    # personnel decisions (identifiable deciders under observable incentives)
+    "head coach", "coach fired", "fired", "hired", "general manager", "draft pick",
+    "first overall", "traded", "trade deadline", "sign with", "contract extension",
+    "retire", "retirement", "opt out", "holdout", "transfer",
+    # institutional rulings
+    "suspension", "suspended", "appeal", "commissioner", "expansion", "relocation",
+    "host city", "rule change", "banned",
+    # participation / announcements
+    "will play", "announce", "comeback", "return from injury",
+)
+
+
+# --- Watchlist TRIAGE (Workstream C1, PLAN_FOR_OPUS.md, 2026-07-17) ---
+# Tetlock's first commandment: work only questions where effort pays. These sub-categories are
+# measured NEGATIVE-skill, efficiently-priced segments (fed-rates -0.029 n=7, inflation-cpi
+# -0.055 n=5, us-president -0.057 n=6 on the resolved record) that also eat the run's
+# wall-clock. curate_watchlist refuses to add them; the forecaster's effort concentrates on
+# the Goldilocks zone (down-ballot politics, evidential mid-priced culture, atlas-flagged
+# cells, sports human-decisions).
+TRIAGE_EXCLUDED_SUBCATS = ("fed-rates", "inflation-cpi", "jobs-unemployment", "gdp-growth",
+                           "us-president")
+
+
+def is_sports_decision(title: str, category_hint: str = "") -> bool:
+    """True iff this looks like the human-decision layer of sports (C1b scope rule).
+
+    Requires BOTH a sports signal AND a decision signal — a bare game/series market has no
+    decision signal and stays blocked; an award/personnel/ruling market clears. Ambiguous
+    markets (sports signal, no decision signal) are excluded by construction."""
+    hay = f"{title} {category_hint}".lower()
+    return (any(s in hay for s in _SPORTS_SIGNALS)
+            and any(d in hay for d in _SPORTS_DECISION_SIGNALS))
+
 _CATEGORY_PATTERNS: tuple[tuple[str, tuple[str, ...]], ...] = (
     ("politics", (
         "election", "senate", "house of representatives", "president", "presidential",
@@ -342,6 +398,11 @@ _CATEGORY_PATTERNS: tuple[tuple[str, tuple[str, ...]], ...] = (
 def classify_category(title: str, category_hint: str = "") -> Optional[str]:
     """Map a market to one of ``schemas.CATEGORIES`` or None (not soft / blocked)."""
     hay = f"{title} {category_hint}".lower()
+    # C1b carve-out FIRST: the human-decision layer of sports is forecastable even though
+    # its titles trip the sports blocklist terms below. Game outcomes still fall through
+    # to the blocklist and stay excluded.
+    if is_sports_decision(title, category_hint):
+        return "sports"
     if any(b in hay for b in _STOCHASTIC_BLOCKLIST):
         return None
     # Honor an explicit canonical hint if Kalshi already gives us one.

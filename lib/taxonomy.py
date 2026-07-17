@@ -99,11 +99,32 @@ _STATEMENTS_RULES: tuple[tuple[str, tuple[str, ...]], ...] = (
     ("announcement", ("announce", "press conference", "statement", "interview")),
 )
 
+# Sports HUMAN-DECISION layer only (C1b): resolution runs through deliberation, not play.
+# Ordered: award electorates first (the most election-like), then front-office decisions,
+# then league rulings, then participation/announcement questions.
+_SPORTS_RULES: tuple[tuple[str, tuple[str, ...]], ...] = (
+    ("award-vote", (
+        "mvp", "cy young", "heisman", "ballon d'or", "rookie of the year",
+        "coach of the year", "hall of fame", "all-star", "defensive player of the year",
+    )),
+    ("personnel", (
+        "head coach", "fired", "hired", "general manager", "draft pick", "first overall",
+        "traded", "trade deadline", "sign with", "contract extension", "retire",
+        "retirement", "opt out", "holdout", "transfer",
+    )),
+    ("ruling", (
+        "suspension", "suspended", "appeal", "commissioner", "expansion", "relocation",
+        "host city", "rule change", "banned",
+    )),
+    ("participation", ("will play", "play in", "comeback", "return from injury", "announce")),
+)
+
 _RULES_BY_CATEGORY: dict[str, tuple[tuple[str, tuple[str, ...]], ...]] = {
     "politics": _POLITICS_RULES,
     "economy": _ECONOMY_RULES,
     "culture": _CULTURE_RULES,
     "statements": _STATEMENTS_RULES,
+    "sports": _SPORTS_RULES,
 }
 
 # Ordered reference list of every subcategory we can emit, per category

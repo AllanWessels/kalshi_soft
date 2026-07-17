@@ -80,14 +80,17 @@ cap (`config.WATCHLIST_CAP`, currently **30**) from `candidates.json`, ranking c
 **primarily by FORECASTABILITY** (per the SKILL's selection-priority rule): pick markets with a real
 evidential basis where research yields a defensible, well-calibrated number; do NOT add near-random
 trivia (weekly-chart specifics, single-broadcast word/mention markets, coin-flips) even when liquid.
-**Widen-the-funnel directive (2026-06-19):** within the forecastable set, deliberately favor *softer,
-less efficiently-priced* markets — ones priced in the uncertain middle (~0.15–0.85) and in
-less-nationally-covered corners (down-ballot/foreign nominations, the cheap side of a race you already
-have a view on, RT-score/box-office/award/chart markets with real review tracking, topical
-event-driven statements) — because that is where research can actually beat the price and produce a
-lean. Efficiently-priced macro/headline markets are worth tracking but mostly resolve to NONE. Accuracy
-still beats diversity, but the cap was raised from 20→30 precisely to hold a wider funnel of soft
-forecastable markets. To add a market, you will create its first forecast in Step 5 (the
+**TRIAGE (Workstream C1, 2026-07-17 — supersedes "track macro anyway"):** the watchlist holds ONLY
+the Goldilocks zone: (a) down-ballot / under-covered politics (the one measured positive-skill
+segment — deliberately grow its n), (b) mid-priced (~0.15–0.85) thin/mid-OI culture with a real
+evidential basis, (c) markets the atlas flags in a corrected cell (forecaster as second opinion on
+structural candidates), (d) **sports human-decision markets** (C1b: award votes, personnel moves,
+league rulings, participation — resolution through HUMAN DELIBERATION, never play on the field;
+`config.is_sports_decision` gates them in, game outcomes stay blocked). Measured negative-skill
+efficient segments (`config.TRIAGE_EXCLUDED_SUBCATS`: fed-rates, inflation-cpi, jobs-unemployment,
+gdp-growth, us-president) are REFUSED mechanically by `curate_watchlist.py` — do not fight the gate;
+the record says we cannot beat those prices and they eat the run's wall-clock. Target ≤10
+forecasts/run so effort concentrates where skill can actually accrue. To add a market, you will create its first forecast in Step 5 (the
 `--title/--category/--close-time` args seed the record); also reflect membership by editing
 `data/watchlist.json` **via a script or `store` helper**, not by guessing fields. Keep active count ≤
 the cap. `curate_watchlist.py` is
@@ -121,15 +124,17 @@ target; default 12 when no N is given. Deferred markets carry over automatically
 
 ## Step 4 — Research & forecast each due market (RETRIEVE → assign arm → ENSEMBLE-FORECAST)
 
-> **STANDARD PATH while the shadow A/B is active (user directive 2026-06-29):** run
-> `python3 scripts/ab_forecast.py --limit N`. It executes Steps 4a–5 for the whole due set:
-> shared Qwen retrieval, then forecasts EVERY market with **both Qwen and Mistral** on the same
-> evidence, records the assigned arm officially (adversarial gate + entry-lock), and persists both
-> blind forecasts to `data/ab_shadow.jsonl`. `scripts/ab_score.py` resolves the Qwen-vs-Mistral
-> Brier head-to-head as those markets settle; the dual pass **auto-disables** once the Mistral arm
-> reaches `SHADOW_AB_TARGET_RESOLUTIONS` (25). The manual 4a–4c below documents what that script does.
-> **Profitability is the governing objective — see `PROFITABILITY_PLAN.md`** (concentrate on
-> measured positive-skill segments; we currently lose to the market on Brier and must fix that).
+> **STANDARD PATH:** run `python3 scripts/ab_forecast.py --limit N`. It executes Steps 4a–5 for
+> the whole due set: shared Qwen retrieval, then ONE forecast per market by the **assigned arm's
+> own topology** (adversarial gate + entry-lock). **C2/C3 (2026-07-17): the dual-model shadow
+> pass is OFF** (`config.SHADOW_AB_ENABLED=False` — both models trailed the market by ~0.32
+> Brier at 15/25 and the gap was noise; `ab_score.py` still scores already-persisted pairs as
+> they resolve). The default arm is **`LD5-diverse`** — a REAL diversity panel per Page's
+> theorem: Qwen standard + Qwen outside-view + Mistral standard + Mistral inside-view (all
+> blind to price) **+ the atlas-calibrated price appended as 5th member at COMBINE time only**
+> (the crowd gets a seat at the aggregation table, never in a prompt — anti-anchoring holds by
+> construction). Homogeneous arms stay live so the scoreboard MEASURES whether diversity wins.
+> **Profitability is the governing objective — see `PROFITABILITY_PLAN.md` + `PLAN_FOR_OPUS.md`.**
 
 ### Step 4a — Retrieval tier (Qwen drives its own browser, free)
 For each due market, **Qwen does the retrieval itself** — the orchestrator does NOT run WebSearch/

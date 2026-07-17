@@ -54,6 +54,15 @@ def main() -> int:
         if not c:
             skipped.append(f"{t} (not in candidates.json — run fetch_candidates first)")
             continue
+        # TRIAGE gate (Workstream C1): refuse measured negative-skill efficient segments —
+        # Tetlock's Goldilocks rule, enforced mechanically so a hopeful curation judgment
+        # can't re-admit markets the record says we cannot beat.
+        from lib import taxonomy  # local import: keep module import cheap
+        subcat = taxonomy.classify_subcategory(t, c.get("title", ""), c.get("category", ""))
+        if subcat in config.TRIAGE_EXCLUDED_SUBCATS:
+            skipped.append(f"{t} (TRIAGE: '{subcat}' is a measured negative-skill efficient "
+                           f"segment — see PLAN_FOR_OPUS §C1)")
+            continue
         # Use the true resolution date (expected_expiration_time, surfaced as
         # resolve_time by fetch_candidates) for tiering — some markets trade well
         # past when they actually settle (e.g. a primary that settles in June but

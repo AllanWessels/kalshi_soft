@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-17T19:18:20Z",
+  "updated_at": "2026-07-17T22:44:28Z",
   "cap": 30,
   "markets": [
     {
@@ -34,66 +34,6 @@
       "reforecast_cadence_days": 3.0
     },
     {
-      "ticker": "KXHORMUZNORM-26MAR17-B260701",
-      "event_ticker": "KXHORMUZNORM-26MAR17",
-      "title": "Will the 7-day moving average of transit calls through the Strait of Hormuz as reported by the IMF PortWatch be above 60 before July 1, 2026?",
-      "category": "politics",
-      "close_time": "2026-06-15T14:00:00Z",
-      "added_at": "2026-06-13T10:21:31Z",
-      "liquidity_snapshot": {
-        "volume_24h": 258661.4,
-        "open_interest": 1996281.23,
-        "spread_cents": 1.0
-      },
-      "status": "resolved",
-      "reforecast_cadence_days": 0.0
-    },
-    {
-      "ticker": "KXPLATNERDROPOUT-26",
-      "event_ticker": "KXPLATNERDROPOUT-26",
-      "title": "Will Graham Platner drop out of the 2026 United States Senate election in Maine before Jul 14, 2026?",
-      "category": "politics",
-      "close_time": "2026-07-14T14:00:00Z",
-      "added_at": "2026-06-19T18:47:55Z",
-      "liquidity_snapshot": {
-        "volume_24h": 23957.77,
-        "open_interest": 401024.68,
-        "spread_cents": 1.0
-      },
-      "status": "resolved",
-      "reforecast_cadence_days": 3.0
-    },
-    {
-      "ticker": "KXCPI-26JUN-T0.0",
-      "event_ticker": "KXCPI-26JUN",
-      "title": "Will CPI rise more than 0.0% in June 2026?",
-      "category": "economy",
-      "close_time": "2026-07-14T13:56:00Z",
-      "added_at": "2026-06-19T18:47:55Z",
-      "liquidity_snapshot": {
-        "volume_24h": 3187.99,
-        "open_interest": 34954.79,
-        "spread_cents": 2.0
-      },
-      "status": "resolved",
-      "reforecast_cadence_days": 3.0
-    },
-    {
-      "ticker": "KXECONSTATCPIYOY-26JUN-T4.1",
-      "event_ticker": "KXECONSTATCPIYOY-26JUN",
-      "title": "CPI year-over-year in Jun 2026?",
-      "category": "economy",
-      "close_time": "2026-07-14T14:00:00Z",
-      "added_at": "2026-06-19T18:47:55Z",
-      "liquidity_snapshot": {
-        "volume_24h": 9942.69,
-        "open_interest": 22434.8,
-        "spread_cents": 2.0
-      },
-      "status": "resolved",
-      "reforecast_cadence_days": 3.0
-    },
-    {
       "ticker": "KXTRUMPATTEND",
       "event_ticker": "KXTRUMPATTEND",
       "title": "Will Donald J. Trump attend The 2026 FIFA World Cup Final?",
@@ -124,36 +64,6 @@
       "reforecast_cadence_days": 7.0
     },
     {
-      "ticker": "KXECONSTATCPIYOY-26JUN-T3.9",
-      "event_ticker": "KXECONSTATCPIYOY-26JUN",
-      "title": "CPI year-over-year in Jun 2026?",
-      "category": "economy",
-      "close_time": "2026-07-14T14:00:00Z",
-      "added_at": "2026-06-19T20:50:22Z",
-      "liquidity_snapshot": {
-        "volume_24h": 1494.08,
-        "open_interest": 17561.72,
-        "spread_cents": 1.0
-      },
-      "status": "resolved",
-      "reforecast_cadence_days": 3.0
-    },
-    {
-      "ticker": "KXCPI-26JUN-T-0.1",
-      "event_ticker": "KXCPI-26JUN",
-      "title": "Will CPI rise more than -0.1% in June 2026?",
-      "category": "economy",
-      "close_time": "2026-07-14T13:56:00Z",
-      "added_at": "2026-06-19T20:50:22Z",
-      "liquidity_snapshot": {
-        "volume_24h": 1243.95,
-        "open_interest": 30569.43,
-        "spread_cents": 1.0
-      },
-      "status": "resolved",
-      "reforecast_cadence_days": 3.0
-    },
-    {
       "ticker": "KXGOVOKNOMR-26-GDRU",
       "event_ticker": "KXGOVOKNOMR-26",
       "title": "Will Genter Drummond be the Republican nominee for Governor in Oklahoma?",
@@ -166,36 +76,6 @@
         "spread_cents": 1.0
       },
       "status": "active",
-      "reforecast_cadence_days": 3.0
-    },
-    {
-      "ticker": "KXFEDDECISION-26JUL-H0",
-      "event_ticker": "KXFEDDECISION-26JUL",
-      "title": "Will the Federal Reserve Hike rates by 0bps at their July 2026 meeting?",
-      "category": "economy",
-      "close_time": "2026-07-29T18:05:00Z",
-      "added_at": "2026-06-19T21:52:22Z",
-      "liquidity_snapshot": {
-        "volume_24h": 63909.5,
-        "open_interest": 715104.83,
-        "spread_cents": 1.0
-      },
-      "status": "active",
-      "reforecast_cadence_days": 7.0
-    },
-    {
-      "ticker": "KXCPI-26JUN-T0.1",
-      "event_ticker": "KXCPI-26JUN",
-      "title": "Will CPI rise more than 0.1% in June 2026?",
-      "category": "economy",
-      "close_time": "2026-07-14T13:56:00Z",
-      "added_at": "2026-06-19T21:52:22Z",
-      "liquidity_snapshot": {
-        "volume_24h": 4237.84,
-        "open_interest": 34709.64,
-        "spread_cents": 1.0
-      },
-      "status": "resolved",
       "reforecast_cadence_days": 3.0
     },
     {

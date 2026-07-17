@@ -40,8 +40,11 @@ def main():
     ap.add_argument("--as-of", default=schemas.utc_now_iso()[:10])
     args = ap.parse_args()
     AS_OF = args.as_of
-    dual = shadow_active()
-    print(f"shadow_A/B {'ACTIVE (dual-model)' if dual else 'COMPLETE (Qwen-only; Mistral arm resolved enough)'}")
+    # C2 (2026-07-17): dual pass requires BOTH the config flag and an unresolved shadow target.
+    # Default is OFF — both models trail the market badly and the head-to-head question now
+    # lives inside the LD5-diverse arm (each family is a member; the scoreboard attributes).
+    dual = config.SHADOW_AB_ENABLED and shadow_active()
+    print(f"shadow_A/B {'ACTIVE (dual-model)' if dual else 'OFF (C2: single arm-driven pass; diverse arm carries both families)'}")
     due = _due(args.limit)
     resolved = store.load_resolutions().resolved
     lessons = store.load_lessons().lessons
@@ -52,23 +55,29 @@ def main():
         print(f"market-calibration anchor ON ({len(cmap.cells)} history-learned cells)")
     cache = {}
 
-    # Phase AB: shared Qwen retrieval + Qwen forecast (model resident). Before forecasting each
-    # market we recall the forecaster's most-similar PAST MISSES and inject them in-context
-    # (lib.error_memory) so it stops repeating avoidable errors — the same block is reused for
-    # the Mistral pass below so both models learn from the identical track record.
+    # Phase AB: shared Qwen retrieval + the ASSIGNED ARM's forecast. The arm decides the
+    # topology (C3): homogeneous arms run n passes of their model; LD5-diverse runs the
+    # 4-member cross-model persona panel (strategies.ensemble_members), grouped by model to
+    # limit VRAM swaps. Before forecasting we recall the forecaster's most-similar PAST MISSES
+    # and inject them in-context (lib.error_memory) so it stops repeating avoidable errors.
     for i, m in enumerate(due):
         tk, q = m["ticker"], m["title"]
         try:
+            arm = strategies.select_strategy(tk, by_strat)
             notes = retrieval.gather_evidence(q, as_of=AS_OF, min_sources=5, max_steps=6)
             em = error_memory.recall_block(q, category=m.get("category", ""), ticker=tk,
                                            k=3, resolutions=resolved, lessons=lessons)
-            rq = local_llm.forecast_ensemble(q, notes, n=5, as_of=AS_OF,
-                                             n_sources=notes.get("n_sources"), error_memory=em)
-            cache[tk] = {"m": m, "notes": notes, "qwen": rq, "em": em,
-                         "arm": strategies.select_strategy(tk, by_strat).id}
-            print(f"[Q {i+1}/{len(due)}] {tk} src={notes.get('n_sources')} qwen_p={rq['my_probability']} conf={rq['my_confidence']} mem={'y' if em else '-'}", flush=True)
+            members = strategies.ensemble_members(arm)
+            rq = local_llm.forecast_ensemble(
+                q, notes, n=arm.n_forecasters, as_of=AS_OF,
+                n_sources=notes.get("n_sources"), error_memory=em,
+                model=strategies.resolve_forecaster_model(arm), members=members)
+            cache[tk] = {"m": m, "notes": notes, "qwen": rq, "em": em, "arm": arm.id}
+            print(f"[F {i+1}/{len(due)}] {tk} arm={arm.id} src={notes.get('n_sources')} "
+                  f"p={rq['my_probability']} conf={rq['my_confidence']} n={rq['n']}/{rq['n_requested']} "
+                  f"mem={'y' if em else '-'}", flush=True)
         except Exception as e:
-            print(f"[Q {i+1}/{len(due)}] {tk} ERR {e}", flush=True)
+            print(f"[F {i+1}/{len(due)}] {tk} ERR {e}", flush=True)
 
     # Phase C: Mistral on the SAME notes (one swap) — only while shadow active
     if dual:
@@ -90,7 +99,10 @@ def main():
     with open(config.AB_SHADOW_PATH, "a") as shadowf:
         for tk, c in cache.items():
             arm = strategies.get(c["arm"]) or strategies.get(strategies.DEFAULT_STRATEGY)
-            official = c.get("mistral") if arm.id == "LQM5-mistral24" else c["qwen"]
+            # Phase AB already ran the ASSIGNED arm's own topology (model/members), so its
+            # ensemble is the official forecast for every arm. (Pre-C2 the Mistral arm's
+            # official pass came from the separate shadow phase.)
+            official = c["qwen"]
             try:
                 px = json.loads(subprocess.run(["python3", "scripts/refresh_market.py", "--ticker", tk],
                                 capture_output=True, text=True, timeout=60).stdout.strip().splitlines()[-1])
@@ -106,7 +118,13 @@ def main():
             cal = cmap.calibrate(cat, mi, oi) if mi is not None else {"calibrated": mi, "corrected": False}
             mi_anchor = cal["calibrated"] if mi is not None else None
             # Arm aggregation first (the arm's own topology: ensemble agg + any crowd-adjust).
-            prob_arm = strategies.combine(official["probs"], arm, market_price=mi) if official.get("probs") else official["my_probability"]
+            # LD5-diverse gets its 5th member HERE: the atlas-calibrated price joins the prob
+            # list at combine time only — the crowd's (bias-corrected) vote enters the panel
+            # AFTER every blind LLM pass, so anti-anchoring is preserved by construction.
+            member_probs = list(official.get("probs") or [])
+            if arm.id == "LD5-diverse" and member_probs and mi_anchor is not None:
+                member_probs.append(float(mi_anchor))
+            prob_arm = strategies.combine(member_probs, arm, market_price=mi) if member_probs else official["my_probability"]
             # Then the LEARNING POLICY on top: recalibrate this model's prob and shrink toward the
             # market by our MEASURED skill in this segment. During the shadow A/B we feed a SINGLE
             # model (the assigned arm's) so the blind Qwen-vs-Mistral head-to-head stays uncontaminated;

@@ -15,40 +15,267 @@
     "Any single-source claim must be corroborated by a second, independent source before it enters a forecast (the EOWEEK 'June 11 EOs' artifact came from an uncorroborated AI search-summary).",
     "For contested/political facts, pull at least one left-leaning AND one right-leaning outlet plus a center/wire source; do not let one lean dominate.",
     "Betting/prediction markets are a signal (reliability 2-3), never a fact source; note them but weight by liquidity.",
-    "Treat the WebSearch result summary as reliability 1 (an AI compression layer) — open the underlying links / WebFetch the primary."
+    "Treat the WebSearch result summary as reliability 1 (an AI compression layer) \u2014 open the underlying links / WebFetch the primary.",
+    "Sports human-decision markets (C1b): forecast the DECIDERS (voters, owners, league office), never the game; no single-game recency update (the no-single-poll rule); fan-sentiment-heavy markets are where longshot overpricing concentrates."
   ],
   "domains": {
     "economics_data": [
-      {"name": "BLS (Bureau of Labor Statistics) news releases", "url": "https://www.bls.gov", "type": "official-statistical", "reliability": 5, "bias": "none/center", "use": "CPI, U-3/employment situation; the resolution source for CPI/U-3 markets"},
-      {"name": "Cleveland Fed Inflation Nowcast", "url": "https://www.clevelandfed.org/indicators-and-data/inflation-nowcasting", "type": "official-model", "reliability": 5, "bias": "none/center", "use": "forward MoM/YoY CPI & PCE nowcast (daily, oil+gas driven)"},
-      {"name": "EIA (Energy Information Administration)", "url": "https://www.eia.gov", "type": "official-statistical", "reliability": 5, "bias": "none/center", "use": "gasoline/energy prices feeding CPI energy component"},
-      {"name": "AAA Gas Prices", "url": "https://gasprices.aaa.com", "type": "industry-data", "reliability": 4, "bias": "none", "use": "real-time retail gasoline (CPI energy proxy)"},
-      {"name": "BEA (Bureau of Economic Analysis)", "url": "https://www.bea.gov", "type": "official-statistical", "reliability": 5, "bias": "none/center", "use": "PCE, GDP"},
-      {"name": "Trading Economics", "url": "https://tradingeconomics.com", "type": "data-aggregator", "reliability": 3, "bias": "none", "use": "consensus forecasts + historical series (verify vs primary)"},
-      {"name": "Reuters / Bloomberg / CNBC economics", "url": "https://www.reuters.com", "type": "wire/finance", "reliability": 4, "bias": "center", "use": "bank consensus, market reaction"}
+      {
+        "name": "BLS (Bureau of Labor Statistics) news releases",
+        "url": "https://www.bls.gov",
+        "type": "official-statistical",
+        "reliability": 5,
+        "bias": "none/center",
+        "use": "CPI, U-3/employment situation; the resolution source for CPI/U-3 markets"
+      },
+      {
+        "name": "Cleveland Fed Inflation Nowcast",
+        "url": "https://www.clevelandfed.org/indicators-and-data/inflation-nowcasting",
+        "type": "official-model",
+        "reliability": 5,
+        "bias": "none/center",
+        "use": "forward MoM/YoY CPI & PCE nowcast (daily, oil+gas driven)"
+      },
+      {
+        "name": "EIA (Energy Information Administration)",
+        "url": "https://www.eia.gov",
+        "type": "official-statistical",
+        "reliability": 5,
+        "bias": "none/center",
+        "use": "gasoline/energy prices feeding CPI energy component"
+      },
+      {
+        "name": "AAA Gas Prices",
+        "url": "https://gasprices.aaa.com",
+        "type": "industry-data",
+        "reliability": 4,
+        "bias": "none",
+        "use": "real-time retail gasoline (CPI energy proxy)"
+      },
+      {
+        "name": "BEA (Bureau of Economic Analysis)",
+        "url": "https://www.bea.gov",
+        "type": "official-statistical",
+        "reliability": 5,
+        "bias": "none/center",
+        "use": "PCE, GDP"
+      },
+      {
+        "name": "Trading Economics",
+        "url": "https://tradingeconomics.com",
+        "type": "data-aggregator",
+        "reliability": 3,
+        "bias": "none",
+        "use": "consensus forecasts + historical series (verify vs primary)"
+      },
+      {
+        "name": "Reuters / Bloomberg / CNBC economics",
+        "url": "https://www.reuters.com",
+        "type": "wire/finance",
+        "reliability": 4,
+        "bias": "center",
+        "use": "bank consensus, market reaction"
+      }
     ],
     "elections_politics": [
-      {"name": "Ballotpedia", "url": "https://ballotpedia.org", "type": "nonpartisan-reference", "reliability": 4, "bias": "center", "use": "candidates, primary/runoff dates, results, thresholds"},
-      {"name": "Official Secretary of State / election authority results", "url": "", "type": "official", "reliability": 5, "bias": "none", "use": "certified/preliminary vote counts (system of record)"},
-      {"name": "FiveThirtyEight pollster ratings + averages", "url": "https://projects.fivethirtyeight.com/pollster-ratings/", "type": "nonpartisan-analysis", "reliability": 4, "bias": "center", "use": "weight individual polls by grade; discount partisan-commissioned polls"},
-      {"name": "AP / Reuters election desks", "url": "https://apnews.com", "type": "wire", "reliability": 5, "bias": "center", "use": "race calls, results"},
-      {"name": "Local/state outlets (e.g. SD Searchlight, NonDoc, KOSU)", "url": "", "type": "local-reporting", "reliability": 3, "bias": "varies", "use": "ground-level race dynamics, endorsements, vote redistribution"},
-      {"name": "Polymarket / PredictIt (non-Kalshi)", "url": "https://polymarket.com", "type": "prediction-market", "reliability": 3, "bias": "narrative-prone", "use": "independent market signal; weight by liquidity, never as fact"},
-      {"name": "Cross-spectrum outlet pair (e.g. WSJ/Fox + NYT/WaPo + Al Jazeera)", "url": "", "type": "established-outlet", "reliability": 3, "bias": "pull one left + one right + center", "use": "balance lean on contested political facts"}
+      {
+        "name": "Ballotpedia",
+        "url": "https://ballotpedia.org",
+        "type": "nonpartisan-reference",
+        "reliability": 4,
+        "bias": "center",
+        "use": "candidates, primary/runoff dates, results, thresholds"
+      },
+      {
+        "name": "Official Secretary of State / election authority results",
+        "url": "",
+        "type": "official",
+        "reliability": 5,
+        "bias": "none",
+        "use": "certified/preliminary vote counts (system of record)"
+      },
+      {
+        "name": "FiveThirtyEight pollster ratings + averages",
+        "url": "https://projects.fivethirtyeight.com/pollster-ratings/",
+        "type": "nonpartisan-analysis",
+        "reliability": 4,
+        "bias": "center",
+        "use": "weight individual polls by grade; discount partisan-commissioned polls"
+      },
+      {
+        "name": "AP / Reuters election desks",
+        "url": "https://apnews.com",
+        "type": "wire",
+        "reliability": 5,
+        "bias": "center",
+        "use": "race calls, results"
+      },
+      {
+        "name": "Local/state outlets (e.g. SD Searchlight, NonDoc, KOSU)",
+        "url": "",
+        "type": "local-reporting",
+        "reliability": 3,
+        "bias": "varies",
+        "use": "ground-level race dynamics, endorsements, vote redistribution"
+      },
+      {
+        "name": "Polymarket / PredictIt (non-Kalshi)",
+        "url": "https://polymarket.com",
+        "type": "prediction-market",
+        "reliability": 3,
+        "bias": "narrative-prone",
+        "use": "independent market signal; weight by liquidity, never as fact"
+      },
+      {
+        "name": "Cross-spectrum outlet pair (e.g. WSJ/Fox + NYT/WaPo + Al Jazeera)",
+        "url": "",
+        "type": "established-outlet",
+        "reliability": 3,
+        "bias": "pull one left + one right + center",
+        "use": "balance lean on contested political facts"
+      }
     ],
     "film_tv_ratings": [
-      {"name": "Rotten Tomatoes (Tomatometer page)", "url": "https://www.rottentomatoes.com", "type": "metric-of-record", "reliability": 5, "bias": "none", "use": "THE resolution source for KXRT-* markets; read the live score + review count"},
-      {"name": "Metacritic", "url": "https://www.metacritic.com", "type": "metric", "reliability": 4, "bias": "none", "use": "corroborating critic aggregate; cross-check trajectory"},
-      {"name": "Trade press (THR, Variety, Deadline)", "url": "https://www.hollywoodreporter.com", "type": "industry-press", "reliability": 4, "bias": "center", "use": "first reactions, embargo timing, tracking"},
-      {"name": "Box-office tracking (Box Office Mojo, The Numbers)", "url": "https://www.boxofficemojo.com", "type": "industry-data", "reliability": 4, "bias": "none", "use": "tracking/sentiment proxy"}
+      {
+        "name": "Rotten Tomatoes (Tomatometer page)",
+        "url": "https://www.rottentomatoes.com",
+        "type": "metric-of-record",
+        "reliability": 5,
+        "bias": "none",
+        "use": "THE resolution source for KXRT-* markets; read the live score + review count"
+      },
+      {
+        "name": "Metacritic",
+        "url": "https://www.metacritic.com",
+        "type": "metric",
+        "reliability": 4,
+        "bias": "none",
+        "use": "corroborating critic aggregate; cross-check trajectory"
+      },
+      {
+        "name": "Trade press (THR, Variety, Deadline)",
+        "url": "https://www.hollywoodreporter.com",
+        "type": "industry-press",
+        "reliability": 4,
+        "bias": "center",
+        "use": "first reactions, embargo timing, tracking"
+      },
+      {
+        "name": "Box-office tracking (Box Office Mojo, The Numbers)",
+        "url": "https://www.boxofficemojo.com",
+        "type": "industry-data",
+        "reliability": 4,
+        "bias": "none",
+        "use": "tracking/sentiment proxy"
+      }
     ],
     "geopolitics_foreign": [
-      {"name": "Primary statements (White House, State Dept, FIFA, foreign govts)", "url": "https://www.whitehouse.gov", "type": "primary", "reliability": 5, "bias": "self-interested but authoritative on intent", "use": "official intent, signed documents, schedules"},
-      {"name": "Reuters / AP / AFP wires", "url": "https://www.reuters.com", "type": "wire", "reliability": 5, "bias": "center", "use": "breaking facts on conflict/diplomacy"},
-      {"name": "Federal Register", "url": "https://www.federalregister.gov", "type": "official", "reliability": 5, "bias": "none", "use": "executive orders (count + dates), rules"},
-      {"name": "CFR / Brennan Center / nonpartisan think tanks", "url": "https://www.cfr.org", "type": "analysis", "reliability": 4, "bias": "center", "use": "context, base rates, legal status (e.g. FISA certifications)"},
-      {"name": "IMF PortWatch", "url": "https://portwatch.imf.org", "type": "official-data", "reliability": 5, "bias": "none", "use": "resolution source for Strait-of-Hormuz transit-call markets"},
-      {"name": "Cross-spectrum + regional outlets (Al Jazeera, BBC, WSJ)", "url": "", "type": "established-outlet", "reliability": 3, "bias": "pull multiple leans", "use": "balance framing on contested geopolitics"}
+      {
+        "name": "Primary statements (White House, State Dept, FIFA, foreign govts)",
+        "url": "https://www.whitehouse.gov",
+        "type": "primary",
+        "reliability": 5,
+        "bias": "self-interested but authoritative on intent",
+        "use": "official intent, signed documents, schedules"
+      },
+      {
+        "name": "Reuters / AP / AFP wires",
+        "url": "https://www.reuters.com",
+        "type": "wire",
+        "reliability": 5,
+        "bias": "center",
+        "use": "breaking facts on conflict/diplomacy"
+      },
+      {
+        "name": "Federal Register",
+        "url": "https://www.federalregister.gov",
+        "type": "official",
+        "reliability": 5,
+        "bias": "none",
+        "use": "executive orders (count + dates), rules"
+      },
+      {
+        "name": "CFR / Brennan Center / nonpartisan think tanks",
+        "url": "https://www.cfr.org",
+        "type": "analysis",
+        "reliability": 4,
+        "bias": "center",
+        "use": "context, base rates, legal status (e.g. FISA certifications)"
+      },
+      {
+        "name": "IMF PortWatch",
+        "url": "https://portwatch.imf.org",
+        "type": "official-data",
+        "reliability": 5,
+        "bias": "none",
+        "use": "resolution source for Strait-of-Hormuz transit-call markets"
+      },
+      {
+        "name": "Cross-spectrum + regional outlets (Al Jazeera, BBC, WSJ)",
+        "url": "",
+        "type": "established-outlet",
+        "reliability": 3,
+        "bias": "pull multiple leans",
+        "use": "balance framing on contested geopolitics"
+      }
+    ],
+    "sports_decisions": [
+      {
+        "name": "ESPN (news desk)",
+        "url": "https://www.espn.com",
+        "type": "national-sports-media",
+        "reliability": 4,
+        "bias": "none/center",
+        "use": "award races, coach/personnel news, suspensions; fast but narrative-driven \u2014 corroborate insider scoops"
+      },
+      {
+        "name": "The Athletic",
+        "url": "https://www.theathletic.com",
+        "type": "national-sports-media",
+        "reliability": 4,
+        "bias": "none/center",
+        "use": "deep beat reporting on personnel decisions; beat writers are the primary signal for front-office intent"
+      },
+      {
+        "name": "AP Sports",
+        "url": "https://apnews.com/hub/sports",
+        "type": "wire",
+        "reliability": 5,
+        "bias": "none/center",
+        "use": "confirmed transactions, rulings, retirements \u2014 treat as resolution-grade confirmation"
+      },
+      {
+        "name": "League official sites (NFL.com/NBA.com/MLB.com)",
+        "url": "https://www.nfl.com",
+        "type": "official-primary",
+        "reliability": 5,
+        "bias": "none/center",
+        "use": "official rulings, suspensions, transactions; THE resolution source for league decisions"
+      },
+      {
+        "name": "Spotrac / OverTheCap",
+        "url": "https://www.spotrac.com",
+        "type": "contract-data",
+        "reliability": 4,
+        "bias": "none/center",
+        "use": "contract/cap mechanics that constrain personnel decisions (buyouts, guarantees, deadlines)"
+      },
+      {
+        "name": "Award ballot trackers (public voter polls)",
+        "url": "",
+        "type": "aggregator",
+        "reliability": 3,
+        "bias": "none/center",
+        "use": "revealed-ballot tracking for MVP/HOF-style votes; small-n early, strong late \u2014 weight by ballots revealed"
+      },
+      {
+        "name": "Local beat reporters (team-market papers)",
+        "url": "",
+        "type": "local-beat",
+        "reliability": 3,
+        "bias": "homer-lean",
+        "use": "earliest signal on coach/roster intent; single-source scoops need a second independent confirmation"
+      }
     ]
   }
 }

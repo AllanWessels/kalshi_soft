@@ -228,6 +228,19 @@ scanner live; rec volume 5–20×; all still paper + conservative-scored. Est. e
 
 ### Workstream C — REFIT THE FORECASTER AS R&D (Tetlock-aligned, cheap, honest)
 
+> **STATUS: LANDED 2026-07-17.** C1: `TRIAGE_EXCLUDED_SUBCATS` enforced mechanically in
+> `curate_watchlist.py` (refused a Fed add in test; active Fed market dropped). C1b: `sports`
+> canonical category + `config.is_sports_decision` gate (MVP/coach/ruling markets classify in,
+> game outcomes stay blocked — 6/6 test cases), taxonomy segments award-vote/personnel/ruling/
+> participation, 7 sports-decision sources added to the registry. C2: shadow A/B OFF
+> (`SHADOW_AB_ENABLED=False`; ab_score still scores persisted pairs). C3: `LD5-diverse` arm is
+> DEFAULT — live smoke: 4/4 members (Qwen std 0.62 / Qwen outside 0.65 / Mistral std 0.572 /
+> Mistral inside 0.593 → median 0.6065), atlas price joins at combine time only. C4:
+> `response_format=json_object` + repair pass + `data/llm_json_stats.json` malformed_rate —
+> all 3 previously-deferred critics (Platner, CPI-T0.0, YoY-3.9) now return status:ok,
+> malformed_rate 0.0. Deferred post-mortems from 2026-07-17 are unblocked — complete them on
+> the next /update.
+
 **C1. Triage the watchlist (CHAMPS commandment #1).** Curation policy change in `ROUTINE.md` +
 `curate_watchlist.py`: DROP efficient-macro and deep-liquidity headline markets entirely (Fed, CPI,
 us-president — all measured negative-skill, and they eat the run's wall-clock). The watchlist holds

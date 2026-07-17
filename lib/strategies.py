@@ -70,6 +70,15 @@ REGISTRY: dict[str, Strategy] = {
     "LQM5-mistral24": Strategy(
         "LQM5-mistral24", "5 independent Mistral-Small-24B forecasters -> trimmed mean",
         n_forecasters=5, aggregation="trimmed_mean", forecaster_model="mistral"),
+    # --- DIVERSE panel (Workstream C3, 2026-07-17): a real crowd, not 5 temperature samples.
+    #     4 LLM members (Qwen standard + outside-view persona; Mistral standard + inside-view
+    #     persona) + the ATLAS-CALIBRATED market price as the 5th member, injected by the
+    #     orchestrator at COMBINE time only (anti-anchoring preserved: no LLM member ever sees
+    #     the price; the crowd gets one seat at the aggregation table, not in the prompt). ---
+    "LD5-diverse": Strategy(
+        "LD5-diverse", "diverse panel: Qwen+Mistral x standard/outside/inside personas "
+        "+ atlas-calibrated price as 5th member at combine time",
+        n_forecasters=5, aggregation="trimmed_mean", forecaster_model="diverse"),
     # --- RETIRED Opus arms (never selected; kept for historical record resolution) ---
     "S0-single": Strategy(
         "S0-single", "[RETIRED] Single Opus forecaster, no aggregation",
@@ -87,9 +96,11 @@ REGISTRY: dict[str, Strategy] = {
 }
 
 # Only LIVE local arms are ever selected. S* remain in REGISTRY for record resolution.
-_LIVE_ARM_IDS = ["LQ5-ensemble5", "LQ5C-ensemble5-crowd", "LQ5R-ensemble5-redteam",
-                 "LQ1-single", "LQM5-mistral24"]
-DEFAULT_STRATEGY = "LQ5-ensemble5"
+# C3 (2026-07-17): LD5-diverse joins the experiment and becomes the default; the homogeneous
+# arms stay live so the scoreboard MEASURES whether diversity beats them rather than assuming.
+_LIVE_ARM_IDS = ["LD5-diverse", "LQ5-ensemble5", "LQ5C-ensemble5-crowd",
+                 "LQ5R-ensemble5-redteam", "LQ1-single", "LQM5-mistral24"]
+DEFAULT_STRATEGY = "LD5-diverse"
 _ARM_IDS = list(_LIVE_ARM_IDS)
 
 
@@ -106,7 +117,26 @@ def resolve_forecaster_model(strategy: Strategy) -> Optional[str]:
     if fam == "mistral":
         from . import config
         return config.LOCAL_LLM_MODEL_MISTRAL
-    return None  # qwen/opus -> default model (config.LOCAL_LLM_MODEL)
+    return None  # qwen/opus/diverse -> default model (config.LOCAL_LLM_MODEL)
+
+
+def ensemble_members(strategy: Strategy) -> Optional[list[dict]]:
+    """The LLM member roster for a diverse arm (Workstream C3), or None for homogeneous arms.
+
+    4 LLM members — two model families x distinct epistemic personas — so disagreement is
+    structured, not thermal. The 5th member (the atlas-calibrated market price) is NOT here:
+    the orchestrator appends it to the prob list at COMBINE time, after the blind passes,
+    so anti-anchoring holds (no LLM prompt ever contains the price)."""
+    if (strategy.forecaster_model or "").lower() != "diverse":
+        return None
+    from . import config
+    mistral = config.LOCAL_LLM_MODEL_MISTRAL
+    return [
+        {"model": None, "persona": "standard"},      # Qwen, the baseline
+        {"model": None, "persona": "outside"},       # Qwen, base-rate hedgehog
+        {"model": mistral, "persona": "standard"},   # Mistral, second family
+        {"model": mistral, "persona": "inside"},     # Mistral, incentive analyst
+    ]
 
 
 # ---------------------------------------------------------------------------

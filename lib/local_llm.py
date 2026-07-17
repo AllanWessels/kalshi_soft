@@ -49,12 +49,15 @@ def _url(path: str) -> str:
 
 
 def _base_payload(messages: list[dict], *, model: Optional[str], temperature: float,
-                  max_tokens: int) -> dict:
+                  max_tokens: int, json_mode: bool = False) -> dict:
     """Build the chat payload, injecting thinking-suppression so a hybrid reasoning model
     (Qwen3) cannot burn the output budget on a <think> block and return truncated JSON.
     ``reasoning_effort="none"`` is the field Ollama's OpenAI endpoint honors;
     ``chat_template_kwargs`` is the vLLM equivalent (ignored elsewhere). Both are harmless
-    to non-reasoning models (Mistral)."""
+    to non-reasoning models (Mistral). ``json_mode`` sets OpenAI-style
+    ``response_format={"type":"json_object"}`` — constrained decoding that makes malformed
+    JSON structurally impossible on backends that honor it (Ollama/vLLM do; harmless
+    elsewhere). Workstream C4: 5/7 post-mortems deferred on parse errors before this."""
     payload: dict = {
         "model": model or config.LOCAL_LLM_MODEL,
         "messages": messages,
@@ -62,6 +65,8 @@ def _base_payload(messages: list[dict], *, model: Optional[str], temperature: fl
         "max_tokens": max_tokens,
         "stream": False,
     }
+    if json_mode:
+        payload["response_format"] = {"type": "json_object"}
     if config.LOCAL_LLM_SUPPRESS_THINKING:
         payload["reasoning_effort"] = "none"
         payload["chat_template_kwargs"] = {"enable_thinking": False}
@@ -115,10 +120,12 @@ def chat(
     temperature: float = 0.0,
     max_tokens: int = 1024,
     timeout: Optional[float] = None,
+    json_mode: bool = False,
 ) -> str:
     """Single chat completion -> assistant text. Raises LocalLLMError on transport
     failure or a malformed response shape."""
-    payload = _base_payload(messages, model=model, temperature=temperature, max_tokens=max_tokens)
+    payload = _base_payload(messages, model=model, temperature=temperature,
+                            max_tokens=max_tokens, json_mode=json_mode)
     resp = _post("chat/completions", payload, timeout=timeout)
     try:
         return resp["choices"][0]["message"]["content"]
@@ -170,24 +177,76 @@ def _extract_json_block(text: str) -> dict:
         raise LocalLLMError(f"could not parse JSON object: {e}") from e
 
 
+_JSON_STATS_PATH = config.DATA_DIR / "llm_json_stats.json"
+
+
+def _bump_json_stats(**inc: int) -> None:
+    """Durable malformed-rate metric (Workstream C4). Best-effort read-modify-write —
+    a lost increment costs nothing; the RATE is what the acceptance criterion reads."""
+    try:
+        stats = json.loads(_JSON_STATS_PATH.read_text())
+    except (OSError, ValueError):
+        stats = {}
+    for k, v in inc.items():
+        stats[k] = int(stats.get(k, 0)) + v
+    calls = max(1, int(stats.get("calls", 1)))
+    stats["malformed_rate"] = round(int(stats.get("malformed", 0)) / calls, 4)
+    try:
+        _JSON_STATS_PATH.write_text(json.dumps(stats))
+    except OSError:
+        pass
+
+
+def json_stats() -> dict:
+    try:
+        return json.loads(_JSON_STATS_PATH.read_text())
+    except (OSError, ValueError):
+        return {}
+
+
 def complete_json(system: str, user: str, *, max_tokens: int = 1024,
                   temperature: float = 0.0, model: Optional[str] = None,
                   retries: int = 1) -> dict:
-    """Chat with a JSON-only instruction and return the parsed object.
+    """Chat with structured-output enforcement and return the parsed object.
 
-    Retries once by default on an unparseable/truncated body (with thinking suppressed
-    these are rare, but a single retry absorbs the occasional malformed pass instead of
-    dropping it — what used to silently shrink the forecast ensemble)."""
+    Three layers of defense (Workstream C4 — the critic deferred 5/7 post-mortems on
+    parse errors before this): (1) ``response_format=json_object`` constrained decoding
+    where the backend honors it; (2) a plain retry; (3) a REPAIR pass that feeds the
+    malformed text back and asks for the corrected JSON object alone. Every malformed
+    body and successful repair is counted in data/llm_json_stats.json (malformed_rate)."""
     messages = [
         {"role": "system", "content": system +
          "\n\nRespond with ONE valid JSON object and nothing else. No prose, no markdown."},
         {"role": "user", "content": user},
     ]
+    _bump_json_stats(calls=1)
     last: Optional[LocalLLMError] = None
+    broken_text: Optional[str] = None
     for _ in range(max(1, retries + 1)):
         try:
-            return _extract_json_block(
-                chat(messages, max_tokens=max_tokens, temperature=temperature, model=model))
+            text = chat(messages, max_tokens=max_tokens, temperature=temperature,
+                        model=model, json_mode=True)
+        except LocalLLMError as e:      # transport failure — nothing to repair
+            last = e
+            continue
+        try:
+            return _extract_json_block(text)
+        except LocalLLMError as e:
+            last = e
+            broken_text = text
+            _bump_json_stats(malformed=1)
+    if broken_text:
+        # Repair pass: the model fixes its own malformed output (cheap, usually works —
+        # truncation and stray commas are the common failure modes).
+        try:
+            repaired = _extract_json_block(chat(
+                [{"role": "system",
+                  "content": "You repair malformed JSON. Return ONLY the corrected, complete, "
+                             "valid JSON object — no prose, no markdown."},
+                 {"role": "user", "content": broken_text[: 8000]}],
+                max_tokens=max_tokens, temperature=0.0, model=model, json_mode=True))
+            _bump_json_stats(repaired=1)
+            return repaired
         except LocalLLMError as e:
             last = e
     raise last if last else LocalLLMError("complete_json: exhausted retries")
@@ -294,10 +353,28 @@ _FORECASTER_SYSTEM = (
     "epistemic confidence separately from the probability."
 )
 
+# Persona variants (Workstream C3): a true diversity ensemble needs members that DISAGREE for
+# structured reasons, not five temperature-jittered copies of one prompt (Page's theorem:
+# collective error = avg individual error - diversity; temperature adds noise, not diversity).
+# Personas force distinct epistemic strategies onto the same evidence. All stay blind to price.
+_PERSONAS: dict[str, str] = {
+    "standard": "",
+    "outside": (
+        " PERSONA — OUTSIDE VIEW ONLY: derive your probability almost entirely from base rates "
+        "and reference classes ('how often do things like this happen?'). Use case-specific "
+        "news only to choose the right reference class, never to chase a vivid detail. If the "
+        "evidence contains no usable base rate, construct the closest historical analogy and "
+        "say so."),
+    "inside": (
+        " PERSONA — INSIDE VIEW: focus on the specific actors, their incentives, the causal "
+        "mechanism, and the constraints in THIS case. Spell out the concrete path to YES and "
+        "the concrete path to NO, then judge which is easier for the actors involved."),
+}
+
 
 def forecast(question: str, evidence_notes: dict, *, as_of: str = "",
              temperature: float = 0.0, model: Optional[str] = None,
-             error_memory: str = "") -> dict:
+             error_memory: str = "", persona: str = "standard") -> dict:
     """LOCAL-model forecaster — ONE pass. Returns
     ``{"my_probability": float, "my_confidence": "low|medium|high",
     "rationale_summary": str, "key_drivers": [str], "reference_classes": [str]}``.
@@ -320,7 +397,7 @@ def forecast(question: str, evidence_notes: dict, *, as_of: str = "",
         'OUTPUT JSON: {"my_probability": <0-1 float>, "my_confidence": "low|medium|high", '
         '"rationale_summary": str, "key_drivers": [str], "reference_classes": [str]}'
     )
-    system = _FORECASTER_SYSTEM
+    system = _FORECASTER_SYSTEM + _PERSONAS.get(persona, "")
     if error_memory:
         system += (" You are also given LESSONS FROM YOUR PAST MISSES on similar questions; "
                    "treat them as method guidance to avoid repeating prior errors, not as evidence.")
@@ -338,8 +415,18 @@ def forecast(question: str, evidence_notes: dict, *, as_of: str = "",
 def forecast_ensemble(question: str, evidence_notes: dict, *, n: int = 5,
                       as_of: str = "", temperature: float = 0.7,
                       n_sources: Optional[int] = None, model: Optional[str] = None,
-                      error_memory: str = "") -> dict:
-    """Run ``n`` INDEPENDENT Qwen forecasts (temperature>0 for diversity) and fuse them.
+                      error_memory: str = "",
+                      members: Optional[list[dict]] = None) -> dict:
+    """Run INDEPENDENT forecasts and fuse them.
+
+    Two modes:
+      * homogeneous (default): ``n`` passes of one ``model`` at temperature>0 — variance
+        reduction only.
+      * DIVERSE (Workstream C3): ``members`` = list of ``{"model": tag|None, "persona":
+        "standard"|"outside"|"inside"}`` — one pass per member. Genuine diversity (different
+        models, different epistemic strategies) cuts correlated error the way temperature
+        jitter cannot (Page's diversity theorem; the GJP recipe). Members are run grouped by
+        model to avoid VRAM thrash; every member stays blind to the market price.
 
     Confidence is EARNED from agreement, not asserted by one small model:
       - spread_confidence: pstdev(probs) <=0.05 -> high, <=0.12 -> medium, else low.
@@ -350,16 +437,25 @@ def forecast_ensemble(question: str, evidence_notes: dict, *, n: int = 5,
     "spread_confidence", "rationale_summary", "key_drivers", "reference_classes",
     "samples": [...]}``. Raises LocalLLMError only if EVERY pass fails."""
     import statistics
+    if members:
+        # Group by model so a 14GB<->9GB swap happens at most once per market.
+        plan = sorted(({"model": m.get("model"), "persona": m.get("persona", "standard")}
+                       for m in members), key=lambda m: str(m["model"]))
+    else:
+        plan = [{"model": model, "persona": "standard"} for _ in range(max(1, n))]
     probs: list[float] = []
     samples: list[dict] = []
-    for i in range(max(1, n)):
+    for i, member in enumerate(plan):
         try:
             # Vary temperature slightly per pass to avoid collapsed/degenerate agreement.
             out = forecast(question, evidence_notes, as_of=as_of,
-                           temperature=round(temperature + 0.05 * (i % 3), 3), model=model,
-                           error_memory=error_memory)
+                           temperature=round(temperature + 0.05 * (i % 3), 3),
+                           model=member["model"], error_memory=error_memory,
+                           persona=member["persona"])
         except LocalLLMError:
             continue
+        out["member"] = {"model": member["model"] or "default",
+                         "persona": member["persona"]}
         probs.append(out["my_probability"])
         samples.append(out)
     if not probs:
@@ -387,7 +483,7 @@ def forecast_ensemble(question: str, evidence_notes: dict, *, n: int = 5,
     return {
         "probs": probs,
         "n": len(probs),
-        "n_requested": max(1, n),
+        "n_requested": len(plan),
         "mean": round(mean, 4),
         "median": round(median, 4),
         "stdev": round(stdev, 4),
