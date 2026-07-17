@@ -215,9 +215,46 @@ scanner live; rec volume 5–20×; all still paper + conservative-scored. Est. e
 us-president — all measured negative-skill, and they eat the run's wall-clock). The watchlist holds
 ONLY: (a) down-ballot/under-covered politics (the one +skill segment — deliberately grow its n),
 (b) mid-priced (0.15–0.85) thin/mid-OI culture with real evidential basis, (c) markets the atlas
-flags as sitting in a corrected cell (forecaster as a second opinion on structural candidates).
-Target ≤10 forecasts/run. The goal is to get `us-governor-primary`-type segments to n≥10 fast and
-find out if the niche skill is real.
+flags as sitting in a corrected cell (forecaster as a second opinion on structural candidates),
+(d) **sports human-decision markets (C1b)**. Target ≤10 forecasts/run. The goal is to get
+`us-governor-primary`-type segments to n≥10 fast and find out if the niche skill is real.
+
+**C1b. The sports human-decision pivot (user directive, 2026-07-17).** Sports is admitted to the
+*judgmental* forecaster — but only its political layer. The scope rule, stated once and enforced in
+code: **a sports market is forecastable iff resolution runs through HUMAN DELIBERATION, never
+through play on the field.** Game outcomes (spreads, moneylines, totals, "who wins X") stay
+blocklisted forever — they are the most efficiently priced crowd-forecasts in existence and a
+judgmental forecaster attacking them is triage-negligence. What qualifies:
+- **Award votes** — MVP/Cy Young/Heisman/Ballon d'Or/HOF: *elections with a known, small, studiable
+  electorate*. Voter regularities (narrative arcs, stat thresholds, team-success requirements,
+  ballot timing — e.g. regular-season-only voting that casual money contaminates with playoff
+  narrative) are exactly reference-class material.
+- **Personnel decisions** — coach firings/hires, trades by deadline, draft picks, extensions,
+  retirements, holdouts: one or few identifiable deciders under observable incentives.
+- **Institutional rulings** — suspensions/appeals, CFP committee rankings, expansion/relocation and
+  rule-change votes, host-city selection.
+- **Participation/announcement questions** — "will X play in Y", comeback/opt-out announcements.
+Why the crowd is beatable there (behaviorally, not quantitatively): fan sentiment (hopes get bet),
+narrative seduction (media storyline ≠ decider incentives), single-game recency overreaction (the
+"no single poll moves you" rule maps to **"no single game moves you"**), and thin attention (a
+coach-firing market gets a fraction of a moneyline's scrutiny). These markets are structurally
+identical to down-ballot nominations — the one segment with measured positive skill.
+Implementation:
+1. `lib/config.py` — carve the blocklist: keep game-outcome sports blocked; whitelist
+   human-decision sports series (maintain an explicit allowlist of series patterns, reviewed at
+   curation; when ambiguous, excluded).
+2. `lib/taxonomy.py` — new segments: `sports/award-vote`, `sports/personnel`, `sports/ruling`,
+   `sports/participation`, so skill accrues per sub-category from day one.
+3. `fetch_candidates.py` — include the whitelisted series in discovery; curation ranks them by the
+   same forecastability rule (real evidential basis: voter history, beat-reporter signal, incentive
+   structure — no coin-flips).
+4. Source registry — add the source families this niche needs (national vs local beat reporters,
+   cap/contract analysts, public ballot trackers), with reliability ratings.
+5. **Same earning bar as everything else (C5/Part IV):** sports-decision segments take ZERO
+   positions until a segment reaches n≥10 resolved with positive skill; any segment at n≥10 with
+   negative skill is permanently barred. This is an experiment with a precommitted verdict, not a
+   new profit assumption. (Note: B3's *structural* sports expansion is independent — the map may
+   trade game-outcome cells mechanically; the forecaster never does.)
 
 **C2. End the A/B, pick one model.** The shadow reaches its n=25 target within ~2 runs. Both models
 lose to the market badly; the leader (currently Mistral) becomes the sole forecaster; the dual pass
@@ -245,7 +282,8 @@ learning policy's measured segment skill (shrink-to-market α). No new gates, no
 program — that is an acceptable steady state; the structural engine is the P&L.
 
 *Acceptance: run wall-clock cut ~60%; watchlist 100% Goldilocks; ensemble genuinely diverse;
-malformed_rate <5%; niche segments accruing n. Est. effort: 2 sessions.*
+malformed_rate <5%; niche segments accruing n; sports human-decision segments discoverable, taxed
+into their own sub-categories, and accruing a scored record. Est. effort: 2–3 sessions.*
 
 ### Workstream D — RISK & EXECUTION FRAMEWORK (build the rails now, connect money LATER)
 
