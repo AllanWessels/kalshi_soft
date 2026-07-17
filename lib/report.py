@@ -766,6 +766,36 @@ def _build_structural_edge(st: dict) -> list:
         elems.append(ctbl)
         elems.append(_sp(6))
 
+    # --- paper broker (Workstream D2): execution simulation on top of the signal ledger ---
+    try:
+        from lib import broker as _broker
+        orders = _broker.load_orders()
+        if orders:
+            s_by: dict = {}
+            for o in orders:
+                s_by[o.get("status") or "?"] = s_by.get(o.get("status") or "?", 0) + 1
+            eq = _broker.equity_stats(orders)
+            settled_o = [o for o in orders if o.get("status") == "settled"]
+            pnl = sum(o.get("realized_pnl") or 0.0 for o in settled_o)
+            cost = sum((o.get("fill_price") or 0) * (o.get("filled_qty") or 0)
+                       + (o.get("fee_paid") or 0) for o in settled_o)
+            terminal = [o for o in orders
+                        if o.get("status") in ("settled", "expired", "partial_expired")]
+            nofill = sum(1 for o in orders if o.get("status") == "expired")
+            elems.append(Paragraph(
+                f"<b>Paper broker</b> (resting-limit simulation, D1 sizing on a notional "
+                f"${eq['bankroll_notional']:.0f}): {len(orders)} orders "
+                f"({', '.join(f'{k} {v}' for k, v in sorted(s_by.items()))}). "
+                f"Settled P&amp;L ${pnl:+.2f} on ${cost:.2f}"
+                + (f" (ROI {pnl / cost:+.1%})" if cost else "") + "; no-fill rate "
+                + (f"{nofill / len(terminal):.0%}" if terminal else "— (none terminal yet)")
+                + f"; equity ${eq['equity']:.2f}, deployed ${eq['open_deployed']:.2f}, "
+                f"drawdown {eq['current_drawdown']:.1%}"
+                + (" — <b>DRAWDOWN HALT</b>" if eq["halted"] else "") + ".", st["body"]))
+            elems.append(_sp(4))
+    except Exception:
+        pass
+
     # --- open recs ---
     open_recs = [r for r in rows if r.get("status") != "resolved"]
     if open_recs:

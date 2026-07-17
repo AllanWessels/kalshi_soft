@@ -283,7 +283,14 @@ recommendations. **Workstreams A+B (PLAN_FOR_OPUS.md) rebuilt this path — alwa
 python3 scripts/score_recommendations.py       # score prior open recs (CONSERVATIVE = official)
 python3 scripts/screen_universe.py --max 12    # B1: screen the ENTIRE open exchange
 python3 scripts/scan_coherence.py              # B4: dutch-NO arbs + incoherence flags
+python3 scripts/paper_broker.py                # D2: settle -> maintain resting fills -> place
 ```
+`paper_broker.py` turns every open rec into a SIZED resting limit order (quarter-Kelly on a
+notional bankroll, per-market/per-cell/per-event-family/total caps, drawdown halt — the D1
+rails in `data/policy.json:position_sizing`) and simulates fills against the live book across
+cycles. Its no-fill/expiry rate and settled ROI are the execution-truth numbers the money page
+reports alongside the signal ledger. PAPER ONLY — the LiveBroker is design-only
+(`docs/EXECUTION.md`) until the A4 bar passes AND the user signs off with a trading key.
 `screen_universe.py` walks every open market (not just the 150-candidate funnel): corrected cell
 (granular first) → **walk-forward-POSITIVE** cell only (`data/history/walkforward.json`; fails
 closed) → mid open-interest band → **+EV after fee AND half-spread** → A4 kill-switch check →

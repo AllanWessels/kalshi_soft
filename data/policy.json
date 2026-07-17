@@ -9,8 +9,8 @@
   "adversarial_veto_binding": true,
   "adversarial_min_veto_precision": 0.0,
   "crowd_adjust_weight_default": 0.3,
-  "updated_at": "2026-07-17T22:04:15Z",
-  "version": 8,
+  "updated_at": "2026-07-17T22:48:04Z",
+  "version": 9,
   "changelog": [
     {
       "at": "2026-06-22T22:41:03Z",
@@ -229,6 +229,26 @@
       "evidence": {
         "legacy_cohort_note": "13 resolved recs predate fill evidence; marked fills_unverified, reported as provisional only. Verification clock starts now."
       }
+    },
+    {
+      "at": "2026-07-17T22:48:04Z",
+      "knob": "position_sizing",
+      "old": null,
+      "new": {
+        "kelly_fraction": 0.25,
+        "per_market_cap_frac": 0.02,
+        "per_cell_cap_frac": 0.1,
+        "per_event_family_cap_frac": 0.05,
+        "total_deployed_cap_frac": 0.5,
+        "drawdown_halt_frac": -0.15,
+        "order_expiry_days": 5,
+        "paper_bankroll_notional": 1000.0,
+        "live_bankroll": null
+      },
+      "reason": "Workstream D1 (PLAN_FOR_OPUS.md): sizing + exposure rails for the paper broker \u2014 quarter-Kelly per market capped at 2% bankroll, 10%/cell, 5%/event-family, 50% total deployed, -15% drawdown halt, 5-day GTC expiry. paper_bankroll_notional is a NOTIONAL accounting unit for the simulation; live_bankroll stays null until the A4 verification bar passes AND the user sets it (constraint 2026-07-17: no live trading until verified, no bankroll yet).",
+      "evidence": {
+        "basis": "binary-Kelly f*=(p-c)/(1-c) with shrunk calibrated p; caps reflect the correlated longshot-fade basket risk (one thematic position)."
+      }
     }
   ],
   "structural_verification": {
@@ -241,5 +261,16 @@
     "global_halt_trailing_n": 30,
     "global_halt_roi": -0.1,
     "min_fill_depth_units": 1.0
+  },
+  "position_sizing": {
+    "kelly_fraction": 0.25,
+    "per_market_cap_frac": 0.02,
+    "per_cell_cap_frac": 0.1,
+    "per_event_family_cap_frac": 0.05,
+    "total_deployed_cap_frac": 0.5,
+    "drawdown_halt_frac": -0.15,
+    "order_expiry_days": 5,
+    "paper_bankroll_notional": 1000.0,
+    "live_bankroll": null
   }
 }

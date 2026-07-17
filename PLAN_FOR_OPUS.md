@@ -318,6 +318,17 @@ into their own sub-categories, and accruing a scored record. Est. effort: 2–3 
 
 ### Workstream D — RISK & EXECUTION FRAMEWORK (build the rails now, connect money LATER)
 
+> **STATUS: LANDED 2026-07-17.** D1: `position_sizing` policy block v9 (quarter-Kelly,
+> 2%/market, 10%/cell, 5%/event-family, 50% total, −15% drawdown halt, 5-day GTC expiry;
+> `live_bankroll: null` per user constraint). D2: `lib/broker.py` PaperBroker +
+> `scripts/paper_broker.py` — resting-limit simulation against the live book (fills at the
+> observed ask only when it crosses the limit, depth-capped, partial fills, expiry = the
+> honest no-fill record); first cycle: 13 orders → 4 filled at ask, 3 resting, 6 SKIPPED by
+> the per-cell 10% cap (the correlation rail binding exactly as designed on a single-cell
+> basket), $118.93/$1000 notional deployed. Money page reports broker equity/no-fill/ROI.
+> D3: `docs/EXECUTION.md` LiveBroker spec (contract parity, reconciliation loop, dry-run
+> flag, kill file, rollout ladder) — zero live-order code exists, by design.
+
 **D1. Sizing & exposure policy (encode in `data/policy.json` now, used by the paper broker):**
 - per-market: min(0.25 × Kelly fraction from conservative cell edge, 2% of bankroll),
 - per-cell: 10% of bankroll; per-event-family (e.g. one broadcast's mention markets): 5%,
