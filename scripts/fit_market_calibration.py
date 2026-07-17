@@ -15,7 +15,7 @@ import argparse
 import json
 
 from lib import config
-from lib.atlas import CalibrationMap
+from lib.atlas import CalibrationMap, stable_hash
 
 DEFAULT_IN = config.DATA_DIR / "history" / "markets.jsonl"
 
@@ -59,9 +59,10 @@ def main() -> int:
         return 2
     print(f"loaded {len(rows)} settled markets")
 
-    # Deterministic 70/30 split (hash of ticker -> stable, no RNG seeding needed).
-    train = [r for r in rows if (hash(r.get("ticker", "")) % 10) < 7]
-    test = [r for r in rows if (hash(r.get("ticker", "")) % 10) >= 7]
+    # Deterministic 70/30 split. NB: md5-based stable_hash, NOT python hash() — the builtin is
+    # randomized per process (PYTHONHASHSEED), so the old split silently changed every run.
+    train = [r for r in rows if (stable_hash(r.get("ticker", "")) % 10) < 7]
+    test = [r for r in rows if (stable_hash(r.get("ticker", "")) % 10) >= 7]
     print(f"train={len(train)}  test={len(test)}")
 
     cmap = CalibrationMap.fit(train)

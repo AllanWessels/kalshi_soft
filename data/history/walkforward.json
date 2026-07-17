@@ -1,0 +1,659 @@
+{
+  "generated_at": "2026-07-17T22:24:26Z",
+  "folds": [
+    {
+      "month": "2026-05",
+      "train": 3603,
+      "test": 16573,
+      "trades": 477
+    },
+    {
+      "month": "2026-06",
+      "train": 20176,
+      "test": 16232,
+      "trades": 1556
+    }
+  ],
+  "params": {
+    "min_ev": 0.02
+  },
+  "cells": {
+    "statements|5-15c|mid": {
+      "n": 142,
+      "pnl": 9.34,
+      "staked": 132.66,
+      "roi": 0.0704,
+      "positive": true
+    },
+    "culture|0-5c|mid": {
+      "n": 39,
+      "pnl": 1.17,
+      "staked": 37.83,
+      "roi": 0.0309,
+      "positive": true
+    },
+    "economy|95-100c|mid": {
+      "n": 30,
+      "pnl": -1.63,
+      "staked": 1.63,
+      "roi": -1.0,
+      "positive": false
+    },
+    "economy|35-65c|thin": {
+      "n": 68,
+      "pnl": -2.225,
+      "staked": 38.225,
+      "roi": -0.0582,
+      "positive": false
+    },
+    "culture|95-100c|thin": {
+      "n": 49,
+      "pnl": 21.7,
+      "staked": 2.3,
+      "roi": 9.4348,
+      "positive": true
+    },
+    "culture|0-5c|thin": {
+      "n": 57,
+      "pnl": 1.71,
+      "staked": 55.29,
+      "roi": 0.0309,
+      "positive": true
+    },
+    "statements|0-5c|thin": {
+      "n": 4,
+      "pnl": 0.12,
+      "staked": 3.88,
+      "roi": 0.0309,
+      "positive": true
+    },
+    "statements|0-5c|mid2|d2-14": {
+      "n": 8,
+      "pnl": 0.24,
+      "staked": 7.76,
+      "roi": 0.0309,
+      "positive": true
+    },
+    "culture|0-5c|thin|d2-14": {
+      "n": 70,
+      "pnl": -0.9,
+      "staked": 67.9,
+      "roi": -0.0133,
+      "positive": false
+    },
+    "culture|5-15c|thin|d2-14": {
+      "n": 50,
+      "pnl": 4.21,
+      "staked": 44.79,
+      "roi": 0.094,
+      "positive": true
+    },
+    "statements|0-5c|mid2|d0-2": {
+      "n": 6,
+      "pnl": 0.18,
+      "staked": 5.82,
+      "roi": 0.0309,
+      "positive": true
+    },
+    "economy|0-5c|deep|d14+": {
+      "n": 7,
+      "pnl": 0.21,
+      "staked": 6.79,
+      "roi": 0.0309,
+      "positive": true
+    },
+    "statements|0-5c|deep|d0-2": {
+      "n": 5,
+      "pnl": 0.15,
+      "staked": 4.85,
+      "roi": 0.0309,
+      "positive": true
+    },
+    "statements|95-100c|mid2|d0-2": {
+      "n": 10,
+      "pnl": 0.34,
+      "staked": 9.66,
+      "roi": 0.0352,
+      "positive": true
+    },
+    "culture|0-5c|deep": {
+      "n": 5,
+      "pnl": 0.15,
+      "staked": 4.85,
+      "roi": 0.0309,
+      "positive": true
+    },
+    "statements|0-5c|mid3|d2-14": {
+      "n": 10,
+      "pnl": 0.3,
+      "staked": 9.7,
+      "roi": 0.0309,
+      "positive": true
+    },
+    "culture|0-5c|deep|d2-14": {
+      "n": 9,
+      "pnl": 0.27,
+      "staked": 8.73,
+      "roi": 0.0309,
+      "positive": true
+    },
+    "economy|0-5c|deep": {
+      "n": 5,
+      "pnl": 0.15,
+      "staked": 4.85,
+      "roi": 0.0309,
+      "positive": true
+    },
+    "economy|95-100c|mid1|d0-2": {
+      "n": 7,
+      "pnl": -0.42,
+      "staked": 0.42,
+      "roi": -1.0,
+      "positive": false
+    },
+    "statements|95-100c|mid": {
+      "n": 3,
+      "pnl": 0.11,
+      "staked": 2.89,
+      "roi": 0.0381,
+      "positive": true
+    },
+    "statements|0-5c|deep|d2-14": {
+      "n": 14,
+      "pnl": 0.42,
+      "staked": 13.58,
+      "roi": 0.0309,
+      "positive": true
+    },
+    "statements|95-100c|mid2|d2-14": {
+      "n": 6,
+      "pnl": 0.23,
+      "staked": 5.77,
+      "roi": 0.0399,
+      "positive": true
+    },
+    "statements|0-5c|mid1|d2-14": {
+      "n": 3,
+      "pnl": 0.09,
+      "staked": 2.91,
+      "roi": 0.0309,
+      "positive": true
+    },
+    "statements|0-5c|thin|d2-14": {
+      "n": 8,
+      "pnl": 0.24,
+      "staked": 7.76,
+      "roi": 0.0309,
+      "positive": true
+    },
+    "statements|95-100c|mid3|d2-14": {
+      "n": 2,
+      "pnl": 0.06,
+      "staked": 1.94,
+      "roi": 0.0309,
+      "positive": true
+    },
+    "statements|0-5c|mid": {
+      "n": 5,
+      "pnl": 0.15,
+      "staked": 4.85,
+      "roi": 0.0309,
+      "positive": true
+    },
+    "statements|95-100c|deep|d0-2": {
+      "n": 5,
+      "pnl": 0.17,
+      "staked": 4.83,
+      "roi": 0.0352,
+      "positive": true
+    },
+    "statements|95-100c|deep|d2-14": {
+      "n": 5,
+      "pnl": -0.82,
+      "staked": 4.82,
+      "roi": -0.1701,
+      "positive": false
+    },
+    "statements|95-100c|deep": {
+      "n": 1,
+      "pnl": 0.04,
+      "staked": 0.96,
+      "roi": 0.0417,
+      "positive": true
+    },
+    "politics|0-5c|deep|d14+": {
+      "n": 8,
+      "pnl": 0.239,
+      "staked": 7.761,
+      "roi": 0.0308,
+      "positive": true
+    },
+    "culture|0-5c|mid2|d2-14": {
+      "n": 3,
+      "pnl": 0.09,
+      "staked": 2.91,
+      "roi": 0.0309,
+      "positive": true
+    },
+    "culture|95-100c|deep|d2-14": {
+      "n": 5,
+      "pnl": 0.17,
+      "staked": 4.83,
+      "roi": 0.0352,
+      "positive": true
+    },
+    "economy|95-100c|thin|d0-2": {
+      "n": 204,
+      "pnl": 9.34,
+      "staked": 4.66,
+      "roi": 2.0043,
+      "positive": true
+    },
+    "economy|0-5c|thin|d0-2": {
+      "n": 158,
+      "pnl": 6.98,
+      "staked": 4.02,
+      "roi": 1.7363,
+      "positive": true
+    },
+    "economy|65-85c|thin|d0-2": {
+      "n": 17,
+      "pnl": 8.92,
+      "staked": 5.08,
+      "roi": 1.7559,
+      "positive": true
+    },
+    "economy|5-15c|thin|d0-2": {
+      "n": 26,
+      "pnl": 0.76,
+      "staked": 2.24,
+      "roi": 0.3393,
+      "positive": true
+    },
+    "economy|15-35c|thin|d0-2": {
+      "n": 6,
+      "pnl": 1.74,
+      "staked": 1.26,
+      "roi": 1.381,
+      "positive": true
+    },
+    "economy|65-85c|mid": {
+      "n": 44,
+      "pnl": 1.64,
+      "staked": 11.36,
+      "roi": 0.1444,
+      "positive": true
+    },
+    "economy|35-65c|mid": {
+      "n": 39,
+      "pnl": -0.33,
+      "staked": 21.33,
+      "roi": -0.0155,
+      "positive": false
+    },
+    "economy|15-35c|thin|d14+": {
+      "n": 16,
+      "pnl": 2.18,
+      "staked": 4.82,
+      "roi": 0.4523,
+      "positive": true
+    },
+    "economy|85-95c|thin|d14+": {
+      "n": 21,
+      "pnl": -3.18,
+      "staked": 19.18,
+      "roi": -0.1658,
+      "positive": false
+    },
+    "statements|0-5c|mid3|d0-2": {
+      "n": 4,
+      "pnl": 0.12,
+      "staked": 3.88,
+      "roi": 0.0309,
+      "positive": true
+    },
+    "politics|95-100c|mid3|d14+": {
+      "n": 3,
+      "pnl": 0.11,
+      "staked": 2.89,
+      "roi": 0.0381,
+      "positive": true
+    },
+    "politics|0-5c|mid2|d14+": {
+      "n": 7,
+      "pnl": 0.214,
+      "staked": 6.786,
+      "roi": 0.0315,
+      "positive": true
+    },
+    "economy|35-65c|thin|d14+": {
+      "n": 18,
+      "pnl": 2.32,
+      "staked": 9.68,
+      "roi": 0.2397,
+      "positive": true
+    },
+    "economy|65-85c|thin": {
+      "n": 22,
+      "pnl": 0.22,
+      "staked": 4.78,
+      "roi": 0.046,
+      "positive": true
+    },
+    "economy|15-35c|mid": {
+      "n": 22,
+      "pnl": -1.55,
+      "staked": 16.55,
+      "roi": -0.0937,
+      "positive": false
+    },
+    "culture|5-15c|mid": {
+      "n": 54,
+      "pnl": 1.56,
+      "staked": 50.44,
+      "roi": 0.0309,
+      "positive": true
+    },
+    "culture|95-100c|thin|d14+": {
+      "n": 16,
+      "pnl": -0.57,
+      "staked": 0.57,
+      "roi": -1.0,
+      "positive": false
+    },
+    "culture|95-100c|deep|d14+": {
+      "n": 4,
+      "pnl": 0.15,
+      "staked": 3.85,
+      "roi": 0.039,
+      "positive": true
+    },
+    "culture|15-35c|thin": {
+      "n": 29,
+      "pnl": -0.0,
+      "staked": 23.0,
+      "roi": -0.0,
+      "positive": false
+    },
+    "culture|65-85c|thin": {
+      "n": 31,
+      "pnl": 6.8,
+      "staked": 8.2,
+      "roi": 0.8293,
+      "positive": true
+    },
+    "culture|35-65c|thin": {
+      "n": 33,
+      "pnl": 9.02,
+      "staked": 17.98,
+      "roi": 0.5017,
+      "positive": true
+    },
+    "culture|85-95c|thin": {
+      "n": 4,
+      "pnl": 1.61,
+      "staked": 0.39,
+      "roi": 4.1282,
+      "positive": true
+    },
+    "culture|95-100c|thin|d2-14": {
+      "n": 250,
+      "pnl": 23.88,
+      "staked": 6.12,
+      "roi": 3.902,
+      "positive": true
+    },
+    "culture|85-95c|thin|d2-14": {
+      "n": 9,
+      "pnl": 5.1,
+      "staked": 0.9,
+      "roi": 5.6667,
+      "positive": true
+    },
+    "culture|5-15c|thin|d14+": {
+      "n": 14,
+      "pnl": 0.8,
+      "staked": 13.2,
+      "roi": 0.0606,
+      "positive": true
+    },
+    "economy|65-85c|deep": {
+      "n": 37,
+      "pnl": -1.76,
+      "staked": 9.76,
+      "roi": -0.1803,
+      "positive": false
+    },
+    "culture|65-85c|thin|d2-14": {
+      "n": 13,
+      "pnl": 1.86,
+      "staked": 4.14,
+      "roi": 0.4493,
+      "positive": true
+    },
+    "culture|35-65c|thin|d2-14": {
+      "n": 43,
+      "pnl": 15.78,
+      "staked": 23.22,
+      "roi": 0.6796,
+      "positive": true
+    },
+    "culture|95-100c|thin|d0-2": {
+      "n": 28,
+      "pnl": 16.55,
+      "staked": 1.45,
+      "roi": 11.4138,
+      "positive": true
+    },
+    "culture|0-5c|thin|d14+": {
+      "n": 22,
+      "pnl": 0.66,
+      "staked": 21.34,
+      "roi": 0.0309,
+      "positive": true
+    },
+    "culture|0-5c|mid1|d14+": {
+      "n": 2,
+      "pnl": 0.06,
+      "staked": 1.94,
+      "roi": 0.0309,
+      "positive": true
+    },
+    "culture|0-5c|mid2|d14+": {
+      "n": 3,
+      "pnl": 0.09,
+      "staked": 2.91,
+      "roi": 0.0309,
+      "positive": true
+    },
+    "culture|0-5c|mid1|d2-14": {
+      "n": 3,
+      "pnl": 0.09,
+      "staked": 2.91,
+      "roi": 0.0309,
+      "positive": true
+    },
+    "politics|0-5c|thin|d14+": {
+      "n": 23,
+      "pnl": 0.686,
+      "staked": 22.314,
+      "roi": 0.0307,
+      "positive": true
+    },
+    "politics|95-100c|deep|d2-14": {
+      "n": 5,
+      "pnl": -0.19,
+      "staked": 0.19,
+      "roi": -1.0,
+      "positive": false
+    },
+    "politics|95-100c|deep|d14+": {
+      "n": 5,
+      "pnl": 0.174,
+      "staked": 4.826,
+      "roi": 0.0361,
+      "positive": true
+    },
+    "politics|95-100c|mid": {
+      "n": 7,
+      "pnl": -0.755,
+      "staked": 6.755,
+      "roi": -0.1118,
+      "positive": false
+    },
+    "statements|5-15c|thin": {
+      "n": 31,
+      "pnl": 2.66,
+      "staked": 28.34,
+      "roi": 0.0939,
+      "positive": true
+    },
+    "culture|85-95c|thin|d0-2": {
+      "n": 29,
+      "pnl": 15.2,
+      "staked": 2.8,
+      "roi": 5.4286,
+      "positive": true
+    },
+    "culture|0-5c|mid2|d0-2": {
+      "n": 1,
+      "pnl": 0.03,
+      "staked": 0.97,
+      "roi": 0.0309,
+      "positive": true
+    },
+    "culture|95-100c|mid": {
+      "n": 4,
+      "pnl": 0.76,
+      "staked": 0.24,
+      "roi": 3.1667,
+      "positive": true
+    },
+    "politics|95-100c|deep": {
+      "n": 1,
+      "pnl": -0.03,
+      "staked": 0.03,
+      "roi": -1.0,
+      "positive": false
+    },
+    "economy|35-65c|thin|d0-2": {
+      "n": 17,
+      "pnl": -2.55,
+      "staked": 10.55,
+      "roi": -0.2417,
+      "positive": false
+    },
+    "economy|0-5c|thin|d2-14": {
+      "n": 10,
+      "pnl": -0.5,
+      "staked": 0.5,
+      "roi": -1.0,
+      "positive": false
+    },
+    "culture|95-100c|mid3|d14+": {
+      "n": 4,
+      "pnl": 0.14,
+      "staked": 3.86,
+      "roi": 0.0363,
+      "positive": true
+    },
+    "culture|15-35c|thin|d2-14": {
+      "n": 7,
+      "pnl": 1.59,
+      "staked": 5.41,
+      "roi": 0.2939,
+      "positive": true
+    },
+    "statements|95-100c|mid3|d0-2": {
+      "n": 2,
+      "pnl": 0.08,
+      "staked": 1.92,
+      "roi": 0.0417,
+      "positive": true
+    },
+    "economy|0-5c|deep|d0-2": {
+      "n": 9,
+      "pnl": 0.27,
+      "staked": 8.73,
+      "roi": 0.0309,
+      "positive": true
+    },
+    "economy|35-65c|deep": {
+      "n": 4,
+      "pnl": -0.57,
+      "staked": 1.57,
+      "roi": -0.3631,
+      "positive": false
+    },
+    "economy|0-5c|mid1|d0-2": {
+      "n": 2,
+      "pnl": 0.06,
+      "staked": 1.94,
+      "roi": 0.0309,
+      "positive": true
+    },
+    "economy|0-5c|mid2|d0-2": {
+      "n": 2,
+      "pnl": 0.06,
+      "staked": 1.94,
+      "roi": 0.0309,
+      "positive": true
+    },
+    "economy|0-5c|mid3|d0-2": {
+      "n": 3,
+      "pnl": 0.09,
+      "staked": 2.91,
+      "roi": 0.0309,
+      "positive": true
+    },
+    "statements|95-100c|thin|d2-14": {
+      "n": 1,
+      "pnl": -0.04,
+      "staked": 0.04,
+      "roi": -1.0,
+      "positive": false
+    },
+    "culture|95-100c|mid2|d14+": {
+      "n": 4,
+      "pnl": -0.85,
+      "staked": 3.85,
+      "roi": -0.2208,
+      "positive": false
+    },
+    "culture|95-100c|mid3|d2-14": {
+      "n": 6,
+      "pnl": 0.2,
+      "staked": 5.8,
+      "roi": 0.0345,
+      "positive": true
+    },
+    "economy|95-100c|deep|d2-14": {
+      "n": 2,
+      "pnl": 0.06,
+      "staked": 1.94,
+      "roi": 0.0309,
+      "positive": true
+    },
+    "statements|0-5c|thin|d0-2": {
+      "n": 1,
+      "pnl": 0.03,
+      "staked": 0.97,
+      "roi": 0.0309,
+      "positive": true
+    },
+    "culture|0-5c|deep|d14+": {
+      "n": 1,
+      "pnl": 0.03,
+      "staked": 0.97,
+      "roi": 0.0309,
+      "positive": true
+    },
+    "culture|0-5c|mid3|d14+": {
+      "n": 1,
+      "pnl": 0.03,
+      "staked": 0.97,
+      "roi": 0.0309,
+      "positive": true
+    }
+  }
+}

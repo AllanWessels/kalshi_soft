@@ -1,20 +1,36 @@
 """atlas.py — shared market-(in)efficiency model learned from settled history.
 
-Two leakage-free artifacts, both keyed on cells = (category, price_band, liquidity_tier):
+Two leakage-free artifacts:
 
   * inefficiency atlas (scripts/inefficiency_atlas.py): where is the crowd miscalibrated?
   * market-calibration map (this module): a per-cell correction implied_price -> calibrated P(yes),
     fit by SHRUNK Platt scaling on thousands of past (implied, outcome) pairs.
+
+Cells come at TWO granularities (Workstream B2, PLAN_FOR_OPUS.md):
+
+  * coarse   — (category | price_band | liq_tier)                  e.g. "culture|5-15c|mid"
+  * granular — (category | price_band | fine_liq | duration_band)  e.g. "culture|5-15c|mid2|d0-2"
+
+The granular axes are FINER open-interest tiers inside the tradeable band and the market's
+LIFETIME (duration open->close). Duration is what the harvest supports honestly: each history row
+carries one near-close price snapshot, so a time-REMAINING axis is not learnable from it — but
+duration separates daily mention/chart markets from long-lived election markets, is identical at
+train and serve time, and also bounds the train/serve mismatch (short-lived cells' snapshots are
+representative of any moment in their life). `calibrate()` prefers a granular cell when it has a
+qualified fit, else falls back to coarse, else identity (track the market).
 
 Why Platt (logit a,b) and not just a bias: the longshot inefficiency the atlas finds is a *bias*
 (b shifts the crowd's price) AND often an over/under-confidence (a scales it). Both are learned,
 then shrunk toward identity (a=1,b=0) by n/(n+K) so a thin cell can't buy a wild correction.
 
 Used out-of-sample only: the map is fit on PAST settled markets and applied to FUTURE live ones —
-legitimate calibration (Ch 14), not contamination. backtest_history.py proves it train/test split.
+legitimate calibration (Ch 14), not contamination. Validation is walk-forward by close-month
+(scripts/walkforward_validate.py) and ONLY walk-forward-positive cells are tradeable by the live
+screen (`tradeable_cell()`); the forecaster anchor may still use any fitted cell.
 """
 from __future__ import annotations
 
+import hashlib
 import json
 import math
 from typing import Optional
@@ -26,6 +42,7 @@ K_CELL = 60          # shrink a cell's Platt fit toward identity until it has >>
 MIN_CELL_N = 40      # below this, no correction at all (track the raw market)
 
 CALIB_PATH = config.DATA_DIR / "history" / "market_calibration.json"
+WALKFORWARD_PATH = config.DATA_DIR / "history" / "walkforward.json"
 
 PRICE_BANDS = (
     (0.00, 0.05, "0-5c"), (0.05, 0.15, "5-15c"), (0.15, 0.35, "15-35c"),
@@ -37,6 +54,11 @@ PRICE_BANDS = (
 # BOTH harvested history and live candidates, so train/serve use the same axis. Backtest showed the
 # edge is real at OI ~ mid and vanishes in the most liquid markets (efficient), so the tier matters.
 LIQ_TIERS = ((0.0, 500.0, "thin"), (500.0, 5000.0, "mid"), (5000.0, float("inf"), "deep"))
+# Finer OI tiers for granular cells: the tradeable mid band split three ways (B2).
+FINE_LIQ_TIERS = ((0.0, 500.0, "thin"), (500.0, 1000.0, "mid1"), (1000.0, 2000.0, "mid2"),
+                  (2000.0, 5000.0, "mid3"), (5000.0, float("inf"), "deep"))
+# Market-lifetime bands (open->close), present on history AND live markets.
+DUR_BANDS = ((0.0, 2.0, "d0-2"), (2.0, 14.0, "d2-14"), (14.0, float("inf"), "d14+"))
 
 
 def price_band(p: float) -> str:
@@ -53,8 +75,38 @@ def liq_tier(liq: float) -> str:
     return "deep"
 
 
+def fine_liq_tier(liq: float) -> str:
+    for lo, hi, name in FINE_LIQ_TIERS:
+        if lo <= liq < hi:
+            return name
+    return "deep"
+
+
+def dur_band(days: Optional[float]) -> Optional[str]:
+    if not isinstance(days, (int, float)) or days < 0:
+        return None
+    for lo, hi, name in DUR_BANDS:
+        if lo <= days < hi:
+            return name
+    return "d14+"
+
+
 def cell_key(category: str, implied: float, liquidity: float) -> str:
     return f"{category}|{price_band(implied)}|{liq_tier(liquidity)}"
+
+
+def granular_cell_key(category: str, implied: float, liquidity: float,
+                      duration_days: Optional[float]) -> Optional[str]:
+    db = dur_band(duration_days)
+    if db is None:
+        return None
+    return f"{category}|{price_band(implied)}|{fine_liq_tier(liquidity)}|{db}"
+
+
+def stable_hash(s: str) -> int:
+    """Deterministic string hash (md5) — python's hash() is randomized per process and must
+    never be used for train/test splits (the old fit script's split silently varied per run)."""
+    return int(hashlib.md5(s.encode("utf-8")).hexdigest()[:8], 16)
 
 
 def _logit(p: float) -> float:
@@ -100,14 +152,19 @@ def _fit_platt(rows) -> Optional[dict]:
 
 
 class CalibrationMap:
-    """Per-cell market->outcome correction. Apply with .calibrate(category, implied, liquidity)."""
+    """Per-cell market->outcome correction, at coarse AND granular cell granularity.
+
+    Apply with .calibrate(category, implied, liquidity[, duration_days]) — granular first when a
+    qualified granular cell exists, else coarse, else identity."""
 
     def __init__(self, cells: Optional[dict] = None):
         self.cells = cells or {}
 
     @classmethod
     def fit(cls, rows) -> "CalibrationMap":
-        """rows: iterable of dicts with category, implied_yes, outcome, liquidity."""
+        """rows: iterable of dicts with category, implied_yes, outcome, open_interest,
+        duration_days. Fits coarse cells always; granular cells where duration is present
+        (both live in one dict — key shape distinguishes them, 3 parts vs 4)."""
         buckets: dict[str, list] = {}
         for r in rows:
             p = r.get("implied_yes")
@@ -115,8 +172,12 @@ class CalibrationMap:
             if not isinstance(p, (int, float)) or y not in (0, 1):
                 continue
             # liquidity axis = open_interest (persists post-settlement; present live too)
-            key = cell_key(r.get("category", "?"), p, r.get("open_interest", 0.0) or 0.0)
-            buckets.setdefault(key, []).append((p, y))
+            oi = r.get("open_interest", 0.0) or 0.0
+            cat = r.get("category", "?")
+            buckets.setdefault(cell_key(cat, p, oi), []).append((p, y))
+            gkey = granular_cell_key(cat, p, oi, r.get("duration_days"))
+            if gkey:
+                buckets.setdefault(gkey, []).append((p, y))
         cells = {}
         for key, pairs in buckets.items():
             fit = _fit_platt(pairs)
@@ -124,15 +185,24 @@ class CalibrationMap:
                 cells[key] = fit
         return cls(cells)
 
-    def calibrate(self, category: str, implied: float, liquidity: float) -> dict:
-        """Return {calibrated, raw, key, corrected}. No cell fit => returns raw (track market)."""
-        key = cell_key(category, implied, liquidity or 0.0)
-        c = self.cells.get(key)
-        if not c:
-            return {"calibrated": implied, "raw": implied, "key": key, "corrected": False}
-        cal = _sigmoid(c["a"] * _logit(implied) + c["b"])
-        return {"calibrated": round(cal, 4), "raw": implied, "key": key, "corrected": True,
-                "a": c["a"], "b": c["b"], "n": c["n"]}
+    def calibrate(self, category: str, implied: float, liquidity: float,
+                  duration_days: Optional[float] = None) -> dict:
+        """Return {calibrated, raw, key, corrected, granularity}. Granular cell first (when
+        duration known and the cell qualified), else coarse, else raw (track the market)."""
+        liquidity = liquidity or 0.0
+        gkey = granular_cell_key(category, implied, liquidity, duration_days)
+        for key, gran in ((gkey, "granular"), (cell_key(category, implied, liquidity), "coarse")):
+            if key is None:
+                continue
+            c = self.cells.get(key)
+            if not c:
+                continue
+            cal = _sigmoid(c["a"] * _logit(implied) + c["b"])
+            return {"calibrated": round(cal, 4), "raw": implied, "key": key, "corrected": True,
+                    "granularity": gran, "a": c["a"], "b": c["b"], "n": c["n"]}
+        return {"calibrated": implied, "raw": implied,
+                "key": cell_key(category, implied, liquidity),
+                "corrected": False, "granularity": "none"}
 
     def save(self, path=CALIB_PATH) -> None:
         path.parent.mkdir(parents=True, exist_ok=True)
@@ -153,3 +223,28 @@ def load_atlas() -> dict:
         return json.loads((config.DATA_DIR / "history" / "atlas.json").read_text())
     except (OSError, ValueError):
         return {}
+
+
+# ---------------------------------------------------------------------------
+# Walk-forward gating (B2): only cells that made money in month-by-month
+# out-of-sample validation are tradeable by the live screen.
+# ---------------------------------------------------------------------------
+
+def load_walkforward() -> dict:
+    """{cell_key: {n, pnl, roi, positive, folds}} from walkforward_validate.py; {} if absent."""
+    try:
+        data = json.loads(WALKFORWARD_PATH.read_text())
+        return data.get("cells", {})
+    except (OSError, ValueError):
+        return {}
+
+
+def tradeable_cell(key: str, wf: Optional[dict] = None) -> bool:
+    """A cell may take LIVE-SCREEN positions only if walk-forward validation was positive.
+
+    No walk-forward record at all (file missing) fails CLOSED for the screen — run
+    walkforward_validate.py after every refit. The forecaster anchor is NOT gated by this
+    (calibration can help a forecast even where trading the cell wouldn't clear fees)."""
+    wf = load_walkforward() if wf is None else wf
+    rec = wf.get(key)
+    return bool(rec and rec.get("positive"))

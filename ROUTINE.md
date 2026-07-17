@@ -271,20 +271,28 @@ against that committed point (entry-lock, option A).
 ## Step 6d — Trade recommendations (route the structural edge into TRACKED positions)
 The LLM forecaster loses to the price, so its leans are correctly ~zero — but that must not mean
 **zero trades**, or there is no profit. The history-learned market-calibration edge (`lib/atlas`)
-**beat the market out-of-sample** and nets positive after fees in the mid-liquidity band; this step
-routes THAT edge into explicit, scored position recommendations. Always run both:
+**beat the market out-of-sample** (and walk-forward, month-by-month) and nets positive after fees
+in the mid-liquidity band; this step routes THAT edge into explicit, scored position
+recommendations. **Workstreams A+B (PLAN_FOR_OPUS.md) rebuilt this path — always run all three:**
 ```
-python3 scripts/score_recommendations.py     # score prior open recs against any new resolutions
-python3 scripts/recommend_trades.py --max 10  # emit + LOG this cycle's basket to the ledger
+python3 scripts/score_recommendations.py       # score prior open recs (CONSERVATIVE = official)
+python3 scripts/screen_universe.py --max 12    # B1: screen the ENTIRE open exchange
+python3 scripts/scan_coherence.py              # B4: dutch-NO arbs + incoherence flags
 ```
-`recommend_trades.py` screens candidates → keeps only **mid open-interest** markets in a **corrected**
-cell with **+EV after fee AND half-spread** → appends each to `data/trade_recommendations.jsonl`
-(idempotent per ticker+day). `score_recommendations.py` looks up each open rec's settled outcome and
-records realized P&L + whether the calibrated prob beat the market (Brier) → the **LIVE accuracy
-record** of the edge (the backtest was OOS-historical; this is OOS-forward; verdict needs ≥15 resolved).
-Surface in the Step "summary": the new basket (with explicit BUY-NO/YES + entry limit) and the running
-recommendation scoreboard (win-rate, realized ROI, beat-market rate). Size small & equal — the basket
-is a correlated longshot-fade, one thematic position, high win-rate with tail risk on the rare hit.
+`screen_universe.py` walks every open market (not just the 150-candidate funnel): corrected cell
+(granular first) → **walk-forward-POSITIVE** cell only (`data/history/walkforward.json`; fails
+closed) → mid open-interest band → **+EV after fee AND half-spread** → A4 kill-switch check →
+**orderbook fill evidence** snapshotted per rec → append to `data/trade_recommendations.jsonl`
+(idempotent per ticker+day). `scan_coherence.py` adds probability-axiom trades (guaranteed-floor
+dutch-NO baskets; dutch-YES and bracket monotonicity report-only). `score_recommendations.py`
+scores both P&L columns — the **conservative fills-evidenced column is the official record**; the
+A4 verification bar and per-cell kill switches read only from it. (`recommend_trades.py` remains
+as the legacy candidates-pool screen; superseded by `screen_universe.py`.)
+Surface in the Step "summary": the new basket (explicit BUY-NO/YES + entry limit + fillable_now),
+the OFFICIAL scoreboard (verified cohort, conservative), and verification-bar progress. Size small
+& equal — the basket is a correlated longshot-fade, one thematic position. **After any re-harvest
+or map refit, rerun `fit_market_calibration.py` + `walkforward_validate.py` (the screen fails
+closed without a fresh walk-forward record).**
 
 ## Step 7 — Build the report
 ```

@@ -180,6 +180,18 @@ runs in CI of each loop; verification bar visible with live progress. Est. effor
 
 ### Workstream B — SCALE THE HARVEST (the only engine with measured edge)
 
+> **STATUS: LANDED 2026-07-17** (B1 `screen_universe.py`; B2 granular map — fine OI tiers ×
+> duration bands, coarse fallback, `walkforward_validate.py` month-fold validation gating the
+> screen via `atlas.tradeable_cell` (fails closed), stable-hash split fixing a latent
+> randomized-split bug; B3 `harvest_history.py --all-categories` running (36k→150k+ rows, refit
+> + walk-forward re-run due when it completes); B4 `scan_coherence.py` — dutch-NO auto-log with
+> guaranteed floor, dutch-YES + T-threshold monotonicity report-only). First universe scan:
+> 1.49M open markets → 291 +EV candidates → 12 logged, ALL fillable-now with orderbook
+> evidence. Walk-forward verdict on the soft corpus: +17.4% ROI, 2,033 trades, 72/91 cells
+> positive, 19 blocked. NOTE for time-remaining axis: history rows carry ONE near-close price
+> snapshot, so a time-REMAINING axis is not learnable from this harvest — duration(lifetime)
+> bands used instead; candlestick harvest is the future path if time-remaining matters.
+
 **B1. Full-universe screening.** Decouple the structural screen from the watchlist/candidates
 funnel. New `scripts/screen_universe.py`: `client.iter_markets(status="open")` over the ENTIRE
 exchange (thousands of markets), map each into its atlas cell, emit every corrected-cell, mid-OI,

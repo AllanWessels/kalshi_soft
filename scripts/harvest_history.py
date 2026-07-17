@@ -47,6 +47,11 @@ KALSHI_CAT_TO_CANON = {
     "Mentions": "statements",
 }
 
+
+def _slug(kalshi_category: str) -> str:
+    """Canonical slug for a non-soft Kalshi category (B3 all-category harvest)."""
+    return (kalshi_category or "other").strip().lower().replace(" & ", "-").replace(" ", "-")
+
 HISTORY_DIR = config.DATA_DIR / "history"
 DEFAULT_OUT = HISTORY_DIR / "markets.jsonl"
 HARVESTED_SERIES_PATH = HISTORY_DIR / "_harvested_series.json"
@@ -137,6 +142,11 @@ def main() -> int:
     ap.add_argument("--max-series", type=int, default=None, help="Cap series processed this run")
     ap.add_argument("--categories", default=None,
                     help="Comma list of canonical cats to include (default: all soft)")
+    ap.add_argument("--all-categories", action="store_true",
+                    help="B3 (PLAN_FOR_OPUS): harvest EVERY Kalshi category (sports, financials, "
+                         "...) for the STRUCTURAL map only — favorite-longshot bias was first "
+                         "documented in sports betting. The LLM-forecast blocklist is untouched; "
+                         "walk-forward validation decides which new cells are tradeable.")
     ap.add_argument("--out", default=str(DEFAULT_OUT))
     ap.add_argument("--resume", action="store_true",
                     help="Skip series already harvested (default: always resume-safe)")
@@ -153,19 +163,21 @@ def main() -> int:
         print("kalshi UNREACHABLE — aborting", file=sys.stderr)
         return 2
 
-    # Discover soft series.
+    # Discover series to harvest (soft by default; every category with --all-categories).
     resp = client.get_series()
     all_series = resp.get("series") or []
     soft_series = []
     for s in all_series:
         canon = KALSHI_CAT_TO_CANON.get(s.get("category"))
         if canon is None:
-            continue
+            if not args.all_categories:
+                continue
+            canon = _slug(s.get("category"))
         if want_cats and canon not in want_cats:
             continue
         soft_series.append((s, canon))
-    print(f"soft series found: {len(soft_series)} "
-          f"(of {len(all_series)} total)")
+    print(f"series to harvest: {len(soft_series)} "
+          f"(of {len(all_series)} total; all_categories={args.all_categories})")
 
     done = _load_harvested()
     if args.resume:
