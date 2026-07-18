@@ -1,17 +1,23 @@
 {
-  "generated_at": "2026-07-17T22:24:26Z",
+  "generated_at": "2026-07-18T00:26:23Z",
   "folds": [
     {
       "month": "2026-05",
       "train": 3603,
-      "test": 16573,
+      "test": 50737,
       "trades": 477
     },
     {
       "month": "2026-06",
-      "train": 20176,
-      "test": 16232,
-      "trades": 1556
+      "train": 54340,
+      "test": 8454880,
+      "trades": 863398
+    },
+    {
+      "month": "2026-07",
+      "train": 8509220,
+      "test": 8987986,
+      "trades": 4118816
     }
   ],
   "params": {
@@ -652,6 +658,1112 @@
       "n": 1,
       "pnl": 0.03,
       "staked": 0.97,
+      "roi": 0.0309,
+      "positive": true
+    },
+    "sports|15-35c|thin|d0-2": {
+      "n": 4176,
+      "pnl": 917.03,
+      "staked": 3243.97,
+      "roi": 0.2827,
+      "positive": true
+    },
+    "sports|35-65c|mid2|d0-2": {
+      "n": 262,
+      "pnl": 106.09,
+      "staked": 146.91,
+      "roi": 0.7221,
+      "positive": true
+    },
+    "sports|5-15c|thin|d0-2": {
+      "n": 1876,
+      "pnl": 165.51,
+      "staked": 1706.49,
+      "roi": 0.097,
+      "positive": true
+    },
+    "sports|35-65c|thin|d0-2": {
+      "n": 3536,
+      "pnl": 1467.49,
+      "staked": 2005.51,
+      "roi": 0.7317,
+      "positive": true
+    },
+    "sports|95-100c|deep": {
+      "n": 1,
+      "pnl": 0.03,
+      "staked": 0.97,
+      "roi": 0.0309,
+      "positive": true
+    },
+    "financials|95-100c|mid3|d0-2": {
+      "n": 16,
+      "pnl": 0.59,
+      "staked": 15.41,
+      "roi": 0.0383,
+      "positive": true
+    },
+    "financials|95-100c|deep|d0-2": {
+      "n": 35,
+      "pnl": -2.86,
+      "staked": 33.86,
+      "roi": -0.0845,
+      "positive": false
+    },
+    "financials|85-95c|mid": {
+      "n": 90,
+      "pnl": 4.86,
+      "staked": 83.14,
+      "roi": 0.0585,
+      "positive": true
+    },
+    "financials|95-100c|mid2|d0-2": {
+      "n": 36,
+      "pnl": 1.24,
+      "staked": 34.76,
+      "roi": 0.0357,
+      "positive": true
+    },
+    "financials|85-95c|thin|d0-2": {
+      "n": 210,
+      "pnl": 17.35,
+      "staked": 191.65,
+      "roi": 0.0905,
+      "positive": true
+    },
+    "financials|95-100c|thin|d0-2": {
+      "n": 162,
+      "pnl": 4.87,
+      "staked": 156.13,
+      "roi": 0.0312,
+      "positive": true
+    },
+    "financials|0-5c|mid2|d0-2": {
+      "n": 3,
+      "pnl": 0.09,
+      "staked": 2.91,
+      "roi": 0.0309,
+      "positive": true
+    },
+    "financials|95-100c|mid1|d0-2": {
+      "n": 29,
+      "pnl": 1.0,
+      "staked": 28.0,
+      "roi": 0.0357,
+      "positive": true
+    },
+    "financials|0-5c|mid3|d0-2": {
+      "n": 2,
+      "pnl": 0.06,
+      "staked": 1.94,
+      "roi": 0.0309,
+      "positive": true
+    },
+    "financials|0-5c|deep|d0-2": {
+      "n": 14,
+      "pnl": 0.42,
+      "staked": 13.58,
+      "roi": 0.0309,
+      "positive": true
+    },
+    "financials|0-5c|thin|d0-2": {
+      "n": 16,
+      "pnl": -0.52,
+      "staked": 15.52,
+      "roi": -0.0335,
+      "positive": false
+    },
+    "financials|85-95c|thin": {
+      "n": 15,
+      "pnl": 1.32,
+      "staked": 13.68,
+      "roi": 0.0965,
+      "positive": true
+    },
+    "financials|0-5c|thin": {
+      "n": 2,
+      "pnl": 0.06,
+      "staked": 1.94,
+      "roi": 0.0309,
+      "positive": true
+    },
+    "financials|95-100c|thin": {
+      "n": 1,
+      "pnl": 0.03,
+      "staked": 0.97,
+      "roi": 0.0309,
+      "positive": true
+    },
+    "sports|5-15c|thin": {
+      "n": 12,
+      "pnl": 0.75,
+      "staked": 11.25,
+      "roi": 0.0667,
+      "positive": true
+    },
+    "sports|15-35c|thin": {
+      "n": 12,
+      "pnl": 2.16,
+      "staked": 9.84,
+      "roi": 0.2195,
+      "positive": true
+    },
+    "sports|0-5c|thin|d14+": {
+      "n": 6,
+      "pnl": 0.18,
+      "staked": 5.82,
+      "roi": 0.0309,
+      "positive": true
+    },
+    "sports|35-65c|thin": {
+      "n": 23,
+      "pnl": 9.94,
+      "staked": 13.06,
+      "roi": 0.7611,
+      "positive": true
+    },
+    "sports|95-100c|thin|d2-14": {
+      "n": 7,
+      "pnl": 1.61,
+      "staked": 0.39,
+      "roi": 4.1282,
+      "positive": true
+    },
+    "sports|65-85c|thin": {
+      "n": 17,
+      "pnl": 10.91,
+      "staked": 4.09,
+      "roi": 2.6675,
+      "positive": true
+    },
+    "sports|0-5c|mid2|d0-2": {
+      "n": 40,
+      "pnl": 1.2,
+      "staked": 38.8,
+      "roi": 0.0309,
+      "positive": true
+    },
+    "sports|15-35c|mid2|d0-2": {
+      "n": 249,
+      "pnl": 55.61,
+      "staked": 191.39,
+      "roi": 0.2906,
+      "positive": true
+    },
+    "sports|5-15c|deep|d0-2": {
+      "n": 153,
+      "pnl": 7.047,
+      "staked": 141.953,
+      "roi": 0.0496,
+      "positive": true
+    },
+    "sports|15-35c|mid3|d0-2": {
+      "n": 183,
+      "pnl": 39.19,
+      "staked": 142.81,
+      "roi": 0.2744,
+      "positive": true
+    },
+    "sports|5-15c|mid3|d0-2": {
+      "n": 162,
+      "pnl": 11.17,
+      "staked": 150.83,
+      "roi": 0.0741,
+      "positive": true
+    },
+    "sports|5-15c|mid2|d0-2": {
+      "n": 146,
+      "pnl": 9.63,
+      "staked": 135.37,
+      "roi": 0.0711,
+      "positive": true
+    },
+    "sports|5-15c|mid1|d0-2": {
+      "n": 204,
+      "pnl": 17.05,
+      "staked": 186.95,
+      "roi": 0.0912,
+      "positive": true
+    },
+    "sports|35-65c|mid3|d0-2": {
+      "n": 147,
+      "pnl": 54.91,
+      "staked": 83.09,
+      "roi": 0.6608,
+      "positive": true
+    },
+    "sports|95-100c|deep|d0-2": {
+      "n": 33,
+      "pnl": 1.15,
+      "staked": 31.85,
+      "roi": 0.0361,
+      "positive": true
+    },
+    "sports|5-15c|deep": {
+      "n": 141,
+      "pnl": 9.0,
+      "staked": 132.0,
+      "roi": 0.0682,
+      "positive": true
+    },
+    "sports|15-35c|mid": {
+      "n": 93,
+      "pnl": 16.57,
+      "staked": 73.43,
+      "roi": 0.2257,
+      "positive": true
+    },
+    "sports|0-5c|mid3|d2-14": {
+      "n": 27,
+      "pnl": 0.798,
+      "staked": 26.202,
+      "roi": 0.0305,
+      "positive": true
+    },
+    "sports|5-15c|mid": {
+      "n": 142,
+      "pnl": 9.509,
+      "staked": 132.491,
+      "roi": 0.0718,
+      "positive": true
+    },
+    "sports|5-15c|thin|d2-14": {
+      "n": 90,
+      "pnl": 6.108,
+      "staked": 83.892,
+      "roi": 0.0728,
+      "positive": true
+    },
+    "sports|35-65c|mid": {
+      "n": 42,
+      "pnl": 13.51,
+      "staked": 22.49,
+      "roi": 0.6007,
+      "positive": true
+    },
+    "sports|0-5c|deep|d2-14": {
+      "n": 59,
+      "pnl": 1.765,
+      "staked": 57.235,
+      "roi": 0.0308,
+      "positive": true
+    },
+    "sports|0-5c|mid1|d2-14": {
+      "n": 13,
+      "pnl": 0.382,
+      "staked": 12.618,
+      "roi": 0.0303,
+      "positive": true
+    },
+    "sports|0-5c|thin|d2-14": {
+      "n": 27,
+      "pnl": 0.807,
+      "staked": 26.193,
+      "roi": 0.0308,
+      "positive": true
+    },
+    "sports|0-5c|mid": {
+      "n": 8,
+      "pnl": 0.24,
+      "staked": 7.76,
+      "roi": 0.0309,
+      "positive": true
+    },
+    "sports|0-5c|deep|d14+": {
+      "n": 5,
+      "pnl": 0.15,
+      "staked": 4.85,
+      "roi": 0.0309,
+      "positive": true
+    },
+    "sports|95-100c|deep|d2-14": {
+      "n": 15,
+      "pnl": -1.48,
+      "staked": 14.48,
+      "roi": -0.1022,
+      "positive": false
+    },
+    "sports|95-100c|mid1|d0-2": {
+      "n": 15,
+      "pnl": 6.16,
+      "staked": 0.84,
+      "roi": 7.3333,
+      "positive": true
+    },
+    "sports|35-65c|mid1|d0-2": {
+      "n": 445,
+      "pnl": 186.98,
+      "staked": 249.02,
+      "roi": 0.7509,
+      "positive": true
+    },
+    "sports|95-100c|mid3|d0-2": {
+      "n": 10,
+      "pnl": -2.6,
+      "staked": 9.6,
+      "roi": -0.2708,
+      "positive": false
+    },
+    "sports|15-35c|mid1|d0-2": {
+      "n": 407,
+      "pnl": 90.61,
+      "staked": 314.39,
+      "roi": 0.2882,
+      "positive": true
+    },
+    "sports|0-5c|mid1|d0-2": {
+      "n": 31,
+      "pnl": 0.93,
+      "staked": 30.07,
+      "roi": 0.0309,
+      "positive": true
+    },
+    "sports|65-85c|thin|d0-2": {
+      "n": 197,
+      "pnl": 80.13,
+      "staked": 53.87,
+      "roi": 1.4875,
+      "positive": true
+    },
+    "sports|95-100c|thin|d0-2": {
+      "n": 80,
+      "pnl": 33.87,
+      "staked": 4.13,
+      "roi": 8.201,
+      "positive": true
+    },
+    "sports|95-100c|mid1|d2-14": {
+      "n": 2,
+      "pnl": 0.07,
+      "staked": 1.93,
+      "roi": 0.0363,
+      "positive": true
+    },
+    "sports|0-5c|deep|d0-2": {
+      "n": 58,
+      "pnl": 1.74,
+      "staked": 56.26,
+      "roi": 0.0309,
+      "positive": true
+    },
+    "climate-and-weather|0-5c|mid1|d0-2": {
+      "n": 4,
+      "pnl": 0.12,
+      "staked": 3.88,
+      "roi": 0.0309,
+      "positive": true
+    },
+    "climate-and-weather|0-5c|mid2|d0-2": {
+      "n": 5,
+      "pnl": 0.15,
+      "staked": 4.85,
+      "roi": 0.0309,
+      "positive": true
+    },
+    "climate-and-weather|95-100c|mid3|d0-2": {
+      "n": 5,
+      "pnl": 0.17,
+      "staked": 4.83,
+      "roi": 0.0352,
+      "positive": true
+    },
+    "financials|0-5c|deep": {
+      "n": 3,
+      "pnl": 0.09,
+      "staked": 2.91,
+      "roi": 0.0309,
+      "positive": true
+    },
+    "financials|95-100c|deep": {
+      "n": 4,
+      "pnl": 0.14,
+      "staked": 3.86,
+      "roi": 0.0363,
+      "positive": true
+    },
+    "exotics|0-5c|thin|d0-2": {
+      "n": 456155,
+      "pnl": -16457.071,
+      "staked": 23844.071,
+      "roi": -0.6902,
+      "positive": false
+    },
+    "exotics|5-15c|thin|d0-2": {
+      "n": 1841060,
+      "pnl": 62892.094,
+      "staked": 1677657.906,
+      "roi": 0.0375,
+      "positive": true
+    },
+    "exotics|65-85c|thin|d0-2": {
+      "n": 69084,
+      "pnl": 191.554,
+      "staked": 18953.446,
+      "roi": 0.0101,
+      "positive": true
+    },
+    "exotics|35-65c|mid1|d0-2": {
+      "n": 47803,
+      "pnl": -1360.135,
+      "staked": 24871.135,
+      "roi": -0.0547,
+      "positive": false
+    },
+    "exotics|15-35c|mid2|d0-2": {
+      "n": 55382,
+      "pnl": 4369.399,
+      "staked": 44581.601,
+      "roi": 0.098,
+      "positive": true
+    },
+    "exotics|15-35c|mid1|d0-2": {
+      "n": 93331,
+      "pnl": 4999.626,
+      "staked": 72541.374,
+      "roi": 0.0689,
+      "positive": true
+    },
+    "exotics|35-65c|mid": {
+      "n": 2971,
+      "pnl": -49.762,
+      "staked": 1218.762,
+      "roi": -0.0408,
+      "positive": false
+    },
+    "exotics|35-65c|mid2|d0-2": {
+      "n": 22386,
+      "pnl": 854.794,
+      "staked": 11863.206,
+      "roi": 0.0721,
+      "positive": true
+    },
+    "exotics|0-5c|thin": {
+      "n": 12373,
+      "pnl": 77.022,
+      "staked": 646.978,
+      "roi": 0.119,
+      "positive": true
+    },
+    "exotics|35-65c|thin": {
+      "n": 17975,
+      "pnl": -1237.182,
+      "staked": 9886.182,
+      "roi": -0.1251,
+      "positive": false
+    },
+    "exotics|5-15c|thin": {
+      "n": 8941,
+      "pnl": -629.581,
+      "staked": 7799.581,
+      "roi": -0.0807,
+      "positive": false
+    },
+    "exotics|15-35c|deep": {
+      "n": 314,
+      "pnl": -35.307,
+      "staked": 52.307,
+      "roi": -0.675,
+      "positive": false
+    },
+    "exotics|65-85c|thin": {
+      "n": 5442,
+      "pnl": 41.394,
+      "staked": 1458.606,
+      "roi": 0.0284,
+      "positive": true
+    },
+    "climate-and-weather|95-100c|mid": {
+      "n": 5,
+      "pnl": 0.17,
+      "staked": 4.83,
+      "roi": 0.0352,
+      "positive": true
+    },
+    "commodities|95-100c|thin|d2-14": {
+      "n": 2,
+      "pnl": 0.07,
+      "staked": 1.93,
+      "roi": 0.0363,
+      "positive": true
+    },
+    "climate-and-weather|0-5c|thin|d0-2": {
+      "n": 7,
+      "pnl": 0.21,
+      "staked": 6.79,
+      "roi": 0.0309,
+      "positive": true
+    },
+    "climate-and-weather|0-5c|mid3|d0-2": {
+      "n": 1,
+      "pnl": 0.03,
+      "staked": 0.97,
+      "roi": 0.0309,
+      "positive": true
+    },
+    "sports|65-85c|mid": {
+      "n": 47,
+      "pnl": 4.45,
+      "staked": 12.55,
+      "roi": 0.3546,
+      "positive": true
+    },
+    "sports|5-15c|mid3|d2-14": {
+      "n": 27,
+      "pnl": 1.664,
+      "staked": 25.336,
+      "roi": 0.0657,
+      "positive": true
+    },
+    "sports|35-65c|deep": {
+      "n": 68,
+      "pnl": -4.65,
+      "staked": 35.65,
+      "roi": -0.1304,
+      "positive": false
+    },
+    "sports|15-35c|deep|d2-14": {
+      "n": 37,
+      "pnl": -0.59,
+      "staked": 28.59,
+      "roi": -0.0206,
+      "positive": false
+    },
+    "sports|85-95c|mid": {
+      "n": 28,
+      "pnl": 5.36,
+      "staked": 2.64,
+      "roi": 2.0303,
+      "positive": true
+    },
+    "financials|5-15c|thin|d0-2": {
+      "n": 18,
+      "pnl": -0.65,
+      "staked": 1.65,
+      "roi": -0.3939,
+      "positive": false
+    },
+    "financials|15-35c|thin|d0-2": {
+      "n": 16,
+      "pnl": -1.87,
+      "staked": 3.87,
+      "roi": -0.4832,
+      "positive": false
+    },
+    "financials|65-85c|thin|d0-2": {
+      "n": 63,
+      "pnl": -12.01,
+      "staked": 49.01,
+      "roi": -0.2451,
+      "positive": false
+    },
+    "financials|85-95c|deep": {
+      "n": 13,
+      "pnl": 0.22,
+      "staked": 11.78,
+      "roi": 0.0187,
+      "positive": true
+    },
+    "financials|85-95c|mid2|d0-2": {
+      "n": 13,
+      "pnl": -0.87,
+      "staked": 11.87,
+      "roi": -0.0733,
+      "positive": false
+    },
+    "financials|85-95c|mid1|d0-2": {
+      "n": 10,
+      "pnl": -0.09,
+      "staked": 9.09,
+      "roi": -0.0099,
+      "positive": false
+    },
+    "financials|95-100c|thin|d2-14": {
+      "n": 4,
+      "pnl": 0.14,
+      "staked": 3.86,
+      "roi": 0.0363,
+      "positive": true
+    },
+    "financials|95-100c|mid": {
+      "n": 6,
+      "pnl": 0.18,
+      "staked": 5.82,
+      "roi": 0.0309,
+      "positive": true
+    },
+    "financials|0-5c|thin|d2-14": {
+      "n": 2,
+      "pnl": 0.06,
+      "staked": 1.94,
+      "roi": 0.0309,
+      "positive": true
+    },
+    "financials|65-85c|thin": {
+      "n": 2,
+      "pnl": 0.48,
+      "staked": 1.52,
+      "roi": 0.3158,
+      "positive": true
+    },
+    "financials|15-35c|thin": {
+      "n": 2,
+      "pnl": 0.42,
+      "staked": 0.58,
+      "roi": 0.7241,
+      "positive": true
+    },
+    "sports|95-100c|thin": {
+      "n": 1,
+      "pnl": -0.04,
+      "staked": 0.04,
+      "roi": -1.0,
+      "positive": false
+    },
+    "sports|15-35c|deep|d0-2": {
+      "n": 74,
+      "pnl": 6.19,
+      "staked": 57.81,
+      "roi": 0.1071,
+      "positive": true
+    },
+    "sports|35-65c|deep|d0-2": {
+      "n": 141,
+      "pnl": 1.62,
+      "staked": 73.38,
+      "roi": 0.0221,
+      "positive": true
+    },
+    "sports|35-65c|thin|d2-14": {
+      "n": 16,
+      "pnl": 6.16,
+      "staked": 8.84,
+      "roi": 0.6968,
+      "positive": true
+    },
+    "sports|15-35c|thin|d2-14": {
+      "n": 42,
+      "pnl": 9.7,
+      "staked": 32.3,
+      "roi": 0.3003,
+      "positive": true
+    },
+    "sports|95-100c|mid3|d2-14": {
+      "n": 6,
+      "pnl": -0.76,
+      "staked": 5.76,
+      "roi": -0.1319,
+      "positive": false
+    },
+    "sports|85-95c|thin": {
+      "n": 10,
+      "pnl": 8.12,
+      "staked": 0.88,
+      "roi": 9.2273,
+      "positive": true
+    },
+    "sports|5-15c|deep|d2-14": {
+      "n": 77,
+      "pnl": 0.373,
+      "staked": 71.627,
+      "roi": 0.0052,
+      "positive": true
+    },
+    "financials|5-15c|thin": {
+      "n": 7,
+      "pnl": -0.64,
+      "staked": 0.64,
+      "roi": -1.0,
+      "positive": false
+    },
+    "sports|0-5c|thin|d0-2": {
+      "n": 51,
+      "pnl": 1.53,
+      "staked": 49.47,
+      "roi": 0.0309,
+      "positive": true
+    },
+    "sports|85-95c|thin|d0-2": {
+      "n": 29,
+      "pnl": 19.21,
+      "staked": 2.79,
+      "roi": 6.8853,
+      "positive": true
+    },
+    "sports|95-100c|mid2|d0-2": {
+      "n": 2,
+      "pnl": -0.12,
+      "staked": 0.12,
+      "roi": -1.0,
+      "positive": false
+    },
+    "sports|15-35c|deep": {
+      "n": 1,
+      "pnl": 0.14,
+      "staked": 0.86,
+      "roi": 0.1628,
+      "positive": true
+    },
+    "sports|85-95c|deep": {
+      "n": 11,
+      "pnl": -1.44,
+      "staked": 1.44,
+      "roi": -1.0,
+      "positive": false
+    },
+    "sports|95-100c|mid2|d2-14": {
+      "n": 1,
+      "pnl": -0.06,
+      "staked": 0.06,
+      "roi": -1.0,
+      "positive": false
+    },
+    "exotics|15-35c|thin|d0-2": {
+      "n": 1026630,
+      "pnl": 52626.89,
+      "staked": 812275.11,
+      "roi": 0.0648,
+      "positive": true
+    },
+    "exotics|35-65c|thin|d0-2": {
+      "n": 398160,
+      "pnl": 14673.554,
+      "staked": 221575.446,
+      "roi": 0.0662,
+      "positive": true
+    },
+    "exotics|0-5c|mid1|d0-2": {
+      "n": 40720,
+      "pnl": 685.6,
+      "staked": 39280.4,
+      "roi": 0.0175,
+      "positive": true
+    },
+    "exotics|85-95c|thin|d0-2": {
+      "n": 11045,
+      "pnl": 287.778,
+      "staked": 10369.222,
+      "roi": 0.0278,
+      "positive": true
+    },
+    "exotics|5-15c|mid1|d0-2": {
+      "n": 210803,
+      "pnl": 7521.576,
+      "staked": 194755.424,
+      "roi": 0.0386,
+      "positive": true
+    },
+    "exotics|85-95c|mid1|d0-2": {
+      "n": 5624,
+      "pnl": 202.608,
+      "staked": 5149.392,
+      "roi": 0.0393,
+      "positive": true
+    },
+    "exotics|35-65c|mid3|d0-2": {
+      "n": 9360,
+      "pnl": 524.736,
+      "staked": 5139.264,
+      "roi": 0.1021,
+      "positive": true
+    },
+    "exotics|5-15c|deep|d0-2": {
+      "n": 28490,
+      "pnl": 1358.642,
+      "staked": 26353.358,
+      "roi": 0.0516,
+      "positive": true
+    },
+    "exotics|5-15c|mid2|d0-2": {
+      "n": 123284,
+      "pnl": 4797.894,
+      "staked": 114032.106,
+      "roi": 0.0421,
+      "positive": true
+    },
+    "exotics|5-15c|mid3|d0-2": {
+      "n": 63496,
+      "pnl": 2937.076,
+      "staked": 58678.924,
+      "roi": 0.0501,
+      "positive": true
+    },
+    "exotics|0-5c|deep|d0-2": {
+      "n": 10010,
+      "pnl": 233.824,
+      "staked": 9678.176,
+      "roi": 0.0242,
+      "positive": true
+    },
+    "exotics|85-95c|mid2|d0-2": {
+      "n": 4122,
+      "pnl": 179.696,
+      "staked": 3758.304,
+      "roi": 0.0478,
+      "positive": true
+    },
+    "exotics|0-5c|mid3|d0-2": {
+      "n": 23360,
+      "pnl": 496.088,
+      "staked": 22579.912,
+      "roi": 0.022,
+      "positive": true
+    },
+    "exotics|15-35c|mid3|d0-2": {
+      "n": 24704,
+      "pnl": 2232.818,
+      "staked": 19627.182,
+      "roi": 0.1138,
+      "positive": true
+    },
+    "exotics|35-65c|deep|d0-2": {
+      "n": 3800,
+      "pnl": 259.622,
+      "staked": 2088.378,
+      "roi": 0.1243,
+      "positive": true
+    },
+    "exotics|0-5c|mid2|d0-2": {
+      "n": 31275,
+      "pnl": 644.702,
+      "staked": 30192.298,
+      "roi": 0.0214,
+      "positive": true
+    },
+    "exotics|15-35c|deep|d0-2": {
+      "n": 9844,
+      "pnl": 971.608,
+      "staked": 7850.392,
+      "roi": 0.1238,
+      "positive": true
+    },
+    "exotics|85-95c|mid3|d0-2": {
+      "n": 2972,
+      "pnl": 150.266,
+      "staked": 2717.734,
+      "roi": 0.0553,
+      "positive": true
+    },
+    "exotics|65-85c|deep|d0-2": {
+      "n": 802,
+      "pnl": -48.25,
+      "staked": 174.25,
+      "roi": -0.2769,
+      "positive": false
+    },
+    "exotics|95-100c|mid2|d0-2": {
+      "n": 80,
+      "pnl": 1.2,
+      "staked": 76.8,
+      "roi": 0.0156,
+      "positive": true
+    },
+    "exotics|5-15c|thin|d2-14": {
+      "n": 91295,
+      "pnl": 6023.972,
+      "staked": 10351.028,
+      "roi": 0.582,
+      "positive": true
+    },
+    "exotics|15-35c|thin|d2-14": {
+      "n": 82790,
+      "pnl": 7929.647,
+      "staked": 20477.353,
+      "roi": 0.3872,
+      "positive": true
+    },
+    "exotics|15-35c|mid2|d2-14": {
+      "n": 9455,
+      "pnl": 326.3,
+      "staked": 7469.7,
+      "roi": 0.0437,
+      "positive": true
+    },
+    "exotics|35-65c|thin|d2-14": {
+      "n": 37791,
+      "pnl": 3136.729,
+      "staked": 18613.271,
+      "roi": 0.1685,
+      "positive": true
+    },
+    "exotics|5-15c|mid2|d2-14": {
+      "n": 9102,
+      "pnl": 180.724,
+      "staked": 8179.276,
+      "roi": 0.0221,
+      "positive": true
+    },
+    "exotics|5-15c|mid3|d2-14": {
+      "n": 14580,
+      "pnl": 662.078,
+      "staked": 13401.922,
+      "roi": 0.0494,
+      "positive": true
+    },
+    "exotics|35-65c|mid1|d2-14": {
+      "n": 5440,
+      "pnl": -407.326,
+      "staked": 2961.326,
+      "roi": -0.1375,
+      "positive": false
+    },
+    "exotics|85-95c|thin|d2-14": {
+      "n": 5228,
+      "pnl": 296.062,
+      "staked": 4757.938,
+      "roi": 0.0622,
+      "positive": true
+    },
+    "exotics|5-15c|mid1|d2-14": {
+      "n": 1188,
+      "pnl": -11.728,
+      "staked": 1027.728,
+      "roi": -0.0114,
+      "positive": false
+    },
+    "exotics|15-35c|mid3|d2-14": {
+      "n": 7580,
+      "pnl": 640.372,
+      "staked": 6001.628,
+      "roi": 0.1067,
+      "positive": true
+    },
+    "exotics|5-15c|deep|d2-14": {
+      "n": 14524,
+      "pnl": 897.944,
+      "staked": 13420.056,
+      "roi": 0.0669,
+      "positive": true
+    },
+    "exotics|35-65c|mid3|d2-14": {
+      "n": 1806,
+      "pnl": 76.286,
+      "staked": 1073.714,
+      "roi": 0.071,
+      "positive": true
+    },
+    "exotics|0-5c|deep|d2-14": {
+      "n": 6064,
+      "pnl": 154.498,
+      "staked": 5873.502,
+      "roi": 0.0263,
+      "positive": true
+    },
+    "exotics|35-65c|mid2|d2-14": {
+      "n": 2402,
+      "pnl": -2.818,
+      "staked": 1508.818,
+      "roi": -0.0019,
+      "positive": false
+    },
+    "exotics|65-85c|thin|d2-14": {
+      "n": 312,
+      "pnl": -75.114,
+      "staked": 115.114,
+      "roi": -0.6525,
+      "positive": false
+    },
+    "exotics|35-65c|deep|d2-14": {
+      "n": 1384,
+      "pnl": 83.694,
+      "staked": 764.306,
+      "roi": 0.1095,
+      "positive": true
+    },
+    "exotics|15-35c|deep|d2-14": {
+      "n": 5112,
+      "pnl": 682.122,
+      "staked": 4069.878,
+      "roi": 0.1676,
+      "positive": true
+    },
+    "exotics|95-100c|mid3|d0-2": {
+      "n": 64,
+      "pnl": 2.56,
+      "staked": 61.44,
+      "roi": 0.0417,
+      "positive": true
+    },
+    "exotics|85-95c|deep|d2-14": {
+      "n": 1516,
+      "pnl": 99.134,
+      "staked": 1392.866,
+      "roi": 0.0712,
+      "positive": true
+    },
+    "exotics|85-95c|mid2|d2-14": {
+      "n": 1222,
+      "pnl": 79.456,
+      "staked": 1116.544,
+      "roi": 0.0712,
+      "positive": true
+    },
+    "exotics|65-85c|mid1|d2-14": {
+      "n": 1206,
+      "pnl": -66.814,
+      "staked": 404.814,
+      "roi": -0.165,
+      "positive": false
+    },
+    "exotics|85-95c|mid3|d2-14": {
+      "n": 1338,
+      "pnl": 94.426,
+      "staked": 1229.574,
+      "roi": 0.0768,
+      "positive": true
+    },
+    "exotics|95-100c|mid3|d2-14": {
+      "n": 286,
+      "pnl": 5.354,
+      "staked": 276.646,
+      "roi": 0.0194,
+      "positive": true
+    },
+    "exotics|95-100c|mid1|d2-14": {
+      "n": 144,
+      "pnl": 4.842,
+      "staked": 139.158,
+      "roi": 0.0348,
+      "positive": true
+    },
+    "exotics|85-95c|mid1|d2-14": {
+      "n": 1078,
+      "pnl": 83.618,
+      "staked": 976.382,
+      "roi": 0.0856,
+      "positive": true
+    },
+    "exotics|65-85c|mid3|d2-14": {
+      "n": 734,
+      "pnl": 67.806,
+      "staked": 606.194,
+      "roi": 0.1119,
+      "positive": true
+    },
+    "exotics|95-100c|mid2|d2-14": {
+      "n": 236,
+      "pnl": 7.17,
+      "staked": 228.83,
+      "roi": 0.0313,
+      "positive": true
+    },
+    "exotics|95-100c|deep|d2-14": {
+      "n": 336,
+      "pnl": 11.43,
+      "staked": 324.57,
+      "roi": 0.0352,
+      "positive": true
+    },
+    "commodities|0-5c|mid": {
+      "n": 1,
+      "pnl": 0.03,
+      "staked": 0.97,
+      "roi": 0.0309,
+      "positive": true
+    },
+    "commodities|95-100c|mid": {
+      "n": 2,
+      "pnl": 0.06,
+      "staked": 1.94,
       "roi": 0.0309,
       "positive": true
     }
