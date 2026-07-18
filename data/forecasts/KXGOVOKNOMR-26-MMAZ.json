@@ -5,48 +5,51 @@
   "category": "politics",
   "close_time": "2026-06-30T14:00:00Z",
   "current": {
-    "as_of": "2026-07-17T19:34:38Z",
-    "my_probability": 0.5935,
+    "as_of": "2026-07-18T01:39:21Z",
+    "my_probability": 0.7122,
     "my_confidence": "high",
     "market_implied_probability": 0.815,
     "market_price_cents": 82.0,
-    "edge": -0.22149999999999992,
+    "edge": -0.10279999999999989,
     "yes_ask": 0.82,
     "no_ask": 0.19,
     "fee_per_contract": 0.02,
-    "ev_per_contract": 0.19649999999999998,
+    "ev_per_contract": 0.07779999999999994,
     "limit_price": 0.18,
-    "ev_limit_per_contract": 0.2065,
+    "ev_limit_per_contract": 0.0878,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "22pt gap exceeds the hard ceiling (20pt) — beyond this divergence from a liquid market, even high confidence is treated as model error, not edge",
-    "prob_delta_vs_prev": -0.07299999999999995,
+    "lean_note": "ADVERSARIAL VETO: The position is overconfident and lacks a credible edge over the market, which implies a higher probability of Mazzei winning. The reasoning does not justify the high confidence in the 'NO' position, and the divergence from the market sugge",
+    "prob_delta_vs_prev": 0.11870000000000003,
     "trigger": "scheduled",
-    "strategy_id": "LQ5-ensemble5",
-    "proposed_probability": null,
-    "adversarial_verdict": "",
-    "adversarial_challenged_prob": null,
-    "adversarial_concerns": [],
-    "adversarial_model": "",
-    "rationale_summary": "There is currently no direct evidence about Mike Mazzei's candidacy or likelihood of securing the Republican nomination for Governor in Oklahoma. The absence of specific information about his political activity, endorsements, or campaign efforts makes it difficult to assign a higher probability. The base rate for any single individual becoming a gubernatorial nominee is generally low, especially i",
+    "strategy_id": "LD5-diverse",
+    "proposed_probability": 0.7122,
+    "adversarial_verdict": "veto",
+    "adversarial_challenged_prob": 0.7122,
+    "adversarial_concerns": [
+      "The position diverges significantly from the market-implied probability (0.815), suggesting a lack of alignment with broader market sentiment or information.",
+      "The reasoning does not provide sufficient evidence to justify a high confidence in the 'NO' position, especially given that Mazzei is confirmed as a runoff candidate with no clear disadvantage identified.",
+      "The base rates about runoffs are not sufficient to conclude that Mazzei is unlikely to win; they only highlight uncertainty, not a specific disadvantage."
+    ],
+    "adversarial_model": "qwen3:14b-q4_K_M",
+    "rationale_summary": "Based on the evidence provided, Mike Mazzei is confirmed to be one of the two candidates in the Republican gubernatorial runoff in Oklahoma for 2026. However, the outcome of the runoff is uncertain, and no evidence suggests a clear advantage for Mazzei over Gentner Drummond. The base rates indicate that runoffs are common in Oklahoma's Republican gubernatorial races, and key uncertainties such as ",
     "key_drivers": [
-      "Lack of public information on Mazzei's political involvement",
-      "No recent announcements or endorsements",
-      "Competitive nature of Oklahoma's Republican primary field"
+      "Mazzei and Drummond are the confirmed candidates in the runoff.",
+      "The outcome of the runoff is uncertain and depends on voter preferences and campaign strategies.",
+      "External factors like national political trends or endorsements could influence the race."
     ],
     "reference_classes": [
-      "Likelihood of a little-known candidate winning a major party nomination",
-      "Success of underdog candidates in state-level elections",
-      "Nomination probabilities for non-established politicians"
+      "Republican gubernatorial runoffs in Oklahoma",
+      "Competitive gubernatorial races with multiple strong candidates"
     ],
     "research_refs": [
       "C-SPAN",
-      "KGOU",
       "KOCO",
       "KOSU",
       "KSWO 7News",
       "News 9",
       "NonDoc Media",
+      "OU Daily",
       "Oklahoma Voice"
     ]
   },
@@ -442,6 +445,55 @@
         "KSWO 7News",
         "News 9",
         "NonDoc Media",
+        "Oklahoma Voice"
+      ]
+    },
+    {
+      "as_of": "2026-07-18T01:39:21Z",
+      "my_probability": 0.7122,
+      "my_confidence": "high",
+      "market_implied_probability": 0.815,
+      "market_price_cents": 82.0,
+      "edge": -0.10279999999999989,
+      "yes_ask": 0.82,
+      "no_ask": 0.19,
+      "fee_per_contract": 0.02,
+      "ev_per_contract": 0.07779999999999994,
+      "limit_price": 0.18,
+      "ev_limit_per_contract": 0.0878,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "ADVERSARIAL VETO: The position is overconfident and lacks a credible edge over the market, which implies a higher probability of Mazzei winning. The reasoning does not justify the high confidence in the 'NO' position, and the divergence from the market sugge",
+      "prob_delta_vs_prev": 0.11870000000000003,
+      "trigger": "scheduled",
+      "strategy_id": "LD5-diverse",
+      "proposed_probability": 0.7122,
+      "adversarial_verdict": "veto",
+      "adversarial_challenged_prob": 0.7122,
+      "adversarial_concerns": [
+        "The position diverges significantly from the market-implied probability (0.815), suggesting a lack of alignment with broader market sentiment or information.",
+        "The reasoning does not provide sufficient evidence to justify a high confidence in the 'NO' position, especially given that Mazzei is confirmed as a runoff candidate with no clear disadvantage identified.",
+        "The base rates about runoffs are not sufficient to conclude that Mazzei is unlikely to win; they only highlight uncertainty, not a specific disadvantage."
+      ],
+      "adversarial_model": "qwen3:14b-q4_K_M",
+      "rationale_summary": "Based on the evidence provided, Mike Mazzei is confirmed to be one of the two candidates in the Republican gubernatorial runoff in Oklahoma for 2026. However, the outcome of the runoff is uncertain, and no evidence suggests a clear advantage for Mazzei over Gentner Drummond. The base rates indicate that runoffs are common in Oklahoma's Republican gubernatorial races, and key uncertainties such as ",
+      "key_drivers": [
+        "Mazzei and Drummond are the confirmed candidates in the runoff.",
+        "The outcome of the runoff is uncertain and depends on voter preferences and campaign strategies.",
+        "External factors like national political trends or endorsements could influence the race."
+      ],
+      "reference_classes": [
+        "Republican gubernatorial runoffs in Oklahoma",
+        "Competitive gubernatorial races with multiple strong candidates"
+      ],
+      "research_refs": [
+        "C-SPAN",
+        "KOCO",
+        "KOSU",
+        "KSWO 7News",
+        "News 9",
+        "NonDoc Media",
+        "OU Daily",
         "Oklahoma Voice"
       ]
     }

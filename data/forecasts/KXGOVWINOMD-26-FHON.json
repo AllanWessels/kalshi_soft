@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "ticker": "KXGOVWINOMD-26-FHON",
+  "title": "Will Francesca Hong be the Democratic nominee for Governor in Wisconsin?",
+  "category": "politics",
+  "close_time": "2026-08-31T14:00:00Z",
+  "current": {
+    "as_of": "2026-07-18T01:39:34Z",
+    "my_probability": 0.4819,
+    "my_confidence": "medium",
+    "market_implied_probability": 0.645,
+    "market_price_cents": 64.0,
+    "edge": -0.16310000000000002,
+    "yes_ask": 0.65,
+    "no_ask": 0.36,
+    "fee_per_contract": 0.02,
+    "ev_per_contract": 0.13810000000000003,
+    "limit_price": 0.35,
+    "ev_limit_per_contract": 0.1481,
+    "lean": "NONE",
+    "conviction": "low",
+    "lean_note": "16pt gap vs a liquid market without high confidence — more likely my error than edge",
+    "prob_delta_vs_prev": null,
+    "trigger": "scheduled",
+    "strategy_id": "LQ1-single",
+    "proposed_probability": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": "",
+    "rationale_summary": "There is currently no significant evidence or public information suggesting that Francesca Hong is a major contender for the Democratic nomination for Governor in Wisconsin. The absence of direct mentions in reputable news sources and the lack of prior political prominence for Hong suggest a low probability. However, the situation could change if new information emerges.",
+    "key_drivers": [
+      "Current political prominence of Francesca Hong",
+      "Recent developments in Wisconsin Democratic Party leadership",
+      "Public endorsements or campaign activity"
+    ],
+    "reference_classes": [
+      "Incumbent congressional primaries",
+      "Governor nominations in states with strong party bases"
+    ],
+    "research_refs": [
+      "Milwaukee Journal Sentinel",
+      "NBC News",
+      "PBS Wisconsin",
+      "Politico",
+      "The New York Times",
+      "The Times of Israel",
+      "WISN",
+      "WKMG"
+    ]
+  },
+  "history": [
+    {
+      "as_of": "2026-07-18T01:39:34Z",
+      "my_probability": 0.4819,
+      "my_confidence": "medium",
+      "market_implied_probability": 0.645,
+      "market_price_cents": 64.0,
+      "edge": -0.16310000000000002,
+      "yes_ask": 0.65,
+      "no_ask": 0.36,
+      "fee_per_contract": 0.02,
+      "ev_per_contract": 0.13810000000000003,
+      "limit_price": 0.35,
+      "ev_limit_per_contract": 0.1481,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "16pt gap vs a liquid market without high confidence — more likely my error than edge",
+      "prob_delta_vs_prev": null,
+      "trigger": "scheduled",
+      "strategy_id": "LQ1-single",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "There is currently no significant evidence or public information suggesting that Francesca Hong is a major contender for the Democratic nomination for Governor in Wisconsin. The absence of direct mentions in reputable news sources and the lack of prior political prominence for Hong suggest a low probability. However, the situation could change if new information emerges.",
+      "key_drivers": [
+        "Current political prominence of Francesca Hong",
+        "Recent developments in Wisconsin Democratic Party leadership",
+        "Public endorsements or campaign activity"
+      ],
+      "reference_classes": [
+        "Incumbent congressional primaries",
+        "Governor nominations in states with strong party bases"
+      ],
+      "research_refs": [
+        "Milwaukee Journal Sentinel",
+        "NBC News",
+        "PBS Wisconsin",
+        "Politico",
+        "The New York Times",
+        "The Times of Israel",
+        "WISN",
+        "WKMG"
+      ]
+    }
+  ],
+  "position": {
+    "entered": false,
+    "entry_as_of": "",
+    "entry_side": "",
+    "entry_probability": 0.0,
+    "entry_price": 0.0,
+    "entry_market_implied": null,
+    "entry_confidence": "",
+    "entry_conviction": "",
+    "entry_gap": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": ""
+  }
+}

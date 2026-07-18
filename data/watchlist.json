@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-17T22:44:28Z",
+  "updated_at": "2026-07-18T01:32:14Z",
   "cap": 30,
   "markets": [
     {
@@ -167,6 +167,96 @@
       },
       "status": "active",
       "reforecast_cadence_days": 3.0
+    },
+    {
+      "ticker": "KXGOVWINOMD-26-DCRO",
+      "event_ticker": "KXGOVWINOMD-26",
+      "title": "Will David Crowley be the Democratic nominee for Governor in Wisconsin?",
+      "category": "politics",
+      "close_time": "2026-08-31T14:00:00Z",
+      "added_at": "2026-07-18T01:32:14Z",
+      "liquidity_snapshot": {
+        "volume_24h": 155041.28,
+        "open_interest": 104768.37,
+        "spread_cents": 5.0
+      },
+      "status": "active",
+      "reforecast_cadence_days": 7.0
+    },
+    {
+      "ticker": "KXGOVWINOMD-26-MBAR",
+      "event_ticker": "KXGOVWINOMD-26",
+      "title": "Will Mandela Barnes be the Democratic nominee for Governor in Wisconsin?",
+      "category": "politics",
+      "close_time": "2026-08-31T14:00:00Z",
+      "added_at": "2026-07-18T01:32:14Z",
+      "liquidity_snapshot": {
+        "volume_24h": 93295.59,
+        "open_interest": 136562.33,
+        "spread_cents": 1.0
+      },
+      "status": "active",
+      "reforecast_cadence_days": 7.0
+    },
+    {
+      "ticker": "KXGOVWINOMD-26-FHON",
+      "event_ticker": "KXGOVWINOMD-26",
+      "title": "Will Francesca Hong be the Democratic nominee for Governor in Wisconsin?",
+      "category": "politics",
+      "close_time": "2026-08-31T14:00:00Z",
+      "added_at": "2026-07-18T01:32:14Z",
+      "liquidity_snapshot": {
+        "volume_24h": 81897.63,
+        "open_interest": 185411.64,
+        "spread_cents": 1.0
+      },
+      "status": "active",
+      "reforecast_cadence_days": 7.0
+    },
+    {
+      "ticker": "KXSCRSENS-26-DNOR",
+      "event_ticker": "KXSCRSENS-26",
+      "title": "Who will win the 2026 South Carolina Republican Senate special primary?",
+      "category": "politics",
+      "close_time": "2026-08-11T14:00:00Z",
+      "added_at": "2026-07-18T01:32:14Z",
+      "liquidity_snapshot": {
+        "volume_24h": 120614.66,
+        "open_interest": 73769.11,
+        "spread_cents": 3.0
+      },
+      "status": "active",
+      "reforecast_cadence_days": 3.0
+    },
+    {
+      "ticker": "KXSCRSENS-26-RFRY",
+      "event_ticker": "KXSCRSENS-26",
+      "title": "Who will win the 2026 South Carolina Republican Senate special primary?",
+      "category": "politics",
+      "close_time": "2026-08-11T14:00:00Z",
+      "added_at": "2026-07-18T01:32:14Z",
+      "liquidity_snapshot": {
+        "volume_24h": 80840.1,
+        "open_interest": 56411.75,
+        "spread_cents": 1.0
+      },
+      "status": "active",
+      "reforecast_cadence_days": 3.0
+    },
+    {
+      "ticker": "KXTRUMPWORLDCUP-26-DJT-2",
+      "event_ticker": "KXTRUMPWORLDCUP-26-DJT",
+      "title": "How many 2026 FIFA World Cup matches will Donald Trump attend this season?",
+      "category": "politics",
+      "close_time": "2026-07-20T14:00:00Z",
+      "added_at": "2026-07-18T01:32:14Z",
+      "liquidity_snapshot": {
+        "volume_24h": 51699.3,
+        "open_interest": 459600.64,
+        "spread_cents": 1.0
+      },
+      "status": "active",
+      "reforecast_cadence_days": 0.0
     }
   ]
 }

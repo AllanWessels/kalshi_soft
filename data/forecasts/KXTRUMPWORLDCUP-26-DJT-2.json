@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "ticker": "KXTRUMPWORLDCUP-26-DJT-2",
+  "title": "How many 2026 FIFA World Cup matches will Donald Trump attend this season?",
+  "category": "politics",
+  "close_time": "2026-07-20T14:00:00Z",
+  "current": {
+    "as_of": "2026-07-18T01:39:32Z",
+    "my_probability": 0.0,
+    "my_confidence": "high",
+    "market_implied_probability": 0.005,
+    "market_price_cents": 0.0,
+    "edge": -0.005,
+    "yes_ask": 0.01,
+    "no_ask": 1.0,
+    "fee_per_contract": 0.0,
+    "ev_per_contract": 0.0,
+    "limit_price": null,
+    "ev_limit_per_contract": null,
+    "lean": "NONE",
+    "conviction": "low",
+    "lean_note": "no +EV value bet at the ask (my prob 0%, modal NO) — staying out.",
+    "prob_delta_vs_prev": null,
+    "trigger": "scheduled",
+    "strategy_id": "LQ5C-ensemble5-crowd",
+    "proposed_probability": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": "",
+    "rationale_summary": "As of July 18, 2026, there is no credible evidence or public indication that Donald Trump will attend any matches of the 2026 FIFA World Cup. Trump’s public schedule and activities are typically well-documented, and no confirmed reports or official announcements have emerged about his participation in the World Cup. The reference class for this event includes high-profile individuals attending maj",
+    "key_drivers": [
+      "Lack of confirmed reports or announcements about Trump attending World Cup matches",
+      "Historical low likelihood of Trump attending international sporting events",
+      "No public schedule updates indicating World Cup attendance"
+    ],
+    "reference_classes": [
+      "High-profile individuals attending international sporting events",
+      "Public figures’ attendance at major global events",
+      "Political figures’ participation in sports-related events"
+    ],
+    "research_refs": [
+      "AOL.com",
+      "BBC",
+      "Forbes",
+      "Reuters",
+      "Sports Illustrated",
+      "The American Bazaar",
+      "The New York Times",
+      "The Washington Post"
+    ]
+  },
+  "history": [
+    {
+      "as_of": "2026-07-18T01:39:32Z",
+      "my_probability": 0.0,
+      "my_confidence": "high",
+      "market_implied_probability": 0.005,
+      "market_price_cents": 0.0,
+      "edge": -0.005,
+      "yes_ask": 0.01,
+      "no_ask": 1.0,
+      "fee_per_contract": 0.0,
+      "ev_per_contract": 0.0,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "no +EV value bet at the ask (my prob 0%, modal NO) — staying out.",
+      "prob_delta_vs_prev": null,
+      "trigger": "scheduled",
+      "strategy_id": "LQ5C-ensemble5-crowd",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "As of July 18, 2026, there is no credible evidence or public indication that Donald Trump will attend any matches of the 2026 FIFA World Cup. Trump’s public schedule and activities are typically well-documented, and no confirmed reports or official announcements have emerged about his participation in the World Cup. The reference class for this event includes high-profile individuals attending maj",
+      "key_drivers": [
+        "Lack of confirmed reports or announcements about Trump attending World Cup matches",
+        "Historical low likelihood of Trump attending international sporting events",
+        "No public schedule updates indicating World Cup attendance"
+      ],
+      "reference_classes": [
+        "High-profile individuals attending international sporting events",
+        "Public figures’ attendance at major global events",
+        "Political figures’ participation in sports-related events"
+      ],
+      "research_refs": [
+        "AOL.com",
+        "BBC",
+        "Forbes",
+        "Reuters",
+        "Sports Illustrated",
+        "The American Bazaar",
+        "The New York Times",
+        "The Washington Post"
+      ]
+    }
+  ],
+  "position": {
+    "entered": false,
+    "entry_as_of": "",
+    "entry_side": "",
+    "entry_probability": 0.0,
+    "entry_price": 0.0,
+    "entry_market_implied": null,
+    "entry_confidence": "",
+    "entry_conviction": "",
+    "entry_gap": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": ""
+  }
+}

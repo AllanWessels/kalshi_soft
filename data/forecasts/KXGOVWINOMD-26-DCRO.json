@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "ticker": "KXGOVWINOMD-26-DCRO",
+  "title": "Will David Crowley be the Democratic nominee for Governor in Wisconsin?",
+  "category": "politics",
+  "close_time": "2026-08-31T14:00:00Z",
+  "current": {
+    "as_of": "2026-07-18T01:39:33Z",
+    "my_probability": 0.2022,
+    "my_confidence": "high",
+    "market_implied_probability": 0.205,
+    "market_price_cents": 20.0,
+    "edge": -0.002799999999999997,
+    "yes_ask": 0.23,
+    "no_ask": 0.82,
+    "fee_per_contract": 0.02,
+    "ev_per_contract": -0.04219999999999989,
+    "limit_price": null,
+    "ev_limit_per_contract": null,
+    "lean": "NONE",
+    "conviction": "low",
+    "lean_note": "no +EV value bet at the ask (my prob 20%, modal NO) — staying out.",
+    "prob_delta_vs_prev": null,
+    "trigger": "scheduled",
+    "strategy_id": "LQ5C-ensemble5-crowd",
+    "proposed_probability": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": "",
+    "rationale_summary": "David Crowley is not currently a well-known figure in Wisconsin politics, and there is no evidence in the search results indicating that he is a prominent candidate or has made significant moves to position himself as the Democratic nominee. The absence of direct mentions of Crowley in reputable news sources suggests he is not a frontrunner. The reference class for underdog candidates in state-lev",
+    "key_drivers": [
+      "Lack of media presence or coverage of David Crowley",
+      "No indication of strong grassroots support or endorsements",
+      "No prior political prominence in Wisconsin"
+    ],
+    "reference_classes": [
+      "Underdog candidates in state-level races",
+      "Little-known politicians seeking major nominations",
+      "Incumbent base rate for non-incumbents in gubernatorial races"
+    ],
+    "research_refs": [
+      "Milwaukee Journal Sentinel",
+      "NBC News",
+      "Oskaloosa Herald",
+      "Ottumwa Courier",
+      "PBS Wisconsin",
+      "Politico",
+      "WEAU",
+      "WETM"
+    ]
+  },
+  "history": [
+    {
+      "as_of": "2026-07-18T01:39:33Z",
+      "my_probability": 0.2022,
+      "my_confidence": "high",
+      "market_implied_probability": 0.205,
+      "market_price_cents": 20.0,
+      "edge": -0.002799999999999997,
+      "yes_ask": 0.23,
+      "no_ask": 0.82,
+      "fee_per_contract": 0.02,
+      "ev_per_contract": -0.04219999999999989,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "no +EV value bet at the ask (my prob 20%, modal NO) — staying out.",
+      "prob_delta_vs_prev": null,
+      "trigger": "scheduled",
+      "strategy_id": "LQ5C-ensemble5-crowd",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "David Crowley is not currently a well-known figure in Wisconsin politics, and there is no evidence in the search results indicating that he is a prominent candidate or has made significant moves to position himself as the Democratic nominee. The absence of direct mentions of Crowley in reputable news sources suggests he is not a frontrunner. The reference class for underdog candidates in state-lev",
+      "key_drivers": [
+        "Lack of media presence or coverage of David Crowley",
+        "No indication of strong grassroots support or endorsements",
+        "No prior political prominence in Wisconsin"
+      ],
+      "reference_classes": [
+        "Underdog candidates in state-level races",
+        "Little-known politicians seeking major nominations",
+        "Incumbent base rate for non-incumbents in gubernatorial races"
+      ],
+      "research_refs": [
+        "Milwaukee Journal Sentinel",
+        "NBC News",
+        "Oskaloosa Herald",
+        "Ottumwa Courier",
+        "PBS Wisconsin",
+        "Politico",
+        "WEAU",
+        "WETM"
+      ]
+    }
+  ],
+  "position": {
+    "entered": false,
+    "entry_as_of": "",
+    "entry_side": "",
+    "entry_probability": 0.0,
+    "entry_price": 0.0,
+    "entry_market_implied": null,
+    "entry_confidence": "",
+    "entry_conviction": "",
+    "entry_gap": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": ""
+  }
+}

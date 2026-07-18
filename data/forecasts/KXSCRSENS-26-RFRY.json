@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "ticker": "KXSCRSENS-26-RFRY",
+  "title": "Who will win the 2026 South Carolina Republican Senate special primary?",
+  "category": "politics",
+  "close_time": "2026-08-11T14:00:00Z",
+  "current": {
+    "as_of": "2026-07-18T01:39:33Z",
+    "my_probability": 0.085,
+    "my_confidence": "high",
+    "market_implied_probability": 0.085,
+    "market_price_cents": 8.0,
+    "edge": 0.0,
+    "yes_ask": 0.09,
+    "no_ask": 0.92,
+    "fee_per_contract": 0.01,
+    "ev_per_contract": -0.01499999999999999,
+    "limit_price": null,
+    "ev_limit_per_contract": null,
+    "lean": "NONE",
+    "conviction": "low",
+    "lean_note": "no +EV value bet at the ask (my prob 8%, modal NO) — staying out.",
+    "prob_delta_vs_prev": null,
+    "trigger": "scheduled",
+    "strategy_id": "LQ5C-ensemble5-crowd",
+    "proposed_probability": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": "",
+    "rationale_summary": "The evidence indicates that the South Carolina Republican Senate special primary is highly competitive, with multiple candidates in the running and active interest from prediction markets. While there is no clear frontrunner, the base rate suggests that special elections are often influenced by local dynamics and campaign momentum. The key uncertainties include voter preferences, campaign strategi",
+    "key_drivers": [
+      "Competitiveness of the special primary with multiple candidates",
+      "Active prediction market interest indicating uncertainty",
+      "Potential influence of local voter preferences and campaign strategies",
+      "Possibility of procedural delays affecting the timeline"
+    ],
+    "reference_classes": [
+      "Special Senate elections with multiple candidates",
+      "Prediction market insights on candidate likelihood",
+      "Competitive primary elections in South Carolina"
+    ],
+    "research_refs": [
+      "- Emerson Polling",
+      "270toWin.com",
+      "AP News",
+      "CAWP",
+      "CNBC",
+      "CNN",
+      "CryptoSlate",
+      "DeFi Rate"
+    ]
+  },
+  "history": [
+    {
+      "as_of": "2026-07-18T01:39:33Z",
+      "my_probability": 0.085,
+      "my_confidence": "high",
+      "market_implied_probability": 0.085,
+      "market_price_cents": 8.0,
+      "edge": 0.0,
+      "yes_ask": 0.09,
+      "no_ask": 0.92,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": -0.01499999999999999,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "no +EV value bet at the ask (my prob 8%, modal NO) — staying out.",
+      "prob_delta_vs_prev": null,
+      "trigger": "scheduled",
+      "strategy_id": "LQ5C-ensemble5-crowd",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "The evidence indicates that the South Carolina Republican Senate special primary is highly competitive, with multiple candidates in the running and active interest from prediction markets. While there is no clear frontrunner, the base rate suggests that special elections are often influenced by local dynamics and campaign momentum. The key uncertainties include voter preferences, campaign strategi",
+      "key_drivers": [
+        "Competitiveness of the special primary with multiple candidates",
+        "Active prediction market interest indicating uncertainty",
+        "Potential influence of local voter preferences and campaign strategies",
+        "Possibility of procedural delays affecting the timeline"
+      ],
+      "reference_classes": [
+        "Special Senate elections with multiple candidates",
+        "Prediction market insights on candidate likelihood",
+        "Competitive primary elections in South Carolina"
+      ],
+      "research_refs": [
+        "- Emerson Polling",
+        "270toWin.com",
+        "AP News",
+        "CAWP",
+        "CNBC",
+        "CNN",
+        "CryptoSlate",
+        "DeFi Rate"
+      ]
+    }
+  ],
+  "position": {
+    "entered": false,
+    "entry_as_of": "",
+    "entry_side": "",
+    "entry_probability": 0.0,
+    "entry_price": 0.0,
+    "entry_market_implied": null,
+    "entry_confidence": "",
+    "entry_conviction": "",
+    "entry_gap": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": ""
+  }
+}

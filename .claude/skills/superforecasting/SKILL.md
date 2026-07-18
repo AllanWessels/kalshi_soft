@@ -229,20 +229,13 @@ therefore run as a panel (ROUTINE Step 6b, `scripts/postmortem.py`):
 
 ### Learned heuristics (auto-maintained — do not hand-edit between the markers)
 <!-- AUTO-HEURISTICS:BEGIN -->
-- Never move a forecast materially on a single noisy data point; require corroboration and weight by reliability.
-- Diverge below a liquid market only with a specific, verifiable reason; narrative ≠ evidence of formal dissent.
-- Anchor to strong institutional base rates, not division rhetoric or unverified assumptions.
-- During active supply disruptions, anchor flow estimates to the suppressed regime, not assumed recovery.
-- Avoid entering positions on small divergences from liquid markets resting on unverified assumptions.
-- For verbatim-utterance markets, forecast only with confirmed quotes; topical salience ≠ evidence.
-- Treat 80pt fades against liquid markets as model error; use hard_gap_ceiling to block extreme fades.
-- Do not recommend fading liquid markets on low-confidence estimates without corroboration.
-- Verify assumptions before entering positions, especially in contested or crisis contexts.
-- Require documented reasons for divergence from liquid markets pricing strong base rates.
-- Use hard_gap_ceiling to enforce resolution rules for verbatim markets regardless of confidence.
-- Anchor to data-confirming regimes (e.g., Hormuz norms) during active blockades, not optimistic scenarios.
+- never-say-zero
+- floor-tails-at-base-rate
+- explicit-base-rate
+- three-independent-sources
+- confidence-interval
 
-_Auto-maintained by `postmortem.py revise-skill` from 16 resolved-market lesson(s); reversible via git._
+_Auto-maintained by `postmortem.py revise-skill` from 21 resolved-market lesson(s); reversible via git._
 <!-- AUTO-HEURISTICS:END -->
 
 ## Non-negotiables
