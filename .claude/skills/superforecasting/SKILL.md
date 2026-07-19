@@ -229,13 +229,12 @@ therefore run as a panel (ROUTINE Step 6b, `scripts/postmortem.py`):
 
 ### Learned heuristics (auto-maintained — do not hand-edit between the markers)
 <!-- AUTO-HEURISTICS:BEGIN -->
-- never-say-zero
-- floor-tails-at-base-rate
-- explicit-base-rate
-- three-independent-sources
-- confidence-interval
+- Never emit 0.0 on a multi-week human-decision window
+- Floor tails at the base rate and never price below the market on a tail without documented cause
+- Even on confident forecasts near the market price, log an explicit CI and cite >=3 independent sources with a one-line divergence justification
+- Set a standing floor (>=0.005) for any single-print macro strike regardless of distance
 
-_Auto-maintained by `postmortem.py revise-skill` from 21 resolved-market lesson(s); reversible via git._
+_Auto-maintained by `postmortem.py revise-skill` from 22 resolved-market lesson(s); reversible via git._
 <!-- AUTO-HEURISTICS:END -->
 
 ## Non-negotiables

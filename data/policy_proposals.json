@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-18T01:41:56Z",
-  "n_resolved": 47,
+  "generated_at": "2026-07-19T22:41:04Z",
+  "n_resolved": 48,
   "guardrails": {
     "min_n": 20,
     "max_step": 0.05
@@ -11,16 +11,16 @@
       "knob": "max_market_disagreement",
       "current": 0.05,
       "proposed": null,
-      "n": 47,
+      "n": 48,
       "guardrail": "INSUFFICIENT_DATA",
       "rationale": "No coherent 'wider fades lose' ladder yet (signal not monotone / tail band not negative).",
       "evidence": {
         "0-5pt": {
-          "n": 26,
-          "cf_pnl": 0.3440000000000001,
-          "cf_staked": 24.656,
-          "cf_roi": 0.01395197923426347,
-          "cf_win_rate": 0.9615384615384616,
+          "n": 27,
+          "cf_pnl": 0.5040000000000001,
+          "cf_staked": 25.496,
+          "cf_roi": 0.019767806714778794,
+          "cf_win_rate": 0.9629629629629629,
           "max_drawdown": -0.969
         },
         "5-10pt": {
@@ -53,7 +53,7 @@
       "knob": "hard_gap_ceiling",
       "current": 0.2,
       "proposed": null,
-      "n": 47,
+      "n": 48,
       "guardrail": "INSUFFICIENT_DATA",
       "rationale": "No catastrophic wide-fade band yet — the absolute ceiling stays put.",
       "evidence": {
@@ -78,17 +78,17 @@
     {
       "knob": "min_confidence_for_lean",
       "current": "medium",
-      "proposed": null,
-      "n": 47,
-      "guardrail": "INSUFFICIENT_DATA",
-      "rationale": "Confidence gating evidence inconclusive (or floor already raised).",
+      "proposed": "high",
+      "n": 48,
+      "guardrail": "AUTO_OK",
+      "rationale": "medium-confidence ROI -14% (n=15) while high-confidence profits 0% (n=23) -> raise the lean floor to 'high'.",
       "evidence": {
         "high": {
-          "n": 22,
-          "cf_pnl": -0.07199999999999993,
-          "cf_staked": 20.072,
-          "cf_roi": -0.003587086488640889,
-          "cf_win_rate": 0.9090909090909091,
+          "n": 23,
+          "cf_pnl": 0.08800000000000013,
+          "cf_staked": 20.912,
+          "cf_roi": 0.004208110175975523,
+          "cf_win_rate": 0.9130434782608695,
           "max_drawdown": -0.7100000000000001
         },
         "medium": {
@@ -113,11 +113,11 @@
       "knob": "adversarial_veto_binding",
       "current": true,
       "proposed": null,
-      "n": 7,
+      "n": 8,
       "guardrail": "INSUFFICIENT_DATA",
-      "rationale": "Veto precision becomes learnable once vetoed/revised positions resolve; 7 resolved position(s) carry a verdict so far.",
+      "rationale": "Veto precision becomes learnable once vetoed/revised positions resolve; 8 resolved position(s) carry a verdict so far.",
       "evidence": {
-        "resolved_with_verdict": 7
+        "resolved_with_verdict": 8
       }
     }
   ]

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-17T19:18:20Z",
+  "updated_at": "2026-07-19T22:31:10Z",
   "resolved": [
     {
       "ticker": "KXGOVCA-26-CBIA",
@@ -1693,6 +1693,42 @@
       "commit_as_of": "2026-06-19T21:12:55Z",
       "held_days": 19.14,
       "adversarial_verdict": ""
+    },
+    {
+      "ticker": "KXTRUMPATTEND",
+      "title": "Will Donald J. Trump attend The 2026 FIFA World Cup Final?",
+      "category": "politics",
+      "subcategory": "other-politics",
+      "resolved_at": "2026-07-19T19:06:04Z",
+      "outcome": 1,
+      "final_my_probability": 0.9061,
+      "final_as_of": "2026-07-18T01:39:32Z",
+      "final_market_implied": 0.9555,
+      "brier_mine": 0.0025000000000000044,
+      "brier_market": 0.012099999999999998,
+      "num_forecasts": 6,
+      "first_forecast_prob": 0.85,
+      "strategy_id": "LQ5C-ensemble5-crowd",
+      "entry_side": "YES",
+      "entry_price": 0.9,
+      "fee_at_entry": 0.01,
+      "realized_pnl": 0.08999999999999998,
+      "roi": 0.09890109890109888,
+      "won": true,
+      "clv": 0.055499999999999994,
+      "cf_side": "YES",
+      "cf_entry_price": 0.82,
+      "cf_fee": 0.02,
+      "cf_pnl": 0.16000000000000006,
+      "cf_roi": 0.19047619047619055,
+      "cf_won": true,
+      "was_taken": true,
+      "my_confidence": "high",
+      "edge_gap_bucket": "0-5pt",
+      "commit_probability": 0.95,
+      "commit_as_of": "2026-06-23T18:45:12Z",
+      "held_days": 26.01,
+      "adversarial_verdict": "revise"
     }
   ]
 }

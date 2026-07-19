@@ -5,22 +5,22 @@
   "category": "politics",
   "close_time": "2026-07-20T14:00:00Z",
   "current": {
-    "as_of": "2026-07-18T01:39:32Z",
-    "my_probability": 0.0,
+    "as_of": "2026-07-19T22:39:51Z",
+    "my_probability": 0.0086,
     "my_confidence": "high",
     "market_implied_probability": 0.005,
     "market_price_cents": 0.0,
-    "edge": -0.005,
+    "edge": 0.0036,
     "yes_ask": 0.01,
     "no_ask": 1.0,
     "fee_per_contract": 0.0,
-    "ev_per_contract": 0.0,
+    "ev_per_contract": -0.008600000000000052,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "no +EV value bet at the ask (my prob 0%, modal NO) — staying out.",
-    "prob_delta_vs_prev": null,
+    "lean_note": "no +EV value bet at the ask (my prob 1%, modal NO) — staying out.",
+    "prob_delta_vs_prev": 0.0086,
     "trigger": "scheduled",
     "strategy_id": "LQ5C-ensemble5-crowd",
     "proposed_probability": null,
@@ -28,26 +28,24 @@
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "As of July 18, 2026, there is no credible evidence or public indication that Donald Trump will attend any matches of the 2026 FIFA World Cup. Trump’s public schedule and activities are typically well-documented, and no confirmed reports or official announcements have emerged about his participation in the World Cup. The reference class for this event includes high-profile individuals attending maj",
+    "rationale_summary": "Multiple credible and independent sources (Yahoo Sports, The Guardian, Rolling Stone, Deadline, Fox News, and bolavip.com) confirm that Donald Trump attended the 2026 FIFA World Cup final in New Jersey, including arriving by helicopter, attending the national anthem performance, being present during the halftime show and closing ceremony, and presenting the trophy to the winner. These multiple, cr",
     "key_drivers": [
-      "Lack of confirmed reports or announcements about Trump attending World Cup matches",
-      "Historical low likelihood of Trump attending international sporting events",
-      "No public schedule updates indicating World Cup attendance"
+      "Multiple independent sources confirm Trump's attendance at the World Cup final.",
+      "No evidence is provided for attendance at any other matches.",
+      "No conflicting reports or denials are present in the evidence."
     ],
     "reference_classes": [
-      "High-profile individuals attending international sporting events",
-      "Public figures’ attendance at major global events",
-      "Political figures’ participation in sports-related events"
+      "Presidents attending major international sporting events like the FIFA World Cup final."
     ],
     "research_refs": [
-      "AOL.com",
+      "AL.com",
+      "Al Jazeera",
       "BBC",
-      "Forbes",
-      "Reuters",
-      "Sports Illustrated",
-      "The American Bazaar",
-      "The New York Times",
-      "The Washington Post"
+      "Bergen Record",
+      "Boston Herald",
+      "CBS Sports",
+      "Deadline",
+      "Fox News"
     ]
   },
   "history": [
@@ -95,6 +93,50 @@
         "The American Bazaar",
         "The New York Times",
         "The Washington Post"
+      ]
+    },
+    {
+      "as_of": "2026-07-19T22:39:51Z",
+      "my_probability": 0.0086,
+      "my_confidence": "high",
+      "market_implied_probability": 0.005,
+      "market_price_cents": 0.0,
+      "edge": 0.0036,
+      "yes_ask": 0.01,
+      "no_ask": 1.0,
+      "fee_per_contract": 0.0,
+      "ev_per_contract": -0.008600000000000052,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "no +EV value bet at the ask (my prob 1%, modal NO) — staying out.",
+      "prob_delta_vs_prev": 0.0086,
+      "trigger": "scheduled",
+      "strategy_id": "LQ5C-ensemble5-crowd",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "Multiple credible and independent sources (Yahoo Sports, The Guardian, Rolling Stone, Deadline, Fox News, and bolavip.com) confirm that Donald Trump attended the 2026 FIFA World Cup final in New Jersey, including arriving by helicopter, attending the national anthem performance, being present during the halftime show and closing ceremony, and presenting the trophy to the winner. These multiple, cr",
+      "key_drivers": [
+        "Multiple independent sources confirm Trump's attendance at the World Cup final.",
+        "No evidence is provided for attendance at any other matches.",
+        "No conflicting reports or denials are present in the evidence."
+      ],
+      "reference_classes": [
+        "Presidents attending major international sporting events like the FIFA World Cup final."
+      ],
+      "research_refs": [
+        "AL.com",
+        "Al Jazeera",
+        "BBC",
+        "Bergen Record",
+        "Boston Herald",
+        "CBS Sports",
+        "Deadline",
+        "Fox News"
       ]
     }
   ],

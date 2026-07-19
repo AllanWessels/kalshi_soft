@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-18T01:41:55Z",
+  "updated_at": "2026-07-19T22:40:59Z",
   "lessons": [
     {
       "id": "feedback-001",
@@ -581,6 +581,28 @@
       "critic_model": "qwen3:14b-q4_K_M",
       "rubric_scores": {},
       "judge_verdict": "DEFENDER UPHELD with base-rate documentation caveat.",
+      "disagreement": ""
+    },
+    {
+      "id": "2026-07-19T19:06:04Z-KXTRUMPATTEND",
+      "created_at": "2026-07-19T22:40:49Z",
+      "source": "resolution",
+      "ticker": "KXTRUMPATTEND",
+      "category": "politics",
+      "outcome": 1,
+      "final_my_probability": 0.9061,
+      "final_market_implied": 0.9555,
+      "brier_mine": 0.0025000000000000044,
+      "brier_market": 0.012099999999999998,
+      "beat_market": true,
+      "what_went_right": "",
+      "what_went_wrong": "",
+      "lesson": "WIN: locked entry p~0.95 beat market (Brier 0.0025 vs 0.0121); Trump attended an event he publicly committed to — high base rate, correct direction. Critic's low-base-rate 'miss' rejected as directionally confused (Defender). Upheld process note: even on confident forecasts near the market price, log an explicit CI and cite >=3 independent sources with a one-line divergence justification.",
+      "pattern_tag": "mechanism-anchored-win",
+      "applied_to_skill": true,
+      "critic_model": "",
+      "rubric_scores": {},
+      "judge_verdict": "",
       "disagreement": ""
     }
   ]

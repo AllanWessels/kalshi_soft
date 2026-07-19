@@ -1,6 +1,10 @@
 {
-  "n_resolved": 47,
+  "n_resolved": 48,
   "recalibration": {
+    "qwen": {
+      "k": 0.8128,
+      "n": 22
+    },
     "opus": {
       "k": 0.8014,
       "n": 11
@@ -8,10 +12,6 @@
     "mistral": {
       "k": 1.0,
       "n": 1
-    },
-    "qwen": {
-      "k": 0.7946,
-      "n": 21
     }
   },
   "segment_skill": {
@@ -68,8 +68,8 @@
       "skill": -0.00713
     },
     "politics / other-politics": {
-      "n": 3,
-      "skill": -2e-05
+      "n": 4,
+      "skill": 0.00066
     },
     "economy / inflation-cpi": {
       "n": 5,
@@ -78,7 +78,7 @@
   },
   "model_weights": {
     "opus": 0.08041374373418965,
-    "qwen": 0.4754327271863616,
+    "qwen": 0.4925896084204035,
     "mistral": 0.7925497493467781
   },
   "params": {
@@ -87,5 +87,5 @@
     "K_ALPHA": 10,
     "SKILL_FULL": 0.05
   },
-  "updated_at": "2026-07-17T19:18:20Z"
+  "updated_at": "2026-07-19T22:31:10Z"
 }

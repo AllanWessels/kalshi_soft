@@ -5,12 +5,12 @@
   "conviction_medium_ev": 0.05,
   "conviction_high_ev": 0.12,
   "low_confidence_never_leans": true,
-  "min_confidence_for_lean": "medium",
+  "min_confidence_for_lean": "high",
   "adversarial_veto_binding": true,
   "adversarial_min_veto_precision": 0.0,
   "crowd_adjust_weight_default": 0.3,
-  "updated_at": "2026-07-17T22:48:04Z",
-  "version": 9,
+  "updated_at": "2026-07-19T22:41:04Z",
+  "version": 10,
   "changelog": [
     {
       "at": "2026-06-22T22:41:03Z",
@@ -225,7 +225,7 @@
         "global_halt_roi": -0.1,
         "min_fill_depth_units": 1.0
       },
-      "reason": "Workstream A4 (PLAN_FOR_OPUS.md): precommitted verification bar for the structural edge \u2014 n>=40 verified-fill resolved recs, conservative ROI>=+8% with 90% bootstrap CI excluding 0, >=3 independently positive cells, tail-event survival or stress P(loss)<10%, hit-rate consistency \u2014 plus per-cell kill switch (n>=15 & ROI<0) and global trailing-30 halt at -10%. Passing the bar unlocks ONLY the live-trading conversation with the user (constraint 2026-07-17: no live trading until verified).",
+      "reason": "Workstream A4 (PLAN_FOR_OPUS.md): precommitted verification bar for the structural edge — n>=40 verified-fill resolved recs, conservative ROI>=+8% with 90% bootstrap CI excluding 0, >=3 independently positive cells, tail-event survival or stress P(loss)<10%, hit-rate consistency — plus per-cell kill switch (n>=15 & ROI<0) and global trailing-30 halt at -10%. Passing the bar unlocks ONLY the live-trading conversation with the user (constraint 2026-07-17: no live trading until verified).",
       "evidence": {
         "legacy_cohort_note": "13 resolved recs predate fill evidence; marked fills_unverified, reported as provisional only. Verification clock starts now."
       }
@@ -245,32 +245,43 @@
         "paper_bankroll_notional": 1000.0,
         "live_bankroll": null
       },
-      "reason": "Workstream D1 (PLAN_FOR_OPUS.md): sizing + exposure rails for the paper broker \u2014 quarter-Kelly per market capped at 2% bankroll, 10%/cell, 5%/event-family, 50% total deployed, -15% drawdown halt, 5-day GTC expiry. paper_bankroll_notional is a NOTIONAL accounting unit for the simulation; live_bankroll stays null until the A4 verification bar passes AND the user sets it (constraint 2026-07-17: no live trading until verified, no bankroll yet).",
+      "reason": "Workstream D1 (PLAN_FOR_OPUS.md): sizing + exposure rails for the paper broker — quarter-Kelly per market capped at 2% bankroll, 10%/cell, 5%/event-family, 50% total deployed, -15% drawdown halt, 5-day GTC expiry. paper_bankroll_notional is a NOTIONAL accounting unit for the simulation; live_bankroll stays null until the A4 verification bar passes AND the user sets it (constraint 2026-07-17: no live trading until verified, no bankroll yet).",
       "evidence": {
         "basis": "binary-Kelly f*=(p-c)/(1-c) with shrunk calibrated p; caps reflect the correlated longshot-fade basket risk (one thematic position)."
       }
+    },
+    {
+      "at": "2026-07-19T22:41:04Z",
+      "knob": "min_confidence_for_lean",
+      "old": "medium",
+      "new": "high",
+      "reason": "medium-confidence ROI -14% (n=15) while high-confidence profits 0% (n=23) -> raise the lean floor to 'high'.",
+      "evidence": {
+        "high": {
+          "n": 23,
+          "cf_pnl": 0.08800000000000013,
+          "cf_staked": 20.912,
+          "cf_roi": 0.004208110175975523,
+          "cf_win_rate": 0.9130434782608695,
+          "max_drawdown": -0.7100000000000001
+        },
+        "medium": {
+          "n": 15,
+          "cf_pnl": -1.727,
+          "cf_staked": 12.727,
+          "cf_roi": -0.13569576490924806,
+          "cf_win_rate": 0.7333333333333333,
+          "max_drawdown": -1.847
+        },
+        "low": {
+          "n": 10,
+          "cf_pnl": -0.9099999999999999,
+          "cf_staked": 7.91,
+          "cf_roi": -0.1150442477876106,
+          "cf_win_rate": 0.7,
+          "max_drawdown": -1.45
+        }
+      }
     }
-  ],
-  "structural_verification": {
-    "verified_min_n": 40,
-    "verified_min_roi": 0.08,
-    "roi_ci_level": 0.9,
-    "min_positive_cells": 3,
-    "stress_max_p_loss": 0.1,
-    "cell_kill_min_n": 15,
-    "global_halt_trailing_n": 30,
-    "global_halt_roi": -0.1,
-    "min_fill_depth_units": 1.0
-  },
-  "position_sizing": {
-    "kelly_fraction": 0.25,
-    "per_market_cap_frac": 0.02,
-    "per_cell_cap_frac": 0.1,
-    "per_event_family_cap_frac": 0.05,
-    "total_deployed_cap_frac": 0.5,
-    "drawdown_halt_frac": -0.15,
-    "order_expiry_days": 5,
-    "paper_bankroll_notional": 1000.0,
-    "live_bankroll": null
-  }
+  ]
 }

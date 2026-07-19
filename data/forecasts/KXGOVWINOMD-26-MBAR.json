@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "ticker": "KXGOVWINOMD-26-MBAR",
+  "title": "Will Mandela Barnes be the Democratic nominee for Governor in Wisconsin?",
+  "category": "politics",
+  "close_time": "2026-08-31T14:00:00Z",
+  "current": {
+    "as_of": "2026-07-19T22:39:52Z",
+    "my_probability": 0.0384,
+    "my_confidence": "high",
+    "market_implied_probability": 0.0495,
+    "market_price_cents": 5.0,
+    "edge": -0.011100000000000006,
+    "yes_ask": 0.05,
+    "no_ask": 0.951,
+    "fee_per_contract": 0.01,
+    "ev_per_contract": 0.0006000000000000536,
+    "limit_price": null,
+    "ev_limit_per_contract": null,
+    "lean": "NONE",
+    "conviction": "low",
+    "lean_note": "no +EV value bet at the ask (my prob 4%, modal NO) — staying out.",
+    "prob_delta_vs_prev": null,
+    "trigger": "scheduled",
+    "strategy_id": "LQ5C-ensemble5-crowd",
+    "proposed_probability": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": "",
+    "rationale_summary": "The evidence suggests that Mandela Barnes is not currently identified as a candidate in the Wisconsin gubernatorial race. David Crowley has reentered the race with significant endorsements, while Sara Rodriguez has dropped out, creating a dynamic but not necessarily favorable environment for Barnes. No direct evidence links Barnes to the race, and the base rate of multiple candidates in Wisconsin ",
+    "key_drivers": [
+      "David Crowley's reentry into the race",
+      "Sara Rodriguez's exit",
+      "Lack of direct evidence linking Mandela Barnes to the race"
+    ],
+    "reference_classes": [
+      "Competitive gubernatorial races with multiple candidates",
+      "Incumbent base rates in primary elections"
+    ],
+    "research_refs": [
+      "Milwaukee Journal Sentinel",
+      "NBC News",
+      "PBS Wisconsin",
+      "Politico",
+      "The New York Times",
+      "WISN",
+      "WKMG",
+      "WPR"
+    ]
+  },
+  "history": [
+    {
+      "as_of": "2026-07-19T22:39:52Z",
+      "my_probability": 0.0384,
+      "my_confidence": "high",
+      "market_implied_probability": 0.0495,
+      "market_price_cents": 5.0,
+      "edge": -0.011100000000000006,
+      "yes_ask": 0.05,
+      "no_ask": 0.951,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": 0.0006000000000000536,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "no +EV value bet at the ask (my prob 4%, modal NO) — staying out.",
+      "prob_delta_vs_prev": null,
+      "trigger": "scheduled",
+      "strategy_id": "LQ5C-ensemble5-crowd",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "The evidence suggests that Mandela Barnes is not currently identified as a candidate in the Wisconsin gubernatorial race. David Crowley has reentered the race with significant endorsements, while Sara Rodriguez has dropped out, creating a dynamic but not necessarily favorable environment for Barnes. No direct evidence links Barnes to the race, and the base rate of multiple candidates in Wisconsin ",
+      "key_drivers": [
+        "David Crowley's reentry into the race",
+        "Sara Rodriguez's exit",
+        "Lack of direct evidence linking Mandela Barnes to the race"
+      ],
+      "reference_classes": [
+        "Competitive gubernatorial races with multiple candidates",
+        "Incumbent base rates in primary elections"
+      ],
+      "research_refs": [
+        "Milwaukee Journal Sentinel",
+        "NBC News",
+        "PBS Wisconsin",
+        "Politico",
+        "The New York Times",
+        "WISN",
+        "WKMG",
+        "WPR"
+      ]
+    }
+  ],
+  "position": {
+    "entered": false,
+    "entry_as_of": "",
+    "entry_side": "",
+    "entry_probability": 0.0,
+    "entry_price": 0.0,
+    "entry_market_implied": null,
+    "entry_confidence": "",
+    "entry_conviction": "",
+    "entry_gap": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": ""
+  }
+}

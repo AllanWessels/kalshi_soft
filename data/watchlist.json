@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-18T01:32:14Z",
+  "updated_at": "2026-07-19T22:33:35Z",
   "cap": 30,
   "markets": [
     {
@@ -32,21 +32,6 @@
       },
       "status": "active",
       "reforecast_cadence_days": 3.0
-    },
-    {
-      "ticker": "KXTRUMPATTEND",
-      "event_ticker": "KXTRUMPATTEND",
-      "title": "Will Donald J. Trump attend The 2026 FIFA World Cup Final?",
-      "category": "politics",
-      "close_time": "2026-07-20T14:00:00Z",
-      "added_at": "2026-06-19T18:47:55Z",
-      "liquidity_snapshot": {
-        "volume_24h": 13142.84,
-        "open_interest": 90371.48,
-        "spread_cents": 1.0
-      },
-      "status": "active",
-      "reforecast_cadence_days": 7.0
     },
     {
       "ticker": "KXRT-ODY-90",

@@ -5,7 +5,7 @@
   "category": "culture",
   "close_time": "2026-07-25T14:00:00Z",
   "current": {
-    "as_of": "2026-07-17T19:34:53Z",
+    "as_of": "2026-07-19T22:39:51Z",
     "my_probability": 0.0,
     "my_confidence": "high",
     "market_implied_probability": 0.005,
@@ -20,7 +20,7 @@
     "lean": "NONE",
     "conviction": "low",
     "lean_note": "no +EV value bet at the ask (my prob 0%, modal NO) — staying out.",
-    "prob_delta_vs_prev": null,
+    "prob_delta_vs_prev": 0.0,
     "trigger": "scheduled",
     "strategy_id": "LQ5C-ensemble5-crowd",
     "proposed_probability": null,
@@ -28,21 +28,26 @@
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "The evidence indicates that multiple artists and songs are making appearances on the Billboard Hot 100, particularly due to events like the 4th of July and the World Cup. However, none of the evidence directly mentions the song 'I Knew It, I Knew You' or its position on the Hot 100. Given the lack of specific information about this song and the fact that chart success depends on a variety of facto",
+    "rationale_summary": "The song 'I Knew It, I Knew You' by Taylor Swift was at No. 1 on the Billboard Hot 100 for the second week as of June 22, 2026, which suggests strong momentum. However, there is no direct confirmation of its position as of July 19, 2026. The fact that 'Choosin’ Texas' by Ella Langley remained at No. 1 for the 13th week as of July 13, 2026, indicates that long-running hits can maintain chart domina",
     "key_drivers": [
-      "Lack of direct evidence about the song's performance.",
-      "Presence of other songs and artists with strong chart presence.",
-      "Seasonal events like the 4th of July and the World Cup influencing chart positions."
+      "Taylor Swift's historical success on the Billboard Hot 100.",
+      "Current chart position of 'I Knew It",
+      "I Knew You' as of June 2026.",
+      "Longevity of Ella Langley's 'Choosin’ Texas' on the chart.",
+      "Uncertainty around the July 18",
+      "2026",
+      "chart and potential competition."
     ],
     "reference_classes": [
-      "Songs making chart returns due to seasonal or event-driven factors.",
-      "Chart performances influenced by major events like holidays and sports."
+      "Taylor Swift's previous No. 1 hits on the Billboard Hot 100.",
+      "Long-running No. 1 hits on the Billboard Hot 100."
     ],
     "research_refs": [
       "Billboard",
       "Business Insider",
       "Creative Disc",
       "Gold Derby",
+      "Vulture",
       "Yahoo"
     ]
   },
@@ -86,6 +91,53 @@
         "Business Insider",
         "Creative Disc",
         "Gold Derby",
+        "Yahoo"
+      ]
+    },
+    {
+      "as_of": "2026-07-19T22:39:51Z",
+      "my_probability": 0.0,
+      "my_confidence": "high",
+      "market_implied_probability": 0.005,
+      "market_price_cents": 0.0,
+      "edge": -0.005,
+      "yes_ask": 0.01,
+      "no_ask": 1.0,
+      "fee_per_contract": 0.0,
+      "ev_per_contract": 0.0,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "no +EV value bet at the ask (my prob 0%, modal NO) — staying out.",
+      "prob_delta_vs_prev": 0.0,
+      "trigger": "scheduled",
+      "strategy_id": "LQ5C-ensemble5-crowd",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "The song 'I Knew It, I Knew You' by Taylor Swift was at No. 1 on the Billboard Hot 100 for the second week as of June 22, 2026, which suggests strong momentum. However, there is no direct confirmation of its position as of July 19, 2026. The fact that 'Choosin’ Texas' by Ella Langley remained at No. 1 for the 13th week as of July 13, 2026, indicates that long-running hits can maintain chart domina",
+      "key_drivers": [
+        "Taylor Swift's historical success on the Billboard Hot 100.",
+        "Current chart position of 'I Knew It",
+        "I Knew You' as of June 2026.",
+        "Longevity of Ella Langley's 'Choosin’ Texas' on the chart.",
+        "Uncertainty around the July 18",
+        "2026",
+        "chart and potential competition."
+      ],
+      "reference_classes": [
+        "Taylor Swift's previous No. 1 hits on the Billboard Hot 100.",
+        "Long-running No. 1 hits on the Billboard Hot 100."
+      ],
+      "research_refs": [
+        "Billboard",
+        "Business Insider",
+        "Creative Disc",
+        "Gold Derby",
+        "Vulture",
         "Yahoo"
       ]
     }

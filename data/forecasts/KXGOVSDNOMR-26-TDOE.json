@@ -5,54 +5,47 @@
   "category": "politics",
   "close_time": "2026-06-30T14:00:00Z",
   "current": {
-    "as_of": "2026-07-18T01:39:26Z",
-    "my_probability": 0.0985,
-    "my_confidence": "high",
-    "market_implied_probability": 0.049,
-    "market_price_cents": 5.0,
-    "edge": 0.0495,
-    "yes_ask": 0.056,
-    "no_ask": 0.958,
+    "as_of": "2026-07-19T22:39:50Z",
+    "my_probability": 0.1033,
+    "my_confidence": "medium",
+    "market_implied_probability": 0.057,
+    "market_price_cents": 6.0,
+    "edge": 0.0463,
+    "yes_ask": 0.06,
+    "no_ask": 0.946,
     "fee_per_contract": 0.01,
-    "ev_per_contract": 0.0325,
-    "limit_price": 0.042,
-    "ev_limit_per_contract": 0.0465,
+    "ev_per_contract": -0.0592999999999999,
+    "limit_price": null,
+    "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "ADVERSARIAL VETO: The position is overconfident and lacks sufficient evidence to justify a probability that diverges from the market. The edge is not clearly established, and the reasoning is incomplete.",
-    "prob_delta_vs_prev": -0.0632,
+    "lean_note": "no +EV value bet at the ask (my prob 10%, modal NO) — staying out.",
+    "prob_delta_vs_prev": 0.004799999999999999,
     "trigger": "scheduled",
     "strategy_id": "LQ5C-ensemble5-crowd",
-    "proposed_probability": 0.0985,
-    "adversarial_verdict": "veto",
-    "adversarial_challenged_prob": 0.0985,
-    "adversarial_concerns": [
-      "The proposed probability is significantly higher than the market-implied probability, suggesting overconfidence without sufficient justification.",
-      "The reasoning lacks specific data on polling trends, voter sentiment, or media coverage that would substantiate the high confidence in a 'yes' outcome.",
-      "The forecaster assumes a clear edge based on limited information, but the market may be incorporating broader, more liquid insights that the forecaster is not accounting for."
-    ],
-    "adversarial_model": "qwen3:14b-q4_K_M",
-    "rationale_summary": "Toby Doeden is a prominent figure in South Dakota Republican politics, but recent polling shows him trailing in the runoff against Larry Rhoden. His controversial policy positions, such as the property tax elimination plan, may polarize voters, while his dismissal of unfavorable polls could damage his credibility. The upcoming runoff is critical, and voter turnout and media coverage in the final t",
+    "proposed_probability": null,
+    "adversarial_verdict": "",
+    "adversarial_challenged_prob": null,
+    "adversarial_concerns": [],
+    "adversarial_model": "",
+    "rationale_summary": "There is currently no direct evidence in the search results about Toby Doeden's status in the 2026 South Dakota Republican gubernatorial primary. The lack of specific information means that the probability is based on a low base rate for any single candidate in a primary race without clear indicators of support or opposition. The search results consulted are reputable but do not mention Doeden, su",
     "key_drivers": [
-      "Larry Rhoden's lead in recent polling",
-      "Toby Doeden's controversial policy positions and public statements",
-      "Voter turnout and media influence in the final two weeks",
-      "Public perception of Toby Doeden's credibility"
+      "Lack of direct evidence about Toby Doeden's involvement or support in the primary",
+      "No information in reputable sources about his candidacy"
     ],
     "reference_classes": [
-      "Republican gubernatorial primaries in South Dakota",
-      "Candidates with polarizing policy positions in competitive races",
-      "Polls that are disputed or discredited by candidates"
+      "Candidates with no public information in primary races",
+      "Low-profile candidates in state-level elections"
     ],
     "research_refs": [
-      "- Emerson Polling",
-      "Argus Leader",
-      "Emerson Polling",
-      "KELOLAND.com",
-      "KOTA Territory News",
-      "KTIV",
+      "CBS News",
+      "Mitchell Republic",
+      "NBC News",
+      "News From The States",
+      "SDPB",
+      "South Dakota News Watch",
       "South Dakota Searchlight",
-      "The Mighty 790 KFGO"
+      "The New York Times"
     ]
   },
   "history": [
@@ -484,6 +477,50 @@
         "KTIV",
         "South Dakota Searchlight",
         "The Mighty 790 KFGO"
+      ]
+    },
+    {
+      "as_of": "2026-07-19T22:39:50Z",
+      "my_probability": 0.1033,
+      "my_confidence": "medium",
+      "market_implied_probability": 0.057,
+      "market_price_cents": 6.0,
+      "edge": 0.0463,
+      "yes_ask": 0.06,
+      "no_ask": 0.946,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": -0.0592999999999999,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "no +EV value bet at the ask (my prob 10%, modal NO) — staying out.",
+      "prob_delta_vs_prev": 0.004799999999999999,
+      "trigger": "scheduled",
+      "strategy_id": "LQ5C-ensemble5-crowd",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "There is currently no direct evidence in the search results about Toby Doeden's status in the 2026 South Dakota Republican gubernatorial primary. The lack of specific information means that the probability is based on a low base rate for any single candidate in a primary race without clear indicators of support or opposition. The search results consulted are reputable but do not mention Doeden, su",
+      "key_drivers": [
+        "Lack of direct evidence about Toby Doeden's involvement or support in the primary",
+        "No information in reputable sources about his candidacy"
+      ],
+      "reference_classes": [
+        "Candidates with no public information in primary races",
+        "Low-profile candidates in state-level elections"
+      ],
+      "research_refs": [
+        "CBS News",
+        "Mitchell Republic",
+        "NBC News",
+        "News From The States",
+        "SDPB",
+        "South Dakota News Watch",
+        "South Dakota Searchlight",
+        "The New York Times"
       ]
     }
   ],

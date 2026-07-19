@@ -5,7 +5,7 @@
   "category": "culture",
   "close_time": "2026-07-20T14:00:00Z",
   "current": {
-    "as_of": "2026-07-18T01:39:26Z",
+    "as_of": "2026-07-19T22:39:50Z",
     "my_probability": 1.0,
     "my_confidence": "high",
     "market_implied_probability": 0.995,
@@ -28,28 +28,25 @@
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "Multiple reputable sources, including Forbes, IMDb, TODAY.com, and Yahoo, consistently report that 'The Odyssey' has a Rotten Tomatoes score of 98%, with claims of it being near-perfect and setting records for Christopher Nolan. This is supported by the fact that Nolan's films typically receive high critical acclaim, and Rotten Tomatoes scores for major films often range between 70% and 100%. Alth",
+    "rationale_summary": "Multiple credible sources (TODAY.com, IMDb, Forbes, Rotten Tomatoes, The Daily Beast) consistently report that 'The Odyssey' has a 98% Rotten Tomatoes score. The score is noted as a record for Christopher Nolan, and the film is widely acclaimed as a masterpiece. Although there are mentions of a few negative reviews, none of the sources indicate any significant deviation from the 98% score. The bas",
     "key_drivers": [
-      "Multiple independent sources citing the same high Rotten Tomatoes score.",
-      "Consistency across different media outlets (Forbes",
-      "IMDb",
-      "TODAY.com",
-      "Yahoo).",
-      "Christopher Nolan's historical track record of high scores on Rotten Tomatoes."
+      "Multiple reputable sources explicitly state the 98% score.",
+      "Consistency across different sources and media outlets.",
+      "Contextual support from Nolan's historical performance on Rotten Tomatoes."
     ],
     "reference_classes": [
-      "High-profile films with critical acclaim typically receive scores above 90% on Rotten Tomatoes.",
-      "Christopher Nolan's previous films have consistently performed well on Rotten Tomatoes."
+      "Rotten Tomatoes scores for critically acclaimed films.",
+      "Rotten Tomatoes scores for Christopher Nolan's films."
     ],
     "research_refs": [
       "Forbes",
       "IMDb",
       "Kalshi News",
+      "Men's Journal",
       "Rotten Tomatoes",
       "ScreenRant",
       "TODAY.com",
-      "USA Today",
-      "Yahoo"
+      "The Daily Beast"
     ]
   },
   "history": [
@@ -311,6 +308,51 @@
         "TODAY.com",
         "USA Today",
         "Yahoo"
+      ]
+    },
+    {
+      "as_of": "2026-07-19T22:39:50Z",
+      "my_probability": 1.0,
+      "my_confidence": "high",
+      "market_implied_probability": 0.995,
+      "market_price_cents": 100.0,
+      "edge": 0.0050000000000000044,
+      "yes_ask": 1.0,
+      "no_ask": 0.01,
+      "fee_per_contract": 0.0,
+      "ev_per_contract": 0.0,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "no +EV value bet at the ask (my prob 100%, modal YES) — staying out.",
+      "prob_delta_vs_prev": 0.0,
+      "trigger": "scheduled",
+      "strategy_id": "LQ5C-ensemble5-crowd",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "Multiple credible sources (TODAY.com, IMDb, Forbes, Rotten Tomatoes, The Daily Beast) consistently report that 'The Odyssey' has a 98% Rotten Tomatoes score. The score is noted as a record for Christopher Nolan, and the film is widely acclaimed as a masterpiece. Although there are mentions of a few negative reviews, none of the sources indicate any significant deviation from the 98% score. The bas",
+      "key_drivers": [
+        "Multiple reputable sources explicitly state the 98% score.",
+        "Consistency across different sources and media outlets.",
+        "Contextual support from Nolan's historical performance on Rotten Tomatoes."
+      ],
+      "reference_classes": [
+        "Rotten Tomatoes scores for critically acclaimed films.",
+        "Rotten Tomatoes scores for Christopher Nolan's films."
+      ],
+      "research_refs": [
+        "Forbes",
+        "IMDb",
+        "Kalshi News",
+        "Men's Journal",
+        "Rotten Tomatoes",
+        "ScreenRant",
+        "TODAY.com",
+        "The Daily Beast"
       ]
     }
   ],
