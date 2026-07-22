@@ -5,22 +5,22 @@
   "category": "politics",
   "close_time": "2026-06-30T14:00:00Z",
   "current": {
-    "as_of": "2026-07-22T14:45:22Z",
-    "my_probability": 0.1736,
+    "as_of": "2026-07-22T22:31:30Z",
+    "my_probability": 0.1785,
     "my_confidence": "high",
     "market_implied_probability": 0.165,
     "market_price_cents": 16.0,
-    "edge": 0.008599999999999997,
+    "edge": 0.013499999999999984,
     "yes_ask": 0.17,
     "no_ask": 0.84,
     "fee_per_contract": 0.01,
-    "ev_per_contract": -0.006400000000000008,
+    "ev_per_contract": -0.0015000000000000204,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "no +EV value bet at the ask (my prob 17%, modal NO) — staying out.",
-    "prob_delta_vs_prev": 0.0020999999999999908,
+    "lean_note": "no +EV value bet at the ask (my prob 18%, modal NO) — staying out.",
+    "prob_delta_vs_prev": 0.0069999999999999785,
     "trigger": "scheduled",
     "strategy_id": "LQ5C-ensemble5-crowd",
     "proposed_probability": null,
@@ -28,26 +28,25 @@
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "There is currently no direct evidence in the provided sources indicating that Genter Drummond is the Republican nominee for Governor in Oklahoma. The evidence base is sparse, and the sources consulted do not include explicit statements or endorsements from key political actors or organizations that would strongly suggest his nomination. The probability is low but not negligible, as it is possible ",
+    "rationale_summary": "The evidence is sparse, with no direct information about Genter Drummond's candidacy or likelihood of securing the Republican nomination for Governor in Oklahoma. The absence of clear signals about his political activity, endorsements, or campaign efforts makes it difficult to assign a higher probability. However, the reference class of similar candidates in primary elections provides a low base r",
     "key_drivers": [
-      "Lack of direct evidence in sources",
-      "No official endorsements or statements from Republican Party in Oklahoma",
-      "Sparse information in consulted sources"
+      "lack of direct evidence about Drummond's candidacy",
+      "no recent campaign activity reported",
+      "limited media coverage"
     ],
     "reference_classes": [
-      "Republican gubernatorial nomination races in states with similar political dynamics",
-      "Candidates emerging from under-the-radar political activity",
-      "Nomination processes in states with limited media coverage on emerging candidates"
+      "Republican gubernatorial primary candidates in Oklahoma",
+      "political candidates without strong campaign signals"
     ],
     "research_refs": [
-      "C-SPAN",
       "KOCO",
       "KOSU",
+      "KXII",
       "NonDoc Media",
       "OU Daily",
       "Oklahoma Voice",
-      "The Journal Record",
-      "The Oklahoman"
+      "The Frontier",
+      "The Journal Record"
     ]
   },
   "history": [
@@ -446,22 +445,22 @@
       ]
     },
     {
-      "as_of": "2026-07-22T14:45:22Z",
-      "my_probability": 0.1736,
+      "as_of": "2026-07-22T22:31:30Z",
+      "my_probability": 0.1785,
       "my_confidence": "high",
       "market_implied_probability": 0.165,
       "market_price_cents": 16.0,
-      "edge": 0.008599999999999997,
+      "edge": 0.013499999999999984,
       "yes_ask": 0.17,
       "no_ask": 0.84,
       "fee_per_contract": 0.01,
-      "ev_per_contract": -0.006400000000000008,
+      "ev_per_contract": -0.0015000000000000204,
       "limit_price": null,
       "ev_limit_per_contract": null,
       "lean": "NONE",
       "conviction": "low",
-      "lean_note": "no +EV value bet at the ask (my prob 17%, modal NO) — staying out.",
-      "prob_delta_vs_prev": 0.0020999999999999908,
+      "lean_note": "no +EV value bet at the ask (my prob 18%, modal NO) — staying out.",
+      "prob_delta_vs_prev": 0.0069999999999999785,
       "trigger": "scheduled",
       "strategy_id": "LQ5C-ensemble5-crowd",
       "proposed_probability": null,
@@ -469,26 +468,25 @@
       "adversarial_challenged_prob": null,
       "adversarial_concerns": [],
       "adversarial_model": "",
-      "rationale_summary": "There is currently no direct evidence in the provided sources indicating that Genter Drummond is the Republican nominee for Governor in Oklahoma. The evidence base is sparse, and the sources consulted do not include explicit statements or endorsements from key political actors or organizations that would strongly suggest his nomination. The probability is low but not negligible, as it is possible ",
+      "rationale_summary": "The evidence is sparse, with no direct information about Genter Drummond's candidacy or likelihood of securing the Republican nomination for Governor in Oklahoma. The absence of clear signals about his political activity, endorsements, or campaign efforts makes it difficult to assign a higher probability. However, the reference class of similar candidates in primary elections provides a low base r",
       "key_drivers": [
-        "Lack of direct evidence in sources",
-        "No official endorsements or statements from Republican Party in Oklahoma",
-        "Sparse information in consulted sources"
+        "lack of direct evidence about Drummond's candidacy",
+        "no recent campaign activity reported",
+        "limited media coverage"
       ],
       "reference_classes": [
-        "Republican gubernatorial nomination races in states with similar political dynamics",
-        "Candidates emerging from under-the-radar political activity",
-        "Nomination processes in states with limited media coverage on emerging candidates"
+        "Republican gubernatorial primary candidates in Oklahoma",
+        "political candidates without strong campaign signals"
       ],
       "research_refs": [
-        "C-SPAN",
         "KOCO",
         "KOSU",
+        "KXII",
         "NonDoc Media",
         "OU Daily",
         "Oklahoma Voice",
-        "The Journal Record",
-        "The Oklahoman"
+        "The Frontier",
+        "The Journal Record"
       ]
     }
   ],

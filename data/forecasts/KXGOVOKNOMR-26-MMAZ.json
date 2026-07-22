@@ -5,22 +5,22 @@
   "category": "politics",
   "close_time": "2026-06-30T14:00:00Z",
   "current": {
-    "as_of": "2026-07-22T14:45:22Z",
-    "my_probability": 0.6013,
-    "my_confidence": "medium",
+    "as_of": "2026-07-22T22:31:30Z",
+    "my_probability": 0.579,
+    "my_confidence": "high",
     "market_implied_probability": 0.815,
     "market_price_cents": 82.0,
-    "edge": -0.2137,
+    "edge": -0.236,
     "yes_ask": 0.82,
     "no_ask": 0.19,
     "fee_per_contract": 0.02,
-    "ev_per_contract": -0.2387,
-    "limit_price": null,
-    "ev_limit_per_contract": null,
+    "ev_per_contract": 0.21100000000000005,
+    "limit_price": 0.18,
+    "ev_limit_per_contract": 0.221,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "no +EV value bet at the ask (my prob 60%, modal YES) — staying out.",
-    "prob_delta_vs_prev": -0.09150000000000003,
+    "lean_note": "24pt gap exceeds the hard ceiling (20pt) — beyond this divergence from a liquid market, even high confidence is treated as model error, not edge",
+    "prob_delta_vs_prev": -0.11380000000000001,
     "trigger": "scheduled",
     "strategy_id": "LD5-diverse",
     "proposed_probability": null,
@@ -28,25 +28,23 @@
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "There is currently no direct evidence in the provided sources indicating that Mike Mazzei is the Republican nominee for Governor in Oklahoma. The absence of specific information about his nomination status, combined with the lack of any clear signals from the sources consulted, leads to a low probability. The base rate for any individual becoming a gubernatorial nominee is generally low, especiall",
+    "rationale_summary": "The evidence provided does not include any specific information about Mike Mazzei's political status, campaign activity, or likelihood of being nominated. The base rate for a relatively unknown candidate becoming a major party nominee in a gubernatorial race is very low, especially in a competitive state like Oklahoma. Past misses indicate a tendency to overestimate the chances of underdog candida",
     "key_drivers": [
-      "Lack of explicit information on Mazzei's nomination status",
-      "No reported endorsements or campaign activity",
-      "No prior political history of Mazzei in Oklahoma governance"
+      "Lack of specific evidence about Mazzei's candidacy",
+      "Low base rate for unknown candidates becoming nominees"
     ],
     "reference_classes": [
-      "Gubernatorial nomination probabilities for little-known candidates",
-      "Candidates without prior political experience",
-      "Nomination status in the absence of media coverage"
+      "Historical gubernatorial nomination races in Oklahoma",
+      "Likelihood of unknown candidates winning major party nominations"
     ],
     "research_refs": [
-      "C-SPAN",
       "KOCO",
       "KOSU",
       "KSWO 7News",
       "News 9",
       "NonDoc Media",
       "Oklahoma Voice",
+      "Oklahoma Watch",
       "The Journal Record"
     ]
   },
@@ -545,22 +543,22 @@
       ]
     },
     {
-      "as_of": "2026-07-22T14:45:22Z",
-      "my_probability": 0.6013,
-      "my_confidence": "medium",
+      "as_of": "2026-07-22T22:31:30Z",
+      "my_probability": 0.579,
+      "my_confidence": "high",
       "market_implied_probability": 0.815,
       "market_price_cents": 82.0,
-      "edge": -0.2137,
+      "edge": -0.236,
       "yes_ask": 0.82,
       "no_ask": 0.19,
       "fee_per_contract": 0.02,
-      "ev_per_contract": -0.2387,
-      "limit_price": null,
-      "ev_limit_per_contract": null,
+      "ev_per_contract": 0.21100000000000005,
+      "limit_price": 0.18,
+      "ev_limit_per_contract": 0.221,
       "lean": "NONE",
       "conviction": "low",
-      "lean_note": "no +EV value bet at the ask (my prob 60%, modal YES) — staying out.",
-      "prob_delta_vs_prev": -0.09150000000000003,
+      "lean_note": "24pt gap exceeds the hard ceiling (20pt) — beyond this divergence from a liquid market, even high confidence is treated as model error, not edge",
+      "prob_delta_vs_prev": -0.11380000000000001,
       "trigger": "scheduled",
       "strategy_id": "LD5-diverse",
       "proposed_probability": null,
@@ -568,25 +566,23 @@
       "adversarial_challenged_prob": null,
       "adversarial_concerns": [],
       "adversarial_model": "",
-      "rationale_summary": "There is currently no direct evidence in the provided sources indicating that Mike Mazzei is the Republican nominee for Governor in Oklahoma. The absence of specific information about his nomination status, combined with the lack of any clear signals from the sources consulted, leads to a low probability. The base rate for any individual becoming a gubernatorial nominee is generally low, especiall",
+      "rationale_summary": "The evidence provided does not include any specific information about Mike Mazzei's political status, campaign activity, or likelihood of being nominated. The base rate for a relatively unknown candidate becoming a major party nominee in a gubernatorial race is very low, especially in a competitive state like Oklahoma. Past misses indicate a tendency to overestimate the chances of underdog candida",
       "key_drivers": [
-        "Lack of explicit information on Mazzei's nomination status",
-        "No reported endorsements or campaign activity",
-        "No prior political history of Mazzei in Oklahoma governance"
+        "Lack of specific evidence about Mazzei's candidacy",
+        "Low base rate for unknown candidates becoming nominees"
       ],
       "reference_classes": [
-        "Gubernatorial nomination probabilities for little-known candidates",
-        "Candidates without prior political experience",
-        "Nomination status in the absence of media coverage"
+        "Historical gubernatorial nomination races in Oklahoma",
+        "Likelihood of unknown candidates winning major party nominations"
       ],
       "research_refs": [
-        "C-SPAN",
         "KOCO",
         "KOSU",
         "KSWO 7News",
         "News 9",
         "NonDoc Media",
         "Oklahoma Voice",
+        "Oklahoma Watch",
         "The Journal Record"
       ]
     }

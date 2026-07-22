@@ -1726,7 +1726,8 @@ def _build_cost_usage(
             ["Web searches", str(u.web_searches)],
             ["Web fetches", str(u.web_fetches)],
             ["Tool calls", str(u.tool_calls)],
-            ["Duration (s)", f"{u.duration_s:.1f}"],
+            ["Duration (s)",
+             f"{u.duration_s:.1f}" if u.duration_s is not None else "—"],
             ["Est. tokens",
              str(u.est_tokens) if u.est_tokens is not None else "—"],
         ]
