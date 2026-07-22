@@ -52,6 +52,32 @@ two post-mortem panel roles that must be a *different family* than the Qwen crit
   binding risk gates. Source breadth (**>5 disparate sources/market**, see `data/source_registry.json`)
   is mandatory to lift forecast quality.
 
+### §0.1 Decisive finding (2026-07-22): the OUTSIDE VIEW carries the edge; inside-view LLM retrieval does not beat price
+A leakage-free **point-in-time backtest** (`scripts/backtest_pit.py` — reconstruct the timestamped
+source timeline, forecast at checkpoints using only sources published ≤ T, score vs the known
+outcome; price never shown) was run on a genuinely-diverse super-team (Qwen3 + Mistral × 3 personas,
+member spread 0.17, real discrimination AUC ~0.73). Two arenas, 40 events each:
+- **Efficient markets** (market Brier 0.095): the ensemble is soundly beaten (0.23 vs 0.095) and an
+  isotonic recalibration does **not** generalize out-of-sample (leave-one-event-out CV 0.25 ≈ raw).
+- **Inefficient/beatable atlas cells** (market Brier 0.29): the ensemble *appears* to win (0.16 vs
+  0.29) — but the decomposition kills it: **base-rate-only 0.128 < full ensemble 0.162 < market 0.290.**
+  Just betting the reference-class base rate BEATS the full retrieval ensemble; the case-specific
+  evidence is net-*harmful*. On the one **unbiased** cell (`economy/35-65¢`, the clean discrimination
+  test) the market wins outright (AUC 0.875 > 0.750). The apparent edge elsewhere is **bias-alignment**
+  (predict low in YES-overpriced culture cells = the atlas fade), not per-event skill.
+
+**What this means for how you forecast:**
+1. **Lean HARD on the outside view / base rate (§2).** It is the pillar that empirically survives. The
+   structural/atlas fade *is* the outside view operationalized — not a "quant fallback."
+2. **Treat case-specific retrieval as a BOUNDED update, never an override (§4, §5).** The inside-view
+   layer over-reacts to vivid news and, on this evidence, subtracts value. If the evidence would move
+   you far from the base rate, demand strong, independent, corroborated cause — default to the prior.
+3. **Do not expect to beat sharp prices by forecasting harder.** Edge lives where the market is weak
+   (high-Brier atlas cells); everywhere else, defer to price. Point effort at forecastability (§0/§64),
+   not at out-reasoning an efficient crowd.
+4. The PIT harness is the **reusable adjudicator** — any future claim that a stronger inside-view model
+   beats price must clear it (base-rate-only baseline + per-cell AUC), not just an aggregate Brier.
+
 ## Scope: what to forecast (and what not)
 - **Forecast:** elections, nominations, legislation, approval, appointments; awards, box
   office, charts; whether a public figure says/does X; Fed decisions, CPI/jobs prints,
