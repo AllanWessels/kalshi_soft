@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-19T22:33:35Z",
+  "updated_at": "2026-07-22T14:35:46Z",
   "cap": 30,
   "markets": [
     {
@@ -32,21 +32,6 @@
       },
       "status": "active",
       "reforecast_cadence_days": 3.0
-    },
-    {
-      "ticker": "KXRT-ODY-90",
-      "event_ticker": "KXRT-ODY",
-      "title": "The Odyssey Rotten Tomatoes score?",
-      "category": "culture",
-      "close_time": "2026-07-20T14:00:00Z",
-      "added_at": "2026-06-19T20:50:22Z",
-      "liquidity_snapshot": {
-        "volume_24h": 3357.54,
-        "open_interest": 25913.37,
-        "spread_cents": 7.0
-      },
-      "status": "active",
-      "reforecast_cadence_days": 7.0
     },
     {
       "ticker": "KXGOVOKNOMR-26-GDRU",
@@ -139,21 +124,6 @@
       "reforecast_cadence_days": 3.0
     },
     {
-      "ticker": "KXRANKLIST1SONG-26JUL25-IKN",
-      "event_ticker": "KXRANKLIST1SONG-26JUL25",
-      "title": "Will I Knew It, I Knew You be 1 on the Billboard Hot 100 in July 2026?",
-      "category": "culture",
-      "close_time": "2026-07-25T14:00:00Z",
-      "added_at": "2026-07-17T19:17:41Z",
-      "liquidity_snapshot": {
-        "volume_24h": 28534.66,
-        "open_interest": 168147.96,
-        "spread_cents": 1.0
-      },
-      "status": "active",
-      "reforecast_cadence_days": 3.0
-    },
-    {
       "ticker": "KXGOVWINOMD-26-DCRO",
       "event_ticker": "KXGOVWINOMD-26",
       "title": "Will David Crowley be the Democratic nominee for Governor in Wisconsin?",
@@ -227,21 +197,6 @@
       },
       "status": "active",
       "reforecast_cadence_days": 3.0
-    },
-    {
-      "ticker": "KXTRUMPWORLDCUP-26-DJT-2",
-      "event_ticker": "KXTRUMPWORLDCUP-26-DJT",
-      "title": "How many 2026 FIFA World Cup matches will Donald Trump attend this season?",
-      "category": "politics",
-      "close_time": "2026-07-20T14:00:00Z",
-      "added_at": "2026-07-18T01:32:14Z",
-      "liquidity_snapshot": {
-        "volume_24h": 51699.3,
-        "open_interest": 459600.64,
-        "spread_cents": 1.0
-      },
-      "status": "active",
-      "reforecast_cadence_days": 0.0
     }
   ]
 }

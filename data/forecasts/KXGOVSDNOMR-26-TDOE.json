@@ -5,22 +5,22 @@
   "category": "politics",
   "close_time": "2026-06-30T14:00:00Z",
   "current": {
-    "as_of": "2026-07-19T22:39:50Z",
-    "my_probability": 0.1033,
+    "as_of": "2026-07-22T14:45:23Z",
+    "my_probability": 0.0898,
     "my_confidence": "medium",
-    "market_implied_probability": 0.057,
-    "market_price_cents": 6.0,
-    "edge": 0.0463,
-    "yes_ask": 0.06,
-    "no_ask": 0.946,
+    "market_implied_probability": 0.047,
+    "market_price_cents": 5.0,
+    "edge": 0.042800000000000005,
+    "yes_ask": 0.049,
+    "no_ask": 0.955,
     "fee_per_contract": 0.01,
-    "ev_per_contract": -0.0592999999999999,
+    "ev_per_contract": -0.05479999999999995,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "no +EV value bet at the ask (my prob 10%, modal NO) — staying out.",
-    "prob_delta_vs_prev": 0.004799999999999999,
+    "lean_note": "no +EV value bet at the ask (my prob 9%, modal NO) — staying out.",
+    "prob_delta_vs_prev": -0.013499999999999998,
     "trigger": "scheduled",
     "strategy_id": "LQ5C-ensemble5-crowd",
     "proposed_probability": null,
@@ -28,24 +28,26 @@
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "There is currently no direct evidence in the search results about Toby Doeden's status in the 2026 South Dakota Republican gubernatorial primary. The lack of specific information means that the probability is based on a low base rate for any single candidate in a primary race without clear indicators of support or opposition. The search results consulted are reputable but do not mention Doeden, su",
+    "rationale_summary": "There is currently no direct evidence about Toby Doeden's involvement in the 2026 South Dakota gubernatorial race. The lack of specific information about his candidacy or political activity in the race makes it difficult to assign a higher probability. However, the absence of any news about him running does not definitively rule out his candidacy, especially if he has not yet made a formal announc",
     "key_drivers": [
-      "Lack of direct evidence about Toby Doeden's involvement or support in the primary",
-      "No information in reputable sources about his candidacy"
+      "Absence of public announcements about Toby Doeden's candidacy",
+      "Lack of polling or endorsements related to him",
+      "No news coverage indicating his involvement in the race"
     ],
     "reference_classes": [
-      "Candidates with no public information in primary races",
-      "Low-profile candidates in state-level elections"
+      "Gubernatorial races in South Dakota with little early media attention",
+      "Candidates who emerge later in the primary season",
+      "Republican primary contests in states with strong party infrastructure"
     ],
     "research_refs": [
-      "CBS News",
-      "Mitchell Republic",
-      "NBC News",
-      "News From The States",
-      "SDPB",
+      "- Emerson Polling",
+      "Aberdeen Insider",
+      "Argus Leader",
+      "KELOLAND.com",
+      "KOTA Territory News",
       "South Dakota News Watch",
       "South Dakota Searchlight",
-      "The New York Times"
+      "The Mighty 790 KFGO"
     ]
   },
   "history": [
@@ -521,6 +523,52 @@
         "South Dakota News Watch",
         "South Dakota Searchlight",
         "The New York Times"
+      ]
+    },
+    {
+      "as_of": "2026-07-22T14:45:23Z",
+      "my_probability": 0.0898,
+      "my_confidence": "medium",
+      "market_implied_probability": 0.047,
+      "market_price_cents": 5.0,
+      "edge": 0.042800000000000005,
+      "yes_ask": 0.049,
+      "no_ask": 0.955,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": -0.05479999999999995,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "no +EV value bet at the ask (my prob 9%, modal NO) — staying out.",
+      "prob_delta_vs_prev": -0.013499999999999998,
+      "trigger": "scheduled",
+      "strategy_id": "LQ5C-ensemble5-crowd",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "There is currently no direct evidence about Toby Doeden's involvement in the 2026 South Dakota gubernatorial race. The lack of specific information about his candidacy or political activity in the race makes it difficult to assign a higher probability. However, the absence of any news about him running does not definitively rule out his candidacy, especially if he has not yet made a formal announc",
+      "key_drivers": [
+        "Absence of public announcements about Toby Doeden's candidacy",
+        "Lack of polling or endorsements related to him",
+        "No news coverage indicating his involvement in the race"
+      ],
+      "reference_classes": [
+        "Gubernatorial races in South Dakota with little early media attention",
+        "Candidates who emerge later in the primary season",
+        "Republican primary contests in states with strong party infrastructure"
+      ],
+      "research_refs": [
+        "- Emerson Polling",
+        "Aberdeen Insider",
+        "Argus Leader",
+        "KELOLAND.com",
+        "KOTA Territory News",
+        "South Dakota News Watch",
+        "South Dakota Searchlight",
+        "The Mighty 790 KFGO"
       ]
     }
   ],

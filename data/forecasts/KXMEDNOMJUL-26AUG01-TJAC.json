@@ -5,22 +5,22 @@
   "category": "politics",
   "close_time": "2026-08-08T14:00:00Z",
   "current": {
-    "as_of": "2026-07-17T19:34:55Z",
-    "my_probability": 0.885,
+    "as_of": "2026-07-22T14:45:24Z",
+    "my_probability": 0.9909,
     "my_confidence": "high",
-    "market_implied_probability": 0.885,
-    "market_price_cents": 88.0,
-    "edge": 0.0,
-    "yes_ask": 0.89,
-    "no_ask": 0.12,
-    "fee_per_contract": 0.01,
-    "ev_per_contract": -0.015000000000000005,
+    "market_implied_probability": 0.995,
+    "market_price_cents": 100.0,
+    "edge": -0.0040999999999999925,
+    "yes_ask": 1.0,
+    "no_ask": 0.01,
+    "fee_per_contract": 0.0,
+    "ev_per_contract": -0.009099999999999997,
     "limit_price": null,
     "ev_limit_per_contract": null,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "no +EV value bet at the ask (my prob 88%, modal YES) — staying out.",
-    "prob_delta_vs_prev": null,
+    "lean_note": "no +EV value bet at the ask (my prob 99%, modal YES) — staying out.",
+    "prob_delta_vs_prev": 0.1059,
     "trigger": "scheduled",
     "strategy_id": "LQ5C-ensemble5-crowd",
     "proposed_probability": null,
@@ -28,26 +28,29 @@
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "The evidence indicates that Graham Platner has withdrawn, and the Maine Democratic Party is actively considering multiple candidates to replace him. Troy Jackson is not mentioned as a contender in any of the sources provided, and no confirmation of his nomination has been reported. The absence of any direct mention of Jackson in the evidence, combined with the active search for a replacement, sugg",
+    "rationale_summary": "Troy Jackson has consistently been reported as the frontrunner for the Democratic Senate nomination in Maine, with multiple reputable sources confirming his dominance in delegate elections, growing support, and positioning as the likely replacement for Graham Platner. The evidence is robust and consistent across multiple sources, with no contradictory signals. While there are uncertainties related",
     "key_drivers": [
-      "Graham Platner's withdrawal has created an open race with multiple candidates being considered.",
-      "Troy Jackson is not named in any of the sources as a potential replacement or nominee.",
-      "The Maine Democratic Party is still in the process of selecting a nominee."
+      "Troy Jackson's dominance in delegate elections (96% of delegates) strongly indicates his nomination.",
+      "Multiple reputable news sources (PBS",
+      "NY Times",
+      "Maine Public",
+      "etc.) consistently report him as the frontrunner.",
+      "His status as a prominent figure in Maine politics increases his likelihood of securing"
     ],
     "reference_classes": [
-      "Primary elections where a major candidate withdraws and the party scrambles to find a replacement.",
-      "Senate nomination processes with multiple potential candidates and no clear frontrunner."
+      "Historical trends in Maine Senate races showing a tendency to favor Democratic candidates.",
+      "Nomination processes in other Senate races where delegate dominance strongly correlates with final nomination."
     ],
     "research_refs": [
       "ABC News - Breaking News",
       "Latest News and Videos",
-      "Bangor Daily News",
-      "Los Angeles Times",
-      "Maine Morning Star",
+      "CNN",
+      "Maine Public",
       "NBC News",
-      "News4JAX",
       "PBS",
-      "Politico"
+      "Politico",
+      "The American Prospect",
+      "The Guardian"
     ]
   },
   "history": [
@@ -95,6 +98,55 @@
         "News4JAX",
         "PBS",
         "Politico"
+      ]
+    },
+    {
+      "as_of": "2026-07-22T14:45:24Z",
+      "my_probability": 0.9909,
+      "my_confidence": "high",
+      "market_implied_probability": 0.995,
+      "market_price_cents": 100.0,
+      "edge": -0.0040999999999999925,
+      "yes_ask": 1.0,
+      "no_ask": 0.01,
+      "fee_per_contract": 0.0,
+      "ev_per_contract": -0.009099999999999997,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "no +EV value bet at the ask (my prob 99%, modal YES) — staying out.",
+      "prob_delta_vs_prev": 0.1059,
+      "trigger": "scheduled",
+      "strategy_id": "LQ5C-ensemble5-crowd",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "Troy Jackson has consistently been reported as the frontrunner for the Democratic Senate nomination in Maine, with multiple reputable sources confirming his dominance in delegate elections, growing support, and positioning as the likely replacement for Graham Platner. The evidence is robust and consistent across multiple sources, with no contradictory signals. While there are uncertainties related",
+      "key_drivers": [
+        "Troy Jackson's dominance in delegate elections (96% of delegates) strongly indicates his nomination.",
+        "Multiple reputable news sources (PBS",
+        "NY Times",
+        "Maine Public",
+        "etc.) consistently report him as the frontrunner.",
+        "His status as a prominent figure in Maine politics increases his likelihood of securing"
+      ],
+      "reference_classes": [
+        "Historical trends in Maine Senate races showing a tendency to favor Democratic candidates.",
+        "Nomination processes in other Senate races where delegate dominance strongly correlates with final nomination."
+      ],
+      "research_refs": [
+        "ABC News - Breaking News",
+        "Latest News and Videos",
+        "CNN",
+        "Maine Public",
+        "NBC News",
+        "PBS",
+        "Politico",
+        "The American Prospect",
+        "The Guardian"
       ]
     }
   ],

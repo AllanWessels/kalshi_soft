@@ -5,7 +5,7 @@
   "category": "politics",
   "close_time": "2026-08-08T14:00:00Z",
   "current": {
-    "as_of": "2026-07-17T19:34:54Z",
+    "as_of": "2026-07-22T14:45:23Z",
     "my_probability": 0.0,
     "my_confidence": "high",
     "market_implied_probability": 0.005,
@@ -20,34 +20,33 @@
     "lean": "NONE",
     "conviction": "low",
     "lean_note": "no +EV value bet at the ask (my prob 0%, modal NO) — staying out.",
-    "prob_delta_vs_prev": null,
+    "prob_delta_vs_prev": 0.0,
     "trigger": "scheduled",
-    "strategy_id": "LQ5C-ensemble5-crowd",
+    "strategy_id": "LD5-diverse",
     "proposed_probability": null,
     "adversarial_verdict": "",
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "Multiple credible sources from July 14-17, 2026, confirm that Graham Platner has withdrawn from the Senate nomination, with Maine Democrats actively seeking a replacement. While the exact timeline of his withdrawal is unclear, the consensus across multiple reputable outlets indicates that he is no longer the nominee. The base rate of candidates withdrawing and being replaced by party members suppo",
+    "rationale_summary": "The base rate for a candidate withdrawing from a Senate nomination within the last few weeks before official confirmation is low but non-zero, given historical cases of similar withdrawals in politics. The key evidence includes Platner's official withdrawal after facing allegations of sexual assault; these allegations are significant and have led to substantial support being withdrawn from him. Gi",
     "key_drivers": [
-      "Multiple independent sources confirming Graham Platner's withdrawal from the Senate nomination.",
-      "Maine Democrats actively seeking a replacement",
-      "indicating Platner is no longer the nominee.",
-      "Base rate of candidate withdrawals in Senate elections."
+      "Graham Platner officially withdrew",
+      "A candidate facing sexual assault allegations",
+      "Troy Jackson moving toward nomination; the likelihood of finding another viable candidate so close to the deadline"
     ],
     "reference_classes": [
-      "U.S. Senate candidate withdrawals and replacement processes.",
-      "Political nomination transitions in primary elections."
+      "Historical cases of Senate nominees replacing and withdrawing before confirmation deadlines"
     ],
     "research_refs": [
-      "CNN",
-      "Los Angeles Times",
-      "Maine Morning Star",
-      "McAlester News-Capital",
+      "ABC News - Breaking News",
+      "Latest News and Videos",
+      "Al Jazeera",
+      "Macomb Daily",
+      "Maine Public",
       "NBC News",
       "NPR",
-      "Politico",
-      "Roll Call"
+      "Northwest Progressive Institute",
+      "Politico"
     ]
   },
   "history": [
@@ -95,6 +94,51 @@
         "NPR",
         "Politico",
         "Roll Call"
+      ]
+    },
+    {
+      "as_of": "2026-07-22T14:45:23Z",
+      "my_probability": 0.0,
+      "my_confidence": "high",
+      "market_implied_probability": 0.005,
+      "market_price_cents": 0.0,
+      "edge": -0.005,
+      "yes_ask": 0.01,
+      "no_ask": 1.0,
+      "fee_per_contract": 0.0,
+      "ev_per_contract": 0.0,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "no +EV value bet at the ask (my prob 0%, modal NO) — staying out.",
+      "prob_delta_vs_prev": 0.0,
+      "trigger": "scheduled",
+      "strategy_id": "LD5-diverse",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "The base rate for a candidate withdrawing from a Senate nomination within the last few weeks before official confirmation is low but non-zero, given historical cases of similar withdrawals in politics. The key evidence includes Platner's official withdrawal after facing allegations of sexual assault; these allegations are significant and have led to substantial support being withdrawn from him. Gi",
+      "key_drivers": [
+        "Graham Platner officially withdrew",
+        "A candidate facing sexual assault allegations",
+        "Troy Jackson moving toward nomination; the likelihood of finding another viable candidate so close to the deadline"
+      ],
+      "reference_classes": [
+        "Historical cases of Senate nominees replacing and withdrawing before confirmation deadlines"
+      ],
+      "research_refs": [
+        "ABC News - Breaking News",
+        "Latest News and Videos",
+        "Al Jazeera",
+        "Macomb Daily",
+        "Maine Public",
+        "NBC News",
+        "NPR",
+        "Northwest Progressive Institute",
+        "Politico"
       ]
     }
   ],

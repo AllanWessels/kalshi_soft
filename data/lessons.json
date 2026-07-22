@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-19T22:40:59Z",
+  "updated_at": "2026-07-22T14:49:02Z",
   "lessons": [
     {
       "id": "feedback-001",
@@ -604,6 +604,43 @@
       "rubric_scores": {},
       "judge_verdict": "",
       "disagreement": ""
+    },
+    {
+      "id": "2026-07-20T14:00:00Z-KXRT-ODY-90",
+      "created_at": "2026-07-22T14:48:48Z",
+      "source": "resolution",
+      "ticker": "KXRT-ODY-90",
+      "category": "culture",
+      "outcome": 1,
+      "final_my_probability": 1.0,
+      "final_market_implied": 0.995,
+      "brier_mine": 0.4355999999999999,
+      "brier_market": 0.33062499999999995,
+      "beat_market": false,
+      "what_went_right": "Forecaster correctly stayed out: my_prob=1.0, lean=NONE (no +EV at the ask, modal YES). The LLM did not lose this — it read the near-certain YES correctly and declined the trade.",
+      "what_went_wrong": "Scored loss (brier 0.4356 vs market 0.3306) came from a money-path/atlas NO-fade committed at entry_probability~0.34 (reconcile scores pos.entry_probability, not the forecast). The favorite-longshot screen faded a Rotten Tomatoes score-threshold contract on a critically-acclaimed prestige film (Nolan Odyssey, ~98% RT), which resolved YES.",
+      "lesson": "Do not let the atlas/screen fade RT/culture 'score >= threshold' contracts on prestige/critically-acclaimed films where the near-certain YES is real. The favorite-longshot prior does not apply when YES is genuinely ~99% (concentrated critical consensus). Carve-out: suppress NO-fades on RT-score threshold markets when yes_ask >= ~0.95 with corroborating source consensus. Structural/basket error, not a forecaster error.",
+      "pattern_tag": "atlas-fade-prestige-culture",
+      "applied_to_skill": true,
+      "critic_model": "qwen3:14b-q4_K_M",
+      "rubric_scores": {
+        "base_rate_established": {
+          "pass": true
+        },
+        "three_independent_sources": {
+          "pass": true
+        },
+        "confidence_interval": {
+          "pass": false
+        },
+        "market_divergence_justified": {
+          "pass": false
+        },
+        "biggest_miss": "confidence_interval",
+        "note": "critic scored forecaster rationale; realized loss attributable to atlas NO-fade, not the forecaster"
+      },
+      "judge_verdict": "UPHELD-REDIRECTED: critic scored the forecaster p=1.0 rationale (biggest_miss=confidence_interval), a red herring since the forecaster stayed out. Actionable defect is the atlas NO-fade selection; lesson redirected to the screen.",
+      "disagreement": "Critic faulted forecaster for no CI on a near-certain call; Defender showed forecaster took no position, so CI critique is immaterial to the realized loss, which is entirely a money-path fade."
     }
   ]
 }

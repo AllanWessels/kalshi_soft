@@ -5,9 +5,9 @@
   "category": "politics",
   "close_time": "2026-08-08T14:00:00Z",
   "current": {
-    "as_of": "2026-07-17T19:34:54Z",
+    "as_of": "2026-07-22T14:45:23Z",
     "my_probability": 0.0,
-    "my_confidence": "medium",
+    "my_confidence": "high",
     "market_implied_probability": 0.005,
     "market_price_cents": 0.0,
     "edge": -0.005,
@@ -20,7 +20,7 @@
     "lean": "NONE",
     "conviction": "low",
     "lean_note": "no +EV value bet at the ask (my prob 0%, modal NO) — staying out.",
-    "prob_delta_vs_prev": null,
+    "prob_delta_vs_prev": 0.0,
     "trigger": "scheduled",
     "strategy_id": "LQ5C-ensemble5-crowd",
     "proposed_probability": null,
@@ -28,26 +28,29 @@
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "As of July 17, 2026, there is no definitive evidence confirming Dan Kleban as the Democratic nominee for U.S. Senate in Maine by July 31, 2026. While multiple reputable news sources were consulted, none provided direct confirmation of Kleban's nomination status. The lack of explicit confirmation suggests that the nomination process may still be ongoing or uncertain, and thus the probability is mod",
+    "rationale_summary": "The evidence notes suggest that multiple candidates have withdrawn from the Maine Senate race, including Graham Platner, and that Maine Democrats are backing Troy Jackson. However, there is no direct information about Dan Kleban's involvement in the race or his potential withdrawal. The base rate indicates that candidates in Senate races may face challenges leading to withdrawal, but without speci",
     "key_drivers": [
-      "Absence of direct confirmation from reputable sources",
-      "Uncertainty in nomination timeline",
-      "No prior confirmation in evidence notes"
+      "Multiple candidates have withdrawn from the Maine Senate race",
+      "including Graham Platner.",
+      "Maine Democrats are backing Troy Jackson ahead of the July 25 convention.",
+      "No direct information about Dan Kleban's involvement or potential withdrawal."
     ],
     "reference_classes": [
-      "U.S. Senate nomination confirmations",
-      "Political candidate status predictions",
-      "Nomination process timelines"
+      "Candidates in Senate races often face challenges that may lead to withdrawal",
+      "but the specific circumstances vary widely.",
+      "In Maine's Senate race",
+      "multiple candidates have emerged as potential replacements for withdrawn candidates."
     ],
     "research_refs": [
-      "KIRO 7 News Seattle",
-      "Legis1",
+      "ABC News - Breaking News",
+      "Latest News and Videos",
+      "Axios",
       "Maine Morning Star",
+      "Maine Public",
+      "NBC Boston",
       "NBC News",
-      "Oskaloosa Herald",
-      "Ottumwa Courier",
-      "Politico",
-      "Rutland Herald"
+      "NPR",
+      "PBS"
     ]
   },
   "history": [
@@ -95,6 +98,55 @@
         "Ottumwa Courier",
         "Politico",
         "Rutland Herald"
+      ]
+    },
+    {
+      "as_of": "2026-07-22T14:45:23Z",
+      "my_probability": 0.0,
+      "my_confidence": "high",
+      "market_implied_probability": 0.005,
+      "market_price_cents": 0.0,
+      "edge": -0.005,
+      "yes_ask": 0.01,
+      "no_ask": 1.0,
+      "fee_per_contract": 0.0,
+      "ev_per_contract": 0.0,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "no +EV value bet at the ask (my prob 0%, modal NO) — staying out.",
+      "prob_delta_vs_prev": 0.0,
+      "trigger": "scheduled",
+      "strategy_id": "LQ5C-ensemble5-crowd",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "The evidence notes suggest that multiple candidates have withdrawn from the Maine Senate race, including Graham Platner, and that Maine Democrats are backing Troy Jackson. However, there is no direct information about Dan Kleban's involvement in the race or his potential withdrawal. The base rate indicates that candidates in Senate races may face challenges leading to withdrawal, but without speci",
+      "key_drivers": [
+        "Multiple candidates have withdrawn from the Maine Senate race",
+        "including Graham Platner.",
+        "Maine Democrats are backing Troy Jackson ahead of the July 25 convention.",
+        "No direct information about Dan Kleban's involvement or potential withdrawal."
+      ],
+      "reference_classes": [
+        "Candidates in Senate races often face challenges that may lead to withdrawal",
+        "but the specific circumstances vary widely.",
+        "In Maine's Senate race",
+        "multiple candidates have emerged as potential replacements for withdrawn candidates."
+      ],
+      "research_refs": [
+        "ABC News - Breaking News",
+        "Latest News and Videos",
+        "Axios",
+        "Maine Morning Star",
+        "Maine Public",
+        "NBC Boston",
+        "NBC News",
+        "NPR",
+        "PBS"
       ]
     }
   ],

@@ -1,17 +1,17 @@
 {
-  "n_resolved": 48,
+  "n_resolved": 51,
   "recalibration": {
+    "mistral": {
+      "k": 1.0,
+      "n": 1
+    },
     "qwen": {
-      "k": 0.8128,
-      "n": 22
+      "k": 0.8,
+      "n": 25
     },
     "opus": {
       "k": 0.8014,
       "n": 11
-    },
-    "mistral": {
-      "k": 1.0,
-      "n": 1
     }
   },
   "segment_skill": {
@@ -52,8 +52,8 @@
       "skill": -0.00516
     },
     "culture / box-office": {
-      "n": 3,
-      "skill": -0.0153
+      "n": 4,
+      "skill": -0.02171
     },
     "statements / other-statements": {
       "n": 1,
@@ -68,17 +68,21 @@
       "skill": -0.00713
     },
     "politics / other-politics": {
-      "n": 4,
-      "skill": 0.00066
+      "n": 5,
+      "skill": 0.00062
     },
     "economy / inflation-cpi": {
       "n": 5,
       "skill": -0.01834
+    },
+    "culture / music-charts": {
+      "n": 1,
+      "skill": 0.0
     }
   },
   "model_weights": {
     "opus": 0.08041374373418965,
-    "qwen": 0.4925896084204035,
+    "qwen": 0.4725116249449336,
     "mistral": 0.7925497493467781
   },
   "params": {
@@ -87,5 +91,5 @@
     "K_ALPHA": 10,
     "SKILL_FULL": 0.05
   },
-  "updated_at": "2026-07-19T22:31:10Z"
+  "updated_at": "2026-07-22T14:33:16Z"
 }

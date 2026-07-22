@@ -5,7 +5,7 @@
   "category": "politics",
   "close_time": "2026-08-08T14:00:00Z",
   "current": {
-    "as_of": "2026-07-17T19:34:55Z",
+    "as_of": "2026-07-22T14:45:24Z",
     "my_probability": 0.0,
     "my_confidence": "high",
     "market_implied_probability": 0.005,
@@ -20,7 +20,7 @@
     "lean": "NONE",
     "conviction": "low",
     "lean_note": "no +EV value bet at the ask (my prob 0%, modal NO) — staying out.",
-    "prob_delta_vs_prev": null,
+    "prob_delta_vs_prev": 0.0,
     "trigger": "scheduled",
     "strategy_id": "LQ5C-ensemble5-crowd",
     "proposed_probability": null,
@@ -28,24 +28,27 @@
     "adversarial_challenged_prob": null,
     "adversarial_concerns": [],
     "adversarial_model": "",
-    "rationale_summary": "Jordan Wood has relaunched his Senate bid following Graham Platner's exit, suggesting he is a serious contender. However, there are multiple Democratic candidates running for the seat, and no evidence yet confirms that Wood will be the nominee. The uncertainty around the primary process and the difficulty in replacing Platner indicate that the outcome is not yet clear.",
+    "rationale_summary": "Multiple credible news sources from July 19-20, 2026, consistently report that Troy Jackson is the emerging Democratic nominee for the U.S. Senate in Maine, with top rivals dropping out. While this strongly suggests Jackson is the likely nominee, the question specifically asks about Jordan Wood, who is not mentioned in any of the evidence. There is no indication that Wood is a candidate or has bee",
     "key_drivers": [
-      "Jordan Wood's re-entry into the race following Graham Platner's exit",
-      "Multiple Democratic candidates are vying for the nomination",
-      "The primary process is ongoing and the final nominee is uncertain"
+      "Troy Jackson is the clear frontrunner based on multiple reputable sources",
+      "with no mention of Jordan Wood in the evidence.",
+      "The evidence does not provide any indication that Wood is a candidate or has been considered for the nomination.",
+      "The nomination process could still change",
+      "but current informati"
     ],
     "reference_classes": [
-      "Primary races with multiple candidates",
-      "Senate nomination processes following a candidate's exit"
+      "Primary elections and nomination processes for Senate races in competitive states.",
+      "Candidates who have dropped out or lost early momentum in Senate races."
     ],
     "research_refs": [
-      "CNN",
-      "Los Angeles Times",
+      "ABC News - Breaking News",
+      "Latest News and Videos",
+      "Bangor Daily News",
+      "C-SPAN",
       "Maine Morning Star",
       "Maine Public",
       "NBC News",
-      "NewsNation",
-      "Spectrum News",
+      "The Guardian",
       "The New York Times"
     ]
   },
@@ -92,6 +95,54 @@
         "NBC News",
         "NewsNation",
         "Spectrum News",
+        "The New York Times"
+      ]
+    },
+    {
+      "as_of": "2026-07-22T14:45:24Z",
+      "my_probability": 0.0,
+      "my_confidence": "high",
+      "market_implied_probability": 0.005,
+      "market_price_cents": 0.0,
+      "edge": -0.005,
+      "yes_ask": 0.01,
+      "no_ask": 1.0,
+      "fee_per_contract": 0.0,
+      "ev_per_contract": 0.0,
+      "limit_price": null,
+      "ev_limit_per_contract": null,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "no +EV value bet at the ask (my prob 0%, modal NO) — staying out.",
+      "prob_delta_vs_prev": 0.0,
+      "trigger": "scheduled",
+      "strategy_id": "LQ5C-ensemble5-crowd",
+      "proposed_probability": null,
+      "adversarial_verdict": "",
+      "adversarial_challenged_prob": null,
+      "adversarial_concerns": [],
+      "adversarial_model": "",
+      "rationale_summary": "Multiple credible news sources from July 19-20, 2026, consistently report that Troy Jackson is the emerging Democratic nominee for the U.S. Senate in Maine, with top rivals dropping out. While this strongly suggests Jackson is the likely nominee, the question specifically asks about Jordan Wood, who is not mentioned in any of the evidence. There is no indication that Wood is a candidate or has bee",
+      "key_drivers": [
+        "Troy Jackson is the clear frontrunner based on multiple reputable sources",
+        "with no mention of Jordan Wood in the evidence.",
+        "The evidence does not provide any indication that Wood is a candidate or has been considered for the nomination.",
+        "The nomination process could still change",
+        "but current informati"
+      ],
+      "reference_classes": [
+        "Primary elections and nomination processes for Senate races in competitive states.",
+        "Candidates who have dropped out or lost early momentum in Senate races."
+      ],
+      "research_refs": [
+        "ABC News - Breaking News",
+        "Latest News and Videos",
+        "Bangor Daily News",
+        "C-SPAN",
+        "Maine Morning Star",
+        "Maine Public",
+        "NBC News",
+        "The Guardian",
         "The New York Times"
       ]
     }
