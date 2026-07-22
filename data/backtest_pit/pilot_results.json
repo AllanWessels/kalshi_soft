@@ -1,0 +1,263 @@
+[
+  {
+    "ticker": "KXWATSONRNC",
+    "question": "Will SCOTUS bar counting mail ballots received after Election Day?",
+    "outcome": 0,
+    "implied_yes": 0.66,
+    "close_time": "2026-06-29T14:21:54Z",
+    "checkpoints": [
+      {
+        "label": "T-14d",
+        "as_of": "2026-06-15T14:21:54Z",
+        "n_sources_le_T": 17,
+        "n_items": 20,
+        "prob": 0.7067,
+        "spread": 0.04,
+        "confidence": "high",
+        "per_persona": {
+          "standard": 0.72,
+          "outside": 0.68,
+          "inside": 0.72
+        },
+        "n": 3,
+        "brier": 0.4994
+      },
+      {
+        "label": "T-7d",
+        "as_of": "2026-06-22T14:21:54Z",
+        "n_sources_le_T": 19,
+        "n_items": 20,
+        "prob": 0.72,
+        "spread": 0.0,
+        "confidence": "high",
+        "per_persona": {
+          "standard": 0.72,
+          "outside": 0.72,
+          "inside": 0.72
+        },
+        "n": 3,
+        "brier": 0.5184
+      },
+      {
+        "label": "T-3d",
+        "as_of": "2026-06-26T14:21:54Z",
+        "n_sources_le_T": 17,
+        "n_items": 20,
+        "prob": 0.72,
+        "spread": 0.0,
+        "confidence": "high",
+        "per_persona": {
+          "standard": 0.72,
+          "outside": 0.72,
+          "inside": 0.72
+        },
+        "n": 3,
+        "brier": 0.5184
+      },
+      {
+        "label": "T-1d",
+        "as_of": "2026-06-28T14:21:54Z",
+        "n_sources_le_T": 17,
+        "n_items": 20,
+        "prob": 0.6833,
+        "spread": 0.07,
+        "confidence": "high",
+        "per_persona": {
+          "standard": 0.72,
+          "outside": 0.65,
+          "inside": 0.68
+        },
+        "n": 3,
+        "brier": 0.4669
+      }
+    ],
+    "memory_only_probe": {
+      "prob": 0.35,
+      "spread": 0.0,
+      "confidence": "high",
+      "per_persona": {
+        "standard": 0.35,
+        "outside": 0.35,
+        "inside": 0.35
+      },
+      "n": 3,
+      "brier": 0.1225,
+      "leak_flag": false
+    },
+    "brier_market": 0.4356
+  },
+  {
+    "ticker": "KXPERSONPUBLIC-26JUL01-JROB",
+    "question": "Will John Roberts be seen in public before Jul 1, 2026?",
+    "outcome": 1,
+    "implied_yes": 0.18,
+    "close_time": "2026-06-29T19:12:48Z",
+    "checkpoints": [
+      {
+        "label": "T-14d",
+        "as_of": "2026-06-15T19:12:48Z",
+        "n_sources_le_T": 14,
+        "n_items": 20,
+        "prob": 0.98,
+        "spread": 0.0,
+        "confidence": "high",
+        "per_persona": {
+          "standard": 0.98,
+          "outside": 0.98,
+          "inside": 0.98
+        },
+        "n": 3,
+        "brier": 0.0004
+      },
+      {
+        "label": "T-7d",
+        "as_of": "2026-06-22T19:12:48Z",
+        "n_sources_le_T": 14,
+        "n_items": 20,
+        "prob": 0.93,
+        "spread": 0.03,
+        "confidence": "high",
+        "per_persona": {
+          "standard": 0.95,
+          "outside": 0.92,
+          "inside": 0.92
+        },
+        "n": 3,
+        "brier": 0.0049
+      },
+      {
+        "label": "T-3d",
+        "as_of": "2026-06-26T19:12:48Z",
+        "n_sources_le_T": 14,
+        "n_items": 20,
+        "prob": 0.98,
+        "spread": 0.0,
+        "confidence": "high",
+        "per_persona": {
+          "standard": 0.98,
+          "outside": 0.98,
+          "inside": 0.98
+        },
+        "n": 3,
+        "brier": 0.0004
+      },
+      {
+        "label": "T-1d",
+        "as_of": "2026-06-28T19:12:48Z",
+        "n_sources_le_T": 14,
+        "n_items": 20,
+        "prob": 0.98,
+        "spread": 0.0,
+        "confidence": "high",
+        "per_persona": {
+          "standard": 0.98,
+          "outside": 0.98,
+          "inside": 0.98
+        },
+        "n": 3,
+        "brier": 0.0004
+      }
+    ],
+    "memory_only_probe": {
+      "prob": 0.9867,
+      "spread": 0.01,
+      "confidence": "high",
+      "per_persona": {
+        "standard": 0.98,
+        "outside": 0.99,
+        "inside": 0.99
+      },
+      "n": 3,
+      "brier": 0.0002,
+      "leak_flag": true
+    },
+    "brier_market": 0.6724
+  },
+  {
+    "ticker": "KXLABORANNOUNCE-26-AUG01",
+    "question": "Will Donald Trump issue any official announcement (e.g., Truth Social post) on naming his nominee for Labor Secretary before Aug 1, 2026?",
+    "outcome": 1,
+    "implied_yes": 0.42,
+    "close_time": "2026-06-30T03:21:45Z",
+    "checkpoints": [
+      {
+        "label": "T-14d",
+        "as_of": "2026-06-16T03:21:45Z",
+        "n_sources_le_T": 15,
+        "n_items": 20,
+        "prob": 0.35,
+        "spread": 0.0,
+        "confidence": "high",
+        "per_persona": {
+          "standard": 0.35,
+          "outside": 0.35,
+          "inside": 0.35
+        },
+        "n": 3,
+        "brier": 0.4225
+      },
+      {
+        "label": "T-7d",
+        "as_of": "2026-06-23T03:21:45Z",
+        "n_sources_le_T": 15,
+        "n_items": 20,
+        "prob": 0.1833,
+        "spread": 0.1,
+        "confidence": "medium",
+        "per_persona": {
+          "standard": 0.15,
+          "outside": 0.15,
+          "inside": 0.25
+        },
+        "n": 3,
+        "brier": 0.667
+      },
+      {
+        "label": "T-3d",
+        "as_of": "2026-06-27T03:21:45Z",
+        "n_sources_le_T": 15,
+        "n_items": 20,
+        "prob": 0.2167,
+        "spread": 0.1,
+        "confidence": "medium",
+        "per_persona": {
+          "standard": 0.15,
+          "outside": 0.25,
+          "inside": 0.25
+        },
+        "n": 3,
+        "brier": 0.6136
+      },
+      {
+        "label": "T-1d",
+        "as_of": "2026-06-29T03:21:45Z",
+        "n_sources_le_T": 15,
+        "n_items": 18,
+        "prob": 0.15,
+        "spread": 0.0,
+        "confidence": "high",
+        "per_persona": {
+          "standard": 0.15,
+          "outside": 0.15,
+          "inside": 0.15
+        },
+        "n": 3,
+        "brier": 0.7225
+      }
+    ],
+    "memory_only_probe": {
+      "prob": 0.35,
+      "spread": 0.0,
+      "confidence": "high",
+      "per_persona": {
+        "standard": 0.35,
+        "outside": 0.35,
+        "inside": 0.35
+      },
+      "n": 3,
+      "brier": 0.4225,
+      "leak_flag": false
+    },
+    "brier_market": 0.3364
+  }
+]
