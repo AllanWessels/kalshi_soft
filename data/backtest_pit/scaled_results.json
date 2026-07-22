@@ -1,0 +1,2366 @@
+{
+  "summary": {
+    "n_events": 40,
+    "n_checkpoint_forecasts": 160,
+    "brier_final_blended": 0.2426,
+    "brier_raw_ensemble": 0.233,
+    "brier_market_eventlevel": 0.0947,
+    "mean_member_spread": 0.1722,
+    "leak_flagged_events": 0,
+    "mean_updating_delta": 0.0081,
+    "reliability_blended": [
+      {
+        "bin": "0.0-0.2",
+        "n": 74,
+        "mean_pred": 0.125,
+        "emp_freq": 0.311
+      },
+      {
+        "bin": "0.2-0.4",
+        "n": 42,
+        "mean_pred": 0.3,
+        "emp_freq": 0.452
+      },
+      {
+        "bin": "0.4-0.6",
+        "n": 36,
+        "mean_pred": 0.501,
+        "emp_freq": 0.639
+      },
+      {
+        "bin": "0.6-0.8",
+        "n": 7,
+        "mean_pred": 0.635,
+        "emp_freq": 0.857
+      },
+      {
+        "bin": "0.8-1.0",
+        "n": 1,
+        "mean_pred": 0.833,
+        "emp_freq": 1.0
+      }
+    ]
+  },
+  "events": [
+    {
+      "ticker": "KXLABORANNOUNCE-26-JUL01",
+      "question": "Will Donald Trump issue any official announcement (e.g., Truth Social post) on naming his nominee for Labor Secretary before Jul 1, 2026?",
+      "outcome": 1,
+      "implied_yes": 0.1,
+      "base_rate": 0.65,
+      "memory_only": 0.2,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 13,
+          "ev_mean": 0.35,
+          "spread": 0.2,
+          "w": 0.72,
+          "final": 0.4333,
+          "brier_final": 0.3211,
+          "brier_raw": 0.4225
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 13,
+          "ev_mean": 0.55,
+          "spread": 0.3,
+          "w": 0.72,
+          "final": 0.5778,
+          "brier_final": 0.1783,
+          "brier_raw": 0.2025
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 13,
+          "ev_mean": 0.3,
+          "spread": 0.1,
+          "w": 0.72,
+          "final": 0.3972,
+          "brier_final": 0.3633,
+          "brier_raw": 0.49
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 13,
+          "ev_mean": 0.2667,
+          "spread": 0.1,
+          "w": 0.72,
+          "final": 0.3731,
+          "brier_final": 0.3929,
+          "brier_raw": 0.5378
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": -0.0718,
+      "final_brier": 0.3929,
+      "brier_market": 0.81
+    },
+    {
+      "ticker": "KXBET-26-FAS-TIE",
+      "question": "Will Tie win Fashion Vanguard Award at 26th BET Awards?",
+      "outcome": 0,
+      "implied_yes": 0.95,
+      "base_rate": 0.0625,
+      "memory_only": 0.075,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 3,
+          "ev_mean": 0.0875,
+          "spread": 0.225,
+          "w": 0.38,
+          "final": 0.0719,
+          "brier_final": 0.0052,
+          "brier_raw": 0.0077
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 3,
+          "ev_mean": 0.1667,
+          "spread": 0.2,
+          "w": 0.38,
+          "final": 0.1016,
+          "brier_final": 0.0103,
+          "brier_raw": 0.0278
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 5,
+          "ev_mean": 0.0458,
+          "spread": 0.025,
+          "w": 0.5,
+          "final": 0.0542,
+          "brier_final": 0.0029,
+          "brier_raw": 0.0021
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 7,
+          "ev_mean": 0.0458,
+          "spread": 0.025,
+          "w": 0.58,
+          "final": 0.0528,
+          "brier_final": 0.0028,
+          "brier_raw": 0.0021
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": 0.0024,
+      "final_brier": 0.0028,
+      "brier_market": 0.9025
+    },
+    {
+      "ticker": "KXLABORANNOUNCE-26-AUG01",
+      "question": "Will Donald Trump issue any official announcement (e.g., Truth Social post) on naming his nominee for Labor Secretary before Aug 1, 2026?",
+      "outcome": 1,
+      "implied_yes": 0.42,
+      "base_rate": 0.65,
+      "memory_only": 0.3,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 13,
+          "ev_mean": 0.3167,
+          "spread": 0.1,
+          "w": 0.72,
+          "final": 0.4093,
+          "brier_final": 0.349,
+          "brier_raw": 0.4669
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 13,
+          "ev_mean": 0.3167,
+          "spread": 0.1,
+          "w": 0.72,
+          "final": 0.4093,
+          "brier_final": 0.349,
+          "brier_raw": 0.4669
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 13,
+          "ev_mean": 0.3167,
+          "spread": 0.1,
+          "w": 0.72,
+          "final": 0.4093,
+          "brier_final": 0.349,
+          "brier_raw": 0.4669
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 13,
+          "ev_mean": 0.45,
+          "spread": 0.4,
+          "w": 0.72,
+          "final": 0.5056,
+          "brier_final": 0.2445,
+          "brier_raw": 0.3025
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": 0.1045,
+      "final_brier": 0.2445,
+      "brier_market": 0.3364
+    },
+    {
+      "ticker": "KXBET-26-VID-CHA",
+      "question": "Will CHANEL win Video of the Year award at 26th BET Awards?",
+      "outcome": 0,
+      "implied_yes": 0.77,
+      "base_rate": 0.0875,
+      "memory_only": 0.075,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 5,
+          "ev_mean": 0.1733,
+          "spread": 0.21,
+          "w": 0.5,
+          "final": 0.1304,
+          "brier_final": 0.017,
+          "brier_raw": 0.03
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 5,
+          "ev_mean": 0.1667,
+          "spread": 0.2,
+          "w": 0.5,
+          "final": 0.1271,
+          "brier_final": 0.0162,
+          "brier_raw": 0.0278
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 5,
+          "ev_mean": 0.1167,
+          "spread": 0.1,
+          "w": 0.5,
+          "final": 0.1021,
+          "brier_final": 0.0104,
+          "brier_raw": 0.0136
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 7,
+          "ev_mean": 0.0333,
+          "spread": 0.1,
+          "w": 0.58,
+          "final": 0.0559,
+          "brier_final": 0.0031,
+          "brier_raw": 0.0011
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": 0.0139,
+      "final_brier": 0.0031,
+      "brier_market": 0.5929
+    },
+    {
+      "ticker": "KXALBUMSALES-YOUS-PURE-250000",
+      "question": "Will you seem pretty sad for a girl so in love have at least 250,000 Pure Album Sales on the Hits Daily Double Top 50 Chart for the week immediately following the wide release of you seem pretty sad for a girl so in love?",
+      "outcome": 1,
+      "implied_yes": 0.86,
+      "base_rate": 0.15,
+      "memory_only": 0.2,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 0,
+          "ev_mean": 0.1667,
+          "spread": 0.3,
+          "w": 0.3,
+          "final": 0.155,
+          "brier_final": 0.714,
+          "brier_raw": 0.6944
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 0,
+          "ev_mean": 0.2,
+          "spread": 0.3,
+          "w": 0.3,
+          "final": 0.165,
+          "brier_final": 0.6972,
+          "brier_raw": 0.64
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 0,
+          "ev_mean": 0.1833,
+          "spread": 0.2,
+          "w": 0.3,
+          "final": 0.16,
+          "brier_final": 0.7056,
+          "brier_raw": 0.6669
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 0,
+          "ev_mean": 0.1917,
+          "spread": 0.3,
+          "w": 0.3,
+          "final": 0.1625,
+          "brier_final": 0.7014,
+          "brier_raw": 0.6534
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": 0.0126,
+      "final_brier": 0.7014,
+      "brier_market": 0.0196
+    },
+    {
+      "ticker": "KXBET-26-ALB-MUT",
+      "question": "Will MUTT DELUXE: HEEL win Album of the Year award at 26th BET Awards?",
+      "outcome": 0,
+      "implied_yes": 0.06,
+      "base_rate": 0.0375,
+      "memory_only": 0.075,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 8,
+          "ev_mean": 0.153,
+          "spread": 0.17,
+          "w": 0.62,
+          "final": 0.1086,
+          "brier_final": 0.0118,
+          "brier_raw": 0.0234
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 8,
+          "ev_mean": 0.2,
+          "spread": 0.1,
+          "w": 0.62,
+          "final": 0.1375,
+          "brier_final": 0.0189,
+          "brier_raw": 0.04
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 7,
+          "ev_mean": 0.2333,
+          "spread": 0.1,
+          "w": 0.58,
+          "final": 0.1517,
+          "brier_final": 0.023,
+          "brier_raw": 0.0544
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 8,
+          "ev_mean": 0.265,
+          "spread": 0.2,
+          "w": 0.62,
+          "final": 0.1775,
+          "brier_final": 0.0315,
+          "brier_raw": 0.0702
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": -0.0197,
+      "final_brier": 0.0315,
+      "brier_market": 0.0036
+    },
+    {
+      "ticker": "KXALBUMSALES-YOUS-PURE-200000",
+      "question": "Will you seem pretty sad for a girl so in love have at least 200,000 Pure Album Sales on the Hits Daily Double Top 50 Chart for the week immediately following the wide release of you seem pretty sad for a girl so in love?",
+      "outcome": 1,
+      "implied_yes": 0.95,
+      "base_rate": 0.2,
+      "memory_only": 0.2,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 0,
+          "ev_mean": 0.2,
+          "spread": 0.1,
+          "w": 0.3,
+          "final": 0.2,
+          "brier_final": 0.64,
+          "brier_raw": 0.64
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 0,
+          "ev_mean": 0.18,
+          "spread": 0.3,
+          "w": 0.3,
+          "final": 0.194,
+          "brier_final": 0.6496,
+          "brier_raw": 0.6724
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 0,
+          "ev_mean": 0.1475,
+          "spread": 0.215,
+          "w": 0.3,
+          "final": 0.1842,
+          "brier_final": 0.6654,
+          "brier_raw": 0.7268
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 1,
+          "ev_mean": 0.2167,
+          "spread": 0.1,
+          "w": 0.3,
+          "final": 0.205,
+          "brier_final": 0.632,
+          "brier_raw": 0.6136
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": 0.008,
+      "final_brier": 0.632,
+      "brier_market": 0.0025
+    },
+    {
+      "ticker": "KXWATSONRNC",
+      "question": "Will SCOTUS bar counting mail ballots received after Election Day?",
+      "outcome": 0,
+      "implied_yes": 0.66,
+      "base_rate": 0.3,
+      "memory_only": 0.3,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 11,
+          "ev_mean": 0.6967,
+          "spread": 0.13,
+          "w": 0.69,
+          "final": 0.5727,
+          "brier_final": 0.328,
+          "brier_raw": 0.4853
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 12,
+          "ev_mean": 0.7275,
+          "spread": 0.07,
+          "w": 0.71,
+          "final": 0.6018,
+          "brier_final": 0.3621,
+          "brier_raw": 0.5293
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 12,
+          "ev_mean": 0.6792,
+          "spread": 0.13,
+          "w": 0.71,
+          "final": 0.5676,
+          "brier_final": 0.3222,
+          "brier_raw": 0.4613
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 12,
+          "ev_mean": 0.675,
+          "spread": 0.16,
+          "w": 0.71,
+          "final": 0.5647,
+          "brier_final": 0.3189,
+          "brier_raw": 0.4556
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": 0.0091,
+      "final_brier": 0.3189,
+      "brier_market": 0.4356
+    },
+    {
+      "ticker": "KXGAPRIMARY-07D26-AKOZ",
+      "question": "Will Anthony Kozycki be the Democratic nominee for GA-07?",
+      "outcome": 1,
+      "implied_yes": 0.931,
+      "base_rate": 0.05,
+      "memory_only": 0.075,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 3,
+          "ev_mean": 0.175,
+          "spread": 0.3,
+          "w": 0.38,
+          "final": 0.0969,
+          "brier_final": 0.8156,
+          "brier_raw": 0.6806
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 3,
+          "ev_mean": 0.2167,
+          "spread": 0.1,
+          "w": 0.38,
+          "final": 0.1125,
+          "brier_final": 0.7877,
+          "brier_raw": 0.6136
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 3,
+          "ev_mean": 0.176,
+          "spread": 0.294,
+          "w": 0.38,
+          "final": 0.0973,
+          "brier_final": 0.815,
+          "brier_raw": 0.679
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 3,
+          "ev_mean": 0.125,
+          "spread": 0.3,
+          "w": 0.38,
+          "final": 0.0781,
+          "brier_final": 0.8499,
+          "brier_raw": 0.7656
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": -0.0343,
+      "final_brier": 0.8499,
+      "brier_market": 0.0048
+    },
+    {
+      "ticker": "KXVOTEPRIMARY-LAMAYOR1RKBASKBAS-69",
+      "question": "Will Karen Bass receive at least 38% of the popular vote in the 2026 Los Angeles mayoral primary?",
+      "outcome": 0,
+      "implied_yes": 0.05,
+      "base_rate": 0.4865,
+      "memory_only": 0.585,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 2,
+          "ev_mean": 0.4672,
+          "spread": 0.073,
+          "w": 0.3,
+          "final": 0.4807,
+          "brier_final": 0.2311,
+          "brier_raw": 0.2182
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 2,
+          "ev_mean": 0.462,
+          "spread": 0.07,
+          "w": 0.3,
+          "final": 0.4792,
+          "brier_final": 0.2296,
+          "brier_raw": 0.2134
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 2,
+          "ev_mean": 0.445,
+          "spread": 0.03,
+          "w": 0.3,
+          "final": 0.4741,
+          "brier_final": 0.2247,
+          "brier_raw": 0.198
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 2,
+          "ev_mean": 0.4333,
+          "spread": 0.1,
+          "w": 0.3,
+          "final": 0.4706,
+          "brier_final": 0.2214,
+          "brier_raw": 0.1878
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": 0.0097,
+      "final_brier": 0.2214,
+      "brier_market": 0.0025
+    },
+    {
+      "ticker": "KXMIDTERMMOV-TXSENPKPAX-P18",
+      "question": "Will the margin of victory for Ken Paxton in the U.S. Senate primary election in Texas be at least 18 percentage points?",
+      "outcome": 1,
+      "implied_yes": 0.91,
+      "base_rate": 0.3,
+      "memory_only": 0.35,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 14,
+          "ev_mean": 0.7342,
+          "spread": 0.185,
+          "w": 0.74,
+          "final": 0.6199,
+          "brier_final": 0.1445,
+          "brier_raw": 0.0707
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 14,
+          "ev_mean": 0.5883,
+          "spread": 0.23,
+          "w": 0.74,
+          "final": 0.5125,
+          "brier_final": 0.2377,
+          "brier_raw": 0.1695
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 16,
+          "ev_mean": 0.6617,
+          "spread": 0.07,
+          "w": 0.76,
+          "final": 0.5756,
+          "brier_final": 0.1802,
+          "brier_raw": 0.1145
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 16,
+          "ev_mean": 0.6667,
+          "spread": 0.1,
+          "w": 0.76,
+          "final": 0.5794,
+          "brier_final": 0.1769,
+          "brier_raw": 0.1111
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": -0.0324,
+      "final_brier": 0.1769,
+      "brier_market": 0.0081
+    },
+    {
+      "ticker": "KXMDPRIMARY-06R26-MROC",
+      "question": "Will Mariela Roca be the Republican nominee for MD-06?",
+      "outcome": 0,
+      "implied_yes": 0.09,
+      "base_rate": 0.0375,
+      "memory_only": 0.05,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 5,
+          "ev_mean": 0.3283,
+          "spread": 0.1,
+          "w": 0.5,
+          "final": 0.1829,
+          "brier_final": 0.0335,
+          "brier_raw": 0.1078
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 5,
+          "ev_mean": 0.54,
+          "spread": 0.37,
+          "w": 0.5,
+          "final": 0.2887,
+          "brier_final": 0.0834,
+          "brier_raw": 0.2916
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 5,
+          "ev_mean": 0.5733,
+          "spread": 0.37,
+          "w": 0.5,
+          "final": 0.3054,
+          "brier_final": 0.0933,
+          "brier_raw": 0.3287
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 4,
+          "ev_mean": 0.3667,
+          "spread": 0.2,
+          "w": 0.44,
+          "final": 0.1838,
+          "brier_final": 0.0338,
+          "brier_raw": 0.1344
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": -0.0003,
+      "final_brier": 0.0338,
+      "brier_market": 0.0081
+    },
+    {
+      "ticker": "KXMIDTERMMOV-TXSENPKPAX-P15",
+      "question": "Will the margin of victory for Ken Paxton in the U.S. Senate primary election in Texas be at least 15 percentage points?",
+      "outcome": 1,
+      "implied_yes": 0.95,
+      "base_rate": 0.3,
+      "memory_only": 0.35,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 14,
+          "ev_mean": 0.6667,
+          "spread": 0.07,
+          "w": 0.74,
+          "final": 0.5702,
+          "brier_final": 0.1847,
+          "brier_raw": 0.1111
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 14,
+          "ev_mean": 0.6883,
+          "spread": 0.13,
+          "w": 0.74,
+          "final": 0.5861,
+          "brier_final": 0.1713,
+          "brier_raw": 0.0971
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 16,
+          "ev_mean": 0.6617,
+          "spread": 0.07,
+          "w": 0.76,
+          "final": 0.5756,
+          "brier_final": 0.1802,
+          "brier_raw": 0.1145
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 16,
+          "ev_mean": 0.73,
+          "spread": 0.2,
+          "w": 0.76,
+          "final": 0.6276,
+          "brier_final": 0.1387,
+          "brier_raw": 0.0729
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": 0.046,
+      "final_brier": 0.1387,
+      "brier_market": 0.0025
+    },
+    {
+      "ticker": "KXMDPRIMARY-06R26-CBUR",
+      "question": "Will Chris Burnett be the Republican nominee for MD-06?",
+      "outcome": 0,
+      "implied_yes": 0.18,
+      "base_rate": 0.075,
+      "memory_only": 0.075,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 12,
+          "ev_mean": 0.1217,
+          "spread": 0.2,
+          "w": 0.71,
+          "final": 0.1079,
+          "brier_final": 0.0117,
+          "brier_raw": 0.0148
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 13,
+          "ev_mean": 0.1967,
+          "spread": 0.1,
+          "w": 0.72,
+          "final": 0.1629,
+          "brier_final": 0.0265,
+          "brier_raw": 0.0387
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 12,
+          "ev_mean": 0.2167,
+          "spread": 0.2,
+          "w": 0.71,
+          "final": 0.175,
+          "brier_final": 0.0306,
+          "brier_raw": 0.0469
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 11,
+          "ev_mean": 0.25,
+          "spread": 0.0,
+          "w": 0.69,
+          "final": 0.1953,
+          "brier_final": 0.0381,
+          "brier_raw": 0.0625
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": -0.0264,
+      "final_brier": 0.0381,
+      "brier_market": 0.0324
+    },
+    {
+      "ticker": "KXCAPRIMARY-1626-PSOU",
+      "question": "Will Peter Sundin Soul\u00e9 advance in the 2026 CA-16 primary?",
+      "outcome": 1,
+      "implied_yes": 0.949,
+      "base_rate": 0.35,
+      "memory_only": 0.5,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 1,
+          "ev_mean": 0.455,
+          "spread": 0.28,
+          "w": 0.3,
+          "final": 0.3815,
+          "brier_final": 0.3825,
+          "brier_raw": 0.297
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 3,
+          "ev_mean": 0.3,
+          "spread": 0.15,
+          "w": 0.38,
+          "final": 0.3312,
+          "brier_final": 0.4472,
+          "brier_raw": 0.49
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 3,
+          "ev_mean": 0.3417,
+          "spread": 0.2,
+          "w": 0.38,
+          "final": 0.3469,
+          "brier_final": 0.4266,
+          "brier_raw": 0.4334
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 3,
+          "ev_mean": 0.3167,
+          "spread": 0.1,
+          "w": 0.38,
+          "final": 0.3375,
+          "brier_final": 0.4389,
+          "brier_raw": 0.4669
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": -0.0564,
+      "final_brier": 0.4389,
+      "brier_market": 0.0026
+    },
+    {
+      "ticker": "KXMDPRIMARY-05R26-MTAL",
+      "question": "Will Michelle Talkington be the Republican nominee for MD-05?",
+      "outcome": 0,
+      "implied_yes": 0.26,
+      "base_rate": 0.075,
+      "memory_only": 0.1,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 3,
+          "ev_mean": 0.0833,
+          "spread": 0.1,
+          "w": 0.38,
+          "final": 0.0781,
+          "brier_final": 0.0061,
+          "brier_raw": 0.0069
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 3,
+          "ev_mean": 0.1333,
+          "spread": 0.2,
+          "w": 0.38,
+          "final": 0.0969,
+          "brier_final": 0.0094,
+          "brier_raw": 0.0178
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 2,
+          "ev_mean": 0.0363,
+          "spread": 0.03,
+          "w": 0.3,
+          "final": 0.0634,
+          "brier_final": 0.004,
+          "brier_raw": 0.0013
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 3,
+          "ev_mean": 0.0788,
+          "spread": 0.127,
+          "w": 0.38,
+          "final": 0.0764,
+          "brier_final": 0.0058,
+          "brier_raw": 0.0062
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": 0.0003,
+      "final_brier": 0.0058,
+      "brier_market": 0.0676
+    },
+    {
+      "ticker": "KXVOTEPRIMARY-KY4R26TMASTMAS-46",
+      "question": "Will Thomas Massie receive between 45% and 48% of the popular vote in the 2026 Kentucky 4th Congressional District Republican primary?",
+      "outcome": 1,
+      "implied_yes": 0.59,
+      "base_rate": 0.05,
+      "memory_only": 0.2,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 0,
+          "ev_mean": 0.1783,
+          "spread": 0.2,
+          "w": 0.3,
+          "final": 0.0885,
+          "brier_final": 0.8308,
+          "brier_raw": 0.6751
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 0,
+          "ev_mean": 0.15,
+          "spread": 0.2,
+          "w": 0.3,
+          "final": 0.08,
+          "brier_final": 0.8464,
+          "brier_raw": 0.7225
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 0,
+          "ev_mean": 0.151,
+          "spread": 0.206,
+          "w": 0.3,
+          "final": 0.0803,
+          "brier_final": 0.8458,
+          "brier_raw": 0.7208
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 0,
+          "ev_mean": 0.2167,
+          "spread": 0.4,
+          "w": 0.3,
+          "final": 0.1,
+          "brier_final": 0.81,
+          "brier_raw": 0.6136
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": 0.0208,
+      "final_brier": 0.81,
+      "brier_market": 0.1681
+    },
+    {
+      "ticker": "KXNYPRIMARY-03R26-GHAC",
+      "question": "Will Greg Hach be the Republican nominee for NY-03?",
+      "outcome": 0,
+      "implied_yes": 0.09,
+      "base_rate": 0.05,
+      "memory_only": 0.075,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 3,
+          "ev_mean": 0.3,
+          "spread": 0.1,
+          "w": 0.38,
+          "final": 0.1437,
+          "brier_final": 0.0207,
+          "brier_raw": 0.09
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 5,
+          "ev_mean": 0.3012,
+          "spread": 0.107,
+          "w": 0.5,
+          "final": 0.1756,
+          "brier_final": 0.0308,
+          "brier_raw": 0.0907
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 5,
+          "ev_mean": 0.3667,
+          "spread": 0.1,
+          "w": 0.5,
+          "final": 0.2083,
+          "brier_final": 0.0434,
+          "brier_raw": 0.1344
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 5,
+          "ev_mean": 0.2333,
+          "spread": 0.2,
+          "w": 0.5,
+          "final": 0.1417,
+          "brier_final": 0.0201,
+          "brier_raw": 0.0544
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": 0.0006,
+      "final_brier": 0.0201,
+      "brier_market": 0.0081
+    },
+    {
+      "ticker": "KXMT01D-26-SFOR",
+      "question": "Will Sam Forstag be the Democratic nominee for MT-01?",
+      "outcome": 1,
+      "implied_yes": 0.94,
+      "base_rate": 0.05,
+      "memory_only": 0.3,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 8,
+          "ev_mean": 0.2,
+          "spread": 0.1,
+          "w": 0.62,
+          "final": 0.1423,
+          "brier_final": 0.7356,
+          "brier_raw": 0.64
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 8,
+          "ev_mean": 0.2,
+          "spread": 0.1,
+          "w": 0.62,
+          "final": 0.1423,
+          "brier_final": 0.7356,
+          "brier_raw": 0.64
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 7,
+          "ev_mean": 0.25,
+          "spread": 0.0,
+          "w": 0.58,
+          "final": 0.1667,
+          "brier_final": 0.6944,
+          "brier_raw": 0.5625
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 10,
+          "ev_mean": 0.5072,
+          "spread": 0.2,
+          "w": 0.67,
+          "final": 0.3548,
+          "brier_final": 0.4163,
+          "brier_raw": 0.2429
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": 0.3193,
+      "final_brier": 0.4163,
+      "brier_market": 0.0036
+    },
+    {
+      "ticker": "KXNYPRIMARY-09D26-JBRI",
+      "question": "Will Joshua Bristol be the Democratic nominee for NY-09?",
+      "outcome": 0,
+      "implied_yes": 0.26,
+      "base_rate": 0.05,
+      "memory_only": 0.3,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 2,
+          "ev_mean": 0.1333,
+          "spread": 0.2,
+          "w": 0.3,
+          "final": 0.075,
+          "brier_final": 0.0056,
+          "brier_raw": 0.0178
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 4,
+          "ev_mean": 0.045,
+          "spread": 0.03,
+          "w": 0.44,
+          "final": 0.0478,
+          "brier_final": 0.0023,
+          "brier_raw": 0.002
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 5,
+          "ev_mean": 0.05,
+          "spread": 0.0,
+          "w": 0.5,
+          "final": 0.05,
+          "brier_final": 0.0025,
+          "brier_raw": 0.0025
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 5,
+          "ev_mean": 0.0425,
+          "spread": 0.025,
+          "w": 0.5,
+          "final": 0.0462,
+          "brier_final": 0.0021,
+          "brier_raw": 0.0018
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": 0.0035,
+      "final_brier": 0.0021,
+      "brier_market": 0.0676
+    },
+    {
+      "ticker": "KXMTPRIMARY-02D26-BMIL",
+      "question": "Will Brian Miller be the Democratic nominee for MT-02?",
+      "outcome": 1,
+      "implied_yes": 0.9,
+      "base_rate": 0.175,
+      "memory_only": 0.3,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 8,
+          "ev_mean": 0.2833,
+          "spread": 0.26,
+          "w": 0.62,
+          "final": 0.2417,
+          "brier_final": 0.5751,
+          "brier_raw": 0.5136
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 7,
+          "ev_mean": 0.3,
+          "spread": 0.2,
+          "w": 0.58,
+          "final": 0.2479,
+          "brier_final": 0.5656,
+          "brier_raw": 0.49
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 7,
+          "ev_mean": 0.2942,
+          "spread": 0.1,
+          "w": 0.58,
+          "final": 0.2445,
+          "brier_final": 0.5708,
+          "brier_raw": 0.4982
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 5,
+          "ev_mean": 0.3108,
+          "spread": 0.27,
+          "w": 0.5,
+          "final": 0.2429,
+          "brier_final": 0.5732,
+          "brier_raw": 0.475
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": 0.0019,
+      "final_brier": 0.5732,
+      "brier_market": 0.01
+    },
+    {
+      "ticker": "KXALBUMSALES-YOUS-PURE-300000",
+      "question": "Will you seem pretty sad for a girl so in love have at least 300,000 Pure Album Sales on the Hits Daily Double Top 50 Chart for the week immediately following the wide release of you seem pretty sad for a girl so in love?",
+      "outcome": 0,
+      "implied_yes": 0.05,
+      "base_rate": 0.15,
+      "memory_only": 0.2,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 0,
+          "ev_mean": 0.2,
+          "spread": 0.1,
+          "w": 0.3,
+          "final": 0.165,
+          "brier_final": 0.0272,
+          "brier_raw": 0.04
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 0,
+          "ev_mean": 0.1833,
+          "spread": 0.2,
+          "w": 0.3,
+          "final": 0.16,
+          "brier_final": 0.0256,
+          "brier_raw": 0.0336
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 0,
+          "ev_mean": 0.18,
+          "spread": 0.2,
+          "w": 0.3,
+          "final": 0.159,
+          "brier_final": 0.0253,
+          "brier_raw": 0.0324
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 0,
+          "ev_mean": 0.1833,
+          "spread": 0.2,
+          "w": 0.3,
+          "final": 0.16,
+          "brier_final": 0.0256,
+          "brier_raw": 0.0336
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": 0.0016,
+      "final_brier": 0.0256,
+      "brier_market": 0.0025
+    },
+    {
+      "ticker": "KXSENATEMTD-26-ABAN",
+      "question": "Will Alani Bankhead be the Democratic nominee for the Senate in Montana?",
+      "outcome": 1,
+      "implied_yes": 0.93,
+      "base_rate": 0.05,
+      "memory_only": 0.075,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 10,
+          "ev_mean": 0.234,
+          "spread": 0.104,
+          "w": 0.67,
+          "final": 0.1727,
+          "brier_final": 0.6845,
+          "brier_raw": 0.5868
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 9,
+          "ev_mean": 0.21,
+          "spread": 0.13,
+          "w": 0.64,
+          "final": 0.1529,
+          "brier_final": 0.7177,
+          "brier_raw": 0.6241
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 8,
+          "ev_mean": 0.2433,
+          "spread": 0.2,
+          "w": 0.62,
+          "final": 0.169,
+          "brier_final": 0.6906,
+          "brier_raw": 0.5725
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 6,
+          "ev_mean": 0.225,
+          "spread": 0.1,
+          "w": 0.55,
+          "final": 0.1455,
+          "brier_final": 0.7302,
+          "brier_raw": 0.6006
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": -0.0457,
+      "final_brier": 0.7302,
+      "brier_market": 0.0049
+    },
+    {
+      "ticker": "KXOKPRIMARY-05D26-TMAR",
+      "question": "Will Trey Martin be the Democratic nominee for OK-05?",
+      "outcome": 0,
+      "implied_yes": 0.1,
+      "base_rate": 0.05,
+      "memory_only": 0.05,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 5,
+          "ev_mean": 0.2333,
+          "spread": 0.2,
+          "w": 0.5,
+          "final": 0.1417,
+          "brier_final": 0.0201,
+          "brier_raw": 0.0544
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 7,
+          "ev_mean": 0.4167,
+          "spread": 0.53,
+          "w": 0.58,
+          "final": 0.2639,
+          "brier_final": 0.0696,
+          "brier_raw": 0.1736
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 7,
+          "ev_mean": 0.3783,
+          "spread": 0.37,
+          "w": 0.58,
+          "final": 0.2415,
+          "brier_final": 0.0583,
+          "brier_raw": 0.1431
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 8,
+          "ev_mean": 0.3967,
+          "spread": 0.28,
+          "w": 0.62,
+          "final": 0.2633,
+          "brier_final": 0.0693,
+          "brier_raw": 0.1573
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": -0.0492,
+      "final_brier": 0.0693,
+      "brier_market": 0.01
+    },
+    {
+      "ticker": "KXMALTAPARLI-26MAY30-LAB",
+      "question": "Will Labour Party win the 2026 Malta House of Representatives election?",
+      "outcome": 1,
+      "implied_yes": 0.71,
+      "base_rate": 0.51,
+      "memory_only": 0.5,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 8,
+          "ev_mean": 0.5417,
+          "spread": 0.06,
+          "w": 0.62,
+          "final": 0.5295,
+          "brier_final": 0.2214,
+          "brier_raw": 0.2101
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 9,
+          "ev_mean": 0.6117,
+          "spread": 0.2,
+          "w": 0.64,
+          "final": 0.5754,
+          "brier_final": 0.1803,
+          "brier_raw": 0.1508
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 7,
+          "ev_mean": 0.52,
+          "spread": 0.0,
+          "w": 0.58,
+          "final": 0.5158,
+          "brier_final": 0.2344,
+          "brier_raw": 0.2304
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 11,
+          "ev_mean": 0.98,
+          "spread": 0.05,
+          "w": 0.69,
+          "final": 0.8331,
+          "brier_final": 0.0278,
+          "brier_raw": 0.0004
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": 0.1936,
+      "final_brier": 0.0278,
+      "brier_market": 0.0841
+    },
+    {
+      "ticker": "KXLTGOVOKNOMR-26-JHUM",
+      "question": "Will Justin Humphrey be the Republican nominee for Lt. Governor in Oklahoma?",
+      "outcome": 0,
+      "implied_yes": 0.07,
+      "base_rate": 0.125,
+      "memory_only": 0.075,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 5,
+          "ev_mean": 0.2833,
+          "spread": 0.1,
+          "w": 0.5,
+          "final": 0.2042,
+          "brier_final": 0.0417,
+          "brier_raw": 0.0803
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 4,
+          "ev_mean": 0.3133,
+          "spread": 0.12,
+          "w": 0.44,
+          "final": 0.2087,
+          "brier_final": 0.0436,
+          "brier_raw": 0.0982
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 4,
+          "ev_mean": 0.3167,
+          "spread": 0.1,
+          "w": 0.44,
+          "final": 0.2102,
+          "brier_final": 0.0442,
+          "brier_raw": 0.1003
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 4,
+          "ev_mean": 0.3,
+          "spread": 0.1,
+          "w": 0.44,
+          "final": 0.2028,
+          "brier_final": 0.0411,
+          "brier_raw": 0.09
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": 0.0006,
+      "final_brier": 0.0411,
+      "brier_market": 0.0049
+    },
+    {
+      "ticker": "KXICEDIRECTOR-27JAN01-DVEN",
+      "question": "Will David Venturella be the next head of U.S. Immigration and Customs Enforcement of United States?",
+      "outcome": 1,
+      "implied_yes": 0.927,
+      "base_rate": 0.0275,
+      "memory_only": 0.05,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 6,
+          "ev_mean": 0.8333,
+          "spread": 0.2,
+          "w": 0.55,
+          "final": 0.467,
+          "brier_final": 0.284,
+          "brier_raw": 0.0278
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 6,
+          "ev_mean": 0.9,
+          "spread": 0.1,
+          "w": 0.55,
+          "final": 0.5034,
+          "brier_final": 0.2466,
+          "brier_raw": 0.01
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 6,
+          "ev_mean": 0.8908,
+          "spread": 0.13,
+          "w": 0.55,
+          "final": 0.4984,
+          "brier_final": 0.2516,
+          "brier_raw": 0.0119
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 7,
+          "ev_mean": 0.8792,
+          "spread": 0.1,
+          "w": 0.58,
+          "final": 0.5243,
+          "brier_final": 0.2263,
+          "brier_raw": 0.0146
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": 0.0577,
+      "final_brier": 0.2263,
+      "brier_market": 0.0053
+    },
+    {
+      "ticker": "KXOKPRIMARY-01R26-JCOC",
+      "question": "Will Jed Cochran be the Republican nominee for OK-01?",
+      "outcome": 0,
+      "implied_yes": 0.06,
+      "base_rate": 0.15,
+      "memory_only": 0.3,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 5,
+          "ev_mean": 0.125,
+          "spread": 0.2,
+          "w": 0.5,
+          "final": 0.1375,
+          "brier_final": 0.0189,
+          "brier_raw": 0.0156
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 6,
+          "ev_mean": 0.2,
+          "spread": 0.1,
+          "w": 0.55,
+          "final": 0.1773,
+          "brier_final": 0.0314,
+          "brier_raw": 0.04
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 7,
+          "ev_mean": 0.1942,
+          "spread": 0.215,
+          "w": 0.58,
+          "final": 0.1758,
+          "brier_final": 0.0309,
+          "brier_raw": 0.0377
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 5,
+          "ev_mean": 0.1417,
+          "spread": 0.2,
+          "w": 0.5,
+          "final": 0.1458,
+          "brier_final": 0.0213,
+          "brier_raw": 0.0201
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": -0.0024,
+      "final_brier": 0.0213,
+      "brier_market": 0.0036
+    },
+    {
+      "ticker": "KXTXPRIMARY-05D26-CHOC",
+      "question": "Will Chelsey Hockett be the Democratic nominee for TX-05?",
+      "outcome": 1,
+      "implied_yes": 0.913,
+      "base_rate": 0.15,
+      "memory_only": 0.175,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 7,
+          "ev_mean": 0.3667,
+          "spread": 0.2,
+          "w": 0.58,
+          "final": 0.2764,
+          "brier_final": 0.5236,
+          "brier_raw": 0.4011
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 6,
+          "ev_mean": 0.3933,
+          "spread": 0.42,
+          "w": 0.55,
+          "final": 0.2827,
+          "brier_final": 0.5145,
+          "brier_raw": 0.368
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 7,
+          "ev_mean": 0.43,
+          "spread": 0.3,
+          "w": 0.58,
+          "final": 0.3133,
+          "brier_final": 0.4715,
+          "brier_raw": 0.3249
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 7,
+          "ev_mean": 0.2333,
+          "spread": 0.2,
+          "w": 0.58,
+          "final": 0.1986,
+          "brier_final": 0.6422,
+          "brier_raw": 0.5878
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": -0.1186,
+      "final_brier": 0.6422,
+      "brier_market": 0.0076
+    },
+    {
+      "ticker": "KXLTGOVGANOMD-26-NPAR",
+      "question": "Will Nabilah Parkes be the Democratic nominee for Lt. Governor in Georgia?",
+      "outcome": 0,
+      "implied_yes": 0.14,
+      "base_rate": 0.075,
+      "memory_only": 0.075,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 11,
+          "ev_mean": 0.4783,
+          "spread": 0.1,
+          "w": 0.69,
+          "final": 0.3523,
+          "brier_final": 0.1241,
+          "brier_raw": 0.2288
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 12,
+          "ev_mean": 0.495,
+          "spread": 0.1,
+          "w": 0.71,
+          "final": 0.3715,
+          "brier_final": 0.138,
+          "brier_raw": 0.245
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 11,
+          "ev_mean": 0.465,
+          "spread": 0.07,
+          "w": 0.69,
+          "final": 0.3431,
+          "brier_final": 0.1177,
+          "brier_raw": 0.2162
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 8,
+          "ev_mean": 0.4958,
+          "spread": 0.1,
+          "w": 0.62,
+          "final": 0.334,
+          "brier_final": 0.1115,
+          "brier_raw": 0.2459
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": 0.0126,
+      "final_brier": 0.1115,
+      "brier_market": 0.0196
+    },
+    {
+      "ticker": "KXARSENALCUPS-26-1",
+      "question": "Will Arsenal win at least 1 trophy this season",
+      "outcome": 1,
+      "implied_yes": 0.95,
+      "base_rate": 0.5,
+      "memory_only": 0.55,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 11,
+          "ev_mean": 0.6525,
+          "spread": 0.335,
+          "w": 0.69,
+          "final": 0.6048,
+          "brier_final": 0.1561,
+          "brier_raw": 0.1208
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 11,
+          "ev_mean": 0.7957,
+          "spread": 0.174,
+          "w": 0.69,
+          "final": 0.7033,
+          "brier_final": 0.088,
+          "brier_raw": 0.0418
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 11,
+          "ev_mean": 0.72,
+          "spread": 0.37,
+          "w": 0.69,
+          "final": 0.6512,
+          "brier_final": 0.1216,
+          "brier_raw": 0.0784
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 10,
+          "ev_mean": 0.701,
+          "spread": 0.364,
+          "w": 0.67,
+          "final": 0.634,
+          "brier_final": 0.134,
+          "brier_raw": 0.0894
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": 0.0221,
+      "final_brier": 0.134,
+      "brier_market": 0.0025
+    },
+    {
+      "ticker": "KXSWISS10MILLION-26",
+      "question": "Will the \"No to ten million Switzerland! sustainability initiative\" pass?",
+      "outcome": 0,
+      "implied_yes": 0.075,
+      "base_rate": 0.3,
+      "memory_only": 0.4,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 10,
+          "ev_mean": 0.4217,
+          "spread": 0.07,
+          "w": 0.67,
+          "final": 0.3811,
+          "brier_final": 0.1452,
+          "brier_raw": 0.1778
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 10,
+          "ev_mean": 0.3858,
+          "spread": 0.045,
+          "w": 0.67,
+          "final": 0.3572,
+          "brier_final": 0.1276,
+          "brier_raw": 0.1489
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 15,
+          "ev_mean": 0.4133,
+          "spread": 0.1,
+          "w": 0.75,
+          "final": 0.385,
+          "brier_final": 0.1482,
+          "brier_raw": 0.1708
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 16,
+          "ev_mean": 0.41,
+          "spread": 0.08,
+          "w": 0.76,
+          "final": 0.3838,
+          "brier_final": 0.1473,
+          "brier_raw": 0.1681
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": -0.0021,
+      "final_brier": 0.1473,
+      "brier_market": 0.0056
+    },
+    {
+      "ticker": "KXPERUPRES1RMOV-26APR12-KFUJ-P7",
+      "question": "Will the margin of victory for Keiko Fujimori in the first round of the Peru presidential election be between 5% and 10%?",
+      "outcome": 1,
+      "implied_yes": 0.92,
+      "base_rate": 0.3,
+      "memory_only": 0.3,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 17,
+          "ev_mean": 0.3667,
+          "spread": 0.1,
+          "w": 0.77,
+          "final": 0.3515,
+          "brier_final": 0.4205,
+          "brier_raw": 0.4011
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 17,
+          "ev_mean": 0.3143,
+          "spread": 0.12,
+          "w": 0.77,
+          "final": 0.3111,
+          "brier_final": 0.4746,
+          "brier_raw": 0.4701
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 17,
+          "ev_mean": 0.3,
+          "spread": 0.1,
+          "w": 0.77,
+          "final": 0.3,
+          "brier_final": 0.49,
+          "brier_raw": 0.49
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 17,
+          "ev_mean": 0.3167,
+          "spread": 0.1,
+          "w": 0.77,
+          "final": 0.3129,
+          "brier_final": 0.4721,
+          "brier_raw": 0.4669
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": -0.0516,
+      "final_brier": 0.4721,
+      "brier_market": 0.0064
+    },
+    {
+      "ticker": "KXVOTEPRIMARY-SENATETXR26JCOR-52",
+      "question": "Will John Cornyn receive between 51% and 54% of the popular vote in the 2026 Texas Republican Senate runoff?",
+      "outcome": 0,
+      "implied_yes": 0.05,
+      "base_rate": 0.2,
+      "memory_only": 0.2,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 2,
+          "ev_mean": 0.251,
+          "spread": 0.306,
+          "w": 0.3,
+          "final": 0.2153,
+          "brier_final": 0.0464,
+          "brier_raw": 0.063
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 2,
+          "ev_mean": 0.195,
+          "spread": 0.13,
+          "w": 0.3,
+          "final": 0.1985,
+          "brier_final": 0.0394,
+          "brier_raw": 0.038
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 2,
+          "ev_mean": 0.3177,
+          "spread": 0.306,
+          "w": 0.3,
+          "final": 0.2353,
+          "brier_final": 0.0554,
+          "brier_raw": 0.1009
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 2,
+          "ev_mean": 0.2833,
+          "spread": 0.3,
+          "w": 0.3,
+          "final": 0.225,
+          "brier_final": 0.0506,
+          "brier_raw": 0.0803
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": -0.0042,
+      "final_brier": 0.0506,
+      "brier_market": 0.0025
+    },
+    {
+      "ticker": "KXSENATECONFIRM-26MAY01-RCEK",
+      "question": "Will Robert Cekada be confirmed as ATF Director before May 1, 2026?",
+      "outcome": 1,
+      "implied_yes": 0.83,
+      "base_rate": 0.375,
+      "memory_only": 0.275,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 9,
+          "ev_mean": 0.6458,
+          "spread": 0.37,
+          "w": 0.64,
+          "final": 0.5491,
+          "brier_final": 0.2033,
+          "brier_raw": 0.1254
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 9,
+          "ev_mean": 0.6275,
+          "spread": 0.3,
+          "w": 0.64,
+          "final": 0.5373,
+          "brier_final": 0.2141,
+          "brier_raw": 0.1388
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 9,
+          "ev_mean": 0.4667,
+          "spread": 0.6,
+          "w": 0.64,
+          "final": 0.4339,
+          "brier_final": 0.3204,
+          "brier_raw": 0.2844
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 9,
+          "ev_mean": 0.6017,
+          "spread": 0.37,
+          "w": 0.64,
+          "final": 0.5207,
+          "brier_final": 0.2297,
+          "brier_raw": 0.1587
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": -0.0264,
+      "final_brier": 0.2297,
+      "brier_market": 0.0289
+    },
+    {
+      "ticker": "KXTXPRIMARY-14D26-RDAV",
+      "question": "Will Richard Davis be the Democratic nominee for TX-14?",
+      "outcome": 0,
+      "implied_yes": 0.059,
+      "base_rate": 0.05,
+      "memory_only": 0.15,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 10,
+          "ev_mean": 0.0417,
+          "spread": 0.05,
+          "w": 0.67,
+          "final": 0.0444,
+          "brier_final": 0.002,
+          "brier_raw": 0.0017
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 10,
+          "ev_mean": 0.0692,
+          "spread": 0.13,
+          "w": 0.67,
+          "final": 0.0628,
+          "brier_final": 0.0039,
+          "brier_raw": 0.0048
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 10,
+          "ev_mean": 0.0583,
+          "spread": 0.15,
+          "w": 0.67,
+          "final": 0.0556,
+          "brier_final": 0.0031,
+          "brier_raw": 0.0034
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 10,
+          "ev_mean": 0.0383,
+          "spread": 0.045,
+          "w": 0.67,
+          "final": 0.0422,
+          "brier_final": 0.0018,
+          "brier_raw": 0.0015
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": 0.0002,
+      "final_brier": 0.0018,
+      "brier_market": 0.0035
+    },
+    {
+      "ticker": "KXCAPRIMARY-0226-TGEI",
+      "question": "Will Tim Geist advance in the 2026 CA-02 primary?",
+      "outcome": 0,
+      "implied_yes": 0.099,
+      "base_rate": 0.5,
+      "memory_only": 0.5,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 6,
+          "ev_mean": 0.3255,
+          "spread": 0.15,
+          "w": 0.55,
+          "final": 0.4048,
+          "brier_final": 0.1639,
+          "brier_raw": 0.106
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 10,
+          "ev_mean": 0.4,
+          "spread": 0.2,
+          "w": 0.67,
+          "final": 0.4333,
+          "brier_final": 0.1878,
+          "brier_raw": 0.16
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 10,
+          "ev_mean": 0.3333,
+          "spread": 0.2,
+          "w": 0.67,
+          "final": 0.3889,
+          "brier_final": 0.1512,
+          "brier_raw": 0.1111
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 10,
+          "ev_mean": 0.3308,
+          "spread": 0.315,
+          "w": 0.67,
+          "final": 0.3872,
+          "brier_final": 0.1499,
+          "brier_raw": 0.1095
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": 0.014,
+      "final_brier": 0.1499,
+      "brier_market": 0.0098
+    },
+    {
+      "ticker": "KXCAPRIMARY-0226-RYEE",
+      "question": "Will Rose Yee advance in the 2026 CA-02 primary?",
+      "outcome": 0,
+      "implied_yes": 0.3,
+      "base_rate": 0.51,
+      "memory_only": 0.5,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 5,
+          "ev_mean": 0.3833,
+          "spread": 0.2,
+          "w": 0.5,
+          "final": 0.4467,
+          "brier_final": 0.1995,
+          "brier_raw": 0.1469
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 10,
+          "ev_mean": 0.4167,
+          "spread": 0.1,
+          "w": 0.67,
+          "final": 0.4478,
+          "brier_final": 0.2005,
+          "brier_raw": 0.1736
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 10,
+          "ev_mean": 0.4,
+          "spread": 0.1,
+          "w": 0.67,
+          "final": 0.4367,
+          "brier_final": 0.1907,
+          "brier_raw": 0.16
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 10,
+          "ev_mean": 0.4283,
+          "spread": 0.2,
+          "w": 0.67,
+          "final": 0.4556,
+          "brier_final": 0.2075,
+          "brier_raw": 0.1835
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": -0.008,
+      "final_brier": 0.2075,
+      "brier_market": 0.09
+    },
+    {
+      "ticker": "KXSCPRIMARY-05D26-ACLO",
+      "question": "Will Andrew Clough be the Democratic nominee for SC-05?",
+      "outcome": 0,
+      "implied_yes": 0.07,
+      "base_rate": 0.05,
+      "memory_only": 0.05,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 6,
+          "ev_mean": 0.2833,
+          "spread": 0.2,
+          "w": 0.55,
+          "final": 0.1773,
+          "brier_final": 0.0314,
+          "brier_raw": 0.0803
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 4,
+          "ev_mean": 0.2167,
+          "spread": 0.2,
+          "w": 0.44,
+          "final": 0.1241,
+          "brier_final": 0.0154,
+          "brier_raw": 0.0469
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 5,
+          "ev_mean": 0.2117,
+          "spread": 0.3,
+          "w": 0.5,
+          "final": 0.1308,
+          "brier_final": 0.0171,
+          "brier_raw": 0.0448
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 6,
+          "ev_mean": 0.1625,
+          "spread": 0.225,
+          "w": 0.55,
+          "final": 0.1114,
+          "brier_final": 0.0124,
+          "brier_raw": 0.0264
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": 0.019,
+      "final_brier": 0.0124,
+      "brier_market": 0.0049
+    },
+    {
+      "ticker": "KXSCPRIMARY-06R26-MWAS",
+      "question": "Will Maurice Washington be the Republican nominee for SC-06?",
+      "outcome": 0,
+      "implied_yes": 0.06,
+      "base_rate": 0.075,
+      "memory_only": 0.075,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 8,
+          "ev_mean": 0.0783,
+          "spread": 0.13,
+          "w": 0.62,
+          "final": 0.0771,
+          "brier_final": 0.0059,
+          "brier_raw": 0.0061
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 9,
+          "ev_mean": 0.1633,
+          "spread": 0.2,
+          "w": 0.64,
+          "final": 0.1318,
+          "brier_final": 0.0174,
+          "brier_raw": 0.0267
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 10,
+          "ev_mean": 0.1333,
+          "spread": 0.2,
+          "w": 0.67,
+          "final": 0.1139,
+          "brier_final": 0.013,
+          "brier_raw": 0.0178
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 6,
+          "ev_mean": 0.0642,
+          "spread": 0.125,
+          "w": 0.55,
+          "final": 0.0691,
+          "brier_final": 0.0048,
+          "brier_raw": 0.0041
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": 0.0011,
+      "final_brier": 0.0048,
+      "brier_market": 0.0036
+    }
+  ]
+}

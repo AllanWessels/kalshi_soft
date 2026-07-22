@@ -6,24 +6,33 @@ checkpoints using ONLY sources published <= that checkpoint, and score vs the kn
 outcome. The market price is NEVER shown to the forecaster; it is compared only after.
 
 Two leakage channels, handled explicitly:
-  1. RETRIEVAL leakage ("the web knows"): closed HARD here — GNews is queried per
-     checkpoint with Google's `before:<date>` operator AND every item is re-filtered
-     on its parsed pubDate <= checkpoint. Undated items are DROPPED (can't prove <=T).
-     Wikipedia/live pages are excluded (today's copy reflects the outcome).
-  2. PARAMETRIC leakage ("the weights know"): MEASURED, not assumed — a memory-only
-     probe (ensemble with EMPTY evidence) runs per event. If it already sits near the
-     truth with high confidence, the weights are leaking -> flag/drop that event.
+  1. RETRIEVAL leakage ("the web knows"): closed HARD — GNews is queried per checkpoint
+     with Google's `before:<date>` operator AND every item is re-filtered on its parsed
+     pubDate <= checkpoint. Undated items are DROPPED. Wikipedia/live pages excluded.
+  2. PARAMETRIC leakage ("the weights know"): MEASURED, not assumed — a memory-only probe
+     (empty evidence) runs per event, and is flagged as leakage ONLY when it is confident
+     & correct AND the base rate is genuinely uncertain (a lopsided base rate explains a
+     correct memory-only forecast without any memorized outcome).
 
-This is a PILOT harness (few events, small ensemble) whose job is to prove the timeline
-is honestly reconstructable and to measure the parametric-leakage rate before scaling.
+Super-team construction (the fixes the 3-event pilot demanded):
+  FIX 1 (real diversity): 2 model families (Qwen3 + Mistral) x 3 personas x temp>0.
+         The pilot's single-model personas collapsed to identical numbers -> no diversity
+         -> manufactured confidence. Model-major batching avoids VRAM reload thrash.
+  FIX 2 (anti-overreaction): base-rate-anchored shrinkage. final = w*evidence + (1-w)*base,
+         w grows with the number of distinct sources, so thin/vivid evidence cannot swing
+         the estimate far from the reference-class base rate.
+  FIX 3 (honest leak probe): see channel 2 above.
 
-Usage: python3 scripts/backtest_pit.py [--checkpoints 14,7,3,1] [--personas standard,outside,inside]
+All three fixes live at the AGGREGATION layer — production forecasting code is untouched
+until the backtest shows which calibration to port.
+
+Usage: python3 scripts/backtest_pit.py [--events data/backtest_pit/events_40.json]
+                                        [--checkpoints 14,7,3,1] [--temp 0.4] [--limit N]
 """
 from __future__ import annotations
 
 import argparse
 import json
-import re
 import sys
 from datetime import datetime, timedelta, timezone
 from email.utils import parsedate_to_datetime
@@ -34,188 +43,240 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from lib import local_llm, retrieval, scoring, config  # noqa: E402
 
 OUT_DIR = config.DATA_DIR / "backtest_pit"
-
-# Pilot event set — all settled June 2026 (after the local model's training cutoff, so
-# parametric leakage is expected LOW; the memory-only probe verifies per event).
-PILOT_EVENTS = [
-    {"ticker": "KXWATSONRNC", "outcome": 0, "implied_yes": 0.66,
-     "close_time": "2026-06-29T14:21:54Z",
-     "question": "Will SCOTUS bar counting mail ballots received after Election Day?",
-     "query": "Supreme Court mail ballots received after election day ruling"},
-    {"ticker": "KXPERSONPUBLIC-26JUL01-JROB", "outcome": 1, "implied_yes": 0.18,
-     "close_time": "2026-06-29T19:12:48Z",
-     "question": "Will John Roberts be seen in public before Jul 1, 2026?",
-     "query": "Chief Justice John Roberts public appearance June 2026"},
-    {"ticker": "KXLABORANNOUNCE-26-AUG01", "outcome": 1, "implied_yes": 0.42,
-     "close_time": "2026-06-30T03:21:45Z",
-     "question": ("Will Donald Trump issue any official announcement (e.g., Truth Social "
-                  "post) on naming his nominee for Labor Secretary before Aug 1, 2026?"),
-     "query": "Trump nominee Labor Secretary announcement"},
-]
-
 PERSONAS = ["standard", "outside", "inside"]
+MODELS = [config.LOCAL_LLM_MODEL, config.LOCAL_LLM_MODEL_MISTRAL]  # Qwen3, Mistral — 2 families
 
 
+# --------------------------------------------------------------------------- helpers
 def _parse_iso(s: str) -> datetime:
     return datetime.fromisoformat(s.replace("Z", "+00:00"))
 
 
 def _parse_pubdate(s: str):
-    """RSS pubDate -> aware datetime, or None if unparseable."""
     if not s:
         return None
     try:
         dt = parsedate_to_datetime(s)
-        if dt.tzinfo is None:
-            dt = dt.replace(tzinfo=timezone.utc)
-        return dt
+        return dt.replace(tzinfo=timezone.utc) if dt.tzinfo is None else dt
     except (TypeError, ValueError):
         return None
 
 
 def capture_sources_asof(query: str, checkpoint: datetime, max_results: int = 20) -> list[dict]:
-    """GNews with `before:<checkpoint>`, then HARD-filter parsed pubDate <= checkpoint.
-    Undated items are dropped. Returns dated, sorted (oldest-first) source rows."""
-    before = checkpoint.strftime("%Y-%m-%d")
-    q = f"{query} before:{before}"
-    rows = retrieval._google_news(q, max_results=max_results)
+    """GNews `before:<checkpoint>` + HARD pubDate<=checkpoint filter. Undated dropped."""
+    q = f"{query} before:{checkpoint.strftime('%Y-%m-%d')}"
     kept = []
-    for r in rows:
+    for r in retrieval._google_news(q, max_results=max_results):
         pd = _parse_pubdate(r.get("date", ""))
         if pd is None or pd > checkpoint:
             continue
-        r = dict(r)
-        r["_pub"] = pd
+        r = dict(r); r["_pub"] = pd
         kept.append(r)
-    # dedup by (source,title)
     seen, uniq = set(), []
     for r in sorted(kept, key=lambda x: x["_pub"]):
         k = (r.get("source", ""), r.get("title", "")[:80])
-        if k in seen:
-            continue
-        seen.add(k)
-        uniq.append(r)
+        if k not in seen:
+            seen.add(k); uniq.append(r)
     return uniq
-
-
-def ledger_text(rows: list[dict]) -> str:
-    lines = []
-    for r in rows:
-        d = r["_pub"].strftime("%Y-%m-%d")
-        lines.append(f"[{d}] SOURCE: {r.get('source','?')} — {r.get('title','')}\n  {r.get('snippet','')}")
-    return "\n".join(lines)
 
 
 def _distinct_sources(rows: list[dict]) -> int:
     return len({(r.get("source") or "").strip().lower() for r in rows if r.get("source")})
 
 
-def ensemble_forecast(question: str, notes: dict, as_of: str, personas: list[str]) -> dict:
-    """Run the price-blind super-team (one pass per persona). Returns mean prob, spread,
-    spread-derived confidence, and per-persona probs. Failed passes are skipped."""
-    probs, per = [], {}
-    for p in personas:
-        try:
-            out = local_llm.forecast(question, notes, as_of=as_of, persona=p, temperature=0.0)
-            probs.append(out["my_probability"])
-            per[p] = round(out["my_probability"], 4)
-        except local_llm.LocalLLMError as e:
-            per[p] = f"ERR:{str(e)[:40]}"
-    if not probs:
-        return {"prob": None, "spread": None, "confidence": None, "per_persona": per, "n": 0}
-    mean = sum(probs) / len(probs)
-    spread = max(probs) - min(probs)
-    conf = "high" if spread < 0.10 else ("medium" if spread < 0.25 else "low")
-    return {"prob": round(mean, 4), "spread": round(spread, 4), "confidence": conf,
-            "per_persona": per, "n": len(probs)}
+def ledger_text(rows: list[dict]) -> str:
+    return "\n".join(
+        f"[{r['_pub'].strftime('%Y-%m-%d')}] SOURCE: {r.get('source','?')} — {r.get('title','')}\n"
+        f"  {r.get('snippet','')}" for r in rows)
 
 
-def run_event(ev: dict, checkpoint_days: list[int], personas: list[str]) -> dict:
-    close = _parse_iso(ev["close_time"])
-    q = ev["question"]
-    result = {"ticker": ev["ticker"], "question": q, "outcome": ev["outcome"],
-              "implied_yes": ev["implied_yes"], "close_time": ev["close_time"],
-              "checkpoints": []}
+def _fc(model, question, notes, as_of, persona, temp):
+    """One forecast pass; returns float prob or None on failure."""
+    try:
+        return local_llm.forecast(question, notes, as_of=as_of, persona=persona,
+                                  temperature=temp, model=model)["my_probability"]
+    except local_llm.LocalLLMError:
+        return None
 
-    for days in sorted(checkpoint_days, reverse=True):
-        T = close - timedelta(days=days)
-        rows = capture_sources_asof(ev["query"], T)
-        nsrc = _distinct_sources(rows)
-        cp = {"label": f"T-{days}d", "as_of": T.strftime("%Y-%m-%dT%H:%M:%SZ"),
-              "n_sources_le_T": nsrc, "n_items": len(rows)}
-        if rows:
-            raw = ledger_text(rows)
-            try:
-                notes = local_llm.extract_evidence(q, raw, as_of=cp["as_of"])
-            except local_llm.LocalLLMError:
-                notes = {"question": q, "as_of": cp["as_of"], "facts": []}
-        else:
-            notes = {"question": q, "as_of": cp["as_of"], "facts": []}
-        fc = ensemble_forecast(q, notes, cp["as_of"], personas)
-        cp.update(fc)
-        if fc["prob"] is not None:
-            cp["brier"] = round(scoring.brier(fc["prob"], ev["outcome"]), 4)
-        result["checkpoints"].append(cp)
-        print(f"  {ev['ticker']:28} {cp['label']:6} src={nsrc:2} "
-              f"prob={fc['prob']} spread={fc['spread']} conf={fc['confidence']} "
-              f"brier={cp.get('brier')}")
 
-    # PARAMETRIC-LEAKAGE PROBE: ensemble with NO evidence, as of resolution.
-    empty = {"question": q, "as_of": ev["close_time"], "facts": []}
-    probe = ensemble_forecast(q, empty, ev["close_time"], personas)
-    probe["brier"] = (round(scoring.brier(probe["prob"], ev["outcome"]), 4)
-                      if probe["prob"] is not None else None)
-    # Heuristic flag: memory-only already confident & correct-side -> weights likely leak.
-    leak = (probe["prob"] is not None
-            and probe["confidence"] == "high"
-            and abs(probe["prob"] - ev["outcome"]) < 0.25)
-    probe["leak_flag"] = bool(leak)
-    result["memory_only_probe"] = probe
-    result["brier_market"] = round(scoring.brier(ev["implied_yes"], ev["outcome"]), 4)
-    print(f"  {ev['ticker']:28} MEM-ONLY prob={probe['prob']} conf={probe['confidence']} "
-          f"brier={probe['brier']} LEAK={probe['leak_flag']}  | market_brier={result['brier_market']}")
-    return result
+def _mean(xs):
+    xs = [x for x in xs if x is not None]
+    return sum(xs) / len(xs) if xs else None
+
+
+# --------------------------------------------------------------------------- phases
+def phase_retrieval(events, checkpoints):
+    """No LLM. -> ledgers[ticker][days] = rows, meta[ticker][days] = n_sources."""
+    ledgers, nsrc = {}, {}
+    for ev in events:
+        close = _parse_iso(ev["close_time"])
+        ledgers[ev["ticker"]], nsrc[ev["ticker"]] = {}, {}
+        for days in checkpoints:
+            T = close - timedelta(days=days)
+            rows = capture_sources_asof(ev["query"] or ev["question"], T)
+            ledgers[ev["ticker"]][days] = rows
+            nsrc[ev["ticker"]][days] = _distinct_sources(rows)
+        print(f"  [retrieval] {ev['ticker']:30} " +
+              " ".join(f"T-{d}={nsrc[ev['ticker']][d]}" for d in checkpoints))
+    return ledgers, nsrc
+
+
+def phase_extract(events, checkpoints, ledgers):
+    """Condense each ledger into evidence notes ONCE (default model). -> notes[ticker][days]."""
+    notes = {}
+    for ev in events:
+        close = _parse_iso(ev["close_time"]); notes[ev["ticker"]] = {}
+        for days in checkpoints:
+            rows = ledgers[ev["ticker"]][days]
+            as_of = (close - timedelta(days=days)).strftime("%Y-%m-%dT%H:%M:%SZ")
+            if rows:
+                try:
+                    n = local_llm.extract_evidence(ev["question"], ledger_text(rows), as_of=as_of)
+                except local_llm.LocalLLMError:
+                    n = {"question": ev["question"], "as_of": as_of, "facts": []}
+            else:
+                n = {"question": ev["question"], "as_of": as_of, "facts": []}
+            notes[ev["ticker"]][days] = n
+        print(f"  [extract]  {ev['ticker']:30} done")
+    return notes
+
+
+def phase_forecast(events, checkpoints, notes, temp):
+    """MODEL-MAJOR forecasting (each model resident for its whole batch).
+    -> members[ticker][days] = [probs], base[ticker]=[per-model base rate],
+       mem[ticker]=[per-model memory-only]."""
+    members = {ev["ticker"]: {d: [] for d in checkpoints} for ev in events}
+    base = {ev["ticker"]: [] for ev in events}
+    mem = {ev["ticker"]: [] for ev in events}
+    for model in MODELS:
+        print(f"  [forecast] loading model {model} ...")
+        for ev in events:
+            close = _parse_iso(ev["close_time"]); q = ev["question"]
+            empty = {"question": q, "as_of": ev["close_time"], "facts": []}
+            base[ev["ticker"]].append(_fc(model, q, empty, ev["close_time"], "outside", 0.0))
+            mem[ev["ticker"]].append(_fc(model, q, empty, ev["close_time"], "standard", 0.0))
+            for days in checkpoints:
+                as_of = (close - timedelta(days=days)).strftime("%Y-%m-%dT%H:%M:%SZ")
+                n = notes[ev["ticker"]][days]
+                for persona in PERSONAS:
+                    members[ev["ticker"]][days].append(_fc(model, q, n, as_of, persona, temp))
+        print(f"  [forecast] {model} batch complete")
+    return members, base, mem
+
+
+def aggregate(events, checkpoints, members, base, mem, nsrc):
+    """No LLM. Apply the three fixes and score."""
+    results, all_final, all_raw, all_out, mkt = [], [], [], [], []
+    leak_events = 0
+    for ev in events:
+        t, o = ev["ticker"], ev["outcome"]
+        base_rate = _mean(base[t]); mem_only = _mean(mem[t])
+        r = {"ticker": t, "question": ev["question"], "outcome": o,
+             "implied_yes": ev["implied_yes"], "base_rate": _round(base_rate),
+             "memory_only": _round(mem_only), "checkpoints": []}
+        for days in checkpoints:
+            ms = [m for m in members[t][days] if m is not None]
+            ev_mean = _mean(ms)
+            if ev_mean is None or base_rate is None:
+                r["checkpoints"].append({"label": f"T-{days}d", "n_members": 0}); continue
+            spread = (max(ms) - min(ms)) if len(ms) > 1 else 0.0
+            n = nsrc[t][days]
+            w = min(0.85, max(0.30, n / (n + 5)))                 # FIX 2: shrink to base rate
+            final = w * ev_mean + (1 - w) * base_rate
+            cp = {"label": f"T-{days}d", "n_members": len(ms), "n_sources": n,
+                  "ev_mean": _round(ev_mean), "spread": _round(spread), "w": round(w, 2),
+                  "final": _round(final), "brier_final": _round(scoring.brier(final, o)),
+                  "brier_raw": _round(scoring.brier(ev_mean, o))}
+            r["checkpoints"].append(cp)
+            all_final.append((final, o)); all_raw.append((ev_mean, o))
+        # FIX 3: leak only if memory-only confident-correct AND base rate genuinely uncertain
+        leak = (mem_only is not None and abs(mem_only - o) < 0.25
+                and 0.35 < (base_rate or 0.5) < 0.65)
+        r["leak_flag"] = bool(leak); leak_events += int(leak)
+        # updating skill: earliest vs latest checkpoint brier
+        briers = [c["brier_final"] for c in r["checkpoints"] if c.get("brier_final") is not None]
+        r["updating_delta"] = _round(briers[0] - briers[-1]) if len(briers) >= 2 else None
+        fin = next((c for c in reversed(r["checkpoints"]) if c.get("final") is not None), None)
+        r["final_brier"] = fin["brier_final"] if fin else None
+        r["brier_market"] = _round(scoring.brier(ev["implied_yes"], o))
+        all_out.append(o); mkt.append((ev["implied_yes"], o))
+        results.append(r)
+    return results, all_final, all_raw, mkt, leak_events
+
+
+def _round(x, n=4):
+    return round(x, n) if isinstance(x, (int, float)) else x
+
+
+def reliability(pairs, bins=5):
+    """Coarse reliability curve: per prob-bin, (mean_pred, empirical_freq, n)."""
+    out = []
+    for b in range(bins):
+        lo, hi = b / bins, (b + 1) / bins
+        sel = [(p, o) for p, o in pairs if (lo <= p < hi or (b == bins - 1 and p == 1.0))]
+        if sel:
+            out.append({"bin": f"{lo:.1f}-{hi:.1f}", "n": len(sel),
+                        "mean_pred": round(sum(p for p, _ in sel) / len(sel), 3),
+                        "emp_freq": round(sum(o for _, o in sel) / len(sel), 3)})
+    return out
 
 
 def main() -> int:
     ap = argparse.ArgumentParser()
+    ap.add_argument("--events", default=str(OUT_DIR / "events_40.json"))
     ap.add_argument("--checkpoints", default="14,7,3,1")
-    ap.add_argument("--personas", default=",".join(PERSONAS))
+    ap.add_argument("--temp", type=float, default=0.4)
+    ap.add_argument("--limit", type=int, default=0)
     args = ap.parse_args()
     cps = [int(x) for x in args.checkpoints.split(",") if x.strip()]
-    personas = [x.strip() for x in args.personas.split(",") if x.strip()]
+    events = json.loads(Path(args.events).read_text())
+    if args.limit:
+        events = events[:args.limit]
 
     if not (config.local_llm_enabled() and local_llm.ping()):
-        print("local_llm DOWN — cannot run as-of forecasts", file=sys.stderr)
-        return 2
+        print("local_llm DOWN", file=sys.stderr); return 2
 
-    print(f"PIT backtest: {len(PILOT_EVENTS)} events, checkpoints={cps}, personas={personas}\n")
-    results = [run_event(ev, cps, personas) for ev in PILOT_EVENTS]
+    print(f"PIT backtest: {len(events)} events, checkpoints={cps}, models={MODELS}, "
+          f"personas={PERSONAS}, temp={args.temp}\n")
+    print("PHASE 1 — retrieval (date-bounded, leakage-free)")
+    ledgers, nsrc = phase_retrieval(events, cps)
+    print("\nPHASE 2 — evidence extraction")
+    notes = phase_extract(events, cps, ledgers)
+    print("\nPHASE 3 — forecasting (model-major)")
+    members, base, mem = phase_forecast(events, cps, notes, args.temp)
+    print("\nPHASE 4 — aggregate + score")
+    results, all_final, all_raw, mkt, leak_events = aggregate(
+        events, cps, members, base, mem, nsrc)
 
+    def mb(pairs):
+        return sum(scoring.brier(p, o) for p, o in pairs) / len(pairs) if pairs else None
+    # market brier over ONLY the checkpoints we scored (fair denominator: per-event, but
+    # report event-level market brier vs per-checkpoint ensemble)
+    summary = {
+        "n_events": len(results),
+        "n_checkpoint_forecasts": len(all_final),
+        "brier_final_blended": _round(mb(all_final)),   # with FIX 2
+        "brier_raw_ensemble": _round(mb(all_raw)),      # without FIX 2 (diagnostic)
+        "brier_market_eventlevel": _round(mb(mkt)),
+        "mean_member_spread": _round(_mean(
+            [c["spread"] for r in results for c in r["checkpoints"] if c.get("spread") is not None])),
+        "leak_flagged_events": leak_events,
+        "mean_updating_delta": _round(_mean(
+            [r["updating_delta"] for r in results if r["updating_delta"] is not None])),
+        "reliability_blended": reliability(all_final),
+    }
     OUT_DIR.mkdir(parents=True, exist_ok=True)
-    out = OUT_DIR / "pilot_results.json"
-    out.write_text(json.dumps(results, indent=2))
+    (OUT_DIR / "scaled_results.json").write_text(json.dumps(
+        {"summary": summary, "events": results}, indent=2))
 
-    # ---- summary ----
     print("\n=== SUMMARY ===")
-    all_pairs, mkt_pairs = [], []
-    leak_events = 0
-    for r in results:
-        final = next((c for c in reversed(r["checkpoints"]) if c.get("prob") is not None), None)
-        fb = final["brier"] if final else None
-        print(f"{r['ticker']:28} out={r['outcome']} final_prob={final['prob'] if final else None} "
-              f"final_brier={fb} market_brier={r['brier_market']} "
-              f"mem_leak={r['memory_only_probe']['leak_flag']}")
-        for c in r["checkpoints"]:
-            if c.get("brier") is not None:
-                all_pairs.append(c["brier"])
-        mkt_pairs.append(r["brier_market"])
-        leak_events += int(r["memory_only_probe"]["leak_flag"])
-    if all_pairs:
-        print(f"\nmean ensemble Brier over all checkpoints: {sum(all_pairs)/len(all_pairs):.4f} (n={len(all_pairs)})")
-    print(f"mean market Brier (event-level): {sum(mkt_pairs)/len(mkt_pairs):.4f}")
-    print(f"parametric-leakage flagged events: {leak_events}/{len(results)}")
-    print(f"\nwrote {out}")
+    for k, v in summary.items():
+        if k != "reliability_blended":
+            print(f"  {k}: {v}")
+    print("  reliability (blended):")
+    for b in summary["reliability_blended"]:
+        print(f"    {b['bin']}: pred~{b['mean_pred']} emp={b['emp_freq']} (n={b['n']})")
+    print(f"\nwrote {OUT_DIR/'scaled_results.json'}")
     return 0
 
 

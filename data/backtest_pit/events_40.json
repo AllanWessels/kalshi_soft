@@ -1,0 +1,322 @@
+[
+ {
+  "ticker": "KXLABORANNOUNCE-26-JUL01",
+  "outcome": 1,
+  "implied_yes": 0.1,
+  "close_time": "2026-06-30T03:21:45Z",
+  "question": "Will Donald Trump issue any official announcement (e.g., Truth Social post) on naming his nominee for Labor Secretary before Jul 1, 2026?",
+  "query": "Will Donald Trump issue any official announcement (e.g., Truth Social post) on naming his"
+ },
+ {
+  "ticker": "KXBET-26-FAS-TIE",
+  "outcome": 0,
+  "implied_yes": 0.95,
+  "close_time": "2026-06-29T18:01:22Z",
+  "question": "Will Tie win Fashion Vanguard Award at 26th BET Awards?",
+  "query": "Will Tie win Fashion Vanguard Award at 26th BET Awards"
+ },
+ {
+  "ticker": "KXLABORANNOUNCE-26-AUG01",
+  "outcome": 1,
+  "implied_yes": 0.42,
+  "close_time": "2026-06-30T03:21:45Z",
+  "question": "Will Donald Trump issue any official announcement (e.g., Truth Social post) on naming his nominee for Labor Secretary before Aug 1, 2026?",
+  "query": "Will Donald Trump issue any official announcement (e.g., Truth Social post) on naming his"
+ },
+ {
+  "ticker": "KXBET-26-VID-CHA",
+  "outcome": 0,
+  "implied_yes": 0.77,
+  "close_time": "2026-06-29T17:07:09Z",
+  "question": "Will CHANEL win Video of the Year award at 26th BET Awards?",
+  "query": "Will CHANEL win Video of the Year award at 26th BET Awards"
+ },
+ {
+  "ticker": "KXALBUMSALES-YOUS-PURE-250000",
+  "outcome": 1,
+  "implied_yes": 0.86,
+  "close_time": "2026-06-19T03:59:00Z",
+  "question": "Will you seem pretty sad for a girl so in love have at least 250,000 Pure Album Sales on the Hits Daily Double Top 50 Chart for the week immediately following the wide release of you seem pretty sad for a girl so in love?",
+  "query": "Will you seem pretty sad for a girl so in love have at least 250,000 Pure Album Sales on t"
+ },
+ {
+  "ticker": "KXBET-26-ALB-MUT",
+  "outcome": 0,
+  "implied_yes": 0.06,
+  "close_time": "2026-06-29T17:06:35Z",
+  "question": "Will MUTT DELUXE: HEEL win Album of the Year award at 26th BET Awards?",
+  "query": "Will MUTT DELUXE: HEEL win Album of the Year award at 26th BET Awards"
+ },
+ {
+  "ticker": "KXALBUMSALES-YOUS-PURE-200000",
+  "outcome": 1,
+  "implied_yes": 0.95,
+  "close_time": "2026-06-19T03:59:00Z",
+  "question": "Will you seem pretty sad for a girl so in love have at least 200,000 Pure Album Sales on the Hits Daily Double Top 50 Chart for the week immediately following the wide release of you seem pretty sad for a girl so in love?",
+  "query": "Will you seem pretty sad for a girl so in love have at least 200,000 Pure Album Sales on t"
+ },
+ {
+  "ticker": "KXWATSONRNC",
+  "outcome": 0,
+  "implied_yes": 0.66,
+  "close_time": "2026-06-29T14:21:54Z",
+  "question": "Will SCOTUS bar counting mail ballots received after Election Day?",
+  "query": "Will SCOTUS bar counting mail ballots received after Election Day"
+ },
+ {
+  "ticker": "KXGAPRIMARY-07D26-AKOZ",
+  "outcome": 1,
+  "implied_yes": 0.931,
+  "close_time": "2026-06-17T00:36:23Z",
+  "question": "Will Anthony Kozycki be the Democratic nominee for GA-07?",
+  "query": "Will Anthony Kozycki be the Democratic nominee for GA-07"
+ },
+ {
+  "ticker": "KXVOTEPRIMARY-LAMAYOR1RKBASKBAS-69",
+  "outcome": 0,
+  "implied_yes": 0.05,
+  "close_time": "2026-06-27T15:22:48Z",
+  "question": "Will Karen Bass receive at least 38% of the popular vote in the 2026 Los Angeles mayoral primary?",
+  "query": "Will Karen Bass receive at least 38% of the popular vote in the 2026 Los Angeles mayoral p"
+ },
+ {
+  "ticker": "KXMIDTERMMOV-TXSENPKPAX-P18",
+  "outcome": 1,
+  "implied_yes": 0.91,
+  "close_time": "2026-06-16T15:49:39Z",
+  "question": "Will the margin of victory for Ken Paxton in the U.S. Senate primary election in Texas be at least 18 percentage points?",
+  "query": "Will the margin of victory for Ken Paxton in the U.S. Senate primary election in Texas be"
+ },
+ {
+  "ticker": "KXMDPRIMARY-06R26-MROC",
+  "outcome": 0,
+  "implied_yes": 0.09,
+  "close_time": "2026-06-24T03:59:39Z",
+  "question": "Will Mariela Roca be the Republican nominee for MD-06?",
+  "query": "Will Mariela Roca be the Republican nominee for MD-06"
+ },
+ {
+  "ticker": "KXMIDTERMMOV-TXSENPKPAX-P15",
+  "outcome": 1,
+  "implied_yes": 0.95,
+  "close_time": "2026-06-16T15:49:39Z",
+  "question": "Will the margin of victory for Ken Paxton in the U.S. Senate primary election in Texas be at least 15 percentage points?",
+  "query": "Will the margin of victory for Ken Paxton in the U.S. Senate primary election in Texas be"
+ },
+ {
+  "ticker": "KXMDPRIMARY-06R26-CBUR",
+  "outcome": 0,
+  "implied_yes": 0.18,
+  "close_time": "2026-06-24T03:59:39Z",
+  "question": "Will Chris Burnett be the Republican nominee for MD-06?",
+  "query": "Will Chris Burnett be the Republican nominee for MD-06"
+ },
+ {
+  "ticker": "KXCAPRIMARY-1626-PSOU",
+  "outcome": 1,
+  "implied_yes": 0.949,
+  "close_time": "2026-06-16T01:30:13Z",
+  "question": "Will Peter Sundin Soul\u00e9 advance in the 2026 CA-16 primary?",
+  "query": "Will Peter Sundin Soul\u00e9 advance in the 2026 CA-16 primary"
+ },
+ {
+  "ticker": "KXMDPRIMARY-05R26-MTAL",
+  "outcome": 0,
+  "implied_yes": 0.26,
+  "close_time": "2026-06-24T02:26:32Z",
+  "question": "Will Michelle Talkington be the Republican nominee for MD-05?",
+  "query": "Will Michelle Talkington be the Republican nominee for MD-05"
+ },
+ {
+  "ticker": "KXVOTEPRIMARY-KY4R26TMASTMAS-46",
+  "outcome": 1,
+  "implied_yes": 0.59,
+  "close_time": "2026-06-09T00:34:47Z",
+  "question": "Will Thomas Massie receive between 45% and 48% of the popular vote in the 2026 Kentucky 4th Congressional District Republican primary?",
+  "query": "Will Thomas Massie receive between 45% and 48% of the popular vote in the 2026 Kentucky 4t"
+ },
+ {
+  "ticker": "KXNYPRIMARY-03R26-GHAC",
+  "outcome": 0,
+  "implied_yes": 0.09,
+  "close_time": "2026-06-24T01:49:14Z",
+  "question": "Will Greg Hach be the Republican nominee for NY-03?",
+  "query": "Will Greg Hach be the Republican nominee for NY-03"
+ },
+ {
+  "ticker": "KXMT01D-26-SFOR",
+  "outcome": 1,
+  "implied_yes": 0.94,
+  "close_time": "2026-06-03T17:31:24Z",
+  "question": "Will Sam Forstag be the Democratic nominee for MT-01?",
+  "query": "Will Sam Forstag be the Democratic nominee for MT-01"
+ },
+ {
+  "ticker": "KXNYPRIMARY-09D26-JBRI",
+  "outcome": 0,
+  "implied_yes": 0.26,
+  "close_time": "2026-06-24T01:09:53Z",
+  "question": "Will Joshua Bristol be the Democratic nominee for NY-09?",
+  "query": "Will Joshua Bristol be the Democratic nominee for NY-09"
+ },
+ {
+  "ticker": "KXMTPRIMARY-02D26-BMIL",
+  "outcome": 1,
+  "implied_yes": 0.9,
+  "close_time": "2026-06-03T03:56:54Z",
+  "question": "Will Brian Miller be the Democratic nominee for MT-02?",
+  "query": "Will Brian Miller be the Democratic nominee for MT-02"
+ },
+ {
+  "ticker": "KXALBUMSALES-YOUS-PURE-300000",
+  "outcome": 0,
+  "implied_yes": 0.05,
+  "close_time": "2026-06-19T03:59:00Z",
+  "question": "Will you seem pretty sad for a girl so in love have at least 300,000 Pure Album Sales on the Hits Daily Double Top 50 Chart for the week immediately following the wide release of you seem pretty sad for a girl so in love?",
+  "query": "Will you seem pretty sad for a girl so in love have at least 300,000 Pure Album Sales on t"
+ },
+ {
+  "ticker": "KXSENATEMTD-26-ABAN",
+  "outcome": 1,
+  "implied_yes": 0.93,
+  "close_time": "2026-06-03T03:56:20Z",
+  "question": "Will Alani Bankhead be the Democratic nominee for the Senate in Montana?",
+  "query": "Will Alani Bankhead be the Democratic nominee for the Senate in Montana"
+ },
+ {
+  "ticker": "KXOKPRIMARY-05D26-TMAR",
+  "outcome": 0,
+  "implied_yes": 0.1,
+  "close_time": "2026-06-17T03:13:23Z",
+  "question": "Will Trey Martin be the Democratic nominee for OK-05?",
+  "query": "Will Trey Martin be the Democratic nominee for OK-05"
+ },
+ {
+  "ticker": "KXMALTAPARLI-26MAY30-LAB",
+  "outcome": 1,
+  "implied_yes": 0.71,
+  "close_time": "2026-06-03T02:43:43Z",
+  "question": "Will Labour Party win the 2026 Malta House of Representatives election?",
+  "query": "Will Labour Party win the 2026 Malta House of Representatives election"
+ },
+ {
+  "ticker": "KXLTGOVOKNOMR-26-JHUM",
+  "outcome": 0,
+  "implied_yes": 0.07,
+  "close_time": "2026-06-17T03:06:51Z",
+  "question": "Will Justin Humphrey be the Republican nominee for Lt. Governor in Oklahoma?",
+  "query": "Will Justin Humphrey be the Republican nominee for Lt. Governor in Oklahoma"
+ },
+ {
+  "ticker": "KXICEDIRECTOR-27JAN01-DVEN",
+  "outcome": 1,
+  "implied_yes": 0.927,
+  "close_time": "2026-06-01T19:03:29Z",
+  "question": "Will David Venturella be the next head of U.S. Immigration and Customs Enforcement of United States?",
+  "query": "Will David Venturella be the next head of U.S. Immigration and Customs Enforcement of Unit"
+ },
+ {
+  "ticker": "KXOKPRIMARY-01R26-JCOC",
+  "outcome": 0,
+  "implied_yes": 0.06,
+  "close_time": "2026-06-17T02:26:38Z",
+  "question": "Will Jed Cochran be the Republican nominee for OK-01?",
+  "query": "Will Jed Cochran be the Republican nominee for OK-01"
+ },
+ {
+  "ticker": "KXTXPRIMARY-05D26-CHOC",
+  "outcome": 1,
+  "implied_yes": 0.913,
+  "close_time": "2026-05-27T12:57:47Z",
+  "question": "Will Chelsey Hockett be the Democratic nominee for TX-05?",
+  "query": "Will Chelsey Hockett be the Democratic nominee for TX-05"
+ },
+ {
+  "ticker": "KXLTGOVGANOMD-26-NPAR",
+  "outcome": 0,
+  "implied_yes": 0.14,
+  "close_time": "2026-06-17T01:56:06Z",
+  "question": "Will Nabilah Parkes be the Democratic nominee for Lt. Governor in Georgia?",
+  "query": "Will Nabilah Parkes be the Democratic nominee for Lt. Governor in Georgia"
+ },
+ {
+  "ticker": "KXARSENALCUPS-26-1",
+  "outcome": 1,
+  "implied_yes": 0.95,
+  "close_time": "2026-05-19T20:28:13Z",
+  "question": "Will Arsenal win at least 1 trophy this season",
+  "query": "Will Arsenal win at least 1 trophy this season"
+ },
+ {
+  "ticker": "KXSWISS10MILLION-26",
+  "outcome": 0,
+  "implied_yes": 0.075,
+  "close_time": "2026-06-14T18:35:44Z",
+  "question": "Will the \"No to ten million Switzerland! sustainability initiative\" pass?",
+  "query": "Will the  No to ten million Switzerland! sustainability initiative  pass"
+ },
+ {
+  "ticker": "KXPERUPRES1RMOV-26APR12-KFUJ-P7",
+  "outcome": 1,
+  "implied_yes": 0.92,
+  "close_time": "2026-05-17T14:16:23Z",
+  "question": "Will the margin of victory for Keiko Fujimori in the first round of the Peru presidential election be between 5% and 10%?",
+  "query": "Will the margin of victory for Keiko Fujimori in the first round of the Peru presidential"
+ },
+ {
+  "ticker": "KXVOTEPRIMARY-SENATETXR26JCOR-52",
+  "outcome": 0,
+  "implied_yes": 0.05,
+  "close_time": "2026-06-12T20:48:03Z",
+  "question": "Will John Cornyn receive between 51% and 54% of the popular vote in the 2026 Texas Republican Senate runoff?",
+  "query": "Will John Cornyn receive between 51% and 54% of the popular vote in the 2026 Texas Republi"
+ },
+ {
+  "ticker": "KXSENATECONFIRM-26MAY01-RCEK",
+  "outcome": 1,
+  "implied_yes": 0.83,
+  "close_time": "2026-04-29T20:15:34Z",
+  "question": "Will Robert Cekada be confirmed as ATF Director before May 1, 2026?",
+  "query": "Will Robert Cekada be confirmed as ATF Director before May 1, 2026"
+ },
+ {
+  "ticker": "KXTXPRIMARY-14D26-RDAV",
+  "outcome": 0,
+  "implied_yes": 0.059,
+  "close_time": "2026-06-11T18:49:09Z",
+  "question": "Will Richard Davis be the Democratic nominee for TX-14?",
+  "query": "Will Richard Davis be the Democratic nominee for TX-14"
+ },
+ {
+  "ticker": "KXCAPRIMARY-0226-TGEI",
+  "outcome": 0,
+  "implied_yes": 0.099,
+  "close_time": "2026-06-11T14:05:02Z",
+  "question": "Will Tim Geist advance in the 2026 CA-02 primary?",
+  "query": "Will Tim Geist advance in the 2026 CA-02 primary"
+ },
+ {
+  "ticker": "KXCAPRIMARY-0226-RYEE",
+  "outcome": 0,
+  "implied_yes": 0.3,
+  "close_time": "2026-06-11T14:05:02Z",
+  "question": "Will Rose Yee advance in the 2026 CA-02 primary?",
+  "query": "Will Rose Yee advance in the 2026 CA-02 primary"
+ },
+ {
+  "ticker": "KXSCPRIMARY-05D26-ACLO",
+  "outcome": 0,
+  "implied_yes": 0.07,
+  "close_time": "2026-06-10T14:15:11Z",
+  "question": "Will Andrew Clough be the Democratic nominee for SC-05?",
+  "query": "Will Andrew Clough be the Democratic nominee for SC-05"
+ },
+ {
+  "ticker": "KXSCPRIMARY-06R26-MWAS",
+  "outcome": 0,
+  "implied_yes": 0.06,
+  "close_time": "2026-06-10T01:19:27Z",
+  "question": "Will Maurice Washington be the Republican nominee for SC-06?",
+  "query": "Will Maurice Washington be the Republican nominee for SC-06"
+ }
+]
