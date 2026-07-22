@@ -1,0 +1,362 @@
+[
+ {
+  "ticker": "KXBET-26-VID-CHA",
+  "outcome": 0,
+  "implied_yes": 0.77,
+  "close_time": "2026-06-29T17:07:09Z",
+  "question": "Will CHANEL win Video of the Year award at 26th BET Awards?",
+  "query": "Will CHANEL win Video of the Year award at 26th BET Awards",
+  "cell": "culture/65-85c"
+ },
+ {
+  "ticker": "KXALBUMEQUIV-BIT26JUN11-120K",
+  "outcome": 0,
+  "implied_yes": 0.74,
+  "close_time": "2026-06-14T14:00:00Z",
+  "question": "Will BITCH by Lizzo have above 120000 Album Equivalent Units during the June 5, 2026 - June 11, 2026 tracking week?",
+  "query": "Will BITCH by Lizzo have above 120000 Album Equivalent Units during the June 5, 2026 - Jun",
+  "cell": "culture/65-85c"
+ },
+ {
+  "ticker": "KXALBUMSALES-DIN-ACT-50000",
+  "outcome": 1,
+  "implied_yes": 0.68,
+  "close_time": "2026-06-12T03:59:00Z",
+  "question": "Will Dinner Party have at least 50,000 Activity (Combined Sales) on the Hits Daily Double Top 50 Chart for the week immediately following the wide release of Dinner Party?",
+  "query": "Will Dinner Party have at least 50,000 Activity (Combined Sales) on the Hits Daily Double ",
+  "cell": "culture/65-85c"
+ },
+ {
+  "ticker": "KXANIMEBVAPJ-26-MAY",
+  "outcome": 0,
+  "implied_yes": 0.72,
+  "close_time": "2026-05-23T15:51:42Z",
+  "question": "2026 Crunchyroll Anime Award for Best Anime Voice Artist Performance (Japanese)?",
+  "query": "2026 Crunchyroll Anime Award for Best Anime Voice Artist Performance (Japanese)",
+  "cell": "culture/65-85c"
+ },
+ {
+  "ticker": "KXACMAASWOTY-68-MEG",
+  "outcome": 0,
+  "implied_yes": 0.75,
+  "close_time": "2026-05-18T14:08:42Z",
+  "question": "2026 Academy of Country Music Award for Artist-Songwriter of the Year?",
+  "query": "2026 Academy of Country Music Award for Artist-Songwriter of the Year",
+  "cell": "culture/65-85c"
+ },
+ {
+  "ticker": "KXALBUMRELEASE-26-DOE",
+  "outcome": 1,
+  "implied_yes": 0.79,
+  "close_time": "2026-05-08T15:56:29Z",
+  "question": "Will Doechii release a new album in 2026?",
+  "query": "Will Doechii release a new album in 2026",
+  "cell": "culture/65-85c"
+ },
+ {
+  "ticker": "KXMETGALAFITS-26MAY05-KIM-BAL",
+  "outcome": 0,
+  "implied_yes": 0.79,
+  "close_time": "2026-05-05T03:59:00Z",
+  "question": "Will Kim Kardashian wear Balenciaga at Met Gala 2026 Red Carpet?",
+  "query": "Will Kim Kardashian wear Balenciaga at Met Gala 2026 Red Carpet",
+  "cell": "culture/65-85c"
+ },
+ {
+  "ticker": "KXPUREALBUMS-BIT26JUN11-150K",
+  "outcome": 0,
+  "implied_yes": 0.5,
+  "close_time": "2026-06-14T14:00:00Z",
+  "question": "Will BITCH by Lizzo have above 150000 Pure Album Sales (aka Product Sales) during the June 5, 2026 - June 11, 2026 tracking week?",
+  "query": "Will BITCH by Lizzo have above 150000 Pure Album Sales (aka Product Sales) during the June",
+  "cell": "culture/35-65c"
+ },
+ {
+  "ticker": "KXALBUMSALES-DIN-PURE-60000",
+  "outcome": 0,
+  "implied_yes": 0.49,
+  "close_time": "2026-06-12T03:59:00Z",
+  "question": "Will Dinner Party have at least 60,000 Pure Album Sales on the Hits Daily Double Top 50 Chart for the week immediately following the wide release of Dinner Party?",
+  "query": "Will Dinner Party have at least 60,000 Pure Album Sales on the Hits Daily Double Top 50 Ch",
+  "cell": "culture/35-65c"
+ },
+ {
+  "ticker": "KXSPORTSEMMY-26OSSSW-INS",
+  "outcome": 0,
+  "implied_yes": 0.52,
+  "close_time": "2026-05-27T03:59:52Z",
+  "question": "Will Inside the NBA on TNT win the 47th Annual Sports Emmy Awards for Outstanding Sports Studio Show: Weekly?",
+  "query": "Will Inside the NBA on TNT win the 47th Annual Sports Emmy Awards for Outstanding Sports S",
+  "cell": "culture/35-65c"
+ },
+ {
+  "ticker": "KXSPORTSEMMY-26OUT-LEA",
+  "outcome": 0,
+  "implied_yes": 0.37,
+  "close_time": "2026-05-27T03:53:23Z",
+  "question": "Will League of Legends Worlds 2025 Final win the 47th Annual Sports Emmy Awards for Outstanding ESports Championship Coverage?",
+  "query": "Will League of Legends Worlds 2025 Final win the 47th Annual Sports Emmy Awards for Outsta",
+  "cell": "culture/35-65c"
+ },
+ {
+  "ticker": "KXSPORTSEMMY-26OSPC-NBC",
+  "outcome": 0,
+  "implied_yes": 0.36,
+  "close_time": "2026-05-27T03:25:37Z",
+  "question": "Will NBC NFL Playoffs win the 47th Annual Sports Emmy Awards for Outstanding Sports Playoff Coverage?",
+  "query": "Will NBC NFL Playoffs win the 47th Annual Sports Emmy Awards for Outstanding Sports Playof",
+  "cell": "culture/35-65c"
+ },
+ {
+  "ticker": "KXANIMEBVAPB-26-BRU",
+  "outcome": 0,
+  "implied_yes": 0.53,
+  "close_time": "2026-05-23T15:54:55Z",
+  "question": "2026 Crunchyroll Anime Award for Best Anime Voice Artist Performance (Brazilian Portuguese)?",
+  "query": "2026 Crunchyroll Anime Award for Best Anime Voice Artist Performance (Brazilian Portuguese",
+  "cell": "culture/35-65c"
+ },
+ {
+  "ticker": "KXMETGALAFITS-26MAY05-GIG-PRA",
+  "outcome": 0,
+  "implied_yes": 0.58,
+  "close_time": "2026-05-05T03:59:00Z",
+  "question": "Will Gigi Hadid wear Prada at Met Gala 2026 Red Carpet?",
+  "query": "Will Gigi Hadid wear Prada at Met Gala 2026 Red Carpet",
+  "cell": "culture/35-65c"
+ },
+ {
+  "ticker": "KXMETGALAFITS-26MAY05-ZEN-BOT",
+  "outcome": 0,
+  "implied_yes": 0.57,
+  "close_time": "2026-05-05T03:59:00Z",
+  "question": "Will Zendaya wear Bottega Veneta at Met Gala 2026 Red Carpet?",
+  "query": "Will Zendaya wear Bottega Veneta at Met Gala 2026 Red Carpet",
+  "cell": "culture/35-65c"
+ },
+ {
+  "ticker": "KXMETGALAFITS-26MAY05-BAD-VAL",
+  "outcome": 0,
+  "implied_yes": 0.56,
+  "close_time": "2026-05-05T03:59:00Z",
+  "question": "Will Bad Bunny wear Valentino at Met Gala 2026 Red Carpet?",
+  "query": "Will Bad Bunny wear Valentino at Met Gala 2026 Red Carpet",
+  "cell": "culture/35-65c"
+ },
+ {
+  "ticker": "KXMETGALAFITS-26MAY05-BAD-DOL",
+  "outcome": 0,
+  "implied_yes": 0.53,
+  "close_time": "2026-05-05T03:59:00Z",
+  "question": "Will Bad Bunny wear Dolce & Gabbana at Met Gala 2026 Red Carpet?",
+  "query": "Will Bad Bunny wear Dolce & Gabbana at Met Gala 2026 Red Carpet",
+  "cell": "culture/35-65c"
+ },
+ {
+  "ticker": "KXMETGALAFITS-26MAY05-BAD-CHR",
+  "outcome": 0,
+  "implied_yes": 0.42,
+  "close_time": "2026-05-05T03:59:00Z",
+  "question": "Will Bad Bunny wear Chrome Hearts at Met Gala 2026 Red Carpet?",
+  "query": "Will Bad Bunny wear Chrome Hearts at Met Gala 2026 Red Carpet",
+  "cell": "culture/35-65c"
+ },
+ {
+  "ticker": "KXMETGALAFITS-26MAY05-BAD-BUR",
+  "outcome": 0,
+  "implied_yes": 0.57,
+  "close_time": "2026-05-05T03:59:00Z",
+  "question": "Will Bad Bunny wear Burberry at Met Gala 2026 Red Carpet?",
+  "query": "Will Bad Bunny wear Burberry at Met Gala 2026 Red Carpet",
+  "cell": "culture/35-65c"
+ },
+ {
+  "ticker": "KXMETGALAFITS-26MAY05-BAD-BRU",
+  "outcome": 0,
+  "implied_yes": 0.57,
+  "close_time": "2026-05-05T03:59:00Z",
+  "question": "Will Bad Bunny wear Brunello Cucinelli at Met Gala 2026 Red Carpet?",
+  "query": "Will Bad Bunny wear Brunello Cucinelli at Met Gala 2026 Red Carpet",
+  "cell": "culture/35-65c"
+ },
+ {
+  "ticker": "KXMETGALAFITS-26MAY05-BAD-BALM",
+  "outcome": 0,
+  "implied_yes": 0.58,
+  "close_time": "2026-05-05T03:59:00Z",
+  "question": "Will Bad Bunny wear Balmain at Met Gala 2026 Red Carpet?",
+  "query": "Will Bad Bunny wear Balmain at Met Gala 2026 Red Carpet",
+  "cell": "culture/35-65c"
+ },
+ {
+  "ticker": "KXMETGALAFITS-26MAY05-BAD-BAL",
+  "outcome": 0,
+  "implied_yes": 0.57,
+  "close_time": "2026-05-05T03:59:00Z",
+  "question": "Will Bad Bunny wear Balenciaga at Met Gala 2026 Red Carpet?",
+  "query": "Will Bad Bunny wear Balenciaga at Met Gala 2026 Red Carpet",
+  "cell": "culture/35-65c"
+ },
+ {
+  "ticker": "KXSATRADEBAL-26JUN30-T20.00",
+  "outcome": 0,
+  "implied_yes": 0.4,
+  "close_time": "2026-06-30T11:59:00Z",
+  "question": "Will South Africa balance of trade for May 2026 be above ZAR20.00B?",
+  "query": "Will South Africa balance of trade for May 2026 be above ZAR20.00B",
+  "cell": "economy/35-65c"
+ },
+ {
+  "ticker": "KXSATRADEBAL-26JUN30-T18.00",
+  "outcome": 0,
+  "implied_yes": 0.45,
+  "close_time": "2026-06-30T11:59:00Z",
+  "question": "Will South Africa balance of trade for May 2026 be above ZAR18.00B?",
+  "query": "Will South Africa balance of trade for May 2026 be above ZAR18.00B",
+  "cell": "economy/35-65c"
+ },
+ {
+  "ticker": "KXUE-MEX26JUN-2.5",
+  "outcome": 1,
+  "implied_yes": 0.64,
+  "close_time": "2026-06-25T11:55:00Z",
+  "question": "Mexico unemployment rate in May 2026?",
+  "query": "Mexico unemployment rate in May 2026",
+  "cell": "economy/35-65c"
+ },
+ {
+  "ticker": "KXCACPIYOY-26JUN22-T3.3",
+  "outcome": 0,
+  "implied_yes": 0.55,
+  "close_time": "2026-06-22T12:29:00Z",
+  "question": "Will Canada inflation rate YoY for May 2026 be above 3.3%?",
+  "query": "Will Canada inflation rate YoY for May 2026 be above 3.3%",
+  "cell": "economy/35-65c"
+ },
+ {
+  "ticker": "KXCACPIYOY-26JUN22-T2.9",
+  "outcome": 1,
+  "implied_yes": 0.57,
+  "close_time": "2026-06-22T12:29:00Z",
+  "question": "Will Canada inflation rate YoY for May 2026 be above 2.9%?",
+  "query": "Will Canada inflation rate YoY for May 2026 be above 2.9%",
+  "cell": "economy/35-65c"
+ },
+ {
+  "ticker": "KXSARETAIL-26JUN17-T0.2",
+  "outcome": 1,
+  "implied_yes": 0.44,
+  "close_time": "2026-06-17T10:59:00Z",
+  "question": "Will South Africa retail sales MoM for April 2026 be above 0.2%?",
+  "query": "Will South Africa retail sales MoM for April 2026 be above 0.2%",
+  "cell": "economy/35-65c"
+ },
+ {
+  "ticker": "KXSARETAIL-26JUN17-T0.0",
+  "outcome": 1,
+  "implied_yes": 0.56,
+  "close_time": "2026-06-17T10:59:00Z",
+  "question": "Will South Africa retail sales MoM for April 2026 be above 0.0%?",
+  "query": "Will South Africa retail sales MoM for April 2026 be above 0.0%",
+  "cell": "economy/35-65c"
+ },
+ {
+  "ticker": "KXDEZEW-26JUN16-T-17.5",
+  "outcome": 1,
+  "implied_yes": 0.63,
+  "close_time": "2026-06-16T08:59:00Z",
+  "question": "Will Germany ZEW economic sentiment index for June 2026 be above -17.5?",
+  "query": "Will Germany ZEW economic sentiment index for June 2026 be above -17.5",
+  "cell": "economy/35-65c"
+ },
+ {
+  "ticker": "KXDEZEW-26JUN16-T-15.0",
+  "outcome": 1,
+  "implied_yes": 0.57,
+  "close_time": "2026-06-16T08:59:00Z",
+  "question": "Will Germany ZEW economic sentiment index for June 2026 be above -15.0?",
+  "query": "Will Germany ZEW economic sentiment index for June 2026 be above -15.0",
+  "cell": "economy/35-65c"
+ },
+ {
+  "ticker": "KXDEZEW-26JUN16-T-12.5",
+  "outcome": 1,
+  "implied_yes": 0.49,
+  "close_time": "2026-06-16T08:59:00Z",
+  "question": "Will Germany ZEW economic sentiment index for June 2026 be above -12.5?",
+  "query": "Will Germany ZEW economic sentiment index for June 2026 be above -12.5",
+  "cell": "economy/35-65c"
+ },
+ {
+  "ticker": "KXUSMICHCSP-26JUN12-T46.0",
+  "outcome": 1,
+  "implied_yes": 0.52,
+  "close_time": "2026-06-12T13:59:00Z",
+  "question": "Will US Michigan consumer sentiment prel for June 2026 be above 46.0?",
+  "query": "Will US Michigan consumer sentiment prel for June 2026 be above 46.0",
+  "cell": "economy/35-65c"
+ },
+ {
+  "ticker": "KXAIRFARECPI-26JUN10-T312.0",
+  "outcome": 0,
+  "implied_yes": 0.48,
+  "close_time": "2026-06-10T12:29:00Z",
+  "question": "Will Consumer Price Index for All Urban Consumers: Airline Fares in U.S. City Average for May 2026 be above 312.0\u3164?",
+  "query": "Will Consumer Price Index for All Urban Consumers: Airline Fares in U.S. City Average for ",
+  "cell": "economy/35-65c"
+ },
+ {
+  "ticker": "KXAIRFARECPI-26JUN10-T294.0",
+  "outcome": 1,
+  "implied_yes": 0.61,
+  "close_time": "2026-06-10T12:29:00Z",
+  "question": "Will Consumer Price Index for All Urban Consumers: Airline Fares in U.S. City Average for May 2026 be above 294.0\u3164?",
+  "query": "Will Consumer Price Index for All Urban Consumers: Airline Fares in U.S. City Average for ",
+  "cell": "economy/35-65c"
+ },
+ {
+  "ticker": "KXAUNABCONF-26JUN08-T-21",
+  "outcome": 1,
+  "implied_yes": 0.63,
+  "close_time": "2026-06-09T01:29:00Z",
+  "question": "Will Australia NAB business confidence for May 2026 be above -21?",
+  "query": "Will Australia NAB business confidence for May 2026 be above -21",
+  "cell": "economy/35-65c"
+ },
+ {
+  "ticker": "KXBET-26-ALB-EVE",
+  "outcome": 0,
+  "implied_yes": 0.22,
+  "close_time": "2026-06-29T17:06:35Z",
+  "question": "Will EVERYTHING IS A LOT. win Album of the Year award at 26th BET Awards?",
+  "query": "Will EVERYTHING IS A LOT. win Album of the Year award at 26th BET Awards",
+  "cell": "culture/15-35c"
+ },
+ {
+  "ticker": "KXALBUMEQUIV-DIR26JUN18-20K",
+  "outcome": 0,
+  "implied_yes": 0.25,
+  "close_time": "2026-06-21T14:00:00Z",
+  "question": "Will DIRTY BLONDE by Bebe Rexha have above 20000 Album Equivalent Units during the June 12, 2026 - June 18, 2026 tracking week?",
+  "query": "Will DIRTY BLONDE by Bebe Rexha have above 20000 Album Equivalent Units during the June 12",
+  "cell": "culture/15-35c"
+ },
+ {
+  "ticker": "KXPUREALBUMS-CRY26JUN11-12K",
+  "outcome": 0,
+  "implied_yes": 0.92,
+  "close_time": "2026-06-14T14:00:00Z",
+  "question": "Will Cry Baby by Vince Staples have above 12000 Pure Album Sales (aka Product Sales) during the June 5, 2026 - June 11, 2026 tracking week?",
+  "query": "Will Cry Baby by Vince Staples have above 12000 Pure Album Sales (aka Product Sales) durin",
+  "cell": "culture/85-95c"
+ },
+ {
+  "ticker": "KXALBUMEQUIV-DOT26JUN11-125K",
+  "outcome": 0,
+  "implied_yes": 0.88,
+  "close_time": "2026-06-14T14:00:00Z",
+  "question": "Will Do That Again by Malcolm Todd have above 125000 Album Equivalent Units during the June 5, 2026 - June 11, 2026 tracking week?",
+  "query": "Will Do That Again by Malcolm Todd have above 125000 Album Equivalent Units during the Jun",
+  "cell": "culture/85-95c"
+ }
+]

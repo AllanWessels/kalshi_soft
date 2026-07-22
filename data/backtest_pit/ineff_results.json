@@ -1,0 +1,2360 @@
+{
+  "summary": {
+    "n_events": 40,
+    "n_checkpoint_forecasts": 160,
+    "brier_final_blended": 0.1517,
+    "brier_raw_ensemble": 0.1737,
+    "brier_market_eventlevel": 0.2898,
+    "mean_member_spread": 0.192,
+    "leak_flagged_events": 0,
+    "mean_updating_delta": -0.0103,
+    "reliability_blended": [
+      {
+        "bin": "0.0-0.2",
+        "n": 44,
+        "mean_pred": 0.141,
+        "emp_freq": 0.0
+      },
+      {
+        "bin": "0.2-0.4",
+        "n": 48,
+        "mean_pred": 0.289,
+        "emp_freq": 0.188
+      },
+      {
+        "bin": "0.4-0.6",
+        "n": 58,
+        "mean_pred": 0.488,
+        "emp_freq": 0.534
+      },
+      {
+        "bin": "0.6-0.8",
+        "n": 10,
+        "mean_pred": 0.659,
+        "emp_freq": 0.8
+      }
+    ]
+  },
+  "events": [
+    {
+      "ticker": "KXBET-26-VID-CHA",
+      "question": "Will CHANEL win Video of the Year award at 26th BET Awards?",
+      "outcome": 0,
+      "implied_yes": 0.77,
+      "base_rate": 0.0875,
+      "memory_only": 0.075,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 5,
+          "ev_mean": 0.2,
+          "spread": 0.1,
+          "w": 0.5,
+          "final": 0.1437,
+          "brier_final": 0.0207,
+          "brier_raw": 0.04
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 5,
+          "ev_mean": 0.1842,
+          "spread": 0.125,
+          "w": 0.5,
+          "final": 0.1358,
+          "brier_final": 0.0185,
+          "brier_raw": 0.0339
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 5,
+          "ev_mean": 0.1967,
+          "spread": 0.1,
+          "w": 0.5,
+          "final": 0.1421,
+          "brier_final": 0.0202,
+          "brier_raw": 0.0387
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 7,
+          "ev_mean": 0.2333,
+          "spread": 0.1,
+          "w": 0.58,
+          "final": 0.1726,
+          "brier_final": 0.0298,
+          "brier_raw": 0.0544
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": -0.0091,
+      "final_brier": 0.0298,
+      "brier_market": 0.5929
+    },
+    {
+      "ticker": "KXALBUMEQUIV-BIT26JUN11-120K",
+      "question": "Will BITCH by Lizzo have above 120000 Album Equivalent Units during the June 5, 2026 - June 11, 2026 tracking week?",
+      "outcome": 0,
+      "implied_yes": 0.74,
+      "base_rate": 0.3,
+      "memory_only": 0.3,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 0,
+          "ev_mean": 0.3583,
+          "spread": 0.25,
+          "w": 0.3,
+          "final": 0.3175,
+          "brier_final": 0.1008,
+          "brier_raw": 0.1284
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 0,
+          "ev_mean": 0.375,
+          "spread": 0.25,
+          "w": 0.3,
+          "final": 0.3225,
+          "brier_final": 0.104,
+          "brier_raw": 0.1406
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 0,
+          "ev_mean": 0.3917,
+          "spread": 0.4,
+          "w": 0.3,
+          "final": 0.3275,
+          "brier_final": 0.1073,
+          "brier_raw": 0.1534
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 0,
+          "ev_mean": 0.3458,
+          "spread": 0.25,
+          "w": 0.3,
+          "final": 0.3137,
+          "brier_final": 0.0984,
+          "brier_raw": 0.1196
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": 0.0024,
+      "final_brier": 0.0984,
+      "brier_market": 0.5476
+    },
+    {
+      "ticker": "KXALBUMSALES-DIN-ACT-50000",
+      "question": "Will Dinner Party have at least 50,000 Activity (Combined Sales) on the Hits Daily Double Top 50 Chart for the week immediately following the wide release of Dinner Party?",
+      "outcome": 1,
+      "implied_yes": 0.68,
+      "base_rate": 0.3,
+      "memory_only": 0.3,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 0,
+          "ev_mean": 0.2833,
+          "spread": 0.1,
+          "w": 0.3,
+          "final": 0.295,
+          "brier_final": 0.497,
+          "brier_raw": 0.5136
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 0,
+          "ev_mean": 0.3167,
+          "spread": 0.1,
+          "w": 0.3,
+          "final": 0.305,
+          "brier_final": 0.483,
+          "brier_raw": 0.4669
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 0,
+          "ev_mean": 0.3,
+          "spread": 0.1,
+          "w": 0.3,
+          "final": 0.3,
+          "brier_final": 0.49,
+          "brier_raw": 0.49
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 0,
+          "ev_mean": 0.305,
+          "spread": 0.1,
+          "w": 0.3,
+          "final": 0.3015,
+          "brier_final": 0.4879,
+          "brier_raw": 0.483
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": 0.0091,
+      "final_brier": 0.4879,
+      "brier_market": 0.1024
+    },
+    {
+      "ticker": "KXANIMEBVAPJ-26-MAY",
+      "question": "2026 Crunchyroll Anime Award for Best Anime Voice Artist Performance (Japanese)?",
+      "outcome": 0,
+      "implied_yes": 0.72,
+      "base_rate": 0.15,
+      "memory_only": 0.275,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 15,
+          "ev_mean": 0.5583,
+          "spread": 0.75,
+          "w": 0.75,
+          "final": 0.4562,
+          "brier_final": 0.2082,
+          "brier_raw": 0.3117
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 15,
+          "ev_mean": 0.4775,
+          "spread": 0.7,
+          "w": 0.75,
+          "final": 0.3956,
+          "brier_final": 0.1565,
+          "brier_raw": 0.228
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 15,
+          "ev_mean": 0.5828,
+          "spread": 0.45,
+          "w": 0.75,
+          "final": 0.4746,
+          "brier_final": 0.2253,
+          "brier_raw": 0.3397
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 15,
+          "ev_mean": 0.8125,
+          "spread": 0.5,
+          "w": 0.75,
+          "final": 0.6469,
+          "brier_final": 0.4184,
+          "brier_raw": 0.6602
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": -0.2102,
+      "final_brier": 0.4184,
+      "brier_market": 0.5184
+    },
+    {
+      "ticker": "KXACMAASWOTY-68-MEG",
+      "question": "2026 Academy of Country Music Award for Artist-Songwriter of the Year?",
+      "outcome": 0,
+      "implied_yes": 0.75,
+      "base_rate": 0.1375,
+      "memory_only": 0.13,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 17,
+          "ev_mean": 0.29,
+          "spread": 0.1,
+          "w": 0.77,
+          "final": 0.2553,
+          "brier_final": 0.0652,
+          "brier_raw": 0.0841
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 17,
+          "ev_mean": 0.395,
+          "spread": 0.4,
+          "w": 0.77,
+          "final": 0.3365,
+          "brier_final": 0.1132,
+          "brier_raw": 0.156
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 16,
+          "ev_mean": 0.4883,
+          "spread": 0.5,
+          "w": 0.76,
+          "final": 0.4048,
+          "brier_final": 0.1639,
+          "brier_raw": 0.2385
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 13,
+          "ev_mean": 0.9842,
+          "spread": 0.02,
+          "w": 0.72,
+          "final": 0.749,
+          "brier_final": 0.561,
+          "brier_raw": 0.9686
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": -0.4958,
+      "final_brier": 0.561,
+      "brier_market": 0.5625
+    },
+    {
+      "ticker": "KXALBUMRELEASE-26-DOE",
+      "question": "Will Doechii release a new album in 2026?",
+      "outcome": 1,
+      "implied_yes": 0.79,
+      "base_rate": 0.4,
+      "memory_only": 0.475,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 15,
+          "ev_mean": 0.75,
+          "spread": 0.2,
+          "w": 0.75,
+          "final": 0.6625,
+          "brier_final": 0.1139,
+          "brier_raw": 0.0625
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 16,
+          "ev_mean": 0.7683,
+          "spread": 0.13,
+          "w": 0.76,
+          "final": 0.6806,
+          "brier_final": 0.102,
+          "brier_raw": 0.0537
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 16,
+          "ev_mean": 0.8217,
+          "spread": 0.2,
+          "w": 0.76,
+          "final": 0.7213,
+          "brier_final": 0.0777,
+          "brier_raw": 0.0318
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 16,
+          "ev_mean": 0.735,
+          "spread": 0.2,
+          "w": 0.76,
+          "final": 0.6552,
+          "brier_final": 0.1189,
+          "brier_raw": 0.0702
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": -0.005,
+      "final_brier": 0.1189,
+      "brier_market": 0.0441
+    },
+    {
+      "ticker": "KXMETGALAFITS-26MAY05-KIM-BAL",
+      "question": "Will Kim Kardashian wear Balenciaga at Met Gala 2026 Red Carpet?",
+      "outcome": 0,
+      "implied_yes": 0.79,
+      "base_rate": 0.25,
+      "memory_only": 0.25,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 12,
+          "ev_mean": 0.2817,
+          "spread": 0.11,
+          "w": 0.71,
+          "final": 0.2724,
+          "brier_final": 0.0742,
+          "brier_raw": 0.0793
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 13,
+          "ev_mean": 0.2305,
+          "spread": 0.32,
+          "w": 0.72,
+          "final": 0.2359,
+          "brier_final": 0.0557,
+          "brier_raw": 0.0531
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 17,
+          "ev_mean": 0.2633,
+          "spread": 0.12,
+          "w": 0.77,
+          "final": 0.2603,
+          "brier_final": 0.0678,
+          "brier_raw": 0.0693
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 8,
+          "ev_mean": 0.3133,
+          "spread": 0.12,
+          "w": 0.62,
+          "final": 0.289,
+          "brier_final": 0.0835,
+          "brier_raw": 0.0982
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": -0.0093,
+      "final_brier": 0.0835,
+      "brier_market": 0.6241
+    },
+    {
+      "ticker": "KXPUREALBUMS-BIT26JUN11-150K",
+      "question": "Will BITCH by Lizzo have above 150000 Pure Album Sales (aka Product Sales) during the June 5, 2026 - June 11, 2026 tracking week?",
+      "outcome": 0,
+      "implied_yes": 0.5,
+      "base_rate": 0.45,
+      "memory_only": 0.45,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 0,
+          "ev_mean": 0.484,
+          "spread": 0.5,
+          "w": 0.3,
+          "final": 0.4602,
+          "brier_final": 0.2118,
+          "brier_raw": 0.2343
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 0,
+          "ev_mean": 0.45,
+          "spread": 0.4,
+          "w": 0.3,
+          "final": 0.45,
+          "brier_final": 0.2025,
+          "brier_raw": 0.2025
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 0,
+          "ev_mean": 0.4283,
+          "spread": 0.5,
+          "w": 0.3,
+          "final": 0.4435,
+          "brier_final": 0.1967,
+          "brier_raw": 0.1835
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 0,
+          "ev_mean": 0.3979,
+          "spread": 0.7125,
+          "w": 0.3,
+          "final": 0.4344,
+          "brier_final": 0.1887,
+          "brier_raw": 0.1583
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": 0.0231,
+      "final_brier": 0.1887,
+      "brier_market": 0.25
+    },
+    {
+      "ticker": "KXALBUMSALES-DIN-PURE-60000",
+      "question": "Will Dinner Party have at least 60,000 Pure Album Sales on the Hits Daily Double Top 50 Chart for the week immediately following the wide release of Dinner Party?",
+      "outcome": 0,
+      "implied_yes": 0.49,
+      "base_rate": 0.2,
+      "memory_only": 0.25,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 0,
+          "ev_mean": 0.2333,
+          "spread": 0.1,
+          "w": 0.3,
+          "final": 0.21,
+          "brier_final": 0.0441,
+          "brier_raw": 0.0544
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 0,
+          "ev_mean": 0.2667,
+          "spread": 0.2,
+          "w": 0.3,
+          "final": 0.22,
+          "brier_final": 0.0484,
+          "brier_raw": 0.0711
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 0,
+          "ev_mean": 0.25,
+          "spread": 0.2,
+          "w": 0.3,
+          "final": 0.215,
+          "brier_final": 0.0462,
+          "brier_raw": 0.0625
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 0,
+          "ev_mean": 0.2617,
+          "spread": 0.2,
+          "w": 0.3,
+          "final": 0.2185,
+          "brier_final": 0.0477,
+          "brier_raw": 0.0685
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": -0.0036,
+      "final_brier": 0.0477,
+      "brier_market": 0.2401
+    },
+    {
+      "ticker": "KXSPORTSEMMY-26OSSSW-INS",
+      "question": "Will Inside the NBA on TNT win the 47th Annual Sports Emmy Awards for Outstanding Sports Studio Show: Weekly?",
+      "outcome": 0,
+      "implied_yes": 0.52,
+      "base_rate": 0.3,
+      "memory_only": 0.3,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 3,
+          "ev_mean": 0.4,
+          "spread": 0.1,
+          "w": 0.38,
+          "final": 0.3375,
+          "brier_final": 0.1139,
+          "brier_raw": 0.16
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 3,
+          "ev_mean": 0.45,
+          "spread": 0.3,
+          "w": 0.38,
+          "final": 0.3563,
+          "brier_final": 0.1269,
+          "brier_raw": 0.2025
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 3,
+          "ev_mean": 0.4458,
+          "spread": 0.3,
+          "w": 0.38,
+          "final": 0.3547,
+          "brier_final": 0.1258,
+          "brier_raw": 0.1988
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 3,
+          "ev_mean": 0.4367,
+          "spread": 0.22,
+          "w": 0.38,
+          "final": 0.3513,
+          "brier_final": 0.1234,
+          "brier_raw": 0.1907
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": -0.0095,
+      "final_brier": 0.1234,
+      "brier_market": 0.2704
+    },
+    {
+      "ticker": "KXSPORTSEMMY-26OUT-LEA",
+      "question": "Will League of Legends Worlds 2025 Final win the 47th Annual Sports Emmy Awards for Outstanding ESports Championship Coverage?",
+      "outcome": 0,
+      "implied_yes": 0.37,
+      "base_rate": 0.135,
+      "memory_only": 0.15,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 4,
+          "ev_mean": 0.0429,
+          "spread": 0.03,
+          "w": 0.44,
+          "final": 0.0941,
+          "brier_final": 0.0088,
+          "brier_raw": 0.0018
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 4,
+          "ev_mean": 0.0408,
+          "spread": 0.03,
+          "w": 0.44,
+          "final": 0.0931,
+          "brier_final": 0.0087,
+          "brier_raw": 0.0017
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 4,
+          "ev_mean": 0.05,
+          "spread": 0.0,
+          "w": 0.44,
+          "final": 0.0972,
+          "brier_final": 0.0095,
+          "brier_raw": 0.0025
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 4,
+          "ev_mean": 0.0433,
+          "spread": 0.03,
+          "w": 0.44,
+          "final": 0.0943,
+          "brier_final": 0.0089,
+          "brier_raw": 0.0019
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": -0.0001,
+      "final_brier": 0.0089,
+      "brier_market": 0.1369
+    },
+    {
+      "ticker": "KXSPORTSEMMY-26OSPC-NBC",
+      "question": "Will NBC NFL Playoffs win the 47th Annual Sports Emmy Awards for Outstanding Sports Playoff Coverage?",
+      "outcome": 0,
+      "implied_yes": 0.36,
+      "base_rate": 0.3,
+      "memory_only": 0.3,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 6,
+          "ev_mean": 0.2833,
+          "spread": 0.1,
+          "w": 0.55,
+          "final": 0.2909,
+          "brier_final": 0.0846,
+          "brier_raw": 0.0803
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 6,
+          "ev_mean": 0.3,
+          "spread": 0.1,
+          "w": 0.55,
+          "final": 0.3,
+          "brier_final": 0.09,
+          "brier_raw": 0.09
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 6,
+          "ev_mean": 0.2667,
+          "spread": 0.1,
+          "w": 0.55,
+          "final": 0.2818,
+          "brier_final": 0.0794,
+          "brier_raw": 0.0711
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 5,
+          "ev_mean": 0.2833,
+          "spread": 0.1,
+          "w": 0.5,
+          "final": 0.2917,
+          "brier_final": 0.0851,
+          "brier_raw": 0.0803
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": -0.0005,
+      "final_brier": 0.0851,
+      "brier_market": 0.1296
+    },
+    {
+      "ticker": "KXANIMEBVAPB-26-BRU",
+      "question": "2026 Crunchyroll Anime Award for Best Anime Voice Artist Performance (Brazilian Portuguese)?",
+      "outcome": 0,
+      "implied_yes": 0.53,
+      "base_rate": 0.1,
+      "memory_only": 0.275,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 14,
+          "ev_mean": 0.725,
+          "spread": 0.7,
+          "w": 0.74,
+          "final": 0.5605,
+          "brier_final": 0.3142,
+          "brier_raw": 0.5256
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 14,
+          "ev_mean": 0.7083,
+          "spread": 0.6,
+          "w": 0.74,
+          "final": 0.5482,
+          "brier_final": 0.3006,
+          "brier_raw": 0.5017
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 14,
+          "ev_mean": 0.6617,
+          "spread": 0.8,
+          "w": 0.74,
+          "final": 0.5139,
+          "brier_final": 0.2641,
+          "brier_raw": 0.4378
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 14,
+          "ev_mean": 0.7265,
+          "spread": 0.475,
+          "w": 0.74,
+          "final": 0.5616,
+          "brier_final": 0.3154,
+          "brier_raw": 0.5278
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": -0.0012,
+      "final_brier": 0.3154,
+      "brier_market": 0.2809
+    },
+    {
+      "ticker": "KXMETGALAFITS-26MAY05-GIG-PRA",
+      "question": "Will Gigi Hadid wear Prada at Met Gala 2026 Red Carpet?",
+      "outcome": 0,
+      "implied_yes": 0.58,
+      "base_rate": 0.15,
+      "memory_only": 0.3,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 8,
+          "ev_mean": 0.2667,
+          "spread": 0.1,
+          "w": 0.62,
+          "final": 0.2218,
+          "brier_final": 0.0492,
+          "brier_raw": 0.0711
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 8,
+          "ev_mean": 0.1875,
+          "spread": 0.2,
+          "w": 0.62,
+          "final": 0.1731,
+          "brier_final": 0.03,
+          "brier_raw": 0.0352
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 14,
+          "ev_mean": 0.1667,
+          "spread": 0.2,
+          "w": 0.74,
+          "final": 0.1623,
+          "brier_final": 0.0263,
+          "brier_raw": 0.0278
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 0,
+          "ev_mean": 0.2667,
+          "spread": 0.3,
+          "w": 0.3,
+          "final": 0.185,
+          "brier_final": 0.0342,
+          "brier_raw": 0.0711
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": 0.015,
+      "final_brier": 0.0342,
+      "brier_market": 0.3364
+    },
+    {
+      "ticker": "KXMETGALAFITS-26MAY05-ZEN-BOT",
+      "question": "Will Zendaya wear Bottega Veneta at Met Gala 2026 Red Carpet?",
+      "outcome": 0,
+      "implied_yes": 0.57,
+      "base_rate": 0.0875,
+      "memory_only": 0.15,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 11,
+          "ev_mean": 0.2173,
+          "spread": 0.196,
+          "w": 0.69,
+          "final": 0.1768,
+          "brier_final": 0.0312,
+          "brier_raw": 0.0472
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 11,
+          "ev_mean": 0.1275,
+          "spread": 0.195,
+          "w": 0.69,
+          "final": 0.115,
+          "brier_final": 0.0132,
+          "brier_raw": 0.0163
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 11,
+          "ev_mean": 0.1896,
+          "spread": 0.2,
+          "w": 0.69,
+          "final": 0.1577,
+          "brier_final": 0.0249,
+          "brier_raw": 0.0359
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 10,
+          "ev_mean": 0.218,
+          "spread": 0.204,
+          "w": 0.67,
+          "final": 0.1745,
+          "brier_final": 0.0305,
+          "brier_raw": 0.0475
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": 0.0007,
+      "final_brier": 0.0305,
+      "brier_market": 0.3249
+    },
+    {
+      "ticker": "KXMETGALAFITS-26MAY05-BAD-VAL",
+      "question": "Will Bad Bunny wear Valentino at Met Gala 2026 Red Carpet?",
+      "outcome": 0,
+      "implied_yes": 0.56,
+      "base_rate": 0.0875,
+      "memory_only": 0.1,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 13,
+          "ev_mean": 0.2133,
+          "spread": 0.1,
+          "w": 0.72,
+          "final": 0.1784,
+          "brier_final": 0.0318,
+          "brier_raw": 0.0455
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 13,
+          "ev_mean": 0.1833,
+          "spread": 0.2,
+          "w": 0.72,
+          "final": 0.1567,
+          "brier_final": 0.0246,
+          "brier_raw": 0.0336
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 16,
+          "ev_mean": 0.2167,
+          "spread": 0.1,
+          "w": 0.76,
+          "final": 0.1859,
+          "brier_final": 0.0346,
+          "brier_raw": 0.0469
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 4,
+          "ev_mean": 0.2,
+          "spread": 0.2,
+          "w": 0.44,
+          "final": 0.1375,
+          "brier_final": 0.0189,
+          "brier_raw": 0.04
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": 0.0129,
+      "final_brier": 0.0189,
+      "brier_market": 0.3136
+    },
+    {
+      "ticker": "KXMETGALAFITS-26MAY05-BAD-DOL",
+      "question": "Will Bad Bunny wear Dolce & Gabbana at Met Gala 2026 Red Carpet?",
+      "outcome": 0,
+      "implied_yes": 0.53,
+      "base_rate": 0.0875,
+      "memory_only": 0.1,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 5,
+          "ev_mean": 0.23,
+          "spread": 0.1,
+          "w": 0.5,
+          "final": 0.1588,
+          "brier_final": 0.0252,
+          "brier_raw": 0.0529
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 6,
+          "ev_mean": 0.1967,
+          "spread": 0.2,
+          "w": 0.55,
+          "final": 0.147,
+          "brier_final": 0.0216,
+          "brier_raw": 0.0387
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 10,
+          "ev_mean": 0.1967,
+          "spread": 0.1,
+          "w": 0.67,
+          "final": 0.1603,
+          "brier_final": 0.0257,
+          "brier_raw": 0.0387
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 9,
+          "ev_mean": 0.1722,
+          "spread": 0.167,
+          "w": 0.64,
+          "final": 0.1419,
+          "brier_final": 0.0201,
+          "brier_raw": 0.0296
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": 0.0051,
+      "final_brier": 0.0201,
+      "brier_market": 0.2809
+    },
+    {
+      "ticker": "KXMETGALAFITS-26MAY05-BAD-CHR",
+      "question": "Will Bad Bunny wear Chrome Hearts at Met Gala 2026 Red Carpet?",
+      "outcome": 0,
+      "implied_yes": 0.42,
+      "base_rate": 0.15,
+      "memory_only": 0.25,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 14,
+          "ev_mean": 0.2338,
+          "spread": 0.103,
+          "w": 0.74,
+          "final": 0.2118,
+          "brier_final": 0.0448,
+          "brier_raw": 0.0547
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 14,
+          "ev_mean": 0.1967,
+          "spread": 0.2,
+          "w": 0.74,
+          "final": 0.1844,
+          "brier_final": 0.034,
+          "brier_raw": 0.0387
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 15,
+          "ev_mean": 0.3133,
+          "spread": 0.12,
+          "w": 0.75,
+          "final": 0.2725,
+          "brier_final": 0.0743,
+          "brier_raw": 0.0982
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 10,
+          "ev_mean": 0.2383,
+          "spread": 0.27,
+          "w": 0.67,
+          "final": 0.2089,
+          "brier_final": 0.0436,
+          "brier_raw": 0.0568
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": 0.0012,
+      "final_brier": 0.0436,
+      "brier_market": 0.1764
+    },
+    {
+      "ticker": "KXMETGALAFITS-26MAY05-BAD-BUR",
+      "question": "Will Bad Bunny wear Burberry at Met Gala 2026 Red Carpet?",
+      "outcome": 0,
+      "implied_yes": 0.57,
+      "base_rate": 0.0875,
+      "memory_only": 0.1,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 13,
+          "ev_mean": 0.2467,
+          "spread": 0.02,
+          "w": 0.72,
+          "final": 0.2025,
+          "brier_final": 0.041,
+          "brier_raw": 0.0608
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 13,
+          "ev_mean": 0.1833,
+          "spread": 0.2,
+          "w": 0.72,
+          "final": 0.1567,
+          "brier_final": 0.0246,
+          "brier_raw": 0.0336
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 17,
+          "ev_mean": 0.2033,
+          "spread": 0.12,
+          "w": 0.77,
+          "final": 0.177,
+          "brier_final": 0.0313,
+          "brier_raw": 0.0413
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 4,
+          "ev_mean": 0.1275,
+          "spread": 0.22,
+          "w": 0.44,
+          "final": 0.1053,
+          "brier_final": 0.0111,
+          "brier_raw": 0.0163
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": 0.0299,
+      "final_brier": 0.0111,
+      "brier_market": 0.3249
+    },
+    {
+      "ticker": "KXMETGALAFITS-26MAY05-BAD-BRU",
+      "question": "Will Bad Bunny wear Brunello Cucinelli at Met Gala 2026 Red Carpet?",
+      "outcome": 0,
+      "implied_yes": 0.57,
+      "base_rate": 0.0875,
+      "memory_only": 0.1,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 5,
+          "ev_mean": 0.1308,
+          "spread": 0.215,
+          "w": 0.5,
+          "final": 0.1092,
+          "brier_final": 0.0119,
+          "brier_raw": 0.0171
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 5,
+          "ev_mean": 0.1592,
+          "spread": 0.225,
+          "w": 0.5,
+          "final": 0.1233,
+          "brier_final": 0.0152,
+          "brier_raw": 0.0253
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 6,
+          "ev_mean": 0.132,
+          "spread": 0.215,
+          "w": 0.55,
+          "final": 0.1118,
+          "brier_final": 0.0125,
+          "brier_raw": 0.0174
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 7,
+          "ev_mean": 0.0958,
+          "spread": 0.125,
+          "w": 0.58,
+          "final": 0.0924,
+          "brier_final": 0.0085,
+          "brier_raw": 0.0092
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": 0.0034,
+      "final_brier": 0.0085,
+      "brier_market": 0.3249
+    },
+    {
+      "ticker": "KXMETGALAFITS-26MAY05-BAD-BALM",
+      "question": "Will Bad Bunny wear Balmain at Met Gala 2026 Red Carpet?",
+      "outcome": 0,
+      "implied_yes": 0.58,
+      "base_rate": 0.0875,
+      "memory_only": 0.15,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 11,
+          "ev_mean": 0.2,
+          "spread": 0.3,
+          "w": 0.69,
+          "final": 0.1648,
+          "brier_final": 0.0272,
+          "brier_raw": 0.04
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 11,
+          "ev_mean": 0.225,
+          "spread": 0.45,
+          "w": 0.69,
+          "final": 0.182,
+          "brier_final": 0.0331,
+          "brier_raw": 0.0506
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 12,
+          "ev_mean": 0.2,
+          "spread": 0.3,
+          "w": 0.71,
+          "final": 0.1669,
+          "brier_final": 0.0279,
+          "brier_raw": 0.04
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 10,
+          "ev_mean": 0.0833,
+          "spread": 0.1,
+          "w": 0.67,
+          "final": 0.0847,
+          "brier_final": 0.0072,
+          "brier_raw": 0.0069
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": 0.02,
+      "final_brier": 0.0072,
+      "brier_market": 0.3364
+    },
+    {
+      "ticker": "KXMETGALAFITS-26MAY05-BAD-BAL",
+      "question": "Will Bad Bunny wear Balenciaga at Met Gala 2026 Red Carpet?",
+      "outcome": 0,
+      "implied_yes": 0.57,
+      "base_rate": 0.1,
+      "memory_only": 0.25,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 12,
+          "ev_mean": 0.245,
+          "spread": 0.02,
+          "w": 0.71,
+          "final": 0.2024,
+          "brier_final": 0.0409,
+          "brier_raw": 0.06
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 11,
+          "ev_mean": 0.2838,
+          "spread": 0.1,
+          "w": 0.69,
+          "final": 0.2264,
+          "brier_final": 0.0513,
+          "brier_raw": 0.0806
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 12,
+          "ev_mean": 0.2677,
+          "spread": 0.294,
+          "w": 0.71,
+          "final": 0.2184,
+          "brier_final": 0.0477,
+          "brier_raw": 0.0716
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 7,
+          "ev_mean": 0.1125,
+          "spread": 0.175,
+          "w": 0.58,
+          "final": 0.1073,
+          "brier_final": 0.0115,
+          "brier_raw": 0.0127
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": 0.0294,
+      "final_brier": 0.0115,
+      "brier_market": 0.3249
+    },
+    {
+      "ticker": "KXSATRADEBAL-26JUN30-T20.00",
+      "question": "Will South Africa balance of trade for May 2026 be above ZAR20.00B?",
+      "outcome": 0,
+      "implied_yes": 0.4,
+      "base_rate": 0.475,
+      "memory_only": 0.5,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 0,
+          "ev_mean": 0.4917,
+          "spread": 0.05,
+          "w": 0.3,
+          "final": 0.48,
+          "brier_final": 0.2304,
+          "brier_raw": 0.2417
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 0,
+          "ev_mean": 0.4917,
+          "spread": 0.05,
+          "w": 0.3,
+          "final": 0.48,
+          "brier_final": 0.2304,
+          "brier_raw": 0.2417
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 0,
+          "ev_mean": 0.4917,
+          "spread": 0.05,
+          "w": 0.3,
+          "final": 0.48,
+          "brier_final": 0.2304,
+          "brier_raw": 0.2417
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 0,
+          "ev_mean": 0.4833,
+          "spread": 0.05,
+          "w": 0.3,
+          "final": 0.4775,
+          "brier_final": 0.228,
+          "brier_raw": 0.2336
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": 0.0024,
+      "final_brier": 0.228,
+      "brier_market": 0.16
+    },
+    {
+      "ticker": "KXSATRADEBAL-26JUN30-T18.00",
+      "question": "Will South Africa balance of trade for May 2026 be above ZAR18.00B?",
+      "outcome": 0,
+      "implied_yes": 0.45,
+      "base_rate": 0.475,
+      "memory_only": 0.51,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 0,
+          "ev_mean": 0.495,
+          "spread": 0.07,
+          "w": 0.3,
+          "final": 0.481,
+          "brier_final": 0.2314,
+          "brier_raw": 0.245
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 0,
+          "ev_mean": 0.5033,
+          "spread": 0.1,
+          "w": 0.3,
+          "final": 0.4835,
+          "brier_final": 0.2338,
+          "brier_raw": 0.2533
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 0,
+          "ev_mean": 0.515,
+          "spread": 0.07,
+          "w": 0.3,
+          "final": 0.487,
+          "brier_final": 0.2372,
+          "brier_raw": 0.2652
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 0,
+          "ev_mean": 0.5283,
+          "spread": 0.15,
+          "w": 0.3,
+          "final": 0.491,
+          "brier_final": 0.2411,
+          "brier_raw": 0.2791
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": -0.0097,
+      "final_brier": 0.2411,
+      "brier_market": 0.2025
+    },
+    {
+      "ticker": "KXUE-MEX26JUN-2.5",
+      "question": "Mexico unemployment rate in May 2026?",
+      "outcome": 1,
+      "implied_yes": 0.64,
+      "base_rate": 0.2675,
+      "memory_only": 0.2675,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 15,
+          "ev_mean": 0.338,
+          "spread": 0.205,
+          "w": 0.75,
+          "final": 0.3204,
+          "brier_final": 0.4619,
+          "brier_raw": 0.4382
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 15,
+          "ev_mean": 0.3992,
+          "spread": 0.221,
+          "w": 0.75,
+          "final": 0.3663,
+          "brier_final": 0.4016,
+          "brier_raw": 0.361
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 15,
+          "ev_mean": 0.3883,
+          "spread": 0.202,
+          "w": 0.75,
+          "final": 0.3581,
+          "brier_final": 0.412,
+          "brier_raw": 0.3741
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 15,
+          "ev_mean": 0.3432,
+          "spread": 0.22,
+          "w": 0.75,
+          "final": 0.3243,
+          "brier_final": 0.4566,
+          "brier_raw": 0.4314
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": 0.0053,
+      "final_brier": 0.4566,
+      "brier_market": 0.1296
+    },
+    {
+      "ticker": "KXCACPIYOY-26JUN22-T3.3",
+      "question": "Will Canada inflation rate YoY for May 2026 be above 3.3%?",
+      "outcome": 0,
+      "implied_yes": 0.55,
+      "base_rate": 0.5,
+      "memory_only": 0.475,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 12,
+          "ev_mean": 0.435,
+          "spread": 0.27,
+          "w": 0.71,
+          "final": 0.4541,
+          "brier_final": 0.2062,
+          "brier_raw": 0.1892
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 12,
+          "ev_mean": 0.4525,
+          "spread": 0.245,
+          "w": 0.71,
+          "final": 0.4665,
+          "brier_final": 0.2176,
+          "brier_raw": 0.2048
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 13,
+          "ev_mean": 0.4233,
+          "spread": 0.27,
+          "w": 0.72,
+          "final": 0.4446,
+          "brier_final": 0.1977,
+          "brier_raw": 0.1792
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 13,
+          "ev_mean": 0.4567,
+          "spread": 0.27,
+          "w": 0.72,
+          "final": 0.4687,
+          "brier_final": 0.2197,
+          "brier_raw": 0.2085
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": -0.0135,
+      "final_brier": 0.2197,
+      "brier_market": 0.3025
+    },
+    {
+      "ticker": "KXCACPIYOY-26JUN22-T2.9",
+      "question": "Will Canada inflation rate YoY for May 2026 be above 2.9%?",
+      "outcome": 1,
+      "implied_yes": 0.57,
+      "base_rate": 0.5,
+      "memory_only": 0.51,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 17,
+          "ev_mean": 0.6333,
+          "spread": 0.1,
+          "w": 0.77,
+          "final": 0.603,
+          "brier_final": 0.1576,
+          "brier_raw": 0.1344
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 17,
+          "ev_mean": 0.68,
+          "spread": 0.09,
+          "w": 0.77,
+          "final": 0.6391,
+          "brier_final": 0.1303,
+          "brier_raw": 0.1024
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 16,
+          "ev_mean": 0.6617,
+          "spread": 0.1,
+          "w": 0.76,
+          "final": 0.6232,
+          "brier_final": 0.142,
+          "brier_raw": 0.1145
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 16,
+          "ev_mean": 0.645,
+          "spread": 0.06,
+          "w": 0.76,
+          "final": 0.6105,
+          "brier_final": 0.1517,
+          "brier_raw": 0.126
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": 0.0059,
+      "final_brier": 0.1517,
+      "brier_market": 0.1849
+    },
+    {
+      "ticker": "KXSARETAIL-26JUN17-T0.2",
+      "question": "Will South Africa retail sales MoM for April 2026 be above 0.2%?",
+      "outcome": 1,
+      "implied_yes": 0.44,
+      "base_rate": 0.5,
+      "memory_only": 0.51,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 2,
+          "ev_mean": 0.497,
+          "spread": 0.018,
+          "w": 0.3,
+          "final": 0.4991,
+          "brier_final": 0.2509,
+          "brier_raw": 0.253
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 2,
+          "ev_mean": 0.4988,
+          "spread": 0.073,
+          "w": 0.3,
+          "final": 0.4996,
+          "brier_final": 0.2504,
+          "brier_raw": 0.2512
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 2,
+          "ev_mean": 0.4967,
+          "spread": 0.08,
+          "w": 0.3,
+          "final": 0.499,
+          "brier_final": 0.251,
+          "brier_raw": 0.2533
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 2,
+          "ev_mean": 0.4925,
+          "spread": 0.07,
+          "w": 0.3,
+          "final": 0.4977,
+          "brier_final": 0.2523,
+          "brier_raw": 0.2576
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": -0.0014,
+      "final_brier": 0.2523,
+      "brier_market": 0.3136
+    },
+    {
+      "ticker": "KXSARETAIL-26JUN17-T0.0",
+      "question": "Will South Africa retail sales MoM for April 2026 be above 0.0%?",
+      "outcome": 1,
+      "implied_yes": 0.56,
+      "base_rate": 0.535,
+      "memory_only": 0.51,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 0,
+          "ev_mean": 0.515,
+          "spread": 0.05,
+          "w": 0.3,
+          "final": 0.529,
+          "brier_final": 0.2218,
+          "brier_raw": 0.2352
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 0,
+          "ev_mean": 0.5117,
+          "spread": 0.05,
+          "w": 0.3,
+          "final": 0.528,
+          "brier_final": 0.2228,
+          "brier_raw": 0.2385
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 0,
+          "ev_mean": 0.5167,
+          "spread": 0.05,
+          "w": 0.3,
+          "final": 0.5295,
+          "brier_final": 0.2214,
+          "brier_raw": 0.2336
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 0,
+          "ev_mean": 0.5,
+          "spread": 0.1,
+          "w": 0.3,
+          "final": 0.5245,
+          "brier_final": 0.2261,
+          "brier_raw": 0.25
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": -0.0043,
+      "final_brier": 0.2261,
+      "brier_market": 0.1936
+    },
+    {
+      "ticker": "KXDEZEW-26JUN16-T-17.5",
+      "question": "Will Germany ZEW economic sentiment index for June 2026 be above -17.5?",
+      "outcome": 1,
+      "implied_yes": 0.63,
+      "base_rate": 0.51,
+      "memory_only": 0.51,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 16,
+          "ev_mean": 0.4787,
+          "spread": 0.27,
+          "w": 0.76,
+          "final": 0.4861,
+          "brier_final": 0.2641,
+          "brier_raw": 0.2718
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 16,
+          "ev_mean": 0.5017,
+          "spread": 0.33,
+          "w": 0.76,
+          "final": 0.5037,
+          "brier_final": 0.2464,
+          "brier_raw": 0.2483
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 16,
+          "ev_mean": 0.435,
+          "spread": 0.07,
+          "w": 0.76,
+          "final": 0.4529,
+          "brier_final": 0.2994,
+          "brier_raw": 0.3192
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 16,
+          "ev_mean": 0.5117,
+          "spread": 0.23,
+          "w": 0.76,
+          "final": 0.5113,
+          "brier_final": 0.2389,
+          "brier_raw": 0.2385
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": 0.0252,
+      "final_brier": 0.2389,
+      "brier_market": 0.1369
+    },
+    {
+      "ticker": "KXDEZEW-26JUN16-T-15.0",
+      "question": "Will Germany ZEW economic sentiment index for June 2026 be above -15.0?",
+      "outcome": 1,
+      "implied_yes": 0.57,
+      "base_rate": 0.585,
+      "memory_only": 0.51,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 16,
+          "ev_mean": 0.4533,
+          "spread": 0.32,
+          "w": 0.76,
+          "final": 0.4847,
+          "brier_final": 0.2656,
+          "brier_raw": 0.2988
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 16,
+          "ev_mean": 0.4583,
+          "spread": 0.27,
+          "w": 0.76,
+          "final": 0.4885,
+          "brier_final": 0.2616,
+          "brier_raw": 0.2934
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 16,
+          "ev_mean": 0.4033,
+          "spread": 0.16,
+          "w": 0.76,
+          "final": 0.4466,
+          "brier_final": 0.3063,
+          "brier_raw": 0.356
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 16,
+          "ev_mean": 0.59,
+          "spread": 0.37,
+          "w": 0.76,
+          "final": 0.5888,
+          "brier_final": 0.1691,
+          "brier_raw": 0.1681
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": 0.0965,
+      "final_brier": 0.1691,
+      "brier_market": 0.1849
+    },
+    {
+      "ticker": "KXDEZEW-26JUN16-T-12.5",
+      "question": "Will Germany ZEW economic sentiment index for June 2026 be above -12.5?",
+      "outcome": 1,
+      "implied_yes": 0.49,
+      "base_rate": 0.51,
+      "memory_only": 0.51,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 16,
+          "ev_mean": 0.4022,
+          "spread": 0.34,
+          "w": 0.76,
+          "final": 0.4278,
+          "brier_final": 0.3274,
+          "brier_raw": 0.3574
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 16,
+          "ev_mean": 0.4883,
+          "spread": 0.25,
+          "w": 0.76,
+          "final": 0.4935,
+          "brier_final": 0.2566,
+          "brier_raw": 0.2618
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 16,
+          "ev_mean": 0.4417,
+          "spread": 0.17,
+          "w": 0.76,
+          "final": 0.4579,
+          "brier_final": 0.2938,
+          "brier_raw": 0.3117
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 16,
+          "ev_mean": 0.47,
+          "spread": 0.37,
+          "w": 0.76,
+          "final": 0.4795,
+          "brier_final": 0.2709,
+          "brier_raw": 0.2809
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": 0.0565,
+      "final_brier": 0.2709,
+      "brier_market": 0.2601
+    },
+    {
+      "ticker": "KXUSMICHCSP-26JUN12-T46.0",
+      "question": "Will US Michigan consumer sentiment prel for June 2026 be above 46.0?",
+      "outcome": 1,
+      "implied_yes": 0.52,
+      "base_rate": 0.51,
+      "memory_only": 0.5,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 0,
+          "ev_mean": 0.5033,
+          "spread": 0.09,
+          "w": 0.3,
+          "final": 0.508,
+          "brier_final": 0.2421,
+          "brier_raw": 0.2467
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 0,
+          "ev_mean": 0.5,
+          "spread": 0.0,
+          "w": 0.3,
+          "final": 0.507,
+          "brier_final": 0.243,
+          "brier_raw": 0.25
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 0,
+          "ev_mean": 0.4988,
+          "spread": 0.073,
+          "w": 0.3,
+          "final": 0.5066,
+          "brier_final": 0.2434,
+          "brier_raw": 0.2512
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 0,
+          "ev_mean": 0.495,
+          "spread": 0.07,
+          "w": 0.3,
+          "final": 0.5055,
+          "brier_final": 0.2445,
+          "brier_raw": 0.255
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": -0.0024,
+      "final_brier": 0.2445,
+      "brier_market": 0.2304
+    },
+    {
+      "ticker": "KXAIRFARECPI-26JUN10-T312.0",
+      "question": "Will Consumer Price Index for All Urban Consumers: Airline Fares in U.S. City Average for May 2026 be above 312.0\u3164?",
+      "outcome": 0,
+      "implied_yes": 0.48,
+      "base_rate": 0.475,
+      "memory_only": 0.475,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 6,
+          "ev_mean": 0.5028,
+          "spread": 0.092,
+          "w": 0.55,
+          "final": 0.4902,
+          "brier_final": 0.2403,
+          "brier_raw": 0.2528
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 6,
+          "ev_mean": 0.4948,
+          "spread": 0.074,
+          "w": 0.55,
+          "final": 0.4858,
+          "brier_final": 0.236,
+          "brier_raw": 0.2449
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 6,
+          "ev_mean": 0.5095,
+          "spread": 0.043,
+          "w": 0.55,
+          "final": 0.4938,
+          "brier_final": 0.2439,
+          "brier_raw": 0.2596
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 6,
+          "ev_mean": 0.4867,
+          "spread": 0.07,
+          "w": 0.55,
+          "final": 0.4814,
+          "brier_final": 0.2317,
+          "brier_raw": 0.2368
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": 0.0086,
+      "final_brier": 0.2317,
+      "brier_market": 0.2304
+    },
+    {
+      "ticker": "KXAIRFARECPI-26JUN10-T294.0",
+      "question": "Will Consumer Price Index for All Urban Consumers: Airline Fares in U.S. City Average for May 2026 be above 294.0\u3164?",
+      "outcome": 1,
+      "implied_yes": 0.61,
+      "base_rate": 0.575,
+      "memory_only": 0.475,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 6,
+          "ev_mean": 0.5033,
+          "spread": 0.02,
+          "w": 0.55,
+          "final": 0.5359,
+          "brier_final": 0.2154,
+          "brier_raw": 0.2467
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 6,
+          "ev_mean": 0.5072,
+          "spread": 0.023,
+          "w": 0.55,
+          "final": 0.538,
+          "brier_final": 0.2134,
+          "brier_raw": 0.2429
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 6,
+          "ev_mean": 0.495,
+          "spread": 0.07,
+          "w": 0.55,
+          "final": 0.5314,
+          "brier_final": 0.2196,
+          "brier_raw": 0.255
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 6,
+          "ev_mean": 0.5105,
+          "spread": 0.023,
+          "w": 0.55,
+          "final": 0.5398,
+          "brier_final": 0.2118,
+          "brier_raw": 0.2396
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": 0.0036,
+      "final_brier": 0.2118,
+      "brier_market": 0.1521
+    },
+    {
+      "ticker": "KXAUNABCONF-26JUN08-T-21",
+      "question": "Will Australia NAB business confidence for May 2026 be above -21?",
+      "outcome": 1,
+      "implied_yes": 0.63,
+      "base_rate": 0.725,
+      "memory_only": 0.51,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 19,
+          "ev_mean": 0.3167,
+          "spread": 0.1,
+          "w": 0.79,
+          "final": 0.4017,
+          "brier_final": 0.3579,
+          "brier_raw": 0.4669
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 19,
+          "ev_mean": 0.3667,
+          "spread": 0.1,
+          "w": 0.79,
+          "final": 0.4413,
+          "brier_final": 0.3121,
+          "brier_raw": 0.4011
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 19,
+          "ev_mean": 0.3383,
+          "spread": 0.13,
+          "w": 0.79,
+          "final": 0.4189,
+          "brier_final": 0.3377,
+          "brier_raw": 0.4378
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 18,
+          "ev_mean": 0.3033,
+          "spread": 0.1,
+          "w": 0.78,
+          "final": 0.395,
+          "brier_final": 0.366,
+          "brier_raw": 0.4853
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": -0.0081,
+      "final_brier": 0.366,
+      "brier_market": 0.1369
+    },
+    {
+      "ticker": "KXBET-26-ALB-EVE",
+      "question": "Will EVERYTHING IS A LOT. win Album of the Year award at 26th BET Awards?",
+      "outcome": 0,
+      "implied_yes": 0.22,
+      "base_rate": 0.1,
+      "memory_only": 0.1,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 13,
+          "ev_mean": 0.1,
+          "spread": 0.2,
+          "w": 0.72,
+          "final": 0.1,
+          "brier_final": 0.01,
+          "brier_raw": 0.01
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 13,
+          "ev_mean": 0.2,
+          "spread": 0.1,
+          "w": 0.72,
+          "final": 0.1722,
+          "brier_final": 0.0297,
+          "brier_raw": 0.04
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 13,
+          "ev_mean": 0.1667,
+          "spread": 0.2,
+          "w": 0.72,
+          "final": 0.1481,
+          "brier_final": 0.0219,
+          "brier_raw": 0.0278
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 17,
+          "ev_mean": 0.0438,
+          "spread": 0.02,
+          "w": 0.77,
+          "final": 0.0565,
+          "brier_final": 0.0032,
+          "brier_raw": 0.0019
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": 0.0068,
+      "final_brier": 0.0032,
+      "brier_market": 0.0484
+    },
+    {
+      "ticker": "KXALBUMEQUIV-DIR26JUN18-20K",
+      "question": "Will DIRTY BLONDE by Bebe Rexha have above 20000 Album Equivalent Units during the June 12, 2026 - June 18, 2026 tracking week?",
+      "outcome": 0,
+      "implied_yes": 0.25,
+      "base_rate": 0.3,
+      "memory_only": 0.3,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 0,
+          "ev_mean": 0.3167,
+          "spread": 0.1,
+          "w": 0.3,
+          "final": 0.305,
+          "brier_final": 0.093,
+          "brier_raw": 0.1003
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 0,
+          "ev_mean": 0.28,
+          "spread": 0.12,
+          "w": 0.3,
+          "final": 0.294,
+          "brier_final": 0.0864,
+          "brier_raw": 0.0784
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 0,
+          "ev_mean": 0.3167,
+          "spread": 0.1,
+          "w": 0.3,
+          "final": 0.305,
+          "brier_final": 0.093,
+          "brier_raw": 0.1003
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 0,
+          "ev_mean": 0.3167,
+          "spread": 0.2,
+          "w": 0.3,
+          "final": 0.305,
+          "brier_final": 0.093,
+          "brier_raw": 0.1003
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": 0.0,
+      "final_brier": 0.093,
+      "brier_market": 0.0625
+    },
+    {
+      "ticker": "KXPUREALBUMS-CRY26JUN11-12K",
+      "question": "Will Cry Baby by Vince Staples have above 12000 Pure Album Sales (aka Product Sales) during the June 5, 2026 - June 11, 2026 tracking week?",
+      "outcome": 0,
+      "implied_yes": 0.92,
+      "base_rate": 0.3,
+      "memory_only": 0.3,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 0,
+          "ev_mean": 0.3,
+          "spread": 0.1,
+          "w": 0.3,
+          "final": 0.3,
+          "brier_final": 0.09,
+          "brier_raw": 0.09
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 0,
+          "ev_mean": 0.2658,
+          "spread": 0.305,
+          "w": 0.3,
+          "final": 0.2897,
+          "brier_final": 0.084,
+          "brier_raw": 0.0707
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 0,
+          "ev_mean": 0.2617,
+          "spread": 0.33,
+          "w": 0.3,
+          "final": 0.2885,
+          "brier_final": 0.0832,
+          "brier_raw": 0.0685
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 0,
+          "ev_mean": 0.2833,
+          "spread": 0.3,
+          "w": 0.3,
+          "final": 0.295,
+          "brier_final": 0.087,
+          "brier_raw": 0.0803
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": 0.003,
+      "final_brier": 0.087,
+      "brier_market": 0.8464
+    },
+    {
+      "ticker": "KXALBUMEQUIV-DOT26JUN11-125K",
+      "question": "Will Do That Again by Malcolm Todd have above 125000 Album Equivalent Units during the June 5, 2026 - June 11, 2026 tracking week?",
+      "outcome": 0,
+      "implied_yes": 0.88,
+      "base_rate": 0.1,
+      "memory_only": 0.225,
+      "checkpoints": [
+        {
+          "label": "T-14d",
+          "n_members": 6,
+          "n_sources": 0,
+          "ev_mean": 0.2567,
+          "spread": 0.2,
+          "w": 0.3,
+          "final": 0.147,
+          "brier_final": 0.0216,
+          "brier_raw": 0.0659
+        },
+        {
+          "label": "T-7d",
+          "n_members": 6,
+          "n_sources": 0,
+          "ev_mean": 0.2717,
+          "spread": 0.2,
+          "w": 0.3,
+          "final": 0.1515,
+          "brier_final": 0.023,
+          "brier_raw": 0.0738
+        },
+        {
+          "label": "T-3d",
+          "n_members": 6,
+          "n_sources": 0,
+          "ev_mean": 0.2083,
+          "spread": 0.25,
+          "w": 0.3,
+          "final": 0.1325,
+          "brier_final": 0.0176,
+          "brier_raw": 0.0434
+        },
+        {
+          "label": "T-1d",
+          "n_members": 6,
+          "n_sources": 0,
+          "ev_mean": 0.2083,
+          "spread": 0.3,
+          "w": 0.3,
+          "final": 0.1325,
+          "brier_final": 0.0176,
+          "brier_raw": 0.0434
+        }
+      ],
+      "leak_flag": false,
+      "updating_delta": 0.004,
+      "final_brier": 0.0176,
+      "brier_market": 0.7744
+    }
+  ]
+}
