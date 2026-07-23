@@ -5,54 +5,54 @@
   "category": "politics",
   "close_time": "2026-06-30T14:00:00Z",
   "current": {
-    "as_of": "2026-07-22T22:31:36Z",
-    "my_probability": 0.1318,
+    "as_of": "2026-07-23T21:07:30Z",
+    "my_probability": 0.117,
     "my_confidence": "high",
-    "market_implied_probability": 0.052,
-    "market_price_cents": 5.0,
-    "edge": 0.07980000000000001,
-    "yes_ask": 0.054,
-    "no_ask": 0.95,
+    "market_implied_probability": 0.063,
+    "market_price_cents": 6.0,
+    "edge": 0.054000000000000006,
+    "yes_ask": 0.067,
+    "no_ask": 0.941,
     "fee_per_contract": 0.01,
-    "ev_per_contract": 0.06780000000000001,
-    "limit_price": 0.05,
-    "ev_limit_per_contract": 0.0718,
+    "ev_per_contract": 0.04,
+    "limit_price": 0.059,
+    "ev_limit_per_contract": 0.048,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "ADVERSARIAL VETO: The forecast lacks sufficient evidence to justify the proposed probability and position. The divergence from the market implies overconfidence, and the reasoning is incomplete and speculative. The edge is not convincingly demonstrated, and ",
-    "prob_delta_vs_prev": 0.028499999999999998,
+    "lean_note": "ADVERSARIAL VETO: The position is overconfident and lacks sufficient justification for diverging from the market-implied probability. The edge is not convincingly demonstrated, and the reasoning is incomplete.",
+    "prob_delta_vs_prev": -0.014799999999999994,
     "trigger": "scheduled",
     "strategy_id": "LQ5C-ensemble5-crowd",
-    "proposed_probability": 0.1318,
+    "proposed_probability": 0.117,
     "adversarial_verdict": "veto",
-    "adversarial_challenged_prob": 0.052,
+    "adversarial_challenged_prob": 0.063,
     "adversarial_concerns": [
-      "The proposed probability (0.1318) significantly diverges from the market-implied probability (0.052), suggesting overconfidence without sufficient justification.",
-      "The reasoning lacks concrete evidence to support the claim that Toby Doeden is a strong contender or that the polls are unreliable.",
-      "The historical trends referenced are incomplete and do not provide a clear basis for the forecast.",
-      "The position assumes a strategic advantage for Doeden without addressing the competitive nature of the race or the strength of his opponent, Larry Rhoden."
+      "The proposed probability (0.117) significantly diverges from the market-implied probability (0.063), suggesting overconfidence in the forecast.",
+      "The reasoning does not provide sufficient evidence to justify a higher probability than the market, which may reflect broader consensus or more liquid information.",
+      "The forecast assumes a strong influence from polling and candidate response, but does not account for the broader context of South Dakota politics or the likelihood of a runoff election."
     ],
     "adversarial_model": "qwen3:14b-q4_K_M",
-    "rationale_summary": "The evidence suggests that Toby Doeden is a strong contender due to his status as an 'outsider' and his ability to shake up the race, but he faces a competitive opponent in Larry Rhoden, who leads in recent polls. Doeden's dismissal of unfavorable polling data raises questions about his strategy and the reliability of the polls themselves. Historical trends show that stronger name recognition and ",
+    "rationale_summary": "Based on recent polling, Larry Rhoden appears to be leading Toby Doeden in the runoff election for the South Dakota gubernatorial race. However, the rarity of runoff elections in South Dakota and the possibility of last-minute shifts in voter sentiment or external events make the outcome uncertain. Additionally, the candidate's response to unfavorable polling may influence public perception. While",
     "key_drivers": [
-      "Larry Rhoden's current poll lead and name recognition",
-      "Toby Doeden's status as an 'outsider' and potential to attract new voters",
-      "Doeden's handling of polling data and its impact on public perception",
-      "Effectiveness and appeal of Doeden's property tax elimination plan"
+      "Larry Rhoden's current lead in multiple polls",
+      "The historical strength of Republican candidates in South Dakota",
+      "The influence of voter perception and candidate response to polling",
+      "The rarity and nature of runoff elections in South Dakota"
     ],
     "reference_classes": [
-      "South Dakota gubernatorial elections with competitive primary races",
-      "Candidates with strong name recognition vs. outsider candidates",
-      "Impact of negative campaigning and accusations on voter behavior"
+      "Runoff elections in South Dakota",
+      "Competitive gubernatorial races in Republican-leaning states",
+      "Candidate responses to polling and their impact on voter behavior"
     ],
     "research_refs": [
       "- Emerson Polling",
       "Aberdeen Insider",
+      "Argus Leader",
+      "Emerson Polling",
+      "KELOLAND.com",
       "KOTA Territory News",
-      "South Dakota News Watch",
-      "South Dakota Searchlight",
-      "The Mighty 790 KFGO",
-      "The Public Opinion"
+      "KTIV",
+      "SDPB"
     ]
   },
   "history": [
@@ -579,6 +579,57 @@
         "South Dakota Searchlight",
         "The Mighty 790 KFGO",
         "The Public Opinion"
+      ]
+    },
+    {
+      "as_of": "2026-07-23T21:07:30Z",
+      "my_probability": 0.117,
+      "my_confidence": "high",
+      "market_implied_probability": 0.063,
+      "market_price_cents": 6.0,
+      "edge": 0.054000000000000006,
+      "yes_ask": 0.067,
+      "no_ask": 0.941,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": 0.04,
+      "limit_price": 0.059,
+      "ev_limit_per_contract": 0.048,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "ADVERSARIAL VETO: The position is overconfident and lacks sufficient justification for diverging from the market-implied probability. The edge is not convincingly demonstrated, and the reasoning is incomplete.",
+      "prob_delta_vs_prev": -0.014799999999999994,
+      "trigger": "scheduled",
+      "strategy_id": "LQ5C-ensemble5-crowd",
+      "proposed_probability": 0.117,
+      "adversarial_verdict": "veto",
+      "adversarial_challenged_prob": 0.063,
+      "adversarial_concerns": [
+        "The proposed probability (0.117) significantly diverges from the market-implied probability (0.063), suggesting overconfidence in the forecast.",
+        "The reasoning does not provide sufficient evidence to justify a higher probability than the market, which may reflect broader consensus or more liquid information.",
+        "The forecast assumes a strong influence from polling and candidate response, but does not account for the broader context of South Dakota politics or the likelihood of a runoff election."
+      ],
+      "adversarial_model": "qwen3:14b-q4_K_M",
+      "rationale_summary": "Based on recent polling, Larry Rhoden appears to be leading Toby Doeden in the runoff election for the South Dakota gubernatorial race. However, the rarity of runoff elections in South Dakota and the possibility of last-minute shifts in voter sentiment or external events make the outcome uncertain. Additionally, the candidate's response to unfavorable polling may influence public perception. While",
+      "key_drivers": [
+        "Larry Rhoden's current lead in multiple polls",
+        "The historical strength of Republican candidates in South Dakota",
+        "The influence of voter perception and candidate response to polling",
+        "The rarity and nature of runoff elections in South Dakota"
+      ],
+      "reference_classes": [
+        "Runoff elections in South Dakota",
+        "Competitive gubernatorial races in Republican-leaning states",
+        "Candidate responses to polling and their impact on voter behavior"
+      ],
+      "research_refs": [
+        "- Emerson Polling",
+        "Aberdeen Insider",
+        "Argus Leader",
+        "Emerson Polling",
+        "KELOLAND.com",
+        "KOTA Territory News",
+        "KTIV",
+        "SDPB"
       ]
     }
   ],
