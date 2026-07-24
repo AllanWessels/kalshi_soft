@@ -72,6 +72,23 @@ def _duration_days(m: dict):
         return None
 
 
+def _days_to_resolve(m: dict, now: datetime.datetime):
+    """Days until the market's TRUE resolution (expected_expiration_time, fallback
+    close_time). None if unparseable. Used to concentrate the paper book on markets that
+    SETTLE soon so the A4 verification bar accrues resolved fills in weeks, not months —
+    otherwise year-out longshots (award seasons, 2027/2028 politics) freeze the scoreboard."""
+    for key in ("expected_expiration_time", "close_time"):
+        raw = m.get(key)
+        if not raw:
+            continue
+        try:
+            t = datetime.datetime.fromisoformat(raw.replace("Z", "+00:00"))
+            return (t - now).total_seconds() / 86400.0
+        except (ValueError, TypeError):
+            continue
+    return None
+
+
 def _series_category_map(client: KalshiClient) -> dict:
     """{series_ticker: canon_category} for all series in harvested categories (one API call)."""
     out = {}
@@ -115,8 +132,9 @@ def main() -> int:
     print(f"series in harvested categories: {len(series_cat)}")
 
     today = schemas.utc_now_iso()[:10]
+    now = datetime.datetime.now(datetime.timezone.utc)
     seen = _existing_keys()
-    scanned = softcat = corrected = wf_pos = in_band = 0
+    scanned = softcat = near_horizon = corrected = wf_pos = in_band = 0
     recs = []
     try:
         for m in client.iter_markets(status="open"):
@@ -126,6 +144,12 @@ def main() -> int:
             if not cat:
                 continue
             softcat += 1
+            # Settlement-horizon gate (2026-07-24, rescope-to-fast): only screen markets that
+            # RESOLVE within MAX_DAYS_TO_RESOLVE so the verified scoreboard accrues in weeks.
+            dtr = _days_to_resolve(m, now)
+            if dtr is None or dtr < config.MIN_DAYS_TO_CLOSE or dtr > config.MAX_DAYS_TO_RESOLVE:
+                continue
+            near_horizon += 1
             q = market_quote(m)
             yb, ya = q.get("yes_bid"), q.get("yes_ask")
             if not (yb and ya and 0 < yb <= ya < 1):
@@ -165,12 +189,15 @@ def main() -> int:
                 "entry_limit": round(min(0.99, entry), 4), "ev_net": round(ev_net, 4),
                 "open_interest": round(oi, 1), "spread_cents": round((ya - yb) * 100, 1),
                 "duration_days": dur, "cell": info["key"], "granularity": info["granularity"],
-                "close_time": m.get("close_time"), "source": "screen_universe",
+                "close_time": m.get("close_time"),
+                "expected_expiration_time": m.get("expected_expiration_time"),
+                "days_to_resolve": round(dtr, 1), "source": "screen_universe",
             })
     except KalshiError as exc:
         print(f"scan aborted early: {exc} — emitting what was found", file=sys.stderr)
 
-    print(f"scanned {scanned} open markets | soft-category {softcat} | corrected-cell "
+    print(f"scanned {scanned} open markets | soft-category {softcat} | "
+          f"resolve<={config.MAX_DAYS_TO_RESOLVE}d {near_horizon} | corrected-cell "
           f"{corrected} | walk-forward-positive {wf_pos} | mid-OI {in_band} | "
           f"+EV after costs {len(recs)}")
 
