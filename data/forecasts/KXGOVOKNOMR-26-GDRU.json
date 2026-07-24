@@ -5,49 +5,52 @@
   "category": "politics",
   "close_time": "2026-06-30T14:00:00Z",
   "current": {
-    "as_of": "2026-07-23T21:07:24Z",
-    "my_probability": 0.1712,
+    "as_of": "2026-07-24T14:27:55Z",
+    "my_probability": 0.2547,
     "my_confidence": "high",
-    "market_implied_probability": 0.165,
+    "market_implied_probability": 0.155,
     "market_price_cents": 16.0,
-    "edge": 0.006199999999999983,
-    "yes_ask": 0.17,
-    "no_ask": 0.84,
+    "edge": 0.09969999999999998,
+    "yes_ask": 0.16,
+    "no_ask": 0.85,
     "fee_per_contract": 0.01,
-    "ev_per_contract": -0.008800000000000021,
-    "limit_price": null,
-    "ev_limit_per_contract": null,
+    "ev_per_contract": 0.08469999999999998,
+    "limit_price": 0.15,
+    "ev_limit_per_contract": 0.0947,
     "lean": "NONE",
     "conviction": "low",
-    "lean_note": "no +EV value bet at the ask (my prob 17%, modal NO) — staying out.",
-    "prob_delta_vs_prev": -0.007300000000000001,
+    "lean_note": "ADVERSARIAL VETO: The forecaster's confidence is not supported by sufficient evidence, and the position diverges from the market without a credible explanation. The edge is not clearly established, and the reasoning lacks depth and specificity.",
+    "prob_delta_vs_prev": 0.08349999999999999,
     "trigger": "scheduled",
     "strategy_id": "LQ5C-ensemble5-crowd",
-    "proposed_probability": null,
-    "adversarial_verdict": "",
-    "adversarial_challenged_prob": null,
-    "adversarial_concerns": [],
-    "adversarial_model": "",
-    "rationale_summary": "There is currently no direct evidence in the provided sources indicating that Genter Drummond is the Republican nominee for Governor in Oklahoma. The absence of specific information about his candidacy or any endorsements, combined with the lack of news coverage pointing to his nomination, leads to a low probability. The reference class of similar political nomination forecasts suggests that witho",
+    "proposed_probability": 0.2547,
+    "adversarial_verdict": "veto",
+    "adversarial_challenged_prob": 0.2547,
+    "adversarial_concerns": [
+      "The proposed probability is significantly higher than the market-implied probability, suggesting overconfidence without sufficient justification.",
+      "The reasoning does not provide concrete evidence that Drummond has a clear edge over Mazzei in the runoff.",
+      "The base rate argument is incomplete and does not account for specific factors that could influence the runoff outcome."
+    ],
+    "adversarial_model": "qwen3:14b-q4_K_M",
+    "rationale_summary": "Gentner Drummond has advanced to the GOP runoff for governor, which is a significant step toward becoming the Republican nominee. However, the outcome of the runoff against Mike Mazzei remains uncertain, and no clear indication of a landslide victory for Drummond has emerged. The base rate suggests that Oklahoma’s GOP primary elections typically narrow the field to a runoff, but the final nominee ",
     "key_drivers": [
-      "lack of direct evidence of candidacy",
-      "no endorsements or public statements",
-      "absence of news coverage on nomination"
+      "Gentner Drummond advancing to the GOP runoff for governor.",
+      "The uncertainty surrounding the outcome of the runoff against Mike Mazzei.",
+      "Historical precedent of competitive GOP primaries in Oklahoma leading to runoffs."
     ],
     "reference_classes": [
-      "political nomination forecasts",
-      "candidate emergence in primary elections",
-      "lack of media signals in political contests"
+      "Competitive gubernatorial elections in Oklahoma with GOP dominance.",
+      "Primary elections narrowing fields significantly and leading to runoffs."
     ],
     "research_refs": [
       "C-SPAN",
       "KOCO",
       "KOSU",
       "KXII",
+      "MS NOW",
+      "News On 6",
       "NonDoc Media",
-      "OU Daily",
-      "Oklahoma Voice",
-      "The Journal Record"
+      "OU Daily"
     ]
   },
   "history": [
@@ -534,6 +537,55 @@
         "OU Daily",
         "Oklahoma Voice",
         "The Journal Record"
+      ]
+    },
+    {
+      "as_of": "2026-07-24T14:27:55Z",
+      "my_probability": 0.2547,
+      "my_confidence": "high",
+      "market_implied_probability": 0.155,
+      "market_price_cents": 16.0,
+      "edge": 0.09969999999999998,
+      "yes_ask": 0.16,
+      "no_ask": 0.85,
+      "fee_per_contract": 0.01,
+      "ev_per_contract": 0.08469999999999998,
+      "limit_price": 0.15,
+      "ev_limit_per_contract": 0.0947,
+      "lean": "NONE",
+      "conviction": "low",
+      "lean_note": "ADVERSARIAL VETO: The forecaster's confidence is not supported by sufficient evidence, and the position diverges from the market without a credible explanation. The edge is not clearly established, and the reasoning lacks depth and specificity.",
+      "prob_delta_vs_prev": 0.08349999999999999,
+      "trigger": "scheduled",
+      "strategy_id": "LQ5C-ensemble5-crowd",
+      "proposed_probability": 0.2547,
+      "adversarial_verdict": "veto",
+      "adversarial_challenged_prob": 0.2547,
+      "adversarial_concerns": [
+        "The proposed probability is significantly higher than the market-implied probability, suggesting overconfidence without sufficient justification.",
+        "The reasoning does not provide concrete evidence that Drummond has a clear edge over Mazzei in the runoff.",
+        "The base rate argument is incomplete and does not account for specific factors that could influence the runoff outcome."
+      ],
+      "adversarial_model": "qwen3:14b-q4_K_M",
+      "rationale_summary": "Gentner Drummond has advanced to the GOP runoff for governor, which is a significant step toward becoming the Republican nominee. However, the outcome of the runoff against Mike Mazzei remains uncertain, and no clear indication of a landslide victory for Drummond has emerged. The base rate suggests that Oklahoma’s GOP primary elections typically narrow the field to a runoff, but the final nominee ",
+      "key_drivers": [
+        "Gentner Drummond advancing to the GOP runoff for governor.",
+        "The uncertainty surrounding the outcome of the runoff against Mike Mazzei.",
+        "Historical precedent of competitive GOP primaries in Oklahoma leading to runoffs."
+      ],
+      "reference_classes": [
+        "Competitive gubernatorial elections in Oklahoma with GOP dominance.",
+        "Primary elections narrowing fields significantly and leading to runoffs."
+      ],
+      "research_refs": [
+        "C-SPAN",
+        "KOCO",
+        "KOSU",
+        "KXII",
+        "MS NOW",
+        "News On 6",
+        "NonDoc Media",
+        "OU Daily"
       ]
     }
   ],
